@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "title": "Pick, align & insert",
+  "status": "frozen presentation evidence",
+  "headline": "Build the task. Train the skill. Test it. Compose it.",
+  "scope_label": "Simulation-state observations \u2022 learned specialists + conventional control \u2022 no hardware validation",
+  "summary": "A custom keyed-insertion simulation with physical gripper contact and a composed small-policy chain. Prepared experiment evidence, not live training footage.",
+  "metrics": [
+    {
+      "label": "Nominal trials",
+      "value": "20 / 20",
+      "detail": "Frozen prior evaluation; insertion and hold, not release."
+    },
+    {
+      "label": "Stress trials",
+      "value": "20 / 20",
+      "detail": "Frozen prior randomized evaluation; not universal robustness."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Acquire",
+      "parameters": 1540
+    },
+    {
+      "name": "Lift",
+      "parameters": 1540
+    },
+    {
+      "name": "Align",
+      "parameters": 72
+    },
+    {
+      "name": "Insert",
+      "parameters": 90
+    }
+  ],
+  "total_learned_parameters": 3242,
+  "videos": [
+    {
+      "id": "success",
+      "title": "Composed learned skills",
+      "replay_path": "runs/full-micro-composition-v3-final-render/seed-5000-cad-replay.json",
+      "path": "runs/full-micro-composition-v3-final-render/seed-5000-replay.mp4",
+      "caption": "Recorded audited physics replay. Imitation-trained specialists, simulator state, scripted guards and IK.",
+      "kind": "learned_execution"
+    }
+  ],
+  "sources": [
+    {
+      "id": "pickup",
+      "path": "runs/hackathon-demo/evidence/pickup.json",
+      "source_path": "runs/micro-grasp-v1/report.json",
+      "sha256": "6ed959a72e323523095e405c12eb4f65e62c1987fe4137ad01820d0ef20e7123"
+    },
+    {
+      "id": "early_chain",
+      "path": "runs/hackathon-demo/evidence/early_chain.json",
+      "source_path": "runs/full-micro-composition-v1/report.json",
+      "sha256": "adb1d461cd09616a25677e928dc3dc44e615e1d37f0c9c1f906f3ce449658f61"
+    },
+    {
+      "id": "nominal",
+      "path": "runs/hackathon-demo/evidence/nominal.json",
+      "source_path": "runs/full-micro-composition-v3-final-nominal/report.json",
+      "sha256": "fd42d3dd035b8ae96d0d3bff9f91b7f84fd03d2674de568675b31e18d64a913e"
+    },
+    {
+      "id": "stress",
+      "path": "runs/hackathon-demo/evidence/stress.json",
+      "source_path": "runs/full-micro-composition-v3-final-stress/report.json",
+      "sha256": "e51fbb936d81a452560794e17e53218058f73ffddf69d9478e7be93414c08061"
+    },
+    {
+      "id": "layouts",
+      "path": "runs/hackathon-demo/evidence/layouts.json",
+      "source_path": "runs/skill-layout-cases-v1/report.json",
+      "sha256": "1fc823eef6ded687215485d85018711b97ce4edfe1769e6676945452773b4ca6"
+    },
+    {
+      "id": "replay",
+      "path": "runs/hackathon-demo/evidence/replay.json",
+      "source_path": "runs/full-micro-composition-v3-final-render/report.json",
+      "sha256": "722e6de58e56a2f122526e684b0abea497025ccc3085bb052dc84ba95934cfff"
+    },
+    {
+      "id": "grid_audit",
+      "path": "runs/hackathon-demo/evidence/grid_audit.json",
+      "source_path": "runs/skill-layout-cases-v1-grid/audit.json",
+      "sha256": "312c20ecc5462fc1c77d051e5388b78371142c9e0f396e580623594e02a3f2eb"
+    },
+    {
+      "id": "visual",
+      "path": "runs/hackathon-demo/evidence/visual.json",
+      "source_path": "runs/visual-policy-v2-32episodes-evaluation/report.json",
+      "sha256": "91b6c28399e1138730bcfd9fe451531ba1be651b737e9ebba88cc327695d53b2"
+    }
+  ],
+  "checkpoints": [
+    {
+      "path": "runs/micro-grasp-v1/policy.pt",
+      "sha256": "aa6226378ff2dce5d4f6ff58ce848d87bb359b0b8430001835812f610aeda7a4"
+    },
+    {
+      "path": "runs/downstream-v2-dr/align.npz",
+      "sha256": "3ac91d0211dc7d6181d4f449693a8f0a9d2386185ebd1121a2c099171dd7a291"
+    },
+    {
+      "path": "runs/downstream-v3-corrected/linear.npz",
+      "sha256": "857e41a2011403fb8abec722cf904048a08a27f6588dcd10a4ff73a00fa8d93f"
+    }
+  ],
+  "learning_story": [
+    "Define CAD parts, contact task and independent success criteria.",
+    "Generate privileged teacher demonstrations; train small imitation-learning specialists.",
+    "Observe the early chain stall, correct an insertion-teacher gating bug, retrain the correction.",
+    "Freeze checkpoints and evaluate the composed chain on reserved nominal and randomized trials."
+  ],
+  "limitations": [
+    "Runtime uses exact simulator state, scripted targets/skill guards, IK and stabilization.",
+    "Physical MuJoCo contact: no welded peg or reset between composed skills. Dynamics are not hardware-calibrated.",
+    "This evidence is imitation learning and engineered control; the tested PPO residual was rejected.",
+    "Success means insertion and hold, not release, retention after release, or a complete manufactured assembly.",
+    "Early chain 2/10 and final 20/20 use different seed sets; do not call that a paired comparison."
+  ],
+  "visual_status": {
+    "promoted": false,
+    "rgb_successes": 1,
+    "blank_rgb_successes": 2,
+    "episodes_per_condition": 5,
+    "label": "Visual student: no demonstrated benefit; not promoted"
+  },
+  "runbook": "docs/HACKATHON-DEMO.md",
+  "fallback_reel": {
+    "path": "runs/hackathon-demo/astra-learning-demo.mp4",
+    "absolute_path": "/Users/isaiah/Documents/BallahTech/AstraFactory/runs/hackathon-demo/astra-learning-demo.mp4",
+    "url": "/runs/hackathon-demo/astra-learning-demo.mp4",
+    "sha256": "4fb43c6c2371bf007973cb1893deb90c591d2f1a1a72edc277a503f173894e9c",
+    "description": "Three audited source clips; earlier failure at2x, success and layout trials at1x. Presentation montage, not one continuous rollout."
+  },
+  "prompt": "Teach a YAM to pick up, align and insert a keyed part.",
+  "template_id": "keyed-insertion",
+  "default_stage": "concept",
+  "preparation": "Prepared assets and prior experiment evidence. Live configuration compiles a new copy of the selected template; it does not retrain the policy.",
+  "stages": [
+    {
+      "id": "concept",
+      "title": "Concept image",
+      "status": "prepared",
+      "kind": "image",
+      "path": "assets/workcells/concepts/keyed-insertion-concept.png",
+      "description": "Prepared AI-generated visual direction. Illustrative, not physics evidence or an exact CAD specification.",
+      "provenance": "prepared"
+    },
+    {
+      "id": "cad",
+      "title": "CAD & workcell",
+      "status": "prepared",
+      "kind": "replay",
+      "path": "runs/full-micro-composition-v3-final-render/seed-5000-cad-replay.json",
+      "description": "Actual YAM meshes and task geometry. Recorded simulation available to orbit and inspect.",
+      "provenance": "recorded"
+    },
+    {
+      "id": "gym",
+      "title": "Simulation & checks",
+      "status": "pending",
+      "kind": "artifact",
+      "path": "tasks/yam_contact_curriculum/task.json",
+      "description": "Compile and validate a fresh prepared environment bundle. Uses existing task and unchanged evaluator.",
+      "provenance": "live"
+    },
+    {
+      "id": "learn",
+      "title": "Learned skills",
+      "status": "complete",
+      "kind": "results",
+      "path": "runs/hackathon-demo/final-demo.json",
+      "description": "Prior frozen training and evaluation. These results are not from the new configuration.",
+      "provenance": "recorded"
+    }
+  ]
+}

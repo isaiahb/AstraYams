@@ -1,0 +1,74 @@
+{
+  "scope_label": "Untrained design \u00b7 two YAM arms and a manual screw vise. Static pose only.",
+  "videos": [
+    {
+      "id": "design",
+      "title": "Inspect the design",
+      "replay_path": "docs/evidence/bimanual-vise-design/design-cad-preview.json",
+      "caption": "One arm holds the workpiece; the other is positioned at the crank. This is a design pose, not an executed grasp or tightening motion.",
+      "kind": "untrained_design"
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Independent IK samples",
+      "value": "7 / 7 reachable",
+      "detail": "Seven separate upper-half-turn poses. This does not validate the path between them."
+    }
+  ],
+  "limitations": [
+    "No trained policy or executed motion.",
+    "Gripper closure, handle grasp, torque transfer and full swept collision remain untested.",
+    "Zero sampled arm-to-arm penetration; full fixture clearance remains unvalidated."
+  ],
+  "sources": [
+    {
+      "path": "docs/evidence/bimanual-vise-design/design-cad-preview.json",
+      "label": "Design scene and screening evidence"
+    }
+  ],
+  "schema_version": 1,
+  "title": "Two arms tighten a vise",
+  "prompt": "Have two YAMs hold stock and tighten a manual vise together.",
+  "template_id": "manual-vise",
+  "default_stage": "concept",
+  "preparation": "Prepared assets and prior experiment evidence. Live configuration compiles a new copy of the selected template; it does not retrain the policy.",
+  "stages": [
+    {
+      "id": "concept",
+      "title": "Concept image",
+      "status": "prepared",
+      "kind": "image",
+      "path": "assets/workcells/concepts/bimanual-vise-concept.png",
+      "description": "Prepared AI-generated visual direction. Illustrative, not physics evidence or an exact CAD specification.",
+      "provenance": "prepared"
+    },
+    {
+      "id": "cad",
+      "title": "CAD & workcell",
+      "status": "prepared",
+      "kind": "replay",
+      "path": "runs/bimanual-vise-design/design-cad-preview.json",
+      "description": "Actual YAM meshes and task geometry. Static design pose; grasp and motion unvalidated.",
+      "provenance": "prepared"
+    },
+    {
+      "id": "gym",
+      "title": "Simulation & checks",
+      "status": "pending",
+      "kind": "artifact",
+      "path": "assets/workcells/manual_vise_cad/mechanical_spec.json",
+      "description": "Compile and validate a fresh prepared environment bundle. Manual task reward, termination and contact manipulation still require implementation.",
+      "provenance": "live"
+    },
+    {
+      "id": "learn",
+      "title": "Learned skills",
+      "status": "blocked",
+      "kind": "results",
+      "path": "apps/skill-studio/evidence/manual-vise-design.json",
+      "description": "Not trained: contact grasp/turn/regrasp validation required.",
+      "provenance": "prepared"
+    }
+  ]
+}

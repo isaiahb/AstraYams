@@ -1,0 +1,76 @@
+{
+  "scope_label": "Powered-fixture checkpoint \u00b7 recorded simulation. Separate from the proposed manual-vise task.",
+  "videos": [
+    {
+      "id": "baseline",
+      "title": "Before learning",
+      "path": "runs/machine-seating-ppo-v1-holdout/visual-review/baseline-58000.mp4",
+      "caption": "Powered-fixture checkpoint \u00b7 Initial controller + scripted workflow/IK. Actual recorded physics; detailed CAD display assets.",
+      "kind": "baseline_execution",
+      "replay_path": "runs/machine-seating-ppo-v1-holdout/baseline-58000-cad-replay.json"
+    },
+    {
+      "id": "trained",
+      "title": "After learning",
+      "path": "runs/machine-seating-ppo-v1-holdout/visual-review/candidate-58000.mp4",
+      "caption": "Powered-fixture checkpoint \u00b7 Learned PPO seating correction + scripted workflow/IK. Actual recorded physics; detailed CAD display assets.",
+      "kind": "learned_execution",
+      "replay_path": "runs/machine-seating-ppo-v1-holdout/candidate-58000-cad-replay.json"
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Held-out full-cycle success",
+      "value": "2/5 \u2192 4/5",
+      "detail": "Same untouched seeds 58000\u201358004."
+    }
+  ],
+  "limitations": [
+    "Simulation only; powered fixture commands, arm workflow and IK remain scripted.",
+    "547-parameter PPO actor; one held-out timeout remains."
+  ],
+  "schema_version": 1,
+  "title": "Load a machine vise",
+  "prompt": "Teach a YAM to load stock into a machine vise.",
+  "template_id": "machine-tending",
+  "default_stage": "concept",
+  "preparation": "Prepared assets and prior experiment evidence. Live configuration compiles a new copy of the selected template; it does not retrain the policy.",
+  "stages": [
+    {
+      "id": "concept",
+      "title": "Concept image",
+      "status": "prepared",
+      "kind": "image",
+      "path": "assets/workcells/concepts/powered-vise-concept.png",
+      "description": "Prepared AI-generated visual direction. Illustrative, not physics evidence or an exact CAD specification.",
+      "provenance": "prepared"
+    },
+    {
+      "id": "cad",
+      "title": "CAD & workcell",
+      "status": "prepared",
+      "kind": "replay",
+      "path": "runs/machine-seating-ppo-v1-holdout/candidate-58000-cad-replay.json",
+      "description": "Actual YAM meshes and task geometry. Recorded simulation available to orbit and inspect.",
+      "provenance": "recorded"
+    },
+    {
+      "id": "gym",
+      "title": "Simulation & checks",
+      "status": "pending",
+      "kind": "artifact",
+      "path": "tasks/yam_machine_tending/task.json",
+      "description": "Compile and validate a fresh prepared environment bundle. Uses existing task and unchanged evaluator.",
+      "provenance": "live"
+    },
+    {
+      "id": "learn",
+      "title": "Learned skills",
+      "status": "complete",
+      "kind": "results",
+      "path": "apps/skill-studio/evidence/machine-seating.json",
+      "description": "Prior frozen training and evaluation. These results are not from the new configuration.",
+      "provenance": "recorded"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "scenarios": [
+    {
+      "id": "keyed-insertion",
+      "title": "Pick, align & insert",
+      "prompt": "Teach a YAM to pick up, align and insert a keyed part.",
+      "manifest_path": "assets/workcells/demo-workflows/keyed-insertion.json",
+      "existing_example": true
+    },
+    {
+      "id": "machine-tending",
+      "title": "Load a machine vise",
+      "prompt": "Teach a YAM to load stock into a machine vise.",
+      "manifest_path": "assets/workcells/demo-workflows/machine-tending.json",
+      "existing_example": true
+    },
+    {
+      "id": "manual-vise",
+      "title": "Two arms tighten a vise",
+      "prompt": "Have two YAMs hold stock and tighten a manual vise together.",
+      "manifest_path": "assets/workcells/demo-workflows/manual-vise.json",
+      "existing_example": false
+    }
+  ],
+  "existing_examples": [
+    "keyed-insertion",
+    "machine-tending"
+  ],
+  "timing": "Real template configuration; no artificial duration or training claim."
+}
