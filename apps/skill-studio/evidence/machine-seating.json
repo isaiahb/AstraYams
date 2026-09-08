@@ -1,1 +1,30 @@
-{"scope_label":"PPO seating correction + scripted workflow and IK. Recorded simulation.","videos":[{"id":"baseline","title":"Before learning","path":"runs/machine-seating-ppo-v1-holdout/baseline-58000.mp4","caption":"Held-out case 58000 without the learned correction.","kind":"baseline_execution"},{"id":"trained","title":"After learning","path":"runs/machine-seating-ppo-v1-holdout/candidate-58000.mp4","caption":"Same case. PPO controls only a ±2 mm seating correction.","kind":"learned_execution"}],"metrics":[{"label":"Held-out full-cycle success","value":"2/5 → 4/5","detail":"Same untouched seeds 58000–58004."}],"limitations":["Simulation only; powered fixture commands, arm workflow and IK remain scripted.","547-parameter PPO actor; one held-out timeout remains."]}
+{
+  "scope_label": "PPO seating correction + scripted workflow and IK. Recorded simulation.",
+  "videos": [
+    {
+      "id": "baseline",
+      "title": "Before learning",
+      "path": "runs/machine-seating-ppo-v1-holdout/visual-review/baseline-58000.mp4",
+      "caption": "Held-out case 58000 without the learned correction. Visual fixture detail added without changing tested physics; clip shows the final 15 seconds.",
+      "kind": "baseline_execution"
+    },
+    {
+      "id": "trained",
+      "title": "After learning",
+      "path": "runs/machine-seating-ppo-v1-holdout/visual-review/candidate-58000.mp4",
+      "caption": "Same case. PPO controls only a ±2 mm seating correction. Visual fixture detail added without changing tested physics; clip shows the final 15 seconds.",
+      "kind": "learned_execution"
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Held-out full-cycle success",
+      "value": "2/5 → 4/5",
+      "detail": "Same untouched seeds 58000–58004."
+    }
+  ],
+  "limitations": [
+    "Simulation only; powered fixture commands, arm workflow and IK remain scripted.",
+    "547-parameter PPO actor; one held-out timeout remains."
+  ]
+}
