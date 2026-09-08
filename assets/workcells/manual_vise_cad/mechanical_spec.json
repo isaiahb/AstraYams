@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "status": "proposed mechanical simulation/design reference, not hardware validated",
+  "units": "SI unless explicitly labelled",
+  "pedestal": {
+    "height_m": 0.04,
+    "fixed_world_bounds_m": [
+      [
+        0.268,
+        -0.045,
+        0
+      ],
+      [
+        0.372,
+        0.14,
+        0.04
+      ]
+    ],
+    "collision_proposal": "Add one fixed support under the entire lifted vise in the new task; no alteration of powered task.",
+    "seat_world_m": [
+      0.32,
+      0,
+      0.06
+    ]
+  },
+  "lead_screw": {
+    "pitch_m_per_rev": 0.002,
+    "major_diameter_m": 0.008,
+    "mean_diameter_assumption_m": 0.007,
+    "axis_world": [
+      0,
+      1,
+      0
+    ],
+    "handle_origin_world_m": [
+      0.32,
+      0.135,
+      0.095
+    ],
+    "nut_attached_to": "vise_slider",
+    "shaft_body": "manual_screw",
+    "arrangement": "Axially fixed rotating screw in two fixed thrust-bearing supports; anti-rotation nut translates with jaw on two guide rails.",
+    "coupling": "jaw_q_m = initial_jaw_q_m + 0.002/(2*pi) * (screw_theta_rad - initial_theta_rad)",
+    "positive_rotation": "Positive right-hand rotation about +Y increases jaw opening; negative closes. Match CAD helix handedness in engine convention before use.",
+    "backlash_assumption_m": 0.0001,
+    "backlash_status": "Explicit modelling proposal; not represented by CAD clearance as a validated tolerance"
+  },
+  "handle": {
+    "radius_m": 0.035,
+    "grasp_pin_diameter_m": 0.008,
+    "grasp_pin_length_m": 0.024,
+    "pin_center_world_at_zero_m": [
+      0.355,
+      0.157,
+      0.095
+    ],
+    "pin_axis": [
+      0,
+      1,
+      0
+    ],
+    "sweep_min_z_m": 0.055,
+    "sweep_max_z_m": 0.135,
+    "note": "Lowest surface includes 5 mm endcap radius; gripper envelope needs separate collision validation."
+  },
+  "travel": {
+    "reference_contact_gap_m": 0.014,
+    "allowed_jaw_q_m": [
+      -0.002,
+      0.026
+    ],
+    "full_gap_range_m": [
+      0.012,
+      0.04
+    ],
+    "recommended_load_gap_m": 0.02,
+    "near_clamp_start_gap_m": 0.016,
+    "turns_20_to_14": 3,
+    "turns_16_to_14": 1,
+    "turns_39_to_14": 12.5,
+    "short_demo_condition": "A near-clamp initial state must be explicitly declared; do not conceal omitted opening turns."
+  },
+  "force_model_proposal": {
+    "manual_shaft_torque_limit_nm": 0.02,
+    "equivalent_handle_tangent_force_n": 0.5714285714285714,
+    "friction_coefficient_assumption": 0.15,
+    "lead_angle_rad": 0.09069617801364269,
+    "frictionless_axial_upper_bound_n": 62.83185307179587,
+    "quasistatic_square_thread_axial_estimate_n": 23.392543213231434,
+    "required_simulation": "Apply contact-derived hand torque to shaft; constrain screw translation to zero and jaw rotation to zero. Use finite torque/friction, joint limits, finite contact stiffness and measured jaw forces. Do not motor the jaw or teleport angle/translation.",
+    "limitations": "Square-thread formula is only a provisional estimate; CAD ridge is not a validated thread standard. Add bearing drag and calibrated friction before force claims. Self-locking is not guaranteed from CAD."
+  },
+  "collision_authority": "Original fixed stock/jaw contact faces from tasks/yam_machine_tending/scene.xml; new handle/nut/bridge collisions must be introduced and audited in a separate dual-arm task.",
+  "clearance_risks": [
+    "Raised nut bridge near first gripper needs full articulated collision checks.",
+    "Second-arm base, wrist and all crank angles require reachability/collision checks.",
+    "CAD support/rod overlaps describe an assembled mechanism, not collision pairs."
+  ],
+  "powered_components": "None: no motor, pneumatic barrel, service line or powered actuator in this CAD variant."
+}
