@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "video_hashes_checked": 3,
+  "source_hashes_checked": 8,
+  "frozen_checkpoints_checked_by_builder": 3,
+  "fallback_duration_seconds": 46.56,
+  "decoded_frames_visually_inspected_seconds": [
+    5,
+    25,
+    40
+  ],
+  "scope": "Presentation verification only; physics unchanged. Existing source audits retained."
+}

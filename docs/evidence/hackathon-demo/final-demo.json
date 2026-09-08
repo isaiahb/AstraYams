@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "title": "AstraFactory \u2014 an AI that creates the robotics skills it is missing",
+  "status": "frozen presentation evidence",
+  "headline": "Build the task. Train the skill. Test it. Compose it.",
+  "scope_label": "Simulation-state observations \u2022 learned specialists + conventional control \u2022 no hardware validation",
+  "summary": "A custom keyed-insertion simulation with physical gripper contact and a composed small-policy chain. Prepared experiment evidence, not live training footage.",
+  "metrics": [
+    {
+      "id": "pickup",
+      "label": "Paired pickup learning",
+      "value": "0/5 \u2192 5/5",
+      "detail": "Same five development seeds, before and after imitation training; unchanged control scaffold.",
+      "source": "pickup"
+    },
+    {
+      "id": "training",
+      "label": "Pickup model training",
+      "value": "4.99 seconds",
+      "detail": "CPU training for two 1,540-parameter pickup specialists only; excludes data generation, evaluation and downstream skill training.",
+      "source": "pickup"
+    },
+    {
+      "id": "nominal",
+      "label": "Final nominal insertion",
+      "value": "20/20",
+      "detail": "Frozen chain; final nominal seeds 5000\u20135019.",
+      "source": "nominal"
+    },
+    {
+      "id": "stress",
+      "label": "Final randomized insertion",
+      "value": "20/20",
+      "detail": "Frozen chain; final stress seeds 5100\u20135119. Declared variation, same part geometry.",
+      "source": "stress"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Acquire",
+      "parameters": 1540
+    },
+    {
+      "name": "Lift",
+      "parameters": 1540
+    },
+    {
+      "name": "Align",
+      "parameters": 72
+    },
+    {
+      "name": "Insert",
+      "parameters": 90
+    }
+  ],
+  "total_learned_parameters": 3242,
+  "videos": [
+    {
+      "id": "failure",
+      "title": "Earlier chain stalls at insertion",
+      "caption": "Selected failed development trial; earlier chain scored 2/10. Different seeds from final evaluation.",
+      "path": "runs/hackathon-demo/videos/failure.mp4",
+      "url": "/runs/hackathon-demo/videos/failure.mp4",
+      "absolute_path": "/Users/isaiah/Documents/BallahTech/AstraFactory/runs/hackathon-demo/videos/failure.mp4",
+      "duration_seconds": 30.08,
+      "sha256": "5123a110d885807c5f04414e3414da8ce94e7a209a32b727e3c9aedc972b1d5c",
+      "kind": "audited saved-action simulation replay"
+    },
+    {
+      "id": "success",
+      "title": "Composed pickup, alignment and insertion",
+      "caption": "First final nominal trial, seed 5000; final nominal set 20/20.",
+      "path": "runs/hackathon-demo/videos/success.mp4",
+      "url": "/runs/hackathon-demo/videos/success.mp4",
+      "absolute_path": "/Users/isaiah/Documents/BallahTech/AstraFactory/runs/hackathon-demo/videos/success.mp4",
+      "duration_seconds": 14.4,
+      "sha256": "692e3d3f8912e3bcef840a9da62d4e679cfe5b8114b1e5af17cea8c54a8b87ec",
+      "kind": "audited saved-action simulation replay"
+    },
+    {
+      "id": "generalization",
+      "title": "Different part locations and key rotations",
+      "caption": "Four displayed trials from six named layout cases; all six passed. Same geometry; vertical insertion axis.",
+      "path": "runs/hackathon-demo/videos/generalization.mp4",
+      "url": "/runs/hackathon-demo/videos/generalization.mp4",
+      "absolute_path": "/Users/isaiah/Documents/BallahTech/AstraFactory/runs/hackathon-demo/videos/generalization.mp4",
+      "duration_seconds": 17.12,
+      "sha256": "ad22c772a911d4a7bcdcfcd99995507f2153a57edb75470e22ebbeed0c5c2ed6",
+      "kind": "audited saved-action simulation replay"
+    }
+  ],
+  "sources": [
+    {
+      "id": "pickup",
+      "path": "runs/hackathon-demo/evidence/pickup.json",
+      "source_path": "runs/micro-grasp-v1/report.json",
+      "sha256": "6ed959a72e323523095e405c12eb4f65e62c1987fe4137ad01820d0ef20e7123"
+    },
+    {
+      "id": "early_chain",
+      "path": "runs/hackathon-demo/evidence/early_chain.json",
+      "source_path": "runs/full-micro-composition-v1/report.json",
+      "sha256": "adb1d461cd09616a25677e928dc3dc44e615e1d37f0c9c1f906f3ce449658f61"
+    },
+    {
+      "id": "nominal",
+      "path": "runs/hackathon-demo/evidence/nominal.json",
+      "source_path": "runs/full-micro-composition-v3-final-nominal/report.json",
+      "sha256": "fd42d3dd035b8ae96d0d3bff9f91b7f84fd03d2674de568675b31e18d64a913e"
+    },
+    {
+      "id": "stress",
+      "path": "runs/hackathon-demo/evidence/stress.json",
+      "source_path": "runs/full-micro-composition-v3-final-stress/report.json",
+      "sha256": "e51fbb936d81a452560794e17e53218058f73ffddf69d9478e7be93414c08061"
+    },
+    {
+      "id": "layouts",
+      "path": "runs/hackathon-demo/evidence/layouts.json",
+      "source_path": "runs/skill-layout-cases-v1/report.json",
+      "sha256": "1fc823eef6ded687215485d85018711b97ce4edfe1769e6676945452773b4ca6"
+    },
+    {
+      "id": "replay",
+      "path": "runs/hackathon-demo/evidence/replay.json",
+      "source_path": "runs/full-micro-composition-v3-final-render/report.json",
+      "sha256": "722e6de58e56a2f122526e684b0abea497025ccc3085bb052dc84ba95934cfff"
+    },
+    {
+      "id": "grid_audit",
+      "path": "runs/hackathon-demo/evidence/grid_audit.json",
+      "source_path": "runs/skill-layout-cases-v1-grid/audit.json",
+      "sha256": "312c20ecc5462fc1c77d051e5388b78371142c9e0f396e580623594e02a3f2eb"
+    },
+    {
+      "id": "visual",
+      "path": "runs/hackathon-demo/evidence/visual.json",
+      "source_path": "runs/visual-policy-v2-32episodes-evaluation/report.json",
+      "sha256": "91b6c28399e1138730bcfd9fe451531ba1be651b737e9ebba88cc327695d53b2"
+    }
+  ],
+  "checkpoints": [
+    {
+      "path": "runs/micro-grasp-v1/policy.pt",
+      "sha256": "aa6226378ff2dce5d4f6ff58ce848d87bb359b0b8430001835812f610aeda7a4"
+    },
+    {
+      "path": "runs/downstream-v2-dr/align.npz",
+      "sha256": "3ac91d0211dc7d6181d4f449693a8f0a9d2386185ebd1121a2c099171dd7a291"
+    },
+    {
+      "path": "runs/downstream-v3-corrected/linear.npz",
+      "sha256": "857e41a2011403fb8abec722cf904048a08a27f6588dcd10a4ff73a00fa8d93f"
+    }
+  ],
+  "learning_story": [
+    "Define CAD parts, contact task and independent success criteria.",
+    "Generate privileged teacher demonstrations; train small imitation-learning specialists.",
+    "Observe the early chain stall, correct an insertion-teacher gating bug, retrain the correction.",
+    "Freeze checkpoints and evaluate the composed chain on reserved nominal and randomized trials."
+  ],
+  "limitations": [
+    "Runtime uses exact simulator state, scripted targets/skill guards, IK and stabilization.",
+    "Physical MuJoCo contact: no welded peg or reset between composed skills. Dynamics are not hardware-calibrated.",
+    "This evidence is imitation learning and engineered control; the tested PPO residual was rejected.",
+    "Success means insertion and hold, not release, retention after release, or a complete manufactured assembly.",
+    "Early chain 2/10 and final 20/20 use different seed sets; do not call that a paired comparison."
+  ],
+  "visual_status": {
+    "promoted": false,
+    "rgb_successes": 1,
+    "blank_rgb_successes": 2,
+    "episodes_per_condition": 5,
+    "label": "Visual student: no demonstrated benefit; not promoted"
+  },
+  "runbook": "docs/HACKATHON-DEMO.md",
+  "fallback_reel": {
+    "path": "runs/hackathon-demo/astra-learning-demo.mp4",
+    "absolute_path": "/Users/isaiah/Documents/BallahTech/AstraFactory/runs/hackathon-demo/astra-learning-demo.mp4",
+    "url": "/runs/hackathon-demo/astra-learning-demo.mp4",
+    "sha256": "4fb43c6c2371bf007973cb1893deb90c591d2f1a1a72edc277a503f173894e9c",
+    "description": "Three audited source clips; earlier failure at2x, success and layout trials at1x. Presentation montage, not one continuous rollout."
+  }
+}
