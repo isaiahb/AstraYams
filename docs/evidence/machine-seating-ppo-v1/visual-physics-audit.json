@@ -1,0 +1,36 @@
+{
+  "visual_physics_checks": {
+    "body_mass": true,
+    "body_inertia": true,
+    "body_ipos": true,
+    "body_iquat": true,
+    "dof_armature": true,
+    "dof_damping": true,
+    "jnt_range": true,
+    "jnt_axis": true,
+    "actuator_gainprm": true,
+    "actuator_biasprm": true,
+    "actuator_ctrlrange": true,
+    "collision_geometry_identical": true
+  },
+  "actuation_check": [
+    {
+      "motor_enabled": false,
+      "start_gap_m": 0.039,
+      "end_gap_m": 0.039,
+      "motor_force_n": 0.0
+    },
+    {
+      "motor_enabled": true,
+      "start_gap_m": 0.039,
+      "end_gap_m": 0.013925444784678716,
+      "motor_force_n": -4.2763379534205495
+    }
+  ],
+  "command_changes_qpos": false,
+  "interpretation": "Motor force produces closing; disabling motor prevents closing despite identical CLOSE command. This is an abstract powered linear actuator, not robot-operated manual screw mechanics.",
+  "source_sha256": {
+    "tasks/yam_machine_tending/scene.xml": "2d396759501a2c9a978327905755748f46359a5be0ef46c2e3f8ecfbbf8f93b8",
+    "tasks/yam_machine_tending/scene_visual.xml": "cfe7f2d745647ee3999f420ed49d02ebd25879234cfbe158110407df27d7903f"
+  }
+}
