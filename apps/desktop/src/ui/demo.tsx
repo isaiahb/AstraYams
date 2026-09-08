@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {ModelViewer} from './viewer';
 const steps=['Brief','Design','Test','Improve'];
 export function DemoWorkspace({project,artifacts,agents,items,assetURL,onInspect,onEngineering,onSession,onCycle,approvalCount}:{project:any,artifacts:any[],agents:any[],items:any[],assetURL:(p:string)=>string,onInspect:(a:any)=>void,onEngineering:()=>void,onSession:(id:string)=>void,onCycle:(w:any)=>void,approvalCount:number}){
@@ -18,9 +18,11 @@ export function DemoWorkspace({project,artifacts,agents,items,assetURL,onInspect
  const view=visual==='auto'?(step===3&&comparison?'change':'model'):visual;
  const shown=view==='change'?comparison:view==='views'?picture:view==='exploded'?exploded:view==='motion'?videos[0]:model||picture;
  const brief=artifacts.find(a=>a.name==='BRIEF.md'),report=artifacts.find(a=>a.path===result?.path);
+ const [reportIntro,setReportIntro]=useState('');
+ useEffect(()=>{let cancelled=false;setReportIntro('');if(report?.path&&/\.md$/i.test(report.path))fetch(assetURL(report.path)).then(r=>r.ok?r.text():'').then(text=>{const intro=text.split(/\n\s*\n/).find(p=>p.trim()&&!/^[#|`>]/.test(p.trim()));if(!cancelled)setReportIntro(intro?.trim()||'');}).catch(()=>{});return()=>{cancelled=true;};},[report?.path,report?.modified]);
  const team=Array.from(new Map(agents.map(a=>[a.role,a])).values());
  const goal=(project.brief.split('\n').filter(Boolean).find((line:string)=>line!==project.title)||project.brief).split(/(?<=\.)\s/)[0];
- const findingText=result?.summary||w?.blocker||'The tester checks the submitted design against the brief.';
+ const findingText=reportIntro||result?.summary||w?.blocker||'The tester checks the submitted design against the brief.';
  const findingPreview=(findingText.match(/[^.!?]+[.!?](?:\s|$)/g)||[findingText]).slice(0,2).join(' ').trim();
  const heading=step===0?'Define the product':step===1?'Explore the design':step===2?'Check the design':w?.status==='passed'?'The re-test passed':'Improve the design';
  const status=approvalCount?'Needs a decision':w?.status==='revising'?(improving?'Improving the design':'Engineering in progress'):w?.status==='retesting'?'Independent re-test running':w?.status==='passed'?'Re-test passed':w?.status==='needs_revision'?'Changes needed':w?.status==='blocked'?'Needs attention':active?'Defining the project':'Brief ready';
