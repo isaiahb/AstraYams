@@ -1,0 +1,9 @@
+{
+  "artifact": "astrafactory-hackathon-demo-20260908.tar.gz",
+  "repository": "isaiahb/AstraFactory",
+  "release_tag": "contact-learning-checkpoint-20260908",
+  "bytes": 6332795,
+  "sha256": "a345e7162f0b52c30db182d8bd232f8e9e0e6e6beca3bce5e59d58784196efa0",
+  "github_digest_verified": true,
+  "source_commit": "9fba05d"
+}
