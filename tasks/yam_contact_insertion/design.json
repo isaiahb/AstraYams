@@ -1,0 +1,42 @@
+{
+  "source": "../../assets/robots/yam/source.json",
+  "tool_site": {
+    "parent": "gripper",
+    "translation_m": [
+      0,
+      0,
+      -0.13
+    ]
+  },
+  "peg": {
+    "joint": "free",
+    "insertion_section_m": 0.038,
+    "handle_z_m": [
+      0.038,
+      0.07
+    ],
+    "handle_size_xy_m": [
+      0.018,
+      0.014
+    ],
+    "mass_kg": 0.04
+  },
+  "gripper": {
+    "actuator": "grip",
+    "primary_joint": "joint7",
+    "mimic_joint": "joint8",
+    "mimic_relation": "q8=q7",
+    "joint_range_m": [
+      -0.04695,
+      0
+    ],
+    "close_direction": "positive toward zero (negative opens)",
+    "force_cap_n": 30
+  },
+  "notes": [
+    "No peg weld, rigid attachment, equality or adapter stem; peg translation/orientation governed by free rigid-body physics and contacts.",
+    "Official full URDF articulated fingers and link inertias retained; 24 CoACD convex pieces per official finger mesh (see collision/DECOMPOSITION.json), original finger mesh visual only.",
+    "Arm self collisions disabled; robot/bench, robot/socket, robot/peg and finger/peg contacts enabled.",
+    "PD gains, armature, friction and gripper force cap are provisional simulation settings."
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "id": "yam-contact-insertion-v0",
+  "scene": "scene.xml",
+  "plugin": "task.py",
+  "reward_plugin": "reward.py",
+  "camera": "overview",
+  "frame_skip": 10,
+  "horizon": 1500,
+  "observation_size": 42,
+  "abort_contact_force_n": 80,
+  "controller": {
+    "type": "joint_delta_pd",
+    "joints": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "actuators": [
+      "motor1",
+      "motor2",
+      "motor3",
+      "motor4",
+      "motor5",
+      "motor6",
+      "grip"
+    ],
+    "action_scale": [
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.0006
+    ],
+    "kp": [
+      300,
+      300,
+      300,
+      150,
+      100,
+      80,
+      800
+    ],
+    "kd": [
+      25,
+      25,
+      20,
+      10,
+      8,
+      6,
+      8
+    ]
+  },
+  "reset": {
+    "type": "fixed_pregrasp",
+    "peg_position_m": [
+      0.26,
+      -0.08,
+      0.001
+    ],
+    "socket_position_m": [
+      0.32,
+      0,
+      0
+    ],
+    "yaw_rad": 3.141592653589793
+  },
+  "success": {
+    "xy_tolerance_m": 0.0008,
+    "yaw_tolerance_rad": 0.05,
+    "tip_z_max_m": 0.012,
+    "tip_z_min_m": 0.0075,
+    "speed_max": 0.015,
+    "hold_steps": 15,
+    "contact_force_max_n": 15
+  },
+  "observation_contract": "q7, qvel7, target7, peg goal position/orientation error6, previous actions7, free peg pose7, contact load1 (42); privileged simulator state",
+  "embodiment": "Free peg, articulated fingers, contact-only manipulation"
+}

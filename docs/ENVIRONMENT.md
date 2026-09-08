@@ -1,5 +1,7 @@
 # Reusable task packages
 
+**Current contact-manipulation task:** `ContactEnv('tasks/yam_contact_insertion')` from `astrafactory.contact_env`. The peg is a free body, fingers are articulated, and grasp retention comes only from contact/friction. Run `python tools/check_yam_contact.py` and `python tools/record_yam_contact.py --insertion`. Seven actions,42 state observations. [Physical evidence and limitations](CONTACT-VALIDATION.md). The prepared rigid-tool task below is a separate diagnostic and its policies are not valid for the contact task.
+
 **Active demonstration:** the official articulated [YAM task](../tasks/yam_keyed_insertion/README.md), using `astrafactory.yam_env.YamEnv`. Run `python tools/check_yam_task.py --episodes 10` and `python tools/record_yam_task.py --mode teacher`. Its six actions and31 observations replace the Cartesian fixture interface described below. [Learning commands and actual results](LEARNING.md). The fixture remains a focused contact test.
 
 The shared `FactoryEnv` owns physics stepping, bounded PD control, Gym API, deterministic resets, rendering and termination plumbing. A task directory owns its CAD meshes, MJCF scene, reset distribution, observation contract, reward and success logic. New rigid-part tasks should be new directories, not forks of the Gym core.

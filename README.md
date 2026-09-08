@@ -6,7 +6,7 @@ Give a robot a task. Astra analyzes its failures, creates targeted simulation an
 
 ## First experiment
 
-A YAM robot inserts a custom keyed peg into a matching socket despite position and orientation errors. A shared MuJoCo/Gym core loads task-specific CAD, reset rules, reward code and acceptance checks. The peg starts attached to the gripper; grasp acquisition is outside this experiment.
+A YAM robot grasps a free custom keyed peg through finger contact, lifts it and attempts insertion into a matching socket. A shared MuJoCo/Gym core loads task-specific CAD, reset rules, reward code and acceptance checks. The peg is a separate dynamic body, with no attachment to the gripper.
 
 ## Repository
 
@@ -14,11 +14,12 @@ A YAM robot inserts a custom keyed peg into a matching socket despite position a
 - `docs/ENVIRONMENT.md`: task-package contract, running instructions and limitations.
 - `tasks/keyed_insertion/`: generated CAD meshes, physics scene, reward and evaluator.
 - `tasks/yam_keyed_insertion/`: articulated YAM task, physical joint control and insertion acceptance contract.
+- `tasks/yam_contact_insertion/`: active task with moving fingers, free peg and contact-only manipulation.
 - `src/astrafactory/`: reusable Gym core and camera observations.
 - `tools/`: CAD generation, environment checks, rollout recording and PPO training.
 
 ## Status
 
-The articulated YAM environment runs with contact dynamics and separate training/evaluation logic. Scripted teacher10/10; hold0/10; deliberately misaligned descent0/3 physically blocked at the socket rim. Learned state-policy baseline3/20 and resumed candidate5/20 on paired development seeds; this is not robust insertion or a VLA result. See [YAM task](tasks/yam_keyed_insertion/README.md) and [learning evidence](docs/LEARNING.md).
+The active contact task passes physical grasp diagnostics at one fixed reset:89.4mm lift with bilateral unsupported finger contact, release/drop on jaw opening, and failed sustained lift when friction is removed. Insertion is currently unsuccessful: transport error causes a socket-rim collision and force abort. These are scripted physics checks, not trained-policy results. See [contact validation](docs/CONTACT-VALIDATION.md). Earlier rigid-tool checkpoints are incompatible with this task and do not establish contact manipulation performance.
 
 Active robot assets: [I2RT YAM](https://github.com/i2rt-robotics/i2rt), MIT license retained in `assets/robots/yam/LICENSE`. Importing a URDF does not establish calibrated simulation dynamics or hardware readiness. Additional inactive robot assets retain their own source manifests and licenses.
