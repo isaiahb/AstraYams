@@ -51,3 +51,16 @@ Next prototype: a sensor-pod enclosure is an illustrative example, chosen to mak
 
 Current inline preview: `/Users/isaiah/.codex/visualizations/2026/09/08/01a0822a-02ec-7c12-a11a-3a9fd5df3f9a/discipline-workspace.html`.
 Standalone browser wrapper: `/tmp/af-discipline-preview.html`, served by the local preview server at port 59112. Regenerate via visualize skill render.py with --force after edits.
+
+## Iteration 3 — behavior and project isolation
+
+Preserved v3; new checkpoint `workspace-v4.html` and inline `discipline-workspace-v4.html`.
+
+- Project catalog remembers each project's selected workstream/artifact, research spikes, concept selection, team preference, and assignment state during this page session.
+- New project prompt and project conversation now use verified click handlers in the inline host.
+- Selecting a lean team updates roles, tradeoff explanation, and team count. Reassigning the team respects that choice. ID specialist proposal now explicitly includes a reviewer.
+- Removed sensor-pod imagery from other example projects. Empty artifact slots and project-specific names make unfinished work honest.
+- Browser verified: select lean ID team → assign → switch to gripper → return to sensor pod preserves `Team · 1 assigned`; new project prompt opens its own Brief; handoff and research flows remain in the prototype.
+- Corrected sample sensor-pod names/questions bleeding into a newly created project's brief and research.
+
+Next: source/evidence provenance, version changes and handoff impact; distinguish detailed CAD from packaging; responsive appearance checks. Current best preview is v4. Do not edit v3.
