@@ -10,13 +10,13 @@ from build_machine_fixture_cad import box,cylinder_y,screw,tray,COLORS,ROOT
 
 OUT=ROOT/'assets/workcells/manual_vise_cad'
 FRAMES_MM={'world':(0,0,0),'vise':(320,0,0),'vise_slider':(320,13,30),
-           'manual_screw':(320,135,55),'free_peg':(250,-100,4.1),'finished_stock':(320,0,20.1)}
+           'manual_screw':(320,135,55),'manual_grip_sleeve':(355,157,55),'free_peg':(250,-100,4.1),'finished_stock':(320,0,20.1)}
 
 
 def build(pedestal_height_mm=40):
     if not 0 <= pedestal_height_mm <= 100: raise ValueError('Pedestal height must be 0–100 mm')
     frames=dict(FRAMES_MM)
-    for body in ['vise','vise_slider','manual_screw','finished_stock']:
+    for body in ['vise','vise_slider','manual_screw','manual_grip_sleeve','finished_stock']:
         x,y,z=frames[body];frames[body]=(x,y,z+pedestal_height_mm)
     lift=pedestal_height_mm/1000
     OUT.mkdir(parents=True,exist_ok=True);objects=[];assembly=cq.Assembly(name='Manual_screw_vise_design_reference')
@@ -77,12 +77,13 @@ def build(pedestal_height_mm=40):
     lever=box(35,6,9,(17.5,7,0),1.4).union(cylinder_y(7,6,(35,10,0)))
     add('radial_crank_lever','manual_screw',lever,'blue')
     # Cylindrical grasp pin, 24 mm long and 8 mm diameter. Surface need not be phase-tracked.
-    grip=cylinder_y(4,24,(35,34,0)).edges().fillet(.6)
-    add('robot_grasp_pin','manual_screw',grip,'dark')
-    add('grasp_pin_endcap','manual_screw',cylinder_y(5,2,(35,36,0)),'bright')
+    grip=cylinder_y(4,24,(35,34,0)).edges().fillet(.6).cut(cylinder_y(2.05,26,(35,35,0)))
+    add('fixed_crank_pin_axle','manual_screw',cylinder_y(1.8,24,(35,34,0)),'bright')
+    add('robot_grasp_pin','manual_grip_sleeve',grip.translate((-35,-22,0)),'dark')
+    add('grasp_pin_endcap','manual_grip_sleeve',cylinder_y(5,2,(0,14,0)),'bright')
     for name,at in [('raw',(250,-100,0)),('output',(240,100,0))]:add(name+'_tray','world',tray().translate(at),'tray')
-    table=box(760,540,24,(180,0,-12),3)
-    for y in [-230,-190,190,230]:table=table.cut(cq.Workplane('XY').center(180,y).slot2D(710,3).extrude(-2))
+    table=box(930,850,24,(335,225,-12),3)
+    for y in [-165,-130,580,615]:table=table.cut(cq.Workplane('XY').center(335,y).slot2D(880,3).extrude(-2))
     add('tooling_table','world',table,'cast')
     add('raw_stock','free_peg',box(18,14,70,(0,0,35)))
     add('finished_stock','finished_stock',box(18,14,70,(0,0,35)))
@@ -94,7 +95,8 @@ def build(pedestal_height_mm=40):
        'coupling':'jaw_q_m = initial_jaw_q_m + 0.002/(2*pi) * (screw_theta_rad - initial_theta_rad)',
        'positive_rotation':'Positive right-hand rotation about +Y increases jaw opening; negative closes. Match CAD helix handedness in engine convention before use.',
        'backlash_assumption_m':.0001,'backlash_status':'Explicit modelling proposal; not represented by CAD clearance as a validated tolerance'},
-      'handle':{'radius_m':.035,'grasp_pin_diameter_m':.008,'grasp_pin_length_m':.024,
+      'support_table':{'world_bounds_m':[[-.130,-.200,-.024],[.800,.650,0]],'proposed_arm_b_base_m':[.320,.500,0],'contact_status':'Visual CAD only; new task must provide matching fixed support collisions.'},
+      'handle':{'grip_sleeve_body':'manual_grip_sleeve','sleeve_origin_in_crank_m':[.035,.022,0],'sleeve_hinge_axis_in_crank':[0,1,0],'bearing':'Passive free-spinning grip sleeve on crank pin, no motor or weld to robot','provisional_hinge_damping_nm_s_per_rad':.00001,'provisional_hinge_coulomb_friction_nm':.00001,'bearing_assumption':'Low-friction sleeve bearing; numerical values are provisional and require sensitivity testing. Only radial/axial contact transmission, not commanded orientation tracking.','radius_m':.035,'grasp_pin_diameter_m':.008,'grasp_pin_length_m':.024,
        'pin_center_world_at_zero_m':[.355,.157,.055+lift],'pin_axis':[0,1,0],'sweep_min_z_m':.015+lift,
        'sweep_max_z_m':.095+lift,'note':'Lowest surface includes 5 mm endcap radius; gripper envelope needs separate collision validation.'},
       'travel':{'reference_contact_gap_m':.014,'allowed_jaw_q_m':[-.002,.026],'full_gap_range_m':[.012,.040],
@@ -114,7 +116,7 @@ def build(pedestal_height_mm=40):
       'mechanical_spec':'mechanical_spec.json','configuration':'jaw q=0 (14 mm gap), manual screw theta=0; initial stock yaw pi',
       'source':'tools/build_manual_vise_cad.py','purpose':'Visual/design reference, not a replacement for contact physics'}
     (OUT/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n');(OUT/'mechanical_spec.json').write_text(json.dumps(spec,indent=2)+'\n')
-    (OUT/'README.md').write_text(f'# Manual screw-vise variant\n\nSeparate design reference: the powered-vise checkpoint is unchanged. A {pedestal_height_mm:g} mm pedestal lifts the entire vise and finished stock; raw stock remains in its original tray. Change this with `--pedestal-height-mm` when regenerating. Build with `/tmp/clonebench-cad-env/bin/python tools/build_manual_vise_cad.py`. STEP uses millimetres; each STL uses metres in its declared body frame. The complete assembly contains a genuine helical CAD ridge at 2 mm pitch, drilled bearing supports, guide bearings, a translating nut bridge and a radial robot-graspable crank.\n\nScrew rotation is axially fixed; the anti-rotation nut and moving jaw translate along Y. Handle centre is world (0.320, 0.135, {0.055+lift:.3f}) m, radius 35 mm. At zero angle the cylindrical 8 mm × 24 mm grasp pin is centred at (0.355, 0.157, {0.055+lift:.3f}) m. A 20 to 14 mm closing stroke needs three turns; a declared 16 to 14 mm near-clamp stroke needs one. Full 39 to 14 mm closing needs 12.5 turns.\n\n`mechanical_spec.json` defines proposed coupling, finite torque, friction and force bounds. None is calibrated hardware evidence. New handle/bridge collision geometry, both arms, all crank angles and nut travel require a separately audited simulation task. No powered actuator or implicit infinite-force drive is included. The original jaw/stock faces remain the reference contact geometry; this CAD is not manufacturing validated.\n')
+    (OUT/'README.md').write_text(f'# Manual screw-vise variant\n\nSeparate design reference: the powered-vise checkpoint is unchanged. A {pedestal_height_mm:g} mm pedestal lifts the entire vise and finished stock; raw stock remains in its original tray. Change this with `--pedestal-height-mm` when regenerating. Build with `/tmp/clonebench-cad-env/bin/python tools/build_manual_vise_cad.py`. STEP uses millimetres; each STL uses metres in its declared body frame. The complete assembly contains a genuine helical CAD ridge at 2 mm pitch, drilled bearing supports, guide bearings, a translating nut bridge and a radial robot-graspable crank.\n\nThe grip sleeve is a separate `manual_grip_sleeve` body with origin (0.035, 0.022, 0) m in the crank frame and a proposed passive Y-axis bearing; the robot need not rotate its wrist with the crank. Low bearing damping/friction are explicit provisional mechanical assumptions. The manual table spans world X −0.130 to 0.800 m and Y −0.200 to 0.650 m, with its top at Z=0.\n\nScrew rotation is axially fixed; the anti-rotation nut and moving jaw translate along Y. Handle centre is world (0.320, 0.135, {0.055+lift:.3f}) m, radius 35 mm. At zero angle the cylindrical 8 mm × 24 mm grasp pin is centred at (0.355, 0.157, {0.055+lift:.3f}) m. A 20 to 14 mm closing stroke needs three turns; a declared 16 to 14 mm near-clamp stroke needs one. Full 39 to 14 mm closing needs 12.5 turns.\n\n`mechanical_spec.json` defines proposed coupling, finite torque, friction and force bounds. None is calibrated hardware evidence. New handle/bridge collision geometry, both arms, all crank angles and nut travel require a separately audited simulation task. No powered actuator or implicit infinite-force drive is included. The original jaw/stock faces remain the reference contact geometry; this CAD is not manufacturing validated.\n')
     print(json.dumps({'objects':len(objects),'stl_bytes':sum((OUT/o['filename']).stat().st_size for o in objects),'output':str(OUT)}))
 
 if __name__=='__main__':

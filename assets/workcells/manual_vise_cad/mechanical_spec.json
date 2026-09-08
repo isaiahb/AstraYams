@@ -45,7 +45,42 @@
     "backlash_assumption_m": 0.0001,
     "backlash_status": "Explicit modelling proposal; not represented by CAD clearance as a validated tolerance"
   },
+  "support_table": {
+    "world_bounds_m": [
+      [
+        -0.13,
+        -0.2,
+        -0.024
+      ],
+      [
+        0.8,
+        0.65,
+        0
+      ]
+    ],
+    "proposed_arm_b_base_m": [
+      0.32,
+      0.5,
+      0
+    ],
+    "contact_status": "Visual CAD only; new task must provide matching fixed support collisions."
+  },
   "handle": {
+    "grip_sleeve_body": "manual_grip_sleeve",
+    "sleeve_origin_in_crank_m": [
+      0.035,
+      0.022,
+      0
+    ],
+    "sleeve_hinge_axis_in_crank": [
+      0,
+      1,
+      0
+    ],
+    "bearing": "Passive free-spinning grip sleeve on crank pin, no motor or weld to robot",
+    "provisional_hinge_damping_nm_s_per_rad": 1e-05,
+    "provisional_hinge_coulomb_friction_nm": 1e-05,
+    "bearing_assumption": "Low-friction sleeve bearing; numerical values are provisional and require sensitivity testing. Only radial/axial contact transmission, not commanded orientation tracking.",
     "radius_m": 0.035,
     "grasp_pin_diameter_m": 0.008,
     "grasp_pin_length_m": 0.024,
