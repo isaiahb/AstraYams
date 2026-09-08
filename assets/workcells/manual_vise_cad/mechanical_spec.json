@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "status": "proposed mechanical simulation/design reference, not hardware validated",
+  "status": "robot-adapted manual crank design; not a catalog vise or hardware-validated mechanism",
   "units": "SI unless explicitly labelled",
   "pedestal": {
-    "height_m": 0.04,
+    "height_m": 0.105,
     "fixed_world_bounds_m": [
       [
         0.268,
@@ -13,14 +13,14 @@
       [
         0.372,
         0.14,
-        0.04
+        0.105
       ]
     ],
     "collision_proposal": "Add one fixed support under the entire lifted vise in the new task; no alteration of powered task.",
     "seat_world_m": [
       0.32,
       0,
-      0.06
+      0.125
     ]
   },
   "lead_screw": {
@@ -35,7 +35,7 @@
     "handle_origin_world_m": [
       0.32,
       0.135,
-      0.095
+      0.16
     ],
     "nut_attached_to": "vise_slider",
     "shaft_body": "manual_screw",
@@ -67,6 +67,13 @@
   },
   "handle": {
     "grip_sleeve_body": "manual_grip_sleeve",
+    "opposing_grip_sleeve_body": "manual_grip_sleeve_b",
+    "opposing_sleeve_origin_in_crank_m": [
+      -0.035,
+      0.022,
+      0
+    ],
+    "independent_passive_sleeves": true,
     "sleeve_origin_in_crank_m": [
       0.035,
       0.022,
@@ -87,15 +94,15 @@
     "pin_center_world_at_zero_m": [
       0.355,
       0.157,
-      0.095
+      0.16
     ],
     "pin_axis": [
       0,
       1,
       0
     ],
-    "sweep_min_z_m": 0.055,
-    "sweep_max_z_m": 0.135,
+    "sweep_min_z_m": 0.12,
+    "sweep_max_z_m": 0.2,
     "note": "Lowest surface includes 5 mm endcap radius; gripper envelope needs separate collision validation."
   },
   "travel": {
@@ -111,6 +118,8 @@
     "recommended_load_gap_m": 0.02,
     "near_clamp_start_gap_m": 0.016,
     "turns_20_to_14": 3,
+    "upper_half_strokes_20_to_14": 6,
+    "stroke_protocol": "Grasp the right-hand grip, rotate through the upper semicircle by pi radians in closing direction, release, then acquire the other grip now at the right. Repeat six times without reverse screw rotation, motor, ratchet or skipped turns.",
     "turns_16_to_14": 1,
     "turns_39_to_14": 12.5,
     "short_demo_condition": "A near-clamp initial state must be explicitly declared; do not conceal omitted opening turns."
