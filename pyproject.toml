@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "astrafactory"
+version = "0.1.0"
+description = "Task packages and physics experiments for robot skill learning"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "mujoco>=3.2,<4", "gymnasium>=1.0,<2"]
+
+[project.optional-dependencies]
+design = ["trimesh>=4", "shapely>=2"]
+train = ["stable-baselines3>=2.4", "torch>=2.2"]
+video = ["imageio[ffmpeg]>=2.34", "pillow>=10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,32 @@
+[
+  {
+    "mode": "blind_descent",
+    "seed": 0,
+    "is_success": false,
+    "xy_error_m": 0.013826245025541412,
+    "yaw_error_rad": 0.24765334636663283,
+    "tip_z_m": 0.03999723853400656,
+    "hold_steps": 0,
+    "speed": 4.3655851452275154e-12,
+    "task_id": "keyed-insertion-v0",
+    "sim_time": 7.999999999999341,
+    "peak_contact_force_n": 21.471500003609684,
+    "episode_peak_force_n": 21.471537827501656,
+    "reason": "timeout"
+  },
+  {
+    "mode": "teacher",
+    "seed": 0,
+    "is_success": true,
+    "xy_error_m": 3.6799042000400975e-18,
+    "yaw_error_rad": 0.0,
+    "tip_z_m": 0.009000003377203287,
+    "hold_steps": 15,
+    "speed": 1.3819045459317199e-07,
+    "task_id": "keyed-insertion-v0",
+    "sim_time": 2.0000000000000013,
+    "peak_contact_force_n": 0.0,
+    "episode_peak_force_n": 0.0,
+    "reason": "success"
+  }
+]

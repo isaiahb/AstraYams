@@ -1,0 +1,53 @@
+[
+  {
+    "seed": 10,
+    "mode": "3mm_offset_descent",
+    "steps": 600,
+    "is_success": false,
+    "xy_error_m": 0.003291010343004564,
+    "yaw_error_rad": 5.317728821564485e-06,
+    "orientation_error_rad": 0.001640999461230405,
+    "tip_z_m": 0.039990418312248394,
+    "speed": 4.115118469371117e-05,
+    "hold_steps": 0,
+    "task_id": "yam-keyed-insertion-v0",
+    "sim_time": 12.000000000000677,
+    "peak_contact_force_n": 0.9613462029610265,
+    "episode_peak_force_n": 7.684866823307576,
+    "reason": "timeout"
+  },
+  {
+    "seed": 11,
+    "mode": "3mm_offset_descent",
+    "steps": 600,
+    "is_success": false,
+    "xy_error_m": 0.0032548134905199997,
+    "yaw_error_rad": 3.3548386856049163e-06,
+    "orientation_error_rad": 0.0015390985183013357,
+    "tip_z_m": 0.03999009193011477,
+    "speed": 5.6206437544682306e-05,
+    "hold_steps": 0,
+    "task_id": "yam-keyed-insertion-v0",
+    "sim_time": 12.000000000000677,
+    "peak_contact_force_n": 1.0795220261338996,
+    "episode_peak_force_n": 7.7087042912067325,
+    "reason": "timeout"
+  },
+  {
+    "seed": 12,
+    "mode": "3mm_offset_descent",
+    "steps": 600,
+    "is_success": false,
+    "xy_error_m": 0.0033040672057225045,
+    "yaw_error_rad": 5.909466127641491e-06,
+    "orientation_error_rad": 0.0016821635119338841,
+    "tip_z_m": 0.039990203378325095,
+    "speed": 4.239967899138699e-05,
+    "hold_steps": 0,
+    "task_id": "yam-keyed-insertion-v0",
+    "sim_time": 12.000000000000677,
+    "peak_contact_force_n": 1.0071467596329888,
+    "episode_peak_force_n": 7.706012679629954,
+    "reason": "timeout"
+  }
+]

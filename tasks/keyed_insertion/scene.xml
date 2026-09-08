@@ -1,0 +1,55 @@
+<mujoco model="AstraFactory keyed insertion fixture">
+  <compiler angle="radian" meshdir="assets" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" gravity="0 0 -9.81" iterations="80" />
+  <visual>
+    <global offwidth="960" offheight="720" />
+    <headlight ambient=".4 .4 .4" diffuse=".7 .7 .7" />
+  </visual>
+  <asset>
+    <mesh name="peg" file="peg.stl" />
+    <mesh name="wall0" file="wall_0.stl" />
+    <mesh name="wall1" file="wall_1.stl" />
+    <mesh name="wall2" file="wall_2.stl" />
+    <mesh name="wall3" file="wall_3.stl" />
+    <mesh name="wall4" file="wall_4.stl" />
+    <mesh name="wall5" file="wall_5.stl" />
+    <mesh name="wall6" file="wall_6.stl" />
+    <mesh name="wall7" file="wall_7.stl" />
+    <mesh name="wall8" file="wall_8.stl" />
+  </asset>
+  <default>
+    <geom friction=".5 .005 .0001" solref=".005 1" solimp=".95 .99 .001" condim="3" />
+  </default>
+  <worldbody>
+    <light pos="0 -.2 .5" dir="0 .2 -.5" directional="true" />
+    <camera name="overview" pos=".13 -.18 .15" xyaxes=".81 .585 0 -.30 .415 .86" />
+    <geom name="bench" type="plane" size=".3 .3 .01" rgba=".13 .17 .21 1" />
+    <body name="socket">
+      <geom name="socket_floor" type="box" pos="0 0 .004" size=".022 .020 .004" rgba=".22 .48 .65 1" />
+      <geom name="socket_wall_0" type="mesh" mesh="wall0" rgba=".22 .48 .65 1" />
+      <geom name="socket_wall_1" type="mesh" mesh="wall1" rgba=".22 .48 .65 1" />
+      <geom name="socket_wall_2" type="mesh" mesh="wall2" rgba=".22 .48 .65 1" />
+      <geom name="socket_wall_3" type="mesh" mesh="wall3" rgba=".22 .48 .65 1" />
+      <geom name="socket_wall_4" type="mesh" mesh="wall4" rgba=".22 .48 .65 1" />
+      <geom name="socket_wall_5" type="mesh" mesh="wall5" rgba=".22 .48 .65 1" />
+      <geom name="socket_wall_6" type="mesh" mesh="wall6" rgba=".22 .48 .65 1" />
+      <geom name="socket_wall_7" type="mesh" mesh="wall7" rgba=".22 .48 .65 1" />
+      <geom name="socket_wall_8" type="mesh" mesh="wall8" rgba=".22 .48 .65 1" />
+    </body>
+    <body name="held_tool">
+      <joint name="tool_x" type="slide" axis="1 0 0" range="-.05 .05" />
+      <joint name="tool_y" type="slide" axis="0 1 0" range="-.05 .05" />
+      <joint name="tool_z" type="slide" axis="0 0 1" range=".006 .12" />
+      <joint name="tool_yaw" type="hinge" axis="0 0 1" range="-1.2 1.2" />
+      <inertial pos="0 0 .035" mass=".15" diaginertia=".0001 .0001 .00005" />
+      <geom name="peg" type="mesh" mesh="peg" rgba=".96 .63 .16 1" />
+      <geom name="tool_holder" type="cylinder" pos="0 0 .048" size=".014 .01" rgba=".65 .69 .74 1" />
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="x" joint="tool_x" ctrlrange="-20 20" />
+    <motor name="y" joint="tool_y" ctrlrange="-20 20" />
+    <motor name="z" joint="tool_z" ctrlrange="-20 20" />
+    <motor name="yaw" joint="tool_yaw" ctrlrange="-.6 .6" />
+  </actuator>
+</mujoco>

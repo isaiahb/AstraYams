@@ -1,4 +1,6 @@
-# POC: learn to position a part
+# Initial pushing proposal — superseded
+
+The active experiment is custom keyed insertion. See [the reusable environment](ENVIRONMENT.md) for its contract and implementation. The text below is a retained proposal, not the current task.
 
 ## Goal
 

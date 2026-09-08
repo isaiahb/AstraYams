@@ -1,0 +1,35 @@
+{
+  "units": "m",
+  "peg_profile_xy": [
+    [
+      -0.009,
+      -0.007
+    ],
+    [
+      0.009,
+      -0.007
+    ],
+    [
+      0.009,
+      0.003
+    ],
+    [
+      0.005,
+      0.007
+    ],
+    [
+      -0.009,
+      0.007
+    ],
+    [
+      -0.009,
+      -0.007
+    ]
+  ],
+  "peg_length": 0.038,
+  "socket_clearance_per_side": 0.0006,
+  "socket_top": 0.04,
+  "socket_floor": 0.008,
+  "collision_decomposition": "convex triangular prisms covering the socket walls; the opening is not convex-filled",
+  "wall_count": 9
+}

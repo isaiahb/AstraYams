@@ -1,0 +1,23 @@
+{
+  "source": "../../assets/robots/yam/source.json",
+  "tool_transform": {
+    "parent": "gripper",
+    "translation_m": [
+      0,
+      0,
+      -0.17
+    ],
+    "quaternion_wxyz": [
+      1,
+      0,
+      0,
+      0
+    ]
+  },
+  "notes": [
+    "Official URDF inertias retained, fingers fixed at joint displacement -0.030 m.",
+    "URDF visual meshes used as convex collisions against bench/socket; arm self collisions disabled by masks because source has no validated collision decomposition.",
+    "Arm torque caps \u00b110 Nm follow upstream MJCF; PD, damping, armature and held adapter mass provisional.",
+    "Peg attached rigidly; grasp acquisition not simulated."
+  ]
+}

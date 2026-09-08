@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "keyed-insertion-v0",
+  "scene": "scene.xml",
+  "plugin": "task.py",
+  "reward_plugin": "reward.py",
+  "camera": "overview",
+  "frame_skip": 10,
+  "horizon": 400,
+  "observation_size": 21,
+  "abort_contact_force_n": 45,
+  "controller": {
+    "type": "joint_delta_pd",
+    "joints": ["tool_x", "tool_y", "tool_z", "tool_yaw"],
+    "actuators": ["x", "y", "z", "yaw"],
+    "action_scale": [0.0015, 0.0015, 0.0015, 0.025],
+    "kp": [1200, 1200, 1200, 0.2],
+    "kd": [35, 35, 35, 0.005]
+  },
+  "reset": {"socket_xy_range_m": 0.008, "socket_yaw_range_rad": 0.18, "tool_xy_error_m": 0.012, "tool_yaw_error_rad": 0.3},
+  "success": {"xy_tolerance_m": 0.0008, "yaw_tolerance_rad": 0.05, "tip_z_max_m": 0.012, "tip_z_min_m": 0.0075, "speed_max": 0.015, "hold_steps": 15, "contact_force_max_n": 15},
+  "observation_contract": "Privileged simulator state: q(4), qvel(4), controller targets(4), relative goal(4), previous action(4), last contact force(1). Camera available through render; this is not yet a visual or VLA observation adapter.",
+  "embodiment": "4-DOF Cartesian held-tool fixture, not full robot arm. Peg is rigidly fixed to tool from reset; grasp acquisition is outside task scope."
+}
