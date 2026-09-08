@@ -1,0 +1,1 @@
+{"compilerOptions": {"target": "ESNext", "module": "ESNext", "moduleResolution": "Bundler", "jsx": "react-jsx", "strict": true, "skipLibCheck": true, "allowImportingTsExtensions": true, "noEmit": true, "types": ["bun"]}, "include": ["src/**/*.ts", "src/**/*.tsx"], "extends": "./.hutch/devkit/tsconfig.json"}
