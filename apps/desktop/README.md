@@ -35,7 +35,7 @@ This is a development app, not a signed distributable. The launch command suppli
 
 Sessions persist in the usual Codex store and can be read in the desktop app. Independent App Server instances do not share live runtime ownership: avoid driving the same active turn from both apps. Reopening AstraFactory marks interrupted local sessions disconnected; a follow-up resumes them with a fresh MCP connection.
 
-Agents can read text via MCP and inspect local images through their normal file tools. Binary images/video are reviewed in the human viewer; the MCP text reader is not a video analysis tool. Role conflicts, automatic agent-to-agent dispatch, and enforced design approval gates remain future work. No activity or outcome is fabricated.
+Agents can read text via MCP and inspect local images through their normal file tools. Binary images/video are reviewed in the human viewer; the MCP text reader is not a video analysis tool. General team scheduling, role conflicts, and enforced design approval gates remain future work. No activity or outcome is fabricated.
 
 ## Validation
 
@@ -43,4 +43,8 @@ Agents can read text via MCP and inspect local images through their normal file 
 
 Project metadata, reviews, assignments, and organization persist in `.local/workspace.json`; new project files live in ignored `workspaces/` folders. They remain local until explicitly exported or committed. Legacy assets are referenced in place. The lunar brief is a research starting point, not a completed engineering example.
 
-The feedback loop currently creates inspectable proposals and explicit engineer assignments. Automatic scheduling, change propagation, live physics, and re-test execution are not implemented.
+The feedback loop supports one bounded automatic revision → independent re-test cycle per proposal. The user supplies fixed acceptance criteria; the engineer submits a separate artifact through MCP, then the tester starts when that turn completes. The tester executes the task-specific procedure with its normal tools and submits an evidence report. This orchestrates real sessions; it does not embed a physics engine or independently prove an agent’s reported pass. No automatic retry or paid GPU launch is performed.
+
+Changed evidence, missing submissions, failed/interrupted sessions and app restarts stop the cycle with a visible blocker. A failed test requests a new revision; it does not change acceptance criteria. New cycles require new proposals. All source, revision and test report hashes are retained. The UI exposes each session and report for review.
+
+Workflow tests use a deterministic session adapter to verify dispatch, stale-version detection, session ownership, interruption, and bounded stopping. They are software tests, not robot simulation evidence.
