@@ -1,1 +1,1 @@
-export default {app:{name:'Astra Skill Studio',identifier:'dev.astrafactory.skills',version:'0.1.0'},build:{mainProcess:'bun',bun:{entrypoint:'src/desktop.ts'}},runtime:{exitOnLastWindowClosed:true}};
+export default {app:{name:'Astra Yams',identifier:'dev.astrafactory.skills',version:'0.1.0'},build:{mac:{icons:'assets/icon.iconset'},mainProcess:'bun',bun:{entrypoint:'src/desktop.ts'}},runtime:{exitOnLastWindowClosed:true}};

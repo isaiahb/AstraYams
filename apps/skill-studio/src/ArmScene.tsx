@@ -1,8 +1,8 @@
 import {useEffect,useRef,useState} from 'react';
 import * as T from 'three';
 import {STLLoader} from 'three/examples/jsm/loaders/STLLoader.js';
-const vertex=`varying vec3 n; void main(){n=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`;
-const fragment=`uniform vec3 ink; varying vec3 n; void main(){float d=dot(normalize(n),normalize(vec3(-.5,.8,1.)));float shade=d>.52?1.:d>.05?.83:.64;gl_FragColor=vec4(ink*shade,1.);#include <colorspace_fragment>}`.replace(';#include',';\n#include');
+export const vertex=`varying vec3 n; void main(){n=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`;
+export const fragment=`uniform vec3 ink; varying vec3 n; void main(){float d=dot(normalize(n),normalize(vec3(-.5,.8,1.)));float shade=d>.52?1.:d>.05?.83:.64;gl_FragColor=vec4(ink*shade,1.);#include <colorspace_fragment>}`.replace(';#include',';\n#include');
 export function ArmScene({token}:{token:string}){
  const host=useRef<HTMLDivElement>(null),[failed,setFailed]=useState(false);
  useEffect(()=>{if(!host.current)return;let dead=false,ready=false;const scene=new T.Scene(),camera=new T.PerspectiveCamera(32,1,.001,100);camera.up.set(0,0,1);

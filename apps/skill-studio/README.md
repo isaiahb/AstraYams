@@ -32,3 +32,10 @@ Deep link to a skill using `?skill=machine-tending-v1` (retain the authenticated
 ## Native desktop window
 
 With the local backend and Skill Studio server running, use `bun run desktop`. This builds and opens a dedicated Electrobun app named **Astra Skill Studio**, with bundle identifier `dev.astrafactory.skills`, directly on the cel-shaded skill prompt and library. Its development bundle is `build/dev-macos-arm64/Astra Skill Studio-dev.app`. Runtime URLs and tokens remain in ignored `.local` files.
+
+### Astra Yams and replay
+The native application is named **Astra Yams**. Its generated robot icon lives in the Dock; the interface keeps a text wordmark. Rebuild with `bun run desktop` to install the icon into the development bundle.
+
+Skill details support `videos[].replay_path`: recorded MuJoCo world-body positions and XYZW quaternions, right-handed Z-up, time-stamped frames. `ReplayScene` uses original YAM URDF visual origins exactly once and renders the recorded poses with the same cel shader as the prompt. Orbit, pan, zoom, pause, scrub, and reset-view controls do not rerun physics. Export metadata should include source trace/scene hashes and outcome. Dynamic boxes carry full dimensions and recorded geom poses under unique object body names.
+
+`Delete from library` writes a tombstone in `.local/deleted-skills.json`; it does not erase experiments or stop/delete agent sessions. Archive remains separately reversible. The prompt accepts up to ten image/CAD reference files totaling 50 MB, saved under the new project's `inputs/` folder before the engineer starts. File content is reference data; geometry still needs inspection and simulation preparation.
