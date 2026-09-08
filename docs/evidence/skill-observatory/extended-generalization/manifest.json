@@ -1,0 +1,47 @@
+{
+  "scope": "Extended append-only challenge and CPU/MPS evidence; earlier pre-final/final snapshots unchanged",
+  "experiments": 26,
+  "events": 85,
+  "files": {
+    "docs/evidence/skill-observatory/extended-generalization/extended-experiments.jsonl": {
+      "sha256": "8d0b702780df222e13a19b12880e2b1ccbc06a0a8806c0a6ee35a28577eca4ce",
+      "bytes": 199152
+    },
+    "docs/evidence/skill-observatory/extended-generalization/experiments.json": {
+      "sha256": "abb3b90b3ae3b6ad20882251dab6b201d7df982e43b14dd5f110adf12b565599",
+      "bytes": 554134
+    },
+    "docs/evidence/skill-observatory/extended-generalization/index.html": {
+      "sha256": "12b035664bcde5d987b29eb7d5ead7c05a43bd4c6d06ea1c3e2c28a6d0bec11b",
+      "bytes": 689032
+    },
+    "docs/evidence/skill-observatory/pre-challenge-proposals.jsonl": {
+      "sha256": "7b1153316e38e8821de62854735636c5c25babab857dbf37106efd8fc1c5291e",
+      "bytes": 155463
+    },
+    "docs/evidence/skill-observatory/pre-layout-proposals.jsonl": {
+      "sha256": "418dbd4cd45e83371f9c52811acf0ee3191825aec0639814e4d9120d65ca3bcf",
+      "bytes": 196284
+    },
+    "runs/skill-layout-cases-v1-grid/four-physical-generalization-trials.mp4": {
+      "sha256": "ad22c772a911d4a7bcdcfcd99995507f2153a57edb75470e22ebbeed0c5c2ed6",
+      "bytes": 2137910
+    },
+    "runs/skill-layout-cases-v1-grid/audit.json": {
+      "sha256": "312c20ecc5462fc1c77d051e5388b78371142c9e0f396e580623594e02a3f2eb",
+      "bytes": 20209
+    },
+    "runs/skill-layout-cases-v1-grid/visual-review.json": {
+      "sha256": "21e61af7e92ec04b09603e3f04952791d54b8ed0b102ffcaed8e5124cb1dd104",
+      "bytes": 609
+    },
+    "runs/skill-generalization-v1/report.json": {
+      "sha256": "c24340a0fbeb795f36989e6fcd0365c68d0811c2f0ac6809f8e47d0b6ed1724c",
+      "bytes": 88175
+    },
+    "runs/micro-grasp-device-benchmark/summary.json": {
+      "sha256": "ff3c566500b67c21fc78894e123a426c0a5b875f08abc74e12592e5b467691ac",
+      "bytes": 2991
+    }
+  }
+}
