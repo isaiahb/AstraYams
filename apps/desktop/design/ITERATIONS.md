@@ -92,3 +92,16 @@ Latest user steering supersedes the generic robot-test endpoint and preference f
 - Home now hides the previous project's title and project-specific controls.
 
 Current best: `workspace-v6.html`, inline `simulation-workspace-v6.html`. Next pass should deepen artifact/provenance and revision comparison while keeping the sidebar and task-specific simulation. Do not revert to a fixed Robot test endpoint.
+
+## Iteration 6 — evidence, revision state, and joint detail
+
+Preserved v6; new checkpoint `workspace-v7.html` / `evidence-workspace-v7.html`.
+
+- Robot-arm ME Detailed CAD now shows a distinct exploded joint-module schematic (housing, actuator, board, harness, cover, fasteners). Packaging retains the overall arm concept.
+- Artifact version control opens current draft, upstream inputs, and verification status. Previewing a new revision marks affected checks for review; revision state is per artifact, not shared across all artifacts in a project.
+- Added source/limits drawer. MuJoCo official computation documentation supports contact-model investigation; it does not validate the mechanical assembly. NASA's indexed catalog abstract establishes historical mass-driver prior art; full report access returned 403 and has not been reviewed.
+- Sensor-pod ID source view distinguishes image generation from missing prior-art/ergonomic engineering evidence.
+- Browser verified: arm project → Detailed CAD gives exploded module; artifact version button → new revision state updates evidence and verification status.
+- Sources: https://mujoco.readthedocs.io/en/latest/computation/ and https://ntrs.nasa.gov/citations/19810062908 (catalog abstract only).
+
+Remaining: responsiveness/dark appearance, drawer discoverability, optional example demo walkthrough. Best current checkpoint v7. Keep claims honest: schematics and UI state transitions are not actual CAD revisions or simulations.
