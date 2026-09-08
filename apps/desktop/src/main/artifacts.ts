@@ -16,7 +16,7 @@ export async function listArtifacts(root:string):Promise<Artifact[]>{
    }
   }
  }
- for(const folder of ['tasks','runs','docs','assets/robots'])await walk(resolve(root,folder));
+ for(const folder of ['tasks','runs','docs','assets/robots','apps/desktop/workspaces'])await walk(resolve(root,folder));
  return rows.sort((a,b)=>b.modified.localeCompare(a.modified));
 }
 export async function artifactPath(root:string,path:string){
@@ -24,7 +24,7 @@ export async function artifactPath(root:string,path:string){
  const canonicalRoot=await realpath(root);const target=await realpath(resolve(root,path));
  if(!target.startsWith(canonicalRoot+sep))throw new Error('Artifact must be inside the workspace');
  const rel=relative(canonicalRoot,target);
- if(!['tasks/','runs/','docs/','assets/robots/'].some(p=>rel.startsWith(p))||rel.split(sep).some(p=>p.startsWith('.')))throw new Error('Artifact location is not exposed');
+ if(!['tasks/','runs/','docs/','assets/robots/','apps/desktop/workspaces/'].some(p=>rel.startsWith(p))||rel.split(sep).some(p=>p.startsWith('.')))throw new Error('Artifact location is not exposed');
  if(!extensions.has(extname(target).toLowerCase()))throw new Error('Unsupported artifact type');
  return target;
 }

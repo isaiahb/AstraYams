@@ -19,3 +19,32 @@ test('workspace auth, artifact boundary, MCP and exact-version reviews',async()=
   const m=await(await call('/mcp',{jsonrpc:'2.0',id:1,method:'tools/call',params:{name:'list_artifacts',arguments:{}}})).json();expect(JSON.parse(m.result.content[0].text).map((a:any)=>a.path)).toEqual(['docs/test.md']);
  }finally{app.close();await rm(root,{recursive:true,force:true});}
 });
+
+test('projects isolate artifacts and persist version-linked engineering feedback',async()=>{
+ const root=await mkdtemp(join(tmpdir(),'astrafactory-projects-'));
+ await mkdir(join(root,'docs'));await writeFile(join(root,'docs/legacy.md'),'legacy');
+ let app=await startServer({root});
+ const call=async(path:string,body?:any)=>fetch(app.url.split('/#')[0]+path,{method:body?'POST':'GET',headers:{Authorization:'Bearer '+app.url.split('#')[1],'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});
+ try{
+  const p=await(await call('/api/projects',{title:'Fixture',brief:'Design a robot-assembled fixture.'})).json();
+  const path=p.prefixes[0]+'BRIEF.md';
+  expect((await(await call('/api/artifacts?projectId='+p.id)).json()).map((a:any)=>a.path)).toEqual([path]);
+  expect((await call('/api/artifact?projectId='+p.id+'&path=docs/legacy.md')).status).toBe(400);
+  await symlink(join(root,'docs/legacy.md'),join(p.directory,'alias.md'));
+  expect((await call('/api/artifact?projectId='+p.id+'&path='+p.prefixes[0]+'alias.md')).status).toBe(400);
+  const meta=await(await call('/api/publish',{projectId:p.id,path,owner:'ME',stage:'Research'})).json();
+  expect(meta.registeredHash).toHaveLength(64);
+  expect((await call('/api/publish',{projectId:p.id,path,owner:'ME',stage:'Schematic'})).status).toBe(400);
+  const item=await(await call('/api/workitems',{projectId:p.id,kind:'change',owner:'EE',title:'Check power budget',detail:'Resolve peak power before selecting the supply.',sourcePath:path})).json();
+  expect(item.sourceHash).toBe(meta.registeredHash);
+  await writeFile(join(p.directory,'BRIEF.md'),'revised');
+  expect((await call('/api/review',{projectId:p.id,path,verdict:'accepted',note:'stale review',expectedHash:meta.registeredHash})).status).toBe(400);
+  const m=await(await call('/mcp?projectId='+p.id,{jsonrpc:'2.0',id:1,method:'tools/call',params:{name:'read_artifact',arguments:{path:'docs/legacy.md',projectId:'robot-arm'}}})).json();
+  expect(m.result.isError).toBe(true);
+  app.close();app=await startServer({root});
+  const state=(await(await call('/api/status')).json()).state;
+  expect(state.projects.find((x:any)=>x.id===p.id).title).toBe('Fixture');
+  expect(state.workitems[0].sourceHash).toBe(meta.registeredHash);
+  expect((await(await call('/api/artifact-info?projectId='+p.id+'&path='+path)).json()).sha256).not.toBe(meta.registeredHash);
+ }finally{app.close();await rm(root,{recursive:true,force:true});}
+});

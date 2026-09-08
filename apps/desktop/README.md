@@ -16,13 +16,18 @@ bun run desktop
 
 ## Working capabilities
 
+- Prompt-led project catalog; new prompts create a project folder, brief, and lead session.
+- Explicit ID, ME, EE, software, manufacturing, and simulation workstreams with artifact stages and research spikes.
+- Engineering change proposals and handoffs linked to the source file hash, assignable to a real engineer session.
+- Preloaded arm assets / recorded experiments and a separately labeled lunar concept brief.
+
 - Create, name, inspect, follow up, steer, and interrupt real Codex sessions. Roles provide task instructions; they are not file ownership enforcement.
 - Use the local ChatGPT account through Codex App Server, without embedding an API key. Available models come from the account.
 - Explicit command/file and MCP tool approval UI.
 - Inspect STL geometry, mesh-based URDF at its zero joint pose, self-contained GLB, images, text reports, and recorded simulation videos.
-- Automatically index actual files under `tasks`, `runs`, `docs`, and `assets/robots`.
+- Automatically index actual files under `tasks`, `runs`, `docs`, and `assets/robots`, and project-owned `apps/desktop/workspaces` folders.
 - Attach human or agent reviews to SHA-256 artifact versions.
-- Authenticated local MCP tools: `workspace_status`, `list_artifacts`, `read_artifact`, `review_artifact`.
+- Authenticated local MCP tools: `workspace_status`, `list_artifacts`, `read_artifact`, `review_artifact`, `publish_artifact`, `create_work_item`. Tool artifact access is scoped to its project; this is not a filesystem sandbox for agent shell tools.
 
 ## Boundaries
 
@@ -35,3 +40,7 @@ Agents can read text via MCP and inspect local images through their normal file 
 ## Validation
 
 `bun run typecheck` and `bun test`. Integration verified against the installed Codex App Server: ChatGPT authentication, an Astra thread, approved MCP artifact listing, final response, and persisted history retrieval. Native Electrobun/Bun launch and CAD rendering verified visually.
+
+Project metadata, reviews, assignments, and organization persist in `.local/workspace.json`; new project files live in ignored `workspaces/` folders. They remain local until explicitly exported or committed. Legacy assets are referenced in place. The lunar brief is a research starting point, not a completed engineering example.
+
+The feedback loop currently creates inspectable proposals and explicit engineer assignments. Automatic scheduling, change propagation, live physics, and re-test execution are not implemented.
