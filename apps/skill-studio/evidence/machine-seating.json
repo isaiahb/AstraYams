@@ -1,26 +1,28 @@
 {
-  "scope_label": "PPO seating correction + scripted workflow and IK. Recorded simulation.",
+  "scope_label": "Powered-fixture checkpoint \u00b7 recorded simulation. Separate from the proposed manual-vise task.",
   "videos": [
     {
       "id": "baseline",
       "title": "Before learning",
       "path": "runs/machine-seating-ppo-v1-holdout/visual-review/baseline-58000.mp4",
-      "caption": "Held-out case 58000 without the learned correction. Visual fixture detail added without changing tested physics; clip shows the final 15 seconds.",
-      "kind": "baseline_execution"
+      "caption": "Powered-fixture checkpoint \u00b7 Initial controller + scripted workflow/IK. Actual recorded physics; detailed CAD display assets.",
+      "kind": "baseline_execution",
+      "replay_path": "runs/machine-seating-ppo-v1-holdout/baseline-58000-cad-replay.json"
     },
     {
       "id": "trained",
       "title": "After learning",
       "path": "runs/machine-seating-ppo-v1-holdout/visual-review/candidate-58000.mp4",
-      "caption": "Same case. PPO controls only a ±2 mm seating correction. Visual fixture detail added without changing tested physics; clip shows the final 15 seconds.",
-      "kind": "learned_execution"
+      "caption": "Powered-fixture checkpoint \u00b7 Learned PPO seating correction + scripted workflow/IK. Actual recorded physics; detailed CAD display assets.",
+      "kind": "learned_execution",
+      "replay_path": "runs/machine-seating-ppo-v1-holdout/candidate-58000-cad-replay.json"
     }
   ],
   "metrics": [
     {
       "label": "Held-out full-cycle success",
-      "value": "2/5 → 4/5",
-      "detail": "Same untouched seeds 58000–58004."
+      "value": "2/5 \u2192 4/5",
+      "detail": "Same untouched seeds 58000\u201358004."
     }
   ],
   "limitations": [

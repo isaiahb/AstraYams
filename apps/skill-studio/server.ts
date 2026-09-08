@@ -1,11 +1,14 @@
 import {resolve} from 'node:path';
-import {mkdir} from 'node:fs/promises';
+import {mkdir,realpath} from 'node:fs/promises';
 import {listSkills,saveSkill,archiveSkills,deleteSkill} from './catalog';
 const here=import.meta.dir;
 const upstream=await Bun.file(resolve(here,'../desktop/.local/connection.json')).json();
 const origin=new URL(upstream.url).origin;
 const server=Bun.serve({hostname:'127.0.0.1',port:Number(process.env.PORT||0),async fetch(req){
  const u=new URL(req.url);
+ if(u.pathname==='/studio-api/asset'){
+ if(req.headers.get('authorization')!=='Bearer '+upstream.token&&u.searchParams.get('token')!==upstream.token)return new Response('Unauthorized',{status:401});
+ try{const path=u.searchParams.get('path')||'',root=resolve(here,'../..');if(!path.startsWith('assets/workcells/')&&!path.startsWith('apps/skill-studio/evidence/'))throw Error('Invalid asset');const full=await realpath(resolve(root,path));const allowed=[resolve(root,'assets/workcells')+'/',resolve(here,'evidence')+'/'];if(!allowed.some(p=>full.startsWith(p)))throw Error('Invalid asset');return new Response(Bun.file(full),{headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});}catch{return new Response('Asset unavailable',{status:404});}}
  if(u.pathname==='/studio-api/attachments'&&req.method==='POST'){
  if(req.headers.get('authorization')!=='Bearer '+upstream.token)return Response.json({error:'Unauthorized'},{status:401});
  try{const form=await req.formData(),project=String(form.get('projectId')||'');if(!/^[a-f0-9-]{36}$/.test(project))throw new Error('Invalid project');
