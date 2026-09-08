@@ -1,0 +1,147 @@
+{
+  "proposal": {
+    "algorithm": "PPO",
+    "train_prefix_seeds": [
+      56000,
+      56001,
+      56002,
+      56003
+    ],
+    "dev_seeds": [
+      59000,
+      59001,
+      59002,
+      59003,
+      59004
+    ],
+    "reserved_final_seeds": [
+      58000,
+      58001,
+      58002,
+      58003,
+      58004,
+      58005,
+      58006,
+      58007,
+      58008,
+      58009,
+      58010,
+      58011,
+      58012,
+      58013,
+      58014,
+      58015,
+      58016,
+      58017,
+      58018,
+      58019
+    ],
+    "steps": 8192,
+    "action": "3D tool-target residual \u00b12mm only in seat_raw",
+    "observations": "13D privileged pose/velocity/contact/grip",
+    "training_reset": "Complete integration snapshots from real physical prefix rollouts; restores ONLY at isolated training episode reset",
+    "evaluation": "Continuous full cycle with frozen fitted transport/precision, workflow and IK; no resets between skills",
+    "source_sha256": {
+      "/Users/isaiah/Documents/BallahTech/AstraFactory/tools/train_machine_seating_ppo.py": "9bf8cbb828475e7711e6d7e62fe3d93bf1b83a3630087a090617be43671457c0",
+      "src/astrafactory/machine_tending.py": "4aa39ccafa32c985f3030786e1019d15eb6c3ba580be4aa709bcab31bdbb0e23",
+      "src/astrafactory/machine_tending_policy.py": "6c67e6dc28989919bf2cb7c021218a4f1b2b11d5b6325cc60b5fe873d354944c",
+      "tasks/yam_machine_tending/task.json": "54c4fd61f7feeeb0eb3ea620343aeda6828b8f56d5e1f77fbb99f547ba4fba78",
+      "tasks/yam_machine_tending/scene.xml": "2d396759501a2c9a978327905755748f46359a5be0ef46c2e3f8ecfbbf8f93b8",
+      "runs/machine-tending-structured-v2/policy.pt": "c4d09baa4f03121eed114dd21b9bddbebbeb1a6353280d92e28c38496c7ed6d3"
+    }
+  },
+  "baseline_successes": 2,
+  "candidate_successes": 4,
+  "training_timesteps": 8192,
+  "training_seconds": null,
+  "timing_note": "Training finished and saved checkpoint, but JSON export failed before timing was persisted. Do not report an inferred training duration.",
+  "evaluation_seconds": 106.38703799247742,
+  "actor_parameters": 547,
+  "promoted": false,
+  "evaluation_source_sha256": {
+    "/Users/isaiah/Documents/BallahTech/AstraFactory/tools/evaluate_machine_seating_ppo.py": "ba286d5508db71a38f4b3a547da5f6559369b6afdf69f4d1e3c9a2fc53a33fe7",
+    "tools/train_machine_seating_ppo.py": "49889de5fa739670abb03485d58f5a0d1efb4e46e81fcc22dc5c1ce87f22868f"
+  },
+  "trials": [
+    {
+      "mode": "baseline",
+      "seed": 59000,
+      "success": true,
+      "reason": "success",
+      "peak_contact_load_n": 69.49857452222835,
+      "hold_steps": 50
+    },
+    {
+      "mode": "baseline",
+      "seed": 59001,
+      "success": false,
+      "reason": "timeout",
+      "peak_contact_load_n": 49.40868594105021,
+      "hold_steps": 34
+    },
+    {
+      "mode": "baseline",
+      "seed": 59002,
+      "success": true,
+      "reason": "success",
+      "peak_contact_load_n": 72.19864387201315,
+      "hold_steps": 50
+    },
+    {
+      "mode": "baseline",
+      "seed": 59003,
+      "success": false,
+      "reason": "force_limit",
+      "peak_contact_load_n": 80.41757067894847,
+      "hold_steps": 0
+    },
+    {
+      "mode": "baseline",
+      "seed": 59004,
+      "success": false,
+      "reason": "force_limit",
+      "peak_contact_load_n": 93.54761995332186,
+      "hold_steps": 0
+    },
+    {
+      "mode": "candidate",
+      "seed": 59000,
+      "success": true,
+      "reason": "success",
+      "peak_contact_load_n": 22.329091384781027,
+      "hold_steps": 50
+    },
+    {
+      "mode": "candidate",
+      "seed": 59001,
+      "success": false,
+      "reason": "timeout",
+      "peak_contact_load_n": 22.268396686121452,
+      "hold_steps": 42
+    },
+    {
+      "mode": "candidate",
+      "seed": 59002,
+      "success": true,
+      "reason": "success",
+      "peak_contact_load_n": 23.02245906786353,
+      "hold_steps": 50
+    },
+    {
+      "mode": "candidate",
+      "seed": 59003,
+      "success": true,
+      "reason": "success",
+      "peak_contact_load_n": 22.959636388952294,
+      "hold_steps": 50
+    },
+    {
+      "mode": "candidate",
+      "seed": 59004,
+      "success": true,
+      "reason": "success",
+      "peak_contact_load_n": 22.3664584180005,
+      "hold_steps": 50
+    }
+  ]
+}

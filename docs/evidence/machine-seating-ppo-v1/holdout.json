@@ -1,0 +1,100 @@
+{
+  "proposal": {
+    "role": "final five-case holdout",
+    "seeds": [
+      58000,
+      58001,
+      58002,
+      58003,
+      58004
+    ],
+    "checkpoint_sha256": "ebb7d411c5e7c99d7407ac372024c4b02a2fdc42b3978bc01d91cd62b7832ba8",
+    "selection": "Frozen after development 4/5 vs baseline2/5; no further training permitted before this evaluation",
+    "scope": "Five of20 reserved seeds; remaining58005\u201358019 untouched. Small-sample evidence only."
+  },
+  "baseline_successes": 2,
+  "candidate_successes": 4,
+  "evaluation_seconds": 111.36223888397217,
+  "trials": [
+    {
+      "mode": "baseline",
+      "seed": 58000,
+      "success": false,
+      "reason": "force_limit",
+      "peak_contact_load_n": 377.6354881582485,
+      "hold_steps": 0
+    },
+    {
+      "mode": "baseline",
+      "seed": 58001,
+      "success": true,
+      "reason": "success",
+      "peak_contact_load_n": 23.85948548985092,
+      "hold_steps": 50
+    },
+    {
+      "mode": "baseline",
+      "seed": 58002,
+      "success": false,
+      "reason": "timeout",
+      "peak_contact_load_n": 28.69204506857341,
+      "hold_steps": 38
+    },
+    {
+      "mode": "baseline",
+      "seed": 58003,
+      "success": false,
+      "reason": "force_limit",
+      "peak_contact_load_n": 87.76660538044078,
+      "hold_steps": 0
+    },
+    {
+      "mode": "baseline",
+      "seed": 58004,
+      "success": true,
+      "reason": "success",
+      "peak_contact_load_n": 42.402109397562924,
+      "hold_steps": 50
+    },
+    {
+      "mode": "candidate",
+      "seed": 58000,
+      "success": true,
+      "reason": "success",
+      "peak_contact_load_n": 22.278228691747675,
+      "hold_steps": 50
+    },
+    {
+      "mode": "candidate",
+      "seed": 58001,
+      "success": true,
+      "reason": "success",
+      "peak_contact_load_n": 23.004770370998212,
+      "hold_steps": 50
+    },
+    {
+      "mode": "candidate",
+      "seed": 58002,
+      "success": false,
+      "reason": "timeout",
+      "peak_contact_load_n": 22.321037721551342,
+      "hold_steps": 43
+    },
+    {
+      "mode": "candidate",
+      "seed": 58003,
+      "success": true,
+      "reason": "success",
+      "peak_contact_load_n": 22.33034980173178,
+      "hold_steps": 50
+    },
+    {
+      "mode": "candidate",
+      "seed": 58004,
+      "success": true,
+      "reason": "success",
+      "peak_contact_load_n": 22.2757148713151,
+      "hold_steps": 50
+    }
+  ]
+}

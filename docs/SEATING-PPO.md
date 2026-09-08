@@ -21,3 +21,7 @@ For historical comparison, `runs/residual-insert-ppo-v2/report.json` records the
 ## Development result
 
 The frozen seating PPO candidate improved full-cycle success from 2/5 to 4/5 on development seeds 59000–59004. It passed the two cases where the baseline exceeded the seating force limit; seed 59001 still timed out. This is a 547-parameter actor correcting only seating, with all other components fixed. Training completed 8,192 steps and saved its checkpoint, but a subsequent JSON export error prevented its duration from being persisted; do not substitute the earlier experiment's 17.97 seconds as this run's measured time. Evaluation resumed from the saved checkpoint without retraining. A predeclared five-case final comparison uses seeds 58000–58004; the other reserved seeds remain untouched.
+
+## Frozen holdout result
+
+On previously untouched seeds 58000–58004, baseline success was 2/5 and PPO success was 4/5. The PPO candidate passed 58000, 58001, 58003, and 58004. Seed 58002 timed out in both runs. This corroborates the development improvement in a small, position-randomized test; it does not establish broad generalization or hardware readiness. The original keyed-insertion checkpoints remain separate and unchanged.
