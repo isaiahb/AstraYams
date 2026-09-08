@@ -20,6 +20,8 @@ A YAM robot grasps a free custom keyed peg through finger contact, lifts it and 
 
 ## Status
 
-The active contact task passes physical grasp diagnostics at one fixed reset:89.4mm lift with bilateral unsupported finger contact, release/drop on jaw opening, and failed sustained lift when friction is removed. A pose-feedback scripted controller now succeeds at insertion, including five slightly randomized starts. Initial learned policies still fail; scripted success is not a learned-policy result. These are scripted physics checks, not trained-policy results. See [contact validation](docs/CONTACT-VALIDATION.md). Earlier rigid-tool checkpoints are incompatible with this task and do not establish contact manipulation performance.
+Four small learned controllers (3,242 parameters total) now execute contact grasp → lift → alignment → insertion continuously on the official YAM assets. The frozen chain passed **20/20 reserved nominal tests and 20/20 reserved stress tests**. It uses privileged simulator state, hand-designed target coordinates, physical handoff guards and an IK/control scaffold; this is local controller distillation, not visual VLA learning or hardware validation.
+
+The observable experiment loop preserves rejected candidates, including a PPO residual that regressed from6/10 to5/10. Astra's review identified an incorrect insertion demonstration gate; correcting training guidance and retraining produced the final chain without changing physics or acceptance checks. See [measured sprint results](docs/MICRO-SKILL-SPRINT.md), [experiment report](docs/evidence/skill-observatory/index.html) and [ledger contract](docs/SKILL-EXPERIMENTS.md).
 
 Active robot assets: [I2RT YAM](https://github.com/i2rt-robotics/i2rt), MIT license retained in `assets/robots/yam/LICENSE`. Importing a URDF does not establish calibrated simulation dynamics or hardware readiness. Additional inactive robot assets retain their own source manifests and licenses.

@@ -1,0 +1,22 @@
+{
+  "pre-final-proposals.jsonl": {
+    "sha256": "412357231f7f8e11072590a0628f4cc6d611fc40301000db08465b8cc938367f",
+    "bytes": 130562
+  },
+  "final-experiments.jsonl": {
+    "sha256": "fddf7bb6eda59b3cb6e740525c40cfac25ef96900d0b8b35b072d31e0c220d81",
+    "bytes": 137251
+  },
+  "final-experiments.json": {
+    "sha256": "46e154459647d372292b5aee858770d04af318034a99b69542c5c157aad42d89",
+    "bytes": 359049
+  },
+  "index.html": {
+    "sha256": "41429e1b6b88378ee930e7fc389897857e2be2879545310fd2bd127615a8364a",
+    "bytes": 469591
+  },
+  "experiments.json": {
+    "sha256": "878f4c4ee65fa68dc4dd2622ef9bed1191a34a884486325124b6a98d886656ce",
+    "bytes": 359049
+  }
+}
