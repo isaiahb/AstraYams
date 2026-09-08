@@ -1,7 +1,8 @@
 """Compose a learned pickup with explicitly scripted transport and insertion.
 
 This is a hybrid proof of skill handoff, not three learned policies. The pickup
-uses camera/proprioception only. The handoff monitor and downstream controllers
+uses camera/proprioception in VLA mode, or privileged pose/contact in tiny-policy
+mode. The handoff monitor and downstream controllers
 use privileged simulated contact/pose observations. No state reset occurs between
 skills, and every movement is executed through the original physics/actuators.
 """
