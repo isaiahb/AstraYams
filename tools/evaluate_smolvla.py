@@ -59,6 +59,22 @@ def validate_stats(processor, expected, keys):
     return result
 
 
+def strict_posthoc(trajectory, thresholds):
+    """Score only recorded states; never extend or modify environment termination."""
+    consecutive=0;maximum=0;first=None
+    for row in trajectory:
+        qualifies=(row.get('was_lifted',False)
+            and row['xy_error_m']<thresholds['xy_tolerance_m']
+            and row['orientation_error_rad']<thresholds['yaw_tolerance_rad']
+            and thresholds['tip_z_min_m']<=row['tip_z_m']<=thresholds['tip_z_max_m']
+            and row['peg_speed_m_s']<thresholds['speed_max']
+            and row['peak_contact_force_n']<thresholds['contact_force_max_n'])
+        consecutive=consecutive+1 if qualifies else 0
+        maximum=max(maximum,consecutive)
+        if first is None and consecutive>=thresholds['hold_steps']:first=row['step']
+    return {'success_from_recorded_trace':first is not None,'maximum_consecutive_qualifying_steps':maximum,'first_qualifying_success_step':first}
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     source=parser.add_mutually_exclusive_group(required=True)
@@ -124,7 +140,10 @@ def main():
         'action_contract':'Postprocessed 7 target increments in environment normalized units; clipped to [-1,1] before step.',
         'inference_control':{'n_action_steps':5,'chunk_size':50,'num_steps':10,'control_hz':1/(env.model.opt.timestep*env.frame_skip)},
         'scope':'development' if args.seed_start<5000 else 'final seed range (caller must preserve untouched evaluation)',
-        'max_steps_override':args.max_steps,'episodes':[]}
+        'max_steps_override':args.max_steps,
+        'acceptance_discrepancy':{'actual_evaluator':'Frozen ContactTask uses XY < 0.001 m, full rotation < 0.06 rad, contact load < 45 N; was_lifted, tip 0.0075–0.012 m, linear speed < 0.015 m/s, 15 consecutive steps.',
+            'configured_success':env.specification['success'],
+            'strict_posthoc':'Separate audit applies configured XY, full-rotation (using yaw_tolerance_rad), tip, speed, load and hold thresholds plus was_lifted to recorded states only. Environment success and termination remain unchanged.'},'episodes':[]}
     (args.out/'report.json').write_text(json.dumps(report,indent=2))
     try:
         for seed in range(args.seed_start,args.seed_start+args.episodes):
@@ -159,7 +178,7 @@ def main():
             np.savez_compressed(args.out/f'seed-{seed}-actions.npz',predicted=predicted,executed=executed)
             (args.out/f'seed-{seed}-trace.json').write_text(json.dumps(trajectory))
             episode={'seed':seed,'steps':len(trajectory),'wall_seconds':time.monotonic()-start,'clipped_action_steps':clip_count,'final':trajectory[-1],
-                'ended_by_budget':not (terminated or truncated),'success':bool(result['is_success'])}
+                'ended_by_budget':not (terminated or truncated),'success':bool(result['is_success']),'strict_posthoc':strict_posthoc(trajectory,env.specification['success'])}
             report['episodes'].append(episode);report['successes']=sum(x['success'] for x in report['episodes'])
             (args.out/'report.json').write_text(json.dumps(report,indent=2));print(json.dumps(episode),flush=True)
     finally:

@@ -58,3 +58,5 @@ The fixed-reset run succeeds in 724 steps (14.48 simulated seconds), with tip he
 The separate `yam_contact_curriculum` task randomizes peg and socket XY independently within ±2 mm and varies their shared yaw within ±0.02 radians. Seeds 0–4 all succeed with this scripted controller. This is narrow reset variation, not broad robustness or independent angular misalignment coverage.
 
 The synchronized overview/closeup video is `runs/contact-teacher-video/scripted-contact-insertion.mp4`, explicitly labelled scripted feedback controller. Initial learned state-policy candidates fail. Camera-based VLA fine-tuning is a separate experiment; controller success does not establish learned performance.
+
+The frozen v0 task JSON contains stale success values (0.8 mm XY, 0.05 rad and 15 N); the active Python evaluator uses 1.0 mm XY, 0.06 rad full orientation and 45 N, plus the recorded height/speed/15-step hold checks. Reported v0 success follows that actual evaluator. This discrepancy is preserved during the comparison rather than silently changing thresholds between runs. A subsequent task version should make the declared specification authoritative.

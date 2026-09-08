@@ -59,8 +59,15 @@ def main():
     p.add_argument('--development-episodes', type=int, default=16)
     p.add_argument('--train-seed-start', type=int, default=100)
     p.add_argument('--development-seed-start', type=int, default=1000)
+    p.add_argument('--learner-checkpoint', type=Path, help='Collect expert labels on states visited by a frozen learned policy (DAgger)')
+    p.add_argument('--teacher-execution-probability', type=float, default=0.5, help='With a learner checkpoint, probability of executing expert rather than learned action')
+    p.add_argument('--action-noise-std', type=float, default=0., help='Training-only Gaussian noise on executed actions; retain unperturbed teacher_action labels')
     p.add_argument('--camera', action='store_true', help='Save synchronized pre-action RGB and proprioception (large files)')
     args = p.parse_args()
+    if not 0 <= args.teacher_execution_probability <= 1:
+        p.error('Teacher execution probability must be in [0,1]')
+    if args.action_noise_std < 0 or not np.isfinite(args.action_noise_std):
+        p.error('Action noise must be finite and nonnegative')
     if min(args.train_episodes, args.development_episodes) < 1:
         p.error('Both episode counts must be positive')
     splits = {'train': list(range(args.train_seed_start, args.train_seed_start + args.train_episodes)),
@@ -76,9 +83,29 @@ def main():
     teacher = load_callable(args.teacher)
     env = load_callable(args.env_class)(args.task)
     camera = CameraObservation(env) if args.camera else None
+    learner = None
+    if args.learner_checkpoint:
+        import torch
+        try:
+            from .finetune_skill import StatePolicy, predict
+        except ImportError:
+            from finetune_skill import StatePolicy, predict
+        torch.set_num_threads(2)
+        checkpoint = torch.load(args.learner_checkpoint, map_location='cpu', weights_only=False)
+        if checkpoint['task_hashes'] != task_hashes(args.task) or checkpoint.get('env_class') != args.env_class:
+            raise ValueError('DAgger checkpoint must match the current task/environment')
+        learner = StatePolicy(**checkpoint['config'])
+        learner.load_state_dict(checkpoint['model'])
+        learner.eval()
     manifest = {'schema_version': 1, 'env_class': args.env_class, 'teacher': args.teacher, 'policy_kind': 'scripted_privileged_teacher',
                 'task': str(Path(args.task).resolve()), 'task_hashes': task_hashes(args.task),
                 'env_source_sha256': environment_source_hash(args.env_class),
+                'teacher_module_sha256': environment_source_hash(args.teacher),
+                'reset_configuration': env.specification.get('reset'), 'curriculum_configuration': env.specification.get('curriculum'), 'action_noise_std': args.action_noise_std,
+                'learner_checkpoint': str(args.learner_checkpoint) if args.learner_checkpoint else None,
+                'learner_checkpoint_sha256': hashlib.sha256(args.learner_checkpoint.read_bytes()).hexdigest() if args.learner_checkpoint else None,
+                'teacher_execution_probability': args.teacher_execution_probability if learner is not None else 1.,
+                'training_label': 'teacher_action; action stores the command actually executed',
                 'alignment': 'state[t], image[t], proprioception[t] precede action[t]; next_state[t] follows action[t]',
                 'camera': args.camera, 'teacher_source_sha256': hashlib.sha256(inspect.getsource(teacher).encode()).hexdigest(), 'episodes': []}
     try:
@@ -86,7 +113,11 @@ def main():
             (out / split).mkdir()
             for seed in seeds:
                 obs, info = env.reset(seed=seed)
-                data = {k: [] for k in ['state', 'action', 'next_state', 'reward', 'terminated', 'truncated', 'sim_time']}
+                if learner is not None:
+                    learner.reset_history()
+                initial_hash = hashlib.sha256(np.asarray(obs).tobytes()).hexdigest()
+                noise_rng = np.random.default_rng(seed)
+                data = {k: [] for k in ['state', 'action', 'teacher_action', 'executed_teacher', 'next_state', 'reward', 'terminated', 'truncated', 'sim_time']}
                 if camera:
                     data.update(image=[], proprioception=[])
                 for step in range(env.horizon):
@@ -96,7 +127,13 @@ def main():
                         frame = camera.observation(obs)
                         for key in ['image', 'proprioception']:
                             data[key].append(frame[key])
-                    action = np.asarray(teacher(env), dtype=np.float32)
+                    teacher_action = np.asarray(teacher(env), dtype=np.float32)
+                    executed_teacher = learner is None or noise_rng.random() < args.teacher_execution_probability
+                    learner_action = predict(learner, obs, checkpoint['mean'], checkpoint['std']) if learner is not None else None
+                    command = teacher_action if executed_teacher else learner_action
+                    action = np.clip(command + noise_rng.normal(0, args.action_noise_std, teacher_action.shape), -1, 1).astype(np.float32)
+                    data['executed_teacher'].append(executed_teacher)
+                    data['teacher_action'].append(teacher_action.copy())
                     obs, reward, terminated, truncated, info = env.step(action)
                     for key, value in [('action', action), ('next_state', obs.copy()), ('reward', reward), ('terminated', terminated), ('truncated', truncated)]:
                         data[key].append(value)
@@ -104,7 +141,10 @@ def main():
                         break
                 path = f'{split}/episode_{seed}.npz'
                 np.savez_compressed(out / path, **{k: np.asarray(v) for k, v in data.items()})
-                manifest['episodes'].append({'split': split, 'seed': seed, 'file': path, 'steps': step + 1, 'sha256': hashlib.sha256((out / path).read_bytes()).hexdigest(), **info})
+                manifest['episodes'].append({'split': split, 'seed': seed, 'file': path, 'steps': step + 1, 'initial_state_sha256': initial_hash,
+                    'trajectory_sha256': hashlib.sha256(np.asarray(data['state']).tobytes() + np.asarray(data['action']).tobytes()).hexdigest(), 'sha256': hashlib.sha256((out / path).read_bytes()).hexdigest(), **info})
+                manifest['unique_initial_states'] = len({r['initial_state_sha256'] for r in manifest['episodes']})
+                manifest['unique_state_action_trajectories'] = len({r['trajectory_sha256'] for r in manifest['episodes']})
                 (out / 'manifest.json').write_text(json.dumps(manifest, indent=2))
             rows = [r for r in manifest['episodes'] if r['split'] == split]
             print(split, sum(r['is_success'] for r in rows), '/', len(rows), flush=True)

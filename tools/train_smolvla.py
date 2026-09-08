@@ -12,11 +12,12 @@ def main():
     p.add_argument('--repo-id',default='astrafactory/yam-contact-train')
     p.add_argument('--out',type=Path,required=True)
     p.add_argument('--steps',type=int,default=1000)
+    p.add_argument('--policy-path',default='lerobot/smolvla_base',help='Base model or checkpoint; starts a new fine-tuning phase with a fresh optimizer')
     args=p.parse_args()
-    policy=SmolVLAConfig.from_pretrained('lerobot/smolvla_base')
+    policy=SmolVLAConfig.from_pretrained(args.policy_path)
     # Direct assignment replaces the base embodiment's three cameras/six joints.
     policy.input_features={};policy.output_features={}
-    policy.pretrained_path=Path('lerobot/smolvla_base')
+    policy.pretrained_path=Path(args.policy_path)
     policy.device='cuda';policy.push_to_hub=False
     policy.n_action_steps=5;policy.chunk_size=50;policy.num_steps=10
     policy.scheduler_warmup_steps=100

@@ -1,5 +1,7 @@
 # Reproducible state-policy learning loop
 
+Current free-peg/curriculum results and the bounded DAgger experiment are documented in [STATE-LEARNING.md](STATE-LEARNING.md). The tested free-contact learned candidates remain unsuccessful; historical rigid-attachment results below do not transfer to them.
+
 This pipeline trains a compact learned state policy for the articulated six-axis YAM arm, with the earlier Cartesian fixture retained as historical pipeline evidence. The policy is a two-hidden-layer, 128-unit tanh MLP trained by behavioral cloning. YAM observations contain 31 values, including privileged simulator goal errors; the historical fixture has 21. This is **not a VLA**, camera policy, learned grasp, or physical validation. The scripted teacher is used only when collecting demonstrations; learned rollout inference consumes the observation tensor alone.
 
 ## Articulated YAM adapter
