@@ -12,6 +12,7 @@ def main():
     p.add_argument('--repo-id',default='astrafactory/yam-contact-train')
     p.add_argument('--out',type=Path,required=True)
     p.add_argument('--steps',type=int,default=1000)
+    p.add_argument('--save-freq',type=int,default=500)
     p.add_argument('--policy-path',default='lerobot/smolvla_base',help='Base model or checkpoint; starts a new fine-tuning phase with a fresh optimizer')
     args=p.parse_args()
     policy=SmolVLAConfig.from_pretrained(args.policy_path)
@@ -24,7 +25,7 @@ def main():
     config=TrainPipelineConfig(
         dataset=DatasetConfig(repo_id=args.repo_id,root=str(args.dataset_root)),
         policy=policy,output_dir=args.out,job_name=args.out.name,
-        batch_size=16,steps=args.steps,save_freq=500,env_eval_freq=0,
+        batch_size=16,steps=args.steps,save_freq=args.save_freq,env_eval_freq=0,
         log_freq=25,num_workers=2,wandb=WandBConfig(enable=False))
     train(config)
 

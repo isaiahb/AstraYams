@@ -1,0 +1,336 @@
+{
+  "label": "Hybrid skill composition, not a fully learned assembly policy",
+  "learned_component": "runs/small-grasp-v1/policy.pt",
+  "learned_inputs": "Privileged simulator pose/contact, 5252-parameter state policy with scripted IK",
+  "scripted_components": [
+    "pose-feedback transport",
+    "pose-feedback insertion"
+  ],
+  "monitor_inputs": "Privileged simulator contact and pose; not claimed as deployed hardware sensing.",
+  "reset_between_skills": false,
+  "seed": 2004,
+  "model_checks": {
+    "peg_joint_is_free": true,
+    "peg_parent_is_world": true,
+    "peg_is_not_mocap": true,
+    "no_peg_attachment_equalities": true,
+    "gravity_points_down": true,
+    "attachment_equality_ids": [],
+    "peg_mass_kg": 0.04,
+    "passed": true
+  },
+  "task_hashes": {
+    "../../assets/robots/yam/collision/tip_left_00.stl": "adca7c6d28578f029fbeb00bfb5c65853fc2273e0cceecc0690d6ef3ca95fb5a",
+    "../../assets/robots/yam/collision/tip_left_01.stl": "52077d55a7e94a30d111a2413c5475716a07a39fa3b8631c1b20cf46a3049a2f",
+    "../../assets/robots/yam/collision/tip_left_02.stl": "6fdef5eb8f6a0ddf1ac60dff652301efaaa9a21c79585baaaa6945a11dc0c579",
+    "../../assets/robots/yam/collision/tip_left_03.stl": "1d2ac17668cdbb2d71a966afb3ccb3ddc41c269ed8c0c17e1dd95b01b1dff0b7",
+    "../../assets/robots/yam/collision/tip_left_04.stl": "a16c2ddd5797547908cdc6452227f4fb1154b86ffcd806944aaabd460ba0e6c8",
+    "../../assets/robots/yam/collision/tip_left_05.stl": "c5eab163b45b0f981a9fa52fc301f8afcb8937da8ec908256aa11109f2dcbf3b",
+    "../../assets/robots/yam/collision/tip_left_06.stl": "21cdb6486bbf51d896a083b26ae873558e71ea57ccb2f760708eed4cdb11116d",
+    "../../assets/robots/yam/collision/tip_left_07.stl": "39802b1389c48ef10fa70996d28c45d5cf140b4fbfcf7f5e2060c7222c30113f",
+    "../../assets/robots/yam/collision/tip_left_08.stl": "84973d7c4709a3f7fba3849b46aa15b6ea3208d15c8d610f5ff593978d7b7932",
+    "../../assets/robots/yam/collision/tip_left_09.stl": "0accb8adc4eeb98d1b57f7033e4415599512cc966ef8f32ab3254c957f988877",
+    "../../assets/robots/yam/collision/tip_left_10.stl": "cdf68c2b932df02ce7155691c28a26aba8f8671512bfe3ad4b5f39c9db97430c",
+    "../../assets/robots/yam/collision/tip_left_11.stl": "0af6de816d1af607e61e55f1ce37693c125f59665ac6309074afa12da3785b05",
+    "../../assets/robots/yam/collision/tip_left_12.stl": "1c458d8f370d10529e6e01f40e3f00152cef6df1c88e558ad920b305031773a1",
+    "../../assets/robots/yam/collision/tip_left_13.stl": "6ccee9c77bedcdb3c150b747b4ec5b4474904278f295bbf48920013dc8a36b4d",
+    "../../assets/robots/yam/collision/tip_left_14.stl": "cd2f195ea4fe35bd34faf71cb01a71415d96c013c92a5529dc4f61ce70ce9362",
+    "../../assets/robots/yam/collision/tip_left_15.stl": "3514a9e2e60234673a9e91f7aa24f4025c6d2108119dc2733ec386fb48226c9d",
+    "../../assets/robots/yam/collision/tip_left_16.stl": "58b235316c7c6dd259d6ea013fd763a9a68a60a65fc71a05892b4258588ee46c",
+    "../../assets/robots/yam/collision/tip_left_17.stl": "049dffac371da21f70eb0a743a48fc9970113527a9afaa0f2ad93e025ae08994",
+    "../../assets/robots/yam/collision/tip_left_18.stl": "bda7786620893ac10c23ce00fd0e36eb3f0e21a3dea96e8988979419a0c8017c",
+    "../../assets/robots/yam/collision/tip_left_19.stl": "09c3d1f05dda23ecbefba84462231c706870281ec76c2e0fb2c4137afa19c5c9",
+    "../../assets/robots/yam/collision/tip_left_20.stl": "0aed24b7c6789f78832652fb0e7682ae8fd77dcac9fe79fe912a392dd5d929e4",
+    "../../assets/robots/yam/collision/tip_left_21.stl": "6b9afd5162bc7fc244285461795f886b1bc0a5c7a0be5875a3731febfade9f01",
+    "../../assets/robots/yam/collision/tip_left_22.stl": "1bf67f77d0c229a146a387c2a582fb0a5a167a5119462346048deda9fd4df246",
+    "../../assets/robots/yam/collision/tip_left_23.stl": "b9ca5563f61ad264c08c42eaffb69232c59f9b48257c2c0f18b304e50e482e90",
+    "../../assets/robots/yam/collision/tip_right_00.stl": "9bcb14014ec0f54deb4198ce8799c339cfe5186a29cd45b37d768452f39e90f4",
+    "../../assets/robots/yam/collision/tip_right_01.stl": "7f4aa06110fc1b37fb8d38b6caf5a74a2bb8fbb11c5cd3253090e5301b2369bc",
+    "../../assets/robots/yam/collision/tip_right_02.stl": "0c528cc0a9c9017cda03196b9e5b5edae0494e964589fad294224d89296867c8",
+    "../../assets/robots/yam/collision/tip_right_03.stl": "d50e1c811a3d7c23792b05111f1f7c18a666d6874985690791f5541807b38b0e",
+    "../../assets/robots/yam/collision/tip_right_04.stl": "39e71f0558ba3594176ecbe5bf5db46c0da49f12f1b67158ca113d03d9feb0d8",
+    "../../assets/robots/yam/collision/tip_right_05.stl": "26e7c75493167a3f6104665cb318f2dbb053c3527a4326d59a8ed2aa7abab13b",
+    "../../assets/robots/yam/collision/tip_right_06.stl": "fa6815b47bbc37c1d95d1b915cc2a075004988035764733a3ff9ecaadeba46cc",
+    "../../assets/robots/yam/collision/tip_right_07.stl": "1497f7e956c64f30c9037e41403c5c8693dc878736b38b0c6929bcfc7d523250",
+    "../../assets/robots/yam/collision/tip_right_08.stl": "0307768fe031d92dee8650bfa722d891b3367c231953ef412c038b7634c35fdb",
+    "../../assets/robots/yam/collision/tip_right_09.stl": "2b0fcf7960e78086371257a427864d9968cc816e014d9f98cabfad73ec07cca8",
+    "../../assets/robots/yam/collision/tip_right_10.stl": "17dc5e563e202bf5df7d22598ac00272701aca1fc1421e8e7fb8b553c598ddb8",
+    "../../assets/robots/yam/collision/tip_right_11.stl": "28b38c7ed46b6b1fa333ba426ae773b2f73b104e2deda26feef40be636fd255d",
+    "../../assets/robots/yam/collision/tip_right_12.stl": "9ee6c51af2580fba912c089c9657bba3b15b56a22530ff814ba65c11bd8b6384",
+    "../../assets/robots/yam/collision/tip_right_13.stl": "f70747cabab76a6163a9592649fd84fb132d2f3baac4092f7d580ddfda3f8665",
+    "../../assets/robots/yam/collision/tip_right_14.stl": "836ff00716cea95a7423f6d2090badc431b5bf86be71208df25a37669f0fabd4",
+    "../../assets/robots/yam/collision/tip_right_15.stl": "cfd7c13e4fc807e7a4bffc3aab7748eac67e3e8d83a7e7b56031648a3e9d8e40",
+    "../../assets/robots/yam/collision/tip_right_16.stl": "88dc755e2d24acbb17e1f57c7df9af968bf6de49e3afa424073b3c75abf627aa",
+    "../../assets/robots/yam/collision/tip_right_17.stl": "9218d710dac54e53980235af75c1b17251bbb13f97566bee12f4cea1cdb573c9",
+    "../../assets/robots/yam/collision/tip_right_18.stl": "f77cbb94daff6fb7e9b3ca3d7507157d1666587fb51eeb73e151089e326507de",
+    "../../assets/robots/yam/collision/tip_right_19.stl": "19e4287bcd8eeaeb33d93eb3b67d408b32397b83bd6184be51b1c631cca2a1de",
+    "../../assets/robots/yam/collision/tip_right_20.stl": "286058bf86bc73201e729bff41529e6475219ce51179e80c956ee2715edd7b18",
+    "../../assets/robots/yam/collision/tip_right_21.stl": "0977e9ca9c31598e30e145bf27c37f6c65fd1da0db2092cfbfd928a52d3f21e4",
+    "../../assets/robots/yam/collision/tip_right_22.stl": "678b43b5615c4424be580e71b5ca36d534716cbfb7e0a40cfdd4203dcbba802b",
+    "../../assets/robots/yam/collision/tip_right_23.stl": "86fd3dc072aa72805d17097278533e3dfff9f4d0cce5cc740fca33d8a3b27a9a",
+    "../../assets/robots/yam/v1/assets/base.stl": "d95a5aa0c06a5ef6da02788b0df5a14e4202c1ae8eb2771a7f6f8947e3a490c7",
+    "../../assets/robots/yam/v1/assets/gripper.stl": "e0dad958755f0a9d58e6bea4f16fed2849146ae81c0dbd45487aff308cb49e58",
+    "../../assets/robots/yam/v1/assets/link1.stl": "41f7dfbd0471a0f96884c73782e82927f2bbc6aced9b55c0111da1b52d6e0c50",
+    "../../assets/robots/yam/v1/assets/link2.stl": "067b51567a95a631d50fc02515bd045a2eb7f2f34489d5aec31d9f3f6ce58b30",
+    "../../assets/robots/yam/v1/assets/link3.stl": "9650a114393881b54a68822ba3fb48fcd3318023ebecaf251e4f7804e91f801c",
+    "../../assets/robots/yam/v1/assets/link4.stl": "42740ce2bb8693760a35dc6e9e8fe0981999c02d6bf167a465c9936acf41c557",
+    "../../assets/robots/yam/v1/assets/link5.stl": "f70eb1191d6a1ccbb748a46fe8ba541f38094c9829fd1859300e70360c5a07c7",
+    "../../assets/robots/yam/v1/assets/tip_left.stl": "281354d77e4914ccd994b6c71fecce49a91527701f268d318f801769a6913685",
+    "../../assets/robots/yam/v1/assets/tip_right.stl": "070925233d4b742c05c4d5508e951deba5947c2fabfa336a4e33db599c70ac3a",
+    "../keyed_insertion/assets/peg.stl": "0df2b8307657ae8b6918bcf6ead5dd97f40bb00de934341c81ef37be2e49403a",
+    "../keyed_insertion/assets/wall_0.stl": "63cee48d2b0c02fe99061637ebc119da0a8afe77024db0099b3f962bd33e63b8",
+    "../keyed_insertion/assets/wall_1.stl": "277e6114ed117742a8c5a769d313f798f657aaa010f13a02e0ae8bee00440e7b",
+    "../keyed_insertion/assets/wall_2.stl": "cc7ee55e4c4b3029e526feb1dc2fb65f54f347d286f8907f6793858859bc73f8",
+    "../keyed_insertion/assets/wall_3.stl": "8af9b50f06d184e05d065bebf34d916628f20c1f08bfa51fb42c262b3c4ec416",
+    "../keyed_insertion/assets/wall_4.stl": "27c20f8579d0187a2fc929a51fd1697fb392736706f540d3fafe9bcdafac2add",
+    "../keyed_insertion/assets/wall_5.stl": "1e0d4066f1fdec724b37e6769269e87f7d9ebf8fe3de043b0042d38b4848ccad",
+    "../keyed_insertion/assets/wall_6.stl": "045e26033bd97c9119f3ef8a978cc8f31f1fcfe30c41e6a10e41ef443de0673e",
+    "../keyed_insertion/assets/wall_7.stl": "ffcd04e2e530640fb9fd853fa233e88a08fe016b2d52fc4fc05cd505ab50fcca",
+    "../keyed_insertion/assets/wall_8.stl": "ebff5f5e1cafd7eb1d634a30783a7222070b30fbf133db06857dc280639fc20f",
+    "README.md": "03594f6aba645001d5e59bc8d6cd46623c84fbf86396629f7fba2cdf2cfa5ab2",
+    "design.json": "2cf2a6b0b88034a5385ec70455f196d86a1fee710633dc9c4e0b8d8b68f929f7",
+    "reward.py": "a66014aad1f733006aa6d11c92e4384161ac19c1502fcc428db2657689526adb",
+    "scene.xml": "05148eb172da112bda5acacc80b6e8851cfb46dbdf30df7567326d06d4ac8a10",
+    "task.json": "d50acaaeff78b69ae28639de77aedfea887e5679275d2ccd2c1953d809a79d58",
+    "task.py": "f34f1e647baa25d869134a089641fab4d1188f081c64f25ccaa70121db20b49d"
+  },
+  "script_sha256": "327a9a0696213ea1a24b0157e520bda8f917db24ab739c5cfd64a96e429de50d",
+  "handoffs": [
+    {
+      "to": "scripted transport",
+      "time": 14.620000000001552,
+      "guard": "unsupported bilateral lift >=20mm for >=0.5s and absolute peg clearance >=65mm",
+      "supported_seconds": 2.4200000000000017,
+      "physical_state": {
+        "peg_z_m": 0.06501321339458623,
+        "tool_z_m": 0.1207768588458121,
+        "peg_vertical_velocity_m_s": 0.011998365656429139,
+        "left_force_n": 0.9682808802657232,
+        "right_force_n": 1.072412672176119,
+        "nonfinger_support_force_n": 0.0,
+        "peg_contacts": [
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.2550761083143209
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.25070505127780324
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.2527750682299486
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.20972465244365043
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_2",
+            "force_n": 0.13145133986786287
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_2",
+            "force_n": 0.11946134357695341
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_2",
+            "force_n": 0.17996242977457255
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_2",
+            "force_n": 0.1807797244535156
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.09591366104923404
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.12962063402667798
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.12780716161280303
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.10741637781449949
+          }
+        ],
+        "grip_joint_position_m": -0.006935451580752456,
+        "sim_time": 14.620000000001552
+      }
+    },
+    {
+      "to": "scripted insertion",
+      "time": 17.900000000000958,
+      "guard": "measured socket alignment / overhead pose",
+      "physical_state": {
+        "peg_z_m": 0.06479501596490421,
+        "tool_z_m": 0.1206987206275463,
+        "peg_vertical_velocity_m_s": -6.327463247486307e-06,
+        "left_force_n": 1.263385512872146,
+        "right_force_n": 2.290447059204901,
+        "nonfinger_support_force_n": 0.0,
+        "peg_contacts": [
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.2687498573447872
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.08663435293042365
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.1856621727462764
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.3522770222977496
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_13",
+            "force_n": 0.2687679893547384
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_13",
+            "force_n": 0.10129411819817072
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_2",
+            "force_n": 0.6532471549322497
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.25604329760227873
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.5963538755899139
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.40437172622279477
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.3804310048576635
+          }
+        ],
+        "grip_joint_position_m": -0.006930483006953643,
+        "sim_time": 17.900000000000958
+      }
+    }
+  ],
+  "final": {
+    "phase": "scripted insertion",
+    "step": 1138,
+    "is_success": true,
+    "peg_z_m": 0.009303056507913026,
+    "tip_z_m": 0.009303056507913026,
+    "xy_error_m": 0.00015608593471066172,
+    "orientation_error_rad": 0.000615575732153757,
+    "yaw_error_rad": 6.183458693233632e-06,
+    "left_contact": true,
+    "right_contact": true,
+    "grasp_contacts": true,
+    "was_lifted": true,
+    "stage": 5,
+    "hold_steps": 15,
+    "peg_speed_m_s": 0.008171008707869935,
+    "task_id": "yam-contact-curriculum-v0",
+    "sim_time": 22.759999999998264,
+    "peak_contact_force_n": 3.8215176471188346,
+    "episode_peak_force_n": 30.28148122304464,
+    "reason": "success",
+    "tool_z_m": 0.06543491811908891,
+    "peg_vertical_velocity_m_s": -0.008109816341648673,
+    "left_force_n": 1.2516237909589008,
+    "right_force_n": 2.175396771108811,
+    "nonfinger_support_force_n": 0.0,
+    "peg_contacts": [
+      {
+        "group": "left",
+        "other_geom": "finger_left_7",
+        "force_n": 0.2667021585376529
+      },
+      {
+        "group": "left",
+        "other_geom": "finger_left_7",
+        "force_n": 0.08845229666702405
+      },
+      {
+        "group": "left",
+        "other_geom": "finger_left_7",
+        "force_n": 0.18581759048208257
+      },
+      {
+        "group": "left",
+        "other_geom": "finger_left_7",
+        "force_n": 0.3450550087687084
+      },
+      {
+        "group": "left",
+        "other_geom": "finger_left_13",
+        "force_n": 0.262456895917039
+      },
+      {
+        "group": "left",
+        "other_geom": "finger_left_13",
+        "force_n": 0.10313984058639374
+      },
+      {
+        "group": "right",
+        "other_geom": "finger_right_2",
+        "force_n": 0.5978432019869805
+      },
+      {
+        "group": "right",
+        "other_geom": "finger_right_11",
+        "force_n": 0.2426646726099681
+      },
+      {
+        "group": "right",
+        "other_geom": "finger_right_11",
+        "force_n": 0.577375100768373
+      },
+      {
+        "group": "right",
+        "other_geom": "finger_right_11",
+        "force_n": 0.3907343897468203
+      },
+      {
+        "group": "right",
+        "other_geom": "finger_right_11",
+        "force_n": 0.3667794059966693
+      }
+    ],
+    "grip_joint_position_m": -0.006931196312156223
+  },
+  "success": true
+}
