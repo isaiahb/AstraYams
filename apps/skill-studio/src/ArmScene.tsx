@@ -1,0 +1,27 @@
+import {useEffect,useRef,useState} from 'react';
+import * as T from 'three';
+import {STLLoader} from 'three/examples/jsm/loaders/STLLoader.js';
+const vertex=`varying vec3 n; void main(){n=normalize(normalMatrix*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`;
+const fragment=`uniform vec3 ink; varying vec3 n; void main(){float d=dot(normalize(n),normalize(vec3(-.5,.8,1.)));float shade=d>.52?1.:d>.05?.83:.64;gl_FragColor=vec4(ink*shade,1.);#include <colorspace_fragment>}`.replace(';#include',';\n#include');
+export function ArmScene({token}:{token:string}){
+ const host=useRef<HTMLDivElement>(null),[failed,setFailed]=useState(false);
+ useEffect(()=>{if(!host.current)return;let dead=false,ready=false;const scene=new T.Scene(),camera=new T.PerspectiveCamera(32,1,.001,100);camera.up.set(0,0,1);
+ const renderer=new T.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setClearColor(0,0);host.current.appendChild(renderer.domElement);
+ const root=new T.Group();scene.add(root);const joints=new Map<string,{g:T.Group,home:T.Quaternion,axis:T.Vector3,q:number}>();
+ const meshes:T.Mesh[]=[];const materials:T.Material[]=[];
+ function ink(color:number){const m=new T.ShaderMaterial({uniforms:{ink:{value:new T.Color(color)}},vertexShader:vertex,fragmentShader:fragment});materials.push(m);return m;}
+ const outline=new T.ShaderMaterial({side:T.BackSide,vertexShader:'void main(){gl_Position=projectionMatrix*modelViewMatrix*vec4(position+normal*.00085,1.);}',fragmentShader:'void main(){gl_FragColor=vec4(.035,.08,.08,1.);}'});materials.push(outline);
+ const asset=(p:string)=>'/api/artifact?projectId=robot-arm&path='+encodeURIComponent(p)+'&token='+token;
+ const nums=(s:string|null|undefined,fallback:string)=>new T.Vector3(...(s||fallback).trim().split(/\s+/).map(Number) as [number,number,number]);
+ async function load(){const path='assets/robots/yam/v1/yam.urdf';const res=await fetch(asset(path));if(!res.ok)throw new Error('Robot preview unavailable');const xml=new DOMParser().parseFromString(await res.text(),'application/xml');const links=new Map<string,T.Group>(),loader=new STLLoader();const work:Promise<void>[]=[];
+ for(const l of xml.querySelectorAll('robot > link')){const name=l.getAttribute('name')!,g=new T.Group();links.set(name,g);for(const v of l.querySelectorAll(':scope > visual')){const file=v.querySelector('mesh');if(!file)continue;const p=new URL(file.getAttribute('filename')!,'http://local/'+path).pathname.slice(1);work.push((async()=>{const r=await fetch(asset(p));if(!r.ok)throw new Error('Robot mesh unavailable');const geo=loader.parse(await r.arrayBuffer());if(dead){geo.dispose();return;}geo.computeVertexNormals();const colored=/link1|link4|link5/.test(name),dark=/tip_/.test(name);const mesh=new T.Mesh(geo,ink(dark?0x173b3b:colored?0x518f91:0xe8e6df));const origin=v.querySelector('origin');mesh.position.copy(nums(origin?.getAttribute('xyz'),'0 0 0'));const rpy=nums(origin?.getAttribute('rpy'),'0 0 0');mesh.rotation.set(rpy.x,rpy.y,rpy.z,'ZYX');mesh.scale.copy(nums(file.getAttribute('scale'),'1 1 1'));const edge=new T.Mesh(geo,outline);mesh.add(edge);meshes.push(mesh);g.add(mesh);})());}}
+ const children=new Set<string>(),poses:Record<string,number>={joint1:.3,joint2:1.05,joint3:1.7,joint4:.25,joint5:0,joint6:0};for(const j of xml.querySelectorAll('robot > joint')){const child=j.querySelector('child')!.getAttribute('link')!,parent=j.querySelector('parent')!.getAttribute('link')!,g=links.get(child)!,o=j.querySelector('origin'),rpy=nums(o?.getAttribute('rpy'),'0 0 0');g.position.copy(nums(o?.getAttribute('xyz'),'0 0 0'));g.rotation.set(rpy.x,rpy.y,rpy.z,'ZYX');const name=j.getAttribute('name')!,home=g.quaternion.clone(),axis=nums(j.querySelector('axis')?.getAttribute('xyz'),'0 0 1').normalize(),q=poses[name]||0;if(j.getAttribute('type')==='revolute'){g.quaternion.multiply(new T.Quaternion().setFromAxisAngle(axis,q));joints.set(name,{g,home,axis,q});}links.get(parent)!.add(g);children.add(child);}
+ for(const [name,g] of links)if(!children.has(name))root.add(g);await Promise.all(work);if(dead)return;
+ const b=new T.Box3().setFromObject(root),c=b.getCenter(new T.Vector3()),size=b.getSize(new T.Vector3()),r=Math.max(size.x,size.y,size.z);camera.position.copy(c).add(new T.Vector3(1.15,-1.8,.85).normalize().multiplyScalar(r*2.05));camera.lookAt(c);ready=true;}
+ load().catch(()=>{if(!dead)setFailed(true);});const reduced=matchMedia('(prefers-reduced-motion: reduce)');let start=performance.now();
+ const resize=new ResizeObserver(()=>{if(!host.current)return;const w=host.current.clientWidth,h=host.current.clientHeight;renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();});resize.observe(host.current);
+ renderer.setAnimationLoop(()=>{if(ready&&!reduced.matches){const t=(performance.now()-start)/1000;for(const [name,j] of joints){const delta=name==='joint1'?Math.sin(t*.18)*.12:name==='joint4'?Math.sin(t*.25)*.07:0;j.g.quaternion.copy(j.home).multiply(new T.Quaternion().setFromAxisAngle(j.axis,j.q+delta));}}renderer.render(scene,camera);});
+ return()=>{dead=true;resize.disconnect();renderer.setAnimationLoop(null);meshes.forEach(m=>m.geometry.dispose());materials.forEach(m=>m.dispose());renderer.dispose();renderer.domElement.remove();};
+ },[token]);
+ return <div className="arm-scene" ref={host} aria-hidden="true">{failed&&<span className="preview-fallback">Robot preview unavailable</span>}</div>;
+}
