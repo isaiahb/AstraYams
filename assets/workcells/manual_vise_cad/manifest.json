@@ -82,6 +82,7 @@
           0.105
         ]
       },
+      "assembly_group": "vise",
       "sha256": "098a802318c0485dfe33e234b1c06fa03c30efdaf45b3ca8567569b81c5df4f5"
     },
     {
@@ -119,6 +120,7 @@
           0.0101
         ]
       },
+      "assembly_group": "vise",
       "sha256": "9104c794254c5f7e648a95ca541a5e4df8712b956d32599a2ea9934a7cb2422f"
     },
     {
@@ -156,6 +158,7 @@
           0.0101
         ]
       },
+      "assembly_group": "vise",
       "sha256": "bf78f0c6a68632d4736854497e97fb90f56c5eb607de0c78904e45da9df6bec1"
     },
     {
@@ -193,6 +196,7 @@
           0.0101
         ]
       },
+      "assembly_group": "vise",
       "sha256": "412eaacb8454177e1e0d6284a32dff81590ac38be74ffbcd6e90f33572c1a6f2"
     },
     {
@@ -230,6 +234,7 @@
           0.0101
         ]
       },
+      "assembly_group": "vise",
       "sha256": "ef314d474ed32f85fe673735b0cc34b8efa81fff06056b700d935dc859ce44cf"
     },
     {
@@ -267,6 +272,7 @@
           0.0101
         ]
       },
+      "assembly_group": "vise",
       "sha256": "a8dae088639af9905921dd95d8fd29cf0ad8638e63121736d1a41c941b0f1e1f"
     },
     {
@@ -304,6 +310,7 @@
           0.0101
         ]
       },
+      "assembly_group": "vise",
       "sha256": "b3681cb0d595aada766cb7963aa850c2c955d555450262330c2275bf0cc385cd"
     },
     {
@@ -341,6 +348,7 @@
           0.012000000000000009
         ]
       },
+      "assembly_group": "vise",
       "sha256": "4ae138fd4dc648c489d6d34dfe501637ff0c5e863cc1c0725f8fcd7d084b248f"
     },
     {
@@ -378,6 +386,7 @@
           0.016000000000000004
         ]
       },
+      "assembly_group": "vise",
       "sha256": "823141138f077962b4a0619ea2fe74016df244fefedc587f1201e40d427d822f"
     },
     {
@@ -415,6 +424,7 @@
           0.020000000000000004
         ]
       },
+      "assembly_group": "vise",
       "sha256": "fef20b5a8b748492d09caaaaf8cab20e836fcf30a2f1457410d393ad2b53cce9"
     },
     {
@@ -452,6 +462,7 @@
           0.04
         ]
       },
+      "assembly_group": "vise",
       "sha256": "c0397301ce86cf611b483755663cad5fffb268ec4d27ce69d4637390e6588cb5"
     },
     {
@@ -489,6 +500,7 @@
           0.04
         ]
       },
+      "assembly_group": "vise",
       "sha256": "c0db1d4487df780d9baafb5f58806410a6f126905f2ca6bb365322d53fc82605"
     },
     {
@@ -526,6 +538,7 @@
           0.01
         ]
       },
+      "assembly_group": "vise",
       "sha256": "d0056cfb87dd3cbcbe34350b6845de61eeec6070d43197423397519cdc06b3d8"
     },
     {
@@ -563,6 +576,7 @@
           0.01
         ]
       },
+      "assembly_group": "vise",
       "sha256": "3e42441f8ad9fc2190edc5f3442228a0f339348c1d363cbda2edb6be2f142bf7"
     },
     {
@@ -600,6 +614,7 @@
           0.04
         ]
       },
+      "assembly_group": "vise",
       "sha256": "5034202b6b871d58ec900a05ae6360e5615735988b446a516ef0485b36581c26"
     },
     {
@@ -637,6 +652,7 @@
           0.04
         ]
       },
+      "assembly_group": "vise",
       "sha256": "d35738e4ad9e6bacabc7a3ccb9e8e08d32e09357b27aa2a802f7ee35c5811de7"
     },
     {
@@ -674,6 +690,7 @@
           0.0275
         ]
       },
+      "assembly_group": "vise",
       "sha256": "2feb62586ce9c55aeb4f8424b18f498316e3c5cec10c8105d1d7ac581a075760"
     },
     {
@@ -711,6 +728,7 @@
           0.0005000000000000006
         ]
       },
+      "assembly_group": "vise",
       "sha256": "1d58d01009472b98c57ac464d846df786bcb84f0b71c342e57bc0c73e43f7c9d"
     },
     {
@@ -748,6 +766,7 @@
           0.0275
         ]
       },
+      "assembly_group": "vise",
       "sha256": "6a124ccba9cb57b8e3df787dd03fc7af731621d4558c4403e0eb84135de32bdf"
     },
     {
@@ -785,6 +804,7 @@
           0.0005000000000000006
         ]
       },
+      "assembly_group": "vise",
       "sha256": "8ce000bdd65980214e12607a63b6ca9e850ae4327acebfcae85a218646d3452b"
     },
     {
@@ -822,6 +842,7 @@
           0.032
         ]
       },
+      "assembly_group": "vise",
       "sha256": "c2337735e722a63c9bf9432d042a1cae011cfd0c5a4ce2df3733501a28204d32"
     },
     {
@@ -859,6 +880,7 @@
           0.032
         ]
       },
+      "assembly_group": "vise",
       "sha256": "a5f51145e1dcc53f42836883d6879e018352918aa4fc622ba58bc816189e060f"
     },
     {
@@ -896,6 +918,7 @@
           0.060000000000000005
         ]
       },
+      "assembly_group": "vise",
       "sha256": "7762d4571549dfd67c7b26938f06e03d8f82f0bc0eb8fa4502404926813c7c12"
     },
     {
@@ -933,6 +956,7 @@
           0.062
         ]
       },
+      "assembly_group": "vise",
       "sha256": "5f8f2178c2a930fcec72f99719c62735244c081870b464af0556c13f6f0042b8"
     },
     {
@@ -970,6 +994,7 @@
           0.060000000000000005
         ]
       },
+      "assembly_group": "vise",
       "sha256": "9056b262b7b88df96af8c5b1e463711f647c89d81068e1b9c5310ad12953bd62"
     },
     {
@@ -1007,6 +1032,7 @@
           0.062
         ]
       },
+      "assembly_group": "vise",
       "sha256": "8c653dd6726965c1130c76d4810e1b1544d71426762e3a6fdefdc9b8e77b0a19"
     },
     {
@@ -1044,6 +1070,7 @@
           0.0033
         ]
       },
+      "assembly_group": "crank",
       "sha256": "3f8b294a1a1cc1bfbdf67e7b2ab5d3e9e6eaab85d0b306b60fce77636b0cbe48"
     },
     {
@@ -1081,6 +1108,7 @@
           0.004000033414434242
         ]
       },
+      "assembly_group": "crank",
       "sha256": "e8870a9ea4712a8403a99d25142c9a1bf84d2e2d7b931b19479e836cc9a3175d"
     },
     {
@@ -1118,6 +1146,7 @@
           0.006
         ]
       },
+      "assembly_group": "crank",
       "sha256": "d2f1e0b440d84f6d27a6e770af6148f54cd7eb2c0e8559b08d5fa9f69cb5d7aa"
     },
     {
@@ -1155,6 +1184,7 @@
           0.006
         ]
       },
+      "assembly_group": "crank",
       "sha256": "e9682c0739cb47932078bb022084bc67465e7150332bb685aedaf8087db6d921"
     },
     {
@@ -1192,6 +1222,7 @@
           0.008
         ]
       },
+      "assembly_group": "crank",
       "sha256": "0e19e51210b51a0801a6768a66560d37cbedd1920166adf56a33fe39aa8a7b2c"
     },
     {
@@ -1229,6 +1260,7 @@
           0.007000000000000002
         ]
       },
+      "assembly_group": "crank",
       "sha256": "187e0758a9076e9a084ab5767889264b969fc97c3d0ad0a0efabbfca9e9a1d38"
     },
     {
@@ -1266,6 +1298,7 @@
           0.0069999999999999975
         ]
       },
+      "assembly_group": "crank",
       "sha256": "4830ea10a2e2ceb66794413f30b20623782af5f901a30fd83f8e6d78d863b7f6"
     },
     {
@@ -1303,6 +1336,7 @@
           0.0018
         ]
       },
+      "assembly_group": "crank",
       "sha256": "2a34289b85587794919da67e6ba93c5d965730194d11fab72c3e48fcb41f3bdd"
     },
     {
@@ -1340,6 +1374,7 @@
           0.0040000001000000006
         ]
       },
+      "assembly_group": "grip_sleeves",
       "sha256": "c63c199b3e2f2ff5f5d3f6d777ba00c3cd3508711dcb53cb47e1d7bea900a5b7"
     },
     {
@@ -1377,6 +1412,7 @@
           0.005
         ]
       },
+      "assembly_group": "grip_sleeves",
       "sha256": "8190bf42d234493750ae81996b5cb48f43c03a5b9876a8a502e68e6b53d9beda"
     },
     {
@@ -1414,6 +1450,7 @@
           0.0018
         ]
       },
+      "assembly_group": "crank",
       "sha256": "e4f9dbb3a687f27d1cb01c86218467e89f5402f525f2b9bc8d84e87e66472d79"
     },
     {
@@ -1451,6 +1488,7 @@
           0.0040000001000000006
         ]
       },
+      "assembly_group": "grip_sleeves",
       "sha256": "c63c199b3e2f2ff5f5d3f6d777ba00c3cd3508711dcb53cb47e1d7bea900a5b7"
     },
     {
@@ -1488,6 +1526,7 @@
           0.005
         ]
       },
+      "assembly_group": "grip_sleeves",
       "sha256": "8190bf42d234493750ae81996b5cb48f43c03a5b9876a8a502e68e6b53d9beda"
     },
     {
@@ -1525,6 +1564,7 @@
           0.014
         ]
       },
+      "assembly_group": "trays",
       "sha256": "1a3d8bdb2cebc21ba49f5364226d8b6bef56cbd38f005139e7ea2650dd233abb"
     },
     {
@@ -1552,17 +1592,18 @@
       ],
       "bounds_m": {
         "min": [
-          0.2,
+          0.14,
           0.059999999899999996,
           0.0
         ],
         "max": [
-          0.28000000010000003,
+          0.22,
           0.14,
           0.014
         ]
       },
-      "sha256": "61d1e96a65b0df8b309ad6dc5fb8350bda41bc0b449886a223e831b60b4c41d7"
+      "assembly_group": "trays",
+      "sha256": "e19dbd0684826610238e282c82e5db3d6d4c6484fb9ff38386645669a3345d55"
     },
     {
       "name": "tooling_table",
@@ -1599,6 +1640,7 @@
           2.1157903967182152e-17
         ]
       },
+      "assembly_group": "table",
       "sha256": "32cc19d52ccc8ea6f70fd973f2753708f239fb9e4043485e43c56a6e273f41c8"
     },
     {
@@ -1636,6 +1678,7 @@
           0.07
         ]
       },
+      "assembly_group": "stock",
       "sha256": "3284925f158aa52c9bbbf692d45d34e912b4bf2319a8bc3782c15e30b75a7552"
     },
     {
@@ -1673,6 +1716,7 @@
           0.07
         ]
       },
+      "assembly_group": "stock",
       "sha256": "3284925f158aa52c9bbbf692d45d34e912b4bf2319a8bc3782c15e30b75a7552"
     }
   ],

@@ -45,7 +45,8 @@
         ]
       },
       "description": "Chamfered mounting base with six drilled and counterbored holes.",
-      "sha256": "0947ef12221be520dd7737a0fa4dbfbfc4a6551656db8c2d20fc64da1a1d02c7"
+      "assembly_group": "vise",
+      "sha256": "60ded136400811b7d5a404340a657a4e6973efbb90b36c2bcb8502b8dbeb23f1"
     },
     {
       "name": "base_socket_screw_-35_-29",
@@ -83,83 +84,8 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "0044b370906a7019ab478d9d7b6f428c78b2957f92b06c133a4d83e1f38d44a0"
-    },
-    {
-      "name": "base_socket_screw_-35_55",
-      "body": "vise",
-      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_-35_55.stl",
-      "filename": "base_socket_screw_-35_55.stl",
-      "units": "m",
-      "origin": "original MuJoCo body frame; geometry transform baked",
-      "position": [
-        0,
-        0,
-        0
-      ],
-      "quaternion": [
-        1,
-        0,
-        0,
-        0
-      ],
-      "color": [
-        0.055,
-        0.07,
-        0.08
-      ],
-      "bounds_m": {
-        "min": [
-          -0.0385,
-          0.0515,
-          0.0060999999999999995
-        ],
-        "max": [
-          -0.0315,
-          0.0585,
-          0.0081
-        ]
-      },
-      "description": "",
-      "sha256": "b4f264678ad50b72b582237a3afe42cc31dea7770a6791d2c787359a86fe4d17"
-    },
-    {
-      "name": "base_socket_screw_-35_102",
-      "body": "vise",
-      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_-35_102.stl",
-      "filename": "base_socket_screw_-35_102.stl",
-      "units": "m",
-      "origin": "original MuJoCo body frame; geometry transform baked",
-      "position": [
-        0,
-        0,
-        0
-      ],
-      "quaternion": [
-        1,
-        0,
-        0,
-        0
-      ],
-      "color": [
-        0.055,
-        0.07,
-        0.08
-      ],
-      "bounds_m": {
-        "min": [
-          -0.0385,
-          0.0985,
-          0.0060999999999999995
-        ],
-        "max": [
-          -0.0315,
-          0.1055,
-          0.0081
-        ]
-      },
-      "description": "",
-      "sha256": "cf9210e3957994ed0bb3b5bf1a165ab20e8e7d7133f88f09f78283c0d1b489aa"
     },
     {
       "name": "base_socket_screw_35_-29",
@@ -197,13 +123,14 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "95d08c7b63dc33531dc362b5a32c303b254ecadf77b27e70f1edd61e3a387004"
     },
     {
-      "name": "base_socket_screw_35_55",
+      "name": "base_socket_screw_-24_55",
       "body": "vise",
-      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_35_55.stl",
-      "filename": "base_socket_screw_35_55.stl",
+      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_-24_55.stl",
+      "filename": "base_socket_screw_-24_55.stl",
       "units": "m",
       "origin": "original MuJoCo body frame; geometry transform baked",
       "position": [
@@ -224,24 +151,25 @@
       ],
       "bounds_m": {
         "min": [
-          0.0315,
+          -0.0275,
           0.0515,
           0.0060999999999999995
         ],
         "max": [
-          0.0385,
+          -0.0205,
           0.0585,
           0.0081
         ]
       },
       "description": "",
-      "sha256": "1a6dbb0a11b82a42c4d7934410d4daa9ce8340f3d3986154154e796aa093ac4e"
+      "assembly_group": "vise",
+      "sha256": "4f026309858464958e1d7fef539ccce34d953dfca919c3296796a8806875d3f8"
     },
     {
-      "name": "base_socket_screw_35_102",
+      "name": "base_socket_screw_24_55",
       "body": "vise",
-      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_35_102.stl",
-      "filename": "base_socket_screw_35_102.stl",
+      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_24_55.stl",
+      "filename": "base_socket_screw_24_55.stl",
       "units": "m",
       "origin": "original MuJoCo body frame; geometry transform baked",
       "position": [
@@ -262,18 +190,97 @@
       ],
       "bounds_m": {
         "min": [
-          0.0315,
+          0.0205,
+          0.0515,
+          0.0060999999999999995
+        ],
+        "max": [
+          0.0275,
+          0.0585,
+          0.0081
+        ]
+      },
+      "description": "",
+      "assembly_group": "vise",
+      "sha256": "5ede7a5576b595436518c63c0530b2f34de043a1591c4ed754ad9d1eeafcae6c"
+    },
+    {
+      "name": "base_socket_screw_-24_102",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_-24_102.stl",
+      "filename": "base_socket_screw_-24_102.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0275,
           0.0985,
           0.0060999999999999995
         ],
         "max": [
-          0.0385,
+          -0.0205,
           0.1055,
           0.0081
         ]
       },
       "description": "",
-      "sha256": "284689d392e3ec6e59b53a7a7b5ead075f4b908373c3f1600aec038e5eefb531"
+      "assembly_group": "vise",
+      "sha256": "abc6e25c7effef44d207d9248aa438f021a693fa9e95c48f33eb7b233b951fc2"
+    },
+    {
+      "name": "base_socket_screw_24_102",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_24_102.stl",
+      "filename": "base_socket_screw_24_102.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          0.0205,
+          0.0985,
+          0.0060999999999999995
+        ],
+        "max": [
+          0.0275,
+          0.1055,
+          0.0081
+        ]
+      },
+      "description": "",
+      "assembly_group": "vise",
+      "sha256": "36bde757cc5f732fdcaa2ce45000774659f3d5f42d3c812762881524c4465fa3"
     },
     {
       "name": "precision_seat",
@@ -311,6 +318,7 @@
         ]
       },
       "description": "Top plane remains z=20 mm.",
+      "assembly_group": "vise",
       "sha256": "fef20b5a8b748492d09caaaaf8cab20e836fcf30a2f1457410d393ad2b53cce9"
     },
     {
@@ -349,6 +357,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "c0397301ce86cf611b483755663cad5fffb268ec4d27ce69d4637390e6588cb5"
     },
     {
@@ -387,6 +396,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "c0db1d4487df780d9baafb5f58806410a6f126905f2ca6bb365322d53fc82605"
     },
     {
@@ -425,6 +435,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "d0056cfb87dd3cbcbe34350b6845de61eeec6070d43197423397519cdc06b3d8"
     },
     {
@@ -463,6 +474,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "3e42441f8ad9fc2190edc5f3442228a0f339348c1d363cbda2edb6be2f142bf7"
     },
     {
@@ -501,6 +513,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "2aae984961126f338f8cccdfdec40ec27531a18b3a83c1d0aafbb446b46700ad"
     },
     {
@@ -539,6 +552,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "1347974cfb3b2b03dc3cc02e9265fcd64c27ca0a1c838aa44bc2399f2ba17052"
     },
     {
@@ -577,6 +591,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "e230a2f4c8ab0cc6c20f370e8776d8b9bb3100d08368b85f4c0cd5ed3a83b2b2"
     },
     {
@@ -615,6 +630,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "218feea1a9425c266ef009c5f37e15fc73726e270abab1c9ba6bb51da6d0a3bc"
     },
     {
@@ -653,6 +669,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "5034202b6b871d58ec900a05ae6360e5615735988b446a516ef0485b36581c26"
     },
     {
@@ -691,6 +708,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "d35738e4ad9e6bacabc7a3ccb9e8e08d32e09357b27aa2a802f7ee35c5811de7"
     },
     {
@@ -729,6 +747,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "2feb62586ce9c55aeb4f8424b18f498316e3c5cec10c8105d1d7ac581a075760"
     },
     {
@@ -767,6 +786,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "7757572173fdccb46ae9e89677c3c35e2d0515eeaed84e36d165d7c1b2f2b571"
     },
     {
@@ -805,6 +825,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "6a124ccba9cb57b8e3df787dd03fc7af731621d4558c4403e0eb84135de32bdf"
     },
     {
@@ -843,6 +864,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "vise",
       "sha256": "51fdfb056ddade716f2c2a1ff14e8cd889d52803ac8ea56ab29774200a68dea3"
     },
     {
@@ -881,6 +903,7 @@
         ]
       },
       "description": "Design reference for existing force-driven motor; no simulated pneumatics.",
+      "assembly_group": "drive",
       "sha256": "b28f11019302f96f4e816fe67d29b05e30fc6808518abbe1654273f64344172e"
     },
     {
@@ -919,6 +942,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "drive",
       "sha256": "e9c82a7ec91dc793c12d0e94c57112a17b0a2fb1bdbb071bd666de297f65b96f"
     },
     {
@@ -957,6 +981,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "drive",
       "sha256": "002cbc35712e433fee8fc90e7bee5db255073e53ae3bacc7288afc927172b71d"
     },
     {
@@ -995,6 +1020,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "drive",
       "sha256": "f1cad565be8d4bcb5523ea7583d1ed7c4f5bb5b5b531c2953de6d4a5420828a3"
     },
     {
@@ -1033,6 +1059,7 @@
         ]
       },
       "description": "Attached to actual slider; axis Y; moves continuously with recorded jaw joint.",
+      "assembly_group": "drive",
       "sha256": "99b46b58bbfb8bc03d1aef1f57eeca1a89eb2f46ee9382dfe66379cd7a75c114"
     },
     {
@@ -1071,6 +1098,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "drive",
       "sha256": "81165226d2d6d30d18dd2144702826f28f2c99af303659b666a56813ecaa2fd2"
     },
     {
@@ -1109,6 +1137,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "drive",
       "sha256": "3ccafb7b3aefaa2bc0764c4fc39216faafb4cd9022575401251efb517647c5cc"
     },
     {
@@ -1147,6 +1176,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "drive",
       "sha256": "0c8567ff053e6d2763e0f0d8928f9d0d4a4b7187daf36277dde758028c86dbef"
     },
     {
@@ -1185,6 +1215,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "drive",
       "sha256": "aa7cd6d0a7741aeb7cbbbec7353f61fb9b2ca4ac74dbcc170ce236ef3a6b18fd"
     },
     {
@@ -1223,6 +1254,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "drive",
       "sha256": "f8a06cc3ccf334ea787954e8f8ef045bd8070365715c0ed5980275e93a5bbc72"
     },
     {
@@ -1261,6 +1293,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "drive",
       "sha256": "562957b6ad315d68d91b721363c4cfd60ef313707da51097db947100766498fa"
     },
     {
@@ -1299,6 +1332,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "trays",
       "sha256": "1a3d8bdb2cebc21ba49f5364226d8b6bef56cbd38f005139e7ea2650dd233abb"
     },
     {
@@ -1337,6 +1371,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "trays",
       "sha256": "ff10e7853cbc761ec307f1fd4511d4bfd51d4948ad05fc473ad01e978c8a0d1f"
     },
     {
@@ -1375,6 +1410,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "trays",
       "sha256": "61d1e96a65b0df8b309ad6dc5fb8350bda41bc0b449886a223e831b60b4c41d7"
     },
     {
@@ -1413,6 +1449,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "trays",
       "sha256": "94482dd7d8e549ce1df38149c3830690af16bf8b8db207e29f0b117283ad79c6"
     },
     {
@@ -1451,6 +1488,7 @@
         ]
       },
       "description": "",
+      "assembly_group": "table",
       "sha256": "01f812cf4f5863f72f49226fc04db4226efed96db309df84406aebd66b3b29af"
     },
     {
@@ -1489,6 +1527,7 @@
         ]
       },
       "description": "Exact original stock dimensions and bottom origin; collision authority unchanged.",
+      "assembly_group": "stock",
       "sha256": "3284925f158aa52c9bbbf692d45d34e912b4bf2319a8bc3782c15e30b75a7552"
     },
     {
@@ -1527,6 +1566,7 @@
         ]
       },
       "description": "Exact original stock dimensions and bottom origin; collision authority unchanged.",
+      "assembly_group": "stock",
       "sha256": "3284925f158aa52c9bbbf692d45d34e912b4bf2319a8bc3782c15e30b75a7552"
     }
   ],
@@ -1560,6 +1600,11 @@
       14
     ],
     "tray_floor_z": 4
+  },
+  "layout_revision": {
+    "rear_extension_width_mm": 60,
+    "rear_extension_output_tray_clearance_mm": 10,
+    "reason": "Previous 82 mm cosmetic extension overlapped the frozen output tray by1 mm; original powered collision scene was unchanged and did not contain this extension."
   },
   "limitations": [
     "Visual solids are not collision models or manufacturing-validated hardware.",
