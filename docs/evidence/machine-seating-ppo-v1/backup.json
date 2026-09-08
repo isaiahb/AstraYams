@@ -1,0 +1,10 @@
+{
+  "repository": "isaiahb/AstraFactory",
+  "release_id": 385012029,
+  "release_tag": "contact-learning-checkpoint-20260908",
+  "asset": "astrafactory-machine-seating-ppo-20260908.tar.gz",
+  "bytes": 40649314,
+  "sha256": "175bba5e30aec8f15c5d0c4df9331655eb657bb070901ff212f29d1d873dd95b",
+  "verified": "Local archive SHA256 matches GitHub asset digest",
+  "contents": "PPO initial/final checkpoints, physical prefix states/actions, paired development and holdout traces/reports, renderings before terminal-frame playback refinement."
+}
