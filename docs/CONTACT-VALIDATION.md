@@ -42,8 +42,19 @@ The actual free-body grasp checks passed for the fixed pickup/fixture arrangemen
 
 The zero-friction result does **not** mean the peg never moves: its tip has a 13.25 mm transient excursion. It does show failure to achieve the specified lift while the same arm commands raise the tool, followed by support on the bench rather than suspension by the fingers. The open-release video continues through two simulated seconds to show the actual fall and settling, while the report retains the first verified release time.
 
-This establishes an acquired, contact-supported simulated grasp and gravity-driven release in the measured arrangement. **Insertion is not solved.** The failure is preserved rather than replaced with an attachment or a passing animation. No new learned policy was trained for this free-body task, and the earlier rigid-attachment learning scores do not apply.
+This establishes an acquired, contact-supported simulated grasp and gravity-driven release in the measured arrangement. The original insertion attempt failed. The failure is preserved rather than replaced with an attachment or a passing animation. The earlier rigid-attachment learning scores do not apply.
 
 The complete closeup evidence is in `runs/yam-contact-evidence`: `lift.mp4`, `drop.mp4`, `zero-friction.mp4`, `insertion-attempt.mp4`, per-step traces and `report.json`. `runs/yam-contact-overview` records the same experiments with the full-arm camera. The reports include task/referenced-asset hashes and environment source hashes; generated recordings remain ignored artifacts. The earlier independent static/physics report is `runs/yam-contact-full-lift-checks/report.json`.
 
 These are simulator measurements, not physical gripper calibration or hardware safety limits. Finger collision meshes, inertias, friction, actuator gains and contact solver settings remain model assumptions.
+
+
+## Feedback correction and narrow curriculum
+
+The new `astrafactory.contact_teacher:feedbackteacher` corrects the gripper pose from the measured free-peg pose after pickup. It aligns above the rim and retracts under excessive force. It writes commands only, uses scratch state for IK, and preserves the free body and original insertion acceptance thresholds.
+
+The fixed-reset run succeeds in 724 steps (14.48 simulated seconds), with tip height 9.210 mm, XY error 0.165 mm and peak summed contact-force metric 9.715 N. Independent grasp, release and zero-friction checks pass again.
+
+The separate `yam_contact_curriculum` task randomizes peg and socket XY independently within ±2 mm and varies their shared yaw within ±0.02 radians. Seeds 0–4 all succeed with this scripted controller. This is narrow reset variation, not broad robustness or independent angular misalignment coverage.
+
+The synchronized overview/closeup video is `runs/contact-teacher-video/scripted-contact-insertion.mp4`, explicitly labelled scripted feedback controller. Initial learned state-policy candidates fail. Camera-based VLA fine-tuning is a separate experiment; controller success does not establish learned performance.

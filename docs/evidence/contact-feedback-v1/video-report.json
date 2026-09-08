@@ -1,0 +1,31 @@
+{
+  "label": "Scripted feedback controller, not learned policy",
+  "seed": 0,
+  "steps": 724,
+  "frames": 413,
+  "fps": 25,
+  "bytes": 1546679,
+  "final": {
+    "is_success": true,
+    "peg_z_m": 0.009209962179408327,
+    "tip_z_m": 0.009209962179408327,
+    "xy_error_m": 0.00016511205027800062,
+    "orientation_error_rad": 0.000676838450572626,
+    "yaw_error_rad": 4.4599590573017614e-08,
+    "left_contact": true,
+    "right_contact": true,
+    "grasp_contacts": true,
+    "was_lifted": true,
+    "stage": 5,
+    "hold_steps": 15,
+    "peg_speed_m_s": 0.0069753473126238285,
+    "task_id": "yam-contact-insertion-v0",
+    "sim_time": 14.480000000001505,
+    "peak_contact_force_n": 2.647552686604117,
+    "episode_peak_force_n": 9.715020060445857,
+    "reason": "success"
+  },
+  "teacher_qpos_unchanged": true,
+  "teacher_sha256": "8f2526812acc3c84848503290a573db6ba863ad97e93a748a1c75db7e4253df2",
+  "video_alignment": "Both cameras display identical post-step physics state; final state repeats for 2 seconds."
+}

@@ -6,9 +6,9 @@ import numpy as np
 import imageio.v2 as imageio
 from PIL import Image, ImageDraw
 try:
-    from .check_yam_contact import validate, emit_step, ROOT
+    from .check_yam_contact import validate, emit_step, ROOT, load_callable
 except ImportError:
-    from check_yam_contact import validate, emit_step, ROOT
+    from check_yam_contact import validate, emit_step, ROOT, load_callable
 
 
 class VideoCapture:
@@ -45,15 +45,17 @@ class VideoCapture:
 
 
 def main():
-    from astrafactory.contact_env import ContactEnv, teacher
+    from astrafactory.contact_env import ContactEnv
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--task', default=str(ROOT / 'tasks/yam_contact_insertion'))
     p.add_argument('--seed', type=int, default=0)
+    p.add_argument('--teacher', default='astrafactory.contact_env:teacher')
     p.add_argument('--out', type=Path, default=ROOT / 'runs/yam-contact-recording')
     p.add_argument('--every', type=int, default=2)
     p.add_argument('--camera', default='overview', help='Existing MJCF camera name; insertion gives a closer grasp/task view')
     p.add_argument('--insertion', action='store_true', help='Attempt insertion only after all three contact validations pass')
     args = p.parse_args()
+    teacher = load_callable(args.teacher)
     if args.every < 1:
         p.error('--every must be positive')
     args.out.mkdir(parents=True, exist_ok=True)
@@ -61,7 +63,7 @@ def main():
         p.error('Output directory must be empty')
     captures = {mode: VideoCapture(args.out, mode, args.every, args.camera) for mode in ['lift', 'drop', 'zero-friction']}
     try:
-        report, traces = validate(args.task, args.seed, captures)
+        report, traces = validate(args.task, args.seed, captures, args.teacher)
     finally:
         for capture in captures.values():
             capture.close()

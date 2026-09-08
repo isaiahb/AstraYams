@@ -5,9 +5,9 @@ import json
 import numpy as np
 import mujoco
 try:
-    from .collect_demonstrations import task_hashes, environment_source_hash
+    from .collect_demonstrations import task_hashes, environment_source_hash, load_callable
 except ImportError:
-    from collect_demonstrations import task_hashes, environment_source_hash
+    from collect_demonstrations import task_hashes, environment_source_hash, load_callable
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -83,8 +83,8 @@ def emit_step(env, action, obs, capture, info):
     return observation, terminated or truncated, row
 
 
-def lift(env, seed, capture=None):
-    from astrafactory.contact_env import teacher
+def lift(env, seed, capture=None, teacher_reference='astrafactory.contact_env:teacher'):
+    teacher = load_callable(teacher_reference)
     obs, info = env.reset(seed=seed)
     initial = physical_state(env)
     duration = env.model.opt.timestep * env.frame_skip
@@ -157,13 +157,13 @@ def zero_friction(env, seed, actions, capture=None):
             'all_geom_and_pair_friction_zero': True, 'last': rows[-1] if rows else initial}, rows
 
 
-def validate(task, seed=0, captures=None):
+def validate(task, seed=0, captures=None, teacher_reference='astrafactory.contact_env:teacher'):
     from astrafactory.contact_env import ContactEnv
     captures = captures or {}
     env = ContactEnv(task)
     try:
         static = model_checks(env)
-        baseline, actions, rows, obs = lift(env, seed, captures.get('lift'))
+        baseline, actions, rows, obs = lift(env, seed, captures.get('lift'), teacher_reference)
         if baseline['passed']:
             released, drop_rows = drop(env, obs, seed, captures.get('drop'))
         else:
@@ -176,7 +176,7 @@ def validate(task, seed=0, captures=None):
     finally:
         negative_env.close()
     report = {'scope': 'simulated free-body contact grasp; no learned-policy claim', 'seed': seed,
-              'task_hashes': task_hashes(task), 'environment_source_hashes': {name: environment_source_hash(name) for name in ['astrafactory.contact_env:ContactEnv', 'astrafactory.env:FactoryEnv', 'astrafactory.yam_env:YamEnv']},
+              'task_hashes': task_hashes(task), 'teacher': teacher_reference, 'teacher_module_sha256': environment_source_hash(teacher_reference), 'environment_source_hashes': {name: environment_source_hash(name) for name in ['astrafactory.contact_env:ContactEnv', 'astrafactory.env:FactoryEnv', 'astrafactory.yam_env:YamEnv']},
               'static_model': static, 'closed_contact_lift': baseline, 'open_gripper_drop': released,
               'zero_friction_action_replay': negative}
     report['passed'] = all(v['passed'] for v in [static, baseline, released, negative])
@@ -187,10 +187,11 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--task', default=str(ROOT / 'tasks/yam_contact_insertion'))
     p.add_argument('--seed', type=int, default=0)
+    p.add_argument('--teacher', default='astrafactory.contact_env:teacher')
     p.add_argument('--out', type=Path, default=ROOT / 'runs/yam-contact-checks')
     args = p.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
-    report, traces = validate(args.task, args.seed)
+    report, traces = validate(args.task, args.seed, teacher_reference=args.teacher)
     (args.out / 'report.json').write_text(json.dumps(report, indent=2))
     for mode, rows in traces.items():
         (args.out / f'{mode}-trace.json').write_text(json.dumps(rows))
