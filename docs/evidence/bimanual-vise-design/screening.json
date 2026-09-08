@@ -1,0 +1,99 @@
+{
+  "status": "untrained design screening",
+  "left_arm_error": 9.743896174148944e-09,
+  "right_base_position": [
+    0.32,
+    0.5,
+    0
+  ],
+  "right_base_yaw": -1.5707963267948966,
+  "manual_axis": [
+    0.32,
+    0.135,
+    0.16
+  ],
+  "screw_pitch_m": 0.002,
+  "loading_gap_m": 0.02,
+  "turns_to_nominal_stock_width": 3,
+  "screw_actuator": null,
+  "rows": [
+    {
+      "angle_deg": 0,
+      "position_m": [
+        0.355,
+        0.157,
+        0.16
+      ],
+      "ik_weighted_error": 5.087316496113206e-10,
+      "reachable": true,
+      "arm_arm_penetrations": []
+    },
+    {
+      "angle_deg": -30,
+      "position_m": [
+        0.35031088913245534,
+        0.157,
+        0.1775
+      ],
+      "ik_weighted_error": 5.921559701971845e-09,
+      "reachable": true,
+      "arm_arm_penetrations": []
+    },
+    {
+      "angle_deg": -60,
+      "position_m": [
+        0.3375,
+        0.157,
+        0.19031088913245536
+      ],
+      "ik_weighted_error": 1.0185578836369792e-07,
+      "reachable": true,
+      "arm_arm_penetrations": []
+    },
+    {
+      "angle_deg": -90,
+      "position_m": [
+        0.32,
+        0.157,
+        0.195
+      ],
+      "ik_weighted_error": 3.5059818214937837e-09,
+      "reachable": true,
+      "arm_arm_penetrations": []
+    },
+    {
+      "angle_deg": -120,
+      "position_m": [
+        0.3025,
+        0.157,
+        0.19031088913245536
+      ],
+      "ik_weighted_error": 3.4398647628847054e-09,
+      "reachable": true,
+      "arm_arm_penetrations": []
+    },
+    {
+      "angle_deg": -150,
+      "position_m": [
+        0.2896891108675447,
+        0.157,
+        0.1775
+      ],
+      "ik_weighted_error": 7.57029273031263e-07,
+      "reachable": true,
+      "arm_arm_penetrations": []
+    },
+    {
+      "angle_deg": -180,
+      "position_m": [
+        0.28500000000000003,
+        0.157,
+        0.16
+      ],
+      "ik_weighted_error": 1.9044341319475957e-09,
+      "reachable": true,
+      "arm_arm_penetrations": []
+    }
+  ],
+  "scope": "Independent IK sample poses, not physically executed motions. Convex visual-mesh inter-arm penetration screen only; full fixture/handle swept clearance and contact grasp still need validation. Mechanical gear equality is an ideal screw constraint, not a welded gripper."
+}

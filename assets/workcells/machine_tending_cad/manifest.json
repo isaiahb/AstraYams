@@ -1,0 +1,1569 @@
+{
+  "schema_version": 1,
+  "purpose": "visual CAD and dimensioned design reference only",
+  "contact_authority": "tasks/yam_machine_tending/scene.xml (unchanged)",
+  "source": "tools/build_machine_fixture_cad.py",
+  "cad_units": "mm",
+  "mesh_units": "m",
+  "step_file": "machine_tending_assembly.step",
+  "step_configuration": "original task reset, slider joint=0; world coordinates in mm",
+  "quaternion_convention": "wxyz",
+  "objects": [
+    {
+      "name": "vise_machined_base",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/vise_machined_base.stl",
+      "filename": "vise_machined_base.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.045000000000000005,
+          -0.04,
+          -5.809255869344022e-18
+        ],
+        "max": [
+          0.045000000000000005,
+          0.112,
+          0.016000000000000004
+        ]
+      },
+      "description": "Chamfered mounting base with six drilled and counterbored holes.",
+      "sha256": "0947ef12221be520dd7737a0fa4dbfbfc4a6551656db8c2d20fc64da1a1d02c7"
+    },
+    {
+      "name": "base_socket_screw_-35_-29",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_-35_-29.stl",
+      "filename": "base_socket_screw_-35_-29.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0385,
+          -0.0325,
+          0.0121
+        ],
+        "max": [
+          -0.0315,
+          -0.0255,
+          0.0141
+        ]
+      },
+      "description": "",
+      "sha256": "0044b370906a7019ab478d9d7b6f428c78b2957f92b06c133a4d83e1f38d44a0"
+    },
+    {
+      "name": "base_socket_screw_-35_55",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_-35_55.stl",
+      "filename": "base_socket_screw_-35_55.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0385,
+          0.0515,
+          0.0060999999999999995
+        ],
+        "max": [
+          -0.0315,
+          0.0585,
+          0.0081
+        ]
+      },
+      "description": "",
+      "sha256": "b4f264678ad50b72b582237a3afe42cc31dea7770a6791d2c787359a86fe4d17"
+    },
+    {
+      "name": "base_socket_screw_-35_102",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_-35_102.stl",
+      "filename": "base_socket_screw_-35_102.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0385,
+          0.0985,
+          0.0060999999999999995
+        ],
+        "max": [
+          -0.0315,
+          0.1055,
+          0.0081
+        ]
+      },
+      "description": "",
+      "sha256": "cf9210e3957994ed0bb3b5bf1a165ab20e8e7d7133f88f09f78283c0d1b489aa"
+    },
+    {
+      "name": "base_socket_screw_35_-29",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_35_-29.stl",
+      "filename": "base_socket_screw_35_-29.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          0.0315,
+          -0.0325,
+          0.0121
+        ],
+        "max": [
+          0.0385,
+          -0.0255,
+          0.0141
+        ]
+      },
+      "description": "",
+      "sha256": "95d08c7b63dc33531dc362b5a32c303b254ecadf77b27e70f1edd61e3a387004"
+    },
+    {
+      "name": "base_socket_screw_35_55",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_35_55.stl",
+      "filename": "base_socket_screw_35_55.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          0.0315,
+          0.0515,
+          0.0060999999999999995
+        ],
+        "max": [
+          0.0385,
+          0.0585,
+          0.0081
+        ]
+      },
+      "description": "",
+      "sha256": "1a6dbb0a11b82a42c4d7934410d4daa9ce8340f3d3986154154e796aa093ac4e"
+    },
+    {
+      "name": "base_socket_screw_35_102",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/base_socket_screw_35_102.stl",
+      "filename": "base_socket_screw_35_102.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          0.0315,
+          0.0985,
+          0.0060999999999999995
+        ],
+        "max": [
+          0.0385,
+          0.1055,
+          0.0081
+        ]
+      },
+      "description": "",
+      "sha256": "284689d392e3ec6e59b53a7a7b5ead075f4b908373c3f1600aec038e5eefb531"
+    },
+    {
+      "name": "precision_seat",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/precision_seat.stl",
+      "filename": "precision_seat.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          -0.014000000000000002,
+          -0.011000000000000001,
+          0.015999999999999997
+        ],
+        "max": [
+          0.014000000000000002,
+          0.011000000000000001,
+          0.020000000000000004
+        ]
+      },
+      "description": "Top plane remains z=20 mm.",
+      "sha256": "fef20b5a8b748492d09caaaaf8cab20e836fcf30a2f1457410d393ad2b53cce9"
+    },
+    {
+      "name": "fixed_jaw_carrier",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/fixed_jaw_carrier.stl",
+      "filename": "fixed_jaw_carrier.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.025,
+          -0.019,
+          0.02
+        ],
+        "max": [
+          0.025,
+          -0.01,
+          0.04
+        ]
+      },
+      "description": "",
+      "sha256": "c0397301ce86cf611b483755663cad5fffb268ec4d27ce69d4637390e6588cb5"
+    },
+    {
+      "name": "fixed_replaceable_jaw_plate",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/fixed_replaceable_jaw_plate.stl",
+      "filename": "fixed_replaceable_jaw_plate.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.57,
+        0.62,
+        0.66
+      ],
+      "bounds_m": {
+        "min": [
+          -0.025,
+          -0.010000000000000004,
+          0.02
+        ],
+        "max": [
+          0.025,
+          -0.0069999999999999975,
+          0.04
+        ]
+      },
+      "description": "",
+      "sha256": "c0db1d4487df780d9baafb5f58806410a6f126905f2ca6bb365322d53fc82605"
+    },
+    {
+      "name": "moving_jaw_carrier",
+      "body": "vise_slider",
+      "mesh_path": "assets/workcells/machine_tending_cad/moving_jaw_carrier.stl",
+      "filename": "moving_jaw_carrier.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.025,
+          -0.003000000000000001,
+          -0.01
+        ],
+        "max": [
+          0.025,
+          0.006000000000000001,
+          0.01
+        ]
+      },
+      "description": "",
+      "sha256": "d0056cfb87dd3cbcbe34350b6845de61eeec6070d43197423397519cdc06b3d8"
+    },
+    {
+      "name": "moving_replaceable_jaw_plate",
+      "body": "vise_slider",
+      "mesh_path": "assets/workcells/machine_tending_cad/moving_replaceable_jaw_plate.stl",
+      "filename": "moving_replaceable_jaw_plate.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.57,
+        0.62,
+        0.66
+      ],
+      "bounds_m": {
+        "min": [
+          -0.025,
+          -0.006000000000000003,
+          -0.010000000000000002
+        ],
+        "max": [
+          0.025,
+          -0.0029999999999999975,
+          0.01
+        ]
+      },
+      "description": "",
+      "sha256": "3e42441f8ad9fc2190edc5f3442228a0f339348c1d363cbda2edb6be2f142bf7"
+    },
+    {
+      "name": "fixed_plate_screw_-20",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/fixed_plate_screw_-20.stl",
+      "filename": "fixed_plate_screw_-20.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.02225,
+          -0.0152500001,
+          0.038
+        ],
+        "max": [
+          -0.0177499999,
+          -0.010749999900000001,
+          0.0400000001
+        ]
+      },
+      "description": "",
+      "sha256": "2aae984961126f338f8cccdfdec40ec27531a18b3a83c1d0aafbb446b46700ad"
+    },
+    {
+      "name": "moving_plate_screw_-20",
+      "body": "vise_slider",
+      "mesh_path": "assets/workcells/machine_tending_cad/moving_plate_screw_-20.stl",
+      "filename": "moving_plate_screw_-20.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0222500001,
+          -0.0022500001,
+          0.008
+        ],
+        "max": [
+          -0.0177499999,
+          0.0022500001,
+          0.01
+        ]
+      },
+      "description": "",
+      "sha256": "1347974cfb3b2b03dc3cc02e9265fcd64c27ca0a1c838aa44bc2399f2ba17052"
+    },
+    {
+      "name": "fixed_plate_screw_20",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/fixed_plate_screw_20.stl",
+      "filename": "fixed_plate_screw_20.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          0.01775,
+          -0.0152500001,
+          0.038
+        ],
+        "max": [
+          0.0222500001,
+          -0.010749999900000001,
+          0.0400000001
+        ]
+      },
+      "description": "",
+      "sha256": "e230a2f4c8ab0cc6c20f370e8776d8b9bb3100d08368b85f4c0cd5ed3a83b2b2"
+    },
+    {
+      "name": "moving_plate_screw_20",
+      "body": "vise_slider",
+      "mesh_path": "assets/workcells/machine_tending_cad/moving_plate_screw_20.stl",
+      "filename": "moving_plate_screw_20.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          0.0177499999,
+          -0.0022500001,
+          0.008
+        ],
+        "max": [
+          0.0222500001,
+          0.0022500001,
+          0.01
+        ]
+      },
+      "description": "",
+      "sha256": "218feea1a9425c266ef009c5f37e15fc73726e270abab1c9ba6bb51da6d0a3bc"
+    },
+    {
+      "name": "seat_endstop_-14",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/seat_endstop_-14.stl",
+      "filename": "seat_endstop_-14.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.57,
+        0.62,
+        0.66
+      ],
+      "bounds_m": {
+        "min": [
+          -0.017,
+          -0.025,
+          0.02
+        ],
+        "max": [
+          -0.010999999999999998,
+          0.025,
+          0.04
+        ]
+      },
+      "description": "",
+      "sha256": "5034202b6b871d58ec900a05ae6360e5615735988b446a516ef0485b36581c26"
+    },
+    {
+      "name": "seat_endstop_14",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/seat_endstop_14.stl",
+      "filename": "seat_endstop_14.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.57,
+        0.62,
+        0.66
+      ],
+      "bounds_m": {
+        "min": [
+          0.010999999999999998,
+          -0.025,
+          0.02
+        ],
+        "max": [
+          0.017,
+          0.025,
+          0.04
+        ]
+      },
+      "description": "",
+      "sha256": "d35738e4ad9e6bacabc7a3ccb9e8e08d32e09357b27aa2a802f7ee35c5811de7"
+    },
+    {
+      "name": "ground_guide_rail_-35",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/ground_guide_rail_-35.stl",
+      "filename": "ground_guide_rail_-35.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0385,
+          -0.031,
+          0.0205
+        ],
+        "max": [
+          -0.0315,
+          0.071,
+          0.0275
+        ]
+      },
+      "description": "",
+      "sha256": "2feb62586ce9c55aeb4f8424b18f498316e3c5cec10c8105d1d7ac581a075760"
+    },
+    {
+      "name": "slider_linear_bearing_-35",
+      "body": "vise_slider",
+      "mesh_path": "assets/workcells/machine_tending_cad/slider_linear_bearing_-35.stl",
+      "filename": "slider_linear_bearing_-35.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0415,
+          -0.01,
+          -0.0125
+        ],
+        "max": [
+          -0.0285,
+          0.01,
+          0.0005000000000000001
+        ]
+      },
+      "description": "",
+      "sha256": "7757572173fdccb46ae9e89677c3c35e2d0515eeaed84e36d165d7c1b2f2b571"
+    },
+    {
+      "name": "ground_guide_rail_35",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/ground_guide_rail_35.stl",
+      "filename": "ground_guide_rail_35.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          0.0315,
+          -0.031,
+          0.0205
+        ],
+        "max": [
+          0.0385,
+          0.071,
+          0.0275
+        ]
+      },
+      "description": "",
+      "sha256": "6a124ccba9cb57b8e3df787dd03fc7af731621d4558c4403e0eb84135de32bdf"
+    },
+    {
+      "name": "slider_linear_bearing_35",
+      "body": "vise_slider",
+      "mesh_path": "assets/workcells/machine_tending_cad/slider_linear_bearing_35.stl",
+      "filename": "slider_linear_bearing_35.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          0.0285,
+          -0.01,
+          -0.0125
+        ],
+        "max": [
+          0.0415,
+          0.01,
+          0.0005000000000000001
+        ]
+      },
+      "description": "",
+      "sha256": "51fdfb056ddade716f2c2a1ff14e8cd889d52803ac8ea56ab29774200a68dea3"
+    },
+    {
+      "name": "powered_actuator_housing",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/powered_actuator_housing.stl",
+      "filename": "powered_actuator_housing.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.16,
+        0.36,
+        0.43
+      ],
+      "bounds_m": {
+        "min": [
+          -0.014,
+          0.069,
+          0.016
+        ],
+        "max": [
+          0.014,
+          0.121,
+          0.044
+        ]
+      },
+      "description": "Design reference for existing force-driven motor; no simulated pneumatics.",
+      "sha256": "b28f11019302f96f4e816fe67d29b05e30fc6808518abbe1654273f64344172e"
+    },
+    {
+      "name": "actuator_endcap_65",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/actuator_endcap_65.stl",
+      "filename": "actuator_endcap_65.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.017,
+          0.062,
+          0.013
+        ],
+        "max": [
+          0.017,
+          0.068,
+          0.047
+        ]
+      },
+      "description": "",
+      "sha256": "e9c82a7ec91dc793c12d0e94c57112a17b0a2fb1bdbb071bd666de297f65b96f"
+    },
+    {
+      "name": "actuator_endcap_124",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/actuator_endcap_124.stl",
+      "filename": "actuator_endcap_124.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.017,
+          0.121,
+          0.013
+        ],
+        "max": [
+          0.017,
+          0.127,
+          0.047
+        ]
+      },
+      "description": "",
+      "sha256": "002cbc35712e433fee8fc90e7bee5db255073e53ae3bacc7288afc927172b71d"
+    },
+    {
+      "name": "actuator_rod_seal",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/actuator_rod_seal.stl",
+      "filename": "actuator_rod_seal.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.007,
+          0.059,
+          0.023
+        ],
+        "max": [
+          0.007,
+          0.062,
+          0.037
+        ]
+      },
+      "description": "",
+      "sha256": "f1cad565be8d4bcb5523ea7583d1ed7c4f5bb5b5b531c2953de6d4a5420828a3"
+    },
+    {
+      "name": "moving_piston_rod",
+      "body": "vise_slider",
+      "mesh_path": "assets/workcells/machine_tending_cad/moving_piston_rod.stl",
+      "filename": "moving_piston_rod.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          -0.004,
+          0.005,
+          -0.004
+        ],
+        "max": [
+          0.004,
+          0.087,
+          0.004
+        ]
+      },
+      "description": "Attached to actual slider; axis Y; moves continuously with recorded jaw joint.",
+      "sha256": "99b46b58bbfb8bc03d1aef1f57eeca1a89eb2f46ee9382dfe66379cd7a75c114"
+    },
+    {
+      "name": "actuator_tie_rod_-12_18",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/actuator_tie_rod_-12_18.stl",
+      "filename": "actuator_tie_rod_-12_18.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0135,
+          0.063,
+          0.0165
+        ],
+        "max": [
+          -0.0105,
+          0.128,
+          0.0195
+        ]
+      },
+      "description": "",
+      "sha256": "81165226d2d6d30d18dd2144702826f28f2c99af303659b666a56813ecaa2fd2"
+    },
+    {
+      "name": "actuator_tie_rod_-12_42",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/actuator_tie_rod_-12_42.stl",
+      "filename": "actuator_tie_rod_-12_42.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0135,
+          0.063,
+          0.0405
+        ],
+        "max": [
+          -0.0105,
+          0.128,
+          0.0435
+        ]
+      },
+      "description": "",
+      "sha256": "3ccafb7b3aefaa2bc0764c4fc39216faafb4cd9022575401251efb517647c5cc"
+    },
+    {
+      "name": "actuator_tie_rod_12_18",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/actuator_tie_rod_12_18.stl",
+      "filename": "actuator_tie_rod_12_18.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          0.0105,
+          0.063,
+          0.0165
+        ],
+        "max": [
+          0.0135,
+          0.128,
+          0.0195
+        ]
+      },
+      "description": "",
+      "sha256": "0c8567ff053e6d2763e0f0d8928f9d0d4a4b7187daf36277dde758028c86dbef"
+    },
+    {
+      "name": "actuator_tie_rod_12_42",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/actuator_tie_rod_12_42.stl",
+      "filename": "actuator_tie_rod_12_42.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          0.0105,
+          0.063,
+          0.0405
+        ],
+        "max": [
+          0.0135,
+          0.128,
+          0.0435
+        ]
+      },
+      "description": "",
+      "sha256": "aa7cd6d0a7741aeb7cbbbec7353f61fb9b2ca4ac74dbcc170ce236ef3a6b18fd"
+    },
+    {
+      "name": "actuator_service_fitting",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/actuator_service_fitting.stl",
+      "filename": "actuator_service_fitting.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          0.012,
+          0.0975,
+          0.026968911086754463
+        ],
+        "max": [
+          0.019,
+          0.1045,
+          0.033031088913245535
+        ]
+      },
+      "description": "",
+      "sha256": "f8a06cc3ccf334ea787954e8f8ef045bd8070365715c0ed5980275e93a5bbc72"
+    },
+    {
+      "name": "actuator_service_connector",
+      "body": "vise",
+      "mesh_path": "assets/workcells/machine_tending_cad/actuator_service_connector.stl",
+      "filename": "actuator_service_connector.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          0.019,
+          0.0984,
+          0.027399999999999997
+        ],
+        "max": [
+          0.026,
+          0.1036,
+          0.032600000000000004
+        ]
+      },
+      "description": "",
+      "sha256": "562957b6ad315d68d91b721363c4cfd60ef313707da51097db947100766498fa"
+    },
+    {
+      "name": "raw_formed_metal_tray",
+      "body": "world",
+      "mesh_path": "assets/workcells/machine_tending_cad/raw_formed_metal_tray.stl",
+      "filename": "raw_formed_metal_tray.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.66,
+        0.71,
+        0.73
+      ],
+      "bounds_m": {
+        "min": [
+          0.21,
+          -0.14,
+          0.0
+        ],
+        "max": [
+          0.29,
+          -0.06,
+          0.014
+        ]
+      },
+      "description": "",
+      "sha256": "1a3d8bdb2cebc21ba49f5364226d8b6bef56cbd38f005139e7ea2650dd233abb"
+    },
+    {
+      "name": "raw_tray_identification_plate",
+      "body": "world",
+      "mesh_path": "assets/workcells/machine_tending_cad/raw_tray_identification_plate.stl",
+      "filename": "raw_tray_identification_plate.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.16,
+        0.36,
+        0.43
+      ],
+      "bounds_m": {
+        "min": [
+          0.237,
+          -0.14054999999999998,
+          0.005499999999999999
+        ],
+        "max": [
+          0.263,
+          -0.13984999999999997,
+          0.0105
+        ]
+      },
+      "description": "",
+      "sha256": "ff10e7853cbc761ec307f1fd4511d4bfd51d4948ad05fc473ad01e978c8a0d1f"
+    },
+    {
+      "name": "output_formed_metal_tray",
+      "body": "world",
+      "mesh_path": "assets/workcells/machine_tending_cad/output_formed_metal_tray.stl",
+      "filename": "output_formed_metal_tray.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.66,
+        0.71,
+        0.73
+      ],
+      "bounds_m": {
+        "min": [
+          0.2,
+          0.059999999899999996,
+          0.0
+        ],
+        "max": [
+          0.28000000010000003,
+          0.14,
+          0.014
+        ]
+      },
+      "description": "",
+      "sha256": "61d1e96a65b0df8b309ad6dc5fb8350bda41bc0b449886a223e831b60b4c41d7"
+    },
+    {
+      "name": "output_tray_identification_plate",
+      "body": "world",
+      "mesh_path": "assets/workcells/machine_tending_cad/output_tray_identification_plate.stl",
+      "filename": "output_tray_identification_plate.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          0.227,
+          0.059449999999999996,
+          0.005499999999999999
+        ],
+        "max": [
+          0.253,
+          0.060149999999999995,
+          0.0105
+        ]
+      },
+      "description": "",
+      "sha256": "94482dd7d8e549ce1df38149c3830690af16bf8b8db207e29f0b117283ad79c6"
+    },
+    {
+      "name": "fixture_tooling_table",
+      "body": "world",
+      "mesh_path": "assets/workcells/machine_tending_cad/fixture_tooling_table.stl",
+      "filename": "fixture_tooling_table.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.20000000000000004,
+          -0.27,
+          -0.024000000000000025
+        ],
+        "max": [
+          0.56,
+          0.27,
+          1.860428665216655e-17
+        ]
+      },
+      "description": "",
+      "sha256": "01f812cf4f5863f72f49226fc04db4226efed96db309df84406aebd66b3b29af"
+    },
+    {
+      "name": "raw_stock",
+      "body": "free_peg",
+      "mesh_path": "assets/workcells/machine_tending_cad/raw_stock.stl",
+      "filename": "raw_stock.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.57,
+        0.62,
+        0.66
+      ],
+      "bounds_m": {
+        "min": [
+          -0.009,
+          -0.007,
+          0.0
+        ],
+        "max": [
+          0.009,
+          0.007,
+          0.07
+        ]
+      },
+      "description": "Exact original stock dimensions and bottom origin; collision authority unchanged.",
+      "sha256": "3284925f158aa52c9bbbf692d45d34e912b4bf2319a8bc3782c15e30b75a7552"
+    },
+    {
+      "name": "finished_stock",
+      "body": "finished_stock",
+      "mesh_path": "assets/workcells/machine_tending_cad/finished_stock.stl",
+      "filename": "finished_stock.stl",
+      "units": "m",
+      "origin": "original MuJoCo body frame; geometry transform baked",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.57,
+        0.62,
+        0.66
+      ],
+      "bounds_m": {
+        "min": [
+          -0.009,
+          -0.007,
+          0.0
+        ],
+        "max": [
+          0.009,
+          0.007,
+          0.07
+        ]
+      },
+      "description": "Exact original stock dimensions and bottom origin; collision authority unchanged.",
+      "sha256": "3284925f158aa52c9bbbf692d45d34e912b4bf2319a8bc3782c15e30b75a7552"
+    }
+  ],
+  "dimensions_mm": {
+    "stock": [
+      18,
+      14,
+      70
+    ],
+    "stock_grasp_height": 54,
+    "seat_world": [
+      320,
+      0,
+      20
+    ],
+    "vise_jaw_top_world_z": 40,
+    "closed_nominal_gap": 14,
+    "slider_travel": [
+      -2,
+      26
+    ],
+    "jaw_width": 50,
+    "base": [
+      90,
+      80,
+      16
+    ],
+    "tray_outer": [
+      80,
+      80,
+      14
+    ],
+    "tray_floor_z": 4
+  },
+  "limitations": [
+    "Visual solids are not collision models or manufacturing-validated hardware.",
+    "Cosmetic radii, bearings, actuator and fastener details are engineering illustration.",
+    "No YAM mesh, simulation source, policy or recorded action was modified."
+  ]
+}

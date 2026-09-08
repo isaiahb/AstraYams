@@ -1,0 +1,1683 @@
+{
+  "schema_version": 1,
+  "mesh_units": "m",
+  "cad_units": "mm",
+  "quaternion_convention": "wxyz",
+  "step_file": "manual_vise_assembly.step",
+  "body_frames_world_m": {
+    "world": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "vise": [
+      0.32,
+      0.0,
+      0.105
+    ],
+    "vise_slider": [
+      0.32,
+      0.013,
+      0.135
+    ],
+    "manual_screw": [
+      0.32,
+      0.135,
+      0.16
+    ],
+    "manual_grip_sleeve": [
+      0.355,
+      0.157,
+      0.16
+    ],
+    "manual_grip_sleeve_b": [
+      0.285,
+      0.157,
+      0.16
+    ],
+    "free_peg": [
+      0.25,
+      -0.1,
+      0.0040999999999999995
+    ],
+    "finished_stock": [
+      0.32,
+      0.0,
+      0.1251
+    ]
+  },
+  "objects": [
+    {
+      "name": "fixed_vise_pedestal",
+      "body": "world",
+      "filename": "fixed_vise_pedestal.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/fixed_vise_pedestal.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          0.268,
+          -0.045,
+          -6.987390653582114e-18
+        ],
+        "max": [
+          0.372,
+          0.14,
+          0.105
+        ]
+      },
+      "sha256": "098a802318c0485dfe33e234b1c06fa03c30efdaf45b3ca8567569b81c5df4f5"
+    },
+    {
+      "name": "mount_screw_-35_-29",
+      "body": "vise",
+      "filename": "mount_screw_-35_-29.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/mount_screw_-35_-29.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.03825,
+          -0.0322500001,
+          0.0081
+        ],
+        "max": [
+          -0.0317499999,
+          -0.025749999899999997,
+          0.0101
+        ]
+      },
+      "sha256": "9104c794254c5f7e648a95ca541a5e4df8712b956d32599a2ea9934a7cb2422f"
+    },
+    {
+      "name": "mount_screw_-35_65",
+      "body": "vise",
+      "filename": "mount_screw_-35_65.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/mount_screw_-35_65.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.03825,
+          0.0617499999,
+          0.0081
+        ],
+        "max": [
+          -0.0317499999,
+          0.0682500001,
+          0.0101
+        ]
+      },
+      "sha256": "bf78f0c6a68632d4736854497e97fb90f56c5eb607de0c78904e45da9df6bec1"
+    },
+    {
+      "name": "mount_screw_-35_121",
+      "body": "vise",
+      "filename": "mount_screw_-35_121.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/mount_screw_-35_121.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.03825,
+          0.1177499999,
+          0.0081
+        ],
+        "max": [
+          -0.0317499999,
+          0.1242500001,
+          0.0101
+        ]
+      },
+      "sha256": "412eaacb8454177e1e0d6284a32dff81590ac38be74ffbcd6e90f33572c1a6f2"
+    },
+    {
+      "name": "mount_screw_35_-29",
+      "body": "vise",
+      "filename": "mount_screw_35_-29.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/mount_screw_35_-29.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          0.03175,
+          -0.0322500001,
+          0.0081
+        ],
+        "max": [
+          0.0382500001,
+          -0.025749999899999997,
+          0.0101
+        ]
+      },
+      "sha256": "ef314d474ed32f85fe673735b0cc34b8efa81fff06056b700d935dc859ce44cf"
+    },
+    {
+      "name": "mount_screw_35_65",
+      "body": "vise",
+      "filename": "mount_screw_35_65.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/mount_screw_35_65.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          0.03175,
+          0.0617499999,
+          0.0081
+        ],
+        "max": [
+          0.0382500001,
+          0.0682500001,
+          0.0101
+        ]
+      },
+      "sha256": "a8dae088639af9905921dd95d8fd29cf0ad8638e63121736d1a41c941b0f1e1f"
+    },
+    {
+      "name": "mount_screw_35_121",
+      "body": "vise",
+      "filename": "mount_screw_35_121.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/mount_screw_35_121.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          0.03175,
+          0.1177499999,
+          0.0081
+        ],
+        "max": [
+          0.0382500001,
+          0.1242500001,
+          0.0101
+        ]
+      },
+      "sha256": "b3681cb0d595aada766cb7963aa850c2c955d555450262330c2275bf0cc385cd"
+    },
+    {
+      "name": "manual_vise_base",
+      "body": "vise",
+      "filename": "manual_vise_base.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/manual_vise_base.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.045000000000000005,
+          -0.04000000000000001,
+          -8.93682087555743e-18
+        ],
+        "max": [
+          0.045,
+          0.13500000000000004,
+          0.012000000000000009
+        ]
+      },
+      "sha256": "4ae138fd4dc648c489d6d34dfe501637ff0c5e863cc1c0725f8fcd7d084b248f"
+    },
+    {
+      "name": "contact_base_riser",
+      "body": "vise",
+      "filename": "contact_base_riser.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/contact_base_riser.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.045000000000000005,
+          -0.04,
+          0.011999999999999995
+        ],
+        "max": [
+          0.045,
+          0.04,
+          0.016000000000000004
+        ]
+      },
+      "sha256": "823141138f077962b4a0619ea2fe74016df244fefedc587f1201e40d427d822f"
+    },
+    {
+      "name": "precision_seat",
+      "body": "vise",
+      "filename": "precision_seat.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/precision_seat.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          -0.014000000000000002,
+          -0.011000000000000001,
+          0.015999999999999997
+        ],
+        "max": [
+          0.014000000000000002,
+          0.011000000000000001,
+          0.020000000000000004
+        ]
+      },
+      "sha256": "fef20b5a8b748492d09caaaaf8cab20e836fcf30a2f1457410d393ad2b53cce9"
+    },
+    {
+      "name": "fixed_carrier",
+      "body": "vise",
+      "filename": "fixed_carrier.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/fixed_carrier.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.025,
+          -0.019,
+          0.02
+        ],
+        "max": [
+          0.025,
+          -0.01,
+          0.04
+        ]
+      },
+      "sha256": "c0397301ce86cf611b483755663cad5fffb268ec4d27ce69d4637390e6588cb5"
+    },
+    {
+      "name": "fixed_replaceable_plate",
+      "body": "vise",
+      "filename": "fixed_replaceable_plate.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/fixed_replaceable_plate.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.57,
+        0.62,
+        0.66
+      ],
+      "bounds_m": {
+        "min": [
+          -0.025,
+          -0.010000000000000004,
+          0.02
+        ],
+        "max": [
+          0.025,
+          -0.0069999999999999975,
+          0.04
+        ]
+      },
+      "sha256": "c0db1d4487df780d9baafb5f58806410a6f126905f2ca6bb365322d53fc82605"
+    },
+    {
+      "name": "moving_carrier",
+      "body": "vise_slider",
+      "filename": "moving_carrier.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/moving_carrier.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.025,
+          -0.003000000000000001,
+          -0.01
+        ],
+        "max": [
+          0.025,
+          0.006000000000000001,
+          0.01
+        ]
+      },
+      "sha256": "d0056cfb87dd3cbcbe34350b6845de61eeec6070d43197423397519cdc06b3d8"
+    },
+    {
+      "name": "moving_replaceable_plate",
+      "body": "vise_slider",
+      "filename": "moving_replaceable_plate.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/moving_replaceable_plate.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.57,
+        0.62,
+        0.66
+      ],
+      "bounds_m": {
+        "min": [
+          -0.025,
+          -0.006000000000000003,
+          -0.010000000000000002
+        ],
+        "max": [
+          0.025,
+          -0.0029999999999999975,
+          0.01
+        ]
+      },
+      "sha256": "3e42441f8ad9fc2190edc5f3442228a0f339348c1d363cbda2edb6be2f142bf7"
+    },
+    {
+      "name": "endstop_-14",
+      "body": "vise",
+      "filename": "endstop_-14.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/endstop_-14.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.57,
+        0.62,
+        0.66
+      ],
+      "bounds_m": {
+        "min": [
+          -0.017,
+          -0.025,
+          0.02
+        ],
+        "max": [
+          -0.010999999999999998,
+          0.025,
+          0.04
+        ]
+      },
+      "sha256": "5034202b6b871d58ec900a05ae6360e5615735988b446a516ef0485b36581c26"
+    },
+    {
+      "name": "endstop_14",
+      "body": "vise",
+      "filename": "endstop_14.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/endstop_14.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.57,
+        0.62,
+        0.66
+      ],
+      "bounds_m": {
+        "min": [
+          0.010999999999999998,
+          -0.025,
+          0.02
+        ],
+        "max": [
+          0.017,
+          0.025,
+          0.04
+        ]
+      },
+      "sha256": "d35738e4ad9e6bacabc7a3ccb9e8e08d32e09357b27aa2a802f7ee35c5811de7"
+    },
+    {
+      "name": "guide_rail_-35",
+      "body": "vise",
+      "filename": "guide_rail_-35.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/guide_rail_-35.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0385,
+          -0.031,
+          0.0205
+        ],
+        "max": [
+          -0.0315,
+          0.071,
+          0.0275
+        ]
+      },
+      "sha256": "2feb62586ce9c55aeb4f8424b18f498316e3c5cec10c8105d1d7ac581a075760"
+    },
+    {
+      "name": "jaw_bearing_-35",
+      "body": "vise_slider",
+      "filename": "jaw_bearing_-35.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/jaw_bearing_-35.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0415,
+          -0.010000000000000002,
+          -0.012500000000000002
+        ],
+        "max": [
+          -0.028499999999999998,
+          0.010000000000000002,
+          0.0005000000000000006
+        ]
+      },
+      "sha256": "1d58d01009472b98c57ac464d846df786bcb84f0b71c342e57bc0c73e43f7c9d"
+    },
+    {
+      "name": "guide_rail_35",
+      "body": "vise",
+      "filename": "guide_rail_35.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/guide_rail_35.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          0.0315,
+          -0.031,
+          0.0205
+        ],
+        "max": [
+          0.0385,
+          0.071,
+          0.0275
+        ]
+      },
+      "sha256": "6a124ccba9cb57b8e3df787dd03fc7af731621d4558c4403e0eb84135de32bdf"
+    },
+    {
+      "name": "jaw_bearing_35",
+      "body": "vise_slider",
+      "filename": "jaw_bearing_35.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/jaw_bearing_35.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          0.028499999999999998,
+          -0.010000000000000002,
+          -0.012500000000000002
+        ],
+        "max": [
+          0.04150000000000001,
+          0.010000000000000002,
+          0.0005000000000000006
+        ]
+      },
+      "sha256": "8ce000bdd65980214e12607a63b6ca9e850ae4327acebfcae85a218646d3452b"
+    },
+    {
+      "name": "translating_nut_bridge",
+      "body": "vise_slider",
+      "filename": "translating_nut_bridge.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/translating_nut_bridge.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.011,
+          0.006,
+          -0.006
+        ],
+        "max": [
+          0.011,
+          0.02,
+          0.032
+        ]
+      },
+      "sha256": "c2337735e722a63c9bf9432d042a1cae011cfd0c5a4ce2df3733501a28204d32"
+    },
+    {
+      "name": "leadscrew_nut",
+      "body": "vise_slider",
+      "filename": "leadscrew_nut.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/leadscrew_nut.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.16,
+        0.36,
+        0.43
+      ],
+      "bounds_m": {
+        "min": [
+          -0.007,
+          0.007,
+          0.018
+        ],
+        "max": [
+          0.007,
+          0.019,
+          0.032
+        ]
+      },
+      "sha256": "a5f51145e1dcc53f42836883d6879e018352918aa4fc622ba58bc816189e060f"
+    },
+    {
+      "name": "fixed_thrust_support_95",
+      "body": "vise",
+      "filename": "fixed_thrust_support_95.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/fixed_thrust_support_95.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.014000000000000002,
+          0.08999999999999997,
+          0.011999999999999997
+        ],
+        "max": [
+          0.014000000000000002,
+          0.10000000000000002,
+          0.060000000000000005
+        ]
+      },
+      "sha256": "7762d4571549dfd67c7b26938f06e03d8f82f0bc0eb8fa4502404926813c7c12"
+    },
+    {
+      "name": "thrust_bearing_95",
+      "body": "vise",
+      "filename": "thrust_bearing_95.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/thrust_bearing_95.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.007,
+          0.099,
+          0.048
+        ],
+        "max": [
+          0.007,
+          0.101,
+          0.062
+        ]
+      },
+      "sha256": "5f8f2178c2a930fcec72f99719c62735244c081870b464af0556c13f6f0042b8"
+    },
+    {
+      "name": "fixed_thrust_support_119",
+      "body": "vise",
+      "filename": "fixed_thrust_support_119.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/fixed_thrust_support_119.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.014000000000000002,
+          0.11399999999999996,
+          0.011999999999999997
+        ],
+        "max": [
+          0.014000000000000002,
+          0.12400000000000001,
+          0.060000000000000005
+        ]
+      },
+      "sha256": "9056b262b7b88df96af8c5b1e463711f647c89d81068e1b9c5310ad12953bd62"
+    },
+    {
+      "name": "thrust_bearing_119",
+      "body": "vise",
+      "filename": "thrust_bearing_119.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/thrust_bearing_119.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.007,
+          0.123,
+          0.048
+        ],
+        "max": [
+          0.007,
+          0.125,
+          0.062
+        ]
+      },
+      "sha256": "8c653dd6726965c1130c76d4810e1b1544d71426762e3a6fdefdc9b8e77b0a19"
+    },
+    {
+      "name": "lead_screw_shaft",
+      "body": "manual_screw",
+      "filename": "lead_screw_shaft.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/lead_screw_shaft.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0033,
+          -0.122,
+          -0.0033
+        ],
+        "max": [
+          0.0033,
+          0.0,
+          0.0033
+        ]
+      },
+      "sha256": "3f8b294a1a1cc1bfbdf67e7b2ab5d3e9e6eaab85d0b306b60fce77636b0cbe48"
+    },
+    {
+      "name": "helical_thread_pitch_2mm",
+      "body": "manual_screw",
+      "filename": "helical_thread_pitch_2mm.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/helical_thread_pitch_2mm.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.57,
+        0.62,
+        0.66
+      ],
+      "bounds_m": {
+        "min": [
+          -0.004000033414461708,
+          -0.12255000022463616,
+          -0.004000033414434223
+        ],
+        "max": [
+          0.0040000334144342856,
+          -0.039449999900000005,
+          0.004000033414434242
+        ]
+      },
+      "sha256": "e8870a9ea4712a8403a99d25142c9a1bf84d2e2d7b931b19479e836cc9a3175d"
+    },
+    {
+      "name": "shaft_thrust_collar_-45",
+      "body": "manual_screw",
+      "filename": "shaft_thrust_collar_-45.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/shaft_thrust_collar_-45.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          -0.006,
+          -0.048,
+          -0.006
+        ],
+        "max": [
+          0.006,
+          -0.045,
+          0.006
+        ]
+      },
+      "sha256": "d2f1e0b440d84f6d27a6e770af6148f54cd7eb2c0e8559b08d5fa9f69cb5d7aa"
+    },
+    {
+      "name": "shaft_thrust_collar_-11",
+      "body": "manual_screw",
+      "filename": "shaft_thrust_collar_-11.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/shaft_thrust_collar_-11.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          -0.006,
+          -0.014,
+          -0.006
+        ],
+        "max": [
+          0.006,
+          -0.011,
+          0.006
+        ]
+      },
+      "sha256": "e9682c0739cb47932078bb022084bc67465e7150332bb685aedaf8087db6d921"
+    },
+    {
+      "name": "manual_crank_hub",
+      "body": "manual_screw",
+      "filename": "manual_crank_hub.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/manual_crank_hub.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.008,
+          -0.005,
+          -0.008
+        ],
+        "max": [
+          0.008,
+          0.005,
+          0.008
+        ]
+      },
+      "sha256": "0e19e51210b51a0801a6768a66560d37cbedd1920166adf56a33fe39aa8a7b2c"
+    },
+    {
+      "name": "radial_crank_lever",
+      "body": "manual_screw",
+      "filename": "radial_crank_lever.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/radial_crank_lever.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.16,
+        0.36,
+        0.43
+      ],
+      "bounds_m": {
+        "min": [
+          -1.1330138236044471e-18,
+          0.00399999999999994,
+          -0.007000000000000001
+        ],
+        "max": [
+          0.042,
+          0.010000000000000061,
+          0.007000000000000002
+        ]
+      },
+      "sha256": "187e0758a9076e9a084ab5767889264b969fc97c3d0ad0a0efabbfca9e9a1d38"
+    },
+    {
+      "name": "opposing_radial_crank_lever",
+      "body": "manual_screw",
+      "filename": "opposing_radial_crank_lever.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/opposing_radial_crank_lever.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.16,
+        0.36,
+        0.43
+      ],
+      "bounds_m": {
+        "min": [
+          -0.042,
+          0.00399999999999994,
+          -0.007000000000000006
+        ],
+        "max": [
+          1.4122433252927135e-18,
+          0.010000000000000061,
+          0.0069999999999999975
+        ]
+      },
+      "sha256": "4830ea10a2e2ceb66794413f30b20623782af5f901a30fd83f8e6d78d863b7f6"
+    },
+    {
+      "name": "fixed_crank_pin_axle",
+      "body": "manual_screw",
+      "filename": "fixed_crank_pin_axle.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/fixed_crank_pin_axle.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          0.0332,
+          0.01,
+          -0.0018
+        ],
+        "max": [
+          0.0368,
+          0.034,
+          0.0018
+        ]
+      },
+      "sha256": "2a34289b85587794919da67e6ba93c5d965730194d11fab72c3e48fcb41f3bdd"
+    },
+    {
+      "name": "robot_grasp_pin",
+      "body": "manual_grip_sleeve",
+      "filename": "robot_grasp_pin.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/robot_grasp_pin.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0040000001000000006,
+          -0.012,
+          -0.004
+        ],
+        "max": [
+          0.004,
+          0.012,
+          0.0040000001000000006
+        ]
+      },
+      "sha256": "c63c199b3e2f2ff5f5d3f6d777ba00c3cd3508711dcb53cb47e1d7bea900a5b7"
+    },
+    {
+      "name": "grasp_pin_endcap",
+      "body": "manual_grip_sleeve",
+      "filename": "grasp_pin_endcap.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/grasp_pin_endcap.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          -0.005,
+          0.012,
+          -0.005
+        ],
+        "max": [
+          0.005,
+          0.014,
+          0.005
+        ]
+      },
+      "sha256": "8190bf42d234493750ae81996b5cb48f43c03a5b9876a8a502e68e6b53d9beda"
+    },
+    {
+      "name": "opposing_fixed_crank_pin_axle",
+      "body": "manual_screw",
+      "filename": "opposing_fixed_crank_pin_axle.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/opposing_fixed_crank_pin_axle.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0368,
+          0.01,
+          -0.0018
+        ],
+        "max": [
+          -0.0332,
+          0.034,
+          0.0018
+        ]
+      },
+      "sha256": "e4f9dbb3a687f27d1cb01c86218467e89f5402f525f2b9bc8d84e87e66472d79"
+    },
+    {
+      "name": "opposing_robot_grasp_pin",
+      "body": "manual_grip_sleeve_b",
+      "filename": "opposing_robot_grasp_pin.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/opposing_robot_grasp_pin.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.055,
+        0.07,
+        0.08
+      ],
+      "bounds_m": {
+        "min": [
+          -0.0040000001000000006,
+          -0.012,
+          -0.004
+        ],
+        "max": [
+          0.004,
+          0.012,
+          0.0040000001000000006
+        ]
+      },
+      "sha256": "c63c199b3e2f2ff5f5d3f6d777ba00c3cd3508711dcb53cb47e1d7bea900a5b7"
+    },
+    {
+      "name": "opposing_grasp_pin_endcap",
+      "body": "manual_grip_sleeve_b",
+      "filename": "opposing_grasp_pin_endcap.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/opposing_grasp_pin_endcap.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.76,
+        0.81,
+        0.84
+      ],
+      "bounds_m": {
+        "min": [
+          -0.005,
+          0.012,
+          -0.005
+        ],
+        "max": [
+          0.005,
+          0.014,
+          0.005
+        ]
+      },
+      "sha256": "8190bf42d234493750ae81996b5cb48f43c03a5b9876a8a502e68e6b53d9beda"
+    },
+    {
+      "name": "raw_tray",
+      "body": "world",
+      "filename": "raw_tray.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/raw_tray.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.66,
+        0.71,
+        0.73
+      ],
+      "bounds_m": {
+        "min": [
+          0.21,
+          -0.14,
+          0.0
+        ],
+        "max": [
+          0.29,
+          -0.06,
+          0.014
+        ]
+      },
+      "sha256": "1a3d8bdb2cebc21ba49f5364226d8b6bef56cbd38f005139e7ea2650dd233abb"
+    },
+    {
+      "name": "output_tray",
+      "body": "world",
+      "filename": "output_tray.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/output_tray.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.66,
+        0.71,
+        0.73
+      ],
+      "bounds_m": {
+        "min": [
+          0.2,
+          0.059999999899999996,
+          0.0
+        ],
+        "max": [
+          0.28000000010000003,
+          0.14,
+          0.014
+        ]
+      },
+      "sha256": "61d1e96a65b0df8b309ad6dc5fb8350bda41bc0b449886a223e831b60b4c41d7"
+    },
+    {
+      "name": "tooling_table",
+      "body": "world",
+      "filename": "tooling_table.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/tooling_table.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.18,
+        0.23,
+        0.26
+      ],
+      "bounds_m": {
+        "min": [
+          -0.13000000000000003,
+          -0.2,
+          -0.024000000000000014
+        ],
+        "max": [
+          0.8,
+          0.65,
+          2.1157903967182152e-17
+        ]
+      },
+      "sha256": "32cc19d52ccc8ea6f70fd973f2753708f239fb9e4043485e43c56a6e273f41c8"
+    },
+    {
+      "name": "raw_stock",
+      "body": "free_peg",
+      "filename": "raw_stock.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/raw_stock.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.57,
+        0.62,
+        0.66
+      ],
+      "bounds_m": {
+        "min": [
+          -0.009,
+          -0.007,
+          0.0
+        ],
+        "max": [
+          0.009,
+          0.007,
+          0.07
+        ]
+      },
+      "sha256": "3284925f158aa52c9bbbf692d45d34e912b4bf2319a8bc3782c15e30b75a7552"
+    },
+    {
+      "name": "finished_stock",
+      "body": "finished_stock",
+      "filename": "finished_stock.stl",
+      "mesh_path": "assets/workcells/manual_vise_cad/finished_stock.stl",
+      "units": "m",
+      "origin": "body-local, baked vertices",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "quaternion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "color": [
+        0.57,
+        0.62,
+        0.66
+      ],
+      "bounds_m": {
+        "min": [
+          -0.009,
+          -0.007,
+          0.0
+        ],
+        "max": [
+          0.009,
+          0.007,
+          0.07
+        ]
+      },
+      "sha256": "3284925f158aa52c9bbbf692d45d34e912b4bf2319a8bc3782c15e30b75a7552"
+    }
+  ],
+  "mechanical_spec": "mechanical_spec.json",
+  "configuration": "jaw q=0 (14 mm gap), manual screw theta=0; initial stock yaw pi",
+  "source": "tools/build_manual_vise_cad.py",
+  "purpose": "Visual/design reference, not a replacement for contact physics"
+}
