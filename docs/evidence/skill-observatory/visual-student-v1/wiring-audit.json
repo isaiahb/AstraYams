@@ -1,0 +1,26 @@
+{
+  "scope": "Independent source callgraph/wiring review, not policy performance or hardware verification",
+  "source_sha256": {
+    "tools/evaluate_visual_skill.py": "b4c50d4eac3bd21f7e81ac5f64edd40705e8a8fdab326e34943e117388360a0c",
+    "tools/train_visual_skill.py": "51e780ac3ae70b7db9274082f3c7c16f81be95f53c5bc336ca860de311684f00",
+    "src/astrafactory/vision_policy.py": "d29c0f5c1ad3d1d12bc700389a7833acbb7a70934d08df1871e59f41548d6f02",
+    "src/astrafactory/deployable_observations.py": "d1a2d8bf333e3d7e1b36bbbf1c81b6445731dfb34c067a71c5ac2db0e63c9ea6",
+    "src/astrafactory/sensor_contract.py": "bc882f76ba81a4a6024ff7da106cd8673a448bfe3304005d346c86871f85377a"
+  },
+  "student_runtime_path": [
+    "FixedCameraRig.read extracts RGB and normalized robot feedback/controller memory",
+    "Evaluator creates supplied dict with only rgb/proprio; blank mode replaces only RGB",
+    "VisualPolicy.act consumes dict and copied history; returns bounded seven joint/gripper deltas",
+    "Caller executes env.step(action)"
+  ],
+  "privileged_evaluator_path": "physical_state/model_checks and environment info are read outside student only after action execution; result never fed into policy; no pickup-success early stopping",
+  "offline_training_path": "pickup_end_step annotation selects training segment, action arrays are supervised targets, images/image_index/proprio are the only network inputs",
+  "reset": "visual-reset-v1 canonical robot q overrides prior task-conditioned IK before physics; independent4seed equality/camera audit passed",
+  "findings": [],
+  "limitations": [
+    "Camera/encoder/controller calibration and real timing remain unvalidated",
+    "Passing a boundary audit does not imply the model uses images effectively",
+    "Blank-camera paired rollout result is required to interpret visual dependence",
+    "Original privileged-state chain is a separate retained result, not a camera policy"
+  ]
+}

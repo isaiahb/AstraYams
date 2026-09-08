@@ -1,0 +1,55 @@
+{
+  "scope": "Frozen first visual-student attempt, independent of subsequent v2 revision",
+  "ledger_events": 107,
+  "result": "Trained/blank/initial0of5,softwareboundarypassed",
+  "files": {
+    "docs/evidence/skill-observatory/visual-student-v1/index.html": {
+      "sha256": "b7980fd4f6c6cffdc973ac1631f32967da3eef85b7980a7c27fdd71a66f56de0",
+      "bytes": 887206
+    },
+    "docs/evidence/skill-observatory/visual-student-v1/trained-checkpoint-leak-audit.json": {
+      "sha256": "4bf564c4e6297865072eb6afe48744678212ac18907f353f324b8d3d91b5f871",
+      "bytes": 1393
+    },
+    "docs/evidence/skill-observatory/visual-student-v1/frozen-v1-trainer.py": {
+      "sha256": "51e780ac3ae70b7db9274082f3c7c16f81be95f53c5bc336ca860de311684f00",
+      "bytes": 7653
+    },
+    "docs/evidence/skill-observatory/visual-student-v1/frozen-v1-policy.py": {
+      "sha256": "d29c0f5c1ad3d1d12bc700389a7833acbb7a70934d08df1871e59f41548d6f02",
+      "bytes": 3771
+    },
+    "docs/evidence/skill-observatory/visual-student-v1/reset-camera-audit.json": {
+      "sha256": "c15eff84a9ae66773bdd43eb58ca13870bb575ecf44718feb0cb11d96335de57",
+      "bytes": 9722
+    },
+    "docs/evidence/skill-observatory/visual-student-v1/experiments.json": {
+      "sha256": "d99c4add43cce94d8acf1c4d5d1475ceb2d4ab1a4d90cd33a61bc1f5ad221a24",
+      "bytes": 702191
+    },
+    "docs/evidence/skill-observatory/visual-student-v1/wiring-audit.json": {
+      "sha256": "afedfdffd73dba22bf363dd4cf347ce2c09c527590ded79e5f1f11ce057c3748",
+      "bytes": 1933
+    },
+    "docs/evidence/skill-observatory/visual-student-v1/visual-experiments.jsonl": {
+      "sha256": "a9adfa75569987fab11725d8bd18405dd6718fcec8958acf14133145d06c7919",
+      "bytes": 249728
+    },
+    "runs/visual-policy-v1-8episodes-evaluation/report.json": {
+      "sha256": "bc00a3fe6c5d091551fdc2904ae8d4ad4d356f123aa377af0d44a96b6a35d520",
+      "bytes": 83093
+    },
+    "runs/visual-policy-v1-8episodes-evaluation/trained_rgb-seed-21000-sensor-video.mp4": {
+      "sha256": "c7821c2ab05b632505426a639b4f034fc43fa85db602fd638988bd59874fd9b6",
+      "bytes": 481152
+    },
+    "runs/visual-policy-v1-8episodes/policy.pt": {
+      "sha256": "c9fb2387e8b316f2c6aeba7eb891048aae6482697dbd07fe53ad2e50309020b7",
+      "bytes": 812889
+    },
+    "runs/visual-policy-v1-8episodes/initial-policy.pt": {
+      "sha256": "f6eeafe94d9344f05145c3c0a2084426fc48a91ceed675bb8aff7742c5a395a7",
+      "bytes": 813905
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "artifact": "astrafactory-visual-data-20260908.tar.gz",
+  "release_tag": "contact-learning-checkpoint-20260908",
+  "repository": "isaiahb/AstraFactory",
+  "private_draft_release": true,
+  "bytes": 968797240,
+  "sha256": "a9070b6e60a235bf94aaef78fb852287dd4dcc538fae5f73d27ec5e3ed6f8a15",
+  "github_digest_verified": true,
+  "contents": "runs/visual-contact-v1 completed 40 demonstration dataset;32train+8offline development; teacher data, not visual student success"
+}
