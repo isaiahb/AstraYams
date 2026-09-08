@@ -17,3 +17,7 @@ PYTHONPATH=src:tools python tools/train_machine_seating_ppo.py --steps 8192 --ou
 The proposal, progress, training episodes, policy checkpoints, paired full-cycle traces, action/qpos records, and report are saved in the run directory. Report PPO optimization/rollout time separately from prefix generation and full-cycle evaluation. A short training run is possible because the policy only adjusts a small part of an already engineered controller. It does not imply that arbitrary manufacturing skills can be learned in seconds.
 
 For historical comparison, `runs/residual-insert-ppo-v2/report.json` records the earlier insertion PPO experiment: 8,192 training steps in 17.97 seconds, with baseline 6/10 and PPO candidate 5/10. It was not retained as an improvement. The successful prior imitation-learning experiments should not be labeled PPO.
+
+## Development result
+
+The frozen seating PPO candidate improved full-cycle success from 2/5 to 4/5 on development seeds 59000–59004. It passed the two cases where the baseline exceeded the seating force limit; seed 59001 still timed out. This is a 547-parameter actor correcting only seating, with all other components fixed. Training completed 8,192 steps and saved its checkpoint, but a subsequent JSON export error prevented its duration from being persisted; do not substitute the earlier experiment's 17.97 seconds as this run's measured time. Evaluation resumed from the saved checkpoint without retraining. A predeclared five-case final comparison uses seeds 58000–58004; the other reserved seeds remain untouched.
