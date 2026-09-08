@@ -1,0 +1,1 @@
+export default {app:{name:'Astra Skill Studio',identifier:'dev.astrafactory.skills',version:'0.1.0'},build:{mainProcess:'bun',bun:{entrypoint:'src/desktop.ts'}},runtime:{exitOnLastWindowClosed:true}};

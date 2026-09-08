@@ -28,3 +28,7 @@ The simulation thread can publish `runs/skill-studio/skills.json` with `{schema_
 Prior results are read from `runs/hackathon-demo/final-demo.json`. The verified state-based insertion and unpromoted visual candidate are represented separately. Each skill has Simulation, Results and Artifacts tabs. The scope labels, baseline seed caveats and limitations remain visible in its evidence.
 
 Deep link to a skill using `?skill=machine-tending-v1` (retain the authenticated fragment). `bun test` checks persistence, de-duplication and merging active runs with prior results.
+
+## Native desktop window
+
+With the local backend and Skill Studio server running, use `bun run desktop`. This builds and opens a dedicated Electrobun app named **Astra Skill Studio**, with bundle identifier `dev.astrafactory.skills`, directly on the cel-shaded skill prompt and library. Its development bundle is `build/dev-macos-arm64/Astra Skill Studio-dev.app`. Runtime URLs and tokens remain in ignored `.local` files.
