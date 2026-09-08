@@ -29,6 +29,8 @@ for a in list(eq):
   if key in c.attrib:c.set(key,'right_'+c.get(key))
  eq.append(c)
 vise=world.find("body[@name='vise']");vise.set('pos','.32 0 .105');fin=world.find("body[@name='finished_stock']");fin.set('pos','.32 0 .1251')
+# Keep the output tray clear of the raised fixture, including static geometry.
+world.find("body[@name='output_tray']").set('pos','.18 .10 0')
 ET.SubElement(world,'geom',name='manual_pedestal',type='box',pos='.32 .035 .0525',size='.055 .09 .0525',rgba='.18 .23 .26 1',contype='1',conaffinity='62')
 screw=ET.SubElement(world,'body',name='manual_screw',pos='.32 .135 .160')
 ET.SubElement(screw,'joint',name='manual_screw_spin',type='hinge',axis='0 1 0',damping='.0005',frictionloss='.004',limited='true',range='-24 1')

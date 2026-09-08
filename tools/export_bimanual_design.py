@@ -38,6 +38,7 @@ preview = {
     'cad_manifest_sha256': sha(manifest), 'fps': 1, 'default_time': 0,
     'frames': [{'time': 0, 'bodies': bodies, 'phase': 'IK design pose — contact unvalidated'}],
     'objects': objects,
+    'assembly_path': 'assets/workcells/manual_vise_cad/manual_vise_assembly.step',
     'robot_instances': [{'id': 'holder', 'body_prefix': ''},
                         {'id': 'tightener', 'body_prefix': 'right_'}],
     'camera': {'target': [.26, .21, .20], 'position': [.95, -.65, .70]},
