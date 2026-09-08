@@ -78,3 +78,17 @@ Responds to Isaiah's latest feedback: easier to understand, less confusing.
 - Home hides project-only team/mode controls.
 
 Current best: `workspace-v5.html`; inline `focused-workspace-v5.html`. Next passes: version/provenance detail and handoff change impact, then responsive QA. Focus view should remain simple as details are added.
+
+## Iteration 5 — simulation as a shared engineering loop
+
+Latest user steering supersedes the generic robot-test endpoint and preference for hiding the sidebar: restore the workstream sidebar by default. Keep Focus view optional.
+
+- Preserved v5; v6 defaults to the project catalog with Sensor pod, Modular robot arm, and Lunar mass driver example projects.
+- Restored explicit workstream rail. Replaced ROB/Robot test with Simulation & analysis: Question → Model → Experiment → Feedback.
+- Added illustrative project-specific robot-arm and lunar mass-driver schematics and simulation questions. These are study placeholders, not actual engineered CAD or validated analyses.
+- Simulation feedback explicitly distinguishes geometry, controller, and modeling issues; proposed owner routing changes by project.
+- Robot-arm feedback opens ME Detailed CAD and leaves a link back to the originating finding. Lunar concept feedback opens EE architecture with ME involvement explained.
+- Browser verified: robot-arm catalog → Simulation → Feedback → change proposal → ME, with backlink and pending-investigation note.
+- Home now hides the previous project's title and project-specific controls.
+
+Current best: `workspace-v6.html`, inline `simulation-workspace-v6.html`. Next pass should deepen artifact/provenance and revision comparison while keeping the sidebar and task-specific simulation. Do not revert to a fixed Robot test endpoint.
