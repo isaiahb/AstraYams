@@ -24,7 +24,7 @@ bun run desktop
 - Create, name, inspect, follow up, steer, and interrupt real Codex sessions. Roles provide task instructions; they are not file ownership enforcement.
 - Use the local ChatGPT account through Codex App Server, without embedding an API key. Available models come from the account.
 - Explicit command/file and MCP tool approval UI.
-- Inspect STL geometry, mesh-based URDF at its zero joint pose, self-contained GLB, images, text reports, and recorded simulation videos.
+- Inspect STL geometry, downloadable STEP exports, generator source, mesh-based URDF at its zero joint pose, self-contained GLB, images, text reports, and recorded simulation videos.
 - Automatically index actual files under `tasks`, `runs`, `docs`, and `assets/robots`, and project-owned `apps/desktop/workspaces` folders.
 - Attach human or agent reviews to SHA-256 artifact versions.
 - Authenticated local MCP tools: `workspace_status`, `list_artifacts`, `read_artifact`, `review_artifact`, `publish_artifact`, `create_work_item`. Tool artifact access is scoped to its project; this is not a filesystem sandbox for agent shell tools.
@@ -45,6 +45,10 @@ Project metadata, reviews, assignments, and organization persist in `.local/work
 
 The feedback loop supports one bounded automatic revision → independent re-test cycle per proposal. The user supplies fixed acceptance criteria; the engineer submits a separate artifact through MCP, then the tester starts when that turn completes. The tester executes the task-specific procedure with its normal tools and submits an evidence report. This orchestrates real sessions; it does not embed a physics engine or independently prove an agent’s reported pass. No automatic retry or paid GPU launch is performed.
 
-Changed evidence, missing submissions, failed/interrupted sessions and app restarts stop the cycle with a visible blocker. A failed test requests a new revision; it does not change acceptance criteria. New cycles require new proposals. All source, revision and test report hashes are retained. The UI exposes each session and report for review.
+Changed evidence, missing submissions, failed/interrupted sessions and app restarts stop the cycle with a visible blocker. A failed test requests a new revision; it does not change acceptance criteria. An explicit retry can reuse a stopped proposal with the same criteria, retaining prior attempts. It never retries automatically. All source, revision and test report hashes are retained. The UI exposes each session and report for review.
 
 Workflow tests use a deterministic session adapter to verify dispatch, stale-version detection, session ownership, interruption, and bounded stopping. They are software tests, not robot simulation evidence.
+
+## Demo workspace
+
+Projects open in a visual Brief → Design → Test → Improve workspace. The small team sidebar opens actual sessions; Engineering view exposes discipline stages, artifact reviews and full Markdown reports. Long assignments and tool logs are collapsed. The prepared demo path is documented in [design/DEMO-PATH.md](design/DEMO-PATH.md). Test outcomes and remaining failures stay visible; rendered CAD does not imply physical validation or a trained policy.

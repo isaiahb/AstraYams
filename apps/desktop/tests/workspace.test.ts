@@ -57,9 +57,9 @@ test('HTTP assignment and scoped MCP submissions drive the automatic two-session
  const call=async(path:string,body?:any)=>{const r=await fetch(base+path,{method:body?'POST':'GET',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});return r.json();};
  const waitFor=async(status:string)=>{for(let i=0;i<100;i++){const s=await call('/api/status');if(s.state.workitems[0].status===status)return s.state.workitems[0];await new Promise(r=>setTimeout(r,5));}throw new Error('Handoff did not reach '+status);};
  try{
-  const p=await call('/api/projects',{title:'Integration fixture',brief:'Validate handoff orchestration only.'});const source=p.prefixes[0]+'BRIEF.md';
+  const p=await call('/api/projects',{title:'Integration fixture',brief:'For this lead session only: do not build CAD.'});const source=p.prefixes[0]+'BRIEF.md';
   const w=await call('/api/workitems',{projectId:p.id,kind:'change',owner:'ME',title:'Revision check',detail:'Produce a separate revision.',sourcePath:source});
-  await call('/api/workitems/assign',{projectId:p.id,id:w.id,criteria:'Use the fixed check; preserve the original.'});expect(starts).toHaveLength(1);
+  await call('/api/workitems/assign',{projectId:p.id,id:w.id,criteria:'Use the fixed check; preserve the original.'});expect(starts).toHaveLength(1);expect(starts[0].developerInstructions).not.toContain('For this lead session only: do not build CAD.');
   const revision=p.prefixes[0]+'revision.json';await writeFile(join(root,revision),'{}');
   const mcp=(index:number,name:string,args:any)=>{const u=new URL(starts[index].config['mcp_servers.astrafactory'].url);return call(u.pathname+u.search,{jsonrpc:'2.0',id:1,method:'tools/call',params:{name,arguments:args}});};
   const response=await mcp(0,'submit_revision',{id:w.id,path:revision,summary:'Revised fixture',instructions:'Run the fixed check'});expect(response.result.isError).toBeUndefined();expect(response.result.content[0].text).not.toContain('assignmentKey');

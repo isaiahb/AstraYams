@@ -12,10 +12,21 @@ export class EngineeringLoop {
     w.criteria=criteria;w.history=[];w.status='revising';w.assignmentKey=crypto.randomUUID();await this.record(w,'Revision requested');
     return this.launch(w,'revision');
   });}
+  async retry(id:string,projectId:string){return this.exclusive(id,async()=>{
+    const w=this.item(id,projectId);
+    if(!['blocked','needs_revision'].includes(w.status)||!w.criteria)throw new Error('Only a stopped cycle can be retried');
+    if((this.state.agents||[]).some((a:any)=>a.workItemId===id&&a.turnId))throw new Error('Wait for the previous engineer to stop before retrying');
+    if(w.sourcePath&&await this.deps.hash(w.sourcePath,projectId)!==w.sourceHash)throw new Error('Original evidence changed; create a new proposal');
+    w.attempts??=[];w.attempts.push({status:w.status,blocker:w.blocker,revision:w.revision,result:w.result,revisionAgentId:w.revisionAgentId,testAgentId:w.testAgentId,at:new Date().toISOString()});
+    delete w.blocker;delete w.revision;delete w.result;delete w.revisionAgentId;delete w.testAgentId;
+    w.status='revising';w.assignmentKey=crypto.randomUUID();await this.record(w,'Explicit retry requested; original evidence and criteria preserved');return this.launch(w,'revision');
+  });}
   async record(w:any,event:string){w.history??=[];w.history.push({event,at:new Date().toISOString()});await this.deps.save();}
   async launch(w:any,phase:string){
     const revision=phase==='revision';
-    const prompt=`Engineering work item ${w.id}: ${w.title}\n${w.detail}\nOriginal evidence: ${w.sourcePath||'none'}; SHA-256: ${w.sourceHash||'none'}\nFixed re-test and acceptance criteria:\n${w.criteria}\n${revision?'Produce a separate revision artifact, preserving the original files and evidence. Do not change the evaluator or acceptance criteria. Submit the actual revision with submit_revision, including a summary and exact instructions for an independent re-test. If blocked, use report_blocker.':`Independently re-test revision ${w.revision.path} (SHA-256 ${w.revision.sha256}). Revision summary: ${w.revision.summary}\nReproduction instructions: ${w.revision.instructions}\nRead the revision and run the specified checks. Publish a separate report with commands, assumptions, observed metrics and limitations. Call submit_test_result with pass, fail, or blocked. Pass requires observed evidence satisfying the fixed criteria; a render or completed chat is insufficient.`}\nStay within this bounded task. No purchases, external messages, paid GPU jobs, or modifying other engineers' work. Do not weaken checks to obtain a pass.`;
+    const previous=w.attempts?.at(-1);
+    const feedback=previous?`Previous attempt: ${previous.revision?.path||'no revision'}\nIndependent report: ${previous.result?.path||'none'}\nFindings: ${previous.result?.summary||previous.blocker||'See attempt history'}\nRead those artifacts first. Address the findings in a new revision directory; preserve all previous attempts.`:'';
+    const prompt=`Engineering work item ${w.id}: ${w.title}\n${w.detail}\nOriginal evidence: ${w.sourcePath||'none'}; SHA-256: ${w.sourceHash||'none'}\nFixed re-test and acceptance criteria:\n${w.criteria}\n${feedback}\n${revision?'Produce a separate revision artifact, preserving the original files and evidence. Do not change the evaluator or acceptance criteria. Submit the actual revision with submit_revision, including a summary and exact instructions for an independent re-test. If blocked, use report_blocker.':`Independently re-test revision ${w.revision.path} (SHA-256 ${w.revision.sha256}). Revision summary: ${w.revision.summary}\nReproduction instructions: ${w.revision.instructions}\nRead the revision and run the specified checks. Publish a separate report with commands, assumptions, observed metrics and limitations. Call submit_test_result with pass, fail, or blocked. Pass requires observed evidence satisfying the fixed criteria; a render or completed chat is insufficient.`}\nStay within this bounded task. No purchases, external messages, paid GPU jobs, or modifying other engineers' work. Do not weaken checks to obtain a pass.`;
     try{
       const a=await this.deps.start({projectId:w.projectId,role:revision?({Brief:'Lead engineer',ID:'Industrial design',ME:'Mechanical',EE:'Electrical',SW:'Software',MFG:'Manufacturing',SIM:'Simulation'} as any)[w.owner]:'Simulation',title:`${revision?'Revise':'Re-test'} · ${w.title}`,prompt,workItemId:w.id,phase,assignmentKey:w.assignmentKey});
       if(revision)w.revisionAgentId=a.id;else w.testAgentId=a.id;

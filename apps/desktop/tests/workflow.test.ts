@@ -35,3 +35,9 @@ test('mutated revision or test evidence stops automatic completion',async()=>{
 test('failed re-test ends the cycle without silently changing criteria or retrying',async()=>{
  const f=fixture();await revision(f);await f.loop.completed(f.agents[0],'completed');await f.loop.submitResult({id:'w',path:'report.md',outcome:'fail',summary:'Measured 1 mm'},'p',f.w.assignmentKey);await f.loop.completed(f.agents[1],'completed');expect(f.w.status).toBe('needs_revision');expect(f.agents).toHaveLength(2);expect(f.w.result.sha256).toBe('report');
 });
+test('explicit retry retains criteria and prior evidence and cannot accept stale-session submissions',async()=>{
+ const f=fixture();await f.loop.assign('w','p','Frozen check');const oldKey=f.w.assignmentKey;
+ await f.loop.block({id:'w',reason:'Instruction conflict'},'p',oldKey);
+ await f.loop.retry('w','p');expect(f.w.criteria).toBe('Frozen check');expect(f.w.attempts[0].blocker).toBe('Instruction conflict');expect(f.w.sourceHash).toBe('original');expect(f.agents).toHaveLength(2);
+ await expect(f.loop.submitRevision({id:'w',path:'revision.md',summary:'x',instructions:'y'},'p',oldKey)).rejects.toThrow('does not own');
+});

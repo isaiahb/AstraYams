@@ -1,7 +1,7 @@
 import { readdir, realpath, stat } from 'node:fs/promises';
 import { resolve, relative, extname, basename, sep } from 'node:path';
 export type Artifact={path:string,name:string,kind:string,bytes:number,modified:string};
-const extensions=new Set(['.stl','.urdf','.glb','.gltf','.png','.jpg','.mp4','.webm','.json','.md','.csv','.xml']);
+const extensions=new Set(['.stl','.urdf','.glb','.gltf','.png','.jpg','.mp4','.webm','.json','.md','.csv','.xml','.step','.stp','.py','.txt']);
 export async function listArtifacts(root:string):Promise<Artifact[]>{
  const rows:Artifact[]=[];
  async function walk(dir:string,depth=0){
@@ -12,7 +12,7 @@ export async function listArtifacts(root:string):Promise<Artifact[]>{
    if(entry.isDirectory())await walk(path,depth+1);
    else if(extensions.has(extname(path).toLowerCase())){
     const s=await stat(path);const ext=extname(path).toLowerCase();
-    rows.push({path:relative(root,path),name:basename(path),kind:['.mp4','.webm'].includes(ext)?'video':['.stl','.urdf','.glb','.gltf'].includes(ext)?'model':['.png','.jpg'].includes(ext)?'image':'document',bytes:s.size,modified:s.mtime.toISOString()});
+    rows.push({path:relative(root,path),name:basename(path),kind:['.step','.stp'].includes(ext)?'download':['.mp4','.webm'].includes(ext)?'video':['.stl','.urdf','.glb','.gltf'].includes(ext)?'model':['.png','.jpg'].includes(ext)?'image':'document',bytes:s.size,modified:s.mtime.toISOString()});
    }
   }
  }
