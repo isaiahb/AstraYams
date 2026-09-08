@@ -49,7 +49,7 @@ class SeatEnv(gym.Env):
    a=w.act(e);assert np.array_equal(before,e.data.qpos);_,_,done,trunc,info=e.step(a)
   except ValueError as ex:
    info={'is_success':False,'reason':'ik_failure','exception':str(ex)};self.rows.append({'return':self.total-20,'final':info});return observe(e),-20.,True,False,info
-  error=np.linalg.norm(observe(e)[:3]*.03);terms={'progress':100*(before_error-error),'force':-.005*max(info['peak_contact_force_n']-10,0),'effort':-.001*float(np.square(action).sum()),'time':-.002,'terminal':20*int(info['is_success'])-20*int(info['reason']=='force_limit')};reward=float(sum(terms.values()));self.total+=reward;self.n+=1;info['reward_components']=terms
+  error=np.linalg.norm(observe(e)[:3]*.03);terms={'progress':100*(before_error-error),'force':-.005*max(info['peak_contact_force_n']-10,0),'effort':-.001*float(np.square(action).sum()),'time':-.002,'terminal':20*int(info['is_success'])-20*int(info['reason']=='force_limit')};terms={k:float(v) for k,v in terms.items()};reward=float(sum(terms.values()));self.total+=reward;self.n+=1;info['reward_components']=terms
   if done or trunc:self.rows.append({'steps':self.n,'return':self.total,'final':dict(info)})
   return observe(e),reward,done,trunc,info
  def close(self):self.base.close()
