@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "checkpoint_sha256": "81aebfc8fb1b0e9e45881d5b4ee2787c15208fb20fb28b7a14f08833d210a6b1",
+  "saved_previous_action_mean": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "saved_previous_action_std": [
+    0.4000000059604645,
+    0.4000000059604645,
+    0.4000000059604645,
+    0.4000000059604645,
+    0.4000000059604645,
+    0.4000000059604645,
+    0.5
+  ],
+  "minimum_q_std": 0.05000000074505806,
+  "minimum_qvel_std": 0.10000000149011612,
+  "minimum_target_std": 0.05000000074505806,
+  "scope": "Actual saved checkpoint normalization checked against prospective v2 controller-bound and sensor-floor contract; not a task-success claim"
+}

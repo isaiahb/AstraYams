@@ -1,0 +1,2492 @@
+{
+  "scope": "Visual pickup only, not insertion/hardware transfer",
+  "thresholds": {
+    "control_steps": 450,
+    "control_hz": 50,
+    "rise_m": 0.02,
+    "absolute_clearance_m": 0.065,
+    "left_force_n_gt": 0.02,
+    "right_force_n_gt": 0.02,
+    "other_support_n_lt": 0.01,
+    "final_continuous_hold_seconds": 0.5,
+    "duration": "first-to-last qualifying control timestamps",
+    "force_abort_n_gt": 80.0,
+    "nonfinite_or_unexpected_termination_fails": true,
+    "original_environment_termination_allowed": true,
+    "primary": "valid final held pickup and no force abort",
+    "success_based_early_stop": false
+  },
+  "device": "mps",
+  "task_hashes": {
+    "../../assets/robots/yam/collision/tip_left_00.stl": "adca7c6d28578f029fbeb00bfb5c65853fc2273e0cceecc0690d6ef3ca95fb5a",
+    "../../assets/robots/yam/collision/tip_left_01.stl": "52077d55a7e94a30d111a2413c5475716a07a39fa3b8631c1b20cf46a3049a2f",
+    "../../assets/robots/yam/collision/tip_left_02.stl": "6fdef5eb8f6a0ddf1ac60dff652301efaaa9a21c79585baaaa6945a11dc0c579",
+    "../../assets/robots/yam/collision/tip_left_03.stl": "1d2ac17668cdbb2d71a966afb3ccb3ddc41c269ed8c0c17e1dd95b01b1dff0b7",
+    "../../assets/robots/yam/collision/tip_left_04.stl": "a16c2ddd5797547908cdc6452227f4fb1154b86ffcd806944aaabd460ba0e6c8",
+    "../../assets/robots/yam/collision/tip_left_05.stl": "c5eab163b45b0f981a9fa52fc301f8afcb8937da8ec908256aa11109f2dcbf3b",
+    "../../assets/robots/yam/collision/tip_left_06.stl": "21cdb6486bbf51d896a083b26ae873558e71ea57ccb2f760708eed4cdb11116d",
+    "../../assets/robots/yam/collision/tip_left_07.stl": "39802b1389c48ef10fa70996d28c45d5cf140b4fbfcf7f5e2060c7222c30113f",
+    "../../assets/robots/yam/collision/tip_left_08.stl": "84973d7c4709a3f7fba3849b46aa15b6ea3208d15c8d610f5ff593978d7b7932",
+    "../../assets/robots/yam/collision/tip_left_09.stl": "0accb8adc4eeb98d1b57f7033e4415599512cc966ef8f32ab3254c957f988877",
+    "../../assets/robots/yam/collision/tip_left_10.stl": "cdf68c2b932df02ce7155691c28a26aba8f8671512bfe3ad4b5f39c9db97430c",
+    "../../assets/robots/yam/collision/tip_left_11.stl": "0af6de816d1af607e61e55f1ce37693c125f59665ac6309074afa12da3785b05",
+    "../../assets/robots/yam/collision/tip_left_12.stl": "1c458d8f370d10529e6e01f40e3f00152cef6df1c88e558ad920b305031773a1",
+    "../../assets/robots/yam/collision/tip_left_13.stl": "6ccee9c77bedcdb3c150b747b4ec5b4474904278f295bbf48920013dc8a36b4d",
+    "../../assets/robots/yam/collision/tip_left_14.stl": "cd2f195ea4fe35bd34faf71cb01a71415d96c013c92a5529dc4f61ce70ce9362",
+    "../../assets/robots/yam/collision/tip_left_15.stl": "3514a9e2e60234673a9e91f7aa24f4025c6d2108119dc2733ec386fb48226c9d",
+    "../../assets/robots/yam/collision/tip_left_16.stl": "58b235316c7c6dd259d6ea013fd763a9a68a60a65fc71a05892b4258588ee46c",
+    "../../assets/robots/yam/collision/tip_left_17.stl": "049dffac371da21f70eb0a743a48fc9970113527a9afaa0f2ad93e025ae08994",
+    "../../assets/robots/yam/collision/tip_left_18.stl": "bda7786620893ac10c23ce00fd0e36eb3f0e21a3dea96e8988979419a0c8017c",
+    "../../assets/robots/yam/collision/tip_left_19.stl": "09c3d1f05dda23ecbefba84462231c706870281ec76c2e0fb2c4137afa19c5c9",
+    "../../assets/robots/yam/collision/tip_left_20.stl": "0aed24b7c6789f78832652fb0e7682ae8fd77dcac9fe79fe912a392dd5d929e4",
+    "../../assets/robots/yam/collision/tip_left_21.stl": "6b9afd5162bc7fc244285461795f886b1bc0a5c7a0be5875a3731febfade9f01",
+    "../../assets/robots/yam/collision/tip_left_22.stl": "1bf67f77d0c229a146a387c2a582fb0a5a167a5119462346048deda9fd4df246",
+    "../../assets/robots/yam/collision/tip_left_23.stl": "b9ca5563f61ad264c08c42eaffb69232c59f9b48257c2c0f18b304e50e482e90",
+    "../../assets/robots/yam/collision/tip_right_00.stl": "9bcb14014ec0f54deb4198ce8799c339cfe5186a29cd45b37d768452f39e90f4",
+    "../../assets/robots/yam/collision/tip_right_01.stl": "7f4aa06110fc1b37fb8d38b6caf5a74a2bb8fbb11c5cd3253090e5301b2369bc",
+    "../../assets/robots/yam/collision/tip_right_02.stl": "0c528cc0a9c9017cda03196b9e5b5edae0494e964589fad294224d89296867c8",
+    "../../assets/robots/yam/collision/tip_right_03.stl": "d50e1c811a3d7c23792b05111f1f7c18a666d6874985690791f5541807b38b0e",
+    "../../assets/robots/yam/collision/tip_right_04.stl": "39e71f0558ba3594176ecbe5bf5db46c0da49f12f1b67158ca113d03d9feb0d8",
+    "../../assets/robots/yam/collision/tip_right_05.stl": "26e7c75493167a3f6104665cb318f2dbb053c3527a4326d59a8ed2aa7abab13b",
+    "../../assets/robots/yam/collision/tip_right_06.stl": "fa6815b47bbc37c1d95d1b915cc2a075004988035764733a3ff9ecaadeba46cc",
+    "../../assets/robots/yam/collision/tip_right_07.stl": "1497f7e956c64f30c9037e41403c5c8693dc878736b38b0c6929bcfc7d523250",
+    "../../assets/robots/yam/collision/tip_right_08.stl": "0307768fe031d92dee8650bfa722d891b3367c231953ef412c038b7634c35fdb",
+    "../../assets/robots/yam/collision/tip_right_09.stl": "2b0fcf7960e78086371257a427864d9968cc816e014d9f98cabfad73ec07cca8",
+    "../../assets/robots/yam/collision/tip_right_10.stl": "17dc5e563e202bf5df7d22598ac00272701aca1fc1421e8e7fb8b553c598ddb8",
+    "../../assets/robots/yam/collision/tip_right_11.stl": "28b38c7ed46b6b1fa333ba426ae773b2f73b104e2deda26feef40be636fd255d",
+    "../../assets/robots/yam/collision/tip_right_12.stl": "9ee6c51af2580fba912c089c9657bba3b15b56a22530ff814ba65c11bd8b6384",
+    "../../assets/robots/yam/collision/tip_right_13.stl": "f70747cabab76a6163a9592649fd84fb132d2f3baac4092f7d580ddfda3f8665",
+    "../../assets/robots/yam/collision/tip_right_14.stl": "836ff00716cea95a7423f6d2090badc431b5bf86be71208df25a37669f0fabd4",
+    "../../assets/robots/yam/collision/tip_right_15.stl": "cfd7c13e4fc807e7a4bffc3aab7748eac67e3e8d83a7e7b56031648a3e9d8e40",
+    "../../assets/robots/yam/collision/tip_right_16.stl": "88dc755e2d24acbb17e1f57c7df9af968bf6de49e3afa424073b3c75abf627aa",
+    "../../assets/robots/yam/collision/tip_right_17.stl": "9218d710dac54e53980235af75c1b17251bbb13f97566bee12f4cea1cdb573c9",
+    "../../assets/robots/yam/collision/tip_right_18.stl": "f77cbb94daff6fb7e9b3ca3d7507157d1666587fb51eeb73e151089e326507de",
+    "../../assets/robots/yam/collision/tip_right_19.stl": "19e4287bcd8eeaeb33d93eb3b67d408b32397b83bd6184be51b1c631cca2a1de",
+    "../../assets/robots/yam/collision/tip_right_20.stl": "286058bf86bc73201e729bff41529e6475219ce51179e80c956ee2715edd7b18",
+    "../../assets/robots/yam/collision/tip_right_21.stl": "0977e9ca9c31598e30e145bf27c37f6c65fd1da0db2092cfbfd928a52d3f21e4",
+    "../../assets/robots/yam/collision/tip_right_22.stl": "678b43b5615c4424be580e71b5ca36d534716cbfb7e0a40cfdd4203dcbba802b",
+    "../../assets/robots/yam/collision/tip_right_23.stl": "86fd3dc072aa72805d17097278533e3dfff9f4d0cce5cc740fca33d8a3b27a9a",
+    "../../assets/robots/yam/v1/assets/base.stl": "d95a5aa0c06a5ef6da02788b0df5a14e4202c1ae8eb2771a7f6f8947e3a490c7",
+    "../../assets/robots/yam/v1/assets/gripper.stl": "e0dad958755f0a9d58e6bea4f16fed2849146ae81c0dbd45487aff308cb49e58",
+    "../../assets/robots/yam/v1/assets/link1.stl": "41f7dfbd0471a0f96884c73782e82927f2bbc6aced9b55c0111da1b52d6e0c50",
+    "../../assets/robots/yam/v1/assets/link2.stl": "067b51567a95a631d50fc02515bd045a2eb7f2f34489d5aec31d9f3f6ce58b30",
+    "../../assets/robots/yam/v1/assets/link3.stl": "9650a114393881b54a68822ba3fb48fcd3318023ebecaf251e4f7804e91f801c",
+    "../../assets/robots/yam/v1/assets/link4.stl": "42740ce2bb8693760a35dc6e9e8fe0981999c02d6bf167a465c9936acf41c557",
+    "../../assets/robots/yam/v1/assets/link5.stl": "f70eb1191d6a1ccbb748a46fe8ba541f38094c9829fd1859300e70360c5a07c7",
+    "../../assets/robots/yam/v1/assets/tip_left.stl": "281354d77e4914ccd994b6c71fecce49a91527701f268d318f801769a6913685",
+    "../../assets/robots/yam/v1/assets/tip_right.stl": "070925233d4b742c05c4d5508e951deba5947c2fabfa336a4e33db599c70ac3a",
+    "../keyed_insertion/assets/peg.stl": "0df2b8307657ae8b6918bcf6ead5dd97f40bb00de934341c81ef37be2e49403a",
+    "../keyed_insertion/assets/wall_0.stl": "63cee48d2b0c02fe99061637ebc119da0a8afe77024db0099b3f962bd33e63b8",
+    "../keyed_insertion/assets/wall_1.stl": "277e6114ed117742a8c5a769d313f798f657aaa010f13a02e0ae8bee00440e7b",
+    "../keyed_insertion/assets/wall_2.stl": "cc7ee55e4c4b3029e526feb1dc2fb65f54f347d286f8907f6793858859bc73f8",
+    "../keyed_insertion/assets/wall_3.stl": "8af9b50f06d184e05d065bebf34d916628f20c1f08bfa51fb42c262b3c4ec416",
+    "../keyed_insertion/assets/wall_4.stl": "27c20f8579d0187a2fc929a51fd1697fb392736706f540d3fafe9bcdafac2add",
+    "../keyed_insertion/assets/wall_5.stl": "1e0d4066f1fdec724b37e6769269e87f7d9ebf8fe3de043b0042d38b4848ccad",
+    "../keyed_insertion/assets/wall_6.stl": "045e26033bd97c9119f3ef8a978cc8f31f1fcfe30c41e6a10e41ef443de0673e",
+    "../keyed_insertion/assets/wall_7.stl": "ffcd04e2e530640fb9fd853fa233e88a08fe016b2d52fc4fc05cd505ab50fcca",
+    "../keyed_insertion/assets/wall_8.stl": "ebff5f5e1cafd7eb1d634a30783a7222070b30fbf133db06857dc280639fc20f",
+    "README.md": "03594f6aba645001d5e59bc8d6cd46623c84fbf86396629f7fba2cdf2cfa5ab2",
+    "design.json": "2cf2a6b0b88034a5385ec70455f196d86a1fee710633dc9c4e0b8d8b68f929f7",
+    "reward.py": "a66014aad1f733006aa6d11c92e4384161ac19c1502fcc428db2657689526adb",
+    "scene.xml": "05148eb172da112bda5acacc80b6e8851cfb46dbdf30df7567326d06d4ac8a10",
+    "task.json": "d50acaaeff78b69ae28639de77aedfea887e5679275d2ccd2c1953d809a79d58",
+    "task.py": "f34f1e647baa25d869134a089641fab4d1188f081c64f25ccaa70121db20b49d"
+  },
+  "source_sha256": {
+    "/Users/isaiah/Documents/BallahTech/AstraFactory/tools/evaluate_visual_skill.py": "b4c50d4eac3bd21f7e81ac5f64edd40705e8a8fdab326e34943e117388360a0c",
+    "src/astrafactory/vision_policy.py": "d29c0f5c1ad3d1d12bc700389a7833acbb7a70934d08df1871e59f41548d6f02",
+    "src/astrafactory/deployable_observations.py": "d1a2d8bf333e3d7e1b36bbbf1c81b6445731dfb34c067a71c5ac2db0e63c9ea6",
+    "src/astrafactory/sensor_contract.py": "bc882f76ba81a4a6024ff7da106cd8673a448bfe3304005d346c86871f85377a",
+    "src/astrafactory/contact_env.py": "2380c2ae7ecf3a35fa8fbf26a73c97781c87a91d88770a4718555205b051bc14",
+    "src/astrafactory/env.py": "03bfdd885cf3c1d89ef476d1e78d315bc52ef13f8e97ee1baaebffdfd82fa477"
+  },
+  "trials": [
+    {
+      "mode": "trained_rgb",
+      "seed": 21010,
+      "passed": false,
+      "ever_validated_pickup": false,
+      "final_hold_seconds": 0.0,
+      "longest_qualified_seconds": 0.0,
+      "termination_reason": null,
+      "max_rise_m": 0.006153265861919728,
+      "steps": 450,
+      "final": {
+        "step": 450,
+        "is_success": false,
+        "peg_z_m": 0.006997750158241431,
+        "tip_z_m": 0.006997750158241431,
+        "xy_error_m": 0.09326137070152016,
+        "orientation_error_rad": 1.5782759465595457,
+        "yaw_error_rad": 0.1360713970189679,
+        "left_contact": false,
+        "right_contact": false,
+        "grasp_contacts": false,
+        "was_lifted": false,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 5.239597705654775e-06,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 8.999999999999675,
+        "peak_contact_force_n": 0.39255087928822935,
+        "episode_peak_force_n": 11.686357817815784,
+        "reason": null,
+        "tool_z_m": 0.20335713161616178,
+        "peg_vertical_velocity_m_s": 1.9309479935272182e-06,
+        "left_force_n": 0.0,
+        "right_force_n": 0.0,
+        "nonfinger_support_force_n": 0.3924303978340345,
+        "peg_contacts": [
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.06539569225877574
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.06583186175626848
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.05547024483175274
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.055895218016860815
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.05532929344232348
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.047537013568568515
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.046971073959484785
+          }
+        ],
+        "grip_joint_position_m": -0.0031598897694511525,
+        "sensor_time_s": 8.979999999999668,
+        "image_time_s": 8.959999999999662,
+        "qualified_duration_s": 0.0
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21010,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.2760854432494859,
+          -0.06521500093706044,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.324979300502032,
+          0.012338095068881083,
+          0.009,
+          3.2810270942088913
+        ],
+        "relative_socket_yaw_rad": 0.14941767348296736,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21010,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "81aebfc8fb1b0e9e45881d5b4ee2787c15208fb20fb28b7a14f08833d210a6b1",
+      "wall_seconds": 4.034831708064303
+    },
+    {
+      "mode": "trained_rgb",
+      "seed": 21011,
+      "passed": false,
+      "ever_validated_pickup": false,
+      "final_hold_seconds": 0.0,
+      "longest_qualified_seconds": 0.0,
+      "termination_reason": "force_limit",
+      "max_rise_m": -0.0005751383487609563,
+      "steps": 116,
+      "final": {
+        "step": 116,
+        "is_success": false,
+        "peg_z_m": 0.00042486165123904377,
+        "tip_z_m": 0.00042486165123904377,
+        "xy_error_m": 0.09589351589364395,
+        "orientation_error_rad": 0.2526380275715834,
+        "yaw_error_rad": 0.24979030519969997,
+        "left_contact": true,
+        "right_contact": false,
+        "grasp_contacts": false,
+        "was_lifted": false,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 0.03152996789350234,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 2.319999999999966,
+        "peak_contact_force_n": 167.2644162898527,
+        "episode_peak_force_n": 167.2644162898527,
+        "reason": "force_limit",
+        "tool_z_m": 0.05523170460017565,
+        "peg_vertical_velocity_m_s": -0.01347108167220637,
+        "left_force_n": 167.2644162898527,
+        "right_force_n": 0.0,
+        "nonfinger_support_force_n": 0.0,
+        "peg_contacts": [
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 19.984688377321667
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 20.795285273849963
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 21.216633478209577
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 20.427240846924008
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 18.400405875984006
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 40.0279149376272
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 26.412247499936292
+          }
+        ],
+        "grip_joint_position_m": -0.014813134748482207,
+        "sensor_time_s": 2.2999999999999683,
+        "image_time_s": 2.2799999999999705,
+        "qualified_duration_s": 0.0
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21011,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.26993400177450916,
+          -0.07397218673728562,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.30745139934787186,
+          0.012912689584622735,
+          0.009,
+          3.43960564263396
+        ],
+        "relative_socket_yaw_rad": 0.24835628121085293,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21011,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "81aebfc8fb1b0e9e45881d5b4ee2787c15208fb20fb28b7a14f08833d210a6b1",
+      "wall_seconds": 1.0144369581248611
+    },
+    {
+      "mode": "trained_rgb",
+      "seed": 21012,
+      "passed": false,
+      "ever_validated_pickup": false,
+      "final_hold_seconds": 0.0,
+      "longest_qualified_seconds": 0.0,
+      "termination_reason": "force_limit",
+      "max_rise_m": 0.006818376420992739,
+      "steps": 319,
+      "final": {
+        "step": 319,
+        "is_success": false,
+        "peg_z_m": 0.007818376420992739,
+        "tip_z_m": 0.007818376420992739,
+        "xy_error_m": 0.12256534625139363,
+        "orientation_error_rad": 0.10683015022399661,
+        "yaw_error_rad": 0.08860611235418976,
+        "left_contact": false,
+        "right_contact": false,
+        "grasp_contacts": false,
+        "was_lifted": false,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 1.4257249124235716,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 6.379999999999519,
+        "peak_contact_force_n": 191.55427121893214,
+        "episode_peak_force_n": 191.55427121893214,
+        "reason": "force_limit",
+        "tool_z_m": 0.0517304329678408,
+        "peg_vertical_velocity_m_s": 0.804288822541384,
+        "left_force_n": 0.0,
+        "right_force_n": 0.0,
+        "nonfinger_support_force_n": 0.0,
+        "peg_contacts": [],
+        "grip_joint_position_m": -0.0118038654160508,
+        "sensor_time_s": 6.359999999999522,
+        "image_time_s": 6.359999999999522,
+        "qualified_duration_s": 0.0
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21012,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.26882520890627387,
+          -0.08038845148185439,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.32879057307501836,
+          0.014385157992376503,
+          0.009,
+          3.1797669118575915
+        ],
+        "relative_socket_yaw_rad": -0.057646846449303735,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21012,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "81aebfc8fb1b0e9e45881d5b4ee2787c15208fb20fb28b7a14f08833d210a6b1",
+      "wall_seconds": 2.710008458001539
+    },
+    {
+      "mode": "trained_rgb",
+      "seed": 21013,
+      "passed": true,
+      "ever_validated_pickup": true,
+      "final_hold_seconds": 2.9200000000001225,
+      "longest_qualified_seconds": 2.9200000000001225,
+      "termination_reason": null,
+      "max_rise_m": 0.08659651969340974,
+      "steps": 450,
+      "final": {
+        "step": 450,
+        "is_success": false,
+        "peg_z_m": 0.08759651969340974,
+        "tip_z_m": 0.08759651969340974,
+        "xy_error_m": 0.1236830857086706,
+        "orientation_error_rad": 0.09862148367816348,
+        "yaw_error_rad": 0.09296935940229503,
+        "left_contact": true,
+        "right_contact": true,
+        "grasp_contacts": true,
+        "was_lifted": true,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 0.017145325379491316,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 8.999999999999675,
+        "peak_contact_force_n": 1.8096327079478938,
+        "episode_peak_force_n": 6.8076205986730844,
+        "reason": null,
+        "tool_z_m": 0.13994321038618093,
+        "peg_vertical_velocity_m_s": 0.016413611195387822,
+        "left_force_n": 0.9144978480430511,
+        "right_force_n": 0.8864818436917756,
+        "nonfinger_support_force_n": 0.0,
+        "peg_contacts": [
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.04533456436300939
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.04068612082653842
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_13",
+            "force_n": 0.09265040638739519
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_13",
+            "force_n": 0.08471200676758942
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_13",
+            "force_n": 0.05566870860515459
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_13",
+            "force_n": 0.060314680474256796
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.07092700347366447
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.03780705888974367
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.045428123001625395
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_13",
+            "force_n": 0.06040777600977702
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_13",
+            "force_n": 0.09135563952623546
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_13",
+            "force_n": 0.13961087890640594
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_13",
+            "force_n": 0.08959488081165523
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.16732426433977896
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.16439257063923135
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.1630033660650003
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.18660030960290624
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.20516133304485878
+          }
+        ],
+        "grip_joint_position_m": -0.006949088676305705,
+        "sensor_time_s": 8.979999999999668,
+        "image_time_s": 8.959999999999662,
+        "qualified_duration_s": 2.9200000000001225
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21013,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.26376405078215065,
+          -0.08422267077395944,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.3322266813179488,
+          0.012888389796813242,
+          0.009,
+          3.038903128753131
+        ],
+        "relative_socket_yaw_rad": -0.18331958651099536,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21013,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "81aebfc8fb1b0e9e45881d5b4ee2787c15208fb20fb28b7a14f08833d210a6b1",
+      "wall_seconds": 3.9157397500239313
+    },
+    {
+      "mode": "trained_rgb",
+      "seed": 21014,
+      "passed": false,
+      "ever_validated_pickup": false,
+      "final_hold_seconds": 0.0,
+      "longest_qualified_seconds": 0.0,
+      "termination_reason": "force_limit",
+      "max_rise_m": 0.005731601397662286,
+      "steps": 171,
+      "final": {
+        "step": 171,
+        "is_success": false,
+        "peg_z_m": 0.006731601397662286,
+        "tip_z_m": 0.006731601397662286,
+        "xy_error_m": 0.09690601414523874,
+        "orientation_error_rad": 0.21657465135844403,
+        "yaw_error_rad": 0.21185598334831157,
+        "left_contact": false,
+        "right_contact": false,
+        "grasp_contacts": false,
+        "was_lifted": false,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 1.713142674781081,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 3.419999999999845,
+        "peak_contact_force_n": 172.0407170647317,
+        "episode_peak_force_n": 172.0407170647317,
+        "reason": "force_limit",
+        "tool_z_m": 0.05167291647874597,
+        "peg_vertical_velocity_m_s": 0.9277593373646091,
+        "left_force_n": 0.0,
+        "right_force_n": 0.0,
+        "nonfinger_support_force_n": 0.0,
+        "peg_contacts": [],
+        "grip_joint_position_m": -0.010785954770243982,
+        "sensor_time_s": 3.399999999999847,
+        "image_time_s": 3.399999999999847,
+        "qualified_duration_s": 0.0
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21014,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.2755337040679877,
+          -0.08037199031238589,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.32933722049434616,
+          -0.007373072595046826,
+          0.009,
+          2.988887109416517
+        ],
+        "relative_socket_yaw_rad": -0.16790947604230932,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21014,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "81aebfc8fb1b0e9e45881d5b4ee2787c15208fb20fb28b7a14f08833d210a6b1",
+      "wall_seconds": 1.4271363329607993
+    },
+    {
+      "mode": "blank_rgb",
+      "seed": 21010,
+      "passed": false,
+      "ever_validated_pickup": false,
+      "final_hold_seconds": 0.0,
+      "longest_qualified_seconds": 0.0,
+      "termination_reason": null,
+      "max_rise_m": 0.006009954566282343,
+      "steps": 450,
+      "final": {
+        "step": 450,
+        "is_success": false,
+        "peg_z_m": 0.006997761803078174,
+        "tip_z_m": 0.006997761803078174,
+        "xy_error_m": 0.09405079270926228,
+        "orientation_error_rad": 1.5718129328915649,
+        "yaw_error_rad": 0.05031181004461261,
+        "left_contact": false,
+        "right_contact": false,
+        "grasp_contacts": false,
+        "was_lifted": false,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 4.015277268696886e-06,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 8.999999999999675,
+        "peak_contact_force_n": 0.39255087928823956,
+        "episode_peak_force_n": 63.28417655713772,
+        "reason": null,
+        "tool_z_m": 0.19757370879169012,
+        "peg_vertical_velocity_m_s": 1.467542418780174e-06,
+        "left_force_n": 0.0,
+        "right_force_n": 0.0,
+        "nonfinger_support_force_n": 0.3923954312028024,
+        "peg_contacts": [
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.06536288358785138
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.0658578825202392
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.05544519237875778
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.055928985808090685
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.05528743485971453
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.04757730484014883
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.04693574720799995
+          }
+        ],
+        "grip_joint_position_m": -0.003956789566208033,
+        "sensor_time_s": 8.979999999999668,
+        "image_time_s": 8.959999999999662,
+        "qualified_duration_s": 0.0
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21010,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.2760854432494859,
+          -0.06521500093706044,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.324979300502032,
+          0.012338095068881083,
+          0.009,
+          3.2810270942088913
+        ],
+        "relative_socket_yaw_rad": 0.14941767348296736,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21010,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "81aebfc8fb1b0e9e45881d5b4ee2787c15208fb20fb28b7a14f08833d210a6b1",
+      "wall_seconds": 3.835471625206992
+    },
+    {
+      "mode": "blank_rgb",
+      "seed": 21011,
+      "passed": true,
+      "ever_validated_pickup": true,
+      "final_hold_seconds": 2.8400000000001313,
+      "longest_qualified_seconds": 2.8400000000001313,
+      "termination_reason": null,
+      "max_rise_m": 0.08879326666340259,
+      "steps": 450,
+      "final": {
+        "step": 450,
+        "is_success": false,
+        "peg_z_m": 0.0897932666634026,
+        "tip_z_m": 0.0897932666634026,
+        "xy_error_m": 0.1068080338114064,
+        "orientation_error_rad": 0.2662249682676123,
+        "yaw_error_rad": 0.2651141239576315,
+        "left_contact": true,
+        "right_contact": true,
+        "grasp_contacts": true,
+        "was_lifted": true,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 0.017718868614272566,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 8.999999999999675,
+        "peak_contact_force_n": 2.1967699677931436,
+        "episode_peak_force_n": 10.871761234916622,
+        "reason": null,
+        "tool_z_m": 0.14492426738857014,
+        "peg_vertical_velocity_m_s": 0.017309230337512055,
+        "left_force_n": 1.1002609617461385,
+        "right_force_n": 1.0888121470257293,
+        "nonfinger_support_force_n": 0.0,
+        "peg_contacts": [
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 1.1002609617461385
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.5469326366696562
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.5418795103560732
+          }
+        ],
+        "grip_joint_position_m": -0.007023194407791045,
+        "sensor_time_s": 8.979999999999668,
+        "image_time_s": 8.959999999999662,
+        "qualified_duration_s": 2.8400000000001313
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21011,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.26993400177450916,
+          -0.07397218673728562,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.30745139934787186,
+          0.012912689584622735,
+          0.009,
+          3.43960564263396
+        ],
+        "relative_socket_yaw_rad": 0.24835628121085293,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21011,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "81aebfc8fb1b0e9e45881d5b4ee2787c15208fb20fb28b7a14f08833d210a6b1",
+      "wall_seconds": 3.9227267501410097
+    },
+    {
+      "mode": "blank_rgb",
+      "seed": 21012,
+      "passed": true,
+      "ever_validated_pickup": true,
+      "final_hold_seconds": 3.9800000000000058,
+      "longest_qualified_seconds": 3.9800000000000058,
+      "termination_reason": null,
+      "max_rise_m": 0.1069861474068978,
+      "steps": 450,
+      "final": {
+        "step": 450,
+        "is_success": false,
+        "peg_z_m": 0.1079861474068978,
+        "tip_z_m": 0.1079861474068978,
+        "xy_error_m": 0.11973543146058854,
+        "orientation_error_rad": 0.08253312661720809,
+        "yaw_error_rad": 0.0729071035548362,
+        "left_contact": true,
+        "right_contact": true,
+        "grasp_contacts": true,
+        "was_lifted": true,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 0.013484437163771068,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 8.999999999999675,
+        "peak_contact_force_n": 1.493257229467412,
+        "episode_peak_force_n": 16.540567859403822,
+        "reason": null,
+        "tool_z_m": 0.16250313942261002,
+        "peg_vertical_velocity_m_s": 0.012073476015877334,
+        "left_force_n": 0.7751106781931691,
+        "right_force_n": 0.711516355058396,
+        "nonfinger_support_force_n": 0.0,
+        "peg_contacts": [
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.08141200781166541
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.04291639150186306
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.06264054984216924
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.2045605546096871
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.07885831438725154
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.1621294233286065
+          },
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.14259343671192626
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.2180822366026845
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.11867270394836078
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.17087575831702595
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.20388565619032484
+          }
+        ],
+        "grip_joint_position_m": -0.006942046819161545,
+        "sensor_time_s": 8.979999999999668,
+        "image_time_s": 8.959999999999662,
+        "qualified_duration_s": 3.9800000000000058
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21012,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.26882520890627387,
+          -0.08038845148185439,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.32879057307501836,
+          0.014385157992376503,
+          0.009,
+          3.1797669118575915
+        ],
+        "relative_socket_yaw_rad": -0.057646846449303735,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21012,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "81aebfc8fb1b0e9e45881d5b4ee2787c15208fb20fb28b7a14f08833d210a6b1",
+      "wall_seconds": 4.310756584163755
+    },
+    {
+      "mode": "blank_rgb",
+      "seed": 21013,
+      "passed": false,
+      "ever_validated_pickup": false,
+      "final_hold_seconds": 2.4400000000001754,
+      "longest_qualified_seconds": 2.4400000000001754,
+      "termination_reason": null,
+      "max_rise_m": 0.06399755922066057,
+      "steps": 450,
+      "final": {
+        "step": 450,
+        "is_success": false,
+        "peg_z_m": 0.06499755922066057,
+        "tip_z_m": 0.06499755922066057,
+        "xy_error_m": 0.1276902679840785,
+        "orientation_error_rad": 0.14485386132334135,
+        "yaw_error_rad": 0.11826761081576284,
+        "left_contact": true,
+        "right_contact": true,
+        "grasp_contacts": true,
+        "was_lifted": true,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 0.013666133913622775,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 8.999999999999675,
+        "peak_contact_force_n": 0.7022762944672997,
+        "episode_peak_force_n": 6.352619259108495,
+        "reason": null,
+        "tool_z_m": 0.11864389280216375,
+        "peg_vertical_velocity_m_s": 0.01218482036980709,
+        "left_force_n": 0.08878660859828207,
+        "right_force_n": 0.5544996522258807,
+        "nonfinger_support_force_n": 0.0,
+        "peg_contacts": [
+          {
+            "group": "left",
+            "other_geom": "finger_left_7",
+            "force_n": 0.08878660859828207
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.0974044221240364
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_2",
+            "force_n": 0.2074389643027126
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.1248277532035478
+          },
+          {
+            "group": "right",
+            "other_geom": "finger_right_11",
+            "force_n": 0.12482851259558388
+          }
+        ],
+        "grip_joint_position_m": -0.008211689558023047,
+        "sensor_time_s": 8.979999999999668,
+        "image_time_s": 8.959999999999662,
+        "qualified_duration_s": 2.4400000000001754
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21013,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.26376405078215065,
+          -0.08422267077395944,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.3322266813179488,
+          0.012888389796813242,
+          0.009,
+          3.038903128753131
+        ],
+        "relative_socket_yaw_rad": -0.18331958651099536,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21013,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "81aebfc8fb1b0e9e45881d5b4ee2787c15208fb20fb28b7a14f08833d210a6b1",
+      "wall_seconds": 4.1996129169128835
+    },
+    {
+      "mode": "blank_rgb",
+      "seed": 21014,
+      "passed": false,
+      "ever_validated_pickup": false,
+      "final_hold_seconds": 0.0,
+      "longest_qualified_seconds": 0.0,
+      "termination_reason": null,
+      "max_rise_m": 0.0023873931858045,
+      "steps": 450,
+      "final": {
+        "step": 450,
+        "is_success": false,
+        "peg_z_m": -3.4116679171531705e-06,
+        "tip_z_m": -3.4116679171531705e-06,
+        "xy_error_m": 0.10217716246705509,
+        "orientation_error_rad": 0.0261516276811346,
+        "yaw_error_rad": 0.026148569579416695,
+        "left_contact": false,
+        "right_contact": false,
+        "grasp_contacts": false,
+        "was_lifted": false,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 9.190626982817164e-05,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 8.999999999999675,
+        "peak_contact_force_n": 0.9225108579759389,
+        "episode_peak_force_n": 16.248321407990012,
+        "reason": null,
+        "tool_z_m": 0.05908778408383017,
+        "peg_vertical_velocity_m_s": -9.190626765053555e-05,
+        "left_force_n": 0.0,
+        "right_force_n": 0.0,
+        "nonfinger_support_force_n": 0.3909955078441919,
+        "peg_contacts": [
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.11795774863614276
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.1273364635782018
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.14570129562984735
+          }
+        ],
+        "grip_joint_position_m": -0.011802054760259572,
+        "sensor_time_s": 8.979999999999668,
+        "image_time_s": 8.959999999999662,
+        "qualified_duration_s": 0.0
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21014,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.2755337040679877,
+          -0.08037199031238589,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.32933722049434616,
+          -0.007373072595046826,
+          0.009,
+          2.988887109416517
+        ],
+        "relative_socket_yaw_rad": -0.16790947604230932,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21014,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "81aebfc8fb1b0e9e45881d5b4ee2787c15208fb20fb28b7a14f08833d210a6b1",
+      "wall_seconds": 3.8275709999725223
+    },
+    {
+      "mode": "untrained",
+      "seed": 21010,
+      "passed": false,
+      "ever_validated_pickup": false,
+      "final_hold_seconds": 0.0,
+      "longest_qualified_seconds": 0.0,
+      "termination_reason": null,
+      "max_rise_m": -0.0010052948143431245,
+      "steps": 450,
+      "final": {
+        "step": 450,
+        "is_success": false,
+        "peg_z_m": -6.694547313947852e-06,
+        "tip_z_m": -6.694547313947852e-06,
+        "xy_error_m": 0.09167922948262114,
+        "orientation_error_rad": 0.14940906979795504,
+        "yaw_error_rad": 0.14940892731655359,
+        "left_contact": false,
+        "right_contact": false,
+        "grasp_contacts": false,
+        "was_lifted": false,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 0.00020393523401396972,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 8.999999999999675,
+        "peak_contact_force_n": 0.4241645157355003,
+        "episode_peak_force_n": 2.7089675458552307,
+        "reason": null,
+        "tool_z_m": 0.22685515894964223,
+        "peg_vertical_velocity_m_s": 0.0002039352286050412,
+        "left_force_n": 0.0,
+        "right_force_n": 0.0,
+        "nonfinger_support_force_n": 0.3970498246409902,
+        "peg_contacts": [
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.1534345923027733
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.12719424547176447
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.11642098686645247
+          }
+        ],
+        "grip_joint_position_m": -0.007888938458980971,
+        "sensor_time_s": 8.979999999999668,
+        "image_time_s": 8.959999999999662,
+        "qualified_duration_s": 0.0
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21010,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.2760854432494859,
+          -0.06521500093706044,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.324979300502032,
+          0.012338095068881083,
+          0.009,
+          3.2810270942088913
+        ],
+        "relative_socket_yaw_rad": 0.14941767348296736,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21010,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "0bc00cee4128d804f79bbbf0f249759a51cc8e4913179790dabb1432850e1348",
+      "wall_seconds": 3.5301997498609126
+    },
+    {
+      "mode": "untrained",
+      "seed": 21011,
+      "passed": false,
+      "ever_validated_pickup": false,
+      "final_hold_seconds": 0.0,
+      "longest_qualified_seconds": 0.0,
+      "termination_reason": null,
+      "max_rise_m": -0.0010052948143431245,
+      "steps": 450,
+      "final": {
+        "step": 450,
+        "is_success": false,
+        "peg_z_m": -6.694547313947304e-06,
+        "tip_z_m": -6.694547313947304e-06,
+        "xy_error_m": 0.09463892482180705,
+        "orientation_error_rad": 0.24834762069299632,
+        "yaw_error_rad": 0.24834753469263968,
+        "left_contact": false,
+        "right_contact": false,
+        "grasp_contacts": false,
+        "was_lifted": false,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 0.00020393523401371398,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 8.999999999999675,
+        "peak_contact_force_n": 0.42416451573548963,
+        "episode_peak_force_n": 2.7089675458553195,
+        "reason": null,
+        "tool_z_m": 0.22689561884516274,
+        "peg_vertical_velocity_m_s": 0.00020393522860478547,
+        "left_force_n": 0.0,
+        "right_force_n": 0.0,
+        "nonfinger_support_force_n": 0.3970498246409838,
+        "peg_contacts": [
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.15343459230276857
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.12719424547176242
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.11642098686645284
+          }
+        ],
+        "grip_joint_position_m": -0.007883874403441207,
+        "sensor_time_s": 8.979999999999668,
+        "image_time_s": 8.959999999999662,
+        "qualified_duration_s": 0.0
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21011,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.26993400177450916,
+          -0.07397218673728562,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.30745139934787186,
+          0.012912689584622735,
+          0.009,
+          3.43960564263396
+        ],
+        "relative_socket_yaw_rad": 0.24835628121085293,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21011,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "0bc00cee4128d804f79bbbf0f249759a51cc8e4913179790dabb1432850e1348",
+      "wall_seconds": 3.6257554998155683
+    },
+    {
+      "mode": "untrained",
+      "seed": 21012,
+      "passed": false,
+      "ever_validated_pickup": false,
+      "final_hold_seconds": 0.0,
+      "longest_qualified_seconds": 0.0,
+      "termination_reason": null,
+      "max_rise_m": -0.001005294814343124,
+      "steps": 450,
+      "final": {
+        "step": 450,
+        "is_success": false,
+        "peg_z_m": -6.694547313947762e-06,
+        "tip_z_m": -6.694547313947762e-06,
+        "xy_error_m": 0.11215109548008302,
+        "orientation_error_rad": 0.05765596052362571,
+        "yaw_error_rad": 0.057655591882001325,
+        "left_contact": false,
+        "right_contact": false,
+        "grasp_contacts": false,
+        "was_lifted": false,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 0.00020393523401402436,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 8.999999999999675,
+        "peak_contact_force_n": 0.4241645157355003,
+        "episode_peak_force_n": 2.7089675458553417,
+        "reason": null,
+        "tool_z_m": 0.22692671258918717,
+        "peg_vertical_velocity_m_s": 0.00020393522860509585,
+        "left_force_n": 0.0,
+        "right_force_n": 0.0,
+        "nonfinger_support_force_n": 0.3970498246409876,
+        "peg_contacts": [
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.15343459230278125
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.12719424547176408
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.11642098686644223
+          }
+        ],
+        "grip_joint_position_m": -0.00788013275243659,
+        "sensor_time_s": 8.979999999999668,
+        "image_time_s": 8.959999999999662,
+        "qualified_duration_s": 0.0
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21012,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.26882520890627387,
+          -0.08038845148185439,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.32879057307501836,
+          0.014385157992376503,
+          0.009,
+          3.1797669118575915
+        ],
+        "relative_socket_yaw_rad": -0.057646846449303735,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21012,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "0bc00cee4128d804f79bbbf0f249759a51cc8e4913179790dabb1432850e1348",
+      "wall_seconds": 3.744224625173956
+    },
+    {
+      "mode": "untrained",
+      "seed": 21013,
+      "passed": false,
+      "ever_validated_pickup": false,
+      "final_hold_seconds": 0.0,
+      "longest_qualified_seconds": 0.0,
+      "termination_reason": null,
+      "max_rise_m": -0.0010052948143431243,
+      "steps": 450,
+      "final": {
+        "step": 450,
+        "is_success": false,
+        "peg_z_m": -6.6945473139484745e-06,
+        "tip_z_m": -6.6945473139484745e-06,
+        "xy_error_m": 0.11881782355405235,
+        "orientation_error_rad": 0.18332844772675824,
+        "yaw_error_rad": 0.18332833149792907,
+        "left_contact": false,
+        "right_contact": false,
+        "grasp_contacts": false,
+        "was_lifted": false,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 0.00020393523401367238,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 8.999999999999675,
+        "peak_contact_force_n": 0.42416451573550107,
+        "episode_peak_force_n": 2.7089675458553217,
+        "reason": null,
+        "tool_z_m": 0.22695669440653193,
+        "peg_vertical_velocity_m_s": 0.00020393522860474386,
+        "left_force_n": 0.0,
+        "right_force_n": 0.0,
+        "nonfinger_support_force_n": 0.3970498246409885,
+        "peg_contacts": [
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.15343459230277903
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.1271942454717604
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.11642098686644911
+          }
+        ],
+        "grip_joint_position_m": -0.007874650169736272,
+        "sensor_time_s": 8.979999999999668,
+        "image_time_s": 8.959999999999662,
+        "qualified_duration_s": 0.0
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21013,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.26376405078215065,
+          -0.08422267077395944,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.3322266813179488,
+          0.012888389796813242,
+          0.009,
+          3.038903128753131
+        ],
+        "relative_socket_yaw_rad": -0.18331958651099536,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21013,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "0bc00cee4128d804f79bbbf0f249759a51cc8e4913179790dabb1432850e1348",
+      "wall_seconds": 3.967452249955386
+    },
+    {
+      "mode": "untrained",
+      "seed": 21014,
+      "passed": false,
+      "ever_validated_pickup": false,
+      "final_hold_seconds": 0.0,
+      "longest_qualified_seconds": 0.0,
+      "termination_reason": null,
+      "max_rise_m": -0.001005294814343125,
+      "steps": 450,
+      "final": {
+        "step": 450,
+        "is_success": false,
+        "peg_z_m": -6.694547313947798e-06,
+        "tip_z_m": -6.694547313947798e-06,
+        "xy_error_m": 0.09068433871952905,
+        "orientation_error_rad": 0.16791834792204907,
+        "yaw_error_rad": 0.16791822108398552,
+        "left_contact": false,
+        "right_contact": false,
+        "grasp_contacts": false,
+        "was_lifted": false,
+        "stage": 0,
+        "hold_steps": 0,
+        "peg_speed_m_s": 0.00020393523401373727,
+        "task_id": "yam-contact-curriculum-v0",
+        "sim_time": 8.999999999999675,
+        "peak_contact_force_n": 0.42416451573550285,
+        "episode_peak_force_n": 2.708967545855348,
+        "reason": null,
+        "tool_z_m": 0.22684410786333614,
+        "peg_vertical_velocity_m_s": 0.00020393522860480875,
+        "left_force_n": 0.0,
+        "right_force_n": 0.0,
+        "nonfinger_support_force_n": 0.39704982464098426,
+        "peg_contacts": [
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.15343459230278003
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.1271942454717555
+          },
+          {
+            "group": "other_support",
+            "other_geom": "bench",
+            "force_n": 0.11642098686644878
+          }
+        ],
+        "grip_joint_position_m": -0.007901012715652049,
+        "sensor_time_s": 8.979999999999668,
+        "image_time_s": 8.959999999999662,
+        "qualified_duration_s": 0.0
+      },
+      "exception": null,
+      "reset": {
+        "reset_version": "visual-reset-v1",
+        "profile": "rollout_development",
+        "seed": 21014,
+        "fixed_robot_q7": [
+          -0.29850640491726016,
+          1.5736120325408245,
+          1.2465021212012741,
+          -1.2436904670777116,
+          -1.3983406417199534e-06,
+          -0.2985000781159127,
+          -0.02
+        ],
+        "realized_peg_position_m": [
+          0.2755337040679877,
+          -0.08037199031238589,
+          0.001
+        ],
+        "realized_socket_goal": [
+          0.32933722049434616,
+          -0.007373072595046826,
+          0.009,
+          2.988887109416517
+        ],
+        "relative_socket_yaw_rad": -0.16790947604230932,
+        "teacher_preapproach": false
+      },
+      "camera_contract": {
+        "seed": 21014,
+        "training_augmentation": false,
+        "fixed_cameras": [
+          {
+            "name": "front_left",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.38,
+            "azimuth_deg": 45.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.06989337503910065,
+              -0.26010662317276,
+              0.2629590332508087
+            ]
+          },
+          {
+            "name": "front_oblique",
+            "lookat_world_m": [
+              0.29,
+              -0.04,
+              0.045
+            ],
+            "distance_m": 0.34,
+            "azimuth_deg": 135.0,
+            "elevation_deg": -35.0,
+            "fovy_deg": 45.0,
+            "rendered_eye_world_m": [
+              0.4869374930858612,
+              -0.2369375079870224,
+              0.24001598358154297
+            ]
+          }
+        ],
+        "camera_hz": 25,
+        "control_hz": 50,
+        "hardware_assumption": "Two external RGB cameras with fixed calibrated workcell mounts; no hardware connected or calibrated.",
+        "rgb_gain": 1.0,
+        "white_balance": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "noise_sigma_pixel": 0.0
+      },
+      "model_checks": {
+        "peg_joint_is_free": true,
+        "peg_parent_is_world": true,
+        "peg_is_not_mocap": true,
+        "no_peg_attachment_equalities": true,
+        "gravity_points_down": true,
+        "attachment_equality_ids": [],
+        "peg_mass_kg": 0.04,
+        "passed": true
+      },
+      "checkpoint_sha256": "0bc00cee4128d804f79bbbf0f249759a51cc8e4913179790dabb1432850e1348",
+      "wall_seconds": 3.7239289998542517
+    }
+  ],
+  "summaries": {
+    "trained_rgb": {
+      "successes": 1,
+      "episodes": 5
+    },
+    "blank_rgb": {
+      "successes": 2,
+      "episodes": 5
+    },
+    "untrained": {
+      "successes": 0,
+      "episodes": 5
+    }
+  }
+}

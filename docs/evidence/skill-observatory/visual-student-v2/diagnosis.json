@@ -1,0 +1,40 @@
+{
+  "source_of_truth": "report.json",
+  "summaries": {
+    "trained_rgb": {
+      "successes": 1,
+      "episodes": 5
+    },
+    "blank_rgb": {
+      "successes": 2,
+      "episodes": 5
+    },
+    "untrained": {
+      "successes": 0,
+      "episodes": 5
+    }
+  },
+  "student_first_action_std": [
+    0.00046377998660318553,
+    0.0004277252301108092,
+    0.0002059260878013447,
+    2.7955436962656677e-05,
+    0.00035180762642994523,
+    0.0007221738342195749,
+    0.0012247167760506272
+  ],
+  "initial_proprio_identical": true,
+  "conclusion": "No visual advantage established: trainedRGB1/5 vsblankRGB2/5 vsuntrained0/5. No promotion, no claimofreliablevisualpickup orhardwaretransfer.",
+  "visual_review": [
+    "Decodedbeginning/middle/final RGBsensor frames of21010failure showapproach thatknockspegover thenliftswithoutit.",
+    "Decodedbeginning/middle/final RGBsensor frames ofselected21013success showcontactgrasp andsustainedlift. Selectedvideo isnotrepresentativeofaggregateperformance."
+  ],
+  "bundled_changes": [
+    "32ratherthan8demonstrations",
+    "initial/early/allstepbalanced sampling",
+    "engineeringnormalizationfloors"
+  ],
+  "causal_limit": "Multiplechangesbundled andonly5paireddevelopmentseeds; noattributionofgains toasinglechange. Blankcameraoutcomes precludeclaiming demonstratedimagebenefit.",
+  "frozen_source_snapshot": "runs/visual-policy-v2-32episodes/source",
+  "further_training": "None authorized afterthisboundedrevision"
+}

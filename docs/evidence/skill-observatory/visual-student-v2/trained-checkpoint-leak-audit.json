@@ -1,0 +1,27 @@
+{
+  "policy": "astrafactory.vision_policy:VisualPolicy",
+  "checkpoint_sha256": "81aebfc8fb1b0e9e45881d5b4ee2787c15208fb20fb28b7a14f08833d210a6b1",
+  "source": {
+    "path": "/Users/isaiah/Documents/BallahTech/AstraFactory/src/astrafactory/vision_policy.py",
+    "sha256": "d29c0f5c1ad3d1d12bc700389a7833acbb7a70934d08df1871e59f41548d6f02",
+    "findings": [],
+    "limits": "Static review of student module; dynamic imports and arbitrary external native code are not proven safe by this check."
+  },
+  "observation_contract": "RGB plus measured q/qd and command/history only; no object/socket pose, contacts, force, task stage or teacher actions",
+  "observation_source": {
+    "path": "runs/visual-contact-v1/development/episode-20000.npz",
+    "sha256": "4af20052f2e695b9d37332577f016ea804c706e26b73b2cd47d8006c951d7876"
+  },
+  "dynamic": {
+    "frames": 16,
+    "identical_actions": true,
+    "max_absolute_action_difference": 0.0,
+    "oracle_accesses": [],
+    "held_environment_references": [],
+    "actual_environment_poisoned": true,
+    "passed": true,
+    "limits": "Poisoned module oracle globals and audit environment plus object-reference inspection; no environment is passed in student observations. Review collector/camera and evaluation wiring independently."
+  },
+  "passed": true,
+  "scope": "Software information-boundary audit, not sim-to-real validation or proof of camera calibration/hardware sensing."
+}

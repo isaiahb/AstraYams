@@ -49,3 +49,10 @@ Run records must report failures and baseline results as measured. Final seeds 8
 ## First trained candidate outcome
 
 The 201,672-parameter student trained on eight demonstrations plus two offline-development episodes in 107.13 seconds (120.68 seconds for the trainer run). On the five registered rollout-development seeds, trained RGB, blank RGB and initial untrained weights each scored 0/5 on the final-retention pickup criterion. All 15 episodes ended on the original simulator force limit, with no ever-validated pickup. Offline action MSE is not task success. The candidate is rejected; the successful privileged-state chain remains a separate result. No final seeds were used. Source reports, sensor video and audit snapshots are in `docs/evidence/skill-observatory/visual-student-v1/`.
+
+
+## Second bounded revision
+
+The v2 checkpoint keeps the same 201,672-parameter sensor-only architecture and uses all 32 training plus 8 offline-development episodes, 1,000 MPS updates, early-window sampling and physically scaled normalization. Independent inspection of its saved tensors confirmed previous-action mean 0 and scales [.4 × 6, .5], position/target standard-deviation floors of .05, and velocity floors of .10. Its actual trained checkpoint passed the same 16-packet oracle-poison test with identical actions and no held environment references. A separate audit of all 40 episodes found 28,505 causal control samples, zero future-image indices and identical initial proprioception vectors.
+
+On fresh paired development seeds 21010–21014, trained RGB scored 1/5, blank RGB 2/5 and untrained 0/5. Three trained runs hit the force limit; one retained a valid pickup. The blank control outperforming RGB on this small sample does not demonstrate a visual benefit. V2 is not promoted; no further training or final-seed evaluation was performed in this revision. Training took 257.31 seconds on local MPS. V1 snapshots and the older successful privileged chain remain unchanged. The latest ledger, audits, source reports and selected success/failure sensor videos are linked from `docs/evidence/skill-observatory/visual-student-v2/index.html`.

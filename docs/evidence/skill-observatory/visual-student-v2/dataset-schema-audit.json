@@ -1,0 +1,381 @@
+{
+  "passed": true,
+  "scope": "Independent all40episode schema/reset/causal-timestamp audit; no rendered images or privilege passed to policy here",
+  "manifest_sha256": "b203d76bd6d6351de76c1743808072e5aae86452fe507981062690881a000c54",
+  "episodes": 40,
+  "steps": 28505,
+  "future_image_count": 0,
+  "all_initial_proprio_identical": true,
+  "allowed_npz_keys": [
+    "action",
+    "control_time",
+    "image_index",
+    "image_time",
+    "images",
+    "pickup_end_step",
+    "proprio"
+  ],
+  "teacher_only_annotation": "pickup_end_step selects offline training segment, not policy input",
+  "rows": [
+    {
+      "file": "runs/visual-contact-v1/train/episode-10000.npz",
+      "split": "train",
+      "steps": 703,
+      "image_pairs": 352,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10001.npz",
+      "split": "train",
+      "steps": 686,
+      "image_pairs": 343,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10002.npz",
+      "split": "train",
+      "steps": 696,
+      "image_pairs": 348,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10003.npz",
+      "split": "train",
+      "steps": 689,
+      "image_pairs": 345,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10004.npz",
+      "split": "train",
+      "steps": 704,
+      "image_pairs": 352,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10005.npz",
+      "split": "train",
+      "steps": 731,
+      "image_pairs": 366,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10006.npz",
+      "split": "train",
+      "steps": 695,
+      "image_pairs": 348,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10007.npz",
+      "split": "train",
+      "steps": 783,
+      "image_pairs": 392,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10008.npz",
+      "split": "train",
+      "steps": 747,
+      "image_pairs": 374,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10009.npz",
+      "split": "train",
+      "steps": 717,
+      "image_pairs": 359,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10010.npz",
+      "split": "train",
+      "steps": 775,
+      "image_pairs": 388,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10011.npz",
+      "split": "train",
+      "steps": 652,
+      "image_pairs": 326,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10012.npz",
+      "split": "train",
+      "steps": 712,
+      "image_pairs": 356,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10013.npz",
+      "split": "train",
+      "steps": 689,
+      "image_pairs": 345,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10014.npz",
+      "split": "train",
+      "steps": 697,
+      "image_pairs": 349,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10015.npz",
+      "split": "train",
+      "steps": 722,
+      "image_pairs": 361,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10016.npz",
+      "split": "train",
+      "steps": 691,
+      "image_pairs": 346,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10017.npz",
+      "split": "train",
+      "steps": 729,
+      "image_pairs": 365,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10018.npz",
+      "split": "train",
+      "steps": 732,
+      "image_pairs": 366,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10019.npz",
+      "split": "train",
+      "steps": 703,
+      "image_pairs": 352,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10020.npz",
+      "split": "train",
+      "steps": 700,
+      "image_pairs": 350,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10021.npz",
+      "split": "train",
+      "steps": 721,
+      "image_pairs": 361,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10022.npz",
+      "split": "train",
+      "steps": 673,
+      "image_pairs": 337,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10023.npz",
+      "split": "train",
+      "steps": 722,
+      "image_pairs": 361,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10024.npz",
+      "split": "train",
+      "steps": 686,
+      "image_pairs": 343,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10025.npz",
+      "split": "train",
+      "steps": 693,
+      "image_pairs": 347,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10026.npz",
+      "split": "train",
+      "steps": 757,
+      "image_pairs": 379,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10027.npz",
+      "split": "train",
+      "steps": 744,
+      "image_pairs": 372,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10028.npz",
+      "split": "train",
+      "steps": 688,
+      "image_pairs": 344,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10029.npz",
+      "split": "train",
+      "steps": 691,
+      "image_pairs": 346,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10030.npz",
+      "split": "train",
+      "steps": 749,
+      "image_pairs": 375,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/train/episode-10031.npz",
+      "split": "train",
+      "steps": 712,
+      "image_pairs": 356,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/development/episode-20000.npz",
+      "split": "development",
+      "steps": 682,
+      "image_pairs": 341,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/development/episode-20001.npz",
+      "split": "development",
+      "steps": 685,
+      "image_pairs": 343,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/development/episode-20002.npz",
+      "split": "development",
+      "steps": 702,
+      "image_pairs": 351,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/development/episode-20003.npz",
+      "split": "development",
+      "steps": 722,
+      "image_pairs": 361,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/development/episode-20004.npz",
+      "split": "development",
+      "steps": 712,
+      "image_pairs": 356,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/development/episode-20005.npz",
+      "split": "development",
+      "steps": 719,
+      "image_pairs": 360,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/development/episode-20006.npz",
+      "split": "development",
+      "steps": 754,
+      "image_pairs": 377,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    },
+    {
+      "file": "runs/visual-contact-v1/development/episode-20007.npz",
+      "split": "development",
+      "steps": 740,
+      "image_pairs": 370,
+      "initial_proprio_max_difference": 0.0,
+      "maximum_image_age_s": 0.02000000000000668,
+      "future_image_count": 0
+    }
+  ]
+}

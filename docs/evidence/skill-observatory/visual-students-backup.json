@@ -1,0 +1,10 @@
+{
+  "artifact": "astrafactory-visual-students-20260908.tar.gz",
+  "release_tag": "contact-learning-checkpoint-20260908",
+  "repository": "isaiahb/AstraFactory",
+  "private_draft_release": true,
+  "bytes": 110687416,
+  "sha256": "23b9fc30651f134abf7948e1aa1ad9d6b6093602e8cc3134f01bf2036d649217",
+  "github_digest_verified": true,
+  "contents": "Visual v1/v2 checkpoints, source snapshots, paired sensor/action rollouts, traces, videos and audits. Final v2diagnosis also preserved in Git evidence snapshot."
+}

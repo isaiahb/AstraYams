@@ -1,0 +1,69 @@
+{
+  "scope": "Frozen second visual pickup revision; first revision and earlier final snapshots unchanged",
+  "experiments": 36,
+  "ledger_events": 117,
+  "outcomes": {
+    "trained_rgb": "1/5",
+    "blank_rgb": "2/5",
+    "untrained": "0/5",
+    "promotion": "rejected; no visual benefit demonstrated"
+  },
+  "files": {
+    "docs/evidence/skill-observatory/visual-student-v2/index.html": {
+      "sha256": "c984e08c53ea1e1edf8ede2a0a7bcd1d0d1568d455122027d82f5b0d0671b485",
+      "bytes": 989028
+    },
+    "docs/evidence/skill-observatory/visual-student-v2/trained-checkpoint-leak-audit.json": {
+      "sha256": "f38b19496f715826ca77907a550a758765dd6298fe93c579355b5695fb561082",
+      "bytes": 1428
+    },
+    "docs/evidence/skill-observatory/visual-student-v2/paired-evaluation-report.json": {
+      "sha256": "91b6c28399e1138730bcfd9fe451531ba1be651b737e9ebba88cc327695d53b2",
+      "bytes": 82097
+    },
+    "docs/evidence/skill-observatory/visual-student-v2/dataset-schema-audit.json": {
+      "sha256": "42323b1a810ab6b8929e6b5014c7a1c040167ee0bc3628b6d413704ba9eb6230",
+      "bytes": 11586
+    },
+    "docs/evidence/skill-observatory/visual-student-v2/training-report.json": {
+      "sha256": "b1eef6dbedd236e729a2f9dd07a86f6bf3e26a5ec95fce7bce4c1ef14c1a7f16",
+      "bytes": 11106
+    },
+    "docs/evidence/skill-observatory/visual-student-v2/experiments.json": {
+      "sha256": "f0eea3bd1a77af440071b46090f7c8e04f31773233d5ad30e57598981298514e",
+      "bytes": 791883
+    },
+    "docs/evidence/skill-observatory/visual-student-v2/normalization-audit.json": {
+      "sha256": "86f9ffedd8e8419422b85409c3faef3064c8e4539033b954b0334eb748e6e408",
+      "bytes": 683
+    },
+    "docs/evidence/skill-observatory/visual-student-v2/visual-experiments.jsonl": {
+      "sha256": "65846849f6582e58d04259aa4a093f18ae21184bf3358c4c7dd70e57eea1e214",
+      "bytes": 280088
+    },
+    "docs/evidence/skill-observatory/visual-student-v2/pre-training-proposals.jsonl": {
+      "sha256": "33e6c83b4255cb8c5e933eb5aff65f99f70656d2ec8ba1782c7964e2d8144525",
+      "bytes": 268373
+    },
+    "docs/evidence/skill-observatory/visual-student-v2/diagnosis.json": {
+      "sha256": "aa0dba4ec55bd85eba17512c4dc721a7471960e98d96715f9c54df108c44dd5c",
+      "bytes": 1465
+    },
+    "runs/visual-policy-v2-32episodes/policy.pt": {
+      "sha256": "81aebfc8fb1b0e9e45881d5b4ee2787c15208fb20fb28b7a14f08833d210a6b1",
+      "bytes": 814617
+    },
+    "runs/visual-policy-v2-32episodes/initial-policy.pt": {
+      "sha256": "0bc00cee4128d804f79bbbf0f249759a51cc8e4913179790dabb1432850e1348",
+      "bytes": 813905
+    },
+    "runs/visual-policy-v2-32episodes-evaluation/trained_rgb-seed-21013-selected-success.mp4": {
+      "sha256": "2e4384b18a4fc3b918b9cfe12be7318d05ab43535b7c2796f69d8f626df5f923",
+      "bytes": 554493
+    },
+    "runs/visual-policy-v2-32episodes-evaluation/trained_rgb-seed-21010-sensor-video.mp4": {
+      "sha256": "523c5b5a62753a9e8bed87c7862766ad93632d907069dea69a4897974caee0af",
+      "bytes": 481559
+    }
+  }
+}
