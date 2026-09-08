@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "id": "yam-machine-tending-v0",
+  "scene": "scene.xml",
+  "plugin": "task.py",
+  "reward_plugin": "reward.py",
+  "camera": "overview",
+  "frame_skip": 10,
+  "horizon": 4000,
+  "observation_size": 42,
+  "abort_contact_force_n": 80,
+  "controller": {
+    "type": "joint_delta_pd",
+    "joints": [
+      "joint1",
+      "joint2",
+      "joint3",
+      "joint4",
+      "joint5",
+      "joint6",
+      "joint7"
+    ],
+    "actuators": [
+      "motor1",
+      "motor2",
+      "motor3",
+      "motor4",
+      "motor5",
+      "motor6",
+      "grip"
+    ],
+    "action_scale": [
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.0006
+    ],
+    "kp": [
+      300,
+      300,
+      300,
+      150,
+      100,
+      80,
+      800
+    ],
+    "kd": [
+      25,
+      25,
+      20,
+      10,
+      8,
+      6,
+      8
+    ]
+  },
+  "reset": {
+    "raw_tray_xy": [
+      0.25,
+      -0.1
+    ],
+    "random_raw_xy_m": 0.01,
+    "finished_seat": [
+      0.32,
+      0,
+      0.02
+    ],
+    "robot_start": "fixed above finished stock"
+  },
+  "success": {
+    "finished_contained_in_output": true,
+    "raw_xy_tolerance_m": 0.0015,
+    "raw_z_tolerance_m": 0.0015,
+    "raw_full_rotation_tolerance_rad": 0.0523598776,
+    "bilateral_vise_min_force_n": 1.0,
+    "gripper_raw_contact_max_n": 0.05,
+    "robot_gripper_q_m_lt": -0.015,
+    "tool_z_min_m": 0.13,
+    "hold_steps": 50,
+    "raw_speed_max_m_s": 0.01,
+    "finished_speed_max_m_s": 0.02,
+    "finished_min_corner_z_m": 0.002,
+    "finished_max_corner_z_m": 0.1,
+    "finished_xy_half_region_m": 0.036
+  },
+  "observation_contract": "Active-part privileged42D compatibility observation; external vise command separate from robotaction7",
+  "embodiment": "Two unconstrained rectangular stock objects; contact-only grasp and motor-driven vise",
+  "retention_test": {
+    "trigger": "finished deposited, raw seated, bilateral vise contact, gripper released, tool clear",
+    "force_world_n": [
+      1,
+      0,
+      0
+    ],
+    "duration_control_steps": 15,
+    "duration_s": 0.3,
+    "post_pulse_valid_hold_steps": 50,
+    "external_force_application": "raw body center of mass, worldX; zero force after pulse",
+    "policy_input": "no privileged pulse phase is required by policy; telemetry available for evaluation"
+  },
+  "vise_actuator": {
+    "type": "force_driven_PD",
+    "kp_n_per_m": 3000,
+    "kd_n_s_per_m": 30,
+    "max_force_n": 20,
+    "target_gap_range_m": [
+      0.012,
+      0.04
+    ],
+    "initial_target_gap_m": 0.0125
+  }
+}

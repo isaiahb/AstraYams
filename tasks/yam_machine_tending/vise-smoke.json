@@ -1,0 +1,137 @@
+[
+  {
+    "command": 0.0125,
+    "opening": 0.013916168720431325,
+    "info": {
+      "is_success": false,
+      "finished_in_output": false,
+      "finished_deposited": false,
+      "finished_lifted": false,
+      "raw_lifted": false,
+      "raw_seated": false,
+      "raw_xy_error_m": 0.12436262736379398,
+      "raw_rotation_error_rad": 1.2312114057865438e-16,
+      "vise_bilateral_contact": false,
+      "vise_contact_forces_n": {
+        "vise_fixed": 0.0,
+        "vise_moving": 0.0
+      },
+      "gripper_released": true,
+      "tool_clear": true,
+      "vise_opening_m": 0.013916168720431325,
+      "vise_target_gap_m": 0.0125,
+      "hold_steps": 0,
+      "active_part": "finished",
+      "left_contact": false,
+      "right_contact": false,
+      "grasp_contacts": false,
+      "was_lifted": false,
+      "peg_z_m": 0.02010045078523663,
+      "tip_z_m": 0.02010045078523663,
+      "xy_error_m": 0.12809166380822376,
+      "orientation_error_rad": 6.462176323225359e-05,
+      "peg_speed_m_s": 2.3511765508030993e-16,
+      "stage": 0,
+      "task_id": "yam-machine-tending-v0",
+      "sim_time": 2.0000000000000013,
+      "peak_contact_force_n": 8.89907158476801,
+      "episode_peak_force_n": 9.580223570554137,
+      "reason": null
+    },
+    "finished_contacts": [
+      0.0,
+      0.0,
+      8.50667158380401
+    ]
+  },
+  {
+    "command": 0.039,
+    "opening": 0.039,
+    "info": {
+      "is_success": false,
+      "finished_in_output": false,
+      "finished_deposited": false,
+      "finished_lifted": false,
+      "raw_lifted": false,
+      "raw_seated": false,
+      "raw_xy_error_m": 0.12436262736379398,
+      "raw_rotation_error_rad": 1.229421882726935e-16,
+      "vise_bilateral_contact": false,
+      "vise_contact_forces_n": {
+        "vise_fixed": 0.0,
+        "vise_moving": 0.0
+      },
+      "gripper_released": true,
+      "tool_clear": true,
+      "vise_opening_m": 0.039,
+      "vise_target_gap_m": 0.039,
+      "hold_steps": 0,
+      "active_part": "finished",
+      "left_contact": false,
+      "right_contact": false,
+      "grasp_contacts": false,
+      "was_lifted": false,
+      "peg_z_m": 0.019996670847406865,
+      "tip_z_m": 0.019996670847406865,
+      "xy_error_m": 0.12796532775477462,
+      "orientation_error_rad": 1.4538626030673309e-15,
+      "peg_speed_m_s": 4.3243102789172846e-12,
+      "stage": 0,
+      "task_id": "yam-machine-tending-v0",
+      "sim_time": 3.999999999999781,
+      "peak_contact_force_n": 0.7848000010084976,
+      "episode_peak_force_n": 9.580223570554137,
+      "reason": null
+    },
+    "finished_contacts": [
+      0.0,
+      0.0,
+      0.392400000017906
+    ]
+  },
+  {
+    "command": 0.0125,
+    "opening": 0.013927353652164336,
+    "info": {
+      "is_success": false,
+      "finished_in_output": false,
+      "finished_deposited": false,
+      "finished_lifted": false,
+      "raw_lifted": false,
+      "raw_seated": false,
+      "raw_xy_error_m": 0.12436262736379398,
+      "raw_rotation_error_rad": 1.2305747711287041e-16,
+      "vise_bilateral_contact": false,
+      "vise_contact_forces_n": {
+        "vise_fixed": 0.0,
+        "vise_moving": 0.0
+      },
+      "gripper_released": true,
+      "tool_clear": true,
+      "vise_opening_m": 0.013927353652164336,
+      "vise_target_gap_m": 0.0125,
+      "hold_steps": 0,
+      "active_part": "finished",
+      "left_contact": false,
+      "right_contact": false,
+      "grasp_contacts": false,
+      "was_lifted": false,
+      "peg_z_m": 0.019989148300790047,
+      "tip_z_m": 0.019989148300790047,
+      "xy_error_m": 0.12806470785688076,
+      "orientation_error_rad": 0.0010661108181521546,
+      "peg_speed_m_s": 6.00964705815368e-07,
+      "stage": 0,
+      "task_id": "yam-machine-tending-v0",
+      "sim_time": 5.999999999999561,
+      "peak_contact_force_n": 9.492361449863045,
+      "episode_peak_force_n": 23.436501930887616,
+      "reason": null
+    },
+    "finished_contacts": [
+      0.0,
+      0.0,
+      9.099961449855495
+    ]
+  }
+]

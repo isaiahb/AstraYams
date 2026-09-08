@@ -1,0 +1,230 @@
+<mujoco model="YAM two-stock machine tending with powered contact vise">
+  <compiler angle="radian" />
+  <asset>
+    <mesh name="base" content_type="model/stl" file="../../assets/robots/yam/v1/assets/base.stl" />
+    <mesh name="gripper" content_type="model/stl" file="../../assets/robots/yam/v1/assets/gripper.stl" />
+    <mesh name="link1" content_type="model/stl" file="../../assets/robots/yam/v1/assets/link1.stl" />
+    <mesh name="link2" content_type="model/stl" file="../../assets/robots/yam/v1/assets/link2.stl" />
+    <mesh name="link3" content_type="model/stl" file="../../assets/robots/yam/v1/assets/link3.stl" />
+    <mesh name="link4" content_type="model/stl" file="../../assets/robots/yam/v1/assets/link4.stl" />
+    <mesh name="link5" content_type="model/stl" file="../../assets/robots/yam/v1/assets/link5.stl" />
+    <mesh name="tip_left" content_type="model/stl" file="../../assets/robots/yam/v1/assets/tip_left.stl" />
+    <mesh name="tip_right" content_type="model/stl" file="../../assets/robots/yam/v1/assets/tip_right.stl" />
+    <mesh name="finger_left_0" file="../../assets/robots/yam/collision/tip_left_00.stl" />
+    <mesh name="finger_left_1" file="../../assets/robots/yam/collision/tip_left_01.stl" />
+    <mesh name="finger_left_2" file="../../assets/robots/yam/collision/tip_left_02.stl" />
+    <mesh name="finger_left_3" file="../../assets/robots/yam/collision/tip_left_03.stl" />
+    <mesh name="finger_left_4" file="../../assets/robots/yam/collision/tip_left_04.stl" />
+    <mesh name="finger_left_5" file="../../assets/robots/yam/collision/tip_left_05.stl" />
+    <mesh name="finger_left_6" file="../../assets/robots/yam/collision/tip_left_06.stl" />
+    <mesh name="finger_left_7" file="../../assets/robots/yam/collision/tip_left_07.stl" />
+    <mesh name="finger_left_8" file="../../assets/robots/yam/collision/tip_left_08.stl" />
+    <mesh name="finger_left_9" file="../../assets/robots/yam/collision/tip_left_09.stl" />
+    <mesh name="finger_left_10" file="../../assets/robots/yam/collision/tip_left_10.stl" />
+    <mesh name="finger_left_11" file="../../assets/robots/yam/collision/tip_left_11.stl" />
+    <mesh name="finger_left_12" file="../../assets/robots/yam/collision/tip_left_12.stl" />
+    <mesh name="finger_left_13" file="../../assets/robots/yam/collision/tip_left_13.stl" />
+    <mesh name="finger_left_14" file="../../assets/robots/yam/collision/tip_left_14.stl" />
+    <mesh name="finger_left_15" file="../../assets/robots/yam/collision/tip_left_15.stl" />
+    <mesh name="finger_left_16" file="../../assets/robots/yam/collision/tip_left_16.stl" />
+    <mesh name="finger_left_17" file="../../assets/robots/yam/collision/tip_left_17.stl" />
+    <mesh name="finger_left_18" file="../../assets/robots/yam/collision/tip_left_18.stl" />
+    <mesh name="finger_left_19" file="../../assets/robots/yam/collision/tip_left_19.stl" />
+    <mesh name="finger_left_20" file="../../assets/robots/yam/collision/tip_left_20.stl" />
+    <mesh name="finger_left_21" file="../../assets/robots/yam/collision/tip_left_21.stl" />
+    <mesh name="finger_left_22" file="../../assets/robots/yam/collision/tip_left_22.stl" />
+    <mesh name="finger_left_23" file="../../assets/robots/yam/collision/tip_left_23.stl" />
+    <mesh name="finger_right_0" file="../../assets/robots/yam/collision/tip_right_00.stl" />
+    <mesh name="finger_right_1" file="../../assets/robots/yam/collision/tip_right_01.stl" />
+    <mesh name="finger_right_2" file="../../assets/robots/yam/collision/tip_right_02.stl" />
+    <mesh name="finger_right_3" file="../../assets/robots/yam/collision/tip_right_03.stl" />
+    <mesh name="finger_right_4" file="../../assets/robots/yam/collision/tip_right_04.stl" />
+    <mesh name="finger_right_5" file="../../assets/robots/yam/collision/tip_right_05.stl" />
+    <mesh name="finger_right_6" file="../../assets/robots/yam/collision/tip_right_06.stl" />
+    <mesh name="finger_right_7" file="../../assets/robots/yam/collision/tip_right_07.stl" />
+    <mesh name="finger_right_8" file="../../assets/robots/yam/collision/tip_right_08.stl" />
+    <mesh name="finger_right_9" file="../../assets/robots/yam/collision/tip_right_09.stl" />
+    <mesh name="finger_right_10" file="../../assets/robots/yam/collision/tip_right_10.stl" />
+    <mesh name="finger_right_11" file="../../assets/robots/yam/collision/tip_right_11.stl" />
+    <mesh name="finger_right_12" file="../../assets/robots/yam/collision/tip_right_12.stl" />
+    <mesh name="finger_right_13" file="../../assets/robots/yam/collision/tip_right_13.stl" />
+    <mesh name="finger_right_14" file="../../assets/robots/yam/collision/tip_right_14.stl" />
+    <mesh name="finger_right_15" file="../../assets/robots/yam/collision/tip_right_15.stl" />
+    <mesh name="finger_right_16" file="../../assets/robots/yam/collision/tip_right_16.stl" />
+    <mesh name="finger_right_17" file="../../assets/robots/yam/collision/tip_right_17.stl" />
+    <mesh name="finger_right_18" file="../../assets/robots/yam/collision/tip_right_18.stl" />
+    <mesh name="finger_right_19" file="../../assets/robots/yam/collision/tip_right_19.stl" />
+    <mesh name="finger_right_20" file="../../assets/robots/yam/collision/tip_right_20.stl" />
+    <mesh name="finger_right_21" file="../../assets/robots/yam/collision/tip_right_21.stl" />
+    <mesh name="finger_right_22" file="../../assets/robots/yam/collision/tip_right_22.stl" />
+    <mesh name="finger_right_23" file="../../assets/robots/yam/collision/tip_right_23.stl" />
+    <texture name="studio_sky" type="skybox" builtin="gradient" rgb1=".72 .79 .86" rgb2=".94 .96 .98" width="512" height="3072" />
+    <material name="studio_arm" rgba=".63 .68 .73 1" specular=".65" shininess=".65" reflectance=".03" />
+    <material name="studio_dark" rgba=".07 .085 .105 1" specular=".3" shininess=".35" reflectance="0" />
+    <material name="studio_socket" rgba=".48 .55 .63 1" specular=".75" shininess=".7" reflectance=".05" />
+    <material name="studio_peg" rgba=".92 .47 .10 1" specular=".55" shininess=".6" reflectance=".02" />
+    <material name="studio_bench" rgba=".18 .215 .245 1" specular=".2" shininess=".2" reflectance="0" />
+  </asset>
+  <worldbody>
+    <body name="base">
+      <inertial pos="-3.83909e-05 2.40069e-05 0.0247678" quat="0.500738 0.500087 -0.499793 0.499381" mass="0.873654" diaginertia="0.00169404 0.00157059 0.000678306" />
+      <geom pos="0.0374957 0.0464006 0.187501" quat="-1.29867e-06 -0.707108 -1.29868e-06 0.707105" type="mesh" contype="2" conaffinity="9" group="0" density="0" mesh="base" name="yam_geom_0" material="studio_arm" />
+      <body name="link1" pos="-2.49778e-07 0 0.068" quat="-1.29867e-06 -0.707108 -1.29868e-06 0.707105">
+        <inertial pos="-0.0233636 -0.00172503 -0.00727828" quat="0.350044 0.317088 -0.649919 0.595424" mass="0.101218" diaginertia="0.000134913 0.000106251 4.71815e-05" />
+        <joint name="joint1" range="-2.61799 3.14159" actuatorfrcrange="-10 10" axis="-1 0 0" damping=".15" armature=".015" />
+        <geom pos="-0.119501 -0.0464 -0.0374968" quat="1 0 0 0" type="mesh" contype="2" conaffinity="9" group="0" density="0" mesh="link1" name="yam_geom_1" material="studio_arm" />
+        <body name="link2" pos="-0.0455 -0.0339 -0.02" quat="1.32679e-06 0 0 -1">
+          <inertial pos="0.000134495 -0.0331253 0.129165" quat="1 0.000113256 1.56201e-05 -8.02079e-05" mass="1.46908" diaginertia="0.0146686 0.014599 0.000800088" />
+          <joint name="joint2" range="0 3.66519" actuatorfrcrange="-10 10" axis="0 1 0" damping=".15" armature=".015" />
+          <geom pos="-0.0740001 -0.08025 -0.0174977" quat="1 0 0 0" type="mesh" contype="2" conaffinity="9" group="0" density="0" mesh="link2" name="yam_geom_2" material="studio_arm" />
+          <body name="link3" pos="4.08431e-07 -0.0688 0.264" quat="1.32679e-06 0 0 -1">
+            <inertial pos="-0.0556042 -0.0340514 -0.135083" quat="0.990999 0.00518347 0.0472812 0.125137" mass="0.982553" diaginertia="0.00765198 0.0076296 0.000876442" />
+            <joint name="joint3" range="0 3.14159" actuatorfrcrange="-10 10" axis="0 1 0" damping=".15" armature=".015" />
+            <geom pos="-0.0740003 -0.0813 -0.281499" type="mesh" contype="2" conaffinity="9" group="0" density="0" mesh="link3" name="yam_geom_3" material="studio_arm" />
+            <body name="link4" pos="-0.0600003 -0.0688 -0.244999" quat="1 0 0 0">
+              <inertial pos="-0.0550959 0.032726 -0.0575534" quat="0.127536 0.44423 0.0147443 0.886666" mass="0.462165" diaginertia="0.000787888 0.00076643 0.00028779" />
+              <joint name="joint4" range="-1.69297 1.5708" actuatorfrcrange="-10 10" axis="0 1 0" damping=".15" armature=".015" />
+              <geom pos="-0.0140003 -0.0125 -0.0364989" quat="1 0 0 0" type="mesh" contype="2" conaffinity="9" group="0" density="0" mesh="link4" name="yam_geom_4" material="studio_arm" />
+              <body name="link5" pos="-0.0405003 0.0338995 -0.0739989" quat="1 0 0 0">
+                <inertial pos="0.0375847 -3.55003e-05 -0.000825911" quat="0.661372 -0.253166 -0.247107 0.661387" mass="0.403307" diaginertia="0.000219794 0.000195686 0.000169647" />
+                <joint name="joint5" range="-1.5708 1.5708" actuatorfrcrange="-10 10" axis="1 0 0" damping=".15" armature=".015" />
+                <geom pos="0.0265 -0.0463995 0.0375" quat="1 0 0 0" type="mesh" contype="2" conaffinity="9" group="0" density="0" mesh="link5" name="yam_geom_5" material="studio_arm" />
+                <body name="gripper" pos="0.0404996 2.39858e-07 -0.0356" quat="1 0 0 0">
+                  <inertial pos="-3.57064e-05 0.000249371 -0.0293133" quat="0.667981 0.744113 -0.0043308 0.00882784" mass="0.553219" diaginertia="0.000409687 0.000369758 0.000324415" />
+                  <joint name="joint6" range="-2.0944 2.0944" actuatorfrcrange="-10 10" axis="0 0 -1" damping=".15" armature=".015" />
+                  <geom pos="-0.014 -0.0463995 0.0731" quat="1 0 0 0" type="mesh" contype="2" conaffinity="9" group="0" density="0" mesh="gripper" name="yam_geom_6" material="studio_dark" />
+                  <body name="tip_left" pos="-0.0239931 0.0445119 -0.0566829" quat="1 0 0 0">
+                    <inertial pos="0.014584 -0.042586 -0.0228318" quat="0.80517 -0.425818 -0.124987 0.393393" mass="0.069657" diaginertia="6.18569e-05 5.94605e-05 2.79862e-05" />
+                    <joint name="joint7" type="slide" range="-0.04695 0" actuatorfrcrange="-30 30" axis="0 1 0" damping="2" armature=".002" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="0" conaffinity="0" group="0" density="0" mesh="tip_left" name="yam_geom_7" material="studio_arm" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_0" name="finger_left_0" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_1" name="finger_left_1" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_2" name="finger_left_2" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_3" name="finger_left_3" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_4" name="finger_left_4" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_5" name="finger_left_5" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_6" name="finger_left_6" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_7" name="finger_left_7" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_8" name="finger_left_8" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_9" name="finger_left_9" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_10" name="finger_left_10" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_11" name="finger_left_11" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_12" name="finger_left_12" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_13" name="finger_left_13" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_14" name="finger_left_14" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_15" name="finger_left_15" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_16" name="finger_left_16" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_17" name="finger_left_17" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_18" name="finger_left_18" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_19" name="finger_left_19" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_20" name="finger_left_20" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_21" name="finger_left_21" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_22" name="finger_left_22" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="0.00999321 -0.0914614 0.129783" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_left_23" name="finger_left_23" friction="1.2 .005 .0001" material="studio_dark" />
+                  </body>
+                  <body name="tip_right" pos="0.0239931 -0.0445119 -0.0566829" quat="1 0 0 0">
+                    <inertial pos="-0.014584 0.042586 -0.0228318" quat="0.80517 0.425818 0.124987 0.393393" mass="0.069657" diaginertia="6.18569e-05 5.94605e-05 2.79862e-05" />
+                    <joint name="joint8" type="slide" range="-0.04695 0" actuatorfrcrange="-30 30" axis="0 -1 0" damping="2" armature=".002" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="0" density="0" mesh="tip_right" name="yam_geom_8" material="studio_arm" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_0" name="finger_right_0" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_1" name="finger_right_1" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_2" name="finger_right_2" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_3" name="finger_right_3" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_4" name="finger_right_4" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_5" name="finger_right_5" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_6" name="finger_right_6" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_7" name="finger_right_7" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_8" name="finger_right_8" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_9" name="finger_right_9" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_10" name="finger_right_10" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_11" name="finger_right_11" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_12" name="finger_right_12" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_13" name="finger_right_13" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_14" name="finger_right_14" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_15" name="finger_right_15" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_16" name="finger_right_16" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_17" name="finger_right_17" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_18" name="finger_right_18" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_19" name="finger_right_19" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_20" name="finger_right_20" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_21" name="finger_right_21" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_22" name="finger_right_22" friction="1.2 .005 .0001" material="studio_dark" />
+                    <geom pos="-0.0379932 -0.00133753 0.129783" quat="1 0 0 0" type="mesh" contype="4" conaffinity="9" group="3" density="0" mesh="finger_right_23" name="finger_right_23" friction="1.2 .005 .0001" material="studio_dark" />
+                  </body>
+                  <site name="tool_tip" pos="0 0 -.13" size=".003" rgba="1 .2 .1 0" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <geom name="bench" type="plane" size=".7 .7 .02" contype="1" conaffinity="14" material="studio_bench" />
+    <light name="studio_key" pos=".2 -.6 1.4" dir="0 .35 -1" diffuse=".8 .78 .73" specular=".8 .8 .8" castshadow="true" directional="true" />
+    <light name="studio_fill" pos="-.4 .4 .8" dir=".5 -.3 -.8" diffuse=".36 .43 .52" specular=".25 .3 .4" castshadow="false" directional="true" />
+    <light name="studio_rim" pos=".8 .5 1" dir="-.4 -.4 -1" diffuse=".42 .45 .5" specular=".6 .6 .6" castshadow="false" directional="true" />
+    <camera name="overview" pos="0.95 -1.05 0.82" xyaxes="0.8210645514674284 0.5708353548297359 -0.0 -0.2522652932793071 0.3628473396483184 0.8970529694041725" fovy="38" />
+    <camera name="insertion" pos="0.54 -0.3 0.28" xyaxes="0.8064049958557055 0.5913636636275175 -0.0 -0.31582156599663325 0.43066577181359067 0.8454488343120701" fovy="38" />
+    <body name="raw_tray" pos=".25 -.10 0">
+      <geom name="raw_tray_floor" type="box" pos="0 0 .002" size=".038 .038 .002" contype="1" conaffinity="14" material="studio_bench" />
+      <geom name="raw_tray_wall0_-1" type="box" pos="-0.038 0.0 0.009" size="0.002 0.04 0.005" contype="1" conaffinity="14" material="studio_socket" />
+      <geom name="raw_tray_wall0_1" type="box" pos="0.038 0.0 0.009" size="0.002 0.04 0.005" contype="1" conaffinity="14" material="studio_socket" />
+      <geom name="raw_tray_wall1_-1" type="box" pos="0.0 -0.038 0.009" size="0.04 0.002 0.005" contype="1" conaffinity="14" material="studio_socket" />
+      <geom name="raw_tray_wall1_1" type="box" pos="0.0 0.038 0.009" size="0.04 0.002 0.005" contype="1" conaffinity="14" material="studio_socket" />
+    </body>
+    <body name="output_tray" pos=".24 .10 0">
+      <geom name="output_tray_floor" type="box" pos="0 0 .002" size=".038 .038 .002" contype="1" conaffinity="14" material="studio_bench" />
+      <geom name="output_tray_wall0_-1" type="box" pos="-0.038 0.0 0.009" size="0.002 0.04 0.005" contype="1" conaffinity="14" material="studio_socket" />
+      <geom name="output_tray_wall0_1" type="box" pos="0.038 0.0 0.009" size="0.002 0.04 0.005" contype="1" conaffinity="14" material="studio_socket" />
+      <geom name="output_tray_wall1_-1" type="box" pos="0.0 -0.038 0.009" size="0.04 0.002 0.005" contype="1" conaffinity="14" material="studio_socket" />
+      <geom name="output_tray_wall1_1" type="box" pos="0.0 0.038 0.009" size="0.04 0.002 0.005" contype="1" conaffinity="14" material="studio_socket" />
+    </body>
+    <body name="vise" pos=".32 0 0">
+      <geom name="vise_base" type="box" pos="0 0 .008" size=".045 .040 .008" contype="1" conaffinity="14" material="studio_socket" />
+      <geom name="vise_seat" type="box" pos="0 0 .018" size=".014 .011 .002" contype="1" conaffinity="14" material="studio_bench" />
+      <geom name="vise_fixed_jaw" type="box" pos="0 -.013 .030" size=".025 .006 .010" contype="1" conaffinity="14" material="studio_socket" />
+      <geom name="vise_endstop-1" type="box" pos="-0.014 0 .030" size=".003 .025 .010" contype="1" conaffinity="14" material="studio_socket" />
+      <geom name="vise_endstop1" type="box" pos="0.014 0 .030" size=".003 .025 .010" contype="1" conaffinity="14" material="studio_socket" />
+      <body name="vise_slider" pos="0 .013 .030">
+        <joint name="vise_joint" type="slide" axis="0 1 0" range="-.002 .026" damping="2" armature=".005" />
+        <inertial pos="0 0 0" mass=".12" diaginertia=".00003 .00003 .00003" />
+        <geom name="vise_moving_jaw" type="box" pos="0 0 0" size=".025 .006 .010" contype="1" conaffinity="14" material="studio_socket" />
+      </body>
+    </body>
+    <body name="free_peg" pos=".25 -.10 .0041" quat="0 0 0 1">
+      <freejoint name="peg_free" />
+      <inertial pos="0 0 .035" mass=".04" diaginertia=".00001699 .00001741 .000001733" />
+      <geom name="peg" type="box" pos="0 0 .035" size=".009 .007 .035" contype="8" conaffinity="15" friction="1.2 .005 .0001" material="studio_peg" />
+      <site name="peg_tip" pos="0 0 0" size=".002" rgba="1 0 0 0" />
+    </body>
+    <body name="finished_stock" pos=".32 0 .0201" quat="0 0 0 1">
+      <freejoint name="finished_free" />
+      <inertial pos="0 0 .035" mass=".04" diaginertia=".00001699 .00001741 .000001733" />
+      <geom name="finished_part" type="box" pos="0 0 .035" size=".009 .007 .035" contype="8" conaffinity="15" friction="1.2 .005 .0001" material="studio_socket" />
+      <site name="finished_tip" pos="0 0 0" size=".002" rgba="1 0 0 0" />
+    </body>
+  </worldbody>
+  <option timestep=".002" integrator="implicitfast" gravity="0 0 -9.81" iterations="150" cone="elliptic" noslip_iterations="5" />
+  <default>
+    <geom friction=".8 .005 .0001" solref=".005 1" solimp=".95 .99 .001" condim="4" />
+  </default>
+  <equality>
+    <joint name="gripper_mimic" joint1="joint8" joint2="joint7" polycoef="0 1 0 0 0" solref=".002 1" />
+  </equality>
+  <actuator>
+    <motor name="motor1" joint="joint1" ctrlrange="-10 10" ctrllimited="true" />
+    <motor name="motor2" joint="joint2" ctrlrange="-10 10" ctrllimited="true" />
+    <motor name="motor3" joint="joint3" ctrlrange="-10 10" ctrllimited="true" />
+    <motor name="motor4" joint="joint4" ctrlrange="-10 10" ctrllimited="true" />
+    <motor name="motor5" joint="joint5" ctrlrange="-10 10" ctrllimited="true" />
+    <motor name="motor6" joint="joint6" ctrlrange="-10 10" ctrllimited="true" />
+    <motor name="grip" joint="joint7" ctrlrange="-30 30" ctrllimited="true" />
+    <motor name="vise_motor" joint="vise_joint" ctrlrange="-20 20" ctrllimited="true" />
+  </actuator>
+  <visual>
+    <global offwidth="1440" offheight="1080" />
+    <quality shadowsize="4096" offsamples="8" />
+    <headlight ambient=".28 .28 .3" diffuse=".35 .35 .35" specular=".15 .15 .15" />
+    <rgba haze=".83 .87 .9 1" />
+  </visual>
+</mujoco>
