@@ -64,3 +64,17 @@ Preserved v3; new checkpoint `workspace-v4.html` and inline `discipline-workspac
 - Corrected sample sensor-pod names/questions bleeding into a newly created project's brief and research.
 
 Next: source/evidence provenance, version changes and handoff impact; distinguish detailed CAD from packaging; responsive appearance checks. Current best preview is v4. Do not edit v3.
+
+## Iteration 4 — simplify the default workspace
+
+Responds to Isaiah's latest feedback: easier to understand, less confusing.
+
+- Preserved v4; v5 defaults to Focus view with a plain-language next decision, one primary artifact action, and a short artifact history labeled with its discipline owner.
+- Full ID/ME/EE/etc workspace remains available under All work. This preserves the requested detail rather than replacing it with a generic Engineer stage.
+- Research remains reachable as Explore alternatives next to the artifact's conversation. Goals and acceptance details stay collapsed.
+- Developing a selected image now opens a concrete next-step proposal (inputs, deliverable, check) before navigating to a clearly labeled schematic CAD preview.
+- Main image height constrained so the next action is easier to find; removed repeated concept-selection instructions in Astra's conversation.
+- Browser verified: Develop concept A → proposed form CAD step → All work retains Industrial design / Form CAD context.
+- Home hides project-only team/mode controls.
+
+Current best: `workspace-v5.html`; inline `focused-workspace-v5.html`. Next passes: version/provenance detail and handoff change impact, then responsive QA. Focus view should remain simple as details are added.
