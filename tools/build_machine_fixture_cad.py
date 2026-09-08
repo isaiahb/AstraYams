@@ -53,21 +53,21 @@ def build(output=OUT):
                 'position':[0,0,0],'quaternion':[1,0,0,0],'color':COLORS[color],
                 'bounds_m':{'min':[bounds.xmin/1000,bounds.ymin/1000,bounds.zmin/1000],
                             'max':[bounds.xmax/1000,bounds.ymax/1000,bounds.zmax/1000]},
-                'description':description,'sha256':hashlib.sha256((output/filename).read_bytes()).hexdigest()}
+                'description':description,'assembly_group':('table' if 'table' in name else 'trays' if 'tray' in name else 'stock' if body in ['free_peg','finished_stock'] else 'drive' if any(k in name for k in ['actuator','piston']) else 'vise'),'sha256':hashlib.sha256((output/filename).read_bytes()).hexdigest()}
         objects.append(record)
         # Stocks have 180-degree initial world-Z orientation in the frozen task.
         location=cq.Location(cq.Vector(*BODY_WORLD_MM[body]),cq.Vector(0,0,1),180 if body in ('free_peg','finished_stock') else 0)
         assembly.add(shape,name=name,loc=location,color=cq.Color(*COLORS[color]))
     # Machined base with mounting counterbores, rear actuator extension and relieved edges.
-    base=box(90,80,16,(0,0,8),1.2).union(box(82,94,9,(0,65,4.5),1))
-    for x in [-35,35]:
-        for y in [-29,55,102]:
+    base=box(90,80,16,(0,0,8),1.2).union(box(60,94,9,(0,65,4.5),1))
+    for y in [-29,55,102]:
+        for x in ([-35,35] if y==-29 else [-24,24]):
             hole=cq.Workplane('XY').center(x,y).circle(2.6).extrude(22)
             counter=cq.Workplane('XY').center(x,y).circle(4.6).extrude(4).translate((0,0,6 if y>40 else 12))
             base=base.cut(hole).cut(counter)
     add('vise_machined_base','vise',base,'cast','Chamfered mounting base with six drilled and counterbored holes.')
-    for x in [-35,35]:
-        for y in [-29,55,102]:add(f'base_socket_screw_{x}_{y}','vise',screw((x,y,6.1 if y>40 else 12.1),7),'dark')
+    for y in [-29,55,102]:
+        for x in ([-35,35] if y==-29 else [-24,24]):add(f'base_socket_screw_{x}_{y}','vise',screw((x,y,6.1 if y>40 else 12.1),7),'dark')
     add('precision_seat','vise',box(28,22,4,(0,0,18),.15),'bright','Top plane remains z=20 mm.')
     # Original stock-facing planes stay exactly y=-7 and moving-local y=-6 mm.
     add('fixed_jaw_carrier','vise',box(50,9,20,(0,-14.5,30),.5),'cast')
@@ -120,6 +120,7 @@ def build(output=OUT):
               'dimensions_mm':{'stock':[18,14,70],'stock_grasp_height':54,'seat_world':[320,0,20],
                                'vise_jaw_top_world_z':40,'closed_nominal_gap':14,'slider_travel':[-2,26],
                                'jaw_width':50,'base':[90,80,16],'tray_outer':[80,80,14],'tray_floor_z':4},
+              'layout_revision':{'rear_extension_width_mm':60,'rear_extension_output_tray_clearance_mm':10,'reason':'Previous 82 mm cosmetic extension overlapped the frozen output tray by1 mm; original powered collision scene was unchanged and did not contain this extension.'},
               'limitations':['Visual solids are not collision models or manufacturing-validated hardware.',
                              'Cosmetic radii, bearings, actuator and fastener details are engineering illustration.',
                              'No YAM mesh, simulation source, policy or recorded action was modified.']}

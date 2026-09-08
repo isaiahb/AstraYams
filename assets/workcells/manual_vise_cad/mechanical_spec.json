@@ -45,6 +45,29 @@
     "backlash_assumption_m": 0.0001,
     "backlash_status": "Explicit modelling proposal; not represented by CAD clearance as a validated tolerance"
   },
+  "tray_layout_revision": {
+    "output_tray_center_world_m": [
+      0.18,
+      0.1,
+      0
+    ],
+    "output_tray_world_bounds_m": [
+      [
+        0.14,
+        0.06,
+        0
+      ],
+      [
+        0.22,
+        0.14,
+        0.014
+      ]
+    ],
+    "clearance_to_cad_pedestal_m": 0.048,
+    "clearance_to_design_collision_pedestal_m": 0.045,
+    "reason": "Original output tray overlapped the CAD pedestal12 mm in X and design-scene collision pedestal15 mm. Move only this empty tray in the new manual task; robot, stock, jaw and crank poses remain unchanged.",
+    "required_scene_update": "Set new manual output_tray body pos=.18 .10 0; do not alter frozen powered scene."
+  },
   "support_table": {
     "world_bounds_m": [
       [

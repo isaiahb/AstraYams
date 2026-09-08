@@ -1,0 +1,48 @@
+{
+  "status": "CAD layout corrected; scene synchronization independently reported",
+  "powered": {
+    "old_actual_cad_intersection_mm3": 399.9331166577933,
+    "new_intersection_mm3": 0,
+    "new_minimum_cad_base_tray_distance_mm": 10,
+    "method": "OpenCascade boolean intersection and exact solid distance on chamfered base and formed tray",
+    "original_contact_scene_changed": false,
+    "original_contact_vise_tray_separation_y_mm": 20
+  },
+  "manual": {
+    "old_cad_pedestal_tray_AABB_overlap_mm": [
+      12,
+      80,
+      14
+    ],
+    "old_collision_pedestal_tray_AABB_overlap_mm": [
+      15,
+      65,
+      14
+    ],
+    "new_output_center_m": [
+      0.18,
+      0.1,
+      0
+    ],
+    "new_CAD_pedestal_X_clearance_mm": 48,
+    "new_design_collision_pedestal_X_clearance_mm": 45,
+    "current_design_scene_output_pos": ".18 .10 0",
+    "required_matching_scene_output_pos": ".18 .10 0",
+    "robot_stock_jaw_crank_poses_changed": false
+  },
+  "gripper_workspace_screen": {
+    "sample_source": "runs/bimanual-vise-design/design-poses.npz",
+    "sample_count": 7,
+    "minimum_geom_AABB_distance_to_original_output_tray_m": 0.06973160392352366,
+    "AABB_overlap_candidates": 0,
+    "full_crank_hardware_sweep_vertical_clearance_above_original_tray_m": 0.106,
+    "scope": "Seven independent IK poses and analytic crank envelope, not continuous articulated swept-volume or contact-motion validation."
+  },
+  "validation": {
+    "powered_meshes_watertight": 40,
+    "manual_meshes_watertight": 44,
+    "STEPS_reimport_valid": true,
+    "mesh_manifest_bounds_verified": true
+  },
+  "original_powered_scene_sha256": "2d396759501a2c9a978327905755748f46359a5be0ef46c2e3f8ecfbbf8f93b8"
+}
