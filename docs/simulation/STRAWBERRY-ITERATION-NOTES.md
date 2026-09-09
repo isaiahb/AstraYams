@@ -99,3 +99,14 @@ Model-family error must be separated from parameter error. An always-intact beam
 Proposed next bounded milestone: parameterize one coherent strawberry crown and its leaf-stalk/leaflet system, expose parameters currently hidden in the generator, and produce several anatomically plausible variants. Show each from the same review cameras, then apply the same contact probes. Keep research-derived, inferred and measured values distinct. This is a proposed next implementation, not completed functionality or demonstrated sim-to-real transfer.
 
 Relevant existing foundations: [OpenAlea multiscale tree graphs](https://mtg.readthedocs.io/en/latest/user/intro.html) for plant architecture, [MuJoCo elasticity models](https://github.com/google-deepmind/mujoco/blob/main/plugin/elasticity/README.md) for available deformable primitives, and [MuJoCo system identification](https://github.com/google-deepmind/mujoco/blob/main/python/mujoco/sysid/README.md) for fitting simulation parameters to recorded sensor data. These establish prior art and possible building blocks, not a selected dependency stack or a validated strawberry model.
+
+
+## Scientific model refinement and simulation efficiency — thesis discussion
+
+User extends the goal to an AI-led scientific loop: observe, propose models, design experiments, measure disagreement, revise, and discover more accurate or cheaper calculations. The representation may span physical scales when the task requires it.
+
+Distinguish errors in anatomy/topology, assumed parameters, missing mechanical effects, and numerical approximation from evidence against fundamental physical laws. Our strawberry results currently demonstrate the former categories. A hierarchy can use detailed calculations or experiments offline to identify a cheaper runtime model, with refinement when a task leaves the validated range. Finer spatial detail alone does not establish accuracy.
+
+Success should be assessed against independent observations and held-out interactions, together with simulation throughput and stability. A surrogate trained only on an imperfect simulator can inherit its errors. The proposed process generalizes to model/constitutive-law discovery and numerical-method improvement; it does not establish that this project has discovered new physics or mathematics.
+
+Prior work to examine when implementation reaches this stage: [equation-free multiscale computation](https://arxiv.org/abs/physics/0209043) and [MeshGraphNets](https://arxiv.org/abs/2010.03409). No new dependencies, plant geometry, solver or desktop UI were introduced in this discussion.
