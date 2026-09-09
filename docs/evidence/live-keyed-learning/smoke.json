@@ -1,0 +1,48 @@
+{
+  "metrics": {
+    "baseline": {
+      "development": {
+        "successes": 0,
+        "episodes": 3
+      },
+      "holdout": {
+        "successes": 0,
+        "episodes": 3
+      }
+    },
+    "trained": {
+      "development": {
+        "successes": 3,
+        "episodes": 3
+      },
+      "holdout": {
+        "successes": 3,
+        "episodes": 3
+      }
+    }
+  },
+  "training_seconds": 5.369564749998972,
+  "total_seconds": 27.759246500208974,
+  "parameters": 3080,
+  "baseline_sha256": "c2d03ee9b034a94c35a58f5cf300b6ae71625cf2eb76726eb77b48bdac9e997b",
+  "trained_sha256": "c5c31a41b7407030dc2e18020dca12804998209fee49d052721aa4a5bf3fab22",
+  "accepted": true,
+  "regression": false,
+  "losses": {
+    "acquire": {
+      "before_mse": 0.3720964789390564,
+      "after_mse": 0.002017019782215357,
+      "physical_samples": 1821,
+      "training_samples": 9105
+    },
+    "lift": {
+      "before_mse": 0.3626483976840973,
+      "after_mse": 0.0008498075767420232,
+      "physical_samples": 1150,
+      "training_samples": 5750
+    }
+  },
+  "source_run": "runs/live-keyed-learning-smoke-v3",
+  "scope": "Fresh behavioral cloning from prepared demonstration data; frozen alignment/insertion; simulator state and scripted guards/IK.",
+  "audit": "All12replays checked for matching source state SHA, monotonic timestamps, frame counts and existing mesh paths."
+}
