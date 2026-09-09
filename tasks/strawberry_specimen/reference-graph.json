@@ -392,5 +392,20 @@
     ],
     "dimensions": "14 mm core diameter is an assumed scale, not measured from photo",
     "roots": "buried root mechanics omitted from harvesting-contact model"
-  }
+  },
+  "basal_support": {
+    "petiole_base_radius_m": 0.0028,
+    "peduncle_base_radius_m": 0.0033,
+    "taper_length_m": 0.035,
+    "basis": "Geometry hypothesis from broad petiole bases in the Cal Poly crown reference; no measured dimensions or stiffness. Upper stalk radius and material modulus retained.",
+    "source": "https://strawberrycenterblog.com/2026/02/19/__trashed/",
+    "mechanics": "Bending compliance integrated over tapered radius; same tapered section used for rendering and contact.",
+    "upright_petiole_emergence": true,
+    "emergence_basis": "Separate unloaded-shape hypothesis: proximal leaf stalk rises before bending outward; no growth angle measured. Leaf attachment endpoint preserved.",
+    "fixed_embedded_sheath": true,
+    "attachment_basis": "Embedded sheath is a fixed crown component ending at the flexible stalk origin. It must not be a moving collider buried in rigid substrate. Exposed stalk contact stays enabled.",
+    "contact_timeconst_s": 0.001,
+    "contact_basis": "Numerical contact refinement for the stiffer structural bases; tested for penetration and timestep sensitivity. Not tissue calibration."
+  },
+  "simulation_timestep_s": 0.00025
 }

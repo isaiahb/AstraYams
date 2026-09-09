@@ -1,0 +1,36 @@
+{
+  "trials": [
+    {
+      "timestep_s": 0.0005,
+      "max_target_displacement_mm": 9.803421053851258,
+      "contact_points": 1676,
+      "peak_force_n": 4.512957781383054,
+      "impulse_ns": 1.6145961156964346,
+      "max_penetration_mm": 0.5666551421554012
+    },
+    {
+      "timestep_s": 0.00025,
+      "max_target_displacement_mm": 8.842921987893412,
+      "contact_points": 4611,
+      "peak_force_n": 1.5997468177022742,
+      "impulse_ns": 1.560561759160799,
+      "max_penetration_mm": 0.10227805461133187
+    },
+    {
+      "timestep_s": 0.000125,
+      "max_target_displacement_mm": 8.845982508894792,
+      "contact_points": 9280,
+      "peak_force_n": 1.6000473871863272,
+      "impulse_ns": 1.560811846655978,
+      "max_penetration_mm": 0.0795915732744925
+    }
+  ],
+  "two_finest_relative_differences": {
+    "impulse_ns": 0.00016022911135302631,
+    "max_target_displacement_mm": 0.0003459786403944293,
+    "peak_force_n": 0.00018785036397049598
+  },
+  "declared_convergence_pass": true,
+  "selected_timestep_s": 0.00025,
+  "scope": "Numerical convergence of one basal push; uncalibrated tissue mechanics."
+}

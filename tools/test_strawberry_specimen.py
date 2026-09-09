@@ -11,14 +11,15 @@ def run(kind='rest',control=False):
   z=np.load(P/'rest/rollout.npz');d.qpos[:]=z['qpos'][-1];d.qvel[:]=0
  if kind=='rest':m.geom_contype[pg]=m.geom_conaffinity[pg]=0
  mujoco.mj_forward(m,d)
- target={'leaf':'leaf_left_1_w14_-1','stalk':'peduncle_5_surface','neighbor':'berry_secondary_a'}.get(kind);direction=None
+ target={'leaf':'leaf_left_1_w14_-1','stalk':'peduncle_5_surface','neighbor':'berry_secondary_a','basal':'petiole_left_1_surface'}.get(kind);direction=None
  if target:
   gid=m.geom(target).id;origin=d.geom_xpos[gid].copy()
   if kind=='leaf':direction=-d.xmat[m.geom_bodyid[gid]].reshape(3,3)[:,2]
   elif kind=='stalk':direction=np.array([1.,0.,0.])
+  elif kind=='basal':direction=np.array([0.,1.,0.])
   else:
    direction=d.geom_xpos[m.geom('berry_secondary_b').id]-origin;direction/=np.linalg.norm(direction)
-  start=origin-direction*.045;end=origin+direction*(.012 if kind=='leaf' else .035)
+  start=origin-direction*.045;end=origin+direction*(.012 if kind in ['leaf','basal'] else .035)
   if kind=='neighbor':
    # Search only probe approach directions; keep plant state and collision filters.
    toward=direction.copy();candidates=[]
@@ -63,4 +64,4 @@ def run(kind='rest',control=False):
   a=np.array(positions);report['final_second_max_geom_coordinate_span_mm']=float(np.ptp(a[np.array(ts)>dur-1],axis=0).max()*1000)
  np.savez_compressed(out/'rollout.npz',qpos=q,t=ts,geom_positions=positions);(out/'result.json').write_text(json.dumps(report,indent=2));print(json.dumps(report),flush=True)
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--kind',choices=['rest','leaf','stalk','neighbor'],default='rest');p.add_argument('--control',action='store_true');a=p.parse_args();run(a.kind,a.control)
+ p=argparse.ArgumentParser();p.add_argument('--kind',choices=['rest','leaf','stalk','neighbor','basal'],default='rest');p.add_argument('--control',action='store_true');p.add_argument('--model-dir',type=Path,default=P);a=p.parse_args();P=a.model_dir.resolve();run(a.kind,a.control)

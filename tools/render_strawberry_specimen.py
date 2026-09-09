@@ -14,7 +14,7 @@ def render(kind='rest',video=False):
  def frame(i,az=95,el=-12):
   d.qpos[:]=z['qpos'][i];mujoco.mj_forward(m,d);cam.azimuth=az;cam.elevation=el;renderer.update_scene(d,cam);im=Image.fromarray(renderer.render());dr=ImageDraw.Draw(im);dr.rectangle((0,0,1000,73),fill='#17251d')
   if kind=='rest':label='Reference-based specimen · gravity settling'
-  else:label={'leaf':'Leaf brushing','stalk':'Stalk bending','neighbor':'Neighboring fruit contact'}[kind.split('-')[0]]+' · force-limited probe'+(' · no-contact control' if 'control' in kind else '')
+  else:label={'leaf':'Leaf brushing','stalk':'Stalk bending','neighbor':'Neighboring fruit contact','basal':'Crown-adjacent stalk push'}[kind.split('-')[0]]+' · force-limited probe'+(' · no-contact control' if 'control' in kind else '')
   dr.text((22,12),label,font=FONT,fill='white');dr.text((22,42),f't = {z["t"][i]:.2f} s · inferred depth / mechanics uncalibrated · no cutting',font=FONT,fill='#cfdbc8');return im
  for name,az,el in [('front',90,-8),('three-quarter',125,-22),('side',180,-12),('top',90,-60)]:frame(-1,az,el).save(P/kind/f'{name}.png')
  if kind=='rest':
@@ -23,7 +23,10 @@ def render(kind='rest',video=False):
   for sec in [.4,1.2,1.6,2.4,3.8]:frame(int(np.argmin(abs(z['t']-sec))),0 if kind in ['leaf','stalk'] else 110,-18).save(P/kind/f'contact-{sec}.png')
  if video:
   with imageio.get_writer(P/kind/'demo.mp4',fps=25,codec='libx264',quality=8,macro_block_size=2) as wr:
-   for i in range(0,len(z['t']),2):wr.append_data(np.array(frame(i,0 if kind in ['leaf','stalk'] else 110,-18)))
+   # Resample by physical time so refining the simulator timestep does not
+   # change playback speed. Rollouts can have different logging rates.
+   for sec in np.arange(z['t'][0],z['t'][-1],1/25):
+    i=int(np.argmin(abs(z['t']-sec)));wr.append_data(np.array(frame(i,0 if kind in ['leaf','stalk'] else 110,-18)))
    if kind=='rest':
     for j in range(150):wr.append_data(np.array(frame(-1,110+j*1.8,-18)))
  renderer.close();print(P/kind)
@@ -44,7 +47,7 @@ def export():
  for idx,((body,rgb),parts) in enumerate(groups.items()):
   # Repair export winding for back-face culling; leave simulation vertices and states intact.
   geo=trimesh.util.concatenate(parts);trimesh.repair.fix_normals(geo,multibody=True);name=f'{body}-{idx}.stl';geo.export(mp/name);objects.append({'name':body+' '+str(idx),'body':body,'color':rgb[0]*65536+rgb[1]*256+rgb[2],'mesh_path':str((mp/name).relative_to(ROOT))});meshes.append((body,rgb,geo))
- for kind in ['rest','leaf','stalk','neighbor']:
+ for kind in ['rest','leaf','stalk','neighbor','basal']:
   qpath=P/kind/'rollout.npz'
   if not qpath.exists():continue
   z=np.load(qpath);frames=[]
@@ -58,4 +61,4 @@ def export():
    scene.export(P/'specimen-settled.glb')
  print('Exported',len(objects),'mesh groups and recorded replays')
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--kind',default='rest');p.add_argument('--video',action='store_true');p.add_argument('--export',action='store_true');a=p.parse_args();export() if a.export else render(a.kind,a.video)
+ p=argparse.ArgumentParser();p.add_argument('--kind',default='rest');p.add_argument('--video',action='store_true');p.add_argument('--export',action='store_true');p.add_argument('--model-dir',type=Path,default=P);a=p.parse_args();P=a.model_dir.resolve();export() if a.export else render(a.kind,a.video)

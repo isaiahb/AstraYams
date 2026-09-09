@@ -10,10 +10,11 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'assets/workcells/strawberry-specimen'
 def v(a):return ' '.join(f'{float(x):.8g}' for x in np.ravel(a))
 def add(p,t,**kw):return ET.SubElement(p,t,{k:str(x) for k,x in kw.items()})
-def build():
+def build(output=OUT):
+ OUT=Path(output)
  spec=json.loads((ROOT/'tasks/strawberry_specimen/reference-graph.json').read_text());OUT.mkdir(exist_ok=True,parents=True)
  r=ET.Element('mujoco',model='reference_specimen_contact_only');add(r,'compiler',angle='radian',autolimits='true')
- add(r,'option',timestep='.0005',integrator='implicitfast',gravity='0 0 -9.81',iterations='80',cone='elliptic')
+ add(r,'option',timestep=str(spec.get('simulation_timestep_s',.0005)),integrator='implicitfast',gravity='0 0 -9.81',iterations='80',cone='elliptic')
  vis=add(r,'visual');add(vis,'global',offwidth='1200',offheight='900');add(vis,'headlight',diffuse='.6 .6 .6',ambient='.4 .4 .4',specular='.1 .1 .1');add(vis,'quality',shadowsize='2048')
  asset=add(r,'asset');add(asset,'texture',name='sky',type='skybox',builtin='gradient',rgb1='.84 .87 .82',rgb2='.94 .95 .92',width='512',height='512');contact=add(r,'contact');w=add(r,'worldbody');act=add(r,'actuator');defaults=add(r,'default');add(defaults,'geom',condim='3',solref='.004 1',solimp='.95 .99 .001',friction='.45 .003 .001',rgba='.2 .35 .07 1')
  add(w,'light',pos='-.3 -.4 1.1',dir='.2 .3 -1',diffuse='.8 .8 .75',castshadow='true')
@@ -35,32 +36,81 @@ def build():
  records=[];roots={};ends={}
  def beam(parent,delta,name,radius,n=6,young=50e6):
   delta=np.array(delta,float);offset=np.zeros(3)
+  basal=spec.get('basal_support',{}) if parent is crown else {}
   if parent is crown:
    az=np.arctan2(delta[1],delta[0]);offset=np.array([.0045*np.cos(az),.0045*np.sin(az),.005+.001*np.cos(2*az)]);delta=delta-offset
    # Compact, overlapping basal sheath follows this stalk's actual attachment.
    stop=offset+delta/np.linalg.norm(delta)*.018
-   add(crown,'geom',name=name+'_basal_sheath',type='capsule',fromto=v([offset[0]*.7,offset[1]*.7,-.003,*stop]),size='.0021',rgba='.32 .32 .09 1')
+   fixed_basal=basal.get('fixed_embedded_sheath',False)
+   sheath_end=offset if fixed_basal else stop
+   add(crown,'geom',name=name+'_basal_sheath',type='capsule',fromto=v([offset[0]*.7,offset[1]*.7,-.003,*sheath_end]),size=str(basal.get('petiole_base_radius_m' if name.startswith('petiole_') else 'peduncle_base_radius_m',.0021) if fixed_basal else .0021),rgba='.32 .32 .09 1')
    # Thin stipule flanks the sheath; it is anatomy, not a detached decorative sphere.
    side=np.array([-np.sin(az),np.cos(az),0.])*.0035
    vv=np.array([offset+side,offset-side,stop+side*.25,stop-side*.25,offset+np.array([0,0,-.002]),stop+np.array([0,0,-.0007])]);hh=trimesh.convex.convex_hull(vv);mn=name+'_stipule_mesh';add(asset,'mesh',name=mn,vertex=v(hh.vertices),face=' '.join(str(int(a)) for a in hh.faces.ravel()));add(crown,'geom',name=name+'_stipule',type='mesh',mesh=mn,rgba='.4 .35 .14 1')
   u=np.linspace(0,1,n+1);points=u[:,None]*delta
   # Slight upward unloaded growth bias. Berry load supplies the hanging shape.
   points[:,2]+=.012*np.sin(np.pi*u);ds=np.diff(points,axis=0);prev=parent
+  basal=spec.get('basal_support',{}) if parent is crown else {}
+  if basal.get('upright_petiole_emergence') and name.startswith('petiole_'):
+   # Distinguish unloaded growth direction from sag under load. End attachment
+   # remains fixed in the design graph; only the proximal growth curve changes.
+   horizontal=delta.copy();horizontal[2]=0;horizontal/=max(np.linalg.norm(horizontal),1e-9)
+   c1=horizontal*.006+np.array([0,0,min(.035,float(np.linalg.norm(delta))*.30)])
+   c2=delta*.67+np.array([0,0,.018])
+   points=3*(1-u[:,None])**2*u[:,None]*c1+3*(1-u[:,None])*u[:,None]**2*c2+u[:,None]**3*delta
+   ds=np.diff(points,axis=0)
   roots.setdefault(parent.get('name'),[]).append(name+'_0')
+  lengths=np.linalg.norm(ds,axis=1);total=float(lengths.sum());arc=0.
+  base_radius=basal.get('petiole_base_radius_m' if name.startswith('petiole_') else 'peduncle_base_radius_m',radius)
+  taper_length=basal.get('taper_length_m',.035)
+  def section_radius(s):
+   shaft=radius*(1-.22*s/total)
+   u=np.clip(s/taper_length,0.,1.)
+   return shaft+(base_radius-radius)*(1-u)**2*(1+2*u)
+  segment_records=[]
   for i,dx in enumerate(ds):
-   rad=radius*(1-.22*i/n);L=np.linalg.norm(dx);k=young*np.pi*rad**4/4/L
+   L=lengths[i];rad=float(section_radius(arc+L*.5))
+   # Compliance follows the tapered material section, including its broader base.
+   stations=arc+(np.arange(12)+.5)*L/12
+   k=float(1/(np.mean(4/(young*np.pi*section_radius(stations)**4))*L))
+   if not basal:
+    # Distal fruit branches retain the original model exactly in this experiment.
+    rad=radius*(1-.22*i/n);k=young*np.pi*rad**4/4/L
    b=add(prev,'body',name=f'{name}_{i}',pos=v(offset if i==0 and parent is crown else [0,0,0] if i==0 else ds[i-1]))
    if i==0 and parent is crown:
     for suffix in ['basal_sheath','stipule']:
+     if suffix=='basal_sheath' and basal.get('fixed_embedded_sheath'):continue
      g=crown.find("geom[@name='"+name+'_'+suffix+"']");crown.remove(g)
      if 'fromto' in g.attrib:g.set('fromto',v(np.fromstring(g.get('fromto'),sep=' ').reshape(2,3)-offset))
      else:g.set('pos',v(-offset))
      g.set('mass','0');b.append(g)
    add(b,'joint',name=f'{name}_{i}_bend',type='ball',stiffness=k,damping=max(.001,k*.18),armature='1e-7')
-   add(b,'geom',name=f'{name}_{i}_surface',type='capsule',fromto=v([0,0,0,*dx]),size=rad,density='850',rgba='.3 .4 .10 1')
+   if basal:
+    # A convex tapered section shares its contact and rendered surface. The same
+    # radii determine bending compliance, rather than a cosmetic thicker sleeve.
+    axis=dx/L;side=np.cross(axis,[0,0,1] if abs(axis[2])<.9 else [1,0,0]);side/=np.linalg.norm(side);other=np.cross(axis,side)
+    points=[]
+    for t in [0,.5,1]:
+     rr=float(section_radius(arc+t*L))
+     for a in np.linspace(0,2*np.pi,14,endpoint=False):points.append(t*dx+rr*(np.cos(a)*side+np.sin(a)*other))
+    # Rounded meeting surfaces preserve external coverage at a bending joint.
+    # Mass is assigned from the material span, avoiding duplicate cap mass.
+    for t,sign in [(0,-1),(1,1)]:
+     rr=float(section_radius(arc+t*L))
+     for phi in [np.pi/6,np.pi/3,np.pi/2]:
+      for a in np.linspace(0,2*np.pi,14,endpoint=False):points.append(t*dx+sign*axis*rr*np.sin(phi)+rr*np.cos(phi)*(np.cos(a)*side+np.sin(a)*other))
+    hh=trimesh.convex.convex_hull(points);mn=f'{name}_{i}_taper_mesh'
+    add(asset,'mesh',name=mn,vertex=v(hh.vertices),face=' '.join(str(int(a)) for a in hh.faces.ravel()))
+    mass=float(850*np.pi*np.mean(section_radius(stations)**2)*L)
+    g=add(b,'geom',name=f'{name}_{i}_surface',type='mesh',mesh=mn,mass=mass,rgba='.3 .4 .10 1')
+    if basal.get('contact_timeconst_s'):
+     g.set('solref',str(basal['contact_timeconst_s'])+' 1');g.set('priority','1')
+   else:add(b,'geom',name=f'{name}_{i}_surface',type='capsule',fromto=v([0,0,0,*dx]),size=rad,density='850',rgba='.3 .4 .10 1')
+   segment_records.append(dict(segment=i,start_radius_m=float(section_radius(arc)) if basal else rad,end_radius_m=float(section_radius(arc+L)) if basal else rad,length_m=float(L),rotational_stiffness_nm_per_rad=k))
+   arc+=L
    prev=b
   tip=add(prev,'body',name=name+'_tip',pos=v(ds[-1]));ends[tip.get('name')]=prev.get('name')
-  records.append({'id':name,'radius_m':radius,'young_pa':young,'segments':n,'rest_shape':'near-straight upward growth bias; not loaded sag'})
+  records.append({'id':name,'radius_m':radius,'base_radius_m':base_radius,'young_pa':young,'segments':n,'section_parameters':segment_records,'rest_shape':'upright basal growth curve; endpoint retained; gravity supplies loaded sag' if basal.get('upright_petiole_emergence') and name.startswith('petiole_') else 'near-straight upward growth bias; not loaded sag'})
   return tip
  def mesh(name,verts,faces):
   add(asset,'mesh',name=name,vertex=v(verts),face=' '.join(str(int(a)) for a in np.ravel(faces)))
@@ -124,4 +174,5 @@ def build():
  ET.indent(r);ET.ElementTree(r).write(OUT/'scene.xml',encoding='unicode')
  (OUT/'model.json').write_text(json.dumps({'reference_graph':spec,'beam_parameters':records,'scope':'one representative specimen; inferred depth and attachments; uncalibrated contact model; no cutting, no robot policy','collision':'leaf surfaces consist of convex wedges, same rendered/contact mesh; berry convex collision'},indent=2))
  mujoco.MjModel.from_xml_path(str(OUT/'scene.xml'));print('Compiled',OUT/'scene.xml')
-if __name__=='__main__':build()
+if __name__=='__main__':
+ p=argparse.ArgumentParser();p.add_argument('--output',type=Path,default=OUT);a=p.parse_args();build(a.output)

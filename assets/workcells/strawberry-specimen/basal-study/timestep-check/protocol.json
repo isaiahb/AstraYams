@@ -1,0 +1,8 @@
+{
+  "purpose": "Contact timestep sensitivity, not biological calibration",
+  "shared_initial_state": "v6 gravity-settled rest/rollout.npz; identical initial qpos, zero qvel",
+  "time_constant_s": 0.001,
+  "probe_penetration_limit_mm": 1.0,
+  "convergence_criterion": "Compare two finest timesteps: impulse and maximum target displacement differ <10%; zero warnings. Peak force reported, not used as a fitted material measurement.",
+  "only_changed": "simulation timestep"
+}

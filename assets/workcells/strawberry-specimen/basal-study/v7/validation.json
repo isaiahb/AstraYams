@@ -1,0 +1,75 @@
+{
+  "scene_sha256": "ae08b2bf742aee5f0b8eba09837ed47917d8a085b2485c89e95c6351416504b0",
+  "mujoco_version": "3.12.0",
+  "timestep_s": 0.00025,
+  "contact_diagnostics_pass": true,
+  "all_embedded_sheaths_fixed": true,
+  "trials": {
+    "basal": {
+      "checks": {
+        "valid_contact_and_control": true,
+        "target_contacted": true,
+        "control_has_no_probe_contacts": true,
+        "no_initial_probe_overlap": true,
+        "same_commanded_stroke": true,
+        "same_recorded_initial_state": true,
+        "probe_penetration_below_1mm": true
+      },
+      "max_probe_penetration_mm": 0.10228041705276879
+    },
+    "leaf": {
+      "checks": {
+        "valid_contact_and_control": true,
+        "target_contacted": true,
+        "control_has_no_probe_contacts": true,
+        "no_initial_probe_overlap": true,
+        "same_commanded_stroke": true,
+        "same_recorded_initial_state": true,
+        "probe_penetration_below_1mm": true
+      },
+      "max_probe_penetration_mm": 0.23060545795500037
+    },
+    "stalk": {
+      "checks": {
+        "valid_contact_and_control": true,
+        "target_contacted": true,
+        "control_has_no_probe_contacts": true,
+        "no_initial_probe_overlap": true,
+        "same_commanded_stroke": true,
+        "same_recorded_initial_state": true,
+        "probe_penetration_below_1mm": true
+      },
+      "max_probe_penetration_mm": 0.05681495691652223
+    },
+    "neighbor": {
+      "checks": {
+        "valid_contact_and_control": true,
+        "target_contacted": true,
+        "control_has_no_probe_contacts": true,
+        "no_initial_probe_overlap": true,
+        "same_commanded_stroke": true,
+        "same_recorded_initial_state": true,
+        "probe_penetration_below_1mm": true
+      },
+      "max_probe_penetration_mm": 0.16000138492549415
+    }
+  },
+  "rest_root_rotation_degrees_relative_to_unloaded_shape": {
+    "petiole_left": 1.0974436402141101,
+    "petiole_front": 0.7063554226705002,
+    "peduncle": 11.859900818862252
+  },
+  "rest_final_second_max_span_mm": 0.12833973166361673,
+  "remaining_initial_settling_penetrations_over_1mm": {
+    "berry_primary | trough_front": 1.1003901824579314,
+    "berry_primary | secondary_a_4_surface": 1.4297289711552505,
+    "berry_primary | secondary_a_5_surface": 1.371612525287167
+  },
+  "biologically_calibrated": false,
+  "limits": [
+    "Circular beam sections and tissue mechanics are assumptions.",
+    "The fixed crown does not model roots moving in substrate.",
+    "Leaflet wedge gaps and stalk segmentation remain.",
+    "Numerical convergence checked for one basal push, not every possible load."
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "Before": {
+    "model_sha256": "09da4b67aba3383c12aec19948c32df0db1ef4a119b45370ea5720a16896435b",
+    "root_joint_rotations_at_rest": {
+      "petiole_left": {
+        "rotation_deg": 18.56983759060388,
+        "base_stiffness_nm_per_rad": 0.0204182712918278
+      },
+      "petiole_front": {
+        "rotation_deg": 19.29136388208459,
+        "base_stiffness_nm_per_rad": 0.02392360442060723
+      },
+      "peduncle": {
+        "rotation_deg": 20.153312874495033,
+        "base_stiffness_nm_per_rad": 0.08775114203697995
+      }
+    },
+    "rest": {
+      "kind": "rest",
+      "control": false,
+      "seconds": 10.00000000000073,
+      "elapsed_wall_s": 14.044388055801392,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_probe_contacts": [],
+      "probe_start_m": null,
+      "probe_end_m": null,
+      "target": null,
+      "target_touched": null,
+      "probe_contacts": {},
+      "truss_trough_contact_duration_s": 9.7955,
+      "berry_berry_contact_duration_s": 9.3615,
+      "penetrations_over_1mm": {
+        "petiole_left_basal_sheath | substrate": 1.0999999999999297,
+        "petiole_high_basal_sheath | substrate": 1.0999999999999852,
+        "petiole_right_basal_sheath | substrate": 1.0999999999999852,
+        "petiole_front_basal_sheath | substrate": 1.0999999999999852,
+        "petiole_new_basal_sheath | substrate": 1.0999999999999852,
+        "peduncle_basal_sheath | substrate": 1.0999999999999852,
+        "leaf_right_1_w19_-1 | substrate": 1.2755345361777914,
+        "leaf_right_1_w19_1 | substrate": 1.200916774107941,
+        "peduncle_3_surface | trough_rim": 1.2230243646463155,
+        "berry_primary | trough_front": 1.004023819206773,
+        "berry_primary | secondary_a_4_surface": 1.4605043402377298,
+        "berry_primary | secondary_a_5_surface": 1.1459399479075514,
+        "berry_primary | secondary_b_3_surface": 1.1115540304880835
+      },
+      "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.",
+      "final_second_max_geom_coordinate_span_mm": 0.3824521894040117
+    },
+    "basal_contact": {
+      "kind": "basal",
+      "control": false,
+      "seconds": 4.000000000000503,
+      "elapsed_wall_s": 5.858147144317627,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_probe_contacts": [],
+      "probe_start_m": [
+        -0.03169879227862733,
+        0.0051416165272519035,
+        0.3068651128597935
+      ],
+      "probe_end_m": [
+        -0.03169879227862733,
+        0.062141616527251906,
+        0.3068651128597935
+      ],
+      "target": "petiole_left_1_surface",
+      "target_touched": true,
+      "probe_contacts": {
+        "petiole_left_1_surface": {
+          "contact_points": 1852,
+          "peak_force_n": 0.42985722064748494,
+          "impulse_ns": 0.2372013227515741,
+          "max_penetration_mm": 0.3102779503894315
+        }
+      },
+      "truss_trough_contact_duration_s": 4.0,
+      "berry_berry_contact_duration_s": 4.0,
+      "penetrations_over_1mm": {},
+      "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation."
+    },
+    "basal_control": {
+      "kind": "basal",
+      "control": true,
+      "seconds": 4.000000000000503,
+      "elapsed_wall_s": 5.8438191413879395,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_probe_contacts": [],
+      "probe_start_m": [
+        -0.03169879227862733,
+        0.0051416165272519035,
+        0.3068651128597935
+      ],
+      "probe_end_m": [
+        -0.03169879227862733,
+        0.062141616527251906,
+        0.3068651128597935
+      ],
+      "target": "petiole_left_1_surface",
+      "target_touched": false,
+      "probe_contacts": {},
+      "truss_trough_contact_duration_s": 4.0,
+      "berry_berry_contact_duration_s": 4.0,
+      "penetrations_over_1mm": {},
+      "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation."
+    }
+  },
+  "After": {
+    "model_sha256": "ae08b2bf742aee5f0b8eba09837ed47917d8a085b2485c89e95c6351416504b0",
+    "root_joint_rotations_at_rest": {
+      "petiole_left": {
+        "rotation_deg": 1.0974436402141101,
+        "base_stiffness_nm_per_rad": 0.16371411960829904
+      },
+      "petiole_front": {
+        "rotation_deg": 0.7063554226705002,
+        "base_stiffness_nm_per_rad": 0.18770550669752004
+      },
+      "peduncle": {
+        "rotation_deg": 11.859900818862252,
+        "base_stiffness_nm_per_rad": 0.17534131322616087
+      }
+    },
+    "rest": {
+      "kind": "rest",
+      "control": false,
+      "seconds": 9.99999999999937,
+      "elapsed_wall_s": 23.721246004104614,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_probe_contacts": [],
+      "probe_start_m": null,
+      "probe_end_m": null,
+      "target": null,
+      "target_touched": null,
+      "probe_contacts": {},
+      "truss_trough_contact_duration_s": 9.5185,
+      "berry_berry_contact_duration_s": 9.215250000000001,
+      "penetrations_over_1mm": {
+        "berry_primary | trough_front": 1.1003901824579314,
+        "berry_primary | secondary_a_4_surface": 1.4297289711552505,
+        "berry_primary | secondary_a_5_surface": 1.371612525287167
+      },
+      "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.",
+      "final_second_max_geom_coordinate_span_mm": 0.12833973166361673
+    },
+    "basal_contact": {
+      "kind": "basal",
+      "control": false,
+      "seconds": 3.999999999999143,
+      "elapsed_wall_s": 11.175143003463745,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_probe_contacts": [],
+      "probe_start_m": [
+        -0.014465042911614327,
+        0.007648895873619929,
+        0.30702264425001674
+      ],
+      "probe_end_m": [
+        -0.014465042911614327,
+        0.06464889587361992,
+        0.30702264425001674
+      ],
+      "target": "petiole_left_1_surface",
+      "target_touched": true,
+      "probe_contacts": {
+        "petiole_left_1_surface": {
+          "contact_points": 4611,
+          "peak_force_n": 1.5997814322827841,
+          "impulse_ns": 1.5605632877711222,
+          "max_penetration_mm": 0.10228041705276879
+        }
+      },
+      "truss_trough_contact_duration_s": 4.0,
+      "berry_berry_contact_duration_s": 4.0,
+      "penetrations_over_1mm": {},
+      "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation."
+    },
+    "basal_control": {
+      "kind": "basal",
+      "control": true,
+      "seconds": 3.999999999999143,
+      "elapsed_wall_s": 10.391998052597046,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_probe_contacts": [],
+      "probe_start_m": [
+        -0.014465042911614327,
+        0.007648895873619929,
+        0.30702264425001674
+      ],
+      "probe_end_m": [
+        -0.014465042911614327,
+        0.06464889587361992,
+        0.30702264425001674
+      ],
+      "target": "petiole_left_1_surface",
+      "target_touched": false,
+      "probe_contacts": {},
+      "truss_trough_contact_duration_s": 4.0,
+      "berry_berry_contact_duration_s": 4.0,
+      "penetrations_over_1mm": {},
+      "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation."
+    }
+  },
+  "interpretation": "Root angles are relative to each model\u2019s unloaded joint orientation, not absolute emergence angles. Both the growth curve and cross section changed. No real-plant stiffness measurement is claimed. Probe trajectories share timing, direction and relative stroke; they are centered on each settled target, so absolute positions differ.",
+  "scope": "The old desktop app and original whole-plant artifact remain untouched. This is a separately inspectable simulation candidate."
+}
