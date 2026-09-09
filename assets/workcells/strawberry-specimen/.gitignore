@@ -1,0 +1,11 @@
+# Local generated replay datasets and checkpoints; regenerate from source.
+*.npz
+checkpoints/
+meshes/
+*.glb
+*.mp4
+replay.json
+scene.xml
+model.json
+reference/*.jpg
+reference/*.png
