@@ -1,0 +1,257 @@
+{
+  "title": "Harvest strawberries",
+  "scope_label": "Two YAMs \u00b7 scripted harvest baseline \u00b7 simulation only",
+  "videos": [
+    {
+      "id": "success",
+      "title": "Three-strawberry harvest",
+      "path": "assets/workcells/strawberry-harvest/three-strawberries-wrist-cameras.mp4",
+      "replay_path": "assets/workcells/strawberry-harvest/replay.json",
+      "caption": "Same continuous 34.12 s episode. Video includes both official D405 wrist views. Scripted state feedback.",
+      "kind": "scripted_execution"
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Collected in this run",
+      "value": "3 / 3",
+      "detail": "Continuous episode; berries remain in the basket."
+    },
+    {
+      "label": "Completion time",
+      "value": "34.12 s",
+      "detail": "Simulation time, normal-speed video."
+    },
+    {
+      "label": "Complete trials",
+      "value": "2 / 3",
+      "detail": "One trial lost its catcher grip; not robust yet."
+    }
+  ],
+  "limitations": [
+    "Scripted controller using simulator state. No harvesting policy has been trained.",
+    "Official wrist mount geometry; nominal camera intrinsics and estimated bracket mass.",
+    "Cutting/contact dynamics need hardware calibration."
+  ],
+  "sources": [
+    {
+      "label": "Cutter \u00b7 STEP",
+      "path": "assets/workcells/strawberry-harvest/cad/cutter.step"
+    },
+    {
+      "label": "Catcher \u00b7 STEP",
+      "path": "assets/workcells/strawberry-harvest/cad/catcher.step"
+    },
+    {
+      "label": "Basket \u00b7 STEP",
+      "path": "assets/workcells/strawberry-harvest/cad/basket.step"
+    },
+    {
+      "label": "Hardware & camera specifications",
+      "path": "assets/workcells/strawberry-harvest/hardware-applied.json"
+    },
+    {
+      "label": "Evaluation \u00b7 includes failed trial",
+      "path": "assets/workcells/strawberry-harvest/validation.json"
+    },
+    {
+      "label": "Replay verification",
+      "path": "assets/workcells/strawberry-harvest/replay-audit.json"
+    },
+    {
+      "label": "Fruit\u2013planter clearance audit",
+      "path": "assets/workcells/strawberry-harvest/crop-clearance-audit.json"
+    },
+    {
+      "label": "Task implementation",
+      "path": "assets/workcells/strawberry-harvest/env_multi.py"
+    },
+    {
+      "label": "Controller implementation",
+      "path": "assets/workcells/strawberry-harvest/run.py"
+    },
+    {
+      "label": "Recorded actions & poses",
+      "path": "assets/workcells/strawberry-harvest/rollout.npz"
+    },
+    {
+      "label": "Per-step measurements",
+      "path": "assets/workcells/strawberry-harvest/trace.json"
+    },
+    {
+      "label": "Assumptions & sources",
+      "path": "assets/workcells/strawberry-harvest/README.md"
+    },
+    {
+      "label": "Environment review \u00b7 three iterations",
+      "path": "assets/workcells/strawberry-harvest/environment-lab/REVIEW.md"
+    },
+    {
+      "label": "Diverse environment samples",
+      "path": "assets/workcells/strawberry-harvest/environment-lab/batch-stratified/gallery.png"
+    },
+    {
+      "label": "Synthetic observation manifest",
+      "path": "assets/workcells/strawberry-harvest/environment-lab/batch-stratified/manifest.json"
+    },
+    {
+      "label": "Initial batch \u00b7 includes rejection",
+      "path": "assets/workcells/strawberry-harvest/environment-lab/batch/manifest.json"
+    },
+    {
+      "label": "CAD and physics review",
+      "path": "assets/workcells/strawberry-harvest/reality-gap-loop/REVIEW.md"
+    },
+    {
+      "label": "Candidate catcher STEP",
+      "path": "assets/workcells/strawberry-harvest/reality-gap-loop/cad_revision/cad/catcher.step"
+    },
+    {
+      "label": "Candidate trial results",
+      "path": "assets/workcells/strawberry-harvest/reality-gap-loop/summary.json"
+    },
+    {
+      "label": "Plant physics review",
+      "path": "assets/workcells/strawberry-harvest/plant-physics/REVIEW.md"
+    },
+    {
+      "label": "Plant response measurements",
+      "path": "assets/workcells/strawberry-harvest/plant-physics/summary.json"
+    },
+    {
+      "label": "Plant interaction video",
+      "path": "assets/workcells/strawberry-harvest/plant-physics/surface-matched/plant-response.mp4"
+    },
+    {
+      "label": "Plant model generator",
+      "path": "assets/workcells/strawberry-harvest/plant-physics/plant.py"
+    },
+    {
+      "label": "Botanical structure and shape-retention review",
+      "path": "assets/workcells/strawberry-harvest/plant-physics/botanical-review/REVIEW.md"
+    },
+    {
+      "label": "Plant settling measurements",
+      "path": "assets/workcells/strawberry-harvest/plant-physics/botanical-review/metrics.json"
+    },
+    {
+      "label": "Canopy iteration review",
+      "path": "assets/workcells/strawberry-harvest/plant-physics/canopy-review/REVIEW.md"
+    },
+    {
+      "label": "Canopy visibility measurements",
+      "path": "assets/workcells/strawberry-harvest/plant-physics/canopy-review/canopy-v1/visibility.json"
+    },
+    {
+      "label": "Previous approved plant checkpoint video",
+      "path": "assets/workcells/strawberry-harvest/plant-physics/botanical-review/plant-response.mp4"
+    },
+    {
+      "label": "Checkpoint file hashes",
+      "path": "assets/workcells/strawberry-harvest/plant-physics/canopy-review/previous-checkpoint.json"
+    }
+  ],
+  "improvements": [
+    {
+      "title": "Calibrate the plant response",
+      "detail": "Compare bending force and recovery against real strawberry plants; current parameters are assumed."
+    },
+    {
+      "title": "Add physical detachment to the revised plant",
+      "detail": "The new contact-only candidate needs a cutting/topology-change model before harvesting."
+    },
+    {
+      "title": "Refine canopy geometry",
+      "detail": "Add measured leaf shapes, orientations and cultivar-dependent plant variation."
+    }
+  ],
+  "environment_review": {
+    "report": "assets/workcells/strawberry-harvest/environment-lab/REVIEW.md",
+    "gallery": "assets/workcells/strawberry-harvest/environment-lab/batch-stratified/gallery.png",
+    "iterations": [
+      {
+        "title": "Narrow gutter",
+        "image": "assets/workcells/strawberry-harvest/environment-lab/iteration-1/review.png",
+        "observation": "Fruit is exposed, but the canopy is sparse and the hanging stems are too regular.",
+        "decision": "Split the planter into growing pockets and curve the branches.",
+        "result": "Fresh 50 s controller trial: 0/3 collected; stalled before cutting."
+      },
+      {
+        "title": "Growing pockets",
+        "image": "assets/workcells/strawberry-harvest/environment-lab/iteration-2/review.png",
+        "observation": "Plant groups are clearer, but their alignment is repetitive; catcher visibility is still poor.",
+        "decision": "Stagger the pockets and introduce foliage near the fruit.",
+        "result": "Fresh 50 s controller trial: 0/3 collected; stalled before cutting."
+      },
+      {
+        "title": "Staggered bays",
+        "image": "assets/workcells/strawberry-harvest/environment-lab/iteration-3/review.png",
+        "observation": "Height/depth differences and nearby leaves create richer views. The catcher still hides part of the receiving area.",
+        "decision": "Use this as an environment family; address tool visibility and controller failure before training at scale.",
+        "result": "Fresh 50 s controller trial: 0/3 collected; stalled before cutting."
+      }
+    ],
+    "samples": [
+      {
+        "seed": 7100,
+        "layout": "gutter",
+        "path": "assets/workcells/strawberry-harvest/environment-lab/batch-stratified/seed-7100"
+      },
+      {
+        "seed": 7101,
+        "layout": "gutter",
+        "path": "assets/workcells/strawberry-harvest/environment-lab/batch-stratified/seed-7101"
+      },
+      {
+        "seed": 7102,
+        "layout": "gutter",
+        "path": "assets/workcells/strawberry-harvest/environment-lab/batch-stratified/seed-7102"
+      },
+      {
+        "seed": 7103,
+        "layout": "pods",
+        "path": "assets/workcells/strawberry-harvest/environment-lab/batch-stratified/seed-7103"
+      },
+      {
+        "seed": 7104,
+        "layout": "pods",
+        "path": "assets/workcells/strawberry-harvest/environment-lab/batch-stratified/seed-7104"
+      },
+      {
+        "seed": 7105,
+        "layout": "pods",
+        "path": "assets/workcells/strawberry-harvest/environment-lab/batch-stratified/seed-7105"
+      },
+      {
+        "seed": 7106,
+        "layout": "bays",
+        "path": "assets/workcells/strawberry-harvest/environment-lab/batch-stratified/seed-7106"
+      },
+      {
+        "seed": 7107,
+        "layout": "bays",
+        "path": "assets/workcells/strawberry-harvest/environment-lab/batch-stratified/seed-7107"
+      },
+      {
+        "seed": 7108,
+        "layout": "bays",
+        "path": "assets/workcells/strawberry-harvest/environment-lab/batch-stratified/seed-7108"
+      }
+    ],
+    "reality_gap": {
+      "image": "assets/workcells/strawberry-harvest/reality-gap-loop/comparison.png",
+      "report": "assets/workcells/strawberry-harvest/reality-gap-loop/REVIEW.md",
+      "summary": "Clearer wrist view (+27.6% visible cup floor). Broader stem contacts and geometry-based release tested. Combined candidate completed 2/3 trials; last berry remained in cup in the failed run. Scripted controller; baseline preserved.",
+      "cad": "assets/workcells/strawberry-harvest/reality-gap-loop/cad_revision/cad/catcher.step"
+    },
+    "plant_physics": {
+      "title": "Strawberry canopy \u00b7 varied leaves and contact",
+      "path": "assets/workcells/strawberry-harvest/plant-physics/canopy-review/canopy-v1/plant-response.mp4",
+      "replay_path": "assets/workcells/strawberry-harvest/plant-physics/canopy-review/replay.json",
+      "report": "assets/workcells/strawberry-harvest/plant-physics/canopy-review/REVIEW.md",
+      "summary": "Checkpoint preserved. Varied leaf height, tilt and cupping; lower foliage near the fruit; lighter leaf outlines. Control and contact runs passed the existing rest check. YAM hardware unchanged. Contact-only candidate: cutting unavailable; tissue properties uncalibrated."
+    }
+  },
+  "environment_study_path": "assets/workcells/strawberry-specimen/study.json",
+  "default_view": "research"
+}

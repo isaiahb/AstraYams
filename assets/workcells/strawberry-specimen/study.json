@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "title": "From real plant to responsive simulation",
+  "provenance": "recorded",
+  "status": "Contact diagnostics complete \u00b7 calibration outstanding",
+  "scope": "One reference-informed specimen. Scripted probe tests in MuJoCo; no learned harvesting policy or real-plant validation.",
+  "objective": "Trace the evidence behind the plant: what Astra observed, what changed in the model, and how each physical interaction was checked.",
+  "preview_path": "assets/workcells/strawberry-specimen/rest/three-quarter.png",
+  "checkpoint": {
+    "label": "single-specimen-crown-v4",
+    "sha256": "09da4b67aba3383c12aec19948c32df0db1ef4a119b45370ea5720a16896435b",
+    "report_path": "assets/workcells/strawberry-specimen/validation.json"
+  },
+  "sources": [
+    {
+      "id": "crown",
+      "feature": "Crown & roots",
+      "title": "The compressed stem at the plant base",
+      "publisher": "Cal Poly Strawberry Center",
+      "url": "https://strawberrycenterblog.com/2026/02/19/__trashed/",
+      "image_path": "assets/workcells/strawberry-specimen/reference/crown-roots.png",
+      "observation": "The crown connects leaf bases and roots in a compact, irregular structure. It is not a smooth exposed bulb.",
+      "application": "Replaced the large ellipsoid with a smaller irregular crown at the substrate line. Added overlapping basal sheaths and distributed stalk origins.",
+      "boundary": "This exposed bare-root specimen clarifies anatomy; it does not establish the visible shape or dimensions of our growing plant. Root mechanics are omitted.",
+      "credit": "Photograph: Gerald Holmes, Cal Poly Strawberry Center. Local study copy; redistribution rights not assumed.",
+      "model_path": "assets/workcells/strawberry-specimen/rest/crown-close.png"
+    },
+    {
+      "id": "leaves",
+      "feature": "Leaves",
+      "title": "Leaflets, serrations and short connecting stalks",
+      "publisher": "Cal Poly Strawberry Center",
+      "url": "https://strawberrycenterblog.com/2025/12/15/strawberry-anatomy-part-3-leaves-and-stems/",
+      "image_path": "assets/workcells/strawberry-specimen/reference/leaf-anatomy.jpg",
+      "observation": "A strawberry leaf has three broad, serrated leaflets with short petiolules. Their outline and central crease matter at tool scale.",
+      "application": "The mesh generator consumes a manually estimated width profile from the reference. Bending leaflets use the same wedge surfaces for visual and collision geometry.",
+      "boundary": "The outline is reference-informed, not a calibrated 3D scan. Four hinges per leaflet approximate bending; vein details are visual only.",
+      "credit": "Cal Poly Strawberry Center"
+    },
+    {
+      "id": "truss",
+      "feature": "Fruit stalks",
+      "title": "Peduncle and branching pedicels",
+      "publisher": "Cal Poly Strawberry Center",
+      "url": "https://strawberrycenterblog.com/2025/12/15/strawberry-anatomy-part-3-leaves-and-stems/",
+      "image_path": "assets/workcells/strawberry-specimen/reference/truss-anatomy.jpg",
+      "observation": "Fruit attach to branching stalks; they do not each originate independently at a central hub.",
+      "application": "Constructed a branching peduncle/pedicel graph. Fruit attach at branch ends, and gravity plus trough contact determine the settled pose.",
+      "boundary": "Hidden connections and depth remain inferred. Stiffness and damping have not been measured on a real stalk.",
+      "credit": "Cal Poly Strawberry Center"
+    },
+    {
+      "id": "crop",
+      "feature": "Growing environment",
+      "title": "Tabletop strawberry crop structure",
+      "publisher": "Ohio State Kubota Lab",
+      "url": "https://u.osu.edu/indoorberry/structures/",
+      "image_path": "assets/workcells/strawberry-specimen/reference/tabletop.jpg",
+      "observation": "The crop has uneven foliage, mixed fruit maturity and hanging trusses supported by the trough edge.",
+      "application": "Recorded visible image landmarks, separated uncertain connections, and built one representative specimen before generating a whole crop.",
+      "boundary": "A row photograph cannot prove that every visible stalk belongs to one crown. Camera and depth are approximate; this is not exact reconstruction.",
+      "credit": "Ohio State Kubota Lab page; tabletop photograph credited in-image to Meteor Systems."
+    },
+    {
+      "id": "section",
+      "feature": "Crown section",
+      "title": "Crown anatomy in section",
+      "publisher": "UC IPM / Cal Poly Strawberry Center",
+      "url": "https://strawberrycenterblog.com/2026/02/19/__trashed/",
+      "image_path": "assets/workcells/strawberry-specimen/reference/crown-section.jpg",
+      "observation": "Internal crown anatomy belongs to a compressed stem with leaf-base attachments, rather than a swollen root bulb.",
+      "application": "Used the section to constrain the external crown interpretation. Kept the crown compact and partially at the substrate surface.",
+      "boundary": "This is anatomical reference. Internal vascular tissues are not simulated.",
+      "credit": "Strand 2008 / UC IPM, reproduced by Cal Poly with permission. No redistribution license inferred.",
+      "model_path": "assets/workcells/strawberry-specimen/rest/crown-close.png"
+    },
+    {
+      "id": "calyx",
+      "feature": "Calyx & fruit",
+      "title": "Variation at the fruit attachment",
+      "publisher": "Cal Poly Strawberry Center",
+      "url": "https://strawberrycenterblog.com/2025/11/25/strawberry-anatomy-part-2-the-fruit/",
+      "image_path": "assets/workcells/strawberry-specimen/reference/calyx.jpg",
+      "observation": "Calyx shape and size vary around the fruit attachment. A single repeated star-shaped cap does not capture that variation.",
+      "application": "Retained the source as a constraint for the next morphology pass. Current calyx detail remains a visual approximation.",
+      "boundary": "Calyx contact, fruit bruising and detachment are not implemented. This reference has not yet been fully transferred to geometry.",
+      "credit": "Cal Poly Strawberry Center"
+    },
+    {
+      "id": "surface",
+      "feature": "Fruit surface",
+      "title": "Achenes and the fruit surface",
+      "publisher": "Cal Poly Strawberry Center",
+      "url": "https://strawberrycenterblog.com/2025/11/25/strawberry-anatomy-part-2-the-fruit/",
+      "image_path": "assets/workcells/strawberry-specimen/reference/fruit-surface.jpg",
+      "observation": "Surface features are embedded in the fruit form and include achene and pistil-remnant detail.",
+      "application": "Recorded the evidence for future surface and maturity-specific geometry work; existing fruit remain rigid bodies.",
+      "boundary": "Visible seed details do not establish a contact-accurate surface or a validated bruising model.",
+      "credit": "Cal Poly Strawberry Center"
+    },
+    {
+      "id": "flowers",
+      "feature": "Flowers",
+      "title": "Open flower anatomy",
+      "publisher": "Cal Poly Strawberry Center",
+      "url": "https://strawberrycenterblog.com/2025/11/04/strawberry-anatomy-part-1-the-flower/",
+      "image_path": "assets/workcells/strawberry-specimen/reference/flower.jpg",
+      "observation": "Flowers are a separate developmental stage with petal, sepal and central reproductive structures.",
+      "application": "Added a reference for future maturity variation. The current contact specimen does not include simulated flowers.",
+      "boundary": "Source retained for planning; no flower geometry or mechanics are claimed.",
+      "credit": "Cal Poly Strawberry Center"
+    }
+  ],
+  "revisions": [
+    {
+      "id": "structure",
+      "title": "Build the structure before multiplying plants",
+      "disposition": "kept",
+      "observation": "Repeated procedural foliage and centrally arranged stalks were not convincing as one connected plant.",
+      "decision": "Use a visible landmark graph and botanical topology, while recording hidden connections as assumptions.",
+      "change": "Built a single crown with five trifoliate leaves and an independently branching fruit truss. Leaf meshes use the stored reference width profile.",
+      "evidence": "The current specimen has inspectable connections and shared visual/collision leaf surfaces. Its depth and metric dimensions still need measurement.",
+      "source_ids": [
+        "crop",
+        "leaves",
+        "truss"
+      ],
+      "before_path": "assets/workcells/strawberry-specimen/checkpoints/v1/rest/three-quarter.png",
+      "after_path": "assets/workcells/strawberry-specimen/rest/three-quarter.png",
+      "artifact_path": "tasks/strawberry_specimen/reference-graph.json"
+    },
+    {
+      "id": "overlap",
+      "title": "Reject the overlapping probe initialization",
+      "disposition": "rejected",
+      "observation": "An early neighboring-fruit probe began inside geometry, producing an approximately 8.9 mm penetration.",
+      "decision": "Reject that diagnostic rather than interpret an initialization impulse as plausible plant behavior.",
+      "change": "Selected a collision-aware approach and paired it with an identical no-contact trajectory. Kept the failed checkpoint for inspection.",
+      "evidence": "The current three probe trials start without contact. Matching controls produce zero probe contacts. This validates initialization and contact attribution, not biological accuracy.",
+      "source_ids": [],
+      "artifact_path": "assets/workcells/strawberry-specimen/checkpoints/v1/neighbor/result.json"
+    },
+    {
+      "id": "crown",
+      "title": "Replace the bulb with a compact crown",
+      "disposition": "kept",
+      "observation": "The plant base looked like a large smooth bulb, with disconnected-looking stalk origins.",
+      "decision": "Use the bare-root and section references to model a compact compressed stem with overlapping bases at the substrate line.",
+      "change": "Reduced and irregularized the crown, distributed stalk origins, and attached basal sheaths to their bending stalk bodies.",
+      "evidence": "The close-up exposes the revised connections. Re-ran all three contacts and their controls on the saved v4 model. The crown is still fixed and roots are omitted.",
+      "source_ids": [
+        "crown",
+        "section"
+      ],
+      "before_path": "assets/workcells/strawberry-specimen/checkpoints/v2/rest/three-quarter.png",
+      "after_path": "assets/workcells/strawberry-specimen/rest/crown-close.png",
+      "artifact_path": "assets/workcells/strawberry-specimen/validation.json"
+    },
+    {
+      "id": "contact",
+      "title": "Keep the contact evidence inspectable",
+      "disposition": "kept",
+      "observation": "A stable simulation or attractive render alone could hide missed targets, incidental contacts or untested assumptions.",
+      "decision": "Inspect each contact separately and preserve numerical results alongside close-up video and orbitable recorded geometry.",
+      "change": "Recorded leaf brushing, stalk bending and cluster response from the settled plant, with matched collision-disabled controls.",
+      "evidence": "All intended targets were touched, controls had zero probe contacts, and no physics warnings were recorded. Transient settling penetrations exceeded 1 mm; material calibration remains outstanding.",
+      "source_ids": [],
+      "after_path": "assets/workcells/strawberry-specimen/leaf/contact-1.2.png",
+      "artifact_path": "assets/workcells/strawberry-specimen/validation.json"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "leaf",
+      "title": "Leaf brushing",
+      "question": "Does a tool touch and bend the leaf where it appears to?",
+      "method": "A force-limited scripted probe crosses a selected leaflet. The paired control uses the same start state and trajectory with probe collision disabled.",
+      "outcome": "passed-diagnostic",
+      "path": "assets/workcells/strawberry-specimen/leaf/demo.mp4",
+      "replay_path": "assets/workcells/strawberry-specimen/leaf/replay.json",
+      "poster_path": "assets/workcells/strawberry-specimen/leaf/contact-1.2.png",
+      "result_path": "assets/workcells/strawberry-specimen/leaf/result.json",
+      "control_path": "assets/workcells/strawberry-specimen/leaf-control/result.json",
+      "metrics": [
+        {
+          "label": "Peak probe-contact force",
+          "value": "0.166 N"
+        },
+        {
+          "label": "Maximum probe penetration",
+          "value": "0.220 mm"
+        },
+        {
+          "label": "Probe contacts in control",
+          "value": "0"
+        }
+      ],
+      "finding": "The intended leaf surface was touched. Its neighboring strips also registered contact, consistent with a finite-size probe.",
+      "limitation": "This tests collision placement and response. Leaf stiffness, damping and failure behavior are uncalibrated."
+    },
+    {
+      "id": "stalk",
+      "title": "Stalk bending",
+      "question": "Does stalk contact transmit motion through the connected plant?",
+      "method": "A force-limited scripted probe pushes the selected peduncle after ten seconds of settling. The matched no-contact control retains the same probe trajectory.",
+      "outcome": "passed-diagnostic",
+      "path": "assets/workcells/strawberry-specimen/stalk/demo.mp4",
+      "replay_path": "assets/workcells/strawberry-specimen/stalk/replay.json",
+      "poster_path": "assets/workcells/strawberry-specimen/stalk/contact-1.2.png",
+      "result_path": "assets/workcells/strawberry-specimen/stalk/result.json",
+      "control_path": "assets/workcells/strawberry-specimen/stalk-control/result.json",
+      "metrics": [
+        {
+          "label": "Peak probe-contact force",
+          "value": "0.471 N"
+        },
+        {
+          "label": "Maximum probe penetration",
+          "value": "0.288 mm"
+        },
+        {
+          "label": "Probe contacts in control",
+          "value": "0"
+        }
+      ],
+      "finding": "The intended stalk segment was touched. The result file preserves incidental probe contacts and the response of the connected truss.",
+      "limitation": "Capsule chains approximate elasticity. The observed motion is not a measured match to a living stalk."
+    },
+    {
+      "id": "neighbor",
+      "title": "Neighboring fruit",
+      "question": "Does pushing one berry affect the surrounding cluster?",
+      "method": "A collision-aware scripted probe approaches a selected berry. Fruit can transmit contact through the cluster and stalk network.",
+      "outcome": "passed-diagnostic",
+      "path": "assets/workcells/strawberry-specimen/neighbor/demo.mp4",
+      "replay_path": "assets/workcells/strawberry-specimen/neighbor/replay.json",
+      "poster_path": "assets/workcells/strawberry-specimen/neighbor/contact-1.2.png",
+      "result_path": "assets/workcells/strawberry-specimen/neighbor/result.json",
+      "control_path": "assets/workcells/strawberry-specimen/neighbor-control/result.json",
+      "metrics": [
+        {
+          "label": "Peak probe-contact force",
+          "value": "0.579 N"
+        },
+        {
+          "label": "Maximum probe penetration",
+          "value": "0.145 mm"
+        },
+        {
+          "label": "Probe contacts in control",
+          "value": "0"
+        }
+      ],
+      "finding": "The intended berry was touched without initial probe overlap. Neighboring fruit already touch at rest, so this is a cluster-response trial.",
+      "limitation": "This does not test first-contact onset, fruit deformation, bruising or detachment. Fruit are rigid bodies."
+    }
+  ],
+  "assumptions": [
+    {
+      "subject": "Plant connectivity",
+      "basis": "observed",
+      "value": "Trifoliate leaves, a compact crown, and branching fruit stalks are supported by the anatomical references.",
+      "consequence": "The specimen follows that topology; hidden connections in the crop photograph are still inferred."
+    },
+    {
+      "subject": "Hidden depth and metric scale",
+      "basis": "inferred",
+      "value": "Image landmarks constrain visible placement. All depth coordinates and plant dimensions are reconstructed by judgment.",
+      "consequence": "We cannot claim an exact digital twin or use this geometry as measured crop clearance."
+    },
+    {
+      "subject": "Tissue stiffness and damping",
+      "basis": "assumed",
+      "value": "Elastic stalk chains and hinged leaflets use selected stiffness/damping values, not real force\u2013deflection measurements.",
+      "consequence": "Contact is simulated, but force and recovery predictions need physical calibration."
+    },
+    {
+      "subject": "Crown and substrate boundary",
+      "basis": "assumed",
+      "value": "The crown is fixed at the substrate. Roots and root/substrate mechanics are omitted.",
+      "consequence": "Whole-plant pullout or crown movement cannot be learned credibly from this specimen."
+    },
+    {
+      "subject": "Fruit and decorative details",
+      "basis": "assumed",
+      "value": "Fruit are rigid. Fine calyx and seed geometry is visual detail; bruising, cutting and detachment are not modeled.",
+      "consequence": "Passing a cluster contact probe does not validate harvesting or delicate fruit handling."
+    },
+    {
+      "subject": "Contact checks",
+      "basis": "measured",
+      "value": "Simulator logs record target contact, matched controls, initial overlaps, force, penetration and solver warnings.",
+      "consequence": "These are measurements inside this simulation, not measurements of a real plant."
+    }
+  ],
+  "next_steps": [
+    "Fit a consistent camera and quantify projected landmark errors against the selected specimen references.",
+    "Collect real leaf and stalk force\u2013deflection and recovery measurements before fitting tissue parameters.",
+    "Review transient settling contacts over 1 mm and check timestep/contact sensitivity.",
+    "Improve fruit maturity and calyx geometry, then validate cutting/detachment separately before harvesting training.",
+    "Expand to multiple plants only after a coherent specimen passes visual review and the task-relevant contact checks."
+  ]
+}

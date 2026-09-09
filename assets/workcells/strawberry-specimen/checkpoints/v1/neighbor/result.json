@@ -1,0 +1,51 @@
+{
+  "kind": "neighbor",
+  "control": false,
+  "seconds": 4.000000000000503,
+  "elapsed_wall_s": 4.041703939437866,
+  "valid_run": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial_probe_contacts": [
+    {
+      "a": "probe_surface",
+      "b": "berry_primary",
+      "penetration_mm": 8.902047155519874
+    }
+  ],
+  "target": "berry_secondary_a",
+  "target_touched": true,
+  "probe_contacts": {
+    "berry_primary": {
+      "contact_points": 2224,
+      "peak_force_n": 5.660056361215011,
+      "impulse_ns": 0.0885478144204537,
+      "max_penetration_mm": 8.902047155519874
+    },
+    "berry_secondary_a": {
+      "contact_points": 1714,
+      "peak_force_n": 0.36608987704419105,
+      "impulse_ns": 0.13398364797588347,
+      "max_penetration_mm": 0.09311581607800677
+    },
+    "berry_secondary_b": {
+      "contact_points": 1030,
+      "peak_force_n": 0.5642627565586966,
+      "impulse_ns": 0.023684826399435054,
+      "max_penetration_mm": 0.18232168253022943
+    }
+  },
+  "truss_trough_contact_duration_s": 2.0285,
+  "berry_berry_contact_duration_s": 2.273,
+  "penetrations_over_1mm": {
+    "berry_primary | probe_surface": 8.902047155519874
+  },
+  "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation."
+}
