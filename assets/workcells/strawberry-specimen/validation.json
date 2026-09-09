@@ -1,0 +1,32 @@
+{
+  "checkpoint": "single-specimen-crown-v4",
+  "model_sha256": "09da4b67aba3383c12aec19948c32df0db1ef4a119b45370ea5720a16896435b",
+  "all_three_intended_targets_touched": true,
+  "controls_have_zero_probe_contacts": true,
+  "matching_control_trajectories": true,
+  "no_initial_probe_overlap": true,
+  "all_trials_without_physics_warnings": true,
+  "rest_last_second_span_mm": 0.3824521894040117,
+  "contact_trials": {
+    "leaf": {
+      "max_probe_penetration_mm": 0.21950872689889891,
+      "peak_probe_contact_force_n": 0.16647964077399546
+    },
+    "stalk": {
+      "max_probe_penetration_mm": 0.2881066543920867,
+      "peak_probe_contact_force_n": 0.47129518884702704
+    },
+    "neighbor": {
+      "max_probe_penetration_mm": 0.14462835931242785,
+      "peak_probe_contact_force_n": 0.5786175124922958
+    }
+  },
+  "limits": [
+    "Assumed depth and metric scale, no exact multi-view reconstruction",
+    "Uncalibrated tissue properties",
+    "Transient settling contacts exceeded 1 mm; see raw report",
+    "Rigid fruit; no detachment or bruising",
+    "Neighboring fruit already touch at rest; this tests cluster response, not first-contact onset",
+    "Crown fixed to substrate; root/substrate mechanics omitted"
+  ]
+}

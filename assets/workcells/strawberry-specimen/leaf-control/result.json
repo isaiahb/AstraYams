@@ -1,0 +1,34 @@
+{
+  "kind": "leaf",
+  "control": true,
+  "seconds": 4.000000000000503,
+  "elapsed_wall_s": 5.391106128692627,
+  "valid_run": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial_probe_contacts": [],
+  "probe_start_m": [
+    -0.20097220954152573,
+    0.0745228155860066,
+    0.32493371279320543
+  ],
+  "probe_end_m": [
+    -0.15663358507984637,
+    0.07678491177258391,
+    0.28918501628985227
+  ],
+  "target": "leaf_left_1_w14_-1",
+  "target_touched": false,
+  "probe_contacts": {},
+  "truss_trough_contact_duration_s": 4.0,
+  "berry_berry_contact_duration_s": 4.0,
+  "penetrations_over_1mm": {},
+  "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation."
+}

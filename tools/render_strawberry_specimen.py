@@ -8,6 +8,8 @@ P=Path(__file__).resolve().parents[1]/'assets/workcells/strawberry-specimen';ROO
 FONT=ImageFont.truetype('/System/Library/Fonts/Helvetica.ttc',21)
 def render(kind='rest',video=False):
  m=mujoco.MjModel.from_xml_path(str(P/'scene.xml'));d=mujoco.MjData(m);z=np.load(P/kind/'rollout.npz');renderer=mujoco.Renderer(m,800,1000);cam=mujoco.MjvCamera();cam.lookat[:]=[.02,.015,.30];cam.distance=.73;cam.azimuth=95;cam.elevation=-12
+ if kind!='rest':
+  report=json.loads((P/kind/'result.json').read_text());d.qpos[:]=z['qpos'][0];mujoco.mj_forward(m,d);cam.lookat[:]=d.geom_xpos[m.geom(report['target']).id];cam.distance=.32 if kind.split('-')[0]!='stalk' else .38
  # Neutral material render to inspect geometry. Thin details remain legible.
  def frame(i,az=95,el=-12):
   d.qpos[:]=z['qpos'][i];mujoco.mj_forward(m,d);cam.azimuth=az;cam.elevation=el;renderer.update_scene(d,cam);im=Image.fromarray(renderer.render());dr=ImageDraw.Draw(im);dr.rectangle((0,0,1000,73),fill='#17251d')
@@ -17,9 +19,11 @@ def render(kind='rest',video=False):
  for name,az,el in [('front',90,-8),('three-quarter',125,-22),('side',180,-12),('top',90,-60)]:frame(-1,az,el).save(P/kind/f'{name}.png')
  if kind=='rest':
   frame(0).save(P/kind/'unloaded.png');cam.lookat[:]=[0,.055,.29];cam.distance=.19;frame(-1,125,-32).save(P/kind/'crown-close.png');cam.lookat[:]=[.02,.015,.30];cam.distance=.73
+ if kind!='rest':
+  for sec in [.4,1.2,1.6,2.4,3.8]:frame(int(np.argmin(abs(z['t']-sec))),0 if kind in ['leaf','stalk'] else 110,-18).save(P/kind/f'contact-{sec}.png')
  if video:
   with imageio.get_writer(P/kind/'demo.mp4',fps=25,codec='libx264',quality=8,macro_block_size=2) as wr:
-   for i in range(0,len(z['t']),2):wr.append_data(np.array(frame(i,110,-18)))
+   for i in range(0,len(z['t']),2):wr.append_data(np.array(frame(i,0 if kind in ['leaf','stalk'] else 110,-18)))
    if kind=='rest':
     for j in range(150):wr.append_data(np.array(frame(-1,110+j*1.8,-18)))
  renderer.close();print(P/kind)

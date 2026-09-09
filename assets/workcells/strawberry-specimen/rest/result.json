@@ -1,0 +1,41 @@
+{
+  "kind": "rest",
+  "control": false,
+  "seconds": 10.00000000000073,
+  "elapsed_wall_s": 14.044388055801392,
+  "valid_run": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial_probe_contacts": [],
+  "probe_start_m": null,
+  "probe_end_m": null,
+  "target": null,
+  "target_touched": null,
+  "probe_contacts": {},
+  "truss_trough_contact_duration_s": 9.7955,
+  "berry_berry_contact_duration_s": 9.3615,
+  "penetrations_over_1mm": {
+    "petiole_left_basal_sheath | substrate": 1.0999999999999297,
+    "petiole_high_basal_sheath | substrate": 1.0999999999999852,
+    "petiole_right_basal_sheath | substrate": 1.0999999999999852,
+    "petiole_front_basal_sheath | substrate": 1.0999999999999852,
+    "petiole_new_basal_sheath | substrate": 1.0999999999999852,
+    "peduncle_basal_sheath | substrate": 1.0999999999999852,
+    "leaf_right_1_w19_-1 | substrate": 1.2755345361777914,
+    "leaf_right_1_w19_1 | substrate": 1.200916774107941,
+    "peduncle_3_surface | trough_rim": 1.2230243646463155,
+    "berry_primary | trough_front": 1.004023819206773,
+    "berry_primary | secondary_a_4_surface": 1.4605043402377298,
+    "berry_primary | secondary_a_5_surface": 1.1459399479075514,
+    "berry_primary | secondary_b_3_surface": 1.1115540304880835
+  },
+  "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.",
+  "final_second_max_geom_coordinate_span_mm": 0.3824521894040117
+}

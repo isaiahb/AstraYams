@@ -50,6 +50,12 @@ def build():
   for i,dx in enumerate(ds):
    rad=radius*(1-.22*i/n);L=np.linalg.norm(dx);k=young*np.pi*rad**4/4/L
    b=add(prev,'body',name=f'{name}_{i}',pos=v(offset if i==0 and parent is crown else [0,0,0] if i==0 else ds[i-1]))
+   if i==0 and parent is crown:
+    for suffix in ['basal_sheath','stipule']:
+     g=crown.find("geom[@name='"+name+'_'+suffix+"']");crown.remove(g)
+     if 'fromto' in g.attrib:g.set('fromto',v(np.fromstring(g.get('fromto'),sep=' ').reshape(2,3)-offset))
+     else:g.set('pos',v(-offset))
+     g.set('mass','0');b.append(g)
    add(b,'joint',name=f'{name}_{i}_bend',type='ball',stiffness=k,damping=max(.001,k*.18),armature='1e-7')
    add(b,'geom',name=f'{name}_{i}_surface',type='capsule',fromto=v([0,0,0,*dx]),size=rad,density='850',rgba='.3 .4 .10 1')
    prev=b

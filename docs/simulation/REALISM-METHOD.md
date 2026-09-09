@@ -35,3 +35,8 @@ Each revision contains: hypothesis, minimal change, source/checkpoint hashes, pa
 
 ## Current strawberry evidence and limits
 The existing v8 checkpoint added flexible segmented stalks, hinged leaf panels and physical fruit contacts, and passed its recorded quiet-rest and berry-probe sanity checks. Its canopy still looks overly flat and repetitive. Stiffness/damping/friction are assumed; berries are rigid; attachment topology currently prevents detachment. The next audit extends contact accounting to leaves and stalks before those interactions are described as tested. Shape refinement and measured calibration remain separate work.
+
+## Reference-first specimen pass (2026-09-09)
+The follow-up implementation is `tasks/strawberry_specimen/reference-graph.json` and `tools/build_strawberry_specimen.py`. It records visible image landmarks separately from hidden connectivity assumptions; consumes a manually estimated leaflet width profile; builds fruit from branch tips; places a compact crown at substrate level; and lets the truss settle onto a physical trough rim. The anatomical atlas includes crown/root photos, a crown section, leaf surfaces, branching trusses, fruit/calyx details and flower development. Camera matching and real physical calibration remain incomplete.
+
+Review media are mandatory for this workflow: one whole-specimen view, a close-up for each altered organ, an orbitable mesh replay, and contact recordings with the probe visibly in frame. Check screenshots from the contact phase, not just a final resting image. Record occluded views as presentation failures and choose a clear camera without changing the physics.
