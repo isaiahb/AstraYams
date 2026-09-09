@@ -2,7 +2,7 @@
 The source graph is the design input; leaves/fruit grow from graph attachments.
 """
 from pathlib import Path
-import json,math,copy,argparse
+import json,math,copy,argparse,hashlib
 import xml.etree.ElementTree as ET
 import numpy as np
 import mujoco,trimesh
@@ -10,9 +10,11 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'assets/workcells/strawberry-specimen'
 def v(a):return ' '.join(f'{float(x):.8g}' for x in np.ravel(a))
 def add(p,t,**kw):return ET.SubElement(p,t,{k:str(x) for k,x in kw.items()})
-def build(output=OUT):
+def build(output=OUT,spec_path=None):
  OUT=Path(output)
- spec=json.loads((ROOT/'tasks/strawberry_specimen/reference-graph.json').read_text());OUT.mkdir(exist_ok=True,parents=True)
+ source=Path(spec_path) if spec_path else ROOT/'tasks/strawberry_specimen/reference-graph.json'
+ spec=json.loads(source.read_text());OUT.mkdir(exist_ok=True,parents=True)
+ mechanics=spec.get('mechanics',{});anatomy=spec.get('crown_structure',{})
  r=ET.Element('mujoco',model='reference_specimen_contact_only');add(r,'compiler',angle='radian',autolimits='true')
  add(r,'option',timestep=str(spec.get('simulation_timestep_s',.0005)),integrator='implicitfast',gravity='0 0 -9.81',iterations='80',cone='elliptic')
  vis=add(r,'visual');add(vis,'global',offwidth='1200',offheight='900');add(vis,'headlight',diffuse='.6 .6 .6',ambient='.4 .4 .4',specular='.1 .1 .1');add(vis,'quality',shadowsize='2048')
@@ -28,19 +30,20 @@ def build(output=OUT):
  crown=add(w,'body',name='crown',pos=v(spec['crown_m']))
  # Short irregular crown at the soil line; compressed stem, not an exposed bulb.
  verts=[]
- for z,rad in [(-.012,.0055),(-.004,.007),( .003,.0065),(.009,.0045)]:
+ for z,rad in anatomy.get('core_rings_z_radius_m',[(-.012,.0055),(-.004,.007),( .003,.0065),(.009,.0045)]):
   for j in range(9):
    th=j*2*np.pi/9;rr=rad*(1+.12*np.sin(j*2.3));verts.append([rr*np.cos(th),rr*np.sin(th),z])
  hull=trimesh.convex.convex_hull(verts);add(asset,'mesh',name='crown_core_mesh',vertex=v(hull.vertices),face=' '.join(str(int(a)) for a in hull.faces.ravel()))
  add(crown,'geom',name='crown_core',type='mesh',mesh='crown_core_mesh',rgba='.25 .19 .075 1')
  records=[];roots={};ends={}
- def beam(parent,delta,name,radius,n=6,young=50e6):
+ def beam(parent,delta,name,radius,n=6,young=50e6,growth=None):
+  growth=growth or {}
   delta=np.array(delta,float);offset=np.zeros(3)
   basal=spec.get('basal_support',{}) if parent is crown else {}
   if parent is crown:
-   az=np.arctan2(delta[1],delta[0]);offset=np.array([.0045*np.cos(az),.0045*np.sin(az),.005+.001*np.cos(2*az)]);delta=delta-offset
+   az=np.arctan2(delta[1],delta[0]);offset=np.array(growth.get('attachment_m',[.0045*np.cos(az),.0045*np.sin(az),.005+.001*np.cos(2*az)]));delta=delta-offset
    # Compact, overlapping basal sheath follows this stalk's actual attachment.
-   stop=offset+delta/np.linalg.norm(delta)*.018
+   stop=offset+delta/np.linalg.norm(delta)*growth.get('stipule_length_m',.018)
    fixed_basal=basal.get('fixed_embedded_sheath',False)
    sheath_end=offset if fixed_basal else stop
    add(crown,'geom',name=name+'_basal_sheath',type='capsule',fromto=v([offset[0]*.7,offset[1]*.7,-.003,*sheath_end]),size=str(basal.get('petiole_base_radius_m' if name.startswith('petiole_') else 'peduncle_base_radius_m',.0021) if fixed_basal else .0021),rgba='.32 .32 .09 1')
@@ -59,6 +62,13 @@ def build(output=OUT):
    c2=delta*.67+np.array([0,0,.018])
    points=3*(1-u[:,None])**2*u[:,None]*c1+3*(1-u[:,None])*u[:,None]**2*c2+u[:,None]**3*delta
    ds=np.diff(points,axis=0)
+  if 'control_points_m' in growth:
+   # Explicit unloaded centerline, relative to its own crown attachment. The
+   # solver, not a render deformation, supplies all subsequent loaded motion.
+   c1,c2=np.array(growth['control_points_m'],float)
+   points=3*(1-u[:,None])**2*u[:,None]*c1+3*(1-u[:,None])*u[:,None]**2*c2+u[:,None]**3*delta
+   ds=np.diff(points,axis=0)
+  rest_points=np.vstack([np.zeros(3),np.cumsum(ds,axis=0)])+offset
   roots.setdefault(parent.get('name'),[]).append(name+'_0')
   lengths=np.linalg.norm(ds,axis=1);total=float(lengths.sum());arc=0.
   base_radius=basal.get('petiole_base_radius_m' if name.startswith('petiole_') else 'peduncle_base_radius_m',radius)
@@ -84,7 +94,7 @@ def build(output=OUT):
      if 'fromto' in g.attrib:g.set('fromto',v(np.fromstring(g.get('fromto'),sep=' ').reshape(2,3)-offset))
      else:g.set('pos',v(-offset))
      g.set('mass','0');b.append(g)
-   add(b,'joint',name=f'{name}_{i}_bend',type='ball',stiffness=k,damping=max(.001,k*.18),armature='1e-7')
+   add(b,'joint',name=f'{name}_{i}_bend',type='ball',stiffness=k,damping=max(mechanics.get('minimum_stalk_damping',.001),k*mechanics.get('stalk_damping_time_s',.18)),armature='1e-7')
    if basal:
     # A convex tapered section shares its contact and rendered surface. The same
     # radii determine bending compliance, rather than a cosmetic thicker sleeve.
@@ -110,33 +120,43 @@ def build(output=OUT):
    arc+=L
    prev=b
   tip=add(prev,'body',name=name+'_tip',pos=v(ds[-1]));ends[tip.get('name')]=prev.get('name')
-  records.append({'id':name,'radius_m':radius,'base_radius_m':base_radius,'young_pa':young,'segments':n,'section_parameters':segment_records,'rest_shape':'upright basal growth curve; endpoint retained; gravity supplies loaded sag' if basal.get('upright_petiole_emergence') and name.startswith('petiole_') else 'near-straight upward growth bias; not loaded sag'})
+  records.append({'id':name,'radius_m':radius,'base_radius_m':base_radius,'young_pa':young,'segments':n,'section_parameters':segment_records,'unloaded_points_parent_m':rest_points.tolist(),'rest_shape':'explicit parametric growth curve; gravity supplies loaded sag' if growth else 'upright basal growth curve; endpoint retained; gravity supplies loaded sag' if basal.get('upright_petiole_emergence') and name.startswith('petiole_') else 'near-straight upward growth bias; not loaded sag'})
   return tip
  def mesh(name,verts,faces):
   add(asset,'mesh',name=name,vertex=v(verts),face=' '.join(str(int(a)) for a in np.ravel(faces)))
  # Small convex wedges preserve serration and crease in BOTH visual and collision geometry.
  def leaflet(parent,name,length,width,pitch,roll,yaw,color):
-  root=add(parent,'body',name=name+'_root',euler=v([roll,pitch,yaw]))
-  add(root,'geom',name=name+'_petiolule',type='capsule',fromto='0 0 0 .009 0 0',size='.00075',mass='.00003',rgba='.35 .46 .1 1')
+  profile_spec=spec['leaflet_profile'];petiolule=profile_spec.get('petiolule_m',.009)
+  # Fixed thickness/areal-density hypothesis: smaller leaves carry less mass.
+  mass_scale=(length/mechanics['leaf_mass_reference_length_m'])**2 if mechanics.get('scale_leaf_mass_by_area') else 1.
+  if profile_spec.get('orientation_frame')=='radial_yaw_then_pitch':
+   # Euler xyz rotates about successive local axes in MuJoCo. Leaf elevation
+   # must instead be about the transverse axis AFTER its radial azimuth.
+   # This is a fixed unloaded attachment orientation; it still bends with its stalk.
+   q=np.empty(4);mujoco.mju_euler2Quat(q,np.array([yaw,pitch,roll]),'zyx')
+   root=add(parent,'body',name=name+'_root',quat=v(q))
+  else:root=add(parent,'body',name=name+'_root',euler=v([roll,pitch,yaw]))
+  add(root,'geom',name=name+'_petiolule',type='capsule',fromto=v([0,0,0,petiolule,0,0]),size='.00075',mass='.00003',rgba='.35 .46 .1 1')
   prev=root;n=20;dx=length/n;span=n//4;profile=np.array(spec['leaflet_profile']['normalized_halfwidth_stations'])
   for panel in range(4):
-   b=add(prev,'body',name=f'{name}_panel{panel}',pos=v([.009 if panel==0 else dx*span,0,0]))
-   add(b,'joint',name=f'{name}_bend{panel}',type='hinge',axis='0 1 0',stiffness='.009',damping='.0009',armature='2e-8')
+   b=add(prev,'body',name=f'{name}_panel{panel}',pos=v([petiolule if panel==0 else dx*span,0,0]))
+   add(b,'joint',name=f'{name}_bend{panel}',type='hinge',axis='0 1 0',stiffness=mechanics.get('leaf_hinge_stiffness_nm_per_rad',.009),damping=mechanics.get('leaf_hinge_damping',.0009),armature='2e-8')
    for j in range(span):
     idx=panel*span+j;ts=np.array([idx,idx+1])/n;xx=ts*length
     # Obovate broad terminal leaflet; alternating tooth depth is resolved per wedge.
     widths=width*.5*np.interp(ts,profile[:,0],profile[:,1])*np.array([1 if idx%2 else .90,1 if (idx+1)%2 else .90]);widths=np.maximum(widths,.0005)
-    centerz=.0018*np.sin(np.pi*ts);edgez=centerz+.003*np.sin(np.pi*ts)
+    centerz=profile_spec.get('midrib_arch_m',.0018)*np.sin(np.pi*ts);edgez=centerz+profile_spec.get('crease_m',.003)*np.sin(np.pi*ts)
     for side in [-1,1]:
      top=np.array([[j*dx,0,centerz[0]],[(j+1)*dx,0,centerz[1]],[(j+1)*dx,side*widths[1],edgez[1]],[j*dx,side*widths[0],edgez[0]]]);bot=top.copy();bot[:,2]-=.00045;verts=np.vstack([top,bot]);faces=trimesh.convex.convex_hull(verts).faces
      hull=trimesh.convex.convex_hull(verts);mn=f'{name}_w{idx}_{side}';mesh(mn,hull.vertices,hull.faces)
-     add(b,'geom',name=mn,type='mesh',mesh=mn,mass=str(.0008/(n*2)),rgba=v(color))
+     add(b,'geom',name=mn,type='mesh',mesh=mn,mass=str(mechanics.get('leaf_mass_at_reference_kg',.0008)*mass_scale/(n*2)),rgba=v(color))
     add(b,'geom',name=f'{name}_vein{idx}',type='capsule',fromto=v([j*dx,0,centerz[0]+.0002,(j+1)*dx,0,centerz[1]+.0002]),size='.00025',mass='0',contype='0',conaffinity='0',rgba='.36 .49 .13 1')
    prev=b
   add(contact,'exclude',body1=ends.get(parent.get('name'),parent.get('name')),body2=root.get('name'))
  for leaf in spec['leaves']:
-  tip=beam(crown,np.array(leaf['tip'])-spec['crown_m'],'petiole_'+leaf['id'],.00165,n=7,young=85e6)
-  for i,off in enumerate([-1.05,0,1.05]):
+  tip=beam(crown,np.array(leaf['tip'])-spec['crown_m'],'petiole_'+leaf['id'],leaf.get('shaft_radius_m',.00165),n=mechanics.get('petiole_segments',7),young=mechanics.get('petiole_young_pa',85e6),growth=leaf.get('growth'))
+  fan=spec['leaflet_profile'].get('lateral_azimuth_rad',1.05)
+  for i,off in enumerate([-fan,0,fan]):
    length=leaf['length']*(1 if i==1 else .88);color=[.22,.39,.08,1] if leaf['age']=='mature' else [.35,.51,.12,1]
    leaflet(tip,f"leaf_{leaf['id']}_{i}",length,length/spec['leaflet_profile']['length_to_width'],leaf['pitch']+(i-1)*.1,(i-1)*.12,leaf['yaw']+off,color)
  nodes={'crown':crown}
@@ -159,7 +179,7 @@ def build(output=OUT):
     add(body,'geom',name=f"seed_{f['id']}_{i}_{j}",type='ellipsoid',size='.00035 .00025 .0006',pos=v([rr*np.cos(th),rr*np.sin(th),-.002-length*t]),mass='0',rgba='.68 .55 .18 1',contype='0',conaffinity='0')
   add(contact,'exclude',body1=ends[parent.get('name')],body2=body.get('name'))
  for branch in spec['truss']:
-  tip=beam(nodes[branch['parent']],branch['unloaded_delta'],branch['id'],branch['radius'],n=7,young=45e6);nodes[branch['id']]=tip
+  tip=beam(nodes[branch['parent']],branch['unloaded_delta'],branch['id'],branch['radius'],n=mechanics.get('truss_segments',7),young=mechanics.get('truss_young_pa',45e6),growth=branch.get('growth'));nodes[branch['id']]=tip
   if 'fruit' in branch:berry(tip,branch['fruit'])
  for parent,kids in roots.items():
   for a in kids:
@@ -173,6 +193,8 @@ def build(output=OUT):
   axis=np.eye(3)[i];add(probe,'joint',name=f'probe_{i}',type='slide',axis=v(axis),damping='.5');add(act,'position',name=f'probe_{i}',joint=f'probe_{i}',kp='180',kv='4',forcerange='-1.5 1.5')
  ET.indent(r);ET.ElementTree(r).write(OUT/'scene.xml',encoding='unicode')
  (OUT/'model.json').write_text(json.dumps({'reference_graph':spec,'beam_parameters':records,'scope':'one representative specimen; inferred depth and attachments; uncalibrated contact model; no cutting, no robot policy','collision':'leaf surfaces consist of convex wedges, same rendered/contact mesh; berry convex collision'},indent=2))
+ (OUT/'reference-graph.json').write_text(json.dumps(spec,indent=2))
+ (OUT/'build-provenance.json').write_text(json.dumps({'source':str(source.resolve()),'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'generator_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'scene_sha256':hashlib.sha256((OUT/'scene.xml').read_bytes()).hexdigest(),'mujoco_version':mujoco.__version__},indent=2))
  mujoco.MjModel.from_xml_path(str(OUT/'scene.xml'));print('Compiled',OUT/'scene.xml')
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--output',type=Path,default=OUT);a=p.parse_args();build(a.output)
+ p=argparse.ArgumentParser();p.add_argument('--output',type=Path,default=OUT);p.add_argument('--spec',type=Path);a=p.parse_args();build(a.output,a.spec)

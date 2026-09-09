@@ -3,8 +3,8 @@ from pathlib import Path
 import argparse,json,time
 import numpy as np,mujoco
 P=Path(__file__).resolve().parents[1]/'assets/workcells/strawberry-specimen'
-def run(kind='rest',control=False):
- m=mujoco.MjModel.from_xml_path(str(P/'scene.xml'));d=mujoco.MjData(m);out=P/(kind+('-control' if control else ''));out.mkdir(exist_ok=True)
+def run(kind='rest',control=False,approach_angle_deg=0.,trial_label=None):
+ m=mujoco.MjModel.from_xml_path(str(P/'scene.xml'));d=mujoco.MjData(m);out=P/((trial_label or kind)+('-control' if control else ''));out.mkdir(exist_ok=True)
  pa=np.array([m.joint(f'probe_{i}').qposadr[0] for i in range(3)]);va=np.array([m.joint(f'probe_{i}').dofadr[0] for i in range(3)]);ai=np.array([m.actuator(f'probe_{i}').id for i in range(3)]);pg=m.geom('probe_surface').id
  d.qpos[pa]=[.5,-.5,.5];d.ctrl[ai]=d.qpos[pa]
  if kind!='rest':
@@ -19,6 +19,11 @@ def run(kind='rest',control=False):
   elif kind=='basal':direction=np.array([0.,1.,0.])
   else:
    direction=d.geom_xpos[m.geom('berry_secondary_b').id]-origin;direction/=np.linalg.norm(direction)
+  if approach_angle_deg:
+   if kind=='neighbor':raise ValueError('Neighbor approach search is a separate protocol; angle override unsupported')
+   # Tilt the approach in a repeatable plane; do not move the plant or target.
+   tangent=np.cross(direction,[0,0,1] if abs(direction[2])<.9 else [1,0,0]);tangent/=np.linalg.norm(tangent)
+   angle=np.deg2rad(approach_angle_deg);direction=np.cos(angle)*direction+np.sin(angle)*tangent
   start=origin-direction*.045;end=origin+direction*(.012 if kind in ['leaf','basal'] else .035)
   if kind=='neighbor':
    # Search only probe approach directions; keep plant state and collision filters.
@@ -62,6 +67,8 @@ def run(kind='rest',control=False):
  report=dict(kind=kind,control=control,seconds=float(d.time),elapsed_wall_s=time.time()-t0,valid_run=bool(not any(w.number for w in d.warning) and abs(d.time-dur)<.005),warnings=[int(w.number) for w in d.warning],initial_probe_contacts=init,probe_start_m=start.tolist() if target else None,probe_end_m=end.tolist() if target else None,target=target,target_touched=target in stats if target else None,probe_contacts=stats,truss_trough_contact_duration_s=rim_steps*m.opt.timestep,berry_berry_contact_duration_s=neighbor_steps*m.opt.timestep,penetrations_over_1mm=allstats,scope='Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.')
  if kind=='rest':
   a=np.array(positions);report['final_second_max_geom_coordinate_span_mm']=float(np.ptp(a[np.array(ts)>dur-1],axis=0).max()*1000)
+ report['approach_angle_deg']=approach_angle_deg
+ report['trial_label']=trial_label or kind
  np.savez_compressed(out/'rollout.npz',qpos=q,t=ts,geom_positions=positions);(out/'result.json').write_text(json.dumps(report,indent=2));print(json.dumps(report),flush=True)
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--kind',choices=['rest','leaf','stalk','neighbor','basal'],default='rest');p.add_argument('--control',action='store_true');p.add_argument('--model-dir',type=Path,default=P);a=p.parse_args();P=a.model_dir.resolve();run(a.kind,a.control)
+ p=argparse.ArgumentParser();p.add_argument('--kind',choices=['rest','leaf','stalk','neighbor','basal'],default='rest');p.add_argument('--control',action='store_true');p.add_argument('--model-dir',type=Path,default=P);p.add_argument('--approach-angle-deg',type=float,default=0.);p.add_argument('--trial-label');a=p.parse_args();P=a.model_dir.resolve();run(a.kind,a.control,a.approach_angle_deg,a.trial_label)
