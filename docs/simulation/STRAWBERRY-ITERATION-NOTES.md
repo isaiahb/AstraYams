@@ -193,3 +193,20 @@ mass is unchanged. Final rise remains ~19.71 / 11.39 mm; timestep response
 curve change <0.059 mm. Exported an orbitable standalone replay using existing
 viewer code; checked matching body-local geometry across the topology change.
 Desktop product files remain untouched.
+
+
+## 2026-09-09 — Own the next-goal decision
+
+User explicitly asked the agent to infer values from the repeated feedback and
+derive the next goals instead of requiring the user to identify each defect.
+Recorded a working project brief in AGENTS.md and an autonomous critique loop
+in REALISM-METHOD.md. Updated the stale keyed-insertion focus to the current
+strawberry/modeling work; product UI remains paused.
+
+Before selecting the next fix, classified recorded contact failures by object
+and phase. The largest release penetration is a ground impact, whereas the
+plant's initialization contains fruit/stalk and leaf/leaf overlaps. The next
+selected outcome is a credible contact/support/unweighting test of the intact
+fruit cluster, with load transfer and recovery evidence. This avoids picking
+work merely because its numerical error is largest. The audit and standing
+workflow are completed; the new physical support trial is not yet implemented.

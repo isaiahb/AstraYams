@@ -54,3 +54,45 @@ The earlier table records the starting audit. This update and the chronological 
   real unloading and longitudinal observations remain necessary.
 - Contact penetration and fixed-root limitations persist. Reproducible visuals
   and assumptions: `assets/workcells/strawberry-specimen/fruit-study/README.md`.
+
+## Selected next milestone — 2026-09-09
+
+Derived from the user's request that the agent own critique and goal selection:
+**make one fruit cluster credible under contact, support and unloading**, with
+inspectable evidence of how load transfers to the tool and away from the stalk.
+This is the next diagnostic toward robot harvesting, not a claim that the
+current specimen or a complete harvest policy is ready.
+
+First audit completed: recomputed contacts at recorded poses. The largest
+release overlap (~2.27 mm) is the detached fruit hitting the ground at 1.175 s.
+In gravity initialization, fruit/fruit overlap reaches ~1.08 mm and fruit versus
+a neighboring stalk ~0.88 mm; leaf/leaf overlap is already ~0.45 mm in the first
+saved frame. These are sampled maxima at 5 ms, not every integration step, and
+the initialization transients must not be described as persistent settled
+overlap. Evidence: `fruit-study/next-goal-contact-audit.json`.
+
+Execution order and evidence:
+
+1. Inspect those specific interfaces with visible collision surfaces and local
+   dimensions; distinguish initial geometry errors from contact-compliance and
+   initialization artifacts. Declare scale-aware numerical acceptance limits
+   before tuning, without mistaking them for measured tissue compliance.
+2. Build a controlled, contact-driven support/unweighting trial from the settled
+   v14 candidate. The tool must visibly contact the fruit, transfer load and
+   withdraw; preserve the full neighboring cluster and a matching no-contact
+   control. This fills a missing interaction rather than adding another pose.
+3. Log tool contact force, load transfer, fruit angle, stalk/neighbor movement,
+   penetration, residual motion and energy where applicable. Inspect the entire
+   trajectory from useful views; repair failures and verify timestep sensitivity.
+4. Use evidence to constrain rest curvature, compliance and recovery assumptions.
+   Seek relevant strawberry observations; keep unknown ranges explicit if real
+   measurements remain unavailable. Do not invent calibration or quiet motion
+   by changing spring references during unloading.
+5. Show the recorded contact/support/recovery and compare with references. Choose
+   the next experiment from the largest remaining task-relevant discrepancy.
+
+Actual pedicel cutting, fruit retention, whole-plant leaf/anchorage refinement,
+and learned robot execution remain on the broader roadmap. Do not prematurely
+expand into the desktop app or claim all realism work is finished when this
+diagnostic passes. User feedback can reprioritize the milestone without losing
+the preserved v13/v14 work.

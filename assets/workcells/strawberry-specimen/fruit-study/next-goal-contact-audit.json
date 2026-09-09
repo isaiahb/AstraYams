@@ -1,0 +1,55 @@
+{
+  "purpose": "Choose the next task-relevant model improvement from recorded failures; no model changes or new physical calibration.",
+  "sampling": "Saved qpos; 5 ms sampling. Recomputed contact geometry synchronized to each saved pose; not an every-integration-step maximum.",
+  "contacts": {
+    "settling": [
+      {
+        "pair": "berry_primary | berry_secondary_a",
+        "depth_mm": 1.0838758990463042,
+        "time_s": 0.2951249999999814
+      },
+      {
+        "pair": "berry_primary | trough_front",
+        "depth_mm": 0.9654690342199631,
+        "time_s": 0.2851249999999825
+      },
+      {
+        "pair": "berry_primary | secondary_b_4_surface",
+        "depth_mm": 0.876938288531033,
+        "time_s": 0.3051249999999803
+      },
+      {
+        "pair": "berry_green | trough_front",
+        "depth_mm": 0.7465470762636172,
+        "time_s": 0.2901249999999819
+      },
+      {
+        "pair": "berry_secondary_a | berry_secondary_b",
+        "depth_mm": 0.5790752940215311,
+        "time_s": 0.5401249999999722
+      },
+      {
+        "pair": "leaf_high_0_w6_1 | leaf_high_1_w6_-1",
+        "depth_mm": 0.4502098178174495,
+        "time_s": 0.000125
+      },
+      {
+        "pair": "leaf_high_0_w7_1 | leaf_high_1_w6_-1",
+        "depth_mm": 0.45020963852256857,
+        "time_s": 0.000125
+      },
+      {
+        "pair": "berry_primary | secondary_b_3_surface",
+        "depth_mm": 0.44572242765462955,
+        "time_s": 0.3051249999999803
+      }
+    ],
+    "release": [
+      {
+        "pair": "berry_primary | ground",
+        "depth_mm": 2.2659347756771586,
+        "time_s": 1.1750000000000287
+      }
+    ]
+  }
+}
