@@ -1,0 +1,33 @@
+{
+  "metrics": {
+    "baseline": {
+      "development": {
+        "successes": 0,
+        "episodes": 3
+      },
+      "holdout": {
+        "successes": 0,
+        "episodes": 3
+      }
+    },
+    "trained": {
+      "development": {
+        "successes": 3,
+        "episodes": 3
+      },
+      "holdout": {
+        "successes": 3,
+        "episodes": 3
+      }
+    }
+  },
+  "training_seconds": 7.018287874991074,
+  "total_seconds": 33.59257854195312,
+  "parameters": 3080,
+  "baseline_sha256": "c2d03ee9b034a94c35a58f5cf300b6ae71625cf2eb76726eb77b48bdac9e997b",
+  "trained_sha256": "c5c31a41b7407030dc2e18020dca12804998209fee49d052721aa4a5bf3fab22",
+  "accepted": true,
+  "regression": false,
+  "source_report": "runs/demo-configurations/5ce93072-9310-4b71-bccf-44f8659a1f62/learning/report.json",
+  "trigger": "Actual desktop app Build & learn workflow using its newly configured environment"
+}
