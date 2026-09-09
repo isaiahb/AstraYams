@@ -1,0 +1,20 @@
+{
+  "expected_angular_accel_rad_s2": [
+    -327.4014734774576,
+    0.00947676218568298,
+    -0.009476762185682053
+  ],
+  "simulated_angular_accel_rad_s2": [
+    -327.40147347745767,
+    0.009476762185682986,
+    -0.009476762185682056
+  ],
+  "error_rad_s2": 5.684341920491515e-14,
+  "torque_Nm": [
+    -0.0019459072109930123,
+    5.519232642253175e-21,
+    0.0
+  ],
+  "pass_check": true,
+  "scope": "Independent gravity/inertia unit check; not a biological calibration."
+}

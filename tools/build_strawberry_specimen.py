@@ -35,7 +35,7 @@ def build(output=OUT,spec_path=None):
    th=j*2*np.pi/9;rr=rad*(1+.12*np.sin(j*2.3));verts.append([rr*np.cos(th),rr*np.sin(th),z])
  hull=trimesh.convex.convex_hull(verts);add(asset,'mesh',name='crown_core_mesh',vertex=v(hull.vertices),face=' '.join(str(int(a)) for a in hull.faces.ravel()))
  add(crown,'geom',name='crown_core',type='mesh',mesh='crown_core_mesh',rgba='.25 .19 .075 1')
- records=[];roots={};ends={}
+ records=[];roots={};ends={};tip_tangents={}
  def beam(parent,delta,name,radius,n=6,young=50e6,growth=None):
   growth=growth or {}
   delta=np.array(delta,float);offset=np.zeros(3)
@@ -120,6 +120,7 @@ def build(output=OUT,spec_path=None):
    arc+=L
    prev=b
   tip=add(prev,'body',name=name+'_tip',pos=v(ds[-1]));ends[tip.get('name')]=prev.get('name')
+  tip_tangents[tip.get('name')]=ds[-1]/np.linalg.norm(ds[-1])
   records.append({'id':name,'radius_m':radius,'base_radius_m':base_radius,'young_pa':young,'segments':n,'section_parameters':segment_records,'unloaded_points_parent_m':rest_points.tolist(),'rest_shape':'explicit parametric growth curve; gravity supplies loaded sag' if growth else 'upright basal growth curve; endpoint retained; gravity supplies loaded sag' if basal.get('upright_petiole_emergence') and name.startswith('petiole_') else 'near-straight upward growth bias; not loaded sag'})
   return tip
  def mesh(name,verts,faces):
@@ -162,6 +163,13 @@ def build(output=OUT,spec_path=None):
  nodes={'crown':crown}
  def berry(parent,f):
   body=add(parent,'body',name='fruit_'+f['id']);rad=f['radius'];length=f['length'];verts=[];faces=[];N=32;R=18
+  attachment=f.get('attachment_frame',mechanics.get('fruit_attachment_frame','legacy_local_down'))
+  if attachment=='terminal_tangent':
+   # The calyx-to-apex axis continues the terminal pedicel. This is a material
+   # frame in the unloaded plant, never a gravity-aligned render override.
+   # All subsequent rotations and COM moments are solved with the stalk.
+   quat=np.zeros(4);mujoco.mju_quatZ2Vec(quat,-tip_tangents[parent.get('name')]);body.set('quat',v(quat))
+  elif attachment!='legacy_local_down':raise ValueError('Unknown fruit attachment frame: '+attachment)
   for i in range(R+1):
    t=i/R;rr=rad*(.12+np.sin(np.pi*(t*.86+.1))**.8)*(1-.72*t)
    for j in range(N):

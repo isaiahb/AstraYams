@@ -1,0 +1,7 @@
+**/scene.xml
+**/model.json
+**/*.npz
+**/meshes/
+**/replay.json
+**/*.glb
+**/*.mp4
