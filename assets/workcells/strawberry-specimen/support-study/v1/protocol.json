@@ -1,0 +1,88 @@
+{
+  "source_scene_sha256": "535de45e60aff7fadc161f013a4de0ee9de59caf79c123a5e0e6fafaa1a33022",
+  "scene_sha256": "cfd7e731e2abfa4c4163975e242b3d963ff630937222c83dbfb5ff39c67e3022",
+  "mujoco": "3.12.0",
+  "start_m": [
+    -0.05793943900861132,
+    -0.03143798985052915,
+    0.110432771599599
+  ],
+  "under_m": [
+    -0.007939439008611321,
+    -0.03143798985052915,
+    0.110432771599599
+  ],
+  "gravity_feedforward_joint_m": [
+    0.0,
+    0.0,
+    0.004373625000000001
+  ],
+  "fruit_mass_kg": 0.018049999999999997,
+  "controller": {
+    "rate_hz": 100,
+    "position_kp_n_m": 240.0,
+    "position_kv_ns_m": 7,
+    "axis_force_limit_n": 2,
+    "force_feedback_gain_m_ns": 0.1,
+    "maximum_force_feedback_speed_m_s": 0.014,
+    "target_support_fraction": 0.8
+  },
+  "acceptance": {
+    "initial_instrument_plant_contacts": 0,
+    "non_target_instrument_plant_contacts": 0,
+    "hold_support_fraction": [
+      0.7,
+      0.9
+    ],
+    "minimum_stem_vertical_unloading_fraction": 0.6,
+    "max_cup_fruit_penetration_mm": 0.25,
+    "max_other_plant_penetration_mm": 0.1,
+    "max_target_contact_resultant_n": 0.45,
+    "final_no_contact": true,
+    "maximum_final_fruit_displacement_mm": 2.0,
+    "maximum_hold_force_balance_residual_n": 0.005
+  },
+  "limits": "Engineering diagnostic limits chosen before running, not measured damage/safety thresholds. Fruit/cup rigidity and friction uncalibrated.",
+  "phases": {
+    "rest": [
+      0,
+      0.4
+    ],
+    "approach": [
+      0.4,
+      1.9
+    ],
+    "load": [
+      1.9,
+      5.9
+    ],
+    "hold": [
+      5.9,
+      7.4
+    ],
+    "unload": [
+      7.4,
+      8.6
+    ],
+    "lower": [
+      8.6,
+      9.6
+    ],
+    "retreat": [
+      9.6,
+      11.1
+    ],
+    "recover": [
+      11.1,
+      13
+    ]
+  },
+  "scope": "Intact v14 tree; no weld toggles, cutting, plant-state overrides, or material changes. Ideal actuated bench stages, not a robot policy.",
+  "exclusions": "Internal guide/slider pairs use ideal prismatic joints. No external plant contact exclusions.",
+  "evidence": [
+    {
+      "url": "https://arxiv.org/html/2207.12552",
+      "use": "Supports separating attachment, detachment, transport and cluster interaction; reports specific peduncle tests. Its gripping/cutting forces are not used as fruit-body safety thresholds."
+    }
+  ]
+}

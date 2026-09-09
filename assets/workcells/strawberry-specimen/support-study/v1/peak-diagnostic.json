@@ -1,0 +1,112 @@
+{
+  "max_force": 22.865312447585314,
+  "max_depth": 4.220892398550324,
+  "events": [
+    {
+      "t": 8.99925,
+      "force": 22.865312447585314,
+      "depth_mm": 4.220892398550324,
+      "contacts": [
+        {
+          "geom": [
+            "cup_floor",
+            "berry_primary"
+          ],
+          "depth_mm": 4.220892398550324,
+          "force": [
+            9.502723510532828,
+            0.4438401291771813,
+            -3.77508762793042,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "geom": [
+            "cup_floor",
+            "berry_primary"
+          ],
+          "depth_mm": 4.220892398550324,
+          "force": [
+            22.248706201764982,
+            -5.155010907284834,
+            7.254422855759602,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "after_forward_force": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "after_forward_depth": 0.0,
+      "max_qvel": 2.352619582069401
+    }
+  ],
+  "first_wrong": [
+    {
+      "t": 1.8365,
+      "bad": [
+        "berry_secondary_a"
+      ]
+    },
+    {
+      "t": 1.836625,
+      "bad": [
+        "berry_secondary_a"
+      ]
+    },
+    {
+      "t": 1.83675,
+      "bad": [
+        "berry_secondary_a"
+      ]
+    },
+    {
+      "t": 1.836875,
+      "bad": [
+        "berry_secondary_a"
+      ]
+    },
+    {
+      "t": 1.837,
+      "bad": [
+        "berry_secondary_a"
+      ]
+    },
+    {
+      "t": 1.8371250000000001,
+      "bad": [
+        "berry_secondary_a"
+      ]
+    },
+    {
+      "t": 1.83725,
+      "bad": [
+        "berry_secondary_a"
+      ]
+    },
+    {
+      "t": 1.837375,
+      "bad": [
+        "berry_secondary_a"
+      ]
+    },
+    {
+      "t": 1.8375000000000001,
+      "bad": [
+        "berry_secondary_a"
+      ]
+    },
+    {
+      "t": 1.837625,
+      "bad": [
+        "berry_secondary_a"
+      ]
+    }
+  ]
+}
