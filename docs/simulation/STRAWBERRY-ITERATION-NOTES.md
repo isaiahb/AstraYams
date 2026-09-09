@@ -150,3 +150,46 @@ This is still a reduced bending model: ribs constrain transverse deformation, an
 - `STRAWBERRY-CALIBRATION-PROTOCOL.md`: concrete observation, fitting and held-out experiment protocol; prepared but not executed on real plants.
 
 Next dependencies: integrate and retest the continuous surface in the plant; resolve remaining truss contact penetration; represent and constrain crown/root anchorage; measure real responses; test sensitivity to discretization and uncertain geometry/materials; add physically triggered cutting/retention and damage; then train the harvest policy. A faster surrogate requires a validated teacher and independent observations. None of these remaining steps is marked complete by the current batch.
+
+
+## 2026-09-09 — Finite fruit orientation and unloading
+
+User noticed unrealistic fruit angles and challenged the assumption that a
+stalk growing under fruit weight should recover to a never-loaded shape.
+Inspected real truss anatomy, inferred body COM/inertia and current rotations.
+The mass was finite; the erroneous local-down fruit attachment caused a 42–64°
+angle to its terminal stalk. Optional terminal-tangent material frames fix that
+without world-space pose overrides. v13 preserved; new v14 checkpoint.
+
+Independent finite-body gravity acceleration agrees with the parallel-axis
+inertia calculation. Four paired release/control experiments cover two distinct
+rest-curvature/stiffness hypotheses and two timesteps. Identical initial loaded
+poses and restoring moments lead to 19.71 vs 11.39 mm tip rise by 3 s after load
+release. Material changes occur before each experiment, never at release; this
+is an identifiability counterexample, not measured growth or plasticity.
+
+Every release preserves qpos/qvel exactly. Refined timestep changes the response
+curve by at most 0.061 mm. The event only disables a calyx attachment weld, so
+blade contact, cutting work, fracture and a distal stalk remnant remain absent.
+Contact penetrations up to ~2.3 mm still prevent a physical-accuracy claim.
+
+Rendered before/after fruit closeups, recorded release video and recoil curves;
+inspected pre-release, falling and late-response frames. Research distinguishes
+fast elastic, delayed recoverable and irreversible plant bending, but no real
+strawberry recoil/growth constants were found or measured in this iteration.
+Prepared matching-plant unloading and longitudinal observations in the study
+README. Desktop app unchanged; root/leaf/harvest roadmap remains open.
+
+Method: check hidden frame/inertia assumptions before adding complexity; verify
+analytical mechanics independently; branch same-state experiments; preserve
+pose/velocity across topology events; use paired controls and timestep studies;
+expose non-identifiability instead of claiming a single fitted biological truth.
+
+Final attachment audit rejected the first temporary weld for 0.1996° rotational
+error against a predeclared 0.1° numerical tolerance. Preserved it under
+`release-soft-weld`, increased only its constraint torque scale (0.03 -> 0.1),
+and repeated all eight trajectories. Angular error is now <0.0185° and total
+mass is unchanged. Final rise remains ~19.71 / 11.39 mm; timestep response
+curve change <0.059 mm. Exported an orbitable standalone replay using existing
+viewer code; checked matching body-local geometry across the topology change.
+Desktop product files remain untouched.

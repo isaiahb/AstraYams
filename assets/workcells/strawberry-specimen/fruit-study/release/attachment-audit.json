@@ -1,0 +1,16 @@
+{
+  "rows": [
+    {
+      "trial": "elastic-release",
+      "max_attached_angular_error_deg": 0.018432248189436562
+    },
+    {
+      "trial": "history-release",
+      "max_attached_angular_error_deg": 0.018432554873878057
+    }
+  ],
+  "total_mass_error_kg": 0.0,
+  "angular_tolerance_deg": 0.1,
+  "passed": true,
+  "scope": "Temporary release weld should approximate the original rigid calyx bond; this is not a tissue-stiffness fit."
+}

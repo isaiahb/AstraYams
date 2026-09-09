@@ -40,3 +40,25 @@ The existing v8 checkpoint added flexible segmented stalks, hinged leaf panels a
 The follow-up implementation is `tasks/strawberry_specimen/reference-graph.json` and `tools/build_strawberry_specimen.py`. It records visible image landmarks separately from hidden connectivity assumptions; consumes a manually estimated leaflet width profile; builds fruit from branch tips; places a compact crown at substrate level; and lets the truss settle onto a physical trough rim. The anatomical atlas includes crown/root photos, a crown section, leaf surfaces, branching trusses, fruit/calyx details and flower development. Camera matching and real physical calibration remain incomplete.
 
 Review media are mandatory for this workflow: one whole-specimen view, a close-up for each altered organ, an orbitable mesh replay, and contact recordings with the probe visibly in frame. Check screenshots from the contact phase, not just a final resting image. Record occluded views as presentation failures and choose a clear camera without changing the physics.
+
+## Loaded configuration, material frames and history
+
+A visible pose does not uniquely determine rest shape, stiffness or stored
+strain. Check attachment/material frames, actual COM and inertia before adding
+new deformation models. Verify one isolated mechanics calculation independently
+(for example gravity moment and rotational inertia about an attachment).
+
+Use matched loaded-state hypotheses to expose non-identifiability. If rest shape
+and stiffness both change to preserve that state, say so; do not attribute a
+response difference solely to growth. Separate fast recoverable strain, delayed
+recovery and persistent/growth-related shape. Identify each from observations
+at the relevant timescale, rather than inferring them from appearance alone.
+
+A diagnostic load-release experiment can disable a known connection to study
+unloading. Label the imposed boundary event; it is not evidence of tool-driven
+cutting or fracture. Preserve mass, inertia, instantaneous pose and velocity;
+verify the temporary attachment transmits moments before release. Repeat with
+an uncut control and a refined timestep. A failed attachment approximation must
+be repaired and rerun, not counted as biological compliance. Keep the actual
+tool/contact/fracture gate open until those interactions are implemented and
+validated.

@@ -1,0 +1,273 @@
+{
+  "files": {
+    "tools/build_strawberry_specimen.py": "26a0cf29b6c1e78a106fe109aa30d14fe04e4a329345525e0e865da569e71f81",
+    "tools/study_strawberry_fruit.py": "64b5f879b3fe7c31653b80713c89c9a2f1c124273185459f4fe661bc2e0834e9",
+    "tools/render_strawberry_fruit.py": "e98b71f351ce510319e8554d82c5bc5d9881475ae772ff06803892fe10eaa4b8",
+    "tools/export_strawberry_fruit.py": "2c30e5c84a71cd60b2269bda3d5658545fe1f38826aa9ad27e0c380ebfe8136e",
+    "tasks/strawberry_specimen/parametric/canopy-v14-fruit-frame.json": "c3978a08ccde42cc4af621af77a76409547c5991c3c5179ab954342c2f2f1ce4"
+  },
+  "releases": [
+    {
+      "name": "elastic-control",
+      "dt_s": 0.000125,
+      "seconds": 4.000000000002015,
+      "wall_s": 19.15196204185486,
+      "initial_spring_energy_J": 0.019151418975082306,
+      "initial_spring_force_match_error": 0.0,
+      "history_fraction_hypothesis": 0.0,
+      "initial_qpos_sha256": "cd36b8acb105d4f43862197a9687308c20d9f3663729e231e3343fe07ecfcd34",
+      "initial_qvel_sha256": "a9c5bb8b825aa54d4271a214e2212b4f2f48d621d54dcd1b959226c8161d7d39",
+      "event": {
+        "time_s": 1.0000000000001257,
+        "qpos_jump": 0.0,
+        "qvel_jump": 0.0,
+        "spring_energy_J": 0.019151835208993783
+      },
+      "constitutive_parameters_unchanged_during_trial": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_attached_weld_gap_mm": 0.0003380685269475008,
+      "max_sampled_contact_penetration_mm": 0.05066051498235323,
+      "scope": "Diagnostic attachment release, not blade cutting. Recoil is a model prediction; growth/stiffness hypothesis uncalibrated."
+    },
+    {
+      "name": "elastic-control-fine",
+      "dt_s": 6.25e-05,
+      "seconds": 3.9999999999963465,
+      "wall_s": 33.27449584007263,
+      "initial_spring_energy_J": 0.019151418975082306,
+      "initial_spring_force_match_error": 0.0,
+      "history_fraction_hypothesis": 0.0,
+      "initial_qpos_sha256": "cd36b8acb105d4f43862197a9687308c20d9f3663729e231e3343fe07ecfcd34",
+      "initial_qvel_sha256": "a9c5bb8b825aa54d4271a214e2212b4f2f48d621d54dcd1b959226c8161d7d39",
+      "event": {
+        "time_s": 0.9999999999997857,
+        "qpos_jump": 0.0,
+        "qvel_jump": 0.0,
+        "spring_energy_J": 0.01915183520269811
+      },
+      "constitutive_parameters_unchanged_during_trial": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_attached_weld_gap_mm": 0.00033806867855873873,
+      "max_sampled_contact_penetration_mm": 0.05066051498235323,
+      "scope": "Diagnostic attachment release, not blade cutting. Recoil is a model prediction; growth/stiffness hypothesis uncalibrated."
+    },
+    {
+      "name": "elastic-release",
+      "dt_s": 0.000125,
+      "seconds": 4.000000000002015,
+      "wall_s": 18.780762910842896,
+      "initial_spring_energy_J": 0.019151418975082306,
+      "initial_spring_force_match_error": 0.0,
+      "history_fraction_hypothesis": 0.0,
+      "initial_qpos_sha256": "cd36b8acb105d4f43862197a9687308c20d9f3663729e231e3343fe07ecfcd34",
+      "initial_qvel_sha256": "a9c5bb8b825aa54d4271a214e2212b4f2f48d621d54dcd1b959226c8161d7d39",
+      "event": {
+        "time_s": 1.0000000000001257,
+        "qpos_jump": 0.0,
+        "qvel_jump": 0.0,
+        "spring_energy_J": 0.019151835208993783
+      },
+      "constitutive_parameters_unchanged_during_trial": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_attached_weld_gap_mm": 0.0003380685269475008,
+      "max_sampled_contact_penetration_mm": 2.2659347756771586,
+      "scope": "Diagnostic attachment release, not blade cutting. Recoil is a model prediction; growth/stiffness hypothesis uncalibrated."
+    },
+    {
+      "name": "elastic-release-fine",
+      "dt_s": 6.25e-05,
+      "seconds": 3.9999999999963465,
+      "wall_s": 34.17624878883362,
+      "initial_spring_energy_J": 0.019151418975082306,
+      "initial_spring_force_match_error": 0.0,
+      "history_fraction_hypothesis": 0.0,
+      "initial_qpos_sha256": "cd36b8acb105d4f43862197a9687308c20d9f3663729e231e3343fe07ecfcd34",
+      "initial_qvel_sha256": "a9c5bb8b825aa54d4271a214e2212b4f2f48d621d54dcd1b959226c8161d7d39",
+      "event": {
+        "time_s": 0.9999999999997857,
+        "qpos_jump": 0.0,
+        "qvel_jump": 0.0,
+        "spring_energy_J": 0.01915183520269811
+      },
+      "constitutive_parameters_unchanged_during_trial": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_attached_weld_gap_mm": 0.00033806867855873873,
+      "max_sampled_contact_penetration_mm": 2.268772255265743,
+      "scope": "Diagnostic attachment release, not blade cutting. Recoil is a model prediction; growth/stiffness hypothesis uncalibrated."
+    },
+    {
+      "name": "history-control",
+      "dt_s": 0.000125,
+      "seconds": 4.000000000002015,
+      "wall_s": 19.044710874557495,
+      "initial_spring_energy_J": 0.009905523386339456,
+      "initial_spring_force_match_error": 6.938893903907228e-18,
+      "history_fraction_hypothesis": 0.5,
+      "initial_qpos_sha256": "cd36b8acb105d4f43862197a9687308c20d9f3663729e231e3343fe07ecfcd34",
+      "initial_qvel_sha256": "a9c5bb8b825aa54d4271a214e2212b4f2f48d621d54dcd1b959226c8161d7d39",
+      "event": {
+        "time_s": 1.0000000000001257,
+        "qpos_jump": 0.0,
+        "qvel_jump": 0.0,
+        "spring_energy_J": 0.009905901273844041
+      },
+      "constitutive_parameters_unchanged_during_trial": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_attached_weld_gap_mm": 0.0003380687720155505,
+      "max_sampled_contact_penetration_mm": 0.05066051498235323,
+      "scope": "Diagnostic attachment release, not blade cutting. Recoil is a model prediction; growth/stiffness hypothesis uncalibrated."
+    },
+    {
+      "name": "history-control-fine",
+      "dt_s": 6.25e-05,
+      "seconds": 3.9999999999963465,
+      "wall_s": 33.23157095909119,
+      "initial_spring_energy_J": 0.009905523386339456,
+      "initial_spring_force_match_error": 6.938893903907228e-18,
+      "history_fraction_hypothesis": 0.5,
+      "initial_qpos_sha256": "cd36b8acb105d4f43862197a9687308c20d9f3663729e231e3343fe07ecfcd34",
+      "initial_qvel_sha256": "a9c5bb8b825aa54d4271a214e2212b4f2f48d621d54dcd1b959226c8161d7d39",
+      "event": {
+        "time_s": 0.9999999999997857,
+        "qpos_jump": 0.0,
+        "qvel_jump": 0.0,
+        "spring_energy_J": 0.009905901288271455
+      },
+      "constitutive_parameters_unchanged_during_trial": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_attached_weld_gap_mm": 0.0003380687521051774,
+      "max_sampled_contact_penetration_mm": 0.05066051498235323,
+      "scope": "Diagnostic attachment release, not blade cutting. Recoil is a model prediction; growth/stiffness hypothesis uncalibrated."
+    },
+    {
+      "name": "history-release",
+      "dt_s": 0.000125,
+      "seconds": 4.000000000002015,
+      "wall_s": 18.687886953353882,
+      "initial_spring_energy_J": 0.009905523386339456,
+      "initial_spring_force_match_error": 6.938893903907228e-18,
+      "history_fraction_hypothesis": 0.5,
+      "initial_qpos_sha256": "cd36b8acb105d4f43862197a9687308c20d9f3663729e231e3343fe07ecfcd34",
+      "initial_qvel_sha256": "a9c5bb8b825aa54d4271a214e2212b4f2f48d621d54dcd1b959226c8161d7d39",
+      "event": {
+        "time_s": 1.0000000000001257,
+        "qpos_jump": 0.0,
+        "qvel_jump": 0.0,
+        "spring_energy_J": 0.009905901273844041
+      },
+      "constitutive_parameters_unchanged_during_trial": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_attached_weld_gap_mm": 0.0003380687720155505,
+      "max_sampled_contact_penetration_mm": 2.21384481883761,
+      "scope": "Diagnostic attachment release, not blade cutting. Recoil is a model prediction; growth/stiffness hypothesis uncalibrated."
+    },
+    {
+      "name": "history-release-fine",
+      "dt_s": 6.25e-05,
+      "seconds": 3.9999999999963465,
+      "wall_s": 33.993114948272705,
+      "initial_spring_energy_J": 0.009905523386339456,
+      "initial_spring_force_match_error": 6.938893903907228e-18,
+      "history_fraction_hypothesis": 0.5,
+      "initial_qpos_sha256": "cd36b8acb105d4f43862197a9687308c20d9f3663729e231e3343fe07ecfcd34",
+      "initial_qvel_sha256": "a9c5bb8b825aa54d4271a214e2212b4f2f48d621d54dcd1b959226c8161d7d39",
+      "event": {
+        "time_s": 0.9999999999997857,
+        "qpos_jump": 0.0,
+        "qvel_jump": 0.0,
+        "spring_energy_J": 0.009905901288271455
+      },
+      "constitutive_parameters_unchanged_during_trial": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "max_attached_weld_gap_mm": 0.0003380687521051774,
+      "max_sampled_contact_penetration_mm": 2.2747871539107596,
+      "scope": "Diagnostic attachment release, not blade cutting. Recoil is a model prediction; growth/stiffness hypothesis uncalibrated."
+    }
+  ],
+  "scope": "Simulation audit; no biological calibration or blade fracture",
+  "attachment_check": {
+    "rows": [
+      {
+        "trial": "elastic-release",
+        "max_attached_angular_error_deg": 0.018432248189436562
+      },
+      {
+        "trial": "history-release",
+        "max_attached_angular_error_deg": 0.018432554873878057
+      }
+    ],
+    "total_mass_error_kg": 0.0,
+    "angular_tolerance_deg": 0.1,
+    "passed": true,
+    "scope": "Temporary release weld should approximate the original rigid calyx bond; this is not a tissue-stiffness fit."
+  },
+  "rejected_weld": {
+    "reason": "Temporary weld angular error exceeded 0.1 degree numerical bond tolerance",
+    "measured_max_angle_deg": 0.19960538135096198,
+    "next_change": "Increase only temporary weld torque scale from 0.03 to 0.1; retain actual stalk stiffness."
+  }
+}

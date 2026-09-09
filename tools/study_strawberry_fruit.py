@@ -110,7 +110,7 @@ def prepare():
     parent.remove(fruit);root.find('worldbody').append(fruit)
     ET.SubElement(fruit,'freejoint',name='fruit_release_free')
     equality=ET.SubElement(root,'equality')
-    ET.SubElement(equality,'weld',name='fruit_attachment',body1=parent.get('name'),body2='fruit_primary',solref='.001 1',solimp='.9999 .9999 .001',torquescale='.03')
+    ET.SubElement(equality,'weld',name='fruit_attachment',body1=parent.get('name'),body2='fruit_primary',solref='.001 1',solimp='.9999 .9999 .001',torquescale='.1')
     # No post-release ghosting through the former attachment; the berry begins
     # 2 mm beyond the stalk tip, outside its rounded collision cap.
     contact=root.find('contact')
@@ -221,10 +221,30 @@ def compare():
         interpretation='Both initial loaded configurations and spring moments match; different rest curvature AND tangent stiffness predict different unloading. This does not identify which model fits real strawberries.'))
 
 
+def attachment_check():
+    m0=mujoco.MjModel.from_xml_path(str(NEW/'scene.xml'))
+    qref=m0.body_quat[m0.body('fruit_primary').id]
+    m=mujoco.MjModel.from_xml_path(str(P/'release/scene.xml'));d=mujoco.MjData(m)
+    b=m.body('fruit_primary').id;tip=m.body('primary_stalk_tip').id;rows=[]
+    for name in ['elastic-release','history-release']:
+        z=np.load(P/'release'/name/'rollout.npz');angles=[]
+        for i in np.flatnonzero(z['attachment_active']):
+            d.qpos[:]=z['qpos'][i];mujoco.mj_forward(m,d)
+            target=Rotation.from_quat(d.xquat[tip][[1,2,3,0]])*Rotation.from_quat(qref[[1,2,3,0]])
+            angles.append(float(np.degrees((target.inv()*Rotation.from_quat(d.xquat[b][[1,2,3,0]])).magnitude())))
+        rows.append(dict(trial=name,max_attached_angular_error_deg=max(angles)))
+    mass_error=float(abs(m.body_mass.sum()-m0.body_mass.sum()))
+    passed=bool(max(x['max_attached_angular_error_deg'] for x in rows)<.1 and mass_error<1e-12)
+    dump(P/'release/attachment-audit.json',dict(rows=rows,total_mass_error_kg=mass_error,angular_tolerance_deg=.1,passed=passed,
+        scope='Temporary release weld should approximate the original rigid calyx bond; this is not a tissue-stiffness fit.'))
+    if not passed:raise RuntimeError('Temporary attachment does not preserve rigid-bond mechanics')
+
+
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('stage',choices=['audit','prepare','run','compare']);p.add_argument('--history',type=float,default=0.);p.add_argument('--control',action='store_true');p.add_argument('--fine',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('stage',choices=['audit','prepare','run','compare','attachment-check']);p.add_argument('--history',type=float,default=0.);p.add_argument('--control',action='store_true');p.add_argument('--fine',action='store_true');a=p.parse_args()
     if not 0<=a.history<1:raise ValueError('History fraction must be in [0,1)')
     if a.stage=='audit':audit()
     elif a.stage=='prepare':prepare()
     elif a.stage=='run':run(a.history,a.control,a.fine)
-    else:compare()
+    elif a.stage=='compare':compare()
+    else:attachment_check()

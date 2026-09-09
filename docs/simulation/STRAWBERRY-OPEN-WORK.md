@@ -39,3 +39,18 @@ Do not mark the whole roadmap complete when this batch completes. Cellular/atomi
 - Prepared the real calibration/held-out observation protocol. No real measurements have been executed.
 
 The earlier table records the starting audit. This update and the chronological iteration notes record the actual work completed; the longer roadmap remains open.
+
+## Fruit orientation / unloading follow-up
+
+- v14 fixes a material-frame error at the calyx. COM and finite inertia already
+  existed; an independent gravity/parallel-axis check now verifies them.
+- Four release/control pairs (two rest-shape/stiffness hypotheses, two timesteps)
+  record actual fruit fall and stalk/neighbor recoil with no pose/velocity reset.
+- This is a labeled unloading diagnostic. The **cutting/harvest gate remains
+  open**: no blade contact, fracture criterion or distal stalk remnant. Timed
+  diagnostic release must not be reused as successful robot cutting.
+- No growth evolution or calibrated viscoelastic recovery is implemented. The
+  second hypothesis sets rest orientations and stiffness before the experiment;
+  real unloading and longitudinal observations remain necessary.
+- Contact penetration and fixed-root limitations persist. Reproducible visuals
+  and assumptions: `assets/workcells/strawberry-specimen/fruit-study/README.md`.

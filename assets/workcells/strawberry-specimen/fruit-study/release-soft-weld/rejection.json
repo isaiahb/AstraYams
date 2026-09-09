@@ -1,0 +1,5 @@
+{
+  "reason": "Temporary weld angular error exceeded 0.1 degree numerical bond tolerance",
+  "measured_max_angle_deg": 0.19960538135096198,
+  "next_change": "Increase only temporary weld torque scale from 0.03 to 0.1; retain actual stalk stiffness."
+}
