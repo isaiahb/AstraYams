@@ -1,3 +1,4 @@
+import {configure,configuredSkills} from './configure';
 import {resolve} from 'node:path';
 import {mkdir,realpath} from 'node:fs/promises';
 import {listSkills,saveSkill,archiveSkills,deleteSkill} from './catalog';
@@ -6,6 +7,8 @@ const upstream=await Bun.file(resolve(here,'../desktop/.local/connection.json'))
 const origin=new URL(upstream.url).origin;
 const server=Bun.serve({hostname:'127.0.0.1',port:Number(process.env.PORT||0),async fetch(req){
  const u=new URL(req.url);
+ if(u.pathname==='/studio-api/templates'){if(req.headers.get('authorization')!=='Bearer '+upstream.token)return new Response('Unauthorized',{status:401});const file=Bun.file(resolve(here,'../../assets/workcells/demo-workflows/catalog.json'));return await file.exists()?new Response(file):Response.json({scenarios:[]});}
+ if(u.pathname==='/studio-api/configure'&&req.method==='POST'){if(req.headers.get('authorization')!=='Bearer '+upstream.token)return new Response('Unauthorized',{status:401});try{return Response.json(await configure(here,(await req.json()).scenario));}catch(e){return Response.json({error:String(e)},{status:400});}}
  if(u.pathname==='/studio-api/asset'){
  if(req.headers.get('authorization')!=='Bearer '+upstream.token&&u.searchParams.get('token')!==upstream.token)return new Response('Unauthorized',{status:401});
  try{const path=u.searchParams.get('path')||'',root=resolve(here,'../..');if(!path.startsWith('assets/workcells/')&&!path.startsWith('apps/skill-studio/evidence/'))throw Error('Invalid asset');const full=await realpath(resolve(root,path));const allowed=[resolve(root,'assets/workcells')+'/',resolve(here,'evidence')+'/'];if(!allowed.some(p=>full.startsWith(p)))throw Error('Invalid asset');return new Response(Bun.file(full),{headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});}catch{return new Response('Asset unavailable',{status:404});}}
@@ -19,7 +22,7 @@ const server=Bun.serve({hostname:'127.0.0.1',port:Number(process.env.PORT||0),as
  }catch(e){return Response.json({error:e instanceof Error?e.message:'Upload failed'},{status:400});}}
  if(u.pathname==='/studio-api/delete'&&req.method==='POST'){if(req.headers.get('authorization')!=='Bearer '+upstream.token)return Response.json({error:'Unauthorized'},{status:401});try{return Response.json(await deleteSkill(here,(await req.json()).id));}catch{return Response.json({error:'Unable to remove skill'},{status:400});}}
  if(u.pathname==='/studio-api/archive'&&req.method==='POST'){if(req.headers.get('authorization')!=='Bearer '+upstream.token)return Response.json({error:'Unauthorized'},{status:401});try{const b=await req.json();return Response.json(await archiveSkills(here,b.ids,b.archived!==false));}catch{return Response.json({error:'Unable to update archive'},{status:400});}}
- if(u.pathname==='/studio-api/skills'){if(req.headers.get('authorization')!=='Bearer '+upstream.token)return Response.json({error:'Unauthorized'},{status:401});try{if(req.method==='GET')return Response.json(await listSkills(here));if(req.method==='POST')return Response.json(await saveSkill(here,await req.json()));return new Response('Method not allowed',{status:405});}catch{return Response.json({error:'Unable to save skill'},{status:400});}}
+ if(u.pathname==='/studio-api/skills'){if(req.headers.get('authorization')!=='Bearer '+upstream.token)return Response.json({error:'Unauthorized'},{status:401});try{if(req.method==='GET')return Response.json([...(await listSkills(here)),...(await configuredSkills(here))]);if(req.method==='POST')return Response.json(await saveSkill(here,await req.json()));return new Response('Method not allowed',{status:405});}catch{return Response.json({error:'Unable to save skill'},{status:400});}}
  if(u.pathname.startsWith('/api/'))return fetch(origin+u.pathname+u.search,{method:req.method,headers:req.headers,body:['GET','HEAD'].includes(req.method)?undefined:req.body,redirect:'manual'});
  if(u.pathname==='/icon.png')return new Response(Bun.file(resolve(here,'assets/icon.png')));
  if(u.pathname==='/index.js'||u.pathname==='/index.css')return new Response(Bun.file(resolve(here,'dist',u.pathname.slice(1))));
