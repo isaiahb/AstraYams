@@ -1,0 +1,27 @@
+{
+  "kind": "control",
+  "seconds": 13.000000000016566,
+  "wall_s": 60.676262855529785,
+  "dt_s": 0.000125,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial_instrument_contacts": {},
+  "instrument_contacted_geometries": {},
+  "non_target_contacts": [],
+  "peak_target_contact_force_n": 0.0,
+  "max_cup_fruit_penetration_mm": 0.0,
+  "max_other_plant_penetration_mm": 0.05066051498235412,
+  "mean_hold_support_fraction": 0.0,
+  "mean_hold_stem_vertical_fraction": 1.0000000146770502,
+  "material_mass_inertia_unchanged": true,
+  "stem_sensor_sign": 1,
+  "weight_n": 0.17707049999999996,
+  "scope": "Intact v14 tree; no weld toggles, cutting, plant-state overrides, or material changes. Ideal actuated bench stages, not a robot policy."
+}

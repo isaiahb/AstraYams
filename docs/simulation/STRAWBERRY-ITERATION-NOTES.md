@@ -210,3 +210,41 @@ selected outcome is a credible contact/support/unweighting test of the intact
 fruit cluster, with load transfer and recovery evidence. This avoids picking
 work merely because its numerical error is largest. The audit and standing
 workflow are completed; the new physical support trial is not yet implemented.
+
+
+## 2026-09-09 — Contact support, failure diagnosis and tolerance checks
+
+Followed the selected goal through implementation, rejection, repair and
+verification. The intact v14 fruit cluster is supported by an ideal actuated
+bench stage with a contact-matched concave cup. A calyx force/torque sensor
+checks the load path. The stage uses contact-force feedback; the fruit has no
+tool attachment or state overrides. Product UI was not edited.
+
+v1 failed: neighboring-berry contact on approach; an every-step 22.87 N /
+4.22 mm floor/fruit event during withdrawal that was invisible in the 5 ms
+saved force trace. Exact-command replay located the event at 8.99925 s. The
+recomputed next-state contact was zero. Retained source and failed reports in
+commit dbff206. No isolated engine root-cause claim.
+
+v2 narrows the cup (22 → 16 mm outer diameter), joins its shaft to the floor,
+and uses an explicit convex-prism floor. Controller and acceptance bounds are
+unchanged. Central support/control, a half-timestep support repeat, and ±2 mm
+approach/control pairs completed without warnings or unintended tool contacts.
+Central hold: 76.56% weight on cup, 23.46% on stalk, 0.2163 N peak contact,
+0.0063 mm maximum penetration, 8.81 mm mean stalk-tip rise, 0.568 mm final
+control-relative fruit deviation. Newton hold residual <0.000111 N. Refinement
+changes the fruit path <0.0154 mm. Both approach offsets pass the same checks.
+
+Personally reviewed the instrument connection and contact from front/side/
+oblique cameras, complete approach/hold/lowering/retreat snapshots, load traces
+and browser replay. Reframed the whole-plant camera when its upper canopy was
+clipped. The cup never touches neighboring berries; their approximately 11 mm
+response propagates through the shared branch. Exported actual MuJoCo poses,
+no animation overrides, plus matched control and offset selectors.
+
+The numerical support milestone is complete; biological calibration is not.
+The next prioritized study is load–hold–unload material identification, testing
+fruit contact compliance and stalk history/recovery separately. No real safe
+force, flesh-damage model, growth law, cutter or trained policy is claimed.
+Reproducible sources, evidence, assumptions and commands live in
+assets/workcells/strawberry-specimen/support-study/v2/README.md.

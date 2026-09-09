@@ -1,0 +1,9 @@
+{
+  "max_fruit_orientation_change_deg": 11.113649480910045,
+  "final_fruit_orientation_change_deg": 0.2789415490025091,
+  "maximum_stage_axis_speed_m_s": 0.05131365897602376,
+  "maximum_stage_actuator_force_n": 1.187182393623698,
+  "positive_motor_work_j": 0.020995553671856692,
+  "motor_net_work_j": 0.0037190590112208127,
+  "scope": "Motor work only, not a complete mechanical energy budget; rates from 5 ms samples."
+}

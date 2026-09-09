@@ -98,3 +98,30 @@ The values behind this loop are causal realism, useful robot capability,
 coherence of the complete object, visible evidence, durable/reusable progress,
 and independent judgment. They are a working project brief, not a claim about
 the user's preferences in every context. Update them when the user steers.
+## Intact support as a load-path diagnostic
+
+The 2026-09-09 fruit-support study adds a reusable step between static inspection
+and destructive harvesting: instrument a reversible intervention. Support part
+of an attached object's weight, measure the force remaining at its attachment,
+and withdraw. This makes geometry, shared-branch coupling and recovery testable
+without confounding the result with a cut/fracture model.
+
+- Check sensor conventions against known gravity before interpreting contact.
+- Use the same initial state and exact motor commands in a no-contact control;
+  explicitly label its intentional intersections in every review interface.
+- Preserve integration-step force/penetration extrema as well as display-rate
+  samples. A one-step 22.87 N contact failure was absent from 5 ms force samples.
+- Judge complete episodes, including approach, adjacent objects, unloading and
+  withdrawal. A correct-looking hold can conceal a collision elsewhere.
+- Inspect visual/collision agreement and the instrument's physical continuity.
+  Record combined geometry changes honestly; do not claim a specific root cause
+  was isolated when it was not.
+- Repeat a finer timestep and small, unretuned initial-position perturbations.
+  Keep these numerical/tolerance claims separate from biological calibration.
+- After a numerical pass, prioritize the material assumptions that change the
+  robot's decisions: deformation, contact area/damage, stiffness/history and
+  time-dependent recovery. Do not infer those from a still image or tune them
+  solely to make motion quieter.
+
+Reference implementation and limitations:
+`assets/workcells/strawberry-specimen/support-study/v2/README.md`.

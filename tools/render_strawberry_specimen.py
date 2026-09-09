@@ -30,7 +30,7 @@ def render(kind='rest',video=False):
    if kind=='rest':
     for j in range(150):wr.append_data(np.array(frame(-1,110+j*1.8,-18)))
  renderer.close();print(P/kind)
-def export():
+def export(kinds=None):
  m=mujoco.MjModel.from_xml_path(str(P/'scene.xml'));d=mujoco.MjData(m);groups={};mp=P/'meshes';mp.mkdir(exist_ok=True)
  for i in range(m.ngeom):
   typ=int(m.geom_type[i]);size=m.geom_size[i];color=m.geom_rgba[i]
@@ -41,20 +41,21 @@ def export():
   elif typ==4:geo=trimesh.creation.icosphere(subdivisions=2);geo.vertices*=size
   elif typ==2:geo=trimesh.creation.icosphere(subdivisions=2,radius=size[0])
   elif typ==3:geo=trimesh.creation.capsule(radius=size[0],height=2*size[1],count=[8,12])
+  elif typ==5:geo=trimesh.creation.cylinder(radius=size[0],height=2*size[1],sections=32)
   else:continue
   mat=np.eye(4);rot=np.zeros(9);mujoco.mju_quat2Mat(rot,m.geom_quat[i]);mat[:3,:3]=rot.reshape(3,3);mat[:3,3]=m.geom_pos[i];geo.apply_transform(mat);body=m.body(m.geom_bodyid[i]).name or 'world';rgb=tuple(int(float(c)*255) for c in color[:3]);groups.setdefault((body,rgb),[]).append(geo)
  objects=[];meshes=[]
  for idx,((body,rgb),parts) in enumerate(groups.items()):
   # Repair export winding for back-face culling; leave simulation vertices and states intact.
   geo=trimesh.util.concatenate(parts);trimesh.repair.fix_normals(geo,multibody=True);name=f'{body}-{idx}.stl';geo.export(mp/name);objects.append({'name':body+' '+str(idx),'body':body,'color':rgb[0]*65536+rgb[1]*256+rgb[2],'mesh_path':str((mp/name).relative_to(ROOT))});meshes.append((body,rgb,geo))
- for kind in ['rest','leaf','stalk','neighbor','basal']:
+ for kind in kinds or ['rest','leaf','stalk','neighbor','basal']:
   qpath=P/kind/'rollout.npz'
   if not qpath.exists():continue
   z=np.load(qpath);frames=[]
   for q,t in zip(z['qpos'][::2],z['t'][::2]):
    d.qpos[:]=q;mujoco.mj_forward(m,d);bodies={m.body(i).name or 'world':dict(position=d.xpos[i].round(7).tolist(),quaternion=d.xquat[i][[1,2,3,0]].round(7).tolist()) for i in range(m.nbody)};frames.append(dict(time=float(t),phase=kind+' · recorded physics',bodies=bodies))
   (P/kind/'replay.json').write_text(json.dumps(dict(schema_version=1,label='recorded_physics',allow_explode=False,robot_instances=[],objects=objects,frames=frames,camera=dict(target=[.02,.015,.30],position=[.35,-.64,.52]),scope='Reference-informed, inferred depth. Contact-only diagnostic; no cutting; uncalibrated.'),separators=(',',':')))
-  if kind=='rest':
+  if kind==(kinds[0] if kinds else 'rest'):
    scene=trimesh.Scene()
    for body,rgb,geo in meshes:
     pose=frames[-1]['bodies'][body];mat=trimesh.transformations.quaternion_matrix([pose['quaternion'][3],*pose['quaternion'][:3]]);mat[:3,3]=pose['position'];g=geo.copy();g.visual.vertex_colors=[*rgb,255];scene.add_geometry(g,node_name=body+'-'+str(len(scene.geometry)),transform=mat)

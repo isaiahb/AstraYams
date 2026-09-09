@@ -96,3 +96,40 @@ and learned robot execution remain on the broader roadmap. Do not prematurely
 expand into the desktop app or claim all realism work is finished when this
 diagnostic passes. User feedback can reprioritize the milestone without losing
 the preserved v13/v14 work.
+
+## Support milestone evidence — 2026-09-09
+
+Completed the selected diagnostic with an intact truss, force-driven three-axis
+test stage, visible/collision-matched concave cup, calyx load cell, matched
+no-contact commands, actual-pose video and orbitable replay. v1 is retained as
+a failure (neighbor contact and one-step floor/fruit penetration spike). v2
+uses a narrower cup, connected shaft and explicit mesh floor without relaxing
+the controller's predeclared acceptance limits.
+
+The central case passes all 12 declared comparisons: about 76.56% of weight
+transfers to the tool, peak target contact is 0.2163 N, overlap 0.0063 mm, and
+final target displacement from control is 0.568 mm. All other berries remain
+untouched by the tool but move through the common branch. A half-timestep repeat
+changes the fruit path by at most 0.0154 mm. Two unchanged-controller ±2 mm
+approaches and their matched controls also pass. These are tests on one model,
+not learned-policy generalization or tissue validation.
+
+### Next goal selected from the remaining uncertainty
+
+The largest new consequence is now material identification, not the existence
+of a contact load path. The rigid fruit cannot predict indentation or bruising;
+the truss's scalar spring/damper model cannot establish real slow recovery or
+growth-induced rest curvature. Prioritize a controlled load–hold–unload material
+study, with partial support levels and several hold durations, before cutting
+or training a harvest policy on this instrument. Compare alternative stiffness,
+rest-curvature and relaxation hypotheses using identical intervention histories;
+identify which observations distinguish them and which remain ambiguous.
+
+Acceptance evidence for that next study: published/observed parameter ranges
+with specimen and loading conditions, separated assumptions, time/force traces,
+held-out intervention histories, convergence checks, and visible contact-area
+and recovery differences. Actual real-plant calibration still requires the
+prepared measurement protocol; simulation-generated curves cannot supply it.
+Fruit contact compliance and stalk recovery are separate mechanisms and should
+be tested separately before coupling. No such calibrated material model is
+claimed complete by this support milestone.

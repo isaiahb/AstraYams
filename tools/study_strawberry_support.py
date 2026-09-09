@@ -18,7 +18,7 @@ import trimesh
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'assets/workcells/strawberry-specimen/fruit-study/v14'
-P=ROOT/'assets/workcells/strawberry-specimen/support-study/v1'
+P=ROOT/'assets/workcells/strawberry-specimen/support-study/v2'
 ORIGIN=np.array([-.11,-.095,.10])
 TIP=np.array([0.,.06,0.])
 KP=240.
@@ -34,7 +34,7 @@ def phase(t):
     return next(name for end,name in [(.4,'rest'),(1.9,'approach'),(5.9,'load'),(7.4,'hold'),(8.6,'unload'),(9.6,'lower'),(11.1,'retreat'),(99,'recover')] if t<end)
 
 
-def prepare():
+def prepare(offset_x_mm=0.):
     P.mkdir(parents=True,exist_ok=True)
     r=ET.parse(BASE/'scene.xml').getroot();w=r.find('worldbody');asset=r.find('asset');act=r.find('actuator')
     frame=add(w,'body',name='stage_frame')
@@ -47,14 +47,19 @@ def prepare():
     add(y,'geom',name='x_guide',type='box',pos='.065 0 -.017',size='.074 .004 .004',mass='.017',rgba='.67 .69 .68 1')
     x=add(y,'body',name='support_x');add(x,'joint',name='support_x_axis',type='slide',axis='1 0 0',damping='.15',range='.015 .16')
     add(x,'geom',name='x_carriage',type='box',pos='0 0 -.014',size='.012 .010 .007',mass='.019',rgba='.2 .27 .3 1')
-    add(x,'geom',name='cup_arm',type='capsule',fromto='0 0 -.005 0 .056 -.005',size='.0022',mass='.009',rgba='.58 .64 .67 1')
-    add(x,'geom',name='cup_floor',type='cylinder',pos=vec(TIP+[0,0,-.001]),size='.004 .001',mass='.001',rgba='.07 .46 .56 1',solref='.002 1',priority='2',friction='.4 .003 .001')
+    add(x,'geom',name='cup_arm',type='capsule',fromto='0 0 -.005 0 .060 -.004',size='.0022',mass='.009',rgba='.58 .64 .67 1')
+    # An explicit convex prism avoids the analytic cylinder/mesh interface that
+    # produced a one-step deep contact in v1. Visual and collision shapes match.
+    vertices=[TIP+[.003*np.cos(a),.003*np.sin(a),h] for a in np.linspace(0,2*np.pi,32,endpoint=False) for h in [-.002,0]]
+    floor=trimesh.convex.convex_hull(vertices)
+    add(asset,'mesh',name='cup_floor_mesh',vertex=vec(floor.vertices),face=' '.join(str(int(i)) for i in floor.faces.ravel()))
+    add(x,'geom',name='cup_floor',type='mesh',mesh='cup_floor_mesh',mass='.001',rgba='.07 .46 .56 1',solref='.002 1',priority='2',friction='.4 .003 .001')
     # Concave support surface assembled from convex wall sectors. Each sector
     # has the same visible/collision vertices; no invisible enclosing hull.
     for j in range(20):
         vs=[]
         for a in [2*np.pi*j/20,2*np.pi*(j+1)/20]:
-            for rad,h in [(.004,0),(.010,.005),(.011,.0047),(.004,-.002)]:vs.append(TIP+[rad*np.cos(a),rad*np.sin(a),h])
+            for rad,h in [(.003,0),(.007,.003),(.008,.0027),(.003,-.002)]:vs.append(TIP+[rad*np.cos(a),rad*np.sin(a),h])
         hull=trimesh.convex.convex_hull(vs);name=f'cup_sector_{j}'
         add(asset,'mesh',name=name,vertex=vec(hull.vertices),face=' '.join(str(int(i)) for i in hull.faces.ravel()))
         add(x,'geom',name=name,type='mesh',mesh=name,mass='.00015',rgba='.08 .47 .57 1',solref='.002 1',priority='2',friction='.4 .003 .001')
@@ -74,7 +79,7 @@ def prepare():
         n=4 if m0.jnt_type[j]==mujoco.mjtJoint.mjJNT_BALL else 1;a=m0.jnt_qposadr[j];aa=m.joint(m0.joint(j).name).qposadr[0];d.qpos[aa:aa+n]=d0.qpos[a:a+n]
     b=m0.body('fruit_primary').id
     bottom=d0.xpos[b]+d0.xmat[b].reshape(3,3)@np.array([0,0,-.039])
-    under=np.array([*d0.xipos[b][:2],bottom[2]-.006]);start=under+[-.050,0,0]
+    under=np.array([*d0.xipos[b][:2],bottom[2]-.006]);under[0]+=offset_x_mm/1000;start=under+[-.050,0,0]
     ids=np.array([m.joint(f'support_{a}_axis').qposadr[0] for a in ['x','y','z']]);mot=np.array([m.actuator(f'support_{a}_motor').id for a in ['x','y','z']])
     ff=np.array([0,0,m.body_subtreemass[m.body('support_z').id]*9.81/KP])
     d.qpos[ids]=start-ORIGIN-TIP;d.ctrl[mot]=d.qpos[ids]+ff
@@ -87,6 +92,7 @@ def prepare():
     np.savez_compressed(P/'initial-state.npz',qpos=d.qpos,qvel=d.qvel,ctrl=d.ctrl)
     dump(P/'protocol.json',dict(source_scene_sha256=hashlib.sha256((BASE/'scene.xml').read_bytes()).hexdigest(),scene_sha256=hashlib.sha256((P/'scene.xml').read_bytes()).hexdigest(),mujoco=mujoco.__version__,
         start_m=start.tolist(),under_m=under.tolist(),gravity_feedforward_joint_m=ff.tolist(),fruit_mass_kg=float(m.body_mass[m.body('fruit_primary').id]),
+        instrument_revision='v2: 16 mm outer cup, connected shaft, explicit convex-prism floor; v1 feedback law unchanged',approach_offset_x_mm=offset_x_mm,
         controller=dict(rate_hz=100,position_kp_n_m=KP,position_kv_ns_m=7,axis_force_limit_n=2,force_feedback_gain_m_ns=.10,maximum_force_feedback_speed_m_s=.014,target_support_fraction=.8),
         acceptance=dict(initial_instrument_plant_contacts=0,non_target_instrument_plant_contacts=0,hold_support_fraction=[.7,.9],minimum_stem_vertical_unloading_fraction=.6,max_cup_fruit_penetration_mm=.25,max_other_plant_penetration_mm=.1,max_target_contact_resultant_n=.45,final_no_contact=True,maximum_final_fruit_displacement_mm=2.,maximum_hold_force_balance_residual_n=.005),
         limits='Engineering diagnostic limits chosen before running, not measured damage/safety thresholds. Fruit/cup rigidity and friction uncalibrated.',
@@ -138,7 +144,7 @@ def run(control=False,fine=False,commands_from=None):
     pose_hash=hashlib.sha256(m.qpos_spring.tobytes()+m.jnt_stiffness.tobytes()+m.body_mass.tobytes()+m.body_inertia.tobytes()).hexdigest()
     names=['fruit_primary','primary_stalk_tip','peduncle_tip','fruit_secondary_a','fruit_secondary_b','fruit_green'];bids=[m.body(n).id for n in names]
     logs={k:[] for k in ['t','qpos','qvel','tool_force','other_force','stem_force','stem_torque','fruit_com','fruit_com_velocity','body_positions','cup_position','actuator_force','joint_velocity','command_world','force_target','phase']}
-    commands=[];times=[];wrong=set();all_touched={};maxdepth=0.;otherdepth=0.;peakforce=0.;low_start=None;return_start=None;tc=time.time();clocksteps=round(CONTROL_DT/m.opt.timestep);save=round(.005/m.opt.timestep);steps=round(DURATION/m.opt.timestep)
+    peak_events=[];commands=[];times=[];wrong=set();all_touched={};maxdepth=0.;otherdepth=0.;peakforce=0.;low_start=None;return_start=None;tc=time.time();clocksteps=round(CONTROL_DT/m.opt.timestep);save=round(.005/m.opt.timestep);steps=round(DURATION/m.opt.timestep)
     for k in range(steps+1):
         t=k*m.opt.timestep
         if k%clocksteps==0:
@@ -163,7 +169,16 @@ def run(control=False,fine=False,commands_from=None):
             # Keep force target alongside the command for exact negative-control playback.
             if k==0:targets=[]
             targets.append(target_force.copy())
-        tool,other,touched,bad,dep,dep_other=contact_forces(m,d,target,rig);wrong|=bad;maxdepth=max(maxdepth,dep);otherdepth=max(otherdepth,dep_other);peakforce=max(peakforce,float(np.linalg.norm(tool)))
+        tool,other,touched,bad,dep,dep_other=contact_forces(m,d,target,rig);wrong|=bad
+        force_norm=float(np.linalg.norm(tool))
+        if (force_norm>peakforce+.001 or dep>maxdepth+.001) and (force_norm>.25 or dep>.2):
+            pairs=[]
+            for i,c in enumerate(d.contact):
+                if target in m.geom_bodyid[c.geom] and any(b in rig for b in m.geom_bodyid[c.geom]):
+                    f6=np.zeros(6);mujoco.mj_contactForce(m,d,i,f6)
+                    pairs.append(dict(geoms=[m.geom(int(g)).name for g in c.geom],depth_mm=float(-c.dist*1000),force_local=f6.tolist()))
+            peak_events.append(dict(integration_end_time=t,force_n=force_norm,depth_mm=dep,contacts=pairs))
+        maxdepth=max(maxdepth,dep);otherdepth=max(otherdepth,dep_other);peakforce=max(peakforce,force_norm)
         for n,c in touched.items():all_touched[n]=all_touched.get(n,0)+c
         if k%save==0:
             mujoco.mj_forward(m,d);tool,other,*_=contact_forces(m,d,target,rig)
@@ -180,7 +195,7 @@ def run(control=False,fine=False,commands_from=None):
     tool_fraction=float(np.mean(np.array(logs['tool_force'])[steady,2])/weight);stem_fraction=float(np.mean(np.array(logs['stem_force'])[steady,2])/weight)
     unchanged=pose_hash==hashlib.sha256(m.qpos_spring.tobytes()+m.jnt_stiffness.tobytes()+m.body_mass.tobytes()+m.body_inertia.tobytes()).hexdigest()
     result=dict(kind=name,seconds=float(d.time),wall_s=time.time()-tc,dt_s=float(m.opt.timestep),warnings=[int(w.number) for w in d.warning],initial_instrument_contacts=initial,instrument_contacted_geometries=all_touched,non_target_contacts=sorted(wrong),peak_target_contact_force_n=peakforce,max_cup_fruit_penetration_mm=maxdepth,max_other_plant_penetration_mm=otherdepth,mean_hold_support_fraction=tool_fraction,mean_hold_stem_vertical_fraction=stem_fraction,material_mass_inertia_unchanged=unchanged,stem_sensor_sign=stem_sign,weight_n=weight,scope=protocol['scope'])
-    dump(out/'result.json',result);print(json.dumps(result),flush=True)
+    dump(out/'peak-events.json',peak_events);dump(out/'result.json',result);print(json.dumps(result),flush=True)
 
 
 def compare():
@@ -196,11 +211,17 @@ def compare():
     report=dict(criteria=criteria,all_pass=all(criteria.values()),max_hold_force_balance_residual_n=residual_hold,final_fruit_displacement_from_control_mm=final_displacement,max_fruit_displacement_from_control_mm=float(np.linalg.norm(delta[:,0],axis=1).max()*1000),max_neighbor_displacement_from_control_mm=float(np.linalg.norm(delta[:,3:6],axis=2).max()*1000),mean_supported_stalk_tip_rise_mm=float(delta[hold,1,2].mean()*1000),scope='Uncalibrated contact-driven support diagnostic, not learned robot execution.')
     if (P/'support-fine/rollout.npz').exists():
         f=np.load(P/'support-fine/rollout.npz');report['fine_timestep_comparison']=dict(max_fruit_path_difference_mm=float(np.linalg.norm(a['fruit_com']-f['fruit_com'],axis=1).max()*1000),hold_vertical_support_force_mean_difference_n=float(abs(a['tool_force'][hold,2].mean()-f['tool_force'][hold,2].mean())))
+    m=mujoco.MjModel.from_xml_path(str(P/'scene.xml'));d=mujoco.MjData(m);bid=m.body('fruit_primary').id;quats=[]
+    for q in a['qpos']:
+        d.qpos[:]=q;mujoco.mj_kinematics(m,d);quats.append(d.xquat[bid].copy())
+    quats=np.array(quats);angles=np.degrees(2*np.arccos(np.clip(abs(quats@quats[0]),0,1)))
+    power=(a['actuator_force']*a['joint_velocity']).sum(axis=1)
+    dump(P/'motion-audit.json',dict(max_fruit_orientation_change_deg=float(angles.max()),final_fruit_orientation_change_deg=float(angles[-1]),maximum_stage_axis_speed_m_s=float(abs(a['joint_velocity']).max()),maximum_stage_actuator_force_n=float(abs(a['actuator_force']).max()),positive_motor_work_j=float(np.trapezoid(np.maximum(power,0),t)),motor_net_work_j=float(np.trapezoid(power,t)),scope='Motor work only, not a complete mechanical energy budget; rates from 5 ms samples.'))
     dump(P/'comparison.json',report);print(json.dumps(report,indent=2))
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('stage',choices=['prepare','run','compare']);p.add_argument('--output',type=Path,default=P);p.add_argument('--control',action='store_true');p.add_argument('--fine',action='store_true');p.add_argument('--commands-from',type=Path);a=p.parse_args();P=a.output
-    if a.stage=='prepare':prepare()
+    p=argparse.ArgumentParser();p.add_argument('stage',choices=['prepare','run','compare']);p.add_argument('--output',type=Path,default=P);p.add_argument('--control',action='store_true');p.add_argument('--fine',action='store_true');p.add_argument('--commands-from',type=Path);p.add_argument('--offset-x-mm',type=float,default=0.);a=p.parse_args();P=a.output
+    if a.stage=='prepare':prepare(a.offset_x_mm)
     elif a.stage=='run':run(a.control,a.fine,a.commands_from)
     else:compare()

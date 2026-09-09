@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "initial_same": true,
+    "commands_same": true,
+    "initial_tool_clear": true,
+    "no_non_target_tool_contact": true,
+    "support_fraction": true,
+    "stem_unloaded": true,
+    "cup_penetration": true,
+    "other_plant_penetration": true,
+    "contact_force_budget": true,
+    "final_no_contact": true,
+    "recovery": true,
+    "force_balance": true
+  },
+  "all_pass": true,
+  "max_hold_force_balance_residual_n": 0.00010911003787211703,
+  "final_fruit_displacement_from_control_mm": 0.5610322765532009,
+  "max_fruit_displacement_from_control_mm": 11.403837703055553,
+  "max_neighbor_displacement_from_control_mm": 10.763611991328318,
+  "mean_supported_stalk_tip_rise_mm": 8.816606501794205,
+  "scope": "Uncalibrated contact-driven support diagnostic, not learned robot execution."
+}
