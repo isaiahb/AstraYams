@@ -1,0 +1,118 @@
+{
+  "model": "basal-study/v7/scene.xml",
+  "scene_sha256": "ae08b2bf742aee5f0b8eba09837ed47917d8a085b2485c89e95c6351416504b0",
+  "state": "last saved 10-second gravity-settled qpos; no additional plant edits",
+  "qpos_sha256": "d3df7fb7b765668db81eb0d4e65153abbed506d02bc4796b898feca434326495",
+  "views": [
+    {
+      "name": "whole-standing",
+      "target": [
+        0,
+        0.035,
+        0.305
+      ],
+      "distance": 0.57,
+      "azimuth": 105,
+      "elevation": -25,
+      "container_hidden_for_inspection": false
+    },
+    {
+      "name": "whole-high",
+      "target": [
+        0,
+        0.035,
+        0.3
+      ],
+      "distance": 0.59,
+      "azimuth": 110,
+      "elevation": -48,
+      "container_hidden_for_inspection": false
+    },
+    {
+      "name": "trough-side",
+      "target": [
+        0.015,
+        0.02,
+        0.245
+      ],
+      "distance": 0.66,
+      "azimuth": 90,
+      "elevation": -8,
+      "container_hidden_for_inspection": false
+    },
+    {
+      "name": "crown-front",
+      "target": [
+        0,
+        0.055,
+        0.298
+      ],
+      "distance": 0.18,
+      "azimuth": 125,
+      "elevation": -28,
+      "container_hidden_for_inspection": false
+    },
+    {
+      "name": "crown-back",
+      "target": [
+        0,
+        0.055,
+        0.304
+      ],
+      "distance": 0.19,
+      "azimuth": 305,
+      "elevation": -38,
+      "container_hidden_for_inspection": false
+    },
+    {
+      "name": "crown-cutaway",
+      "target": [
+        0,
+        0.055,
+        0.283
+      ],
+      "distance": 0.22,
+      "azimuth": 125,
+      "elevation": -18,
+      "container_hidden_for_inspection": true
+    },
+    {
+      "name": "attachment-cutaway",
+      "target": [
+        0,
+        0.055,
+        0.258
+      ],
+      "distance": 0.175,
+      "azimuth": 125,
+      "elevation": -12,
+      "visible": "crown, proximal three segments of five petioles and peduncle, ground only"
+    }
+  ],
+  "alignment": "Approximate viewing direction only. Different plants, no shared metric scale or calibrated camera fit.",
+  "cutaway": "Container hidden only for rendering; does not simulate uprooting. Biological roots are absent from this model.",
+  "model_angles": [
+    {
+      "petiole": "left",
+      "first_segment_inclination_from_vertical_degrees": 18.505236843404177
+    },
+    {
+      "petiole": "high",
+      "first_segment_inclination_from_vertical_degrees": 11.507998268484268
+    },
+    {
+      "petiole": "right",
+      "first_segment_inclination_from_vertical_degrees": 22.75594295250201
+    },
+    {
+      "petiole": "front",
+      "first_segment_inclination_from_vertical_degrees": 22.253441049387657
+    },
+    {
+      "petiole": "new",
+      "first_segment_inclination_from_vertical_degrees": 10.960678874771196
+    }
+  ],
+  "angle_warning": "3D inclination of first modeled segment from world vertical, not resting ball-joint rotation or a measured photo angle.",
+  "attachment_cutaway": "Rendering hides all geoms except fixed crown, first three stalk segments and ground. No physical state changes, no root model added. Distal geometry hidden for inspection."
+}

@@ -1,0 +1,65 @@
+{
+  "meaning": "Actual 3D inclination from vertical of each saved-state petiole segment. 0 is up, 90 horizontal. Not a photo measurement or validation target.",
+  "profiles": [
+    {
+      "leaf": "left",
+      "segment_inclination_from_vertical_deg": [
+        18.51,
+        34.32,
+        49.92,
+        63.79,
+        75.71,
+        85.52,
+        94.02
+      ]
+    },
+    {
+      "leaf": "high",
+      "segment_inclination_from_vertical_deg": [
+        11.51,
+        19.05,
+        30.49,
+        42.56,
+        53.81,
+        63.06,
+        70.31
+      ]
+    },
+    {
+      "leaf": "right",
+      "segment_inclination_from_vertical_deg": [
+        22.76,
+        43.18,
+        59.32,
+        72.04,
+        82.28,
+        90.47,
+        97.6
+      ]
+    },
+    {
+      "leaf": "front",
+      "segment_inclination_from_vertical_deg": [
+        22.25,
+        43.32,
+        60.71,
+        74.56,
+        86.09,
+        96.02,
+        105.36
+      ]
+    },
+    {
+      "leaf": "new",
+      "segment_inclination_from_vertical_deg": [
+        10.96,
+        10.44,
+        12.39,
+        15.21,
+        18.63,
+        22.82,
+        29.64
+      ]
+    }
+  ]
+}

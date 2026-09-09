@@ -1,0 +1,106 @@
+[
+  {
+    "id": "osu-whole",
+    "source_url": "https://extension.oregonstate.edu/catalog/pub/ec-1307-growing-strawberries-your-home-garden",
+    "image_url": "https://extension.oregonstate.edu/sites/extd8/files/styles/full/public/images/2021-10/screen-shot-2021-10-18-95744-am.png?itok=22gD4UNW",
+    "title": "Standing field plant: crown, leaves and fruit stalks",
+    "credit": "Bernadine Strik / Amanda Davis, Oregon State University",
+    "rights": "Source credit retained; local research copy. No redistribution license assumed.",
+    "local_file": "assets/workcells/strawberry-specimen/morphology-review-2026-09-09/references/osu-whole.png",
+    "sha256": "d09427b153567a6bdda817e81e4ae1e18385cb16e48bca88b8084d759c40ac47",
+    "bytes": 1619612,
+    "comparison_condition": "Standing field plant; foreground plant partly overlaps neighbors. Figure 1."
+  },
+  {
+    "id": "osu-containers",
+    "source_url": "https://extension.oregonstate.edu/catalog/pub/ec-1307-growing-strawberries-your-home-garden",
+    "image_url": "https://extension.oregonstate.edu/sites/extd8/files/styles/full/public/images/2021-10/screen-shot-2021-10-20-80626-am.png?itok=nnQWnGbG",
+    "title": "Container-grown plants, cultivar Albion in some panels",
+    "credit": "Bernadine Strik / Amanda Davis, Oregon State University",
+    "rights": "Source credit retained; local research copy. No redistribution license assumed.",
+    "local_file": "assets/workcells/strawberry-specimen/morphology-review-2026-09-09/references/osu-containers.png",
+    "sha256": "ae9330394209ff5f507f776b6e7a726114a6bff1a0d08ccf98c77e256560fefb",
+    "bytes": 98094,
+    "comparison_condition": "Four container panels A\u2013D; differing plant counts/stages. Context only: low source resolution."
+  },
+  {
+    "id": "osu-crown",
+    "source_url": "https://extension.oregonstate.edu/catalog/pub/ec-1307-growing-strawberries-your-home-garden",
+    "image_url": "https://extension.oregonstate.edu/sites/extd8/files/styles/full/public/images/2021-10/screen-shot-2021-10-20-81439-am.png?itok=Rwlg0II8",
+    "title": "Older crown in winter / adding substrate",
+    "credit": "Bernadine Strik / Amanda Davis, Oregon State University",
+    "rights": "Source credit retained; local research copy. No redistribution license assumed.",
+    "local_file": "assets/workcells/strawberry-specimen/morphology-review-2026-09-09/references/osu-crown.png",
+    "sha256": "c38d3e59cca173e4df709c9f2fe3bf5037e36603bc5ec9fa4a972c7c1aac012b",
+    "bytes": 51344,
+    "comparison_condition": "Two winter / soil-renewal panels. Older crown; low source resolution, not a stiffness reference."
+  },
+  {
+    "id": "unl-pot",
+    "source_url": "https://agronomy.unl.edu/year-round-strawberry-production/",
+    "image_url": "https://agronomy.unl.edu/sites/unl.edu.ianr.agronomy-horticulture/files/styles/no_crop_720/public/media/image/Fig2-flowerbuds4x5.jpg?itok=Fdr1yrfm",
+    "title": "Young Evie-2 plant with flowers in a nursery pot",
+    "credit": "University of Nebraska\u2013Lincoln, Agronomy and Horticulture",
+    "rights": "Source credit retained; local research copy. No redistribution license assumed.",
+    "local_file": "assets/workcells/strawberry-specimen/morphology-review-2026-09-09/references/unl-pot.jpg",
+    "sha256": "9eac74e67b4835e6ab0081fc534181ec92c36adfa2e278bfa6d0a0cd2865d7dc",
+    "bytes": 214708,
+    "comparison_condition": "Young propagated Evie-2 plants in nursery pots; open flowers visible. Not a mature tabletop crop."
+  },
+  {
+    "id": "unl-large-crown",
+    "source_url": "https://agronomy.unl.edu/year-round-strawberry-production/",
+    "image_url": "https://agronomy.unl.edu/sites/unl.edu.ianr.agronomy-horticulture/files/styles/no_crop_720/public/media/image/Fig3-nov2021.jpg?itok=k8tiUQvF",
+    "title": "Large crown selected for cold storage",
+    "credit": "University of Nebraska\u2013Lincoln, Agronomy and Horticulture",
+    "rights": "Source credit retained; local research copy. No redistribution license assumed.",
+    "local_file": "assets/workcells/strawberry-specimen/morphology-review-2026-09-09/references/unl-large-crown.jpg",
+    "sha256": "84fbc6aab2c1f3bb8e6dbb4ae7908b599a1ec7498e27401fb72361638d4c9a03",
+    "bytes": 185718,
+    "comparison_condition": "Dug, soil-bearing large crown selected for storage; photographed outside its growing substrate."
+  },
+  {
+    "id": "arkansas-branch",
+    "source_url": "https://www.uaex.uada.edu/farm-ranch/crops-commercial-horticulture/horticulture/ar-fruit-veg-nut-update-blog/posts/HighGDDImpact.aspx",
+    "image_url": "https://www.uaex.uada.edu/farm-ranch/crops-commercial-horticulture/horticulture/ar-fruit-veg-nut-update-blog/posts/images/Strawberry%20Crop%20Monitoring%20Img%2032.jpg",
+    "title": "Main crown and branch crowns, dug field plant",
+    "credit": "University of Arkansas Division of Agriculture",
+    "rights": "Source credit retained; local research copy. No redistribution license assumed.",
+    "local_file": "assets/workcells/strawberry-specimen/morphology-review-2026-09-09/references/arkansas-branch.jpg",
+    "sha256": "369cfcec39207c31b3d50c3a9418ae78194eac7a02c26509addad97d303efb3f",
+    "bytes": 624457,
+    "comparison_condition": "Dug field plant held apart by hands to expose main and branch crowns; disturbed pose."
+  },
+  {
+    "id": "calpoly-uprooted",
+    "source_url": "https://strawberry.calpoly.edu/news/test-your-strawberry-anatomy-skills-part-2",
+    "image_url": "https://content-calpoly-edu.s3.amazonaws.com/strawberry/1/widget_images/Widgets3.jpg",
+    "title": "Uprooted strawberry plant",
+    "credit": "Cal Poly Strawberry Center",
+    "rights": "Source credit retained; local research copy. No redistribution license assumed.",
+    "local_file": "assets/workcells/strawberry-specimen/morphology-review-2026-09-09/references/calpoly-uprooted.jpg",
+    "sha256": "7ad7647dbf5b7bd7fe49de6180dac38218d9cca9f2fcb8a9222767cc32c98e11",
+    "bytes": 301045,
+    "comparison_condition": "Uprooted plant laid out on a dark surface; useful topology, not standing angles."
+  },
+  {
+    "id": "calpoly-trimmed",
+    "source_url": "https://strawberrycenterblog.com/2026/02/19/__trashed/",
+    "title": "Trimmed bare-root crown",
+    "credit": "Gerald Holmes / Cal Poly Strawberry Center",
+    "local_file": "assets/workcells/strawberry-specimen/morphology-review-2026-09-09/references/calpoly-trimmed.png",
+    "sha256": "d33dbbd398acc19ef66db0e03113ba1a061ddd4d50c309717143f8f40d5f555f",
+    "rights": "Existing local research reference; source credit retained.",
+    "comparison_condition": "Trimmed bare-root specimen; clipped petioles and roots; useful bases, not mature canopy shape."
+  },
+  {
+    "id": "osu-tabletop",
+    "source_url": "https://u.osu.edu/indoorberry/structures/",
+    "title": "Mature tabletop trough crop",
+    "credit": "Meteor Systems via Ohio State Kubota Lab",
+    "local_file": "assets/workcells/strawberry-specimen/morphology-review-2026-09-09/references/osu-tabletop.jpg",
+    "sha256": "8ae442841b475e446c8b527f0d44f7baffa11c22a6b1d07b07b057463ad6d6d0",
+    "rights": "Existing local research reference; source credit retained.",
+    "comparison_condition": "Mature greenhouse trough row with overlapping plants; individual crown ownership obscured."
+  }
+]

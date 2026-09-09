@@ -79,3 +79,10 @@ Rebuild with `tools/build_strawberry_specimen.py --output assets/workcells/straw
 - Keep numerical validity, anatomical plausibility, material calibration and eventual robot-task success separate.
 
 Physical modeling reference: [MuJoCo joints and contact modeling](https://mujoco.readthedocs.io/en/stable/modeling.html). The abandoned leaflet shell used the documented [2D flex elasticity](https://mujoco.readthedocs.io/en/stable/XMLreference.html#flex-elasticity) capability; its existence did not establish stability for our chosen mesh and parameters.
+
+
+## Multi-reference morphology review — 2026-09-09
+
+The user asked to compare crown/root angles and whole-plant structure against more than one photograph. Added seven new primary-source image files, retained two previous references, rendered the unchanged v7 specimen from comparable directions, and made three local “spot the difference” plates. Full findings and source conditions are in `STRAWBERRY-MORPHOLOGY-REVIEW-2026-09-09.md`.
+
+This revealed a distinction missed by the earlier base-only rotation metric: proximal leaf-stalk segments stand 11–23° from vertical, while several distal segments point below horizontal. The next geometry review should address curvature along the stalk and leaflet orientation, together with layered crown attachments. Roots are absent, so root angles cannot yet be assessed in the model. No new geometry or contact-accuracy claim was made in this review.
