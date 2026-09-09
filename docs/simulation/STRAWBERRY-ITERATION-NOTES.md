@@ -86,3 +86,16 @@ Physical modeling reference: [MuJoCo joints and contact modeling](https://mujoco
 The user asked to compare crown/root angles and whole-plant structure against more than one photograph. Added seven new primary-source image files, retained two previous references, rendered the unchanged v7 specimen from comparable directions, and made three local “spot the difference” plates. Full findings and source conditions are in `STRAWBERRY-MORPHOLOGY-REVIEW-2026-09-09.md`.
 
 This revealed a distinction missed by the earlier base-only rotation metric: proximal leaf-stalk segments stand 11–23° from vertical, while several distal segments point below horizontal. The next geometry review should address curvature along the stalk and leaflet orientation, together with layered crown attachments. Roots are absent, so root angles cannot yet be assessed in the model. No new geometry or contact-accuracy claim was made in this review.
+
+
+## Task-specific parametric physical models — thesis discussion
+
+User direction: AI should research an object and construct a sufficiently useful parametric physical model for learning a specific robot task, beginning with strawberries. Generalize the methodology after demonstrating it here; do not resume desktop app development.
+
+The current generator is already parametric, but many anatomical choices, attachment rules and material constants are embedded in code. The next representation should make explicit: the object’s connected parts; unloaded shape and dimensions; constitutive/contact/attachment behavior; the conditions under which parameters vary together; source evidence and uncertainty; and the task-specific tests that could reject the model. Visual geometry and mechanical discretization may differ in resolution, but their contact locations must agree to an explicit tolerance.
+
+Model-family error must be separated from parameter error. An always-intact beam cannot represent cutting by stiffness tuning alone. A fixed crown can represent some above-ground brushing tasks, but not root movement or pullout. The task determines which effects must be represented. Research supplies priors; real observations and controlled interactions constrain parameters. Photographs alone do not identify material properties.
+
+Proposed next bounded milestone: parameterize one coherent strawberry crown and its leaf-stalk/leaflet system, expose parameters currently hidden in the generator, and produce several anatomically plausible variants. Show each from the same review cameras, then apply the same contact probes. Keep research-derived, inferred and measured values distinct. This is a proposed next implementation, not completed functionality or demonstrated sim-to-real transfer.
+
+Relevant existing foundations: [OpenAlea multiscale tree graphs](https://mtg.readthedocs.io/en/latest/user/intro.html) for plant architecture, [MuJoCo elasticity models](https://github.com/google-deepmind/mujoco/blob/main/plugin/elasticity/README.md) for available deformable primitives, and [MuJoCo system identification](https://github.com/google-deepmind/mujoco/blob/main/python/mujoco/sysid/README.md) for fitting simulation parameters to recorded sensor data. These establish prior art and possible building blocks, not a selected dependency stack or a validated strawberry model.
