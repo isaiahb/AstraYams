@@ -1,0 +1,274 @@
+{
+  "leaf": {
+    "contact": {
+      "target_geom": "leaf_surface_left_0_1_1",
+      "target_contact_observed": false,
+      "all_probe_contacts": {
+        "leaf_surface_target_3_2_1": {
+          "contact_points": 2548,
+          "peak_force_n": 0.1386849649209486,
+          "impulse_ns": 0.060658828262123,
+          "max_penetration_mm": 0.8419481235789616
+        },
+        "leaf_surface_target_3_1_1": {
+          "contact_points": 2439,
+          "peak_force_n": 0.29883302068468853,
+          "impulse_ns": 0.2083348496395035,
+          "max_penetration_mm": 1.4919142320475673
+        },
+        "leaf_surface_target_3_1_2": {
+          "contact_points": 176,
+          "peak_force_n": 0.03179520977965163,
+          "impulse_ns": 1.5897604889825817e-05,
+          "max_penetration_mm": 0.2887912868260213
+        }
+      },
+      "probe_initialization": "Initialized from frozen control position at 5s, zero velocities; probe reset before trial, then actuated. Matched controls use same initialization.",
+      "tag": "audit-leaf-contact",
+      "seconds": 8.99999999999956,
+      "fruits": 8,
+      "probe_contact_steps": 5163,
+      "peak_probe_force_n": 0.29883302068468853,
+      "probe_impulse_ns": 0.2690095755065165,
+      "max_probe_penetration_m": 0.0014919142320475674,
+      "finite": true,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "stiffness_scale": 1,
+      "segments": 5,
+      "timestep_s": 0.0005,
+      "contact_enabled": true,
+      "scope": "Force-limited diagnostic probe. Robot holds pose. No harvest or learned policy claim."
+    },
+    "control": {
+      "target_geom": "leaf_surface_left_0_1_1",
+      "target_contact_observed": false,
+      "all_probe_contacts": {},
+      "probe_initialization": "Initialized from frozen control position at 5s, zero velocities; probe reset before trial, then actuated. Matched controls use same initialization.",
+      "tag": "audit-leaf-control",
+      "seconds": 8.99999999999956,
+      "fruits": 8,
+      "probe_contact_steps": 0,
+      "peak_probe_force_n": 0,
+      "probe_impulse_ns": 0,
+      "max_probe_penetration_m": 0,
+      "finite": true,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "stiffness_scale": 1,
+      "segments": 5,
+      "timestep_s": 0.0005,
+      "contact_enabled": false,
+      "scope": "Force-limited diagnostic probe. Robot holds pose. No harvest or learned policy claim."
+    },
+    "peak_target_difference_mm": 63.07961489159168,
+    "final_target_difference_mm": 0.78648630987469,
+    "acceptance": "Target missed"
+  },
+  "stalk": {
+    "contact": {
+      "target_geom": "leafstalk_left_0_3_surface",
+      "target_contact_observed": true,
+      "all_probe_contacts": {
+        "leaf_surface_left_0_0_1": {
+          "contact_points": 935,
+          "peak_force_n": 0.010095586106609832,
+          "impulse_ns": 0.0016076250103855033,
+          "max_penetration_mm": 0.7477645142366877
+        },
+        "leaf_surface_left_0_0_2": {
+          "contact_points": 3068,
+          "peak_force_n": 0.004949546627797813,
+          "impulse_ns": 0.0012856643803546813,
+          "max_penetration_mm": 1.5057794551739703
+        },
+        "leaf_surface_left_4_2_1": {
+          "contact_points": 3193,
+          "peak_force_n": 0.03570304467367707,
+          "impulse_ns": 0.016151493306479383,
+          "max_penetration_mm": 4.842365179296461
+        },
+        "leaf_surface_left_4_2_2": {
+          "contact_points": 81,
+          "peak_force_n": 0.024161818833491944,
+          "impulse_ns": 0.00025250193573364045,
+          "max_penetration_mm": 3.7416519338383263
+        },
+        "leafstalk_left_0_3_surface": {
+          "contact_points": 2311,
+          "peak_force_n": 0.12827875798919697,
+          "impulse_ns": 0.10131232567149467,
+          "max_penetration_mm": 0.5174877490386831
+        }
+      },
+      "probe_initialization": "Initialized from frozen control position at 5s, zero velocities; probe reset before trial, then actuated. Matched controls use same initialization.",
+      "tag": "audit-stalk-contact",
+      "seconds": 8.99999999999956,
+      "fruits": 8,
+      "probe_contact_steps": 9588,
+      "peak_probe_force_n": 0.12827875798919697,
+      "probe_impulse_ns": 0.12060961030444843,
+      "max_probe_penetration_m": 0.004842365179296461,
+      "finite": true,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "stiffness_scale": 1,
+      "segments": 5,
+      "timestep_s": 0.0005,
+      "contact_enabled": true,
+      "scope": "Force-limited diagnostic probe. Robot holds pose. No harvest or learned policy claim."
+    },
+    "control": {
+      "target_geom": "leafstalk_left_0_3_surface",
+      "target_contact_observed": false,
+      "all_probe_contacts": {},
+      "probe_initialization": "Initialized from frozen control position at 5s, zero velocities; probe reset before trial, then actuated. Matched controls use same initialization.",
+      "tag": "audit-stalk-control",
+      "seconds": 8.99999999999956,
+      "fruits": 8,
+      "probe_contact_steps": 0,
+      "peak_probe_force_n": 0,
+      "probe_impulse_ns": 0,
+      "max_probe_penetration_m": 0,
+      "finite": true,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "stiffness_scale": 1,
+      "segments": 5,
+      "timestep_s": 0.0005,
+      "contact_enabled": false,
+      "scope": "Force-limited diagnostic probe. Robot holds pose. No harvest or learned policy claim."
+    },
+    "peak_target_difference_mm": 30.72912624991514,
+    "final_target_difference_mm": 0.4280851895739274,
+    "acceptance": "Incidental contacts; not isolated"
+  },
+  "berry": {
+    "contact": {
+      "target_geom": "crop2_berry_collision",
+      "target_contact_observed": true,
+      "all_probe_contacts": {
+        "crop2_berry_collision": {
+          "contact_points": 3226,
+          "peak_force_n": 0.3932851610206892,
+          "impulse_ns": 0.28594807186519405,
+          "max_penetration_mm": 0.4307613391314625
+        }
+      },
+      "probe_initialization": "Initialized from frozen control position at 5s, zero velocities; probe reset before trial, then actuated. Matched controls use same initialization.",
+      "tag": "audit-berry-contact",
+      "seconds": 8.99999999999956,
+      "fruits": 8,
+      "probe_contact_steps": 3226,
+      "peak_probe_force_n": 0.3932851610206892,
+      "probe_impulse_ns": 0.28594807186519405,
+      "max_probe_penetration_m": 0.0004307613391314625,
+      "finite": true,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "stiffness_scale": 1,
+      "segments": 5,
+      "timestep_s": 0.0005,
+      "contact_enabled": true,
+      "scope": "Force-limited diagnostic probe. Robot holds pose. No harvest or learned policy claim."
+    },
+    "control": {
+      "target_geom": "crop2_berry_collision",
+      "target_contact_observed": false,
+      "all_probe_contacts": {},
+      "probe_initialization": "Initialized from frozen control position at 5s, zero velocities; probe reset before trial, then actuated. Matched controls use same initialization.",
+      "tag": "audit-berry-control",
+      "seconds": 8.99999999999956,
+      "fruits": 8,
+      "probe_contact_steps": 0,
+      "peak_probe_force_n": 0,
+      "probe_impulse_ns": 0,
+      "max_probe_penetration_m": 0,
+      "finite": true,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "stiffness_scale": 1,
+      "segments": 5,
+      "timestep_s": 0.0005,
+      "contact_enabled": false,
+      "scope": "Force-limited diagnostic probe. Robot holds pose. No harvest or learned policy claim."
+    },
+    "peak_target_difference_mm": 50.19917647918995,
+    "final_target_difference_mm": 0.041458003105065255,
+    "acceptance": "Target contact confirmed; uncalibrated"
+  },
+  "canopy_candidate": {
+    "tag": "canopy-rest-candidate",
+    "seconds": 7.999999999998286,
+    "fruits": 8,
+    "probe_contact_steps": 0,
+    "peak_probe_force_n": 0,
+    "probe_impulse_ns": 0,
+    "max_probe_penetration_m": 0,
+    "finite": true,
+    "valid_run": true,
+    "warnings": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "stiffness_scale": 1,
+    "segments": 5,
+    "timestep_s": 0.0005,
+    "contact_enabled": false,
+    "scope": "Force-limited diagnostic probe. Robot holds pose. No harvest or learned policy claim.",
+    "last_second_fruit_coordinate_span_mm": 0.04277459922621962
+  }
+}

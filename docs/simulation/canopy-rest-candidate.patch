@@ -1,0 +1,14 @@
+--- botanical.py
++++ botanical_canopy_candidate.py
+@@ -80,6 +80,11 @@
+     angle2=angle+offset;prev=tip
+     for q in range(3):
+      b=sub(prev,'body',name=f'leaf_{cluster}_{j}_{leaflet}_{q}',pos=v([0,0,0] if q==0 else [.022*np.cos(angle2),.022*np.sin(angle2),0]))
++     if q==0:
++      # Candidate rest orientation, not measured plant calibration.
++      pitch=.28+.30*np.sin(j*1.7+leaflet*.7+{'target':0.,'left':.8,'right':1.6}[cluster])
++      axis=np.array([-np.sin(angle2),np.cos(angle2),0.])
++      b.set('quat',v([np.cos(pitch/2),*(axis*np.sin(pitch/2))]))
+      sub(b,'joint',name=f'leafbend_{cluster}_{j}_{leaflet}_{q}',type='hinge',axis=v([-np.sin(angle2),np.cos(angle2),0]),stiffness='.005',damping='.001',limited='false',armature='1e-8')
+      sub(b,'geom',name=f'leaf_surface_{cluster}_{j}_{leaflet}_{q}',type='mesh',mesh=f'plant_leaf_panel_{q}',euler=v([0,0,angle2]),mass='.00012',material='leaf',contype='128',conaffinity='255',solref='.015 1',friction='.35 .001 .0001')
+      sub(b,'geom',name=f'leaf_midrib_{cluster}_{j}_{leaflet}_{q}',type='capsule',fromto=v([0,0,.0008,.022*np.cos(angle2),.022*np.sin(angle2),.0008]),size='.00045',rgba='.32 .47 .15 1',mass='0',contype='0',conaffinity='0');prev=b
