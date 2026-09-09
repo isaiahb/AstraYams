@@ -1,0 +1,13 @@
+{
+  "scope": "same frozen rest qpos, zero qvel and same probe trajectory; only timestep changes",
+  "criteria": {
+    "warning_count": 0,
+    "max_penetration_mm": 1.0,
+    "relative_change_in_impulse_and_target_displacement": 0.1
+  },
+  "compare_s": [
+    0.00025,
+    0.000125,
+    6.25e-05
+  ]
+}

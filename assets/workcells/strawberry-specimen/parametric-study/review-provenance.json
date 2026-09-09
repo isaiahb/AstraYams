@@ -1,0 +1,11 @@
+{
+  "reference": "https://extension.oregonstate.edu/catalog/pub/ec-1307-growing-strawberries-your-home-garden",
+  "credit": "Bernadine Strik / Oregon State University, Figure 1",
+  "comparison": "approximate viewing direction only; different specimens, no calibrated shared scale",
+  "candidate": "v13",
+  "models": {
+    "v7": "ae08b2bf742aee5f0b8eba09837ed47917d8a085b2485c89e95c6351416504b0",
+    "v11": "9ace2514a0e3582467be6eb51929fd182ca88db892d6be392501400a29925fce",
+    "v13": "185f600fbe2e30d3912cbbe913fb16e64d6a122cc274c74233efe464ab8c8232"
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "v13": {
+    "pairs": {
+      "leaf": {
+        "numerical_probe_gate_pass": true,
+        "matching_initial_state_and_stroke": true,
+        "isolated_intended_organ": true,
+        "incidental_other_organs": [],
+        "target_touched": true,
+        "control_contact_count": 0,
+        "max_probe_penetration_mm": 0.12135714340339235,
+        "max_target_displacement_relative_control_mm": 26.218089990857337,
+        "final_target_displacement_relative_control_mm": 0.0007488659882969159,
+        "summed_contact_impulse_ns": 0.016739730425933845,
+        "contacted_surfaces": [
+          "leaf_left_1_w14_-1",
+          "leaf_left_1_w13_-1",
+          "leaf_left_1_w12_-1",
+          "leaf_left_1_w11_-1"
+        ],
+        "all_scene_penetrations_over_1mm": {}
+      },
+      "neighbor": {
+        "numerical_probe_gate_pass": true,
+        "matching_initial_state_and_stroke": true,
+        "isolated_intended_organ": true,
+        "incidental_other_organs": [],
+        "target_touched": true,
+        "control_contact_count": 0,
+        "max_probe_penetration_mm": 0.1668651302682584,
+        "max_target_displacement_relative_control_mm": 47.34504825068147,
+        "final_target_displacement_relative_control_mm": 0.9538454023013252,
+        "summed_contact_impulse_ns": 0.0793982035492827,
+        "contacted_surfaces": [
+          "berry_secondary_a"
+        ],
+        "all_scene_penetrations_over_1mm": {}
+      },
+      "stalk": {
+        "numerical_probe_gate_pass": true,
+        "matching_initial_state_and_stroke": true,
+        "isolated_intended_organ": true,
+        "incidental_other_organs": [],
+        "target_touched": true,
+        "control_contact_count": 0,
+        "max_probe_penetration_mm": 0.051955160565348574,
+        "max_target_displacement_relative_control_mm": 38.195562463660345,
+        "final_target_displacement_relative_control_mm": 0.7009764359615853,
+        "summed_contact_impulse_ns": 0.4740721391993289,
+        "contacted_surfaces": [
+          "peduncle_5_surface",
+          "peduncle_6_surface"
+        ],
+        "all_scene_penetrations_over_1mm": {}
+      },
+      "basal": {
+        "numerical_probe_gate_pass": true,
+        "matching_initial_state_and_stroke": true,
+        "isolated_intended_organ": true,
+        "incidental_other_organs": [],
+        "target_touched": true,
+        "control_contact_count": 0,
+        "max_probe_penetration_mm": 0.095636122434066,
+        "max_target_displacement_relative_control_mm": 6.0089629237505,
+        "final_target_displacement_relative_control_mm": 0.00034706894437157277,
+        "summed_contact_impulse_ns": 1.6071873127906886,
+        "contacted_surfaces": [
+          "petiole_left_1_surface"
+        ],
+        "all_scene_penetrations_over_1mm": {}
+      }
+    },
+    "settling": {
+      "kind": "rest",
+      "control": false,
+      "seconds": 10.000000000002242,
+      "elapsed_wall_s": 37.40136408805847,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_probe_contacts": [],
+      "probe_start_m": null,
+      "probe_end_m": null,
+      "target": null,
+      "target_touched": null,
+      "probe_contacts": {},
+      "truss_trough_contact_duration_s": 9.524875,
+      "berry_berry_contact_duration_s": 9.22625,
+      "penetrations_over_1mm": {
+        "berry_primary | trough_front": 1.1211507516894181,
+        "berry_primary | secondary_a_4_surface": 1.3568017720421144,
+        "berry_primary | secondary_a_5_surface": 1.2975411873732334
+      },
+      "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.",
+      "final_second_max_geom_coordinate_span_mm": 0.12554403840633194,
+      "approach_angle_deg": 0.0,
+      "trial_label": "rest"
+    },
+    "parameters": {
+      "schema_version": 1,
+      "seed": null,
+      "split": "representative",
+      "latent_variables": {
+        "size_scale": 1.0,
+        "radial_scale": 1.0,
+        "azimuth_offset_rad": 0.0
+      },
+      "dependencies": [
+        "one size variable changes petiole length/radius, leaf area/mass, and fruit dimensions/volume/mass",
+        "one openness variable changes leaf endpoint radius without moving crown attachments or substrate",
+        "one azimuth variable rotates the leaf arrangement together; fruit truss fixed for probe comparability",
+        "Age-dependent petiole modulus remains fixed across morphology seeds; crown/root boundary and leaf hinge law remain uncalibrated."
+      ],
+      "distribution_status": "uncalibrated bounded hypotheses; seeded variants are simulation holdouts, not proof of real-world generalization",
+      "config_sha256": "8a591d9aa051b3daee27b1b652341dcf74bb5c36954e2298ffdf236701254f4a",
+      "roots": {
+        "representation": "fixed crown boundary; root geometry and pullout absent",
+        "validity": "above-ground contact hypothesis only; must test anchorage before transfer"
+      }
+    }
+  },
+  "v13-holdout-41": {
+    "pairs": {
+      "leaf": {
+        "numerical_probe_gate_pass": true,
+        "matching_initial_state_and_stroke": true,
+        "isolated_intended_organ": true,
+        "incidental_other_organs": [],
+        "target_touched": true,
+        "control_contact_count": 0,
+        "max_probe_penetration_mm": 0.10436071233629364,
+        "max_target_displacement_relative_control_mm": 25.07635040259581,
+        "final_target_displacement_relative_control_mm": 0.0007179756004750174,
+        "summed_contact_impulse_ns": 0.014672881951074485,
+        "contacted_surfaces": [
+          "leaf_left_1_w14_-1",
+          "leaf_left_1_w13_-1",
+          "leaf_left_1_w12_-1"
+        ],
+        "all_scene_penetrations_over_1mm": {}
+      },
+      "basal": {
+        "numerical_probe_gate_pass": true,
+        "matching_initial_state_and_stroke": true,
+        "isolated_intended_organ": true,
+        "incidental_other_organs": [],
+        "target_touched": true,
+        "control_contact_count": 0,
+        "max_probe_penetration_mm": 0.08622491960551433,
+        "max_target_displacement_relative_control_mm": 8.520107742463567,
+        "final_target_displacement_relative_control_mm": 0.0004446983112031971,
+        "summed_contact_impulse_ns": 1.5553323810798372,
+        "contacted_surfaces": [
+          "petiole_left_1_surface"
+        ],
+        "all_scene_penetrations_over_1mm": {}
+      }
+    },
+    "settling": {
+      "kind": "rest",
+      "control": false,
+      "seconds": 10.000000000002242,
+      "elapsed_wall_s": 38.89403486251831,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_probe_contacts": [],
+      "probe_start_m": null,
+      "probe_end_m": null,
+      "target": null,
+      "target_touched": null,
+      "probe_contacts": {},
+      "truss_trough_contact_duration_s": 9.771,
+      "berry_berry_contact_duration_s": 9.306625,
+      "penetrations_over_1mm": {
+        "berry_primary | trough_front": 1.2121409585804592,
+        "berry_primary | secondary_a_4_surface": 1.42824816061353,
+        "berry_primary | secondary_a_5_surface": 1.2532172388618847
+      },
+      "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.",
+      "final_second_max_geom_coordinate_span_mm": 0.6865729514850017,
+      "approach_angle_deg": 0.0,
+      "trial_label": "rest"
+    },
+    "parameters": {
+      "schema_version": 1,
+      "seed": 41,
+      "split": "held-out-morphology",
+      "latent_variables": {
+        "size_scale": 1.090830220592401,
+        "radial_scale": 1.0382277763144079,
+        "azimuth_offset_rad": -0.11220877596353937
+      },
+      "dependencies": [
+        "one size variable changes petiole length/radius, leaf area/mass, and fruit dimensions/volume/mass",
+        "one openness variable changes leaf endpoint radius without moving crown attachments or substrate",
+        "one azimuth variable rotates the leaf arrangement together; fruit truss fixed for probe comparability",
+        "Age-dependent petiole modulus remains fixed across morphology seeds; crown/root boundary and leaf hinge law remain uncalibrated."
+      ],
+      "distribution_status": "uncalibrated bounded hypotheses; seeded variants are simulation holdouts, not proof of real-world generalization",
+      "config_sha256": "d0b205054b38bb74844d034285920a6aec008ee80555cdac6bedbf7910568c99",
+      "roots": {
+        "representation": "fixed crown boundary; root geometry and pullout absent",
+        "validity": "above-ground contact hypothesis only; must test anchorage before transfer"
+      }
+    }
+  },
+  "v13-holdout-73": {
+    "pairs": {
+      "leaf": {
+        "numerical_probe_gate_pass": true,
+        "matching_initial_state_and_stroke": true,
+        "isolated_intended_organ": true,
+        "incidental_other_organs": [],
+        "target_touched": true,
+        "control_contact_count": 0,
+        "max_probe_penetration_mm": 0.0920149432835863,
+        "max_target_displacement_relative_control_mm": 25.984844148621026,
+        "final_target_displacement_relative_control_mm": 0.0007540417479406658,
+        "summed_contact_impulse_ns": 0.01561225426525924,
+        "contacted_surfaces": [
+          "leaf_left_1_w14_-1",
+          "leaf_left_1_w13_-1",
+          "leaf_left_1_w12_-1",
+          "leaf_left_1_w11_-1"
+        ],
+        "all_scene_penetrations_over_1mm": {}
+      },
+      "basal": {
+        "numerical_probe_gate_pass": true,
+        "matching_initial_state_and_stroke": true,
+        "isolated_intended_organ": true,
+        "incidental_other_organs": [],
+        "target_touched": true,
+        "control_contact_count": 0,
+        "max_probe_penetration_mm": 0.09000148744508704,
+        "max_target_displacement_relative_control_mm": 5.617371474620294,
+        "final_target_displacement_relative_control_mm": 0.00031556850116836696,
+        "summed_contact_impulse_ns": 1.7591237916529492,
+        "contacted_surfaces": [
+          "petiole_left_1_surface"
+        ],
+        "all_scene_penetrations_over_1mm": {}
+      }
+    },
+    "settling": {
+      "kind": "rest",
+      "control": false,
+      "seconds": 10.000000000002242,
+      "elapsed_wall_s": 41.055312156677246,
+      "valid_run": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_probe_contacts": [],
+      "probe_start_m": null,
+      "probe_end_m": null,
+      "target": null,
+      "target_touched": null,
+      "probe_contacts": {},
+      "truss_trough_contact_duration_s": 9.509375,
+      "berry_berry_contact_duration_s": 9.221625,
+      "penetrations_over_1mm": {
+        "berry_primary | trough_front": 1.087766784388245,
+        "berry_primary | secondary_a_4_surface": 1.348928298806895,
+        "berry_primary | secondary_a_5_surface": 1.290360265566007
+      },
+      "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.",
+      "final_second_max_geom_coordinate_span_mm": 0.12340255015728593,
+      "approach_angle_deg": 0.0,
+      "trial_label": "rest"
+    },
+    "parameters": {
+      "schema_version": 1,
+      "seed": 73,
+      "split": "held-out-morphology",
+      "latent_variables": {
+        "size_scale": 0.9985272378576386,
+        "radial_scale": 0.9546061568150574,
+        "azimuth_offset_rad": -0.06942966563886123
+      },
+      "dependencies": [
+        "one size variable changes petiole length/radius, leaf area/mass, and fruit dimensions/volume/mass",
+        "one openness variable changes leaf endpoint radius without moving crown attachments or substrate",
+        "one azimuth variable rotates the leaf arrangement together; fruit truss fixed for probe comparability",
+        "Age-dependent petiole modulus remains fixed across morphology seeds; crown/root boundary and leaf hinge law remain uncalibrated."
+      ],
+      "distribution_status": "uncalibrated bounded hypotheses; seeded variants are simulation holdouts, not proof of real-world generalization",
+      "config_sha256": "d0b205054b38bb74844d034285920a6aec008ee80555cdac6bedbf7910568c99",
+      "roots": {
+        "representation": "fixed crown boundary; root geometry and pullout absent",
+        "validity": "above-ground contact hypothesis only; must test anchorage before transfer"
+      }
+    }
+  }
+}

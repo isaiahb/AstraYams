@@ -28,3 +28,14 @@ User direction: finish the deferred scientific-modeling work on this specimen, s
 Implement the parametric graph and canopy/crown hypothesis; preserve the rejected first candidate; settle the corrected candidate; run controlled contact trials; create reproducible morphology holdouts; save actual renders/replays and response/cost reports. Prepare a concrete physical-measurement protocol. Continuous surfaces, anchorage, cutting and real calibration remain separate work until their gates pass.
 
 Do not mark the whole roadmap complete when this batch completes. Cellular/atomic simulations are an optional future escalation if task-relevant error cannot be resolved at organ/tissue scale. More detail and faster computation are not physical validation.
+
+## Progress after this batch
+
+- Implemented editable anatomy/material configuration, source/assumption records, graph checks and reproducible correlated variants.
+- Improved canopy through explicit unloaded paths, corrected leaf frames, staggered crown attachments and age-dependent literature priors; v13 preserved separately.
+- Completed eight probe/control pairs across three configurations; repeated basal timestep checks after changing stiffness. Full-scene settling penetration remains a failure to resolve.
+- Built and tested an isolated continuous contact surface using articulated ribs and constrained shared vertices. Whole-plant integration remains pending; the original FEM shell remains rejected.
+- Added actual-state review images, videos, standalone orbitable replay, control-relative response audits and a local simulation-cost measurement.
+- Prepared the real calibration/held-out observation protocol. No real measurements have been executed.
+
+The earlier table records the starting audit. This update and the chronological iteration notes record the actual work completed; the longer roadmap remains open.

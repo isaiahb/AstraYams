@@ -37,7 +37,10 @@ def audit(path):
         disp=np.linalg.norm(a['geom_positions'][:,gid]-b['geom_positions'][:,gid],axis=1)*1000 if same_shape else np.array([float('nan')])
         pen=max([s['max_penetration_mm'] for s in trial['probe_contacts'].values()],default=0.)
         passed=bool(match and trial['valid_run'] and ctrl['valid_run'] and trial['target_touched'] and not trial['initial_probe_contacts'] and not ctrl['probe_contacts'] and pen<1.)
+        family={'basal':'petiole_left_','leaf':'leaf_left_1_','stalk':'peduncle_','neighbor':'berry_secondary_a'}[trial['kind']]
+        incidental=[name for name in trial['probe_contacts'] if not name.startswith(family)]
         pairs[result.parent.name]={'numerical_probe_gate_pass':passed,'matching_initial_state_and_stroke':match,
+            'isolated_intended_organ':not incidental,'incidental_other_organs':incidental,
             'target_touched':trial['target_touched'],'control_contact_count':len(ctrl['probe_contacts']),
             'max_probe_penetration_mm':pen,'max_target_displacement_relative_control_mm':float(disp.max()),
             'final_target_displacement_relative_control_mm':float(disp[-1]),

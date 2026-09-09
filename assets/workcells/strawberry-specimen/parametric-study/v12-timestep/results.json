@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "timestep_s": 0.00025,
+      "impulse_ns": 1.613514658539995,
+      "max_penetration_mm": 0.3959473581329736,
+      "peak_force_n": 4.018619681988289,
+      "max_control_relative_displacement_mm": 6.059404437244992
+    },
+    {
+      "timestep_s": 0.000125,
+      "impulse_ns": 1.6071873127907015,
+      "max_penetration_mm": 0.09563612243406253,
+      "peak_force_n": 1.5711598781440432,
+      "max_control_relative_displacement_mm": 6.0089629237500155
+    },
+    {
+      "timestep_s": 6.25e-05,
+      "impulse_ns": 1.6072234933633898,
+      "max_penetration_mm": 0.07427662770326769,
+      "peak_force_n": 1.5711265888597645,
+      "max_control_relative_displacement_mm": 6.009000279369576
+    }
+  ],
+  "relative_difference_finest_pair": {
+    "impulse_ns": 2.2511226868995316e-05,
+    "peak_force_n": 2.118816173995444e-05,
+    "max_control_relative_displacement_mm": 6.216611386849152e-06
+  },
+  "selected_timestep_s": 0.000125,
+  "scope": "One basal push only; no material validation. Coarser peak-force spike rejected."
+}

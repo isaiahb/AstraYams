@@ -110,3 +110,43 @@ Distinguish errors in anatomy/topology, assumed parameters, missing mechanical e
 Success should be assessed against independent observations and held-out interactions, together with simulation throughput and stability. A surrogate trained only on an imperfect simulator can inherit its errors. The proposed process generalizes to model/constitutive-law discovery and numerical-method improvement; it does not establish that this project has discovered new physics or mathematics.
 
 Prior work to examine when implementation reaches this stage: [equation-free multiscale computation](https://arxiv.org/abs/physics/0209043) and [MeshGraphNets](https://arxiv.org/abs/2010.03409). No new dependencies, plant geometry, solver or desktop UI were introduced in this discussion.
+
+## Executing the deferred work: parametric canopy and a continuous-surface experiment
+
+The request to execute the outstanding work is tracked in `STRAWBERRY-OPEN-WORK.md`. Desktop product files remain untouched. Candidate outputs live in `assets/workcells/strawberry-specimen/parametric-study/`; v7 and all rejected candidates remain available.
+
+### Representation and morphology
+
+Added an explicit configuration/compiler for crown-relative attachment positions, unloaded Bezier centerlines, leaflet frames, size-dependent leaf mass, material priors and correlated morphology seeds. The configuration records sources, assumptions, missing mechanisms and units. The source graph is compiled into the existing physical model, not applied as a render deformation. Each output records input/generator/scene hashes and MuJoCo version.
+
+The first new short stalk collided with its own 18 mm stipule. Candidate v8 is retained as rejected; scaling the attached stipule to the stalk removed that overlap in v9. Radial leaf orientations had also been mixed with intrinsic xyz Euler rotations. Applying the azimuth before the leaf elevation fixed that frame convention. It exposed overlap between broad adjacent leaflets in v10; an explicit wider trifoliate fan removed the initial overlap in v11. This fan angle is an anatomical hypothesis, not a dimension measured from a photo.
+
+Geometry alone did not solve the loaded droop. We then found [Tsubota et al. (2022)](https://doi.org/10.11357/jsamfe.84.4_229): reported effective petiole moduli were 89, 194 and 297 MPa for new, second, and third-and-older leaves. The study used Tochiotome plants and inferred modulus from buckling with specified supports. Candidate v12 uses these as age-dependent priors; mapping our leaf ages to those ranks is assumed. This is not a direct calibration of our tapered circular beam model. The prior stiffness-proportional damping rule remains, so the change affects damping as well as stiffness. Leaf mass, blade mechanics, fruit-truss mechanics and root support remain uncalibrated.
+
+The final candidate v13 has the same geometry/material configuration with a refined timestep. Its four mature distal stalk inclinations are 47.2°, 30.8°, 55.8° and 57.1° from vertical, compared with 94.0°, 70.3°, 97.6° and 105.4° in v7. These are model measurements, not errors against reconstructed reference angles. The actual-state comparison shows the canopy improvement and the remaining coarse leaf surfaces.
+
+### Numerical recheck after material changes
+
+The stronger bases produced a 4.019 N transient normal-force peak at 0.25 ms. Although penetration was below 1 mm, that peak was timestep-sensitive. At the same frozen initial state and probe stroke, 0.125 and 0.0625 ms produced peaks of 1.571160 and 1.571127 N, impulses of 1.607187 and 1.607223 N·s, and maximum control-relative target displacements of 6.008963 and 6.009000 mm. Selected 0.125 ms and reran a fresh settle and all contact trials as v13. Force-limited actuator commands do not clamp the contact normal force.
+
+All four representative contact/control pairs and four pairs on two untuned morphology variants passed the numerical probe gate: intended target touched, identical initial state/stroke for each pair, no initial probe contact, no runtime warnings, zero control contacts, and probe penetration below 1 mm. Holdouts use seeds 41 and 73 and approach offsets −25°/+25°. The variation links leaf dimensions to mass and fruit dimensions to volume/mass. It is not an empirically fitted plant distribution or a learned-policy generalization result. All incidental surfaces are retained in the reports; isolation from other organs is a separate field.
+
+The full-scene gate remains open: v13 gravity settling still reaches 1.12 mm fruit/trough and 1.36 mm fruit/stalk penetration. Seed 41 shows 0.687 mm final-second geometry drift, versus 0.126 mm in the representative plant. Neither is hidden by the successful probe tests. See `batch-results.json`, per-candidate `audit.json`, and `v12-timestep/results.json`.
+
+### Continuous leaf surface: separate reduced-model prototype
+
+The earlier 2D elastic shell remains rejected. Its narrow end triangles produced initial self-contacts and large passive forces; improving triangulation alone did not yield a valid model at the chosen step. A temporary offline Triangle meshing experiment was exploratory and is not a runtime dependency of the accepted model. No FEM calibration or fully elastic tissue-shell result is claimed.
+
+Implemented a different reduced representation: one shared-vertex MuJoCo flex surface supported by articulated transverse ribs, with hinge bending and near-inextensible edge constraints. Rendered and contact surfaces are the same flex. The first unconstrained rib surface changed edge lengths by 20.6%; a first soft constraint attempt still reached 2.02%, over the 2% criterion. Both are retained, not promoted. The stronger numerical edge constraint in `rib-surface-v2` gives 0.529% maximum edge change, 0.903 mm maximum probe penetration, target contact and no initial contacts/runtime warnings. Its no-contact control produces zero contacts. At half the timestep, peak force differs by 0.64% and maximum control-relative vertex displacement by less than 0.001%.
+
+This is still a reduced bending model: ribs constrain transverse deformation, and there is no calibrated membrane law, torsion, explicit veins, turgor or fracture. First-quarter vertices are pinned; the first dynamic rib is one axial cell beyond the pinned region. The isolated boundary is not the crown attachment. The continuous surface is **not integrated into the whole plant** or the old rigid-mesh exporter. Its own video replays actual qpos through MuJoCo and checks recorded/reconstructed flex vertices within 0.1 mm. Whole-plant v13 still uses four panels per leaflet.
+
+### Inspectable outputs and remaining dependencies
+
+- `parametric-study/whole-plant-progress.png`: credited real reference, preserved v7, candidate v13.
+- `parametric-study/crown-progress.png`: matched crown views with geometry-only and literature-prior stages.
+- `parametric-study/v13/index.html`: copied standalone review viewer with saved physical rollouts; leaf camera recentered on the actual probe trajectory. Product app unchanged.
+- `leaf-study/rib-surface-v2/contact-and-control.mp4`: continuous-surface contact and negative control at physical playback speed.
+- `STRAWBERRY-CALIBRATION-PROTOCOL.md`: concrete observation, fitting and held-out experiment protocol; prepared but not executed on real plants.
+
+Next dependencies: integrate and retest the continuous surface in the plant; resolve remaining truss contact penetration; represent and constrain crown/root anchorage; measure real responses; test sensitivity to discretization and uncertain geometry/materials; add physically triggered cutting/retention and damage; then train the harvest policy. A faster surrogate requires a validated teacher and independent observations. None of these remaining steps is marked complete by the current batch.

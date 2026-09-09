@@ -154,7 +154,7 @@ def build(output=OUT,spec_path=None):
    prev=b
   add(contact,'exclude',body1=ends.get(parent.get('name'),parent.get('name')),body2=root.get('name'))
  for leaf in spec['leaves']:
-  tip=beam(crown,np.array(leaf['tip'])-spec['crown_m'],'petiole_'+leaf['id'],leaf.get('shaft_radius_m',.00165),n=mechanics.get('petiole_segments',7),young=mechanics.get('petiole_young_pa',85e6),growth=leaf.get('growth'))
+  tip=beam(crown,np.array(leaf['tip'])-spec['crown_m'],'petiole_'+leaf['id'],leaf.get('shaft_radius_m',.00165),n=mechanics.get('petiole_segments',7),young=leaf.get('young_pa',mechanics.get('petiole_young_pa',85e6)),growth=leaf.get('growth'))
   fan=spec['leaflet_profile'].get('lateral_azimuth_rad',1.05)
   for i,off in enumerate([-fan,0,fan]):
    length=leaf['length']*(1 if i==1 else .88);color=[.22,.39,.08,1] if leaf['age']=='mature' else [.35,.51,.12,1]

@@ -1,0 +1,10 @@
+# Local credited reference composites; no redistribution rights inferred.
+whole-plant-progress.png
+# Generated media/physics states are local. Keep compact reports and source configs.
+**/rollout.npz
+**/demo.mp4
+**/replay.json
+**/meshes/
+**/scene.xml
+**/model.json
+**/specimen-settled.glb

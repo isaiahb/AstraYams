@@ -1,0 +1,56 @@
+{
+  "protocol": "three fresh resets to saved final pose with zero velocity and stationary probe command; headless mj_step; no Python contact logging/rendering",
+  "machine": "arm64",
+  "mujoco": "3.12.0",
+  "model": "assets/workcells/strawberry-specimen/parametric-study/v13",
+  "timestep_s": 0.000125,
+  "nv": 327,
+  "ngeom": 1613,
+  "nflex": 0,
+  "samples": [
+    {
+      "wall_s": 7.6219388749450445,
+      "simulated_s": 2.0,
+      "simulated_per_wall_s": 0.2624004249856203,
+      "runtime_warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "wall_s": 6.285035749897361,
+      "simulated_s": 2.0,
+      "simulated_per_wall_s": 0.31821616926087676,
+      "runtime_warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "wall_s": 7.8890079169068485,
+      "simulated_s": 2.0,
+      "simulated_per_wall_s": 0.25351730167665587,
+      "runtime_warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "scope": "Local cost measurement, not a biological-accuracy or policy-throughput result.",
+  "other_machine_activity": "Uncontrolled desktop activity; values are local timings, not isolated hardware benchmarks."
+}

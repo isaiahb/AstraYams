@@ -21,6 +21,7 @@ def compile_spec(config_path=DEFAULT, seed=None):
     spec['morphology_evidence'] = cfg['evidence']
     spec['parameter_status'] = cfg['parameter_status']
     spec['mechanics'] = copy.deepcopy(cfg['mechanics'])
+    spec['simulation_timestep_s'] = cfg.get('simulation_timestep_s',spec['simulation_timestep_s'])
     spec['crown_structure'] = copy.deepcopy(cfg['crown_structure'])
     spec['leaflet_profile'].update(cfg['leaflet_profile'])
     crown = np.array(spec['crown_m'])

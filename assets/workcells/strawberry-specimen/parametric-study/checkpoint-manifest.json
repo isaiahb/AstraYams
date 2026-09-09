@@ -1,0 +1,25 @@
+{
+  "baseline": "../basal-study/v7",
+  "baseline_sha256": "ae08b2bf742aee5f0b8eba09837ed47917d8a085b2485c89e95c6351416504b0",
+  "candidate": "v13",
+  "rejected": [
+    {
+      "candidate": "v8",
+      "reason": "Emerging-stalk stipule self-overlap up to 1.70 mm; shortened consistently with stalk length in v9."
+    },
+    {
+      "candidate": "v10",
+      "reason": "Corrected radial orientation revealed 1.43 mm overlap of broad adjacent leaflets; explicit wider trifoliate fan in v11."
+    },
+    {
+      "candidate": "v12",
+      "reason": "Age-dependent geometry/material candidate retained; 0.25 ms basal peak-force spike led to 0.125 ms timestep in v13."
+    }
+  ],
+  "remaining": [
+    "Leaf surfaces remain four articulated panels, not a continuous shell.",
+    "Material, load, crown/root support and unloaded-shape uncertainty remain.",
+    "v13 settling retains fruit/stalk and trough penetrations above 1 mm.",
+    "No real calibration, cutting, plant roots or learned-policy result."
+  ]
+}
