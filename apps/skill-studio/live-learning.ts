@@ -1,0 +1,11 @@
+import {resolve} from 'node:path';
+import {readJson} from './catalog';
+export async function liveLearning(root:string,output:string,onProgress:(stage:string,message:string)=>Promise<void>){
+ const runner=resolve(root,'tools/run_live_keyed_learning.py');if(!await Bun.file(runner).exists())throw Error('Live learning runner is not available yet');
+ const proc=Bun.spawn(['/tmp/clonebench-cad-env/bin/python',runner,'--out',output+'/learning','--task',output+'/environment'],{cwd:root,env:{...process.env,PYTHONPATH:resolve(root,'src')+':'+resolve(root,'tools'),PYTHONUNBUFFERED:'1',OMP_NUM_THREADS:'2',MKL_NUM_THREADS:'2'},stdout:'pipe',stderr:'pipe'});
+ let timeout=false,log='',buffer='';const timer=setTimeout(()=>{timeout=true;proc.kill();},600_000);const err=new Response(proc.stderr).text();
+ try{const reader=proc.stdout.getReader(),decoder=new TextDecoder();while(true){const {done,value}=await reader.read();if(done)break;const chunk=decoder.decode(value,{stream:true});buffer+=chunk;log+=chunk;let i;while((i=buffer.indexOf('\n'))>=0){const line=buffer.slice(0,i);buffer=buffer.slice(i+1);let e;try{e=JSON.parse(line);}catch{continue;}if(e.event==='stage'||e.stage)await onProgress(String(e.stage||'training'),String(e.message||'Running the learning experiment').slice(0,1000));}}
+ const code=await proc.exited;await Bun.write(resolve(root,output,'learning-stdout.log'),log);await Bun.write(resolve(root,output,'learning-stderr.log'),await err);if(timeout)throw Error('Learning reached its ten-minute limit; inspect the saved results.');if(code!==0)throw Error('The learning experiment did not finish successfully; inspect the saved log.');
+ const report=await readJson(resolve(root,output,'learning/report.json'),null),demo=await readJson(resolve(root,output,'learning/demo.json'),null);if(!report||!demo)throw Error('Learning finished without a complete report and replay manifest.');for(const v of demo.videos||[]){if(v.replay_path&&!v.replay_path.startsWith(output+'/learning/'))throw Error('New learning replay must belong to this run.');}if(typeof report.accepted!=='boolean')throw Error('Learning report does not state whether the candidate was accepted.');return {report,demo};
+ }finally{clearTimeout(timer);}
+}
