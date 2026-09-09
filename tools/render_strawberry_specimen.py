@@ -42,7 +42,8 @@ def export():
   mat=np.eye(4);rot=np.zeros(9);mujoco.mju_quat2Mat(rot,m.geom_quat[i]);mat[:3,:3]=rot.reshape(3,3);mat[:3,3]=m.geom_pos[i];geo.apply_transform(mat);body=m.body(m.geom_bodyid[i]).name or 'world';rgb=tuple(int(float(c)*255) for c in color[:3]);groups.setdefault((body,rgb),[]).append(geo)
  objects=[];meshes=[]
  for idx,((body,rgb),parts) in enumerate(groups.items()):
-  geo=trimesh.util.concatenate(parts);name=f'{body}-{idx}.stl';geo.export(mp/name);objects.append({'name':body+' '+str(idx),'body':body,'color':rgb[0]*65536+rgb[1]*256+rgb[2],'mesh_path':str((mp/name).relative_to(ROOT))});meshes.append((body,rgb,geo))
+  # Repair export winding for back-face culling; leave simulation vertices and states intact.
+  geo=trimesh.util.concatenate(parts);trimesh.repair.fix_normals(geo,multibody=True);name=f'{body}-{idx}.stl';geo.export(mp/name);objects.append({'name':body+' '+str(idx),'body':body,'color':rgb[0]*65536+rgb[1]*256+rgb[2],'mesh_path':str((mp/name).relative_to(ROOT))});meshes.append((body,rgb,geo))
  for kind in ['rest','leaf','stalk','neighbor']:
   qpath=P/kind/'rollout.npz'
   if not qpath.exists():continue
