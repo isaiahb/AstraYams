@@ -92,5 +92,54 @@
         "physical_state_sha256": "97d812d7ee3d0084fb6c5520abd0126623c4b4f4473fef7bb4de2118181e4bf2"
       }
     ]
+  },
+  "cut_and_catch": {
+    "run": "partial-chain-v6",
+    "first_sustained_catch_s": 12.52,
+    "full_harvest_success": false,
+    "termination_reason": "skill timeout: release_withdraw",
+    "cut_event": {
+      "time_s": 9.487250000001225,
+      "blade_force_N": [
+        2.7645338054832647,
+        2.761842044727094
+      ],
+      "work_J": 0.0015060373146437633,
+      "threshold_J": 0.0015,
+      "qpos_jump": 0.0,
+      "qvel_jump": 0.0
+    },
+    "net_hold_steps": 375,
+    "net_contact_N": 0.27723473363104423,
+    "blade_forces_N": [
+      0.0,
+      0.0
+    ],
+    "peak_neighbor_contact": {
+      "force_N": 0.0,
+      "geoms": [],
+      "time_s": 0.0
+    },
+    "peak_interarm_N": 0.0,
+    "handoffs": [
+      {
+        "from_skill": "position both",
+        "to_skill": "align",
+        "time_s": 5.86,
+        "physical_state_sha256": "6052eaf1b16ed36d16672d5782350616089e461289ef2e3b487a8ab03be4050e"
+      },
+      {
+        "from_skill": "align",
+        "to_skill": "clip",
+        "time_s": 9.32,
+        "physical_state_sha256": "2ab832cc96b955a5f5d249923ab692ace063030fe9ee760c44c65cddcbb5b852"
+      },
+      {
+        "from_skill": "clip",
+        "to_skill": "release_withdraw",
+        "time_s": 9.5,
+        "physical_state_sha256": "4a4d9fb13f83006687c9055594304bae76b2fd21f96f0ffd1d7ce6cbaa7022f1"
+      }
+    ]
   }
 }

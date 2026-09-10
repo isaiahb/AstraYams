@@ -72,3 +72,10 @@ Known limits: privileged simulator-state policies, no cameras; same-arm self-col
 5. Include the other learned arm policy during training when its response changes the transition dynamics. Freeze its weights and record its checkpoint identity.
 6. Compare reduced training physics against full plant/textile dynamics. Reject a frozen unloaded net for loaded states, airborne release starts, or ignored contact categories. Full-physics failures remain failures.
 7. Preserve checkpoints, controller provenance, state-preserving handoff assertions, untouched acceptance thresholds, report hashes and inspectable replay. A score is a proxy until material/robot experiments calibrate it.
+
+
+## First continuous learned physical cut-and-catch
+
+`partial-chain-v6` (full plant + dynamic textile, 0.125 ms) runs five PPOs: support and coarse approach concurrently, fine alignment, clipping, then coordinated seven-action cutter retreat/release with the support PPO as partner. Physical cut at 9.48725 s, both blade forces about 2.76 N, accumulated work 1.506 mJ, no pose/velocity jump. The fruit is retained from 12.52 s; the final record has 375 consecutive receiving steps (7.5 s), 0.277 N net contact and zero blade forces. Recorded neighboring and inter-arm contact are zero. Every skill boundary preserves qpos, qvel and equality state.
+
+**The run still fails the complete requested contract.** At 19.52 s, retreat times out about 6.02 mm / 0.092 rad from its goal. Therefore carry/unload are not started, no basket score is awarded, and `full_harvest_success` remains false. This is evidence of a continuous learned cut-and-catch, not a completed harvest-to-basket or generalized full-harvest policy. It uses the original designated-fruit cluster, separately from the two held-out plants used to validate support positioning.
