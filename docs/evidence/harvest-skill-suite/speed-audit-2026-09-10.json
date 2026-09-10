@@ -1,0 +1,154 @@
+[
+  {
+    "run": "runs/harvest-skill-suite/partial-chain-v6",
+    "episodes": [
+      {
+        "recording": "runs/harvest-skill-suite/partial-chain-v6/episode-91001.json",
+        "sha256": "fb38e17a46bb5e7697c13164254f27bfd964bd4e5b2d41c906765abb1ffabafe",
+        "physics_sha256": "9add1b030f93b3a21fe5b375474a5bb31d06b28cfdd37ce21913934de5b83945",
+        "controller": "Learned PPO chain through release_withdraw. Support and approach run concurrently; idle-arm finite motor holding. No runtime IK or scripted movement fallback. Privileged simulation state; one designated fruit per episode.",
+        "seed": 91001,
+        "timing": {
+          "clock": "elapsed simulation seconds; both arms share the same clock",
+          "elapsed_s": 19.52,
+          "phases": [
+            {
+              "phase": "position both",
+              "start_s": 0.0,
+              "end_s": 5.86,
+              "duration_s": 5.86
+            },
+            {
+              "phase": "align",
+              "start_s": 5.86,
+              "end_s": 9.32,
+              "duration_s": 3.46
+            },
+            {
+              "phase": "clip",
+              "start_s": 9.32,
+              "end_s": 9.5,
+              "duration_s": 0.17999999999999972
+            },
+            {
+              "phase": "release_withdraw",
+              "start_s": 9.5,
+              "end_s": 19.52,
+              "duration_s": 10.02
+            }
+          ],
+          "cut_s": 9.487250000001225,
+          "first_sustained_net_retention_s": 12.52,
+          "first_settled_placement_s": null,
+          "accepted_harvest_to_placement_s": null,
+          "full_harvest_completed": false,
+          "any_invalid": false,
+          "operational_good_fruit_per_hour": null,
+          "throughput_scope": "Not measured: requires repeated complete cycles, ready-for-next, failures/recovery, target selection and plant/basket handling time. Never sum independently reset subtasks or double the rate for two arms."
+        },
+        "arms": {
+          "catcher": {
+            "sampled_peak_joint_speed_rad_s": 0.2380792333391986,
+            "sampled_p95_max_joint_speed_rad_s": 0.10919889157535512,
+            "peak_recorded_target_slew_rad_s": 0.3281905548647046,
+            "joint_travel_rad_per_joint": [
+              0.17517893111395397,
+              0.1729887807936158,
+              0.3552728179125593,
+              0.11467523874032337,
+              0.14088326845973126,
+              0.07696852614057777
+            ]
+          },
+          "cutter": {
+            "sampled_peak_joint_speed_rad_s": 0.10272853973759612,
+            "sampled_p95_max_joint_speed_rad_s": 0.06991388708904935,
+            "peak_recorded_target_slew_rad_s": 0.12305581476539636,
+            "joint_travel_rad_per_joint": [
+              0.1866348159019087,
+              0.3086913455808,
+              0.28552364291241394,
+              0.5447184406772236,
+              0.19463017623839884,
+              0.12114938669967916
+            ]
+          }
+        },
+        "motion_scope": "Recorded 50 Hz samples can miss between-sample peaks. Joint-target slew is not actual joint speed or a hardware safety limit."
+      }
+    ]
+  },
+  {
+    "run": "runs/harvest-skill-suite/basket-commission-v8",
+    "episodes": [
+      {
+        "recording": "runs/harvest-skill-suite/basket-commission-v8/episode-61001.json",
+        "sha256": "752fe5893c054f8275172987bc6e74f272e148a63a26917acf84321574b74a04",
+        "physics_sha256": "f237d4d866e47126d71b721e9e1cfd3396a68d1bc8a41f2c667a382b9a156254",
+        "controller": "Scripted basket commissioning from recorded cut-and-caught state; offline IK path, finite motor forces. No learned carry/unload claim.",
+        "seed": 61001,
+        "timing": {
+          "clock": "elapsed simulation seconds; both arms share the same clock",
+          "elapsed_s": 15.68,
+          "phases": [
+            {
+              "phase": "carry",
+              "start_s": 0.0,
+              "end_s": 3.54,
+              "duration_s": 3.54
+            },
+            {
+              "phase": "lower",
+              "start_s": 3.54,
+              "end_s": 4.3,
+              "duration_s": 0.7599999999999998
+            },
+            {
+              "phase": "unload",
+              "start_s": 4.3,
+              "end_s": 15.68,
+              "duration_s": 11.379999999999999
+            }
+          ],
+          "cut_s": null,
+          "first_sustained_net_retention_s": 0.5,
+          "first_settled_placement_s": 15.68,
+          "accepted_harvest_to_placement_s": null,
+          "full_harvest_completed": false,
+          "any_invalid": false,
+          "operational_good_fruit_per_hour": null,
+          "throughput_scope": "Not measured: requires repeated complete cycles, ready-for-next, failures/recovery, target selection and plant/basket handling time. Never sum independently reset subtasks or double the rate for two arms."
+        },
+        "arms": {
+          "catcher": {
+            "sampled_peak_joint_speed_rad_s": 0.2313256326063382,
+            "sampled_p95_max_joint_speed_rad_s": 0.21957622173736396,
+            "peak_recorded_target_slew_rad_s": 0.30000000000000665,
+            "joint_travel_rad_per_joint": [
+              0.7362387230268137,
+              0.3311077457232741,
+              0.3628430333566882,
+              0.15250603952053052,
+              0.06612953544099844,
+              1.9321313495345103
+            ]
+          },
+          "cutter": {
+            "sampled_peak_joint_speed_rad_s": 0.0025537968090472013,
+            "sampled_p95_max_joint_speed_rad_s": 1.0327682746191044e-05,
+            "peak_recorded_target_slew_rad_s": 0.0,
+            "joint_travel_rad_per_joint": [
+              4.265421751771718e-05,
+              1.0880209727344436e-05,
+              2.5407743268208346e-05,
+              4.5763153034395014e-05,
+              6.630371924580655e-05,
+              8.011253114410401e-05
+            ]
+          }
+        },
+        "motion_scope": "Recorded 50 Hz samples can miss between-sample peaks. Joint-target slew is not actual joint speed or a hardware safety limit."
+      }
+    ]
+  }
+]

@@ -27,6 +27,12 @@ Known limits: privileged simulator-state policies, no cameras; same-arm self-col
 
 ## Subsequent evidence
 
+- Speed audit: [human references, recorded phase timings and next training protocol](SPEED.md).
+  New composition/commissioning reports separate partial skill time from accepted
+  harvest-to-placement time. The current two recordings establish no complete
+  learned harvest cycle or operational throughput; existing acceptance checks
+  and policy action scales are unchanged.
+
 - Withdrawal v3: 3/4 local full-scene holdouts (73001–73004), 0/1 zero-command baseline. Retraining retained the dynamic net. This is still one cluster, not morphology generalization.
 - Clipping v2 local full-scene check: 2/4 (63001–63004); approach-plus-clip remains rejected.
 - Basket v4: fruit reached receiving basket but did not meet the settling-speed/hold contract; score remains zero.

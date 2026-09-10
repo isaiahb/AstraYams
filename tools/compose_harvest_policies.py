@@ -12,6 +12,7 @@ from astrafactory.harvest_joint_skill import HarvestJointSkill
 from astrafactory.cutter_skill import CutterSkillEnv
 from astrafactory.cut_release_skill import CutReleaseSkill
 from astrafactory.release_withdraw_skill import ReleaseWithdrawSkill
+from astrafactory.harvest_timing import summarize_timing
 
 
 def state_hash(e):
@@ -111,6 +112,7 @@ def run(config,out,seed,through='unload'):
     R=s.goal_R.copy();kwargs=dict(goal=e.data.site_xpos[e.cutsite]+R[:,2]*.035+[0,0,.020],R=R)
    digest=bind(s,e,**kwargs);handoffs.append(dict(from_skill=phase,to_skill=next_phase,time_s=e.elapsed,physical_state_sha256=digest));print('HANDOFF',phase,'->',next_phase,'at',e.elapsed,'s',flush=True);phase=next_phase;phase_steps=0
  result=dict(info,seed=seed,is_success=success,full_harvest_success=success and through=='unload',tested_through=through,termination_reason=reason,handoffs=handoffs,policy_sha256={k:hashlib.sha256(Path(cfg['policies'][k]).read_bytes()).hexdigest() for k in required},controller='Learned PPO chain through '+through+'. Support and approach run concurrently; idle-arm finite motor holding. No runtime IK or scripted movement fallback. Privileged simulation state; one designated fruit per episode.')
+ result['timing']=summarize_timing(trace,result)
  (out/f'episode-{seed}.json').write_text(json.dumps(dict(result=result,trace=trace),indent=2))
  np.savez_compressed(out/f'episode-{seed}.npz',qpos=qs,qvel=vs,eq_active=eq,flex_vertices=net,catch_targets=catch_targets,cut_targets=cut_targets,jaw_targets=jaw_targets,actions=all_actions,t=np.arange(len(qs))*.02)
  print(json.dumps(result),flush=True);return result

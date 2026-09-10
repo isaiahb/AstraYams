@@ -4,6 +4,7 @@ import argparse,json,shutil,time,xml.etree.ElementTree as E
 import numpy as np,mujoco
 from scipy.optimize import least_squares
 from astrafactory.harvest_basket import HarvestBasketEnv
+from astrafactory.harvest_timing import summarize_timing
 
 
 def run(out,task,dt=None):
@@ -44,6 +45,7 @@ def run(out,task,dt=None):
   if info['invalid'] or info['placement_success']:break
  np.savez_compressed(out/'episode-61001.npz',qpos=qs,qvel=vs,controls=ctrl,catch_targets=targets,cut_targets=cuts,eq_active=eqs,flex_vertices=flex,t=np.arange(len(qs))*.02)
  result=dict(**info,seed=61001,wall_s=time.time()-start,controller='Scripted basket commissioning from recorded cut-and-caught state; offline IK path, finite motor forces. No learned carry/unload claim.')
+ result['timing']=summarize_timing(rows,result)
  (out/'episode-61001.json').write_text(json.dumps(dict(result=result,trace=rows),indent=2)+'\n');print('RESULT',json.dumps(result),flush=True)
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--out',type=Path,default=Path('runs/harvest-skill-suite/basket-commission-v3'));p.add_argument('--task',type=Path,default=Path('runs/harvest-skill-suite/basket-task-v3'));p.add_argument('--dt',type=float);a=p.parse_args();run(a.out,a.task,a.dt)
