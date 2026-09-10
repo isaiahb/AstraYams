@@ -1,0 +1,46 @@
+{
+  "title": "Astra teaches a small catcher-positioning specialist",
+  "algorithm": "PPO from scratch",
+  "actor_hidden_layers": [
+    32,
+    32
+  ],
+  "observations": "35 privileged simulator state values: joints, joint-target error, target position/velocity, catcher normal, previous action, grasp quality, hold progress. Not a camera policy.",
+  "action": "Six joint-target increments at 50 Hz; finite-torque PD underneath. No IK or BC in execution.",
+  "task": "Place the gripper-held catcher rim 18 mm below the lowest point of the outer berry, center it and hold 0.4 s.",
+  "success": "3D rim-center error <5 mm, normal_z >0.96, joint speed norm <0.35, both jaws >0.2 N, tool slip <5 mm and rotation <0.15 rad for 20 steps.",
+  "failure": "Unexpected robot/tool contact >0.8 N, penetration >0.8 mm, tool slip >25 mm, rotation >0.5 rad, or numerical warning. These are engineering criteria, not biological limits.",
+  "variation": "Plant XYZ +/-20/20/12 mm, yaw +/-0.2 rad, stalk stiffness +/-15%; full plant joints retained. Priors, not identified real distributions.",
+  "train_variation": [
+    0.2,
+    0.6,
+    1.0
+  ],
+  "dev_seeds": [
+    41001,
+    41002,
+    41003
+  ],
+  "holdout_seeds": [
+    42001,
+    42002,
+    42003,
+    42004,
+    42005,
+    42006,
+    42007,
+    42008,
+    42009,
+    42010,
+    42011,
+    42012
+  ],
+  "reward_design": "Dense progress and proximity reward, upright-tool term, action/jerk costs, sustained-success bonus and invalid-contact penalty. Defined before training; see source.",
+  "scope": "Positioning subskill only. Catcher is prepositioned between jaws at reset; no pickup. Textile is a visual rest shape, no net/fruit contact or cutting. Self-collision disabled; uncalibrated actuators, stiffness and friction. State-based simulated generalization only.",
+  "source_hashes": {
+    "src/astrafactory/catcher_positioning.py": "b569d2b66ca9c1cc6cd1c8bf6c152491fcb88c32fbc73a1f6620ed2041c6071d",
+    "tools/build_catcher_positioning.py": "af4714552be59d15c5870e511fca3ad92d910da808fd8bd313b7d7772c6c7dc5",
+    "/Users/isaiah/Documents/BallahTech/AstraFactory/tools/train_catcher_specialist.py": "23feff8c24b19d8f381afe43cf91251a97728c0b321cbed17a0fa587fdd4128c",
+    "/Users/isaiah/Documents/BallahTech/AstraFactory/tasks/yam_catcher_positioning/scene.xml": "164d5ce1dd94974cd503e44ce036e322a76061659b99de488edd519ef2982017"
+  }
+}

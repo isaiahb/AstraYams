@@ -1,0 +1,941 @@
+{
+  "status": "evaluated",
+  "actor_parameters": 2406,
+  "checkpoint": "runs/catcher-specialist-v1/round-2.zip",
+  "checkpoint_sha256": "45fdc0478d5f22eff071a55c093f629c58873f8dcab18152f4004132356ff0a7",
+  "successes": 0,
+  "episodes": 12,
+  "baseline_successes": 0,
+  "rows": [
+    {
+      "seed": 42001,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.018133463551789072,
+      "normal_z": 0.9859849496502995,
+      "joint_speed_norm": 0.017279207538360604,
+      "hold_steps": 0,
+      "return_sum": 133.83634077374384,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          0.0053430814577233,
+          -0.009457483260659897,
+          -0.007505408323873498
+        ],
+        "yaw_rad": -0.04930844962275232,
+        "stiffness_scale": 0.866922610298079
+      },
+      "left_jaw_N": 5.369360151173938,
+      "right_jaw_N": 5.361575193706146,
+      "tool_slip_m": 0.00394955209114623,
+      "tool_rotation_rad": 0.030162184820976313,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42002,
+      "is_success": false,
+      "invalid": true,
+      "distance_m": 0.23967247777384548,
+      "normal_z": 0.9397584793297276,
+      "joint_speed_norm": 2.001235673481839,
+      "hold_steps": 0,
+      "return_sum": 27.215816589307366,
+      "sim_s": 2.96,
+      "peak_wrong_contact_N": 646.1515459593111,
+      "domain_randomization": {
+        "offset_m": [
+          0.0042074965944857955,
+          0.011684799058017835,
+          -0.010501965504859687
+        ],
+        "yaw_rad": 0.19103039061480587,
+        "stiffness_scale": 0.9532607611169445
+      },
+      "left_jaw_N": 5.694976908386384,
+      "right_jaw_N": 7.7908764229652805,
+      "tool_slip_m": 0.0034822573453707063,
+      "tool_rotation_rad": 0.026720634737312655,
+      "wrong_contact_N": 537.444201864031,
+      "penetration_m": 0.0008734686167945344
+    },
+    {
+      "seed": 42003,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.01712829615261154,
+      "normal_z": 0.9816959811912112,
+      "joint_speed_norm": 0.014532425703218513,
+      "hold_steps": 0,
+      "return_sum": 142.36266620544777,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          -0.009855654274795093,
+          -0.013620544796951899,
+          0.007167021439857685
+        ],
+        "yaw_rad": 0.07630221445023185,
+        "stiffness_scale": 1.0398571631753464
+      },
+      "left_jaw_N": 5.419604847716388,
+      "right_jaw_N": 5.300342545994225,
+      "tool_slip_m": 0.003927194777970325,
+      "tool_rotation_rad": 0.030000104663983174,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42004,
+      "is_success": false,
+      "invalid": true,
+      "distance_m": 0.23777029261010713,
+      "normal_z": 0.9414943869292338,
+      "joint_speed_norm": 0.10959946023933179,
+      "hold_steps": 0,
+      "return_sum": 31.391674451515048,
+      "sim_s": 3.08,
+      "peak_wrong_contact_N": 620.4508534946115,
+      "domain_randomization": {
+        "offset_m": [
+          0.0018102979171365475,
+          0.01593368454007187,
+          -0.011355349990103814
+        ],
+        "yaw_rad": 0.10578446424684569,
+        "stiffness_scale": 0.9974708980387352
+      },
+      "left_jaw_N": 5.35124096549986,
+      "right_jaw_N": 5.396120296091689,
+      "tool_slip_m": 0.0043770949334625995,
+      "tool_rotation_rad": 0.03360123485561073,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0002070901924236812
+    },
+    {
+      "seed": 42005,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.01902218081960624,
+      "normal_z": 0.9826533988206583,
+      "joint_speed_norm": 0.01643358246334045,
+      "hold_steps": 0,
+      "return_sum": 127.97692276466903,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          -0.012034833973836645,
+          0.0018870466448085567,
+          -0.004391617161480433
+        ],
+        "yaw_rad": 0.027065902669044073,
+        "stiffness_scale": 1.0455085703166938
+      },
+      "left_jaw_N": 5.372735952239495,
+      "right_jaw_N": 5.3619139966572185,
+      "tool_slip_m": 0.0039481333195378445,
+      "tool_rotation_rad": 0.03014973284364544,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42006,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.019823586262770677,
+      "normal_z": 0.9837307062449494,
+      "joint_speed_norm": 0.01671048198512726,
+      "hold_steps": 0,
+      "return_sum": 125.14869256868141,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          0.008642579383241462,
+          -0.00842795774335662,
+          -0.00365175425087361
+        ],
+        "yaw_rad": -0.05396217228588318,
+        "stiffness_scale": 0.9949188478710174
+      },
+      "left_jaw_N": 5.412825685350625,
+      "right_jaw_N": 5.297162614365072,
+      "tool_slip_m": 0.003946213001111206,
+      "tool_rotation_rad": 0.030142762604348693,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42007,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.017652519909484105,
+      "normal_z": 0.9850262328558318,
+      "joint_speed_norm": 0.01770277096605925,
+      "hold_steps": 0,
+      "return_sum": 133.29425609808055,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          -0.01560279791536138,
+          0.00456641095656769,
+          -0.00927028689037248
+        ],
+        "yaw_rad": -0.011253018529789173,
+        "stiffness_scale": 0.8692486620956155
+      },
+      "left_jaw_N": 5.419630750799006,
+      "right_jaw_N": 5.305324443973901,
+      "tool_slip_m": 0.003943758989065237,
+      "tool_rotation_rad": 0.03010657515008305,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42008,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.020524067845340267,
+      "normal_z": 0.9822155774712188,
+      "joint_speed_norm": 0.01578072159576761,
+      "hold_steps": 0,
+      "return_sum": 122.16327003144268,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          0.018736154164864547,
+          -0.017227423686773286,
+          0.00417973216492597
+        ],
+        "yaw_rad": -0.08436123169262855,
+        "stiffness_scale": 0.9819439218945614
+      },
+      "left_jaw_N": 5.418135150468256,
+      "right_jaw_N": 5.306071875897771,
+      "tool_slip_m": 0.0039344409132640625,
+      "tool_rotation_rad": 0.03005320830798833,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42009,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.01761969601944627,
+      "normal_z": 0.9827745769394554,
+      "joint_speed_norm": 0.015018127412993439,
+      "hold_steps": 0,
+      "return_sum": 139.41846913893082,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          0.004175106119172054,
+          -0.012056825735884439,
+          0.005759662471250375
+        ],
+        "yaw_rad": -0.11946993277723822,
+        "stiffness_scale": 0.8714695097603489
+      },
+      "left_jaw_N": 5.376769677587082,
+      "right_jaw_N": 5.365030736080255,
+      "tool_slip_m": 0.003943124237047613,
+      "tool_rotation_rad": 0.030108999455425178,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42010,
+      "is_success": false,
+      "invalid": true,
+      "distance_m": 0.2419734569422813,
+      "normal_z": 0.9455060229360781,
+      "joint_speed_norm": 0.11108734326397318,
+      "hold_steps": 0,
+      "return_sum": 54.6366404467605,
+      "sim_s": 3.8000000000000003,
+      "peak_wrong_contact_N": 619.0772202269668,
+      "domain_randomization": {
+        "offset_m": [
+          -0.00030235806404184997,
+          0.015414750992031148,
+          -0.008994603672649638
+        ],
+        "yaw_rad": 0.008536530338270199,
+        "stiffness_scale": 1.148529078792913
+      },
+      "left_jaw_N": 5.361774654184647,
+      "right_jaw_N": 5.37283630242681,
+      "tool_slip_m": 0.005010762867075061,
+      "tool_rotation_rad": 0.038254827794711295,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.00023163261594495027
+    },
+    {
+      "seed": 42011,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.02578450680988443,
+      "normal_z": 0.9800736413479785,
+      "joint_speed_norm": 0.09109247309876825,
+      "hold_steps": 0,
+      "return_sum": 95.86772950830735,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          0.01597761145418804,
+          -0.007986260991651659,
+          0.0044963362250297866
+        ],
+        "yaw_rad": 0.11084757255068359,
+        "stiffness_scale": 0.9606073545642827
+      },
+      "left_jaw_N": 5.374906894699126,
+      "right_jaw_N": 5.35695457842871,
+      "tool_slip_m": 0.003932338246406358,
+      "tool_rotation_rad": 0.03004562407255409,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42012,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.03408549685613095,
+      "normal_z": 0.9882179155073498,
+      "joint_speed_norm": 0.24038109493570456,
+      "hold_steps": 0,
+      "return_sum": 97.97309350607233,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          -0.012375308577322764,
+          0.011918932786089825,
+          -0.004600543328627958
+        ],
+        "yaw_rad": 0.17094101324269317,
+        "stiffness_scale": 1.0423158954759955
+      },
+      "left_jaw_N": 5.361941271765414,
+      "right_jaw_N": 5.354229635889275,
+      "tool_slip_m": 0.003920624124376304,
+      "tool_rotation_rad": 0.029941619597504826,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    }
+  ],
+  "baseline_rows": [
+    {
+      "seed": 42001,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.03170515227993648,
+      "normal_z": 0.9994984562170663,
+      "joint_speed_norm": 9.865001270851274e-06,
+      "hold_steps": 0,
+      "return_sum": 98.17609447133133,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          0.0053430814577233,
+          -0.009457483260659897,
+          -0.007505408323873498
+        ],
+        "yaw_rad": -0.04930844962275232,
+        "stiffness_scale": 0.866922610298079
+      },
+      "left_jaw_N": 5.34208716801531,
+      "right_jaw_N": 5.370347202187927,
+      "tool_slip_m": 0.0039686392399651705,
+      "tool_rotation_rad": 0.030300821655070805,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42002,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.05981450700434531,
+      "normal_z": 0.9994984562170663,
+      "joint_speed_norm": 9.865001270851274e-06,
+      "hold_steps": 0,
+      "return_sum": 52.00359620980138,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          0.0042074965944857955,
+          0.011684799058017835,
+          -0.010501965504859687
+        ],
+        "yaw_rad": 0.19103039061480587,
+        "stiffness_scale": 0.9532607611169445
+      },
+      "left_jaw_N": 5.34208716801531,
+      "right_jaw_N": 5.370347202187927,
+      "tool_slip_m": 0.0039686392399651705,
+      "tool_rotation_rad": 0.030300821655070805,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42003,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.03877093313835891,
+      "normal_z": 0.9994984562170663,
+      "joint_speed_norm": 9.865001270851274e-06,
+      "hold_steps": 0,
+      "return_sum": 81.9880211275818,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          -0.009855654274795093,
+          -0.013620544796951899,
+          0.007167021439857685
+        ],
+        "yaw_rad": 0.07630221445023185,
+        "stiffness_scale": 1.0398571631753464
+      },
+      "left_jaw_N": 5.34208716801531,
+      "right_jaw_N": 5.370347202187927,
+      "tool_slip_m": 0.0039686392399651705,
+      "tool_rotation_rad": 0.030300821655070805,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42004,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.059970130657508336,
+      "normal_z": 0.9994984562170663,
+      "joint_speed_norm": 9.865001270851274e-06,
+      "hold_steps": 0,
+      "return_sum": 51.86316713977304,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          0.0018102979171365475,
+          0.01593368454007187,
+          -0.011355349990103814
+        ],
+        "yaw_rad": 0.10578446424684569,
+        "stiffness_scale": 0.9974708980387352
+      },
+      "left_jaw_N": 5.34208716801531,
+      "right_jaw_N": 5.370347202187927,
+      "tool_slip_m": 0.0039686392399651705,
+      "tool_rotation_rad": 0.030300821655070805,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42005,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.045667362453564245,
+      "normal_z": 0.9994984562170663,
+      "joint_speed_norm": 9.865001270851274e-06,
+      "hold_steps": 0,
+      "return_sum": 68.99779491690403,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          -0.012034833973836645,
+          0.0018870466448085567,
+          -0.004391617161480433
+        ],
+        "yaw_rad": 0.027065902669044073,
+        "stiffness_scale": 1.0455085703166938
+      },
+      "left_jaw_N": 5.34208716801531,
+      "right_jaw_N": 5.370347202187927,
+      "tool_slip_m": 0.0039686392399651705,
+      "tool_rotation_rad": 0.030300821655070805,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42006,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.03348055596201692,
+      "normal_z": 0.9994984562170663,
+      "joint_speed_norm": 9.865001270851274e-06,
+      "hold_steps": 0,
+      "return_sum": 93.73208111365358,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          0.008642579383241462,
+          -0.00842795774335662,
+          -0.00365175425087361
+        ],
+        "yaw_rad": -0.05396217228588318,
+        "stiffness_scale": 0.9949188478710174
+      },
+      "left_jaw_N": 5.34208716801531,
+      "right_jaw_N": 5.370347202187927,
+      "tool_slip_m": 0.0039686392399651705,
+      "tool_rotation_rad": 0.030300821655070805,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42007,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.04920428827284203,
+      "normal_z": 0.9994984562170663,
+      "joint_speed_norm": 9.865001270851274e-06,
+      "hold_steps": 0,
+      "return_sum": 63.78862611531687,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          -0.01560279791536138,
+          0.00456641095656769,
+          -0.00927028689037248
+        ],
+        "yaw_rad": -0.011253018529789173,
+        "stiffness_scale": 0.8692486620956155
+      },
+      "left_jaw_N": 5.34208716801531,
+      "right_jaw_N": 5.370347202187927,
+      "tool_slip_m": 0.0039686392399651705,
+      "tool_rotation_rad": 0.030300821655070805,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42008,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.03354822594251937,
+      "normal_z": 0.9994984562170663,
+      "joint_speed_norm": 9.865001270851274e-06,
+      "hold_steps": 0,
+      "return_sum": 93.98627211804289,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          0.018736154164864547,
+          -0.017227423686773286,
+          0.00417973216492597
+        ],
+        "yaw_rad": -0.08436123169262855,
+        "stiffness_scale": 0.9819439218945614
+      },
+      "left_jaw_N": 5.34208716801531,
+      "right_jaw_N": 5.370347202187927,
+      "tool_slip_m": 0.0039686392399651705,
+      "tool_rotation_rad": 0.030300821655070805,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42009,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.033928138073056634,
+      "normal_z": 0.9994984562170663,
+      "joint_speed_norm": 9.865001270851274e-06,
+      "hold_steps": 0,
+      "return_sum": 93.1588773763345,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          0.004175106119172054,
+          -0.012056825735884439,
+          0.005759662471250375
+        ],
+        "yaw_rad": -0.11946993277723822,
+        "stiffness_scale": 0.8714695097603489
+      },
+      "left_jaw_N": 5.34208716801531,
+      "right_jaw_N": 5.370347202187927,
+      "tool_slip_m": 0.0039686392399651705,
+      "tool_rotation_rad": 0.030300821655070805,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42010,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.054951352834022214,
+      "normal_z": 0.9994984562170663,
+      "joint_speed_norm": 9.865001270851274e-06,
+      "hold_steps": 0,
+      "return_sum": 56.78317567261256,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          -0.00030235806404184997,
+          0.015414750992031148,
+          -0.008994603672649638
+        ],
+        "yaw_rad": 0.008536530338270199,
+        "stiffness_scale": 1.148529078792913
+      },
+      "left_jaw_N": 5.34208716801531,
+      "right_jaw_N": 5.370347202187927,
+      "tool_slip_m": 0.0039686392399651705,
+      "tool_rotation_rad": 0.030300821655070805,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42011,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.046036403705966254,
+      "normal_z": 0.9994984562170663,
+      "joint_speed_norm": 9.865001270851274e-06,
+      "hold_steps": 0,
+      "return_sum": 68.5858632501747,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          0.01597761145418804,
+          -0.007986260991651659,
+          0.0044963362250297866
+        ],
+        "yaw_rad": 0.11084757255068359,
+        "stiffness_scale": 0.9606073545642827
+      },
+      "left_jaw_N": 5.34208716801531,
+      "right_jaw_N": 5.370347202187927,
+      "tool_slip_m": 0.0039686392399651705,
+      "tool_rotation_rad": 0.030300821655070805,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    },
+    {
+      "seed": 42012,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.05956257389235098,
+      "normal_z": 0.9994984562170663,
+      "joint_speed_norm": 9.865001270851274e-06,
+      "hold_steps": 0,
+      "return_sum": 52.29872658062182,
+      "sim_s": 4.0,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          -0.012375308577322764,
+          0.011918932786089825,
+          -0.004600543328627958
+        ],
+        "yaw_rad": 0.17094101324269317,
+        "stiffness_scale": 1.0423158954759955
+      },
+      "left_jaw_N": 5.34208716801531,
+      "right_jaw_N": 5.370347202187927,
+      "tool_slip_m": 0.0039686392399651705,
+      "tool_rotation_rad": 0.030300821655070805,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "variation": 0.2,
+      "steps": 16384,
+      "train_seconds": 116.82687366590835,
+      "successes": 0,
+      "episodes": 3,
+      "mean_distance_m": 0.11476467147272744,
+      "rows": [
+        {
+          "seed": 41001,
+          "is_success": false,
+          "invalid": true,
+          "distance_m": 0.26475413945003373,
+          "normal_z": 0.9239462334089666,
+          "joint_speed_norm": 0.17220805080895074,
+          "hold_steps": 0,
+          "return_sum": 42.31218293492554,
+          "sim_s": 3.52,
+          "peak_wrong_contact_N": 650.1160978343429,
+          "domain_randomization": {
+            "offset_m": [
+              0.009965310336625023,
+              -0.01835801430774946,
+              -0.0001262168569314195
+            ],
+            "yaw_rad": 0.1706670105458722,
+            "stiffness_scale": 0.9457779615195666
+          },
+          "left_jaw_N": 5.376575101676368,
+          "right_jaw_N": 5.353538283332937,
+          "tool_slip_m": 0.005238492719863249,
+          "tool_rotation_rad": 0.04003219633993669,
+          "wrong_contact_N": 7.183154356450433,
+          "penetration_m": 0.00023807705863379547
+        },
+        {
+          "seed": 41002,
+          "is_success": false,
+          "invalid": false,
+          "distance_m": 0.039382642171568956,
+          "normal_z": 0.9490022975873328,
+          "joint_speed_norm": 0.061911928713887676,
+          "hold_steps": 0,
+          "return_sum": 88.8460974753171,
+          "sim_s": 4.0,
+          "peak_wrong_contact_N": 0.0,
+          "domain_randomization": {
+            "offset_m": [
+              -0.0026304853880435974,
+              0.0032465935267446165,
+              0.011372082015451921
+            ],
+            "yaw_rad": -4.284459335011093e-05,
+            "stiffness_scale": 0.9504562277557556
+          },
+          "left_jaw_N": 5.416600958864635,
+          "right_jaw_N": 5.279004652942439,
+          "tool_slip_m": 0.0039036591341868633,
+          "tool_rotation_rad": 0.02983449875069397,
+          "wrong_contact_N": 0.0,
+          "penetration_m": 0.0
+        },
+        {
+          "seed": 41003,
+          "is_success": false,
+          "invalid": true,
+          "distance_m": 0.04015723279657964,
+          "normal_z": 0.9626056458774427,
+          "joint_speed_norm": 0.05805334971268732,
+          "hold_steps": 0,
+          "return_sum": 89.81252742985473,
+          "sim_s": 3.88,
+          "peak_wrong_contact_N": 7.640733638792229,
+          "domain_randomization": {
+            "offset_m": [
+              -0.0006200178406865753,
+              -0.01874788359659882,
+              0.00883453496477405
+            ],
+            "yaw_rad": -0.07129836027673812,
+            "stiffness_scale": 1.1009685530033897
+          },
+          "left_jaw_N": 5.372379545827635,
+          "right_jaw_N": 5.35104658617678,
+          "tool_slip_m": 0.003826038751247643,
+          "tool_rotation_rad": 0.029268558051763194,
+          "wrong_contact_N": 0.0,
+          "penetration_m": 0.0
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "variation": 0.6,
+      "steps": 32768,
+      "train_seconds": 112.23913358408026,
+      "successes": 0,
+      "episodes": 3,
+      "mean_distance_m": 0.020374152166957437,
+      "rows": [
+        {
+          "seed": 41001,
+          "is_success": false,
+          "invalid": false,
+          "distance_m": 0.02174400708983146,
+          "normal_z": 0.9819561375924066,
+          "joint_speed_norm": 0.017287369096823896,
+          "hold_steps": 0,
+          "return_sum": 115.50514711239508,
+          "sim_s": 4.0,
+          "peak_wrong_contact_N": 0.0,
+          "domain_randomization": {
+            "offset_m": [
+              0.009965310336625023,
+              -0.01835801430774946,
+              -0.0001262168569314195
+            ],
+            "yaw_rad": 0.1706670105458722,
+            "stiffness_scale": 0.9457779615195666
+          },
+          "left_jaw_N": 5.424640286814245,
+          "right_jaw_N": 5.308582707735245,
+          "tool_slip_m": 0.003943402960297343,
+          "tool_rotation_rad": 0.03012272378814715,
+          "wrong_contact_N": 0.0,
+          "penetration_m": 0.0
+        },
+        {
+          "seed": 41002,
+          "is_success": false,
+          "invalid": false,
+          "distance_m": 0.023904667653879854,
+          "normal_z": 0.9741561896659953,
+          "joint_speed_norm": 0.016344697338231795,
+          "hold_steps": 0,
+          "return_sum": 106.58606272660859,
+          "sim_s": 4.0,
+          "peak_wrong_contact_N": 0.0,
+          "domain_randomization": {
+            "offset_m": [
+              -0.0026304853880435974,
+              0.0032465935267446165,
+              0.011372082015451921
+            ],
+            "yaw_rad": -4.284459335011093e-05,
+            "stiffness_scale": 0.9504562277557556
+          },
+          "left_jaw_N": 5.367582381607463,
+          "right_jaw_N": 5.34285430332571,
+          "tool_slip_m": 0.003919510868320105,
+          "tool_rotation_rad": 0.029937956400755604,
+          "wrong_contact_N": 0.0,
+          "penetration_m": 0.0
+        },
+        {
+          "seed": 41003,
+          "is_success": false,
+          "invalid": false,
+          "distance_m": 0.015473781757160994,
+          "normal_z": 0.9833409692131365,
+          "joint_speed_norm": 0.014942767415435177,
+          "hold_steps": 0,
+          "return_sum": 154.18053055248595,
+          "sim_s": 4.0,
+          "peak_wrong_contact_N": 0.0,
+          "domain_randomization": {
+            "offset_m": [
+              -0.0006200178406865753,
+              -0.01874788359659882,
+              0.00883453496477405
+            ],
+            "yaw_rad": -0.07129836027673812,
+            "stiffness_scale": 1.1009685530033897
+          },
+          "left_jaw_N": 5.370236174415653,
+          "right_jaw_N": 5.361659442866757,
+          "tool_slip_m": 0.003944340017675055,
+          "tool_rotation_rad": 0.03012215751362639,
+          "wrong_contact_N": 0.0,
+          "penetration_m": 0.0
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "variation": 1.0,
+      "steps": 49152,
+      "train_seconds": 107.1917849581223,
+      "successes": 0,
+      "episodes": 3,
+      "mean_distance_m": 0.030833491844372802,
+      "rows": [
+        {
+          "seed": 41001,
+          "is_success": false,
+          "invalid": false,
+          "distance_m": 0.03468632203351071,
+          "normal_z": 0.979705740108618,
+          "joint_speed_norm": 0.05158897323816376,
+          "hold_steps": 0,
+          "return_sum": 94.76118556278227,
+          "sim_s": 4.0,
+          "peak_wrong_contact_N": 0.0,
+          "domain_randomization": {
+            "offset_m": [
+              0.009965310336625023,
+              -0.01835801430774946,
+              -0.0001262168569314195
+            ],
+            "yaw_rad": 0.1706670105458722,
+            "stiffness_scale": 0.9457779615195666
+          },
+          "left_jaw_N": 5.407691457273777,
+          "right_jaw_N": 5.316137373430987,
+          "tool_slip_m": 0.0039437621495428685,
+          "tool_rotation_rad": 0.030122157112410276,
+          "wrong_contact_N": 0.0,
+          "penetration_m": 0.0
+        },
+        {
+          "seed": 41002,
+          "is_success": false,
+          "invalid": false,
+          "distance_m": 0.03634032147690204,
+          "normal_z": 0.9743048130031084,
+          "joint_speed_norm": 0.05352258468249416,
+          "hold_steps": 0,
+          "return_sum": 90.47341777465087,
+          "sim_s": 4.0,
+          "peak_wrong_contact_N": 0.0,
+          "domain_randomization": {
+            "offset_m": [
+              -0.0026304853880435974,
+              0.0032465935267446165,
+              0.011372082015451921
+            ],
+            "yaw_rad": -4.284459335011093e-05,
+            "stiffness_scale": 0.9504562277557556
+          },
+          "left_jaw_N": 5.3778219992999,
+          "right_jaw_N": 5.354410814596704,
+          "tool_slip_m": 0.003940090943765199,
+          "tool_rotation_rad": 0.030086034396485606,
+          "wrong_contact_N": 0.0,
+          "penetration_m": 0.0
+        },
+        {
+          "seed": 41003,
+          "is_success": false,
+          "invalid": false,
+          "distance_m": 0.021473832022705672,
+          "normal_z": 0.9844608429591063,
+          "joint_speed_norm": 0.04172655929789288,
+          "hold_steps": 0,
+          "return_sum": 143.12104959160234,
+          "sim_s": 4.0,
+          "peak_wrong_contact_N": 0.0,
+          "domain_randomization": {
+            "offset_m": [
+              -0.0006200178406865753,
+              -0.01874788359659882,
+              0.00883453496477405
+            ],
+            "yaw_rad": -0.07129836027673812,
+            "stiffness_scale": 1.1009685530033897
+          },
+          "left_jaw_N": 5.417926928964755,
+          "right_jaw_N": 5.300687476534515,
+          "tool_slip_m": 0.003941747337796919,
+          "tool_rotation_rad": 0.030110281271514033,
+          "wrong_contact_N": 0.0,
+          "penetration_m": 0.0
+        }
+      ]
+    }
+  ],
+  "scope": "Positioning subskill only. Catcher is prepositioned between jaws at reset; no pickup. Textile is a visual rest shape, no net/fruit contact or cutting. Self-collision disabled; uncalibrated actuators, stiffness and friction. State-based simulated generalization only.",
+  "split": "single untouched holdout, model selected using development seeds only"
+}
