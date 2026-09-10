@@ -11,6 +11,7 @@ from astrafactory.harvest_basket import HarvestBasketEnv
 from astrafactory.harvest_joint_skill import HarvestJointSkill
 from astrafactory.cutter_skill import CutterSkillEnv
 from astrafactory.cut_release_skill import CutReleaseSkill
+from astrafactory.release_withdraw_skill import ReleaseWithdrawSkill
 
 
 def state_hash(e):
@@ -33,7 +34,8 @@ def bind(skill,e,goal=None,R=None):
 
 def run(config,out,seed,through='unload'):
  cfg=json.loads(Path(config).read_text());out.mkdir(parents=True,exist_ok=True)
- order=['support','approach']+(['align'] if 'align' in cfg['policies'] else [])+['clip']+(['release_cut'] if 'release_cut' in cfg['policies'] else [])+['withdraw','carry','unload'];required=order[:order.index(through)+1]
+ retreat=['release_withdraw'] if 'release_withdraw' in cfg['policies'] else (['release_cut'] if 'release_cut' in cfg['policies'] else [])+['withdraw']
+ order=['support','approach']+(['align'] if 'align' in cfg['policies'] else [])+['clip']+retreat+['carry','unload'];required=order[:order.index(through)+1]
  for key in required:
   if not Path(cfg['policies'][key]).is_file():raise FileNotFoundError(f'Missing learned {key} checkpoint; scripted fallback is forbidden')
  shutil.copytree(cfg['task'],out/'task',dirs_exist_ok=True);e=HarvestBasketEnv(task_dir=out/'task',variation=cfg.get('variation',0));e.reset(seed=seed)
@@ -48,10 +50,12 @@ def run(config,out,seed,through='unload'):
   s=CutterSkillEnv(source=cfg['cut_source'],difficulty=.5,joint_scale=cfg.get('clip_joint_scale',.25));bind(s,e);profiles['clip']=s
  if 'release_cut' in required:
   s=CutReleaseSkill(source=cfg['release_source']);bind(s,e);profiles['release_cut']=s
+ if 'release_withdraw' in required:
+  s=ReleaseWithdrawSkill(source=cfg['release_source'],support_policy=cfg['policies']['support']);bind(s,e);s.support_reference=support_reference.copy();profiles['release_withdraw']=s
  # The cutter approach target is derived from the current physical target stalk.
  approach=profiles['approach']
  if cfg.get('approach_goal')=='stalk-center':offset=np.zeros(3)
- bind(approach,e,goal=e.data.xpos[e.branch]+offset);phase='position both';phase_steps=0;handoffs=[];trace=[];qs=[e.data.qpos.copy()];vs=[e.data.qvel.copy()];eq=[e.data.eq_active.copy()];net=[e.data.flexvert_xpos.copy()];catch_targets=[e.target.copy()];cut_targets=[e.cut_target.copy()];all_actions=[];reason='horizon';success=False
+ bind(approach,e,goal=e.data.xpos[e.branch]+offset);phase='position both';phase_steps=0;handoffs=[];trace=[];qs=[e.data.qpos.copy()];vs=[e.data.qvel.copy()];eq=[e.data.eq_active.copy()];net=[e.data.flexvert_xpos.copy()];catch_targets=[e.target.copy()];cut_targets=[e.cut_target.copy()];jaw_targets=[e.jaw_target];all_actions=[];reason='horizon';success=False
  for step in range(cfg.get('horizon_steps',1600)):
   ca=cu=None;active=[];e.phase='PPO / '+phase
   if phase=='position both':
@@ -63,6 +67,8 @@ def run(config,out,seed,through='unload'):
    s=profiles['clip'];a=policies['clip'].predict(s.observe(),deterministic=True)[0];cu=a.copy();cu[:6]*=s.joint_scale;active=['clip']
   elif phase=='release_cut':
    s=profiles[phase];a=policies[phase].predict(s.observe(),deterministic=True)[0];cu=np.r_[np.zeros(6),a];active=[phase]
+  elif phase=='release_withdraw':
+   s=profiles[phase];a=policies[phase].predict(s.observe(),deterministic=True)[0];cu=a;ca=s.partner_action();active=[phase]+(['support'] if ca is not None else [])
   else:
    if phase=='align':profiles[phase].goal=e.data.xpos[e.branch].copy()
    s=profiles[phase];a=np.zeros(6) if phase=='withdraw' and s.hold>=10 and e.net_hold<25 else policies[phase].predict(s.observe(),deterministic=True)[0];active=[phase]
@@ -81,11 +87,12 @@ def run(config,out,seed,through='unload'):
    elif info['catcher_ready'] and contract['is_success'] and info['cut_distance_m']<.004:next_phase='clip'
   elif phase=='clip':
    _,_,_,_,contract=s.after_step(a,info)
-   if contract['is_success']:next_phase='release_cut' if 'release_cut' in profiles else 'withdraw'
+   if contract['is_success']:next_phase='release_withdraw' if 'release_withdraw' in profiles else 'release_cut' if 'release_cut' in profiles else 'withdraw'
   else:
    _,_,_,_,contract=s.after_step(a,info)
    if contract['is_success']:
-    if phase=='release_cut':next_phase='withdraw'
+    if phase=='release_withdraw':next_phase='carry'
+    elif phase=='release_cut':next_phase='withdraw'
     elif phase=='align' and info['cut_distance_m']<.004:next_phase='clip'
     elif phase=='withdraw' and e.net_hold>=25:next_phase='carry'
     elif phase=='carry':next_phase='unload'
@@ -93,19 +100,19 @@ def run(config,out,seed,through='unload'):
   if next_phase and ((phase=='position both' and through=='approach') or phase==through):
    success=True;reason='requested partial chain completed through '+through
   info.update(active_policies=active,coordinator_phase=phase,phase_steps=phase_steps,local_skill_contract=contract['is_success'],local_goal_error_m=contract.get('goal_error_m',contract.get('cutter_goal_error_m')),local_orientation_error_rad=contract.get('orientation_error_rad'),is_success=success)
-  trace.append(info);qs.append(e.data.qpos.copy());vs.append(e.data.qvel.copy());eq.append(e.data.eq_active.copy());net.append(e.data.flexvert_xpos.copy());catch_targets.append(e.target.copy());cut_targets.append(e.cut_target.copy());all_actions.append(np.r_[np.zeros(6) if ca is None else ca,np.zeros(7) if cu is None else cu])
+  trace.append(info);qs.append(e.data.qpos.copy());vs.append(e.data.qvel.copy());eq.append(e.data.eq_active.copy());net.append(e.data.flexvert_xpos.copy());catch_targets.append(e.target.copy());cut_targets.append(e.cut_target.copy());jaw_targets.append(e.jaw_target);all_actions.append(np.r_[np.zeros(6) if ca is None else ca,np.zeros(7) if cu is None else cu])
   if info['invalid']:reason='physical acceptance check failed';break
   if success:break
   if phase_steps>500:reason='skill timeout: '+phase;break
   if next_phase:
    s=profiles[next_phase];kwargs={}
    if next_phase=='align':kwargs=dict(goal=e.data.xpos[e.branch])
-   if next_phase=='withdraw':
+   if next_phase in ['withdraw','release_withdraw']:
     R=s.goal_R.copy();kwargs=dict(goal=e.data.site_xpos[e.cutsite]+R[:,2]*.035+[0,0,.020],R=R)
    digest=bind(s,e,**kwargs);handoffs.append(dict(from_skill=phase,to_skill=next_phase,time_s=e.elapsed,physical_state_sha256=digest));print('HANDOFF',phase,'->',next_phase,'at',e.elapsed,'s',flush=True);phase=next_phase;phase_steps=0
  result=dict(info,seed=seed,is_success=success,full_harvest_success=success and through=='unload',tested_through=through,termination_reason=reason,handoffs=handoffs,policy_sha256={k:hashlib.sha256(Path(cfg['policies'][k]).read_bytes()).hexdigest() for k in required},controller='Learned PPO chain through '+through+'. Support and approach run concurrently; idle-arm finite motor holding. No runtime IK or scripted movement fallback. Privileged simulation state; one designated fruit per episode.')
  (out/f'episode-{seed}.json').write_text(json.dumps(dict(result=result,trace=trace),indent=2))
- np.savez_compressed(out/f'episode-{seed}.npz',qpos=qs,qvel=vs,eq_active=eq,flex_vertices=net,catch_targets=catch_targets,cut_targets=cut_targets,actions=all_actions,t=np.arange(len(qs))*.02)
+ np.savez_compressed(out/f'episode-{seed}.npz',qpos=qs,qvel=vs,eq_active=eq,flex_vertices=net,catch_targets=catch_targets,cut_targets=cut_targets,jaw_targets=jaw_targets,actions=all_actions,t=np.arange(len(qs))*.02)
  print(json.dumps(result),flush=True);return result
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--config',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--seed',type=int,default=91001);p.add_argument('--through',choices=['approach','clip','withdraw','unload'],default='unload');a=p.parse_args();torch.set_num_threads(1);run(a.config,a.out,a.seed,a.through)
+ p=argparse.ArgumentParser();p.add_argument('--config',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--seed',type=int,default=91001);p.add_argument('--through',choices=['approach','clip','withdraw','release_withdraw','unload'],default='unload');a=p.parse_args();torch.set_num_threads(1);run(a.config,a.out,a.seed,a.through)

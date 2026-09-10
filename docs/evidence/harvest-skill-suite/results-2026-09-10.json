@@ -1,0 +1,96 @@
+{
+  "scope": "Research simulation. Privileged state policies. No real hardware validation.",
+  "full_learned_harvest_complete": false,
+  "skills": [
+    {
+      "run": "remote/support-v3",
+      "successes": 4,
+      "episodes": 4,
+      "checkpoint": "runs/harvest-skill-suite/remote/support-v3/round-3.zip",
+      "report_sha256": "33a5f772fd34c0812c3994a160beeb5daf71a7ca49c2ee3ceee825b580933b00",
+      "scope": "Support positioning only. Actual held-out plant topologies, not a full harvest claim."
+    },
+    {
+      "run": "align-v1",
+      "successes": 4,
+      "episodes": 4,
+      "checkpoint": "runs/harvest-skill-suite/align-v1/round-3.zip",
+      "report_sha256": "6ae75275aa0096d638d0cd2990936013e75884fd4cd47cf426d85f7020b42023",
+      "scope": "Local skill holdouts in the full dynamics. Morphology holdout and composed-chain evaluation are separate."
+    },
+    {
+      "run": "remote/clip-v5",
+      "successes": 7,
+      "episodes": 8,
+      "checkpoint": "runs/harvest-skill-suite/remote/clip-v5/round-2.zip",
+      "report_sha256": "702ce56ed79bde6f705841e4ff21b1721005d46699438a5d730ca3d5d7ff59ad",
+      "scope": "Simulation-only PPO specialist. Uncalibrated fracture, textile, actuator and grip parameters. Same-arm self-collision unresolved."
+    },
+    {
+      "run": "withdraw-v3",
+      "successes": 3,
+      "episodes": 4,
+      "checkpoint": "runs/harvest-skill-suite/withdraw-v3/round-3.zip",
+      "report_sha256": "c2e7d92c27ce61ba4301e45b19c04f2a69e687e3acff5498aa9979ff672f2dbf",
+      "scope": "Local skill holdouts in the full dynamics. Morphology holdout and composed-chain evaluation are separate."
+    },
+    {
+      "run": "carry-v3",
+      "successes": 0,
+      "episodes": 4,
+      "checkpoint": "runs/harvest-skill-suite/carry-v3/round-5.zip",
+      "report_sha256": "404a6fa88c63d591ee0e160dc995c34d613a8a117ac2e0b7c7b97a71da9fa789",
+      "scope": "Local skill holdouts in the full dynamics. Morphology holdout and composed-chain evaluation are separate."
+    },
+    {
+      "run": "cut-release-v1",
+      "successes": 0,
+      "episodes": 4,
+      "checkpoint": "runs/harvest-skill-suite/cut-release-v1/round-1.zip",
+      "report_sha256": "195d3308fcaf51cb66ca220664242dc519c1988d7a86ab25b9ae866144186f9b",
+      "scope": "One-jaw PPO on the actual upstream cut state, full net and plant. No full-chain claim."
+    }
+  ],
+  "composition": {
+    "run": "partial-chain-v5",
+    "full_harvest_success": false,
+    "termination_reason": "skill timeout: withdraw",
+    "cut_event": {
+      "time_s": 9.46749999999991,
+      "blade_force_N": [
+        2.7711938558400226,
+        2.7756058548194353
+      ],
+      "work_J": 0.0015023636072263528,
+      "threshold_J": 0.0015,
+      "qpos_jump": 0.0,
+      "qvel_jump": 0.0
+    },
+    "peak_neighbor_contact": {
+      "force_N": 0.0,
+      "geoms": [],
+      "time_s": 0.0
+    },
+    "peak_interarm_N": 0.0,
+    "handoffs": [
+      {
+        "from_skill": "position both",
+        "to_skill": "align",
+        "time_s": 5.86,
+        "physical_state_sha256": "3cce126e960eca1e5b98ff4870edf6dc0e3aedaed66683959bbf4946fe732894"
+      },
+      {
+        "from_skill": "align",
+        "to_skill": "clip",
+        "time_s": 9.3,
+        "physical_state_sha256": "f29bb4fc7a021c55b8e98855c1703e6d3709015d5fe1af67acf8747619990195"
+      },
+      {
+        "from_skill": "clip",
+        "to_skill": "withdraw",
+        "time_s": 9.48,
+        "physical_state_sha256": "97d812d7ee3d0084fb6c5520abd0126623c4b4f4473fef7bb4de2118181e4bf2"
+      }
+    ]
+  }
+}

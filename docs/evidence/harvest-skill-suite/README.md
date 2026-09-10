@@ -61,3 +61,14 @@ Known limits: privileged simulator-state policies, no cameras; same-arm self-col
 - `carry-v3`: near-end loaded-net curriculum improved position error but never passed development. Final full-net held-out tests failed. The frozen loaded-net approximation and limited start-distance curriculum are not adequate evidence of learned transport.
 - `remote/wrist-release-v1`: two learned wrist commands, other four joints hold finite motor targets. Dynamic net retained. No success established yet. This restriction is explicit in the action space and must not be described as a six-joint policy.
 - The review now labels support completion as SUPPORT POSITIONED, not RETAINED. Captures preserve failures and include controller provenance; a failed physical episode is not discarded or presented as a pass.
+
+
+## Methodology learned from these experiments
+
+1. Change anatomical parameters upstream of physics compilation; verify resting state and keep the camera fixed for comparison. Vary plant topology and payload physics, not just rendering.
+2. Define skill success by physical outcomes and explicitly distinguish support positioning, cutting, retention, clearing and settled placement. Preserve reset states and failed trajectories.
+3. Train on the **actual preceding policy's terminal states**. Passing isolated experts from scripted ideal starts did not establish composability.
+4. Split coarse approach from millimeter alignment, but merge release with retreat when jaw opening alone strikes a neighbor. Decomposition follows the contact coupling; the smallest action space is not always sufficient.
+5. Include the other learned arm policy during training when its response changes the transition dynamics. Freeze its weights and record its checkpoint identity.
+6. Compare reduced training physics against full plant/textile dynamics. Reject a frozen unloaded net for loaded states, airborne release starts, or ignored contact categories. Full-physics failures remain failures.
+7. Preserve checkpoints, controller provenance, state-preserving handoff assertions, untouched acceptance thresholds, report hashes and inspectable replay. A score is a proxy until material/robot experiments calibrate it.
