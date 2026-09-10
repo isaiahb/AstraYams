@@ -1,0 +1,443 @@
+{
+  "title": "Catch + cut \u00b7 mechanism study B",
+  "units": "mm",
+  "parts": [
+    {
+      "name": "catcher_frame",
+      "file": "catcher_frame.stl",
+      "group": "catcher",
+      "color": "#dce7e6",
+      "material": "PA12 prototype assumption",
+      "volume_mm3": 16930.44126295101,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "net_retaining_ring",
+      "file": "net_retaining_ring.stl",
+      "group": "catcher",
+      "color": "#217a78",
+      "material": "PA12 prototype assumption",
+      "volume_mm3": 2018.4824667926134,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        16
+      ]
+    },
+    {
+      "name": "rim_screw_0",
+      "file": "rim_screw_0.stl",
+      "group": "catcher",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 59.87669721089522,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        10
+      ]
+    },
+    {
+      "name": "rim_screw_1",
+      "file": "rim_screw_1.stl",
+      "group": "catcher",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 59.87669721089522,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        10
+      ]
+    },
+    {
+      "name": "rim_screw_2",
+      "file": "rim_screw_2.stl",
+      "group": "catcher",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 59.876697210895216,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        10
+      ]
+    },
+    {
+      "name": "rim_screw_3",
+      "file": "rim_screw_3.stl",
+      "group": "catcher",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 59.876697210895216,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        10
+      ]
+    },
+    {
+      "name": "left_carrier",
+      "file": "left_carrier.stl",
+      "group": "cutter_left",
+      "color": "#dce7e6",
+      "material": "PA12 prototype; stiffness unverified",
+      "volume_mm3": 12469.593985718557,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_clamp_cover",
+      "file": "left_clamp_cover.stl",
+      "group": "cutter_left",
+      "color": "#217a78",
+      "material": "2 mm aluminium tapped clamp plate",
+      "volume_mm3": 3736.5948891434255,
+      "valid": true,
+      "explode": [
+        0,
+        10,
+        0
+      ]
+    },
+    {
+      "name": "left_blade",
+      "file": "left_blade.stl",
+      "group": "cutter_left",
+      "color": "#9cabb2",
+      "material": "0.5 mm steel blank; edge grinding not yet detailed",
+      "volume_mm3": 130.5244473888326,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        -8
+      ]
+    },
+    {
+      "name": "left_liner",
+      "file": "left_liner.stl",
+      "group": "cutter_left",
+      "color": "#343e45",
+      "material": "elastomer; friction/compression uncalibrated",
+      "volume_mm3": 568.6814995930512,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_clamp_screw_0",
+      "file": "left_clamp_screw_0.stl",
+      "group": "cutter_left",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 104.05534390200171,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_clamp_screw_1",
+      "file": "left_clamp_screw_1.stl",
+      "group": "cutter_left",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 104.05534390200172,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_clamp_screw_2",
+      "file": "left_clamp_screw_2.stl",
+      "group": "cutter_left",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 104.05534390200181,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_clamp_screw_3",
+      "file": "left_clamp_screw_3.stl",
+      "group": "cutter_left",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 104.05534390200181,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_blade_screw_0",
+      "file": "left_blade_screw_0.stl",
+      "group": "cutter_left",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 41.96961908543344,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "left_blade_screw_1",
+      "file": "left_blade_screw_1.stl",
+      "group": "cutter_left",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 41.969619085433436,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_carrier",
+      "file": "right_carrier.stl",
+      "group": "cutter_right",
+      "color": "#dce7e6",
+      "material": "PA12 prototype; stiffness unverified",
+      "volume_mm3": 12469.593985718559,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_clamp_cover",
+      "file": "right_clamp_cover.stl",
+      "group": "cutter_right",
+      "color": "#217a78",
+      "material": "2 mm aluminium tapped clamp plate",
+      "volume_mm3": 3736.5948891434255,
+      "valid": true,
+      "explode": [
+        0,
+        -10,
+        0
+      ]
+    },
+    {
+      "name": "right_blade",
+      "file": "right_blade.stl",
+      "group": "cutter_right",
+      "color": "#9cabb2",
+      "material": "0.5 mm steel blank; edge grinding not yet detailed",
+      "volume_mm3": 130.52444738883264,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        8
+      ]
+    },
+    {
+      "name": "right_liner",
+      "file": "right_liner.stl",
+      "group": "cutter_right",
+      "color": "#343e45",
+      "material": "elastomer; friction/compression uncalibrated",
+      "volume_mm3": 568.6814995930512,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_clamp_screw_0",
+      "file": "right_clamp_screw_0.stl",
+      "group": "cutter_right",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 104.05534390200171,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_clamp_screw_1",
+      "file": "right_clamp_screw_1.stl",
+      "group": "cutter_right",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 104.05534390200172,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_clamp_screw_2",
+      "file": "right_clamp_screw_2.stl",
+      "group": "cutter_right",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 104.05534390200181,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_clamp_screw_3",
+      "file": "right_clamp_screw_3.stl",
+      "group": "cutter_right",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 104.05534390200181,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_blade_screw_0",
+      "file": "right_blade_screw_0.stl",
+      "group": "cutter_right",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 41.96961908543344,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "right_blade_screw_1",
+      "file": "right_blade_screw_1.stl",
+      "group": "cutter_right",
+      "color": "#9cabb2",
+      "material": "steel fastener envelope",
+      "volume_mm3": 41.969619085433436,
+      "valid": true,
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "cut_z": 59.0,
+  "jaw_open_mm": 7,
+  "jaw_closed_mm": 3,
+  "catcher_jaw_offset_mm": 9.05,
+  "catcher_gripper_origin": [
+    -200,
+    0,
+    -7
+  ],
+  "cutter_gripper_origin": [
+    200,
+    0,
+    59.0
+  ],
+  "aperture_mm": [
+    54,
+    46
+  ],
+  "net_rest_depth_mm": 28,
+  "fruit_lowest_point_above_rim_plane_mm": 12,
+  "blade_thickness_mm": 0.5,
+  "nominal_blade_plane_clearance_mm": 0.04,
+  "stem_diameter_mm": 2,
+  "mesh_pitch_mm": 2.5,
+  "collision_sweep": [
+    {
+      "per_jaw_offset_mm": 7.0,
+      "max_cross_cartridge_intersection_mm3": 0.0,
+      "pair": null
+    },
+    {
+      "per_jaw_offset_mm": 6.5,
+      "max_cross_cartridge_intersection_mm3": 0.0,
+      "pair": null
+    },
+    {
+      "per_jaw_offset_mm": 6.0,
+      "max_cross_cartridge_intersection_mm3": 0.0,
+      "pair": null
+    },
+    {
+      "per_jaw_offset_mm": 5.5,
+      "max_cross_cartridge_intersection_mm3": 0.0,
+      "pair": null
+    },
+    {
+      "per_jaw_offset_mm": 5.0,
+      "max_cross_cartridge_intersection_mm3": 0.0,
+      "pair": null
+    },
+    {
+      "per_jaw_offset_mm": 4.5,
+      "max_cross_cartridge_intersection_mm3": 0.0,
+      "pair": null
+    },
+    {
+      "per_jaw_offset_mm": 4.0,
+      "max_cross_cartridge_intersection_mm3": 0.0,
+      "pair": null
+    },
+    {
+      "per_jaw_offset_mm": 3.5,
+      "max_cross_cartridge_intersection_mm3": 0.0,
+      "pair": null
+    },
+    {
+      "per_jaw_offset_mm": 3.0,
+      "max_cross_cartridge_intersection_mm3": 0.0,
+      "pair": null
+    }
+  ],
+  "scope": "Static/kinematic CAD preview. Net is an assumed textile rest shape. No physics, fracture, bruise or PPO result for these tools.",
+  "robot_source": "../../../assets/robots/yam/SOURCE.json"
+}

@@ -32,9 +32,10 @@ proof of grasp stability with this CAD, manufacturability or useful harvesting.
   Separates stem gripping and cutting and experimentally studies the forces involved.
   Reported peduncle forces must not be used as fruit-body bruise thresholds.
 
-## Proposed direction, not yet implemented
+## Superseded proposal
 
-For the direct-joint PPO objective, investigate shaped compliant fingertip adapters
+The following proposal was superseded by the user's 2026-09-10 clarification;
+do not implement it as the task direction. It proposed shaped compliant fingertip adapters
 on the existing YAM parallel jaws. Opening, approaching, enclosing and maintaining
 bounded contact would give all six arm joints plus the jaw a clear role. This would
 replace passive underside support with a direct-grasp skill and therefore changes
@@ -48,3 +49,11 @@ The next concept review must show fruit + actual jaws at common scale, open and
 closed states or entry/support/exit states, contact areas, the neighboring-fruit
 clearance envelope, proposed attachment and material/compliance assumptions.
 Only then should another solid CAD revision and collision model be built.
+
+## Confirmed direction — 2026-09-10
+
+The user wants two tools: a cup or soft mesh net held beneath the fruit, and a
+precision cutter powered by the other YAM's existing jaw motion. The first tool
+catches the berry after its stem is severed; it does not scoop or grasp the fruit.
+See `../harvest-tools/rev-b/README.md`. No existing PPO result demonstrates that
+two-arm sequence. Preserve earlier scores with their original tool and task.

@@ -1,0 +1,5 @@
+*.stl
+*.obj
+!reference/berry.stl
+scene-*.xml
+__pycache__/
