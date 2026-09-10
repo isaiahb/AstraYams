@@ -20,13 +20,13 @@ class Progress(BaseCallback):
 def evaluate(policy,config,seeds,out=None):
  env=HarvestJointSkill(**config);rows=[]
  for seed in seeds:
-  o,_=env.reset(seed=seed);e=env.e;qs=[e.data.qpos.copy()];vs=[e.data.qvel.copy()];eq=[e.data.eq_active.copy()];net=[e.data.flexvert_xpos.copy()];trace=[];actions=[]
+  o,_=env.reset(seed=seed);e=env.e;qs=[e.data.qpos.copy()];vs=[e.data.qvel.copy()];eq=[e.data.eq_active.copy()];net=[e.data.flexvert_xpos.copy()];ct=[e.target.copy()];ut=[e.cut_target.copy()];jt=[e.jaw_target];trace=[];actions=[]
   for _ in range(250):
-   a=np.zeros(6) if policy is None else policy.predict(o,deterministic=True)[0];o,r,done,trunc,info=env.step(a);qs.append(e.data.qpos.copy());vs.append(e.data.qvel.copy());eq.append(e.data.eq_active.copy());net.append(e.data.flexvert_xpos.copy());trace.append(info);actions.append(a)
+   a=np.zeros(6) if policy is None else policy.predict(o,deterministic=True)[0];o,r,done,trunc,info=env.step(a);qs.append(e.data.qpos.copy());vs.append(e.data.qvel.copy());eq.append(e.data.eq_active.copy());net.append(e.data.flexvert_xpos.copy());ct.append(e.target.copy());ut.append(e.cut_target.copy());jt.append(e.jaw_target);trace.append(info);actions.append(a)
    if done or trunc:break
   row=dict(seed=seed,**info);rows.append(row);print('EVAL',config['skill'],seed,row['is_success'],row['invalid'],round(row['goal_error_m']*1000,2),flush=True)
   if out:
-   out.mkdir(parents=True,exist_ok=True);np.savez_compressed(out/f'episode-{seed}.npz',qpos=qs,qvel=vs,eq_active=eq,flex_vertices=net,actions=actions,t=np.arange(len(qs))*.02);dump(out/f'episode-{seed}.json',dict(result=dict(**row,controller='Six-joint PPO specialist, finite motor control. Recorded reset curriculum; no runtime IK or expert action targets.'),trace=trace))
+   out.mkdir(parents=True,exist_ok=True);np.savez_compressed(out/f'episode-{seed}.npz',qpos=qs,qvel=vs,eq_active=eq,flex_vertices=net,catch_targets=ct,cut_targets=ut,jaw_targets=jt,actions=actions,t=np.arange(len(qs))*.02);dump(out/f'episode-{seed}.json',dict(result=dict(**row,controller='Six-joint PPO specialist, finite motor control. Recorded reset curriculum; no runtime IK or expert action targets.'),trace=trace))
  return rows
 
 def main():

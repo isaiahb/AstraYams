@@ -16,6 +16,11 @@ class DualHarvestEnv(CatcherPositioningEnv):
   self.blades=[{i for i in range(m.ngeom) if (m.geom(i).name or '').startswith(f'cut_{side}_blade_contact')} for side in ['left','right']]
   self.cutstems={m.geom(n).id for n in ['proximal_cut_stem','distal_cut_stem']};self.net=mujoco.mj_name2id(m,mujoco.mjtObj.mjOBJ_FLEX,'catcher_net')
   self.neighbor_fruit_bodies={i for i in range(m.nbody) if m.body(i).name.startswith('fruit_') and i!=self.fruit}
+  self.released_bodies=set()
+  for i in range(m.nbody):
+   ancestor=i
+   while ancestor and ancestor!=self.branch:ancestor=int(m.body_parentid[ancestor])
+   if ancestor==self.branch:self.released_bodies.add(i)
   self.allowed=np.zeros((m.ngeom,m.ngeom),dtype=bool)
   for a,b in self.permitted:self.allowed[a,b]=self.allowed[b,a]=True
   self.threshold=cut_work_J;self.excludes=m.exclude_signature.copy();self.cut_target=self.initial[self.cq].copy();self.jaw_target=-.007;self.contact_peak=dict(force_N=0.,geoms=[],time_s=0.);self.neighbor_peak=dict(force_N=0.,geoms=[],time_s=0.);self.receive_peak=0.
@@ -40,11 +45,19 @@ class DualHarvestEnv(CatcherPositioningEnv):
   relevant=valid & np.any((bits&14)!=0,axis=1)
   # Avoid scanning the many legitimate pad/handle contacts at every substep.
   relevant &= ~self.allowed[safe[:,0],safe[:,1]]
-  netpairs=np.any(d.contact.flex==self.net,axis=1)&np.any(geoms==self.fruitgeom,axis=1)
+  # Audit all textile contacts, including stems, sepals and neighboring objects.
+  netpairs=np.any(d.contact.flex==self.net,axis=1)
   relevant |= netpairs
   for i in np.flatnonzero(relevant):
    c=d.contact[i];ids=set(int(x) for x in c.geom if x>=0);f=np.zeros(6);mujoco.mj_contactForce(m,d,int(i),f);force=float(np.linalg.norm(f[:3]))
-   if netpairs[i]:netforce+=force;depth=max(depth,-float(c.dist));continue
+   if netpairs[i]:
+    depth=max(depth,-float(c.dist))
+    if any(m.geom_bodyid[g] in self.released_bodies for g in ids):netforce+=force;continue
+    names=['catcher_net']+[m.geom(g).name for g in sorted(ids)]
+    if any(m.geom_contype[g]&8 for g in ids):interarm=max(interarm,force)
+    if any(m.geom_bodyid[g] in self.neighbor_fruit_bodies for g in ids) and force>self.neighbor_peak['force_N']:self.neighbor_peak=dict(force_N=force,geoms=names,time_s=float(d.time-.3))
+    if force>self.contact_peak['force_N']:self.contact_peak=dict(force_N=force,geoms=names,time_s=float(d.time-.3),penetration_m=max(0.,-float(c.dist)))
+    wrong=max(wrong,force);continue
    b=bits[i]
    if (b[0]&8 and b[1]&2) or (b[1]&8 and b[0]&2):interarm=max(interarm,force)
    bladepair=False
@@ -52,11 +65,11 @@ class DualHarvestEnv(CatcherPositioningEnv):
     if ids&blade and ids&self.cutstems:forces[j]+=max(float(f[0]),0.);bladepair=True
    if bladepair:continue
    names=[m.geom(int(g)).name if g>=0 else 'flex' for g in c.geom]
-   if np.any(b&8) and any(m.geom_bodyid[g] in self.neighbor_fruit_bodies for g in ids) and force>self.neighbor_peak['force_N']:
+   if any(m.geom_bodyid[g] in self.neighbor_fruit_bodies for g in ids) and force>self.neighbor_peak['force_N']:
     self.neighbor_peak=dict(force_N=force,geoms=names,time_s=float(d.time-.3),penetration_m=max(0.,-float(c.dist)))
    # Receiving the detached fruit includes its calyx on that same rigid body.
    # Keep its impact and penetration evidence; do not mislabel it as a neighbor.
-   if self.severed and any(m.geom_bodyid[g]==self.fruit for g in ids) and np.any(b&4):
+   if self.severed and any(m.geom_bodyid[g] in self.released_bodies for g in ids) and np.any(b&4):
     self.receive_peak=max(self.receive_peak,force);depth=max(depth,-float(c.dist));continue
    if force>self.contact_peak['force_N']:
     self.contact_peak=dict(force_N=force,geoms=[m.geom(int(g)).name if g>=0 else 'flex' for g in c.geom],time_s=float(d.time-.3),penetration_m=max(0.,-float(c.dist)))

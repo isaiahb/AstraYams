@@ -40,6 +40,7 @@ def run(config,out,seed,through='unload'):
  if 'clip' in required:profiles['clip']=CutterSkillEnv(source=cfg['cut_source'],difficulty=.5,joint_scale=cfg.get('clip_joint_scale',.25))
  # The cutter approach target is derived from the current physical target stalk.
  approach=profiles['approach'];reference_branch=approach.e.data.xpos[approach.e.branch].copy();offset=approach.goal_base-reference_branch
+ if cfg.get('approach_goal')=='stalk-center':offset=np.zeros(3)
  support_reference=approach.e.initial[approach.e.qids].copy()
  bind(approach,e,goal=e.data.xpos[e.branch]+offset);phase='position both';phase_steps=0;handoffs=[];trace=[];qs=[e.data.qpos.copy()];vs=[e.data.qvel.copy()];eq=[e.data.eq_active.copy()];net=[e.data.flexvert_xpos.copy()];catch_targets=[e.target.copy()];cut_targets=[e.cut_target.copy()];all_actions=[];reason='horizon';success=False
  for step in range(cfg.get('horizon_steps',1600)):
@@ -52,14 +53,14 @@ def run(config,out,seed,through='unload'):
   elif phase=='clip':
    s=profiles['clip'];a=policies['clip'].predict(s.observe(),deterministic=True)[0];cu=a.copy();cu[:6]*=s.joint_scale;active=['clip']
   else:
-   s=profiles[phase];a=policies[phase].predict(s.observe(),deterministic=True)[0];active=[phase]
+   s=profiles[phase];a=np.zeros(6) if phase=='withdraw' and s.hold>=10 and e.net_hold<25 else policies[phase].predict(s.observe(),deterministic=True)[0];active=[phase]
    if phase=='withdraw':cu=np.r_[a,0.]
    else:ca=a
   info=e.advance(catch_action=ca,cut_action=cu);phase_steps+=1;next_phase=None
   if phase=='position both':
    _,_,_,_,contract=approach.after_step(a,info)
    if contract['invalid']:info['invalid']=True
-   if info['catcher_ready'] and contract['is_success']:next_phase='clip'
+   if info['catcher_ready'] and contract['is_success'] and info['cut_distance_m']<.004:next_phase='clip'
   elif phase=='clip':
    _,_,_,_,contract=s.after_step(a,info)
    if contract['is_success']:next_phase='withdraw'

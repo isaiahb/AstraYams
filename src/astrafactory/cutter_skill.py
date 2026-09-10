@@ -10,11 +10,19 @@ from astrafactory.dual_harvest import DualHarvestEnv
 from astrafactory.yam_env import rotation_error
 
 class CutterSkillEnv(gym.Env):
- def __init__(self,source='runs/dual-harvest-commission-v13',difficulty=0.,variation=1.,curriculum=None,joint_scale=1.):
+ def __init__(self,source='runs/dual-harvest-commission-v13',difficulty=0.,variation=1.,curriculum=None,joint_scale=1.,entry_run=None):
   self.joint_scale=float(joint_scale)
   self.source=Path(source);task=Path(curriculum) if curriculum else self.source/'task';self.e=DualHarvestEnv(task_dir=task);self.e.reset(seed=0)
   self.z=np.load(self.source/'episode-61001.npz');self.trace=json.loads((self.source/'episode-61001.json').read_text())['trace'];self.difficulty=difficulty;self.variation=variation
   self.qmap=np.load(task/'qpos-map.npy') if curriculum else np.arange(self.e.model.nq);self.vmap=np.load(task/'qvel-map.npy') if curriculum else np.arange(self.e.model.nv)
+  self.entry_run=Path(entry_run) if entry_run else None;self.entry=None
+  if self.entry_run:
+   episode=sorted(self.entry_run.glob('episode-*.npz'))[0];self.entry=np.load(episode);meta=json.loads(episode.with_suffix('.json').read_text())
+   if meta['result']['severed']:raise ValueError('A clipping entry must still have an attached fruit')
+   old=mujoco.MjModel.from_xml_path(str(self.entry_run/'task/scene.xml'));self.entry_q=[];self.entry_v=[]
+   for j in range(self.e.model.njnt):
+    oj=old.joint(self.e.model.joint(j).name);kind=int(self.e.model.jnt_type[j]);self.entry_q.extend(range(oj.qposadr[0],oj.qposadr[0]+{0:7,1:4,2:1,3:1}[kind]));self.entry_v.extend(range(oj.dofadr[0],oj.dofadr[0]+{0:6,1:3,2:1,3:1}[kind]))
+   self.entry_eq=[old.equality(self.e.model.equality(j).name).id for j in range(self.e.model.neq)]
   self.start=next(i for i,x in enumerate(self.trace) if x['catcher_ready'])+1;self.aligned=next(i for i,x in enumerate(self.trace) if x['phase']=='Commissioning / close stock jaws')
   self.near_cut=next(i for i,x in enumerate(self.trace) if x['severed'])-3
   self.action_space=spaces.Box(-1,1,(7,),np.float32);self.observation_space=spaces.Box(-np.inf,np.inf,(38,),np.float32);self.info={};self.last=np.zeros(7)
@@ -29,9 +37,12 @@ class CutterSkillEnv(gym.Env):
   super().reset(seed=seed);e=self.e;m,d=e.model,e.data;mujoco.mj_resetData(m,d);m.exclude_signature[:]=e.excludes;m.body_pos[:]=e.pos;m.body_quat[:]=e.quat;m.jnt_stiffness[:]=e.stiff
   index=round(self.near_cut*(1-2*self.difficulty)+self.aligned*(2*self.difficulty)) if self.difficulty<=.5 else round(self.aligned*(2-2*self.difficulty)+self.start*(2*self.difficulty-1));d.qpos[:]=self.z['qpos'][index,self.qmap];d.qvel[:]=self.z['qvel'][index,self.vmap];d.time=.3
   e.target=self.z['catch_targets'][index].copy();e.cut_target=self.z['cut_targets'][index].copy();e.jaw_target=float(np.clip(d.qpos[m.joint('cut_joint7').qposadr[0]],-.007,-.0028))
+  if self.entry is not None:
+   d.qpos[:]=self.entry['qpos'][-1,self.entry_q];d.qvel[:]=self.entry['qvel'][-1,self.entry_v];d.eq_active[:]=self.entry['eq_active'][-1,self.entry_eq];e.target=self.entry['catch_targets'][-1].copy();e.cut_target=self.entry['cut_targets'][-1].copy();e.jaw_target=-.007
   jitter=self.np_random.uniform(-.003,.003,6)*self.variation;d.qpos[e.cq]+=jitter;e.cut_target=d.qpos[e.cq].copy();stiff=float(self.np_random.uniform(.85,1.15));m.jnt_stiffness[:]*=stiff
   e.dr=dict(offset_m=[0,0,0],yaw_rad=0.,stiffness_scale=stiff,cutter_joint_offset_rad=jitter.tolist(),reset_frame=int(index));e.last=np.zeros(6);e.goal_velocity=np.zeros(3);e.hold=0;e.steps=0;e.episode_return=0.;e.peakwrong=0.;e.severed=False;e.work=float(self.trace[max(0,index-1)]['cut_work_J']);e.peak_net=0.;e.net_hold=0;e.cut_event=None;e.cut_time=None;e.peak_blade=0.;e.peak_interarm=0.;e.phase='PPO / cutter approach and jaw control';e.elapsed=0.;e.peak_depth=0.;e.last_cut=np.zeros(7);e.receive_peak=0.
   e.contact_peak=dict(force_N=0.,geoms=[],time_s=0.);e.neighbor_peak=e.contact_peak.copy()
+  if self.entry is not None:e.work=0.;e.dr.update(reset_frame=-1,entry_run=str(self.entry_run),entry_state='Actual upstream PPO terminal state; attached fruit, open cutter jaws')
   mujoco.mj_forward(m,d);e.grip=e.grasp();e.previous_goal=e.geometry()[0].copy();e.jaw_previous=sum(d.qpos[m.joint(n).qposadr[0]] for n in ['cut_joint7','cut_joint8']);self.last=np.zeros(7);self.info={};self.steps=0;self.previous_distance=float(np.linalg.norm(self.geometry()[0]));self.previous_work=e.work;self.previous_jaw=float(d.qpos[m.joint('cut_joint7').qposadr[0]])
   return self.observe(),dict(domain_randomization=e.dr)
  def step(self,action):
