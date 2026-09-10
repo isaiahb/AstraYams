@@ -199,3 +199,30 @@ Next acceptance evidence is paired/turntable views of the same fruit and a scale
 reference, held-out-view shape error, and a correlated within-cultivar population.
 Calibrated tissue response, maturity-dependent shape, calyx detail, net contact,
 stem fracture, and PPO with the new tools remain open. No product-app changes.
+
+## Anatomy surface correction — 2026-09-10
+
+V4 fixes two visible procedural shortcuts while preserving the traced outlines:
+seeds are now sized and oriented on the finished surface instead of being warped
+with the fruit, and the cap has separate overlapping whorls, folds and basal
+attachment tissue. Primary botanical descriptions and macro photographs are
+linked in `surface-study/v4/README.md`; spacing and curvature are explicit priors.
+The complete plant uses the same shared opt-in generator. V3 remains preserved.
+
+Exact compiled physical checks plus identical 100-step states permit reuse of
+V3's rest/contact/control trajectories. Source hashes make the reuse explicit.
+Source-view regression stayed within 0.0015 IoU; it is still an in-sample check.
+Front, side, top and recorded probe contact were inspected. Skin/cap appearance
+remains too smooth, and hidden depth has not received real multi-view validation.
+
+Method lesson: make macro morphology and microscopic surface anatomy separate
+parameters. Sample and orient structures in their final physical coordinate
+system. Preserve physical data for a visual pass, prove compatibility before
+reusing motion, and compare old/new with identical cameras and lighting.
+
+Highest consequence remaining mismatch: detailed calyx appearance does not yet
+have matching flexible contact. Before learning a cut near it, add a separate
+sepal-brushing diagnostic and compare visible deflection/contact locations with
+the surface being rendered. Seek real force/deflection and scaled multi-view
+evidence; do not claim that simulated curves or prettier renders identify it.
+The flesh-compliance and tool/PPO work above remains open.

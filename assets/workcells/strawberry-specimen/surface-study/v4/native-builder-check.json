@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "body_mass": true,
+    "body_inertia": true,
+    "body_ipos": true,
+    "body_pos": true,
+    "body_quat": true,
+    "jnt_stiffness": true,
+    "dof_damping": true,
+    "qpos_spring": true,
+    "qpos0": true,
+    "body_frame_inertia_tensors": true
+  },
+  "max_inertia_tensor_difference_kg_m2": 1.666336153397863e-17,
+  "max_relative_tensor_norm_error": 3.5994909581243835e-11,
+  "max_inertia_quaternion_component_difference": 9.963253833067398e-11,
+  "scope": "Canonical builder reproduces physical model within floating-point tolerances. Inertia is compared by body-frame tensor Frobenius norm, not near-zero individual components.",
+  "rtol": 1e-10,
+  "atol": 1e-12,
+  "tensor_norm_rtol": 1e-09,
+  "tensor_norm_atol": 1e-20
+}

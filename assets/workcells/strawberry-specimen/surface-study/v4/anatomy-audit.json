@@ -1,0 +1,590 @@
+{
+  "0": {
+    "recipe": {
+      "version": 4,
+      "minimum_site_spacing_m": 0.0027,
+      "achene_full_axes_m": [
+        0.00072,
+        0.0013,
+        0.00036
+      ],
+      "pit_depth_m": 0.00016,
+      "pit_width_sigma_m": 0.00056,
+      "pit_length_sigma_m": 0.00083,
+      "sepals": 5,
+      "epicalyx_bractlets": 5,
+      "scope": "Surface-area-weighted exclusion sampler; dimensions and curvature are priors, not measured cultivar distributions. Calyx is visual, not flexible contact geometry."
+    },
+    "achene_count": 275,
+    "nearest_site_distance_mm": {
+      "min": 2.2735272659729673,
+      "median": 2.8772511968396275,
+      "max": 4.387686000237643
+    },
+    "maximum_skin_indent_mm": 0.18335549838245233,
+    "calyx": [
+      {
+        "whorl": "sepal",
+        "length_mm": 15.051299122218593,
+        "half_width_mm": 4.806982792283233,
+        "lift_mm": 5.407988237142759,
+        "curl_mm": -4.445626403595115
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 14.597256032126001,
+        "half_width_mm": 4.45810577271566,
+        "lift_mm": 4.122159391158478,
+        "curl_mm": -3.8278303331875825
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 14.370879775201718,
+        "half_width_mm": 4.559366922651801,
+        "lift_mm": 2.8114171340453167,
+        "curl_mm": -7.410640287409271
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 13.215224674889772,
+        "half_width_mm": 4.363149658135693,
+        "lift_mm": 4.454763574100962,
+        "curl_mm": -2.4780781759555577
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 13.85802272358562,
+        "half_width_mm": 4.630509214952206,
+        "lift_mm": 3.7820420668702197,
+        "curl_mm": -5.754204498552622
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 8.695785339014554,
+        "half_width_mm": 2.0570445135669737,
+        "lift_mm": 2.953277452023898,
+        "curl_mm": -4.2197476037789015
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 9.727782277745128,
+        "half_width_mm": 1.952051872066003,
+        "lift_mm": 2.2783553581105815,
+        "curl_mm": -4.460142689180171
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 10.274843673360804,
+        "half_width_mm": 2.5265667285044473,
+        "lift_mm": 3.1723259800382255,
+        "curl_mm": -2.009921835267788
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 12.222306495630232,
+        "half_width_mm": 2.962295157727374,
+        "lift_mm": 3.796457621302172,
+        "curl_mm": -6.5670073913337035
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 9.912932197763567,
+        "half_width_mm": 2.3887491293928926,
+        "lift_mm": 2.616868582860137,
+        "curl_mm": -3.685477275657238
+      }
+    ],
+    "scope": "Appearance only. Macro collision envelope, mass, COM, inertia, plant dynamics unchanged. Achene dimensions are not deformed with the fruit. No calibrated bruising or flexible calyx contact.",
+    "achene_site_file": "library/0-sites.json"
+  },
+  "1": {
+    "recipe": {
+      "version": 4,
+      "minimum_site_spacing_m": 0.0027,
+      "achene_full_axes_m": [
+        0.00072,
+        0.0013,
+        0.00036
+      ],
+      "pit_depth_m": 0.00016,
+      "pit_width_sigma_m": 0.00056,
+      "pit_length_sigma_m": 0.00083,
+      "sepals": 5,
+      "epicalyx_bractlets": 5,
+      "scope": "Surface-area-weighted exclusion sampler; dimensions and curvature are priors, not measured cultivar distributions. Calyx is visual, not flexible contact geometry."
+    },
+    "achene_count": 289,
+    "nearest_site_distance_mm": {
+      "min": 2.2707440962186825,
+      "median": 2.793686885279749,
+      "max": 4.014226297661101
+    },
+    "maximum_skin_indent_mm": 0.18375817187231677,
+    "calyx": [
+      {
+        "whorl": "sepal",
+        "length_mm": 11.398223416656219,
+        "half_width_mm": 3.4622102711113314,
+        "lift_mm": 2.438146004057136,
+        "curl_mm": -4.140413906678729
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 13.893814489840958,
+        "half_width_mm": 4.829423057052187,
+        "lift_mm": 3.988914749503675,
+        "curl_mm": -0.8578045192252921
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 15.364326578752179,
+        "half_width_mm": 5.574637867467812,
+        "lift_mm": 2.6918385959106783,
+        "curl_mm": -5.096389418625069
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 12.207979474529878,
+        "half_width_mm": 3.785277603153788,
+        "lift_mm": 1.7908945977218953,
+        "curl_mm": -2.568067221099478
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 13.666791301215742,
+        "half_width_mm": 4.83537044505121,
+        "lift_mm": 2.97255110410849,
+        "curl_mm": -2.819203744748405
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 10.588485679786919,
+        "half_width_mm": 2.3953573514152398,
+        "lift_mm": 2.660316095386564,
+        "curl_mm": -1.8246215594534407
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 11.37566722846253,
+        "half_width_mm": 2.449696776972299,
+        "lift_mm": 3.4980660636229852,
+        "curl_mm": -2.363741635401996
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 12.191358846026946,
+        "half_width_mm": 2.6430204123033887,
+        "lift_mm": 2.184941268324164,
+        "curl_mm": -0.009078580108672074
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 11.052904255196568,
+        "half_width_mm": 2.4127857139513074,
+        "lift_mm": 3.907025648628996,
+        "curl_mm": -2.0947210937453367
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 10.415829076350086,
+        "half_width_mm": 2.360873947942222,
+        "lift_mm": 2.216884818606539,
+        "curl_mm": -2.8126419640020184
+      }
+    ],
+    "scope": "Appearance only. Macro collision envelope, mass, COM, inertia, plant dynamics unchanged. Achene dimensions are not deformed with the fruit. No calibrated bruising or flexible calyx contact.",
+    "achene_site_file": "library/1-sites.json"
+  },
+  "2": {
+    "recipe": {
+      "version": 4,
+      "minimum_site_spacing_m": 0.0027,
+      "achene_full_axes_m": [
+        0.00072,
+        0.0013,
+        0.00036
+      ],
+      "pit_depth_m": 0.00016,
+      "pit_width_sigma_m": 0.00056,
+      "pit_length_sigma_m": 0.00083,
+      "sepals": 5,
+      "epicalyx_bractlets": 5,
+      "scope": "Surface-area-weighted exclusion sampler; dimensions and curvature are priors, not measured cultivar distributions. Calyx is visual, not flexible contact geometry."
+    },
+    "achene_count": 275,
+    "nearest_site_distance_mm": {
+      "min": 2.2357735390808418,
+      "median": 2.8333149766846475,
+      "max": 4.16469863696025
+    },
+    "maximum_skin_indent_mm": 0.184797319947859,
+    "calyx": [
+      {
+        "whorl": "sepal",
+        "length_mm": 9.666607144791064,
+        "half_width_mm": 3.439309841667611,
+        "lift_mm": 2.121334938601539,
+        "curl_mm": -1.3289634605270135
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 10.586994986492172,
+        "half_width_mm": 3.4611518328904305,
+        "lift_mm": 1.294787160369129,
+        "curl_mm": -2.170979010932094
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 12.034816385797015,
+        "half_width_mm": 4.008792305629142,
+        "lift_mm": 2.2441533589290934,
+        "curl_mm": -2.8221895170458318
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 11.935880262470251,
+        "half_width_mm": 4.181749123787815,
+        "lift_mm": 3.489471155512422,
+        "curl_mm": -1.1466149028049522
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 9.759033370006392,
+        "half_width_mm": 3.2048727721055923,
+        "lift_mm": 2.6139942200598867,
+        "curl_mm": 1.0956458557434194
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 8.511048426426006,
+        "half_width_mm": 1.9558271639637308,
+        "lift_mm": 2.7200670851213906,
+        "curl_mm": 0.2607702915671296
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 9.151717584679625,
+        "half_width_mm": 1.8009808651358632,
+        "lift_mm": 2.980219816265959,
+        "curl_mm": -1.9439576757700991
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 8.129843531671153,
+        "half_width_mm": 1.8475133052676542,
+        "lift_mm": 1.9874923431536482,
+        "curl_mm": -1.0796711833682557
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 8.872576322375183,
+        "half_width_mm": 2.097870859900856,
+        "lift_mm": 2.4395707892311527,
+        "curl_mm": 0.04979996384085598
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 10.363364991450975,
+        "half_width_mm": 2.2046954303545774,
+        "lift_mm": 3.504617810422611,
+        "curl_mm": -0.4405275799197537
+      }
+    ],
+    "scope": "Appearance only. Macro collision envelope, mass, COM, inertia, plant dynamics unchanged. Achene dimensions are not deformed with the fruit. No calibrated bruising or flexible calyx contact.",
+    "achene_site_file": "library/2-sites.json"
+  },
+  "3": {
+    "recipe": {
+      "version": 4,
+      "minimum_site_spacing_m": 0.0027,
+      "achene_full_axes_m": [
+        0.00072,
+        0.0013,
+        0.00036
+      ],
+      "pit_depth_m": 0.00016,
+      "pit_width_sigma_m": 0.00056,
+      "pit_length_sigma_m": 0.00083,
+      "sepals": 5,
+      "epicalyx_bractlets": 5,
+      "scope": "Surface-area-weighted exclusion sampler; dimensions and curvature are priors, not measured cultivar distributions. Calyx is visual, not flexible contact geometry."
+    },
+    "achene_count": 270,
+    "nearest_site_distance_mm": {
+      "min": 2.2545261789418602,
+      "median": 2.8000646839721592,
+      "max": 4.288337414216549
+    },
+    "maximum_skin_indent_mm": 0.18298091808306055,
+    "calyx": [
+      {
+        "whorl": "sepal",
+        "length_mm": 14.437976664345443,
+        "half_width_mm": 4.766846962442891,
+        "lift_mm": 2.2032529621370385,
+        "curl_mm": -6.793082859403567
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 10.839936839196339,
+        "half_width_mm": 3.1028502425063618,
+        "lift_mm": 2.6413715013289303,
+        "curl_mm": -5.519242437162215
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 12.943951386215971,
+        "half_width_mm": 4.609892827004602,
+        "lift_mm": 2.166643321367281,
+        "curl_mm": -2.9752608498725412
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 13.684238623826145,
+        "half_width_mm": 4.477786213977187,
+        "lift_mm": 2.0287908852915786,
+        "curl_mm": -5.664335801711202
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 10.441028004207682,
+        "half_width_mm": 3.7473846782356346,
+        "lift_mm": 3.3741123741177064,
+        "curl_mm": -3.458210964300771
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 9.335149296336848,
+        "half_width_mm": 2.1948955483124024,
+        "lift_mm": 1.7133272193505409,
+        "curl_mm": -3.0511518472023806
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 8.581288134978298,
+        "half_width_mm": 2.141968938591004,
+        "lift_mm": 2.974003711893869,
+        "curl_mm": -2.8260492395081926
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 9.236201241775367,
+        "half_width_mm": 2.1483728504202,
+        "lift_mm": 2.0993637469413335,
+        "curl_mm": -6.101368533936595
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 9.97506341611028,
+        "half_width_mm": 2.3992844836051472,
+        "lift_mm": 1.6716812386143356,
+        "curl_mm": -4.509191143269613
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 8.67189446962592,
+        "half_width_mm": 1.9756979070771163,
+        "lift_mm": 2.0916631723786927,
+        "curl_mm": -4.994944286198984
+      }
+    ],
+    "scope": "Appearance only. Macro collision envelope, mass, COM, inertia, plant dynamics unchanged. Achene dimensions are not deformed with the fruit. No calibrated bruising or flexible calyx contact.",
+    "achene_site_file": "library/3-sites.json"
+  },
+  "4": {
+    "recipe": {
+      "version": 4,
+      "minimum_site_spacing_m": 0.0027,
+      "achene_full_axes_m": [
+        0.00072,
+        0.0013,
+        0.00036
+      ],
+      "pit_depth_m": 0.00016,
+      "pit_width_sigma_m": 0.00056,
+      "pit_length_sigma_m": 0.00083,
+      "sepals": 5,
+      "epicalyx_bractlets": 5,
+      "scope": "Surface-area-weighted exclusion sampler; dimensions and curvature are priors, not measured cultivar distributions. Calyx is visual, not flexible contact geometry."
+    },
+    "achene_count": 273,
+    "nearest_site_distance_mm": {
+      "min": 2.2879056988290247,
+      "median": 2.8377887146367646,
+      "max": 3.9284137308587255
+    },
+    "maximum_skin_indent_mm": 0.1855539919399092,
+    "calyx": [
+      {
+        "whorl": "sepal",
+        "length_mm": 14.071715350057229,
+        "half_width_mm": 5.067638802987717,
+        "lift_mm": 3.550194812158068,
+        "curl_mm": -5.531659205094206
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 17.678025253104636,
+        "half_width_mm": 5.386055949984967,
+        "lift_mm": 5.322565488334476,
+        "curl_mm": -3.216956925927792
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 13.108424790690991,
+        "half_width_mm": 4.45867082379365,
+        "lift_mm": 2.9048845791101647,
+        "curl_mm": -2.521640656311818
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 15.250342218281574,
+        "half_width_mm": 5.269418052935914,
+        "lift_mm": 3.1665953356808765,
+        "curl_mm": -3.6953311670783497
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 13.975487987156479,
+        "half_width_mm": 4.49085484390839,
+        "lift_mm": 4.672001210115163,
+        "curl_mm": -2.949159384918967
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 10.686495485640823,
+        "half_width_mm": 2.1678840871432046,
+        "lift_mm": 3.319804362773657,
+        "curl_mm": -1.6974021611709245
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 13.174508571585257,
+        "half_width_mm": 2.9960682124821534,
+        "lift_mm": 4.324199345382142,
+        "curl_mm": -1.7564126595636396
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 11.183670290185843,
+        "half_width_mm": 2.1432032706537014,
+        "lift_mm": 1.6188532382412346,
+        "curl_mm": -1.0933957400207877
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 10.847960625340043,
+        "half_width_mm": 2.5864813796245385,
+        "lift_mm": 2.080292774733031,
+        "curl_mm": -4.063727967614181
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 12.364378545373214,
+        "half_width_mm": 2.4728478473125524,
+        "lift_mm": 4.202452161940295,
+        "curl_mm": -4.189340330340706
+      }
+    ],
+    "scope": "Appearance only. Macro collision envelope, mass, COM, inertia, plant dynamics unchanged. Achene dimensions are not deformed with the fruit. No calibrated bruising or flexible calyx contact.",
+    "achene_site_file": "library/4-sites.json"
+  },
+  "5": {
+    "recipe": {
+      "version": 4,
+      "minimum_site_spacing_m": 0.0027,
+      "achene_full_axes_m": [
+        0.00072,
+        0.0013,
+        0.00036
+      ],
+      "pit_depth_m": 0.00016,
+      "pit_width_sigma_m": 0.00056,
+      "pit_length_sigma_m": 0.00083,
+      "sepals": 5,
+      "epicalyx_bractlets": 5,
+      "scope": "Surface-area-weighted exclusion sampler; dimensions and curvature are priors, not measured cultivar distributions. Calyx is visual, not flexible contact geometry."
+    },
+    "achene_count": 273,
+    "nearest_site_distance_mm": {
+      "min": 2.2448202682472034,
+      "median": 2.8064243501875956,
+      "max": 4.206008748686357
+    },
+    "maximum_skin_indent_mm": 0.18547157253870816,
+    "calyx": [
+      {
+        "whorl": "sepal",
+        "length_mm": 12.418027154866087,
+        "half_width_mm": 3.478112570401867,
+        "lift_mm": 3.1503916193222796,
+        "curl_mm": -0.2074867630229265
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 14.013372916070939,
+        "half_width_mm": 4.846241892436618,
+        "lift_mm": 4.545272303919976,
+        "curl_mm": -1.7787708318053141
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 12.847921662526991,
+        "half_width_mm": 4.617434640130264,
+        "lift_mm": 2.553584536276742,
+        "curl_mm": -0.059354879172869884
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 10.53815626836136,
+        "half_width_mm": 3.277456630794016,
+        "lift_mm": 3.0221151759668854,
+        "curl_mm": -3.4285820822391524
+      },
+      {
+        "whorl": "sepal",
+        "length_mm": 11.910319817436372,
+        "half_width_mm": 3.5997283407753597,
+        "lift_mm": 4.014988315437102,
+        "curl_mm": -0.583293002281915
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 8.149855584908028,
+        "half_width_mm": 1.5764209801619764,
+        "lift_mm": 2.572355047659819,
+        "curl_mm": -0.061283310092553715
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 10.896239066057772,
+        "half_width_mm": 2.2184592964066847,
+        "lift_mm": 1.358855209056171,
+        "curl_mm": -0.9383475625731603
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 11.093345321846085,
+        "half_width_mm": 2.6925932511409556,
+        "lift_mm": 3.4237312475334045,
+        "curl_mm": -0.1559294158245876
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 9.396831711654483,
+        "half_width_mm": 2.1361545658913887,
+        "lift_mm": 1.4339546433138637,
+        "curl_mm": -1.1973315962799813
+      },
+      {
+        "whorl": "epicalyx",
+        "length_mm": 10.264415286088937,
+        "half_width_mm": 2.030692387625012,
+        "lift_mm": 3.3565857493069915,
+        "curl_mm": -1.6150546947913265
+      }
+    ],
+    "scope": "Appearance only. Macro collision envelope, mass, COM, inertia, plant dynamics unchanged. Achene dimensions are not deformed with the fruit. No calibrated bruising or flexible calyx contact.",
+    "achene_site_file": "library/5-sites.json"
+  }
+}

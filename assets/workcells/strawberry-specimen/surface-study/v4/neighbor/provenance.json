@@ -1,0 +1,6 @@
+{
+  "trajectory_source": "../../v3/neighbor/rollout.npz",
+  "trajectory_sha256": "3af3cb3ef3f9cdf7f32ec9a0fd4df1f918655eb70690b918cd0052b8784192b5",
+  "appearance_only": true,
+  "physical_equivalence": "../physics-equivalence.json"
+}

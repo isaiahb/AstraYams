@@ -1,0 +1,27 @@
+{
+  "source_sha256": "67d43e2b8d1beb445dfe5de63870b65682deb0913c52ca1fffedbb75bdd31948",
+  "revision_sha256": "12b7b9348b785c8a8f68321ae46b00970aa9e6c4161052a6b5919e24f8b710b0",
+  "exact_compiled_checks": {
+    "body_mass": true,
+    "body_inertia": true,
+    "body_ipos": true,
+    "body_iquat": true,
+    "body_parentid": true,
+    "body_pos": true,
+    "body_quat": true,
+    "jnt_pos": true,
+    "jnt_axis": true,
+    "jnt_stiffness": true,
+    "dof_damping": true,
+    "dof_armature": true,
+    "qpos_spring": true,
+    "qpos0": true,
+    "actuator_gainprm": true,
+    "actuator_biasprm": true,
+    "actuator_gear": true,
+    "actuator_forcerange": true
+  },
+  "collision_geometries_checked": 849,
+  "identical_100_step_qpos_qvel": true,
+  "scope": "Appearance-only revision. V3 rest, contact and control trajectories are reused after exact physical checks; no new training or material calibration."
+}

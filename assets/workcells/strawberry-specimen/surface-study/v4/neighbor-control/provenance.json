@@ -1,0 +1,6 @@
+{
+  "trajectory_source": "../../v3/neighbor-control/rollout.npz",
+  "trajectory_sha256": "177985916db8910e9450b671554da5811a9de94abc010b1279cc98c055c47c69",
+  "appearance_only": true,
+  "physical_equivalence": "../physics-equivalence.json"
+}

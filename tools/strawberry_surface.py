@@ -68,6 +68,9 @@ def reshape_physical(root,spec,fruit_specs=None):
     return updated
 
 def make_fruit(f):
+    if f.get('surface_recipe') == 4:
+        from strawberry_anatomy import make_fruit as anatomy_fruit
+        return anatomy_fruit(f)
     radius,length=f['radius'],f['length'];p=profile(radius,length,f.get('surface_profile','legacy'));dp=p.derivative()
     seed=int.from_bytes(hashlib.sha256(f['id'].encode()).digest()[:4],'little')
     rng=np.random.default_rng(seed);sites=[]
