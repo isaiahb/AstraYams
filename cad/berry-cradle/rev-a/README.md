@@ -1,4 +1,7 @@
-# Cradle 01 — solid CAD, revision A
+# Cradle 01 — rejected solid CAD, revision A
+
+**Rejected by the user. Do not resume training on this design.** See
+[the design reset](../DESIGN-RESET.md) for the unresolved mechanism requirements.
 
 A real B-rep prototype replaces the earlier assembly of simulation primitives.
 `build.py` creates a single valid solid with CadQuery/Open Cascade and exports STEP,
