@@ -133,3 +133,37 @@ prepared measurement protocol; simulation-generated curves cannot supply it.
 Fruit contact compliance and stalk recovery are separate mechanisms and should
 be tested separately before coupling. No such calibrated material model is
 claimed complete by this support milestone.
+
+
+## Recovery milestone evidence — 2026-09-09
+
+Completed the uncalibrated material-hypothesis experiment, including six
+contact/control pairs, independent constitutive checks and a half-timestep
+repeat. v1's initial state failed the control-drift limit and is preserved.
+v2 repaired the baseline through unchanged physical settling and passes the
+original limits. Long-hold force relaxation remains about 14.2% in the assumed
+Maxwell case versus less than 0.3% in the two fixed-spring alternatives. Actual
+recordings, curves, numerical reports and a real measurement plan are at
+`assets/workcells/strawberry-specimen/recovery-study/v2/README.md`.
+
+This closes implementation/testing of a discrimination experiment, not material
+identification from real data. A matching accessible strawberry fruit-stalk
+recovery curve was not found or fitted. No biological parameter bounds, growth
+law, tissue damage threshold or full-plant accuracy are established. Multiple
+support amplitudes, held-out plants and measured intervention histories remain
+required for validation; the two simulated holds do not supply that evidence.
+
+### Next prioritized outcome
+
+A physically deforming berry/tool contact with inspectable indentation and
+contact-area change, first as an isolated nondestructive loading/unloading test.
+Maintain this rigid-fruit baseline and the unchanged truss while checking the
+new component separately. Use available strawberry tissue measurements only
+within their specimen and loading scope. Compare contact force, displacement,
+recovery and mesh/time refinement; add damage only with separate evidence.
+Then couple the accepted contact component into the support trial.
+
+Do not substitute more spring damping or contact penetration for modeled flesh
+deformation, and do not describe a numerically stable grasp as bruise-safe.
+The broader crown/root/leaf, multiple-specimen, cutter and learned-robot roadmap
+remains open. Product UI work remains paused.

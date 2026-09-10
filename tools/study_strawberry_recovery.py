@@ -249,7 +249,9 @@ def compare():
     if (P/'relaxing-1s-fine/rollout.npz').exists():
         a=np.load(P/'relaxing-1s/rollout.npz');b=np.load(P/'relaxing-1s-fine/rollout.npz')
         error=float(np.linalg.norm(a['fruit_com']-b['fruit_com'],axis=1).max()*1000)
-        fine=dict(max_fruit_path_difference_mm=error,max_cumulative_dissipation_difference_j=float(abs(a['maxwell_dissipated_j']-b['maxwell_dissipated_j']).max()),pass_check=error<=.25)
+        fr=json.loads((P/'relaxing-1s-fine/result.json').read_text())
+        fc=dict(fruit_path=error<=.25,contact_force=fr['peak_target_contact_n']<=.45,tool_overlap=fr['max_tool_overlap_mm']<=.25,other_overlap=fr['max_other_plant_overlap_mm']<=.1,no_unintended_contact=not fr['unintended_contacts'],no_warnings=not any(fr['warnings']),constants_unchanged=fr['constants_unchanged'],initial_moments=fr['initial_spring_moment_error_nm']<=1e-10,initial_state_matched=bool(np.array_equal(a['qpos'][0],b['qpos'][0]) and np.array_equal(a['qvel'][0],b['qvel'][0])))
+        fine=dict(max_fruit_path_difference_mm=error,max_cumulative_dissipation_difference_j=float(abs(a['maxwell_dissipated_j']-b['maxwell_dissipated_j']).max()),checks=fc,pass_check=all(fc.values()))
     result=dict(rows=rows,fine_timestep=fine,all_checks_pass=all(x['all_checks_pass'] for x in rows) and (fine is not None and fine['pass_check']),
         scope='Contact/numerical checks only. No matching real strawberry recovery curve was found or fitted. Model differences are hypotheses, not established tissue behavior.')
     dump(P/'comparison.json',result)

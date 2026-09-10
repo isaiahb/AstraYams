@@ -1,0 +1,27 @@
+{
+  "status": "proposed real experiment; no measurements collected",
+  "objective": "Distinguish elastic/damped response, delayed recovery and pre-existing rest shape in an intact fruit truss.",
+  "specimen_metadata": ["cultivar", "plant_age", "fruit_maturity", "fruit_mass_kg", "stalk_diameter_profile_m", "stalk_length_m", "hydration_history", "temperature_c", "visible_damage", "time_since_previous_intervention"],
+  "instrumentation": {
+    "force": "Measure actual cup force; select resolution and range from a pilot. Record calibration, noise and saturation rather than treating simulator limits as safe biological loads.",
+    "position": "Measure actual tool displacement and rotation, not only motor command. Calibrate actuator compliance and backlash separately.",
+    "vision": "Synchronized calibrated views of crown/common branch, stalk tip, calyx, berry orientation and neighboring fruit, with visible scale and tracked occlusions.",
+    "timing": "Synchronize video and force timestamps. Select sampling bandwidth from the fastest resolved response and measure filtering delay. Keep raw data."
+  },
+  "sequence": [
+    "Record an untouched baseline long enough to characterize drift and sensor noise.",
+    "Ramp a small support displacement with the fruit attached; use a pilot to establish a reversible range.",
+    "Hold at several actual displacements and durations. The simulated 1 and 12 second holds are candidate interventions, not validated specimen settings.",
+    "Withdraw completely and observe for minutes; extend recording if response persists.",
+    "Repeat low-amplitude cycles with adequate recovery and an untouched comparison specimen.",
+    "Use independent controlled unloading or longitudinal growth observations to constrain reference curvature. Keep destructive tests separate."
+  ],
+  "analysis": [
+    "Check mass/force balance, contact location, instrument drift and baseline motion before fitting material parameters.",
+    "Fit candidate models jointly to force and geometry over time, including instrument compliance and measurement uncertainty.",
+    "Report parameter tradeoffs and models that observations cannot distinguish.",
+    "Reserve whole plants and distinct amplitudes/hold durations for evaluation; do not split adjacent frames across fitting and validation.",
+    "Compare prediction errors at task-relevant contact forces and motion scales; add material complexity only when it improves held-out predictions."
+  ],
+  "exclusions": ["No transfer of petiole, wood, electrical-relaxation or cutting-failure parameters to fruit-stalk recovery without supporting evidence.", "No permanent-set conclusion from a short residual-motion window.", "No use of the rigid-fruit model to establish bruising thresholds."]
+}

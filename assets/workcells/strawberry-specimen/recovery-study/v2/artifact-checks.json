@@ -1,0 +1,21 @@
+{
+  "index.html": 200,
+  "comparison.json": 200,
+  "README.md": 200,
+  "research.md": 200,
+  "measurement-plan.json": 200,
+  "initial-scene.glb": 200,
+  "1s-hold.mp4": 200,
+  "12s-hold.mp4": 200,
+  "recovery-comparison.png": 200,
+  "reference/tabletop.jpg": 200,
+  "1s-video": {
+    "frames": 640,
+    "seconds": 25.6
+  },
+  "12s-video": {
+    "frames": 915,
+    "seconds": 36.6
+  },
+  "review_scope": "Sampled actual video frames at rest, first contact, support, hold, withdrawal and recovery. No motion/geometry edits."
+}

@@ -7,6 +7,7 @@ from pathlib import Path
 import imageio.v2 as imageio
 import mujoco
 import numpy as np
+import trimesh
 from PIL import Image,ImageDraw,ImageFont
 import matplotlib
 matplotlib.use('Agg')
@@ -81,7 +82,18 @@ def plots():
 def export():
     template=ROOT/'assets/workcells/strawberry-specimen/parametric-study/v13/index.html'
     source=json.loads((BASE/'support/replay.json').read_text())
+    # The old isolated-push probe is collision-disabled in every trial and
+    # unrelated to this instrument. Omit it from the exported review geometry.
+    source['objects']=[o for o in source['objects'] if o['body']!='probe']
     m=mujoco.MjModel.from_xml_path(str(BASE/'scene.xml'));d=mujoco.MjData(m)
+    initial=np.load(P/'initial-state.npz');d.qpos[:]=initial['qpos'];mujoco.mj_kinematics(m,d)
+    scene=trimesh.Scene()
+    for i,o in enumerate(source['objects']):
+        g=trimesh.load(ROOT/o['mesh_path'],force='mesh');bid=m.body(o['body']).id
+        transform=np.eye(4);transform[:3,:3]=d.xmat[bid].reshape(3,3);transform[:3,3]=d.xpos[bid]
+        color=o['color'];g.visual.vertex_colors=[(color>>16)&255,(color>>8)&255,color&255,255]
+        scene.add_geometry(g,node_name=f'{o["body"]}-{i}',transform=transform)
+    scene.export(P/'initial-scene.glb')
     cases=[f'{name}-{hold}s' for hold in [1,12] for name in LABELS]
     for case in cases:
         z=np.load(P/case/'rollout.npz');frames=[]
@@ -100,7 +112,7 @@ def export():
     html=html.replace('</header>','</header><p role="status" style="padding:12px;border:1px solid #ba883f">'+notice+'</p>')
     html=re.sub(r'<nav aria-label="Physics recordings">.*?</nav>','<nav aria-label="Physics recordings">'+''.join(f'<button data-kind="{case}"'+(' class="active"' if case=='elastic-1s' else '')+'>'+LABELS[case.split('-')[0]]+' · '+case.split('-')[1]+' hold</button>' for case in cases)+'</nav>',html)
     html=html.replace('Multi-reference morphology hypothesis with age-dependent petiole mechanics.','Compare 1 s and 12 s holds using identical commanded tool paths and a shared loaded plant shape. B adds an uncalibrated relaxing component; C changes pre-existing rest curvature AND stiffness. No measured strawberry recovery curve has been fitted.')
-    html=html.replace('href="specimen-settled.glb"','href="../../support-study/v2/specimen-settled.glb"')
+    html=html.replace('href="specimen-settled.glb"','href="initial-scene.glb"').replace('Download 3D specimen (.glb)','Download initial 3D scene (.glb)')
     html=html.replace('<a href="README.md">Assumptions & methodology</a>','<a href="comparison.json">All checks</a><a href="recovery-comparison.png">Recovery plots</a><a href="research.md">Research & unknowns</a><a href="README.md">Methodology</a>')
     start=html.index("if(kind==='basal')");end=html.index('orbit.update();clock=',start)
     html=html[:start]+"orbit.target.set(-.008,-.03,.15);cam.position.set(.10,-.35,.20);"+html[end:]

@@ -1,0 +1,28 @@
+{
+  "name": "relaxing-12s-control",
+  "material": "relaxing",
+  "hold_s": 12,
+  "control": true,
+  "dt_s": 0.000125,
+  "duration_s": 36.599999999999994,
+  "wall_s": 235.54250979423523,
+  "first_contact_s": null,
+  "last_contact_s": null,
+  "peak_target_contact_n": 0.0,
+  "max_tool_overlap_mm": 0.0,
+  "max_other_plant_overlap_mm": 0.05066051497760278,
+  "unintended_contacts": [],
+  "initial_spring_moment_error_nm": 0.0,
+  "constants_unchanged": true,
+  "maxwell_dissipation_j": 1.8788417694061e-10,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "scope": "Uncalibrated constitutive hypotheses, physical contact with identical commanded stage paths. No plant pose overrides."
+}

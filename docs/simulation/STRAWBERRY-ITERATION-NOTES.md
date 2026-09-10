@@ -248,3 +248,63 @@ fruit contact compliance and stalk history/recovery separately. No real safe
 force, flesh-damage model, growth law, cutter or trained policy is claimed.
 Reproducible sources, evidence, assumptions and commands live in
 assets/workcells/strawberry-specimen/support-study/v2/README.md.
+
+
+## 2026-09-09 — Stalk recovery hypotheses and baseline repair
+
+Researched strawberry mechanical measurements with organ, species and loading-
+mode applicability. No accessible matching fruit-stalk load–hold–unload curve
+was found or fitted. Petiole stiffness, peduncle cutting and woody-branch creep
+remain distinct evidence. Recorded the search limitations and a real measurement
+plan with paired baselines, actual stage position/force, multiple hold durations,
+long recovery and held-out plants/interventions.
+
+Implemented a passive rotational Maxwell component in parallel with the existing
+42 truss springs. Its internal rotation advances once per integration step;
+the force callback never advances state. Noncommuting rotation energy-gradient,
+fixed-strain relaxation/dissipation and analytical scalar creep/recovery checks
+pass. The 3 s relaxation time and equal added stiffness are explicit illustrative
+choices. Compared this with original elastic/damped mechanics and half loaded
+rest curvature plus doubled stiffness, preserving initial restoring moments.
+The latter is a combined pre-existing rest-shape/stiffness hypothesis, not growth
+or plasticity evolving during the trial.
+
+All receive identical 100 Hz stage command histories: the prior approach/support,
+a frozen command held for 1 or 12 seconds, continuous withdrawal and 15 further
+seconds. The fruit stays attached and interacts through real cup contact. Actual
+position is logged because command position and physical position differ under
+finite stage stiffness. Each of six trials has an exact-command no-contact
+control; a relaxing short trial is repeated at half the timestep.
+
+Rejected v1 despite its plausible curves: untouched fruit drifted 0.106–0.228 mm
+against a predeclared 0.10 mm limit. Preserved in commit 05d0147. v2 continues
+gravity settling for 103 simulated seconds without pose/velocity resets or
+material changes. The final 20-second settling window moves only 0.000045 mm.
+Every repeated trial/control pair passes the unchanged limits; the largest
+control drift is 0.000103 mm. Main-trial contact peaks stay below 0.203 N and
+penetration below 0.0068 mm. The fine repeat peaks at 0.204 N / 0.0072 mm, has
+no unintended contact, and differs in fruit path by at most 0.0048 mm.
+
+With the improved baseline, long-hold cup force declines 14.21% for the relaxing
+hypothesis, 0.11% for the original fixed springs and 0.23% for alternate rest
+curvature plus stiffness. At one second after final contact, control-relative
+stalk-tip height is +0.649 mm, -0.019 mm and -0.046 mm respectively. These are
+model predictions that distinguish candidate laws, not observed plant properties.
+Maximum actual stage drift during hold is 0.092 mm; instrument compliance must
+remain part of identification. Short analytical observation-window examples
+expose delayed-recovery/permanent-set ambiguity without asserting growth.
+
+The first relaxing short rerun was interrupted solely to dispatch independent
+cases concurrently; no completed data were discarded as unfavorable. The final
+reports come from completed repeats. Exported two three-panel actual-pose videos,
+six orbitable recordings, an initial-scene GLB, unclipped force/recovery plots,
+compact results and reproducible source. Reviewed saved hold/recovery frames,
+plots and browser loading/playback/view controls. Desktop product files were
+not edited. Source, assumptions, failure history and evidence live in
+assets/workcells/strawberry-specimen/recovery-study/v2/README.md.
+
+The next priority remains one fruit/tool contact deformation experiment before
+cutting or harvest-policy training: indentation, contact area, unloading and
+rate dependence. Added relevant fruit-tissue compression leads without applying
+excised-tissue or failure numbers as whole-berry parameters. Real calibration,
+whole-plant morphology/anchorage and actual cutter interaction remain open.

@@ -65,3 +65,27 @@ for minutes after the fast response; extend the window if motion persists.
 Separately measure unloaded geometry or perform controlled removal to constrain
 pre-existing rest curvature. A force–deflection curve alone can leave stiffness
 and rest-shape tradeoffs unresolved.
+
+## Fruit-contact leads for the next milestone
+
+[An et al., 2020](https://doi.org/10.1016/j.jfoodeng.2020.110016) reports
+strawberry loading–unloading tests with rate- and direction-dependent transitions
+between recoverable response, local plasticity and failure. The accessible
+publisher abstract supports separating these regimes. The repository PDF could
+not be fetched in this session; no curve has been extracted or fitted. Tissue
+failure moduli must not be relabeled as a safe whole-berry contact stiffness.
+
+[An et al., published online 2024](https://link.springer.com/article/10.1007/s11947-024-03491-0)
+provides accessible methods for Malwina fruit cortex specimens: 8 mm diameter
+and height, compressed 5 mm at 1 mm/s. Cell-size distributions informed a
+bonded-particle model evaluated against tissue compression. These are excised
+tissue tests spanning substantial compression, not a calibrated intact-berry
+cup-contact law. This is a useful precedent for connecting observed internal
+structure to an isolated mechanical test. It does not require modeling every
+cell in the whole plant or establish our specimen's parameters.
+
+Proposed next outcome: resolve indentation/contact area for one berry and one
+tool, with an isolated force–displacement and unloading comparison before
+coupling it into this truss. Treat reversible contact, delayed recovery and
+damage as separate identification problems; retain rigid-fruit results as a
+baseline. No deformable-fruit implementation is claimed by this study.

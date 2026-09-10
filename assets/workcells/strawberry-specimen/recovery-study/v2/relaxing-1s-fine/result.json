@@ -1,0 +1,28 @@
+{
+  "name": "relaxing-1s-fine",
+  "material": "relaxing",
+  "hold_s": 1.0,
+  "control": false,
+  "dt_s": 6.25e-05,
+  "duration_s": 25.6,
+  "wall_s": 376.3905351161957,
+  "first_contact_s": 2.8373125,
+  "last_contact_s": 8.4160625,
+  "peak_target_contact_n": 0.20359177637371523,
+  "max_tool_overlap_mm": 0.007154114722131422,
+  "max_other_plant_overlap_mm": 0.05066051497760278,
+  "unintended_contacts": [],
+  "initial_spring_moment_error_nm": 0.0,
+  "constants_unchanged": true,
+  "maxwell_dissipation_j": 0.00024962264363999136,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "scope": "Uncalibrated constitutive hypotheses, physical contact with identical commanded stage paths. No plant pose overrides."
+}

@@ -1,0 +1,400 @@
+{
+  "rows": [
+    {
+      "name": "elastic-1s",
+      "material": "elastic",
+      "hold_s": 1,
+      "hold_force_start_n": 0.1315247722755521,
+      "hold_force_end_n": 0.13150300438360116,
+      "hold_force_change_n": -2.1767891950935647e-05,
+      "max_hold_stage_drift_mm": 0.0007138265381020004,
+      "max_hold_newton_residual_n": 1.8977535387892083e-07,
+      "control_fruit_drift_mm": 2.7083127011228406e-05,
+      "final_tip_distance_mm": 0.14239300577412115,
+      "recovery_after_last_contact": {
+        "0.5": {
+          "sample_time_s": 8.94,
+          "primary_tip_vertical_mm": 0.06002817017436435,
+          "primary_tip_distance_mm": 0.6763859226556121,
+          "largest_neighbor_distance_mm": 1.4645717526887572
+        },
+        "1": {
+          "sample_time_s": 9.44,
+          "primary_tip_vertical_mm": -0.01932876363378022,
+          "primary_tip_distance_mm": 1.215597047663211,
+          "largest_neighbor_distance_mm": 1.3244086230680947
+        },
+        "3": {
+          "sample_time_s": 11.44,
+          "primary_tip_vertical_mm": 0.04117450198462547,
+          "primary_tip_distance_mm": 0.5348898035126368,
+          "largest_neighbor_distance_mm": 0.7026266842692002
+        },
+        "10": {
+          "sample_time_s": 18.44,
+          "primary_tip_vertical_mm": 0.011486486329426171,
+          "primary_tip_distance_mm": 0.2977649606454085,
+          "largest_neighbor_distance_mm": 0.3482818953640181
+        }
+      },
+      "max_tip_displacement_mm": 10.400145826147378,
+      "max_neighbor_displacement_mm": 10.023311203844242,
+      "peak_contact_n": 0.20296914823685638,
+      "max_overlap_mm": 0.006472022568910668,
+      "checks": {
+        "initial_state_matched": true,
+        "identical_model_commands": true,
+        "identical_control_commands": true,
+        "no_unintended_contact": true,
+        "contact_force_budget": true,
+        "tool_overlap": true,
+        "other_overlap": true,
+        "no_warnings": true,
+        "initial_moments": true,
+        "constants_unchanged": true,
+        "control_drift": true,
+        "hold_stage_drift": true,
+        "force_balance": true,
+        "dissipation_monotone": true,
+        "final_tool_clear": true,
+        "initial_state_matches_other_hypotheses": true,
+        "control_has_no_contact": true,
+        "control_no_warnings_or_constant_changes": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "name": "relaxing-1s",
+      "material": "relaxing",
+      "hold_s": 1,
+      "hold_force_start_n": 0.15397647957148874,
+      "hold_force_end_n": 0.15005471942832033,
+      "hold_force_change_n": -0.003921760143168418,
+      "max_hold_stage_drift_mm": 0.01789975595515328,
+      "max_hold_newton_residual_n": 1.895590222046531e-07,
+      "control_fruit_drift_mm": 3.117276271448624e-05,
+      "final_tip_distance_mm": 0.21284700531642592,
+      "recovery_after_last_contact": {
+        "0.5": {
+          "sample_time_s": 8.92,
+          "primary_tip_vertical_mm": 0.5575676133240393,
+          "primary_tip_distance_mm": 0.8644004484937812,
+          "largest_neighbor_distance_mm": 1.2934928732437976
+        },
+        "1": {
+          "sample_time_s": 9.42,
+          "primary_tip_vertical_mm": 0.436471131863736,
+          "primary_tip_distance_mm": 0.690098854080244,
+          "largest_neighbor_distance_mm": 1.4703411662688135
+        },
+        "3": {
+          "sample_time_s": 11.42,
+          "primary_tip_vertical_mm": 0.32619582512805056,
+          "primary_tip_distance_mm": 0.5841264647008672,
+          "largest_neighbor_distance_mm": 0.6449323739739399
+        },
+        "10": {
+          "sample_time_s": 18.42,
+          "primary_tip_vertical_mm": 0.08501908174382566,
+          "primary_tip_distance_mm": 0.3384885210173268,
+          "largest_neighbor_distance_mm": 0.4366704319488753
+        }
+      },
+      "max_tip_displacement_mm": 10.31054123910839,
+      "max_neighbor_displacement_mm": 10.527459931088467,
+      "peak_contact_n": 0.20295396429281168,
+      "max_overlap_mm": 0.006253084642740589,
+      "checks": {
+        "initial_state_matched": true,
+        "identical_model_commands": true,
+        "identical_control_commands": true,
+        "no_unintended_contact": true,
+        "contact_force_budget": true,
+        "tool_overlap": true,
+        "other_overlap": true,
+        "no_warnings": true,
+        "initial_moments": true,
+        "constants_unchanged": true,
+        "control_drift": true,
+        "hold_stage_drift": true,
+        "force_balance": true,
+        "dissipation_monotone": true,
+        "final_tool_clear": true,
+        "initial_state_matches_other_hypotheses": true,
+        "control_has_no_contact": true,
+        "control_no_warnings_or_constant_changes": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "name": "retained-1s",
+      "material": "retained",
+      "hold_s": 1,
+      "hold_force_start_n": 0.17609276695618636,
+      "hold_force_end_n": 0.1760338432341537,
+      "hold_force_change_n": -5.8923722032672154e-05,
+      "max_hold_stage_drift_mm": 0.0011884264961439745,
+      "max_hold_newton_residual_n": 1.7955419499191614e-07,
+      "control_fruit_drift_mm": 8.149642857146466e-05,
+      "final_tip_distance_mm": 0.005001442288938353,
+      "recovery_after_last_contact": {
+        "0.5": {
+          "sample_time_s": 8.96,
+          "primary_tip_vertical_mm": 0.048837869508683296,
+          "primary_tip_distance_mm": 0.09634263142623782,
+          "largest_neighbor_distance_mm": 0.8032879417040313
+        },
+        "1": {
+          "sample_time_s": 9.46,
+          "primary_tip_vertical_mm": -0.04349906175277196,
+          "primary_tip_distance_mm": 0.5007676714886646,
+          "largest_neighbor_distance_mm": 1.0207646932074612
+        },
+        "3": {
+          "sample_time_s": 11.46,
+          "primary_tip_vertical_mm": 0.0116584698570954,
+          "primary_tip_distance_mm": 0.04159394191589395,
+          "largest_neighbor_distance_mm": 0.1328238803792321
+        },
+        "10": {
+          "sample_time_s": 18.46,
+          "primary_tip_vertical_mm": 0.0005200692669016238,
+          "primary_tip_distance_mm": 0.027813195978539502,
+          "largest_neighbor_distance_mm": 0.03274056006452599
+        }
+      },
+      "max_tip_displacement_mm": 10.148921516476477,
+      "max_neighbor_displacement_mm": 10.938835465772053,
+      "peak_contact_n": 0.2029455496137228,
+      "max_overlap_mm": 0.006781919747913857,
+      "checks": {
+        "initial_state_matched": true,
+        "identical_model_commands": true,
+        "identical_control_commands": true,
+        "no_unintended_contact": true,
+        "contact_force_budget": true,
+        "tool_overlap": true,
+        "other_overlap": true,
+        "no_warnings": true,
+        "initial_moments": true,
+        "constants_unchanged": true,
+        "control_drift": true,
+        "hold_stage_drift": true,
+        "force_balance": true,
+        "dissipation_monotone": true,
+        "final_tool_clear": true,
+        "initial_state_matches_other_hypotheses": true,
+        "control_has_no_contact": true,
+        "control_no_warnings_or_constant_changes": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "name": "elastic-12s",
+      "material": "elastic",
+      "hold_s": 12,
+      "hold_force_start_n": 0.1315247722755521,
+      "hold_force_end_n": 0.1313762483636851,
+      "hold_force_change_n": -0.00014852391186698233,
+      "max_hold_stage_drift_mm": 0.0007138265381020004,
+      "max_hold_newton_residual_n": 1.8977535387892083e-07,
+      "control_fruit_drift_mm": 3.464902198990847e-05,
+      "final_tip_distance_mm": 0.14981824212136605,
+      "recovery_after_last_contact": {
+        "0.5": {
+          "sample_time_s": 19.94,
+          "primary_tip_vertical_mm": 0.0668508926462974,
+          "primary_tip_distance_mm": 0.6594005398172534,
+          "largest_neighbor_distance_mm": 1.4944591975637467
+        },
+        "1": {
+          "sample_time_s": 20.44,
+          "primary_tip_vertical_mm": -0.018759223893716204,
+          "primary_tip_distance_mm": 1.2675193517386845,
+          "largest_neighbor_distance_mm": 1.3725696526018056
+        },
+        "3": {
+          "sample_time_s": 22.44,
+          "primary_tip_vertical_mm": 0.04258890101241364,
+          "primary_tip_distance_mm": 0.5692482302689245,
+          "largest_neighbor_distance_mm": 0.743149285387584
+        },
+        "10": {
+          "sample_time_s": 29.44,
+          "primary_tip_vertical_mm": 0.012088942834637129,
+          "primary_tip_distance_mm": 0.3134319673087731,
+          "largest_neighbor_distance_mm": 0.36654916470078586
+        }
+      },
+      "max_tip_displacement_mm": 10.380313692495983,
+      "max_neighbor_displacement_mm": 10.023311203844242,
+      "peak_contact_n": 0.20296914823685638,
+      "max_overlap_mm": 0.006472022568910668,
+      "checks": {
+        "initial_state_matched": true,
+        "identical_model_commands": true,
+        "identical_control_commands": true,
+        "no_unintended_contact": true,
+        "contact_force_budget": true,
+        "tool_overlap": true,
+        "other_overlap": true,
+        "no_warnings": true,
+        "initial_moments": true,
+        "constants_unchanged": true,
+        "control_drift": true,
+        "hold_stage_drift": true,
+        "force_balance": true,
+        "dissipation_monotone": true,
+        "final_tool_clear": true,
+        "initial_state_matches_other_hypotheses": true,
+        "control_has_no_contact": true,
+        "control_no_warnings_or_constant_changes": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "name": "relaxing-12s",
+      "material": "relaxing",
+      "hold_s": 12,
+      "hold_force_start_n": 0.15397647957148874,
+      "hold_force_end_n": 0.1320893996069153,
+      "hold_force_change_n": -0.021887079964573453,
+      "max_hold_stage_drift_mm": 0.0917356722667665,
+      "max_hold_newton_residual_n": 1.895590222046531e-07,
+      "control_fruit_drift_mm": 3.783889073803419e-05,
+      "final_tip_distance_mm": 0.34146933281094155,
+      "recovery_after_last_contact": {
+        "0.5": {
+          "sample_time_s": 19.900000000000002,
+          "primary_tip_vertical_mm": 0.7892472266159967,
+          "primary_tip_distance_mm": 1.252167128730343,
+          "largest_neighbor_distance_mm": 1.9043615279278956
+        },
+        "1": {
+          "sample_time_s": 20.400000000000002,
+          "primary_tip_vertical_mm": 0.6486287232236876,
+          "primary_tip_distance_mm": 1.1023397662536518,
+          "largest_neighbor_distance_mm": 1.9606121470317228
+        },
+        "3": {
+          "sample_time_s": 22.400000000000002,
+          "primary_tip_vertical_mm": 0.46653646838082374,
+          "primary_tip_distance_mm": 0.8973975939572212,
+          "largest_neighbor_distance_mm": 1.1206991433678664
+        },
+        "10": {
+          "sample_time_s": 29.400000000000002,
+          "primary_tip_vertical_mm": 0.12481110462483902,
+          "primary_tip_distance_mm": 0.5379134888895619,
+          "largest_neighbor_distance_mm": 0.700804681238958
+        }
+      },
+      "max_tip_displacement_mm": 10.361209220521056,
+      "max_neighbor_displacement_mm": 10.527459931088467,
+      "peak_contact_n": 0.20295396429281168,
+      "max_overlap_mm": 0.006253084642740589,
+      "checks": {
+        "initial_state_matched": true,
+        "identical_model_commands": true,
+        "identical_control_commands": true,
+        "no_unintended_contact": true,
+        "contact_force_budget": true,
+        "tool_overlap": true,
+        "other_overlap": true,
+        "no_warnings": true,
+        "initial_moments": true,
+        "constants_unchanged": true,
+        "control_drift": true,
+        "hold_stage_drift": true,
+        "force_balance": true,
+        "dissipation_monotone": true,
+        "final_tool_clear": true,
+        "initial_state_matches_other_hypotheses": true,
+        "control_has_no_contact": true,
+        "control_no_warnings_or_constant_changes": true
+      },
+      "all_checks_pass": true
+    },
+    {
+      "name": "retained-12s",
+      "material": "retained",
+      "hold_s": 12,
+      "hold_force_start_n": 0.17609276695618636,
+      "hold_force_end_n": 0.1756863702353953,
+      "hold_force_change_n": -0.00040639672079106903,
+      "max_hold_stage_drift_mm": 0.0016735847956815737,
+      "max_hold_newton_residual_n": 1.7955419499191614e-07,
+      "control_fruit_drift_mm": 0.00010236175348511041,
+      "final_tip_distance_mm": 0.005233288923430826,
+      "recovery_after_last_contact": {
+        "0.5": {
+          "sample_time_s": 19.96,
+          "primary_tip_vertical_mm": 0.05221599215854411,
+          "primary_tip_distance_mm": 0.11523213878597773,
+          "largest_neighbor_distance_mm": 0.799317564722935
+        },
+        "1": {
+          "sample_time_s": 20.46,
+          "primary_tip_vertical_mm": -0.04621100035745451,
+          "primary_tip_distance_mm": 0.5325511621711101,
+          "largest_neighbor_distance_mm": 1.0726246342997223
+        },
+        "3": {
+          "sample_time_s": 22.46,
+          "primary_tip_vertical_mm": 0.012136505150389665,
+          "primary_tip_distance_mm": 0.045388227111647035,
+          "largest_neighbor_distance_mm": 0.14283419990217025
+        },
+        "10": {
+          "sample_time_s": 29.46,
+          "primary_tip_vertical_mm": 0.0005575886810049724,
+          "primary_tip_distance_mm": 0.029049875732950075,
+          "largest_neighbor_distance_mm": 0.03735111891793595
+        }
+      },
+      "max_tip_displacement_mm": 10.129055411611722,
+      "max_neighbor_displacement_mm": 10.938835465772053,
+      "peak_contact_n": 0.2029455496137228,
+      "max_overlap_mm": 0.006781919747913857,
+      "checks": {
+        "initial_state_matched": true,
+        "identical_model_commands": true,
+        "identical_control_commands": true,
+        "no_unintended_contact": true,
+        "contact_force_budget": true,
+        "tool_overlap": true,
+        "other_overlap": true,
+        "no_warnings": true,
+        "initial_moments": true,
+        "constants_unchanged": true,
+        "control_drift": true,
+        "hold_stage_drift": true,
+        "force_balance": true,
+        "dissipation_monotone": true,
+        "final_tool_clear": true,
+        "initial_state_matches_other_hypotheses": true,
+        "control_has_no_contact": true,
+        "control_no_warnings_or_constant_changes": true
+      },
+      "all_checks_pass": true
+    }
+  ],
+  "fine_timestep": {
+    "max_fruit_path_difference_mm": 0.004782197657693142,
+    "max_cumulative_dissipation_difference_j": 3.117511091677461e-09,
+    "checks": {
+      "fruit_path": true,
+      "contact_force": true,
+      "tool_overlap": true,
+      "other_overlap": true,
+      "no_unintended_contact": true,
+      "no_warnings": true,
+      "constants_unchanged": true,
+      "initial_moments": true,
+      "initial_state_matched": true
+    },
+    "pass_check": true
+  },
+  "all_checks_pass": true,
+  "scope": "Contact/numerical checks only. No matching real strawberry recovery curve was found or fitted. Model differences are hypotheses, not established tissue behavior."
+}

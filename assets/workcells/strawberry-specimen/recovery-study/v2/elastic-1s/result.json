@@ -1,0 +1,28 @@
+{
+  "name": "elastic-1s",
+  "material": "elastic",
+  "hold_s": 1,
+  "control": false,
+  "dt_s": 0.000125,
+  "duration_s": 25.6,
+  "wall_s": 128.01541113853455,
+  "first_contact_s": 2.837375,
+  "last_contact_s": 8.44,
+  "peak_target_contact_n": 0.20296914823685638,
+  "max_tool_overlap_mm": 0.006472022568910668,
+  "max_other_plant_overlap_mm": 0.05066051497760278,
+  "unintended_contacts": [],
+  "initial_spring_moment_error_nm": 0.0,
+  "constants_unchanged": true,
+  "maxwell_dissipation_j": 0.0,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "scope": "Uncalibrated constitutive hypotheses, physical contact with identical commanded stage paths. No plant pose overrides."
+}
