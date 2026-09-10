@@ -1,0 +1,9 @@
+meshes/
+library/
+scene.xml
+*.npz
+*.glb
+cad-context.json
+*/rollout.npz
+*/replay.json
+reference/*.html

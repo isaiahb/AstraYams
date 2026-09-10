@@ -167,3 +167,35 @@ Do not substitute more spring damping or contact penetration for modeled flesh
 deformation, and do not describe a numerically stable grasp as bruise-safe.
 The broader crown/root/leaf, multiple-specimen, cutter and learned-robot roadmap
 remains open. Product UI work remains paused.
+
+## Fruit outline correction — 2026-09-10
+
+User rejected the long taper, then rejected the shorter version because every
+fruit still repeated a perfect profile. V2's passed contact test did not establish
+visual morphology. It is preserved at commit 956dc05.
+
+V3 replaces the symmetric profile assumption with 18 digitized photographic
+outlines from six cultivars (Nagamatsu et al., 2021, Fig. 1). Separate boundary
+curves preserve unequal shoulders, taper and slice-centerline drift. Six 3D
+examples show distinct observed contours with explicitly unobserved depth,
+flattening and out-of-plane bending. The plant example interpolates within one
+cultivar's outline family, rather than independently randomizing unrelated traits.
+
+Method improvement: inspect source photographs, overlay the digitized curves,
+project the actual generated mesh back onto its source view, inspect a quarter
+turn, distinguish fitted evidence from latent assumptions, and compile the same
+macroscopic surface into contact/mass geometry. Re-settle and run contact/control
+experiments after physical changes. Appearance-only changes can reuse recordings
+only after verifying unchanged compiled physical arrays.
+
+Artifacts and uncertainty: `surface-study/v3/README.md`, `outline-analysis.png`,
+`projection-fit.json`, `shape-audit.json`, `collision-fit.json`, and the fresh
+neighbor/control results. The fitted-view score is not held-out evidence.
+Single views do not determine hidden geometry; the terminal outline pixels and
+calyx-end depression remain less reliable. Parameter slider edits are labeled
+geometry previews and never alter the linked recorded physics.
+
+Next acceptance evidence is paired/turntable views of the same fruit and a scale
+reference, held-out-view shape error, and a correlated within-cultivar population.
+Calibrated tissue response, maturity-dependent shape, calyx detail, net contact,
+stem fracture, and PPO with the new tools remain open. No product-app changes.

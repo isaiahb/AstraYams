@@ -1,5 +1,6 @@
 {
-  "context": "/assets/workcells/strawberry-specimen/surface-study/v2/cad-context.json",
-  "physics_review": "/assets/workcells/strawberry-specimen/surface-study/v2/index.html",
-  "source_sha256": "31fb61770deb1b345cdff1462c6fa2131e23b6a6345b5d34e2b8fd7a15abe480"
+  "context": "/assets/workcells/strawberry-specimen/surface-study/v3/cad-context.json",
+  "physics_review": "/assets/workcells/strawberry-specimen/surface-study/v3/plant.html",
+  "source_sha256": "67d43e2b8d1beb445dfe5de63870b65682deb0913c52ca1fffedbb75bdd31948",
+  "morphology_review": "/assets/workcells/strawberry-specimen/surface-study/v3/index.html"
 }

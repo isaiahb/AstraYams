@@ -1,0 +1,14 @@
+{
+  "unchanged": [
+    "body_mass",
+    "body_inertia",
+    "body_ipos",
+    "body_iquat",
+    "jnt_stiffness",
+    "qpos_spring",
+    "dof_damping",
+    "geom_contype",
+    "geom_conaffinity"
+  ],
+  "scope": "Sepal length variation and central visible collar only. Existing fresh v3 physics remains applicable; physical geoms and mass properties exactly match."
+}

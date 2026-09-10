@@ -1,0 +1,30 @@
+{
+  "method": "Sample skin vertices against convex collision-hull planes. Inside-plane distance is a lower bound on surface distance near edges; sampling does not prove a global maximum. Includes visual seed pits.",
+  "fruit": {
+    "green": {
+      "skin_samples": 4417,
+      "maximum_inward_plane_gap_mm": 0.20721664515061833,
+      "median_inward_plane_gap_mm": 0.010009609101814185,
+      "maximum_outside_plane_mm": 0.01246596134374476
+    },
+    "primary": {
+      "skin_samples": 4417,
+      "maximum_inward_plane_gap_mm": 0.3249130418685811,
+      "median_inward_plane_gap_mm": 0.012269631982392282,
+      "maximum_outside_plane_mm": 0.029978575830928462
+    },
+    "secondary_a": {
+      "skin_samples": 4417,
+      "maximum_inward_plane_gap_mm": 0.21771846033204548,
+      "median_inward_plane_gap_mm": 0.010808749342609836,
+      "maximum_outside_plane_mm": 0.01615581290761417
+    },
+    "secondary_b": {
+      "skin_samples": 4417,
+      "maximum_inward_plane_gap_mm": 0.24921626620903053,
+      "median_inward_plane_gap_mm": 0.012744903408839353,
+      "maximum_outside_plane_mm": 0.02590743977634504
+    }
+  },
+  "scope": "Contact approximation check, not flesh deformation or calibration."
+}

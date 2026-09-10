@@ -76,8 +76,14 @@ existing local Three.js installation in `apps/skill-studio/node_modules`.
 
 Official YAM STL files and their local translations are read directly from this
 repository; upstream attribution is in `assets/robots/yam/SOURCE.json` and LICENSE.
-`reference/berry.stl` preserves the existing specimen's berry_primary surface in
-millimetres, oriented upright and placed with its tip at Z=12 mm. It supplies
-scale/context only. No earlier training run or generated scene is needed to
-rebuild these tools. The STEP assembly contains the rigid new tools; the textile
-and imported robot are separate preview geometry.
+`reference/berry.stl` preserves the earlier isolated coarse reference. The live
+viewer now reads `specimen-source.json`, which points to the shared full plant's
+settled meshes and physical pose. The plant is translated as one assembly; the
+fruit is not positioned independently of its stalk. The current profile family,
+shape assumptions, rebuilt COM/inertia and new contact recordings are linked
+from that manifest. Only the nominal CAD tool layout is repositioned.
+
+The earlier standalone assembly images preserve the original design study;
+the live full-plant viewer is the current context review. The STEP assembly
+contains the rigid new tools; textile and imported robot/plant meshes are
+separate preview geometry. No prior training run is needed to rebuild the tools.

@@ -56,7 +56,7 @@ review images are retained. Serve the repo root over HTTP and open this index.
 
 ## References and remaining uncertainty
 
-- [Ishikawa et al., fruit shape analysis](https://www.jstage.jst.go.jp/article/jsbbs/71/2/71_19106/_html/-char/en): morphology varies; a single long cone is insufficient.
+- [Nagamatsu et al., fruit shape analysis](https://www.jstage.jst.go.jp/article/jsbbs/71/2/71_19106/_html/-char/en): morphology varies; a single long cone is insufficient.
 - [Cal Poly Strawberry Center fruit anatomy](https://strawberrycenterblog.com/2025/11/25/strawberry-anatomy-part-2-the-fruit/): surface and calyx anatomy reference.
 
 The next shape evidence should be measured multi-view outlines from one real

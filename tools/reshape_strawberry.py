@@ -81,7 +81,7 @@ def export():
 
 def render():
     models=[mujoco.MjModel.from_xml_path(str(OLD/'scene.xml')),mujoco.MjModel.from_xml_path(str(OUT/'scene.xml'))]
-    states=[np.load(REC/'initial-state.npz')['qpos'],np.load(OUT/'initial-state.npz')['qpos']]
+    states=[np.load((OLD if (OLD/'initial-state.npz').exists() else REC)/'initial-state.npz')['qpos'],np.load(OUT/'initial-state.npz')['qpos']]
     font=ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial.ttf',24);images=[]
     for j,(m,q) in enumerate(zip(models,states)):
         d=mujoco.MjData(m);d.qpos[:]=q;mujoco.mj_forward(m,d);m.geom_rgba[m.geom('probe_surface').id,3]=0

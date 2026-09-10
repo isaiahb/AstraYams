@@ -1,0 +1,44 @@
+[
+  {
+    "id": "0",
+    "name": "Fukuoka S6",
+    "fitted_view_iou": 0.9776110515660354,
+    "reference_pixels": 8294,
+    "scope": "In-sample projection fit to the segmented source photograph; not held-out shape or 3D validation. Pixel rasterization included."
+  },
+  {
+    "id": "1",
+    "name": "Kaorino",
+    "fitted_view_iou": 0.9775264607800493,
+    "reference_pixels": 6813,
+    "scope": "In-sample projection fit to the segmented source photograph; not held-out shape or 3D validation. Pixel rasterization included."
+  },
+  {
+    "id": "2",
+    "name": "Sachinoka",
+    "fitted_view_iou": 0.9312727729614273,
+    "reference_pixels": 7514,
+    "scope": "In-sample projection fit to the segmented source photograph; not held-out shape or 3D validation. Pixel rasterization included."
+  },
+  {
+    "id": "3",
+    "name": "06A-184",
+    "fitted_view_iou": 0.9693079818550333,
+    "reference_pixels": 10143,
+    "scope": "In-sample projection fit to the segmented source photograph; not held-out shape or 3D validation. Pixel rasterization included."
+  },
+  {
+    "id": "4",
+    "name": "Beni Hoppe",
+    "fitted_view_iou": 0.9752509690885598,
+    "reference_pixels": 9909,
+    "scope": "In-sample projection fit to the segmented source photograph; not held-out shape or 3D validation. Pixel rasterization included."
+  },
+  {
+    "id": "5",
+    "name": "Ookimi",
+    "fitted_view_iou": 0.967571329157968,
+    "reference_pixels": 7037,
+    "scope": "In-sample projection fit to the segmented source photograph; not held-out shape or 3D validation. Pixel rasterization included."
+  }
+]

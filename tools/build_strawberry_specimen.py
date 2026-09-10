@@ -202,6 +202,10 @@ def build(output=OUT,spec_path=None,detailed_fruit=False,compact_fruit=False):
  if compact_fruit:
   from strawberry_surface import reshape_physical
   spec=reshape_physical(r,spec)
+ elif any('surface_profile' in b.get('fruit',{}) for b in spec['truss']):
+  from strawberry_surface import reshape_physical
+  spec=reshape_physical(r,spec,{b['fruit']['id']:b['fruit'] for b in spec['truss'] if 'fruit' in b})
+  detailed_fruit=True
  if detailed_fruit or compact_fruit:
   from strawberry_surface import enrich
   report=enrich(r,spec,OUT/'meshes')

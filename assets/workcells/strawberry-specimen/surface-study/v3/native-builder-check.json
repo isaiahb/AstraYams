@@ -1,0 +1,15 @@
+{
+  "field_matches": {
+    "body_mass": true,
+    "body_inertia": true,
+    "body_ipos": true,
+    "body_quat": true,
+    "body_pos": true,
+    "jnt_stiffness": true,
+    "dof_damping": true,
+    "qpos_spring": true,
+    "geom_contype": true,
+    "geom_conaffinity": true
+  },
+  "scope": "Native builder automatically respects morphology stored in the graph, without a special shape flag. Numeric comparison tolerances rtol 1e-10 and atol 1e-12."
+}
