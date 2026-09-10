@@ -1,0 +1,38 @@
+{
+  "parameters_mm": {
+    "handle_length": 34.0,
+    "handle_width": 26.0,
+    "handle_thickness": 16.0,
+    "handle_corner_radius": 3.0,
+    "jaw_contact_length": 28.0,
+    "cradle_offset": 70.0,
+    "outer_radius": 17.0,
+    "inner_radius": 15.0,
+    "bowl_center_height": 15.0,
+    "rim_height": 8.0,
+    "side_opening_y": 5.0,
+    "edge_radius": 0.65
+  },
+  "valid": true,
+  "solids": 1,
+  "volume_mm3": 18194.64050875575,
+  "surface_mm2": 5965.090378515409,
+  "bounds_mm": [
+    102.10826033026052,
+    28.108296191823648,
+    16.00908055848656
+  ],
+  "nominal_density_g_cm3": 1.01,
+  "nominal_solid_PA12_mass_g": 18.37658691384331,
+  "scope": "Solid concept CAD for a printed PA12 prototype, not a validated production design. Density is a design assumption; no bruise or food-contact certification claimed.",
+  "grip_interface": "Opposed flat Z faces, 16 mm nominal separation; 26 mm width and 34 mm axial engagement envelope.",
+  "construction": [
+    "R3 grip body",
+    "Smooth elliptical neck loft with R2 shoulder blend",
+    "Concentric spherical bowl with 2 mm radial wall",
+    "Side opening",
+    "R0.65 exposed bowl edges"
+  ],
+  "coordinate_mapping": "To YAM gripper metres: [-CAD_Y, CAD_Z, -130-CAD_X] / 1000",
+  "STEP_roundtrip_volume_error_mm3": 0.0004344976587162819
+}
