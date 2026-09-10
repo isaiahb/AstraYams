@@ -19,7 +19,10 @@ class HarvestJointSkill(gym.Env):
   elif skill=='carry':
    self.begin=0;self.end=next(i for i,r in enumerate(self.trace) if r.get('stage')=='unload')
   else:
-   self.begin=next(i for i,r in enumerate(self.trace) if r.get('stage')=='unload');self.end=max(self.begin,next((i for i,r in enumerate(self.trace) if r.get('placement_contact',False) or r.get('placement_peak_N',0)>.01),len(self.trace)-1)-8)
+   self.begin=next(i for i,r in enumerate(self.trace) if r.get('stage')=='unload')
+   # Even the easiest release reset must contain the berry. First basket contact
+   # happens after free flight and is too late to initialize a release policy.
+   self.end=next((i for i,r in enumerate(self.trace) if i>=self.begin and r.get('normal_z',1)<.65),self.begin)
   d.qpos[:]=self.z['qpos'][self.begin,self.qmap];mujoco.mj_forward(m,d);self.reference_R=d.xmat[self.body].reshape(3,3).copy()
   if skill=='approach':
    d.qpos[:]=self.z['qpos'][self.end,self.qmap];mujoco.mj_forward(m,d);self.goal_base=d.site_xpos[self.site].copy();self.goal_R=d.xmat[self.body].reshape(3,3).copy()

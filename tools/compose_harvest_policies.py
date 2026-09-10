@@ -45,6 +45,7 @@ def run(config,out,seed,through='unload'):
  for step in range(cfg.get('horizon_steps',1600)):
   ca=cu=None;active=[];e.phase='PPO / '+phase
   if phase=='position both':
+   approach.goal=e.data.xpos[e.branch]+offset
    obs=e.observe();obs[:6]=e.data.qpos[e.qids]-support_reference
    ca=None if e.hold>=20 else policies['support'].predict(obs,deterministic=True)[0]
    a=np.zeros(6) if approach.hold>=10 else policies['approach'].predict(approach.observe(),deterministic=True)[0];cu=np.r_[a,0.];active=['support','approach']
@@ -70,7 +71,7 @@ def run(config,out,seed,through='unload'):
     elif phase=='unload':success=True;reason='fruit settled in basket'
   if next_phase and ((phase=='position both' and through=='approach') or phase==through):
    success=True;reason='requested partial chain completed through '+through
-  info.update(active_policies=active,coordinator_phase=phase,phase_steps=phase_steps,local_skill_contract=contract['is_success'],is_success=success)
+  info.update(active_policies=active,coordinator_phase=phase,phase_steps=phase_steps,local_skill_contract=contract['is_success'],local_goal_error_m=contract.get('goal_error_m',contract.get('cutter_goal_error_m')),local_orientation_error_rad=contract.get('orientation_error_rad'),is_success=success)
   trace.append(info);qs.append(e.data.qpos.copy());vs.append(e.data.qvel.copy());eq.append(e.data.eq_active.copy());net.append(e.data.flexvert_xpos.copy());catch_targets.append(e.target.copy());cut_targets.append(e.cut_target.copy());all_actions.append(np.r_[np.zeros(6) if ca is None else ca,np.zeros(7) if cu is None else cu])
   if info['invalid']:reason='physical acceptance check failed';break
   if success:break
