@@ -1,0 +1,22 @@
+[
+  {
+    "jaw_force_cap_n": 30.0,
+    "commanded_jaw_position_m": 0.0,
+    "actual_jaw_position_m": -0.006870335709837792,
+    "actual_motor_force_n": 5.502415271794715,
+    "net_axial_squeeze_n": 5.395834539142632,
+    "measured_peak_motor_force_n": 5.505614095954473,
+    "steps": 150,
+    "ended_by_v1_guard": false
+  },
+  {
+    "jaw_force_cap_n": 1.0,
+    "commanded_jaw_position_m": 0.0,
+    "actual_jaw_position_m": -0.006947798563353112,
+    "actual_motor_force_n": 1.0,
+    "net_axial_squeeze_n": 0.9945427908230078,
+    "measured_peak_motor_force_n": 1.0,
+    "steps": 150,
+    "ended_by_v1_guard": false
+  }
+]
