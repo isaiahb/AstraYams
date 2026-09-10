@@ -1,0 +1,11 @@
+An AI that creates the robot skills it’s missing.
+
+Astra builds a sim + rewards. PPO trains a tiny specialist.
+
+2,406 parameters.
+23/24 unseen sim trials.
+63 new demonstrations.
+
+It also caught a reward bug: hovering paid more than finishing.
+
+Simulation-state input, for now.

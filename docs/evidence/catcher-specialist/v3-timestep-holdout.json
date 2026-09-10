@@ -1,0 +1,221 @@
+{
+  "method": "Same recorded 50 Hz actions, fresh reset at each timestep, including grip settling. Maximum pointwise differences at matching samples. This tests numerical sensitivity, not real-world accuracy.",
+  "rows": [
+    {
+      "seed": 44001,
+      "dt": 0.0005,
+      "result": {
+        "is_success": true,
+        "invalid": false,
+        "distance_m": 0.002062275980402142,
+        "normal_z": 0.9822193582511626,
+        "joint_speed_norm": 0.11180156026513427,
+        "hold_steps": 20,
+        "return_sum": 284.75865160606776,
+        "sim_s": 1.36,
+        "peak_wrong_contact_N": 0.0,
+        "domain_randomization": {
+          "offset_m": [
+            0.010470985703348857,
+            -0.016702711445801783,
+            0.01143592030770193
+          ],
+          "yaw_rad": -0.03087411472180364,
+          "stiffness_scale": 0.9754246813462247
+        },
+        "left_jaw_N": 5.333275050780116,
+        "right_jaw_N": 5.387351237947999,
+        "tool_slip_m": 0.001484882793579433,
+        "tool_rotation_rad": 0.01228504999196554,
+        "wrong_contact_N": 0.0,
+        "penetration_m": 0.0
+      },
+      "max_commanded_torque_Nm": 6.0935980787032245,
+      "peak_sampled_jaw_N": 5.39738073187546,
+      "compared_steps": 68,
+      "max_fruit_position_difference_m": 0.0,
+      "max_joint_difference_rad": 0.0,
+      "max_rim_difference_m": 0.0
+    },
+    {
+      "seed": 44001,
+      "dt": 0.00025,
+      "result": {
+        "is_success": true,
+        "invalid": false,
+        "distance_m": 0.002067595449525326,
+        "normal_z": 0.9821846132979619,
+        "joint_speed_norm": 0.11191922551566207,
+        "hold_steps": 20,
+        "return_sum": 284.7461788392049,
+        "sim_s": 1.36,
+        "peak_wrong_contact_N": 0.0,
+        "domain_randomization": {
+          "offset_m": [
+            0.010470985703348857,
+            -0.016702711445801783,
+            0.01143592030770193
+          ],
+          "yaw_rad": -0.03087411472180364,
+          "stiffness_scale": 0.9754246813462247
+        },
+        "left_jaw_N": 5.3757470634772355,
+        "right_jaw_N": 5.319182810125805,
+        "tool_slip_m": 0.0015132431826499417,
+        "tool_rotation_rad": 0.012495121438601837,
+        "wrong_contact_N": 0.0,
+        "penetration_m": 0.0
+      },
+      "max_commanded_torque_Nm": 6.093295544901001,
+      "peak_sampled_jaw_N": 5.399225141795462,
+      "compared_steps": 68,
+      "max_fruit_position_difference_m": 8.324319717140358e-07,
+      "max_joint_difference_rad": 3.365218578665896e-05,
+      "max_rim_difference_m": 2.5325639999632177e-05
+    },
+    {
+      "seed": 44001,
+      "dt": 0.000125,
+      "result": {
+        "is_success": true,
+        "invalid": false,
+        "distance_m": 0.0020687411436707665,
+        "normal_z": 0.9821507885159257,
+        "joint_speed_norm": 0.11197012670157826,
+        "hold_steps": 20,
+        "return_sum": 284.7426693630099,
+        "sim_s": 1.36,
+        "peak_wrong_contact_N": 0.0,
+        "domain_randomization": {
+          "offset_m": [
+            0.010470985703348857,
+            -0.016702711445801783,
+            0.01143592030770193
+          ],
+          "yaw_rad": -0.03087411472180364,
+          "stiffness_scale": 0.9754246813462247
+        },
+        "left_jaw_N": 5.334362811809277,
+        "right_jaw_N": 5.3903148626065285,
+        "tool_slip_m": 0.0015484289633527454,
+        "tool_rotation_rad": 0.012696124820514828,
+        "wrong_contact_N": 0.0,
+        "penetration_m": 0.0
+      },
+      "max_commanded_torque_Nm": 6.093162027681088,
+      "peak_sampled_jaw_N": 5.400093640572739,
+      "compared_steps": 68,
+      "max_fruit_position_difference_m": 1.251014182267478e-06,
+      "max_joint_difference_rad": 5.0502622405135256e-05,
+      "max_rim_difference_m": 2.989048167640069e-05
+    },
+    {
+      "seed": 44002,
+      "dt": 0.0005,
+      "result": {
+        "is_success": true,
+        "invalid": false,
+        "distance_m": 0.004437943579400147,
+        "normal_z": 0.9893042909564504,
+        "joint_speed_norm": 0.10922954807123669,
+        "hold_steps": 20,
+        "return_sum": 259.7008275812277,
+        "sim_s": 0.78,
+        "peak_wrong_contact_N": 0.0,
+        "domain_randomization": {
+          "offset_m": [
+            -0.01117576386491685,
+            -0.017416793161660796,
+            0.011747620416560633
+          ],
+          "yaw_rad": -0.14481442356362959,
+          "stiffness_scale": 0.995971821269357
+        },
+        "left_jaw_N": 5.37942417006828,
+        "right_jaw_N": 5.341230230008887,
+        "tool_slip_m": 0.0008894129255631488,
+        "tool_rotation_rad": 0.007978943493198507,
+        "wrong_contact_N": 0.0,
+        "penetration_m": 0.0
+      },
+      "max_commanded_torque_Nm": 6.1247623160384,
+      "peak_sampled_jaw_N": 5.398386028134341,
+      "compared_steps": 39,
+      "max_fruit_position_difference_m": 0.0,
+      "max_joint_difference_rad": 0.0,
+      "max_rim_difference_m": 0.0
+    },
+    {
+      "seed": 44002,
+      "dt": 0.00025,
+      "result": {
+        "is_success": true,
+        "invalid": false,
+        "distance_m": 0.004439109078031832,
+        "normal_z": 0.9892859372040033,
+        "joint_speed_norm": 0.10932925521989861,
+        "hold_steps": 20,
+        "return_sum": 259.6878551146657,
+        "sim_s": 0.78,
+        "peak_wrong_contact_N": 0.0,
+        "domain_randomization": {
+          "offset_m": [
+            -0.01117576386491685,
+            -0.017416793161660796,
+            0.011747620416560633
+          ],
+          "yaw_rad": -0.14481442356362959,
+          "stiffness_scale": 0.995971821269357
+        },
+        "left_jaw_N": 5.34443747745802,
+        "right_jaw_N": 5.384142856017591,
+        "tool_slip_m": 0.0009061208294472061,
+        "tool_rotation_rad": 0.008122785903126269,
+        "wrong_contact_N": 0.0,
+        "penetration_m": 0.0
+      },
+      "max_commanded_torque_Nm": 6.124050991828405,
+      "peak_sampled_jaw_N": 5.394851512011343,
+      "compared_steps": 39,
+      "max_fruit_position_difference_m": 1.3834415635886093e-07,
+      "max_joint_difference_rad": 3.513192564766343e-05,
+      "max_rim_difference_m": 2.8988190892183202e-05
+    },
+    {
+      "seed": 44002,
+      "dt": 0.000125,
+      "result": {
+        "is_success": true,
+        "invalid": false,
+        "distance_m": 0.004440200264370548,
+        "normal_z": 0.9892715239133835,
+        "joint_speed_norm": 0.10938307515898692,
+        "hold_steps": 20,
+        "return_sum": 259.6849708573659,
+        "sim_s": 0.78,
+        "peak_wrong_contact_N": 0.0,
+        "domain_randomization": {
+          "offset_m": [
+            -0.01117576386491685,
+            -0.017416793161660796,
+            0.011747620416560633
+          ],
+          "yaw_rad": -0.14481442356362959,
+          "stiffness_scale": 0.995971821269357
+        },
+        "left_jaw_N": 5.33681297369362,
+        "right_jaw_N": 5.386849968559709,
+        "tool_slip_m": 0.0009277416382484171,
+        "tool_rotation_rad": 0.008233612856783947,
+        "wrong_contact_N": 0.0,
+        "penetration_m": 0.0
+      },
+      "max_commanded_torque_Nm": 6.123658699187248,
+      "peak_sampled_jaw_N": 5.395278243524258,
+      "compared_steps": 39,
+      "max_fruit_position_difference_m": 2.0704172538298366e-07,
+      "max_joint_difference_rad": 5.2713629551517927e-05,
+      "max_rim_difference_m": 3.651441250796865e-05
+    }
+  ]
+}

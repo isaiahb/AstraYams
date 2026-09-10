@@ -1,0 +1,10 @@
+{
+  "seed": 44001,
+  "sampled_every_actions": 5,
+  "pairs": 879,
+  "overlaps_m": {
+    "link4/gripper": -0.00576844415118429,
+    "tip_left/tip_right": -0.001196657903480091
+  },
+  "scope": "Signed distances of existing convex robot collision geoms along one recorded trajectory; same and directly adjacent bodies excluded. This is a limited geometric screen, not enabled self-collision dynamics."
+}

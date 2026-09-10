@@ -104,3 +104,36 @@ python tools/train_catcher_specialist.py --out runs/catcher-specialist-v3 --task
 The presentation script captures the same recorded-state viewer with headless
 Chrome via `puppeteer-core` and encodes it with FFmpeg. It changes replay time,
 camera and captions only. Source paths remain local; no social post is sent.
+
+## Final packaged result
+
+V3 selected round 3: **23/24** fresh held-out positioning trials passed, versus
+0/24 for a controller that holds the starting pose. Training took 345.46 seconds
+inside the three learning calls (49,152 transitions); setup, auditing, rendering
+and evaluation took additional time. The failed test, seed 44019, remains in the
+interactive replay and the 31-second film.
+
+The frozen actor generated **63 accepted demonstrations from 64 new attempts**,
+with **4,813** accepted state/action pairs. These are separate from the evaluation
+split. The portable NumPy actor has 2,406 parameters and occupies 10,175 compressed
+bytes; its outputs match the training actor within 1.2e-7 normalized action units.
+No student model or multi-skill composition is claimed.
+
+Two successful final holdout trajectories still passed at 0.25 and 0.125 ms
+physics steps, with maximum rim deviation below 0.04 mm from the 0.5 ms run.
+A separate nonadjacent robot collision-proxy screen flagged convex overlaps.
+Boolean intersections of the corresponding **visible meshes at one terminal
+pose** were empty for both flagged pairs. This does not clear every trajectory
+or validate the collision approximations. Self-collision dynamics remain off;
+refine and validate those proxies before enabling them or claiming transfer-ready
+robot dynamics. Both audit outputs are retained.
+
+The final film is `runs/catcher-specialist-v3/presentation/astra-catcher-ppo.mp4`:
+H.264, 1280x720, 25 fps, 31 seconds. Its captions distinguish recorded motion from
+paused terminal frames and show the disabled self-collision limitation. The
+replay uses every terminal sample, including odd-indexed final steps, so its
+visible pass/hold state matches the recorded evaluation.
+
+Final review: http://127.0.0.1:8793/runs/catcher-specialist-v3/review/index.html
+See `DEMO-NOTES.md` for the three-minute presentation and `X-POST.txt` for the
+276-character draft. Nothing has been published or sent externally.

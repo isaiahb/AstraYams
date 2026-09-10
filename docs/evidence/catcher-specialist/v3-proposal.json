@@ -1,0 +1,68 @@
+{
+  "title": "Astra teaches a small catcher-positioning specialist",
+  "algorithm": "PPO from scratch",
+  "actor_hidden_layers": [
+    32,
+    32
+  ],
+  "observations": "35 privileged simulator state values: joints, joint-target error, target position/velocity, catcher normal, previous action, grasp quality, hold progress. Not a camera policy.",
+  "action": "Six joint-target increments at 50 Hz; finite-torque PD underneath. No IK or BC in execution.",
+  "task": "Place the gripper-held catcher rim 18 mm below the lowest point of the outer berry, center it and hold 0.4 s.",
+  "success": "3D rim-center error <5 mm, normal_z >0.96, joint speed norm <0.35, both jaws >0.2 N, tool slip <5 mm and rotation <0.15 rad for 20 steps.",
+  "failure": "Unexpected robot/tool contact >0.8 N, penetration >0.8 mm, tool slip >25 mm, rotation >0.5 rad, or numerical warning. These are engineering criteria, not biological limits.",
+  "variation": "Plant XYZ +/-20/20/12 mm, yaw +/-0.2 rad, stalk stiffness +/-15%; full plant joints retained. Priors, not identified real distributions.",
+  "train_variation": [
+    0.2,
+    0.6,
+    1.0
+  ],
+  "dev_seeds": [
+    41001,
+    41002,
+    41003,
+    41004,
+    41005,
+    41006
+  ],
+  "holdout_seeds": [
+    44001,
+    44002,
+    44003,
+    44004,
+    44005,
+    44006,
+    44007,
+    44008,
+    44009,
+    44010,
+    44011,
+    44012,
+    44013,
+    44014,
+    44015,
+    44016,
+    44017,
+    44018,
+    44019,
+    44020,
+    44021,
+    44022,
+    44023,
+    44024
+  ],
+  "reward_design": "Dense progress and proximity reward, upright-tool term, action/jerk costs, sustained-success bonus and invalid-contact penalty. Defined before training; see source.",
+  "scope": "Positioning subskill only. Catcher is prepositioned between jaws at reset; no pickup. Textile is a visual rest shape, no net/fruit contact or cutting. Self-collision disabled; uncalibrated actuators, stiffness and friction. State-based simulated generalization only.",
+  "source_hashes": {
+    "src/astrafactory/catcher_positioning.py": "7c54b92bdac15eeb83d0803b2e01ae0c57006c2b65c6fdcb930ec53ab25ab86a",
+    "tools/build_catcher_positioning.py": "f48a8fc82355b8a8b2186273d5f2ebc84a6b2e3223355671d5effe9409bc358e",
+    "/Users/isaiah/Documents/BallahTech/AstraFactory/tools/train_catcher_specialist.py": "26645ccfd8fef981fb2b314164a71093b5d2e119362d3ef1c1df56a0df7bb8b4",
+    "tasks/yam_catcher_positioning_v2/scene.xml": "2dcf1a5c727a779e57086dadbc4590f109684b20bc2a0f4dafc7877f338e6498"
+  },
+  "completion_bonus": 200.0,
+  "task_dir": "/Users/isaiah/Documents/BallahTech/AstraFactory/tasks/yam_catcher_positioning_v2",
+  "learning_rate": 0.0003,
+  "ppo_epochs": 10,
+  "max_rounds": 3,
+  "steps_per_round": 16384,
+  "early_stop": "Two consecutive full-variation rounds with all development cases passing; success criteria unchanged."
+}

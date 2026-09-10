@@ -1,0 +1,21 @@
+{
+  "seed": 44001,
+  "frame": "terminal",
+  "method": "Boolean intersection of visible triangle meshes, contrasted with convex collision-proxy screen. One pose only.",
+  "rows": [
+    {
+      "pair": [
+        "link4",
+        "gripper"
+      ],
+      "intersection_mm3": 0.0
+    },
+    {
+      "pair": [
+        "tip_left",
+        "tip_right"
+      ],
+      "intersection_mm3": 0.0
+    }
+  ]
+}
