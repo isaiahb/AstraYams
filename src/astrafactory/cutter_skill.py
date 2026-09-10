@@ -10,7 +10,8 @@ from astrafactory.dual_harvest import DualHarvestEnv
 from astrafactory.yam_env import rotation_error
 
 class CutterSkillEnv(gym.Env):
- def __init__(self,source='runs/dual-harvest-commission-v13',difficulty=0.,variation=1.,curriculum=None):
+ def __init__(self,source='runs/dual-harvest-commission-v13',difficulty=0.,variation=1.,curriculum=None,joint_scale=1.):
+  self.joint_scale=float(joint_scale)
   self.source=Path(source);task=Path(curriculum) if curriculum else self.source/'task';self.e=DualHarvestEnv(task_dir=task);self.e.reset(seed=0)
   self.z=np.load(self.source/'episode-61001.npz');self.trace=json.loads((self.source/'episode-61001.json').read_text())['trace'];self.difficulty=difficulty;self.variation=variation
   self.qmap=np.load(task/'qpos-map.npy') if curriculum else np.arange(self.e.model.nq);self.vmap=np.load(task/'qvel-map.npy') if curriculum else np.arange(self.e.model.nv)
@@ -35,8 +36,11 @@ class CutterSkillEnv(gym.Env):
  def step(self,action):
   a=np.asarray(action,dtype=float)
   if a.shape!=(7,) or not np.isfinite(a).all():raise ValueError('Seven finite joint/jaw commands required')
-  a=np.clip(a,-1,1);e=self.e;self.info=e.advance(cut_action=a);error,rot=self.geometry();distance=float(np.linalg.norm(error));self.steps+=1;jaw=float(e.data.qpos[e.model.joint('cut_joint7').qposadr[0]])
-  reward=250*(self.previous_distance-distance)+.1*np.exp(-distance/.006)-.08-.2*np.linalg.norm(rot)-.002*np.square(a).sum()
+  a=np.clip(a,-1,1);e=self.e;command=a.copy();command[:6]*=self.joint_scale;info=e.advance(cut_action=command)
+  return self.after_step(a,info)
+ def after_step(self,a,info):
+  e=self.e;self.info=dict(info);error,rot=self.geometry();distance=float(np.linalg.norm(error));self.steps+=1;jaw=float(e.data.qpos[e.model.joint('cut_joint7').qposadr[0]])
+  reward=250*(self.previous_distance-distance)+.1*np.exp(-distance/.006)-8*distance-.08-.2*np.linalg.norm(rot)-.002*np.square(a).sum()
   if distance<.004:reward+=8*(jaw-self.previous_jaw)/.0042
   elif jaw>-.006:reward-=.4
   reward+=10*(e.work-self.previous_work)/e.threshold

@@ -24,3 +24,12 @@ Objective: compose joint-level learned support, cutter approach, clipping, withd
 Placement rubric awards a 0–100 score only on successful settling. Provisional quality is `100 exp(-E/0.001 - Fpeak/2 - Jexcess/0.02)`: preimpact relative kinetic energy in J, peak normal force in N, excess impulse over static weight for the first 150 ms in Ns. The receiving basket has finite mass and rests on a shelf. A passive vertical liner spring represents cushioning. These are **uncalibrated engineering proxies**, not bruise, crushing, vine tearing, basket buckling or hardware validation.
 
 Known limits: privileged simulator-state policies, no cameras; same-arm self-collision still unresolved; one designated cuttable fruit per episode; no morphology generalization or complete learned basket placement established yet. Final validation must restore full canopy and dynamic net; frozen geometry curricula never count as full-physics evidence.
+
+## Subsequent evidence
+
+- Withdrawal v3: 3/4 local full-scene holdouts (73001–73004), 0/1 zero-command baseline. Retraining retained the dynamic net. This is still one cluster, not morphology generalization.
+- Clipping v2 local full-scene check: 2/4 (63001–63004); approach-plus-clip remains rejected.
+- Basket v4: fruit reached receiving basket but did not meet the settling-speed/hold contract; score remains zero.
+- Linux net replay: same recorded commands at 0.25 ms timestep produced a transient 2.69 mm berry/fiber penetration at 0.16225 s with an active 0.393 N normal contact. At 0.125 ms the first 0.18 s had no penetration. Full release and further convergence remain to test. Thresholds were not relaxed.
+- Real plant workcells: five passed a 1 s stationary contact test. These are validated startup states, not learned task successes.
+- State-preserving handoff check: binding a skill preserves qpos, qvel and equality state byte-for-byte. PPO memory/goal changes only. Full composed rollout is still pending.

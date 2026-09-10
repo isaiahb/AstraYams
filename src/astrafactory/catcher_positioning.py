@@ -46,7 +46,7 @@ class CatcherPositioningEnv(gym.Env):
   j=m.joint('joint7');d.ctrl[m.actuator('grip').id]=np.clip(1200*(0.-d.qpos[j.qposadr[0]])-10*d.qvel[j.dofadr[0]],-12,12)
  def observe(self):
   d=self.data;goal,p,normal=self.geometry();quality=np.clip(min(self.grip['left_jaw_N'],self.grip['right_jaw_N'])/5,0,1)
-  return np.r_[d.qpos[self.qids]-self.initial[self.qids],d.qvel[self.vids],(self.target-d.qpos[self.qids])*10,(goal-p)*20,normal,self.goal_velocity*10,self.last,quality,self.hold/20].astype(np.float32)
+  return np.r_[d.qpos[self.qids]-self.initial[self.qids],d.qvel[self.vids],(self.target-d.qpos[self.qids])*10,(goal-p)*20,normal,self.goal_velocity*10,self.last,quality,min(self.hold,20)/20].astype(np.float32)
  def reset(self,*,seed=None,options=None):
   super().reset(seed=seed);m,d=self.model,self.data;mujoco.mj_resetData(m,d);d.qpos[:]=self.initial;m.body_pos[:]=self.pos;m.body_quat[:]=self.quat;m.jnt_stiffness[:]=self.stiff
   v=self.variation;offset=self.np_random.uniform([- .02,-.02,-.012],[.02,.02,.012])*v;yaw=float(self.np_random.uniform(-.20,.20)*v);stiff=float(self.np_random.uniform(1-.15*v,1+.15*v))

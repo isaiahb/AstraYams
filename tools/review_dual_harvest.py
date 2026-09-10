@@ -22,7 +22,7 @@ def main():
    d.qpos[:]=z['qpos'][i];d.eq_active[:]=z['eq_active'][i];mujoco.mj_forward(m,d)
    bodies={m.body(j).name or 'world':dict(position=d.xpos[j].round(7).tolist(),quaternion=d.xquat[j][[1,2,3,0]].round(7).tolist()) for j in range(m.nbody) if not m.body(j).name.startswith('net_node')}
    metrics=meta['trace'][max(0,i-1)].copy()
-   if i==0:metrics.update(phase='Initial physical state',sim_s=0.,severed=False,is_success=False,net_contact_N=0.,cut_work_J=0.)
+   if i==0:metrics.update(phase='Initial physical state',sim_s=0.,severed=not bool(z['eq_active'][0,e.eq]),is_success=False,net_contact_N=0.,cut_work_J=float(meta['trace'][0].get('cut_work_J',0.)))
    frames.append(dict(time=float(z['t'][i]),bodies=bodies,net=z['flex_vertices'][i].round(7).tolist(),metrics=metrics))
   filename=path.stem+'.json';(review/filename).write_text(json.dumps(dict(objects=objects,net_edges=elements,frames=frames,result=meta['result']),separators=(',',':')));cases.append(dict(seed=seed,success=meta['result']['is_success'],replay=filename))
  (review/'manifest.json').write_text(json.dumps(dict(cases=cases),indent=2)+'\n');shutil.copy2(ROOT/'tools/templates/dual-harvest-review.html',review/'index.html');print(review/'index.html',flush=True)

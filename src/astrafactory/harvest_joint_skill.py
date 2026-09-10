@@ -25,7 +25,8 @@ class HarvestJointSkill(gym.Env):
    d.qpos[:]=self.z['qpos'][self.end,self.qmap];mujoco.mj_forward(m,d);self.goal_base=d.site_xpos[self.site].copy();self.goal_R=d.xmat[self.body].reshape(3,3).copy()
   elif skill=='withdraw':self.goal_base=d.site_xpos[self.site]+self.reference_R[:,2]*.035+[0,0,.020];self.goal_R=self.reference_R.copy()
   else:
-   self.goal_base=d.xpos[e.basket]+[0,0,.075 if skill=='carry' else .062];self.goal_R=self.reference_R.copy() if skill=='carry' else Rotation.from_rotvec([0,2.35,0]).as_matrix()@self.reference_R
+   goal_row=self.trace[self.end if skill=='carry' else -1]
+   self.goal_base=np.array(goal_row['goal_position']);self.goal_R=np.array(goal_row['goal_rotation']).reshape(3,3)
   self.action_space=spaces.Box(-1,1,(6,),np.float32);self.observation_space=spaces.Box(-np.inf,np.inf,(67,),np.float32);self.info={};self.last=np.zeros(6)
  def geometry(self):
   e=self.e;return self.goal-e.data.site_xpos[self.site],rotation_error(self.goal_R,e.data.xmat[self.body].reshape(3,3))
@@ -39,7 +40,7 @@ class HarvestJointSkill(gym.Env):
   return result
  def observe(self):
   e=self.e;d=e.data;delta,rot=self.geometry();targets=e.cut_target if self.cutter else e.target;quality=np.clip(min(e.grip['left_jaw_N'],e.grip['right_jaw_N'])/5,0,1)
-  return np.r_[d.qpos[self.qids]-e.initial[self.qids],d.qvel[self.vids],(targets-d.qpos[self.qids])*10,delta*20,np.array([0,0,1])+rot,np.zeros(3),self.last,quality,self.hold/10,self.obstacles()].astype(np.float32)
+  return np.r_[d.qpos[self.qids]-e.initial[self.qids],d.qvel[self.vids],(targets-d.qpos[self.qids])*10,delta*20,np.array([0,0,1])+rot,np.zeros(3),self.last,quality,min(self.hold,10)/10,self.obstacles()].astype(np.float32)
  def reset(self,*,seed=None,options=None):
   super().reset(seed=seed);e=self.e;m,d=e.model,e.data;mujoco.mj_resetData(m,d);d.time=.3;m.exclude_signature[:]=e.excludes;m.body_pos[:]=e.pos;m.body_quat[:]=e.quat;m.jnt_stiffness[:]=e.stiff
   index=round(self.end*(1-self.difficulty)+self.begin*self.difficulty);d.qpos[:]=self.z['qpos'][index,self.qmap];d.qvel[:]=self.z['qvel'][index,self.vmap];d.eq_active[:]=self.z['eq_active'][index]
@@ -50,17 +51,25 @@ class HarvestJointSkill(gym.Env):
   e.last=np.zeros(6);e.goal_velocity=np.zeros(3);e.hold=0;e.steps=0;e.episode_return=0.;e.peakwrong=0.;e.peak_net=0.;e.net_hold=0;e.peak_blade=0.;e.peak_interarm=0.;e.phase='PPO / '+self.skill;e.elapsed=0.;e.peak_depth=0.;e.last_cut=np.zeros(7);e.receive_peak=0.;e.contact_peak=dict(force_N=0.,geoms=[],time_s=0.);e.neighbor_peak=e.contact_peak.copy();e.dr=dict(offset_m=[0,0,0],yaw_rad=0.,stiffness_scale=1.,joint_entry_offset_rad=jitter.tolist(),goal_offset_m=(self.goal-self.goal_base).tolist(),reset_frame=index)
   mujoco.mj_forward(m,d);e.grip=e.grasp();e.previous_goal=e.geometry()[0].copy();e.jaw_previous=sum(d.qpos[m.joint(n).qposadr[0]] for n in ['cut_joint7','cut_joint8'])
   if self.skill in ['carry','unload']:e.clear_metrics();e.basket_start=d.xpos[e.basket].copy();e.basket_quat=d.xquat[e.basket].copy()
-  self.steps=0;self.hold=0;self.last=np.zeros(6);self.info={};delta,rot=self.geometry();self.previous_cost=np.linalg.norm(delta)+.025*np.linalg.norm(rot)
+  self.steps=0;self.hold=0;self.last=np.zeros(6);self.info={};self.previous_impact_cost=0.;delta,rot=self.geometry();self.previous_cost=np.linalg.norm(delta)+.025*np.linalg.norm(rot)
   return self.observe(),dict(domain_randomization=e.dr)
  def step(self,action):
   a=np.clip(np.asarray(action,dtype=float),-1,1);e=self.e
   if a.shape!=(6,) or not np.isfinite(a).all():raise ValueError('Six finite joint actions required')
-  self.info=e.advance(cut_action=np.r_[a,0.] if self.cutter else None,catch_action=a if not self.cutter else None,allow_cut=self.skill!='approach');delta,rot=self.geometry();cost=float(np.linalg.norm(delta)+.025*np.linalg.norm(rot));self.steps+=1
+  info=e.advance(cut_action=np.r_[a,0.] if self.cutter else None,catch_action=a if not self.cutter else None)
+  return self.after_step(a,info)
+ def after_step(self,a,info):
+  e=self.e;self.info=dict(info);delta,rot=self.geometry();cost=float(np.linalg.norm(delta)+.025*np.linalg.norm(rot));self.steps+=1
+  if self.skill=='approach' and e.severed:self.info.update(invalid=True,unexpected_separation=True)
   good=np.linalg.norm(delta)<.004 and np.linalg.norm(rot)<.06 and np.linalg.norm(e.data.qvel[self.vids])<.15 and not self.info['invalid'];self.hold=self.hold+1 if good else 0
   success=bool(self.info.get('placement_success',False)) if self.skill=='unload' else self.hold>=10
   if self.skill=='carry':success=success and e.net_hold>=10
   reward=250*(self.previous_cost-cost)-8*cost-.03-.002*float(a@a)+(.2 if good else 0.)
   if success:reward+=150
+  if self.skill=='unload':
+   impact_cost=10*self.info['impact_energy_J']/.001+self.info['placement_peak_N']+20*self.info['placement_impulse_Ns']
+   reward-=max(0.,impact_cost-self.previous_impact_cost);self.previous_impact_cost=impact_cost
+   if success:reward+=.5*self.info['gentleness_score']
   if self.info['invalid']:reward-=100
   self.info.update(is_success=success,skill=self.skill,goal_error_m=float(np.linalg.norm(delta)),orientation_error_rad=float(np.linalg.norm(rot)),skill_hold_steps=self.hold);self.previous_cost=cost;self.last=a.copy()
   return self.observe(),float(reward),bool(success or self.info['invalid']),self.steps>=250,self.info
