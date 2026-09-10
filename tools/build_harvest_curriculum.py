@@ -10,7 +10,7 @@ import numpy as np,mujoco
 
 def build(source,out,keep_net=False):
  source=Path(source).resolve();out=Path(out).resolve();out.mkdir(parents=True,exist_ok=True)
- root=E.parse(source/'task/scene.xml').getroot();m=mujoco.MjModel.from_xml_path(str(source/'task/scene.xml'));d=mujoco.MjData(m);z=np.load(source/'episode-61001.npz');d.qpos[:]=z['qpos'][0];mujoco.mj_forward(m,d);frozen=[]
+ root=E.parse(source/'task/scene.xml').getroot();m=mujoco.MjModel.from_xml_path(str(source/'task/scene.xml'));d=mujoco.MjData(m);z=np.load(sorted(source.glob('episode-*.npz'))[0]);d.qpos[:]=z['qpos'][0];mujoco.mj_forward(m,d);frozen=[]
  for b in root.iter('body'):
   name=b.get('name','');joints=list(b.findall('joint'))
   prefixes=('petiole_','leaf_') if keep_net else ('petiole_','leaf_','net_node_')
