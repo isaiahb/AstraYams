@@ -1,0 +1,212 @@
+{
+  "full_plant_qpos": 414,
+  "full_plant_dof": 330,
+  "body_count": 197,
+  "joint_count": 162,
+  "original_collision_geom_count": 877,
+  "new_collision_geom_count": 877,
+  "exact_physics_arrays": {
+    "body_mass": {
+      "shape": [
+        197
+      ],
+      "max_error": 0.0
+    },
+    "body_inertia": {
+      "shape": [
+        197,
+        3
+      ],
+      "max_error": 0.0
+    },
+    "body_ipos": {
+      "shape": [
+        197,
+        3
+      ],
+      "max_error": 0.0
+    },
+    "body_iquat": {
+      "shape": [
+        197,
+        4
+      ],
+      "max_error": 0.0
+    },
+    "body_pos": {
+      "shape": [
+        197,
+        3
+      ],
+      "max_error": 0.0
+    },
+    "body_quat": {
+      "shape": [
+        197,
+        4
+      ],
+      "max_error": 0.0
+    },
+    "body_parentid": {
+      "shape": [
+        197
+      ],
+      "max_error": 0.0
+    },
+    "jnt_type": {
+      "shape": [
+        162
+      ],
+      "max_error": 0.0
+    },
+    "jnt_pos": {
+      "shape": [
+        162,
+        3
+      ],
+      "max_error": 0.0
+    },
+    "jnt_axis": {
+      "shape": [
+        162,
+        3
+      ],
+      "max_error": 0.0
+    },
+    "jnt_stiffness": {
+      "shape": [
+        162
+      ],
+      "max_error": 0.0
+    },
+    "dof_damping": {
+      "shape": [
+        330
+      ],
+      "max_error": 0.0
+    },
+    "dof_armature": {
+      "shape": [
+        330
+      ],
+      "max_error": 0.0
+    },
+    "qpos0": {
+      "shape": [
+        414
+      ],
+      "max_error": 0.0
+    },
+    "qpos_spring": {
+      "shape": [
+        414
+      ],
+      "max_error": 0.0
+    },
+    "actuator_gainprm": {
+      "shape": [
+        6,
+        10
+      ],
+      "max_error": 0.0
+    },
+    "actuator_biasprm": {
+      "shape": [
+        6,
+        10
+      ],
+      "max_error": 0.0
+    },
+    "actuator_forcerange": {
+      "shape": [
+        6,
+        2
+      ],
+      "max_error": 0.0
+    },
+    "exclude_signature": {
+      "shape": [
+        77
+      ],
+      "max_error": 0.0
+    }
+  },
+  "original_scene_sha256": "57fde975caf585dbd88766da8153cf760a987f701bae0dd8fc6bc80e08f151c4",
+  "new_scene_sha256": "0e54e291206e8d6c2b0ebf33307e92c7fd76a7b4dbbb59a4d52d686b8f72f283",
+  "recovery_initial_state_sha256": "a0f1246806abc70416bcf682ff13f248a76c5d2d39186fdce296030d42db9219",
+  "surface": {
+    "green": {
+      "achene_count": 68,
+      "maximum_skin_indent_mm": 0.20977034374353642,
+      "recipe": {
+        "version": 1,
+        "radial_segments": 192,
+        "axial_segments": 160,
+        "pit_depth_m": 0.00019,
+        "pit_width_sigma_m": 0.00053,
+        "pit_length_sigma_m": 0.0008,
+        "achene_half_axes_m": [
+          0.00023,
+          0.0005,
+          0.00014
+        ],
+        "description": "Shallow elliptical pits and surface-aligned achenes; visual dimensions are hypotheses."
+      }
+    },
+    "primary": {
+      "achene_count": 158,
+      "maximum_skin_indent_mm": 0.21124989858204773,
+      "recipe": {
+        "version": 1,
+        "radial_segments": 192,
+        "axial_segments": 160,
+        "pit_depth_m": 0.00019,
+        "pit_width_sigma_m": 0.00053,
+        "pit_length_sigma_m": 0.0008,
+        "achene_half_axes_m": [
+          0.00023,
+          0.0005,
+          0.00014
+        ],
+        "description": "Shallow elliptical pits and surface-aligned achenes; visual dimensions are hypotheses."
+      }
+    },
+    "secondary_a": {
+      "achene_count": 129,
+      "maximum_skin_indent_mm": 0.21158940190920308,
+      "recipe": {
+        "version": 1,
+        "radial_segments": 192,
+        "axial_segments": 160,
+        "pit_depth_m": 0.00019,
+        "pit_width_sigma_m": 0.00053,
+        "pit_length_sigma_m": 0.0008,
+        "achene_half_axes_m": [
+          0.00023,
+          0.0005,
+          0.00014
+        ],
+        "description": "Shallow elliptical pits and surface-aligned achenes; visual dimensions are hypotheses."
+      }
+    },
+    "secondary_b": {
+      "achene_count": 118,
+      "maximum_skin_indent_mm": 0.21160739029577336,
+      "recipe": {
+        "version": 1,
+        "radial_segments": 192,
+        "axial_segments": 160,
+        "pit_depth_m": 0.00019,
+        "pit_width_sigma_m": 0.00053,
+        "pit_length_sigma_m": 0.0008,
+        "achene_half_axes_m": [
+          0.00023,
+          0.0005,
+          0.00014
+        ],
+        "description": "Shallow elliptical pits and surface-aligned achenes; visual dimensions are hypotheses."
+      }
+    }
+  },
+  "scope": "Full plant retained; no frozen foliage. Surface is visual only; original collision, COM/inertia, springs, damping and recovery laws retained."
+}

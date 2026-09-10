@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'assets/workcells/strawberry-specimen'
 def v(a):return ' '.join(f'{float(x):.8g}' for x in np.ravel(a))
 def add(p,t,**kw):return ET.SubElement(p,t,{k:str(x) for k,x in kw.items()})
-def build(output=OUT,spec_path=None):
+def build(output=OUT,spec_path=None,detailed_fruit=False,compact_fruit=False):
  OUT=Path(output)
  source=Path(spec_path) if spec_path else ROOT/'tasks/strawberry_specimen/reference-graph.json'
  spec=json.loads(source.read_text());OUT.mkdir(exist_ok=True,parents=True)
@@ -199,10 +199,17 @@ def build(output=OUT,spec_path=None):
  probe=add(w,'body',name='probe',pos='0 0 0');add(probe,'geom',name='probe_surface',type='sphere',size='.009',mass='.025',rgba='.9 .54 .12 1',contype='2',conaffinity='1')
  for i in range(3):
   axis=np.eye(3)[i];add(probe,'joint',name=f'probe_{i}',type='slide',axis=v(axis),damping='.5');add(act,'position',name=f'probe_{i}',joint=f'probe_{i}',kp='180',kv='4',forcerange='-1.5 1.5')
+ if compact_fruit:
+  from strawberry_surface import reshape_physical
+  spec=reshape_physical(r,spec)
+ if detailed_fruit or compact_fruit:
+  from strawberry_surface import enrich
+  report=enrich(r,spec,OUT/'meshes')
+  (OUT/'fruit-surface.json').write_text(json.dumps(report,indent=2)+'\n')
  ET.indent(r);ET.ElementTree(r).write(OUT/'scene.xml',encoding='unicode')
  (OUT/'model.json').write_text(json.dumps({'reference_graph':spec,'beam_parameters':records,'scope':'one representative specimen; inferred depth and attachments; uncalibrated contact model; no cutting, no robot policy','collision':'leaf surfaces consist of convex wedges, same rendered/contact mesh; berry convex collision'},indent=2))
  (OUT/'reference-graph.json').write_text(json.dumps(spec,indent=2))
  (OUT/'build-provenance.json').write_text(json.dumps({'source':str(source.resolve()),'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'generator_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'scene_sha256':hashlib.sha256((OUT/'scene.xml').read_bytes()).hexdigest(),'mujoco_version':mujoco.__version__},indent=2))
  mujoco.MjModel.from_xml_path(str(OUT/'scene.xml'));print('Compiled',OUT/'scene.xml')
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--output',type=Path,default=OUT);p.add_argument('--spec',type=Path);a=p.parse_args();build(a.output,a.spec)
+ p=argparse.ArgumentParser();p.add_argument('--output',type=Path,default=OUT);p.add_argument('--spec',type=Path);p.add_argument('--detailed-fruit',action='store_true');p.add_argument('--compact-fruit',action='store_true');a=p.parse_args();build(a.output,a.spec,a.detailed_fruit,a.compact_fruit)

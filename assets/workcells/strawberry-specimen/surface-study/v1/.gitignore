@@ -1,0 +1,6 @@
+meshes/
+scene.xml
+*.npz
+*.glb
+cad-context.json
+replay.json

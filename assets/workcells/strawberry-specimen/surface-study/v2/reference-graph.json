@@ -1,0 +1,682 @@
+{
+  "version": 1,
+  "reference": "assets/workcells/strawberry-specimen/reference/tabletop.jpg",
+  "source": "https://u.osu.edu/indoorberry/structures/",
+  "photo_credit": "Meteor Systems, as credited within the photograph; hosted by Ohio State Kubota Lab",
+  "crop_pixels": [
+    55,
+    0,
+    330,
+    385
+  ],
+  "scope": "Single-crown strawberry morphology hypothesis informed by several photographs. Six trifoliate leaves and a separate fruit truss. No reconstruction, measured stiffness, roots, cutting or harvest-policy claim.",
+  "landmarks": [
+    {
+      "id": "crown",
+      "uv": [
+        133,
+        115
+      ],
+      "status": "hidden-assumed"
+    },
+    {
+      "id": "leaf_left",
+      "uv": [
+        88,
+        43
+      ],
+      "status": "visible-region-estimate"
+    },
+    {
+      "id": "leaf_high",
+      "uv": [
+        212,
+        28
+      ],
+      "status": "visible-region-estimate"
+    },
+    {
+      "id": "leaf_right",
+      "uv": [
+        280,
+        80
+      ],
+      "status": "visible-region-estimate"
+    },
+    {
+      "id": "leaf_front",
+      "uv": [
+        255,
+        151
+      ],
+      "status": "visible-region-estimate"
+    },
+    {
+      "id": "truss_a",
+      "uv": [
+        153,
+        159
+      ],
+      "status": "partially-visible-assumed-junction"
+    },
+    {
+      "id": "truss_b",
+      "uv": [
+        185,
+        258
+      ],
+      "status": "hidden-assumed"
+    },
+    {
+      "id": "fruit_a",
+      "uv": [
+        158,
+        253
+      ],
+      "status": "visible"
+    },
+    {
+      "id": "fruit_b",
+      "uv": [
+        200,
+        304
+      ],
+      "status": "visible"
+    },
+    {
+      "id": "fruit_c",
+      "uv": [
+        218,
+        331
+      ],
+      "status": "visible"
+    },
+    {
+      "id": "fruit_green",
+      "uv": [
+        120,
+        228
+      ],
+      "status": "visible"
+    }
+  ],
+  "connections": [
+    [
+      "crown",
+      "leaf_left",
+      "assumed"
+    ],
+    [
+      "crown",
+      "leaf_high",
+      "assumed"
+    ],
+    [
+      "crown",
+      "leaf_right",
+      "assumed"
+    ],
+    [
+      "crown",
+      "leaf_front",
+      "assumed"
+    ],
+    [
+      "crown",
+      "truss_a",
+      "partially-visible"
+    ],
+    [
+      "truss_a",
+      "fruit_green",
+      "partially-visible"
+    ],
+    [
+      "truss_a",
+      "fruit_a",
+      "partially-visible"
+    ],
+    [
+      "truss_a",
+      "truss_b",
+      "assumed"
+    ],
+    [
+      "truss_b",
+      "fruit_b",
+      "assumed"
+    ],
+    [
+      "truss_b",
+      "fruit_c",
+      "assumed"
+    ]
+  ],
+  "dimensions": "All metric sizes and depth coordinates below are assumed for this scale study. Image landmarks guide layout; no metric camera calibration is available.",
+  "leaf_shape_reference": "https://strawberrycenterblog.com/2025/12/15/strawberry-anatomy-part-3-leaves-and-stems/",
+  "leaflet_profile": {
+    "length_to_width": 1.05,
+    "petiolule_m": 0.009,
+    "teeth_per_side": 10,
+    "crease_m": 0.003,
+    "status": "approximate proportions traced from Cal Poly upper-surface terminal leaflet; lengths assumed",
+    "normalized_halfwidth_stations": [
+      [
+        0,
+        0.015
+      ],
+      [
+        0.08,
+        0.2
+      ],
+      [
+        0.17,
+        0.39
+      ],
+      [
+        0.25,
+        0.56
+      ],
+      [
+        0.33,
+        0.74
+      ],
+      [
+        0.42,
+        0.89
+      ],
+      [
+        0.5,
+        0.98
+      ],
+      [
+        0.58,
+        1
+      ],
+      [
+        0.67,
+        0.94
+      ],
+      [
+        0.75,
+        0.81
+      ],
+      [
+        0.83,
+        0.61
+      ],
+      [
+        0.92,
+        0.31
+      ],
+      [
+        1,
+        0.01
+      ]
+    ],
+    "profile_basis": "Manual width stations from the upper-surface terminal leaflet in the Cal Poly photograph. Approximate; not image segmentation.",
+    "midrib_arch_m": 0.0018,
+    "orientation_frame": "radial_yaw_then_pitch",
+    "lateral_azimuth_rad": 1.35
+  },
+  "crown_m": [
+    0,
+    0.055,
+    0.278
+  ],
+  "leaves": [
+    {
+      "id": "left",
+      "yaw": 2.95,
+      "pitch": -0.22,
+      "length": 0.08165,
+      "shaft_radius_m": 0.00165,
+      "age": "mature",
+      "young_pa": 297000000.0,
+      "modulus_status": "literature-derived prior; specimen and test-mode transfer unvalidated",
+      "tip": [
+        -0.078,
+        0.044,
+        0.42300000000000004
+      ],
+      "growth": {
+        "attachment_m": [
+          -0.0053,
+          -0.001,
+          0.0045
+        ],
+        "control_points_m": [
+          [
+            -0.011396828078470185,
+            -0.0015676517301884713,
+            0.04614058276401189
+          ],
+          [
+            -0.047480475254210314,
+            -0.006531014477883121,
+            0.1041436519017126
+          ]
+        ],
+        "stipule_length_m": 0.018,
+        "status": "unloaded shape hypothesis; not photo-measured or fitted loaded pose"
+      }
+    },
+    {
+      "id": "high",
+      "yaw": 1.3,
+      "pitch": -0.3,
+      "length": 0.08625,
+      "shaft_radius_m": 0.00165,
+      "age": "mature",
+      "young_pa": 297000000.0,
+      "modulus_status": "literature-derived prior; specimen and test-mode transfer unvalidated",
+      "tip": [
+        0.025,
+        0.083,
+        0.43900000000000006
+      ],
+      "growth": {
+        "attachment_m": [
+          0.0015,
+          0.005,
+          0.009
+        ],
+        "control_points_m": [
+          [
+            0.005789906857459489,
+            0.005666717349853968,
+            0.04594603130912187
+          ],
+          [
+            0.010348164042712327,
+            0.010127990339675893,
+            0.1125352793211821
+          ]
+        ],
+        "stipule_length_m": 0.018,
+        "status": "unloaded shape hypothesis; not photo-measured or fitted loaded pose"
+      }
+    },
+    {
+      "id": "right",
+      "yaw": 0.1,
+      "pitch": -0.18,
+      "length": 0.0759,
+      "shaft_radius_m": 0.00165,
+      "age": "mature",
+      "young_pa": 297000000.0,
+      "modulus_status": "literature-derived prior; specimen and test-mode transfer unvalidated",
+      "tip": [
+        0.099,
+        0.063,
+        0.40900000000000003
+      ],
+      "growth": {
+        "attachment_m": [
+          0.0056,
+          0.0005,
+          0.0065
+        ],
+        "control_points_m": [
+          [
+            0.013623408836178961,
+            0.001093956812327004,
+            0.04470359482385152
+          ],
+          [
+            0.06374004027860261,
+            0.005118311585540894,
+            0.0925912072678781
+          ]
+        ],
+        "stipule_length_m": 0.018,
+        "status": "unloaded shape hypothesis; not photo-measured or fitted loaded pose"
+      }
+    },
+    {
+      "id": "front",
+      "yaw": -0.95,
+      "pitch": -0.15,
+      "length": 0.078,
+      "shaft_radius_m": 0.00165,
+      "age": "mature",
+      "young_pa": 297000000.0,
+      "modulus_status": "literature-derived prior; specimen and test-mode transfer unvalidated",
+      "tip": [
+        0.059,
+        -0.015999999999999993,
+        0.388
+      ],
+      "growth": {
+        "attachment_m": [
+          0.002,
+          -0.0052,
+          0.004
+        ],
+        "control_points_m": [
+          [
+            0.009215101277334955,
+            -0.010637783579800702,
+            0.03866829539762235
+          ],
+          [
+            0.03860868984651187,
+            -0.044569329682464576,
+            0.07980675421589899
+          ]
+        ],
+        "stipule_length_m": 0.018,
+        "status": "unloaded shape hypothesis; not photo-measured or fitted loaded pose"
+      }
+    },
+    {
+      "id": "new",
+      "yaw": 2.0,
+      "pitch": -0.55,
+      "length": 0.043,
+      "shaft_radius_m": 0.00145,
+      "age": "young",
+      "young_pa": 194000000.0,
+      "modulus_status": "literature-derived prior; specimen and test-mode transfer unvalidated",
+      "tip": [
+        -0.025,
+        0.084,
+        0.37
+      ],
+      "growth": {
+        "attachment_m": [
+          -0.0024,
+          0.0025,
+          0.012
+        ],
+        "control_points_m": [
+          [
+            -0.00353146262009441,
+            0.0041408743111726485,
+            0.025603765967176517
+          ],
+          [
+            -0.015900216955089724,
+            0.018644059703976888,
+            0.05785824999652346
+          ]
+        ],
+        "stipule_length_m": 0.013087884664834116,
+        "status": "unloaded shape hypothesis; not photo-measured or fitted loaded pose"
+      }
+    },
+    {
+      "id": "emerging",
+      "yaw": -1.6,
+      "pitch": -0.75,
+      "length": 0.026,
+      "shaft_radius_m": 0.0011,
+      "age": "young",
+      "young_pa": 89000000.0,
+      "modulus_status": "literature-derived prior; specimen and test-mode transfer unvalidated",
+      "tip": [
+        0.002,
+        0.045,
+        0.336
+      ],
+      "growth": {
+        "attachment_m": [
+          0.0005,
+          -0.0005,
+          0.016
+        ],
+        "control_points_m": [
+          [
+            0.00028057206475947874,
+            -0.001776956410143366,
+            0.012800340043644427
+          ],
+          [
+            0.001044801232388705,
+            -0.006617074471795131,
+            0.03029397016573126
+          ]
+        ],
+        "stipule_length_m": 0.006463068156843157,
+        "status": "unloaded shape hypothesis; not photo-measured or fitted loaded pose"
+      }
+    }
+  ],
+  "truss": [
+    {
+      "id": "peduncle",
+      "parent": "crown",
+      "unloaded_delta": [
+        0.005,
+        -0.092,
+        0.062
+      ],
+      "radius": 0.0026
+    },
+    {
+      "id": "green_stalk",
+      "parent": "peduncle",
+      "unloaded_delta": [
+        -0.073,
+        -0.041,
+        -0.005
+      ],
+      "radius": 0.00125,
+      "fruit": {
+        "id": "green",
+        "radius": 0.010357052695507263,
+        "length": 0.019885541175373944,
+        "mass": 0.004,
+        "maturity": "green",
+        "landmark": "fruit_green",
+        "surface_profile": "compact_conic",
+        "flatten_y": 0.98,
+        "density_assumption_kg_m3": 1000.0,
+        "length_width_ratio": 0.96
+      }
+    },
+    {
+      "id": "primary_stalk",
+      "parent": "peduncle",
+      "unloaded_delta": [
+        -0.038,
+        -0.085,
+        -0.01
+      ],
+      "radius": 0.00155,
+      "fruit": {
+        "id": "primary",
+        "radius": 0.01734342336749846,
+        "length": 0.03399310980029698,
+        "mass": 0.018,
+        "maturity": "red",
+        "landmark": "fruit_a",
+        "surface_profile": "compact_conic",
+        "flatten_y": 0.92,
+        "density_assumption_kg_m3": 1000.0,
+        "length_width_ratio": 0.98
+      }
+    },
+    {
+      "id": "secondary",
+      "parent": "peduncle",
+      "unloaded_delta": [
+        0.042,
+        -0.061,
+        0.006
+      ],
+      "radius": 0.0019
+    },
+    {
+      "id": "secondary_a",
+      "parent": "secondary",
+      "unloaded_delta": [
+        -0.004,
+        -0.047,
+        -0.008
+      ],
+      "radius": 0.00135,
+      "fruit": {
+        "id": "secondary_a",
+        "radius": 0.01551675258390303,
+        "length": 0.03165417527116218,
+        "mass": 0.014,
+        "maturity": "red",
+        "landmark": "fruit_b",
+        "surface_profile": "compact_conic",
+        "flatten_y": 0.96,
+        "density_assumption_kg_m3": 1000.0,
+        "length_width_ratio": 1.02
+      }
+    },
+    {
+      "id": "secondary_b",
+      "parent": "secondary",
+      "unloaded_delta": [
+        0.023,
+        -0.05,
+        -0.025
+      ],
+      "radius": 0.0012,
+      "fruit": {
+        "id": "secondary_b",
+        "radius": 0.014235354293454279,
+        "length": 0.030178951102123073,
+        "mass": 0.011,
+        "maturity": "turning",
+        "landmark": "fruit_c",
+        "surface_profile": "compact_conic",
+        "flatten_y": 0.94,
+        "density_assumption_kg_m3": 1000.0,
+        "length_width_ratio": 1.06
+      }
+    }
+  ],
+  "crown_reference": {
+    "url": "https://strawberrycenterblog.com/2026/02/19/__trashed/",
+    "features": [
+      "compressed irregular crown at soil line",
+      "overlapping petiole bases and stipules",
+      "root origins below crown"
+    ],
+    "dimensions": "14 mm core diameter is an assumed scale, not measured from photo",
+    "roots": "buried root mechanics omitted from harvesting-contact model"
+  },
+  "basal_support": {
+    "petiole_base_radius_m": 0.0028,
+    "peduncle_base_radius_m": 0.0033,
+    "taper_length_m": 0.035,
+    "basis": "Geometry hypothesis from broad petiole bases in the Cal Poly crown reference; no measured dimensions or stiffness. Upper stalk radius and material modulus retained.",
+    "source": "https://strawberrycenterblog.com/2026/02/19/__trashed/",
+    "mechanics": "Bending compliance integrated over tapered radius; same tapered section used for rendering and contact.",
+    "upright_petiole_emergence": true,
+    "emergence_basis": "Separate unloaded-shape hypothesis: proximal leaf stalk rises before bending outward; no growth angle measured. Leaf attachment endpoint preserved.",
+    "fixed_embedded_sheath": true,
+    "attachment_basis": "Embedded sheath is a fixed crown component ending at the flexible stalk origin. It must not be a moving collider buried in rigid substrate. Exposed stalk contact stays enabled.",
+    "contact_timeconst_s": 0.001,
+    "contact_basis": "Numerical contact refinement for the stiffer structural bases; tested for penetration and timestep sensitivity. Not tissue calibration."
+  },
+  "simulation_timestep_s": 0.000125,
+  "morphology_evidence": [
+    {
+      "source": "https://extension.oregonstate.edu/catalog/pub/ec-1307-growing-strawberries-your-home-garden",
+      "feature": "Standing plant: petioles remain ascending through most of their length; cupped leaf faces and central developing leaves",
+      "condition": "Figure 1, field-grown plant; adjacent plants overlap; dimensions not recovered"
+    },
+    {
+      "source": "https://www.uaex.uada.edu/farm-ranch/crops-commercial-horticulture/horticulture/ar-fruit-veg-nut-update-blog/posts/HighGDDImpact.aspx",
+      "feature": "Layered petiole bases and main/branch crowns",
+      "condition": "Plant held apart by hands; not evidence for natural attachment angles; this candidate has one crown"
+    },
+    {
+      "source": "https://strawberrycenterblog.com/2026/02/19/__trashed/",
+      "feature": "Short compressed crown, overlapping bases, roots below crown",
+      "condition": "Trimmed bare-root specimen; cannot identify growth posture or mechanical constants"
+    },
+    {
+      "source": "https://agronomy.unl.edu/year-round-strawberry-production/",
+      "feature": "Young nursery-potted plants support another canopy/central-growth comparison",
+      "condition": "Different cultivar/stage/container; not a metric matched specimen"
+    },
+    {
+      "source": "https://doi.org/10.11357/jsamfe.84.4_229",
+      "feature": "Age-stratified effective Young modulus, 89 / 194 / 297 MPa, new / second / third-and-older leaves",
+      "condition": "Tsubota et al. 2022, Tochiotome cultivar in forcing culture. Effective modulus inferred from axial buckling under specified supports; not a direct calibration of our bent, tapered segments. Values stated in PDF p.229; setup described on p.232."
+    },
+    {
+      "source": "https://strawberrycenterblog.com/2025/12/15/strawberry-anatomy-part-3-leaves-and-stems/",
+      "feature": "Pedicels attach through the calyx; replace the arbitrary local-down frame with terminal tangent continuity.",
+      "condition": "Photographic anatomical constraint, not a measurement of attachment flexural/torsional compliance."
+    }
+  ],
+  "parameter_status": {
+    "topology": "anatomy-informed; specimen-specific connections assumed",
+    "unloaded_geometry": "explicit visual hypothesis; photos show loaded geometry, so rest shape remains unidentified",
+    "attachment_coordinates": "assumed staggered crown-relative coordinates in metres",
+    "material_properties": "Age-stratified petiole modulus uses published buckling-derived values as a prior. Mapping our leaf ages to those ranks is assumed. Truss and leaf blade material laws remain unchanged/assumed.",
+    "leaf_mass": "assumed areal-density scaling; no specimen measurements",
+    "distributions": "bounded engineering hypotheses, not biological statistics",
+    "fruit_attachment": "Calyx-to-apex axis aligned with terminal pedicel in unloaded material frame. Uniform-density fruit mesh determines COM and inertia; tissue heterogeneity and local curvature unmeasured."
+  },
+  "mechanics": {
+    "petiole_segments": 7,
+    "truss_segments": 7,
+    "petiole_young_pa": 85000000,
+    "truss_young_pa": 45000000,
+    "stalk_damping_time_s": 0.18,
+    "minimum_stalk_damping": 0.001,
+    "leaf_hinge_stiffness_nm_per_rad": 0.009,
+    "leaf_hinge_damping": 0.0009,
+    "scale_leaf_mass_by_area": true,
+    "leaf_mass_reference_length_m": 0.08165,
+    "leaf_mass_at_reference_kg": 0.0008,
+    "fruit_attachment_frame": "terminal_tangent"
+  },
+  "crown_structure": {
+    "core_rings_z_radius_m": [
+      [
+        -0.012,
+        0.0055
+      ],
+      [
+        -0.004,
+        0.007
+      ],
+      [
+        0.004,
+        0.0068
+      ],
+      [
+        0.01,
+        0.0055
+      ],
+      [
+        0.016,
+        0.0025
+      ]
+    ],
+    "status": "compressed stem with staggered petiole bases; fixed boundary; dimensions assumed"
+  },
+  "parameterization": {
+    "schema_version": 1,
+    "seed": null,
+    "split": "representative",
+    "latent_variables": {
+      "size_scale": 1.0,
+      "radial_scale": 1.0,
+      "azimuth_offset_rad": 0.0
+    },
+    "dependencies": [
+      "one size variable changes petiole length/radius, leaf area/mass, and fruit dimensions/volume/mass",
+      "one openness variable changes leaf endpoint radius without moving crown attachments or substrate",
+      "one azimuth variable rotates the leaf arrangement together; fruit truss fixed for probe comparability",
+      "Age-dependent petiole modulus remains fixed across morphology seeds; crown/root boundary and leaf hinge law remain uncalibrated."
+    ],
+    "distribution_status": "uncalibrated bounded hypotheses; seeded variants are simulation holdouts, not proof of real-world generalization",
+    "config_sha256": "c3978a08ccde42cc4af621af77a76409547c5991c3c5179ab954342c2f2f1ce4",
+    "roots": {
+      "representation": "fixed crown boundary; root geometry and pullout absent",
+      "validity": "above-ground contact hypothesis only; must test anchorage before transfer"
+    }
+  }
+}

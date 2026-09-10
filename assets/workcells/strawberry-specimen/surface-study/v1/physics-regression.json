@@ -1,0 +1,9 @@
+{
+  "duration_s": 0.25,
+  "starting_recorded_time_s": 5.5,
+  "material": "Same rotational Maxwell arm, including saved internal state",
+  "max_generalized_position_difference": 0.0,
+  "max_stem_force_difference_n": 0.0,
+  "passed": true,
+  "scope": "Fresh paired contact-state continuation; verifies appearance did not alter dynamics. Not biological calibration."
+}

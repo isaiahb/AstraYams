@@ -1,0 +1,229 @@
+{
+  "fruit": {
+    "green": {
+      "achene_count": 79,
+      "maximum_skin_indent_mm": 0.20860246739739705,
+      "recipe": {
+        "version": 1,
+        "radial_segments": 192,
+        "axial_segments": 160,
+        "pit_depth_m": 0.00019,
+        "pit_width_sigma_m": 0.00053,
+        "pit_length_sigma_m": 0.0008,
+        "achene_half_axes_m": [
+          0.00023,
+          0.0005,
+          0.00014
+        ],
+        "description": "Shallow elliptical pits and surface-aligned achenes; visual dimensions are hypotheses."
+      },
+      "length_mm": 19.885541175373945,
+      "maximum_width_mm": 20.714105391014527,
+      "profile": "compact_conic",
+      "old_envelope_dimensions_mm": [
+        16.293926239013672,
+        16.293926239013672,
+        22.0
+      ],
+      "new_envelope_dimensions_mm": [
+        19.885540008544922,
+        20.29949951171875,
+        20.713773727416992
+      ],
+      "mass_g": 4.049999999999998,
+      "old_com_m": [
+        2.76198741988812e-20,
+        2.0564543859693752e-20,
+        -0.009963631566168902
+      ],
+      "new_com_m": [
+        -7.198942646589746e-13,
+        9.135470074502128e-13,
+        -0.009563120410284318
+      ],
+      "old_inertia_kg_m2": [
+        1.3846606424962123e-07,
+        1.3846369114821685e-07,
+        1.0231802703662972e-07
+      ],
+      "new_inertia_kg_m2": [
+        1.6650782336179368e-07,
+        1.620110056773882e-07,
+        1.5867297651278488e-07
+      ],
+      "density_assumption_kg_m3": 1000.0,
+      "collision_mesh_volume_mm3": 3996.1208333031404
+    },
+    "primary": {
+      "achene_count": 215,
+      "maximum_skin_indent_mm": 0.2118269820419752,
+      "recipe": {
+        "version": 1,
+        "radial_segments": 192,
+        "axial_segments": 160,
+        "pit_depth_m": 0.00019,
+        "pit_width_sigma_m": 0.00053,
+        "pit_length_sigma_m": 0.0008,
+        "achene_half_axes_m": [
+          0.00023,
+          0.0005,
+          0.00014
+        ],
+        "description": "Shallow elliptical pits and surface-aligned achenes; visual dimensions are hypotheses."
+      },
+      "length_mm": 33.993109800296985,
+      "maximum_width_mm": 34.68684673499692,
+      "profile": "compact_conic",
+      "old_envelope_dimensions_mm": [
+        24.440887451171875,
+        24.440887451171875,
+        37.0
+      ],
+      "new_envelope_dimensions_mm": [
+        31.911392211914062,
+        33.99311065673828,
+        34.68629455566406
+      ],
+      "mass_g": 18.049999999999997,
+      "old_com_m": [
+        3.116969027733684e-20,
+        1.08842189526994e-19,
+        -0.01554142767375661
+      ],
+      "new_com_m": [
+        -1.186664654872223e-12,
+        -3.5033508540102964e-13,
+        -0.015072575223909921
+      ],
+      "old_inertia_kg_m2": [
+        1.5837651445025823e-06,
+        1.5837600693977439e-06,
+        1.0275560313054079e-06
+      ],
+      "new_inertia_kg_m2": [
+        2.0407092012081927e-06,
+        1.9685155776699314e-06,
+        1.8772163550691485e-06
+      ],
+      "density_assumption_kg_m3": 1000.0,
+      "collision_mesh_volume_mm3": 17982.543749864126
+    },
+    "secondary_a": {
+      "achene_count": 184,
+      "maximum_skin_indent_mm": 0.2093418375751517,
+      "recipe": {
+        "version": 1,
+        "radial_segments": 192,
+        "axial_segments": 160,
+        "pit_depth_m": 0.00019,
+        "pit_width_sigma_m": 0.00053,
+        "pit_length_sigma_m": 0.0008,
+        "achene_half_axes_m": [
+          0.00023,
+          0.0005,
+          0.00014
+        ],
+        "description": "Shallow elliptical pits and surface-aligned achenes; visual dimensions are hypotheses."
+      },
+      "length_mm": 31.65417527116218,
+      "maximum_width_mm": 31.03350516780606,
+      "profile": "compact_conic",
+      "old_envelope_dimensions_mm": [
+        22.81149673461914,
+        22.81149673461914,
+        32.0
+      ],
+      "new_envelope_dimensions_mm": [
+        29.791690826416016,
+        31.6541748046875,
+        31.033010482788086
+      ],
+      "mass_g": 14.049999999999999,
+      "old_com_m": [
+        2.087892090012257e-20,
+        1.3708330702119043e-19,
+        -0.013701078198481298
+      ],
+      "new_com_m": [
+        -1.2354513410810397e-12,
+        1.066914430991469e-12,
+        -0.014162493860997568
+      ],
+      "old_inertia_kg_m2": [
+        9.727485779237203e-07,
+        9.727441296521045e-07,
+        6.966590366611021e-07
+      ],
+      "new_inertia_kg_m2": [
+        1.3233100550523607e-06,
+        1.2759339386215094e-06,
+        1.2713598430326228e-06
+      ],
+      "density_assumption_kg_m3": 1000.0,
+      "collision_mesh_volume_mm3": 13986.422916560987
+    },
+    "secondary_b": {
+      "achene_count": 155,
+      "maximum_skin_indent_mm": 0.21145231129844835,
+      "recipe": {
+        "version": 1,
+        "radial_segments": 192,
+        "axial_segments": 160,
+        "pit_depth_m": 0.00019,
+        "pit_width_sigma_m": 0.00053,
+        "pit_length_sigma_m": 0.0008,
+        "achene_half_axes_m": [
+          0.00023,
+          0.0005,
+          0.00014
+        ],
+        "description": "Shallow elliptical pits and surface-aligned achenes; visual dimensions are hypotheses."
+      },
+      "length_mm": 30.178951102123072,
+      "maximum_width_mm": 28.470708586908557,
+      "profile": "compact_conic",
+      "old_envelope_dimensions_mm": [
+        21.18210220336914,
+        21.18210220336914,
+        31.0
+      ],
+      "new_envelope_dimensions_mm": [
+        26.762041091918945,
+        28.47025489807129,
+        30.1789493560791
+      ],
+      "mass_g": 11.049999999999997,
+      "old_com_m": [
+        -5.021895260660061e-20,
+        3.836907075080497e-20,
+        -0.013323347788558577
+      ],
+      "new_com_m": [
+        -1.349324359072424e-13,
+        1.1624667454739703e-13,
+        -0.013583289333013953
+      ],
+      "old_inertia_kg_m2": [
+        6.982693299270247e-07,
+        6.982654673056979e-07,
+        4.7235433505660766e-07
+      ],
+      "new_inertia_kg_m2": [
+        9.119518161136883e-07,
+        8.609452665871188e-07,
+        8.275810310627428e-07
+      ],
+      "density_assumption_kg_m3": 1000.0,
+      "collision_mesh_volume_mm3": 10989.33229158363
+    }
+  },
+  "nq": 411,
+  "nv": 327,
+  "unchanged": "All masses, non-fruit inertias, plant attachments, springs, damping, topology and timestep.",
+  "changed": "Fruit collision envelopes, appearance, COM and inertia; fresh gravity response required.",
+  "references": [
+    "https://www.jstage.jst.go.jp/article/jsbbs/71/2/71_19106/_html/-char/en",
+    "https://strawberrycenterblog.com/2025/11/25/strawberry-anatomy-part-2-the-fruit/"
+  ],
+  "assumptions": "Compact-conic shape ratios and 1000 kg/m3 homogeneous density are design priors, not fitted specimen measurements."
+}
