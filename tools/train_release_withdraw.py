@@ -17,7 +17,8 @@ def evaluate(policy,config,seeds,out=None):
   for _ in range(250):
    a=np.zeros(7) if policy is None else policy.predict(o,deterministic=True)[0];o,r,d,t,i=e.step(a);qs.append(w.data.qpos.copy());vs.append(w.data.qvel.copy());eq.append(w.data.eq_active.copy());net.append(w.data.flexvert_xpos.copy());ct.append(w.target.copy());ut.append(w.cut_target.copy());jt.append(w.jaw_target);trace.append(i);acts.append(a)
    if d or t:break
-  row=dict(i,seed=seed,controller='Seven-action PPO coordinates six cutter joints and stock jaw release after an actual learned cut. Catcher holds finite motor targets. Full dynamic net in holdout; no runtime IK.');rows.append(row);print('EVAL RELEASE RETREAT',seed,i['is_success'],i['invalid'],round(i['goal_error_m']*1000,2),i['net_hold_steps'],round(i['jaw_position_m']*1000,2),flush=True)
+  partner=config.get('support_policy');control='Concurrent frozen support PPO tracks the still-gripped fruit; holds motor targets on release or receiving contact.' if partner else 'Catcher holds finite motor targets.'
+  row=dict(i,seed=seed,controller='Seven-action PPO coordinates six cutter joints and stock jaw release after an actual learned cut. '+control+' Full dynamic net in holdout; no runtime IK.',partner_policy_sha256=hashlib.sha256(Path(partner).read_bytes()).hexdigest() if partner else None);rows.append(row);print('EVAL RELEASE RETREAT',seed,i['is_success'],i['invalid'],round(i['goal_error_m']*1000,2),i['net_hold_steps'],round(i['jaw_position_m']*1000,2),flush=True)
   if out:
    dump(out/f'episode-{seed}.json',dict(result=row,trace=trace));np.savez_compressed(out/f'episode-{seed}.npz',qpos=qs,qvel=vs,eq_active=eq,flex_vertices=net,catch_targets=ct,cut_targets=ut,jaw_targets=jt,actions=acts,t=np.arange(len(qs))*.02)
  e.close();return rows
