@@ -81,3 +81,26 @@ The initial numerical check replays two untrained development trajectories at
 Maximum catcher-rim deviation from the 0.5 ms run is below 0.07 mm over those
 trials. This is a narrow numerical consistency check, not calibration or a
 substitute for checking successful learned trajectories and plant contacts.
+
+## Reward audit and V3
+
+V2's later development checkpoints approach the target but frequently break the
+continuous hold before completion. Their episode returns exceed the earlier
+passing checkpoints. The reward pays a proximity/upright/valid-hold annuity of
+up to 2.35 per step while completing pays only 12 and ends the episode. At gamma
+0.98, the persistent annuity can be worth 117.5. This creates a reason to linger
+without finishing. See `reward-audit.json` for a same-seed discounted comparison.
+
+V3 raises the completion bonus to 200, keeps every acceptance threshold and the
+physical scene unchanged, and trains from scratch with fresh holdout seeds
+44001–44024. This is a reward correction, not a relaxed evaluation. The original
+source/checkpoint/results remain preserved. V3 budget: three rounds of 16,384
+steps, four CPU environments, learning rate 0.0003, ten PPO optimization epochs.
+
+```sh
+python tools/train_catcher_specialist.py --out runs/catcher-specialist-v3 --task-dir tasks/yam_catcher_positioning_v2 --steps 16384 --rounds 3 --envs 4 --lr .0003 --epochs 10 --dev-count 6 --holdout-start 44001 --holdout-count 24 --completion-bonus 200
+```
+
+The presentation script captures the same recorded-state viewer with headless
+Chrome via `puppeteer-core` and encodes it with FFmpeg. It changes replay time,
+camera and captions only. Source paths remain local; no social post is sent.

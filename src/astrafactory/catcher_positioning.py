@@ -7,8 +7,8 @@ import mujoco,numpy as np
 TASK=Path(__file__).resolve().parents[2]/'tasks/yam_catcher_positioning'
 
 class CatcherPositioningEnv(gym.Env):
- def __init__(self,variation=1.,task_dir=TASK):
-  self.task_dir=Path(task_dir)
+ def __init__(self,variation=1.,task_dir=TASK,completion_bonus=12.):
+  self.task_dir=Path(task_dir);self.completion_bonus=float(completion_bonus)
   self.model=mujoco.MjModel.from_xml_path(str(self.task_dir/'scene.xml'));self.data=mujoco.MjData(self.model);m=self.model
   self.initial=np.load(self.task_dir/'initial.npz')['qpos'];self.variation=variation
   self.qids=np.array([m.joint(f'joint{i}').qposadr[0] for i in range(1,7)]);self.vids=np.array([m.joint(f'joint{i}').dofadr[0] for i in range(1,7)]);self.aids=np.array([m.actuator(f'motor{i}').id for i in range(1,7)])
@@ -72,7 +72,7 @@ class CatcherPositioningEnv(gym.Env):
   reward=80*(self.previous_distance-distance)+1.2*np.exp(-distance/.025)+.15*n[2]-.003*(a@a)-.006*np.square(a-self.last).sum()
   if valid:reward+=1
   if invalid:reward-=8
-  if success:reward+=12
+  if success:reward+=self.completion_bonus
   self.previous_distance=distance;self.last=a.copy();self.episode_return+=float(reward)
   info=dict(is_success=bool(success),invalid=invalid,distance_m=distance,normal_z=float(n[2]),joint_speed_norm=speed,hold_steps=self.hold,return_sum=self.episode_return,sim_s=self.steps*.02,peak_wrong_contact_N=self.peakwrong,domain_randomization=self.dr,**self.grip)
   return self.observe(),float(reward),bool(success or invalid),self.steps>=200,info

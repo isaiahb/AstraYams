@@ -1,0 +1,23 @@
+{
+  "seed": 41001,
+  "rows": [
+    {
+      "round": 2,
+      "success": true,
+      "duration_s": 1.36,
+      "undiscounted_return": 95.96830140440326,
+      "discounted_return_gamma_098": 41.04859640877136,
+      "final_hold_steps": 20
+    },
+    {
+      "round": 5,
+      "success": false,
+      "duration_s": 4.0,
+      "undiscounted_return": 387.4908338415166,
+      "discounted_return_gamma_098": 81.45323728277901,
+      "final_hold_steps": 0
+    }
+  ],
+  "diagnosis": "Repeated proximity and partial-hold rewards can favor lingering without satisfying the continuous hold criterion. This is an inferred reward-design failure supported by higher discounted return on a failed trajectory.",
+  "repair": "Increase completion bonus from 12 to 200, above the 2.35/(1-0.98)=117.5 discounted upper bound on persistent proximity/upright/valid-hold rewards. Keep acceptance criteria unchanged. Fresh PPO run and new holdout seeds."
+}

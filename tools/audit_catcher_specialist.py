@@ -10,7 +10,7 @@ def main():
  for seed in a.seeds:
   actions=np.load(a.run/a.split/f'episode-{seed}.npz')['actions'];reference=None
   for dt in [.0005,.00025,.000125]:
-   e=CatcherPositioningEnv(1.,task);e.model.opt.timestep=dt;e.skip=round(.02/dt);e.reset(seed=seed)
+   e=CatcherPositioningEnv(1.,task,proposal.get('completion_bonus',12.));e.model.opt.timestep=dt;e.skip=round(.02/dt);e.reset(seed=seed)
    fruit=[e.model.body(i).id for i in range(e.model.nbody) if (e.model.body(i).name or '').startswith('fruit_')]
    positions=[];joint=[];rim=[];max_torque=0.;peak_jaw=0.
    for action in actions:

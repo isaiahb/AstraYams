@@ -21,9 +21,11 @@ def main():
   sources += [('holdout',x['seed']) for x in selected]
  for split,seed in sources:
   e=CatcherPositioningEnv(1.,task_dir);e.reset(seed=seed);m,d=e.model,e.data;z=np.load(run/split/f'episode-{seed}.npz');trace=json.loads((run/split/f'episode-{seed}.json').read_text());frames=[]
-  for i in range(0,len(z['qpos']),2):
+  for i in sorted(set(range(0,len(z['qpos']),2))|{len(z['qpos'])-1}):
    d.qpos[:]=z['qpos'][i];mujoco.mj_forward(m,d);bodies={m.body(j).name or 'world':dict(position=d.xpos[j].round(7).tolist(),quaternion=d.xquat[j][[1,2,3,0]].round(7).tolist()) for j in range(m.nbody)}
-   metrics=trace['trace'][max(0,i-1)];goal,rim,_=e.geometry();frames.append(dict(time=float(z['t'][i]),bodies=bodies,metrics=metrics,goal=goal.tolist(),rim=rim.tolist()))
+   metrics=trace['trace'][max(0,i-1)].copy();goal,rim,normal=e.geometry()
+   if i==0:metrics.update(is_success=False,hold_steps=0,sim_s=0.,distance_m=float(np.linalg.norm(goal-rim)),normal_z=float(normal[2]),**e.grip)
+   frames.append(dict(time=float(z['t'][i]),bodies=bodies,metrics=metrics,goal=goal.tolist(),rim=rim.tolist()))
   name=f'{split}-{seed}.json';(review/name).write_text(json.dumps(dict(objects=objects,frames=frames,scope='Actual recorded policy trajectory; no interpolated success or kinematic motion script.'),separators=(',',':')))
   cases.append(dict(split=split,seed=seed,success=trace['result']['is_success'],replay=name));e.close()
  (review/'manifest.json').write_text(json.dumps(dict(cases=cases),indent=2)+'\n')
