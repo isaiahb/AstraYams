@@ -79,3 +79,10 @@ Known limits: privileged simulator-state policies, no cameras; same-arm self-col
 `partial-chain-v6` (full plant + dynamic textile, 0.125 ms) runs five PPOs: support and coarse approach concurrently, fine alignment, clipping, then coordinated seven-action cutter retreat/release with the support PPO as partner. Physical cut at 9.48725 s, both blade forces about 2.76 N, accumulated work 1.506 mJ, no pose/velocity jump. The fruit is retained from 12.52 s; the final record has 375 consecutive receiving steps (7.5 s), 0.277 N net contact and zero blade forces. Recorded neighboring and inter-arm contact are zero. Every skill boundary preserves qpos, qvel and equality state.
 
 **The run still fails the complete requested contract.** At 19.52 s, retreat times out about 6.02 mm / 0.092 rad from its goal. Therefore carry/unload are not started, no basket score is awarded, and `full_harvest_success` remains false. This is evidence of a continuous learned cut-and-catch, not a completed harvest-to-basket or generalized full-harvest policy. It uses the original designated-fruit cluster, separately from the two held-out plants used to validate support positioning.
+
+
+## Checkpoint preservation and compute limit
+
+The dedicated RunPod worker `mii4hjqtx76dwk` was stopped and deleted before 23:00 UTC, within its two-hour cap. The unrelated existing pod was untouched. A 42,438,708-byte compressed archive and all 389 internal file hashes were verified locally before deletion. Receipt: `runs/harvest-skill-suite/checkpoints/verification.json`. This preserves all remote policy checkpoints, completed/partial evaluations, logs, and a source snapshot at shutdown.
+
+The expected private GitHub repository redirects to public `isaiahb/AstraYams`. No checkpoint archive was uploaded there. Local commits and the verified local archive preserve this work. Local final evaluations continue without extending the paid-worker bill. The wrist-release run saved round 4 but was interrupted during its development evaluation; best completed development round 3 was selected before full local holdout evaluation.
