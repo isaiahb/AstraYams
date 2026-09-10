@@ -1,0 +1,28 @@
+{
+  "name": "retained-12s",
+  "material": "retained",
+  "hold_s": 12.0,
+  "control": false,
+  "dt_s": 0.000125,
+  "duration_s": 36.599999999999994,
+  "wall_s": 188.75977683067322,
+  "first_contact_s": 2.84375,
+  "last_contact_s": 19.460375,
+  "peak_target_contact_n": 0.2151276284117091,
+  "max_tool_overlap_mm": 0.005520463051711024,
+  "max_other_plant_overlap_mm": 0.05066051498235412,
+  "unintended_contacts": [],
+  "initial_spring_moment_error_nm": 1.3877787807814457e-17,
+  "constants_unchanged": true,
+  "maxwell_dissipation_j": 0.0,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "scope": "Uncalibrated constitutive hypotheses, physical contact with identical commanded stage paths. No plant pose overrides."
+}

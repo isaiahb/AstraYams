@@ -192,7 +192,43 @@ def run(material,hold,control=False,fine=False):
     dump(out/'result.json',report);print(json.dumps(report),flush=True)
 
 
+def compare():
+    rows=[];reference={};mass=json.loads((BASE/'protocol.json').read_text())['fruit_mass_kg']
+    for hold in [1,12]:
+        reference[hold]=np.load(P/f'elastic-{hold}s/commands.npz')['command_world']
+        for material in ['elastic','relaxing','retained']:
+            name=f'{material}-{hold}s';z=np.load(P/name/'rollout.npz');c=np.load(P/(name+'-control')/'rollout.npz')
+            r=json.loads((P/name/'result.json').read_text());t=z['t'];endhold=HOLD_START+hold;delta=z['body_positions']-c['body_positions']
+            hi=(t>HOLD_START+.2)&(t<endhold-.1);first=(t>HOLD_START+.1)&(t<HOLD_START+.3);last=(t>endhold-.3)&(t<endhold-.1)
+            end=t>t[-1]-.5;force=z['tool_force'][:,2]
+            accel=np.gradient(z['fruit_com_velocity'],t,axis=0)
+            residual=z['tool_force']+z['other_force']+z['stem_force']+mass*np.array([0,0,-9.81])-mass*accel
+            stage_drift=float(np.linalg.norm(z['cup_position'][hi]-z['cup_position'][hi][0],axis=1).max()*1000)
+            control_drift=float(np.linalg.norm(c['body_positions'][:,0]-c['body_positions'][0,0],axis=1).max()*1000)
+            own_commands=np.load(P/name/'commands.npz')['command_world'];control_commands=np.load(P/(name+'-control')/'commands.npz')['command_world']
+            after_last=r['last_contact_s'];recover={}
+            for sec in [.5,1,3,10]:
+                i=int(np.argmin(abs(t-(after_last+sec))))
+                recover[str(sec)]=dict(sample_time_s=float(t[i]),primary_tip_vertical_mm=float(delta[i,1,2]*1000),primary_tip_distance_mm=float(np.linalg.norm(delta[i,1])*1000),largest_neighbor_distance_mm=float(np.linalg.norm(delta[i,3:6],axis=1).max()*1000))
+            row=dict(name=name,material=material,hold_s=hold,hold_force_start_n=float(force[first].mean()),hold_force_end_n=float(force[last].mean()),hold_force_change_n=float(force[last].mean()-force[first].mean()),max_hold_stage_drift_mm=stage_drift,
+                max_hold_newton_residual_n=float(np.linalg.norm(residual[hi],axis=1).max()),control_fruit_drift_mm=control_drift,
+                final_tip_distance_mm=float(np.linalg.norm(delta[end,1],axis=1).max()*1000),recovery_after_last_contact=recover,
+                max_tip_displacement_mm=float(np.linalg.norm(delta[:,1],axis=1).max()*1000),max_neighbor_displacement_mm=float(np.linalg.norm(delta[:,3:6],axis=2).max()*1000),peak_contact_n=r['peak_target_contact_n'],max_overlap_mm=r['max_tool_overlap_mm'],
+                checks=dict(initial_state_matched=bool(np.array_equal(z['qpos'][0],c['qpos'][0]) and np.array_equal(z['qvel'][0],c['qvel'][0])),identical_model_commands=bool(np.array_equal(own_commands,reference[hold])),identical_control_commands=bool(np.array_equal(own_commands,control_commands)),no_unintended_contact=not r['unintended_contacts'],contact_force_budget=r['peak_target_contact_n']<=.45,tool_overlap=r['max_tool_overlap_mm']<=.25,other_overlap=r['max_other_plant_overlap_mm']<=.1,no_warnings=not any(r['warnings']),initial_moments=r['initial_spring_moment_error_nm']<=1e-10,constants_unchanged=r['constants_unchanged'],control_drift=control_drift<=.1,hold_stage_drift=stage_drift<=1.,force_balance=float(np.linalg.norm(residual[hi],axis=1).max())<=.005,dissipation_monotone=bool(np.min(np.diff(z['maxwell_dissipated_j']))>=-1e-12),final_tool_clear=bool(np.linalg.norm(z['tool_force'][end],axis=1).max()<1e-5)))
+            row['all_checks_pass']=all(row['checks'].values());rows.append(row)
+    fine=None
+    if (P/'relaxing-1s-fine/rollout.npz').exists():
+        a=np.load(P/'relaxing-1s/rollout.npz');b=np.load(P/'relaxing-1s-fine/rollout.npz')
+        error=float(np.linalg.norm(a['fruit_com']-b['fruit_com'],axis=1).max()*1000)
+        fine=dict(max_fruit_path_difference_mm=error,max_cumulative_dissipation_difference_j=float(abs(a['maxwell_dissipated_j']-b['maxwell_dissipated_j']).max()),pass_check=error<=.25)
+    result=dict(rows=rows,fine_timestep=fine,all_checks_pass=all(x['all_checks_pass'] for x in rows) and (fine is not None and fine['pass_check']),
+        scope='Contact/numerical checks only. No matching real strawberry recovery curve was found or fitted. Model differences are hypotheses, not established tissue behavior.')
+    dump(P/'comparison.json',result)
+    print(json.dumps(result,indent=2),flush=True)
+
+
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('stage',choices=['prepare','run']);parser.add_argument('--material',choices=['elastic','relaxing','retained'],default='elastic');parser.add_argument('--hold',type=float,default=1.);parser.add_argument('--control',action='store_true');parser.add_argument('--fine',action='store_true');a=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('stage',choices=['prepare','run','compare']);parser.add_argument('--material',choices=['elastic','relaxing','retained'],default='elastic');parser.add_argument('--hold',type=float,default=1.);parser.add_argument('--control',action='store_true');parser.add_argument('--fine',action='store_true');a=parser.parse_args()
     if a.stage=='prepare':prepare()
+    elif a.stage=='compare':compare()
     else:run(a.material,a.hold,a.control,a.fine)
