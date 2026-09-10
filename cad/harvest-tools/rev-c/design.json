@@ -1,0 +1,17 @@
+{
+  "parent": "rev-b",
+  "change": "Hooked counterblade to retain stalk against the exposed cutting edges; blade thickness and bypass separation preserved.",
+  "part": "right_blade",
+  "volume_mm3": 152.31159024596712,
+  "valid": true,
+  "solid_count": 1,
+  "cut_site_canonical_mm": [
+    202,
+    0,
+    0
+  ],
+  "limitations": [
+    "Prototype geometry, not manufactured or calibrated",
+    "Grinding, surface finish, blade stiffness and tolerances unverified"
+  ]
+}

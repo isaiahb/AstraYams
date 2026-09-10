@@ -17,17 +17,18 @@ class DualHarvestEnv(CatcherPositioningEnv):
   self.cutstems={m.geom(n).id for n in ['proximal_cut_stem','distal_cut_stem']};self.net=mujoco.mj_name2id(m,mujoco.mjtObj.mjOBJ_FLEX,'catcher_net')
   self.allowed=np.zeros((m.ngeom,m.ngeom),dtype=bool)
   for a,b in self.permitted:self.allowed[a,b]=self.allowed[b,a]=True
-  self.threshold=cut_work_J;self.excludes=m.exclude_signature.copy();self.cut_target=self.initial[self.cq].copy();self.jaw_target=-.007
+  self.threshold=cut_work_J;self.excludes=m.exclude_signature.copy();self.cut_target=self.initial[self.cq].copy();self.jaw_target=-.007;self.contact_peak=dict(force_N=0.,geoms=[],time_s=0.);self.neighbor_peak=dict(force_N=0.,geoms=[],time_s=0.);self.receive_peak=0.
  def servo(self):
   super().servo();m,d=self.model,self.data
+  grip=m.joint('joint7');d.ctrl[m.actuator('grip').id]=np.clip(-2400*d.qpos[grip.qposadr[0]]-16*d.qvel[grip.dofadr[0]],-25,25)
   d.ctrl[self.ca]=np.clip(self.kp*(self.cut_target-d.qpos[self.cq])-self.kd*d.qvel[self.cv]+d.qfrc_bias[self.cv],-10,10)
-  j=m.joint('cut_joint7');d.ctrl[m.actuator('cut_grip').id]=np.clip(2400*(self.jaw_target-d.qpos[j.qposadr[0]])-12*d.qvel[j.dofadr[0]],-30,30)
+  j=m.joint('cut_joint7');d.ctrl[m.actuator('cut_grip').id]=np.clip(12000*(self.jaw_target-d.qpos[j.qposadr[0]])-24*d.qvel[j.dofadr[0]],-30,30)
  def reset(self,*,seed=None,options=None):
   import gymnasium as gym
   gym.Env.reset(self,seed=seed);m,d=self.model,self.data;mujoco.mj_resetData(m,d);d.qpos[:]=self.initial;m.body_pos[:]=self.pos;m.body_quat[:]=self.quat;m.jnt_stiffness[:]=self.stiff;m.exclude_signature[:]=self.excludes
   v=self.variation;offset=self.np_random.uniform([-.02,-.02,-.012],[.02,.02,.012])*v;yaw=float(self.np_random.uniform(-.2,.2)*v);stiff=float(self.np_random.uniform(1-.15*v,1+.15*v));m.body_pos[self.frame]+=offset;m.body_quat[self.frame]=[np.cos(yaw/2),0,0,np.sin(yaw/2)];m.jnt_stiffness[:]*=stiff
   R=np.array([[np.cos(yaw),-np.sin(yaw),0],[np.sin(yaw),np.cos(yaw),0],[0,0,1]]);q=self.freeadr;d.qpos[q:q+3]=self.pos[self.frame]+offset+R@(self.initial[q:q+3]-self.pos[self.frame]);quat=np.zeros(4);mujoco.mju_mulQuat(quat,m.body_quat[self.frame],self.initial[q+3:q+7]);d.qpos[q+3:q+7]=quat
-  self.cut_target=d.qpos[self.cq].copy();self.jaw_target=-.007;self.target=d.qpos[self.qids].copy();self.last=np.zeros(6);self.goal_velocity=np.zeros(3);self.hold=0;self.steps=0;self.episode_return=0.;self.peakwrong=0.;self.severed=False;self.work=0.;self.peak_net=0.;self.net_hold=0;self.cut_event=None;self.cut_time=None;self.peak_blade=0.;self.peak_interarm=0.;self.phase='position catcher';self.elapsed=0.;self.peak_depth=0.
+  self.cut_target=d.qpos[self.cq].copy();self.jaw_target=-.007;self.target=d.qpos[self.qids].copy();self.last=np.zeros(6);self.goal_velocity=np.zeros(3);self.hold=0;self.steps=0;self.episode_return=0.;self.peakwrong=0.;self.severed=False;self.work=0.;self.peak_net=0.;self.net_hold=0;self.cut_event=None;self.cut_time=None;self.peak_blade=0.;self.peak_interarm=0.;self.phase='position catcher';self.elapsed=0.;self.peak_depth=0.;self.contact_peak=dict(force_N=0.,geoms=[],time_s=0.);self.neighbor_peak=dict(force_N=0.,geoms=[],time_s=0.);self.receive_peak=0.
   mujoco.mj_forward(m,d)
   for _ in range(round(.3/m.opt.timestep)):self.servo();mujoco.mj_step(m,d)
   mujoco.mj_forward(m,d);self.grip=self.grasp();self.previous_goal=self.geometry()[0].copy();self.previous_distance=float(np.linalg.norm(self.geometry()[0]-self.geometry()[1]));self.dr=dict(offset_m=offset.tolist(),yaw_rad=yaw,stiffness_scale=stiff);self.jaw_previous=sum(d.qpos[m.joint(n).qposadr[0]] for n in ['cut_joint7','cut_joint8']);self.last_cut=np.zeros(7)
@@ -49,7 +50,15 @@ class DualHarvestEnv(CatcherPositioningEnv):
    for j,blade in enumerate(self.blades):
     if ids&blade and ids&self.cutstems:forces[j]+=max(float(f[0]),0.);bladepair=True
    if bladepair:continue
-   if self.severed and self.fruitgeom in ids and np.any(b&4):continue
+   names=[m.geom(int(g)).name if g>=0 else 'flex' for g in c.geom]
+   if np.any(b&8) and any(any(n in name for n in ['primary','secondary_a','green']) for name in names) and force>self.neighbor_peak['force_N']:
+    self.neighbor_peak=dict(force_N=force,geoms=names,time_s=float(d.time-.3),penetration_m=max(0.,-float(c.dist)))
+   # Receiving the detached fruit includes its calyx on that same rigid body.
+   # Keep its impact and penetration evidence; do not mislabel it as a neighbor.
+   if self.severed and any(m.geom_bodyid[g]==self.fruit for g in ids) and np.any(b&4):
+    self.receive_peak=max(self.receive_peak,force);depth=max(depth,-float(c.dist));continue
+   if force>self.contact_peak['force_N']:
+    self.contact_peak=dict(force_N=force,geoms=[m.geom(int(g)).name if g>=0 else 'flex' for g in c.geom],time_s=float(d.time-.3),penetration_m=max(0.,-float(c.dist)))
    wrong=max(wrong,force);depth=max(depth,-float(c.dist))
   return forces,netforce,wrong,depth,interarm
  def advance(self,catch_action=None,cut_action=None,allow_cut=True):
@@ -76,5 +85,5 @@ class DualHarvestEnv(CatcherPositioningEnv):
   R=d.xmat[self.tool].reshape(3,3);relative=R.T@(d.xipos[self.fruit]-rim);fv=np.zeros(6);mujoco.mj_objectVelocity(m,d,mujoco.mjtObj.mjOBJ_BODY,self.fruit,fv,0)
   contained=bool(self.severed and abs(relative[1])<.023 and abs(relative[2])<.027 and -.065<relative[0]<.015 and np.linalg.norm(fv[3:])<.1 and nf>.005 and gripvalid)
   self.net_hold=self.net_hold+1 if contained else 0;self.peak_net=max(self.peak_net,nf);self.peakwrong=max(self.peakwrong,wrong);self.peak_interarm=max(self.peak_interarm,interarm);self.peak_blade=max(self.peak_blade,*bf);self.peak_depth=max(self.peak_depth,depth)
-  bad=bool(any(w.number for w in d.warning) or not np.isfinite(d.qpos).all() or self.grip['tool_slip_m']>.025 or self.grip['tool_rotation_rad']>.5 or wrong>.8 or interarm>.8)
-  return dict(**{k:v for k,v in self.grip.items() if k not in ['wrong_contact_N']},phase=self.phase,sim_s=self.elapsed,is_success=self.net_hold>=25,invalid=bad,catcher_ready=self.hold>=20,severed=self.severed,cut_event=self.cut_event,cut_work_J=self.work,blade_forces_N=list(map(float,bf)),net_contact_N=nf,peak_net_N=self.peak_net,net_hold_steps=self.net_hold,peak_wrong_contact_N=self.peakwrong,wrong_contact_N=wrong,peak_interarm_N=self.peak_interarm,peak_penetration_m=self.peak_depth,cut_distance_m=float(np.linalg.norm(d.site_xpos[self.cutsite]-d.xpos[self.branch])),distance_m=dist,normal_z=float(normal[2]),hold_steps=self.hold,domain_randomization=self.dr)
+  bad=bool(any(w.number for w in d.warning) or not np.isfinite(d.qpos).all() or self.grip['tool_slip_m']>.025 or self.grip['tool_rotation_rad']>.5 or wrong>.8 or interarm>.8 or depth>.0008)
+  return dict(**{k:v for k,v in self.grip.items() if k not in ['wrong_contact_N']},peak_unexpected_contact=self.contact_peak.copy(),peak_neighbor_contact=self.neighbor_peak.copy(),peak_receiving_rim_contact_N=self.receive_peak,phase=self.phase,sim_s=self.elapsed,is_success=self.net_hold>=25,invalid=bad,catcher_ready=self.hold>=20,severed=self.severed,cut_event=self.cut_event,cut_work_J=self.work,blade_forces_N=list(map(float,bf)),net_contact_N=nf,peak_net_N=self.peak_net,net_hold_steps=self.net_hold,peak_wrong_contact_N=self.peakwrong,wrong_contact_N=wrong,peak_interarm_N=self.peak_interarm,peak_penetration_m=self.peak_depth,cut_distance_m=float(np.linalg.norm(d.site_xpos[self.cutsite]-d.xpos[self.branch])),distance_m=dist,normal_z=float(normal[2]),hold_steps=self.hold,domain_randomization=self.dr)

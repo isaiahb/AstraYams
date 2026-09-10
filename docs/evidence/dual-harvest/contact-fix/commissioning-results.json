@@ -1,0 +1,203 @@
+{
+  "dual-harvest-commission-v10": {
+    "seed": 61001,
+    "wall_s": 19.13472580909729,
+    "controller": "Frozen PPO catcher; scripted Jacobian cutter commissioning; finite-torque motors; event-driven fracture surrogate.",
+    "left_jaw_N": 10.663603577675966,
+    "right_jaw_N": 10.735379458058068,
+    "tool_slip_m": 0.00011988213137703488,
+    "tool_rotation_rad": 0.0010742585416881228,
+    "penetration_m": 0.0,
+    "peak_unexpected_contact": {
+      "force_N": 1.0631113412869706,
+      "geoms": [
+        "calyx_contact_secondary_a_1",
+        "cut_left_blade_contact_217"
+      ],
+      "time_s": 3.7974999999992622,
+      "penetration_m": 1.9920341967523084e-05
+    },
+    "phase": "Physics / receive and retain berry",
+    "sim_s": 3.8000000000000003,
+    "is_success": false,
+    "invalid": true,
+    "catcher_ready": false,
+    "severed": true,
+    "cut_event": {
+      "time_s": 3.703999999999148,
+      "blade_force_N": [
+        1.5515225492829248,
+        0.7418846921367891
+      ],
+      "work_J": 0.0015020445127583012,
+      "threshold_J": 0.0015,
+      "qpos_jump": 0.0,
+      "qvel_jump": 0.0
+    },
+    "cut_work_J": 0.0015020445127583012,
+    "blade_forces_N": [
+      0.0,
+      0.0
+    ],
+    "net_contact_N": 0.7035948911019605,
+    "peak_net_N": 0.7035948911019605,
+    "net_hold_steps": 0,
+    "peak_wrong_contact_N": 1.0631113412869706,
+    "wrong_contact_N": 1.0631113412869706,
+    "peak_interarm_N": 0.0,
+    "peak_penetration_m": 3.692889286248843e-05,
+    "cut_distance_m": 0.04594985336282168,
+    "distance_m": 0.04789805745700812,
+    "normal_z": 0.9847383174993642,
+    "hold_steps": 0,
+    "domain_randomization": {
+      "offset_m": [
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "yaw_rad": 0.0,
+      "stiffness_scale": 1.0
+    }
+  },
+  "dual-harvest-commission-v13": {
+    "seed": 61001,
+    "physics_timestep_s": 0.00025,
+    "postcut_observation_s": 2.0160000000008518,
+    "source_sha256": {
+      "commission_dual_harvest.py": "0db0d4221f24a57aae1239aa5109f9d1026e5e1b05205d04e37efef0ff735253",
+      "catcher_positioning.py": "7c54b92bdac15eeb83d0803b2e01ae0c57006c2b65c6fdcb930ec53ab25ab86a",
+      "dual_harvest.py": "cc58e768fad3ad8d8e6bbd3239a85511f379b42f9a3317494b763bf1901c7939"
+    },
+    "wall_s": 39.355690002441406,
+    "controller": "Frozen PPO catcher; scripted Jacobian cutter commissioning; finite-torque motors; event-driven fracture surrogate.",
+    "left_jaw_N": 10.697478143483675,
+    "right_jaw_N": 10.618773029817694,
+    "tool_slip_m": 0.00023987307827608235,
+    "tool_rotation_rad": 0.000882128528874435,
+    "penetration_m": 0.0,
+    "peak_unexpected_contact": {
+      "force_N": 0.0,
+      "geoms": [],
+      "time_s": 0.0
+    },
+    "peak_neighbor_contact": {
+      "force_N": 0.0,
+      "geoms": [],
+      "time_s": 0.0
+    },
+    "peak_receiving_rim_contact_N": 4.5157596416333625,
+    "phase": "Physics / receive and retain berry",
+    "sim_s": 5.72,
+    "is_success": true,
+    "invalid": false,
+    "catcher_ready": false,
+    "severed": true,
+    "cut_event": {
+      "time_s": 3.703999999999148,
+      "blade_force_N": [
+        1.5515225492829248,
+        0.7418846921367891
+      ],
+      "work_J": 0.0015020445127583012,
+      "threshold_J": 0.0015,
+      "qpos_jump": 0.0,
+      "qvel_jump": 0.0
+    },
+    "cut_work_J": 0.0015020445127583012,
+    "blade_forces_N": [
+      0.0,
+      0.025759042801542637
+    ],
+    "net_contact_N": 0.1494525509530715,
+    "peak_net_N": 9.10136579204156,
+    "net_hold_steps": 87,
+    "peak_wrong_contact_N": 0.0,
+    "wrong_contact_N": 0.0,
+    "peak_interarm_N": 0.0,
+    "peak_penetration_m": 0.00013837757526235177,
+    "cut_distance_m": 0.08802922394935149,
+    "distance_m": 0.04646162088211651,
+    "normal_z": 0.9848141209604135,
+    "hold_steps": 0,
+    "domain_randomization": {
+      "offset_m": [
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "yaw_rad": 0.0,
+      "stiffness_scale": 1.0
+    }
+  },
+  "dual-harvest-commission-v13-halfstep": {
+    "seed": 61001,
+    "physics_timestep_s": 0.000125,
+    "postcut_observation_s": 2.01749999999799,
+    "source_sha256": {
+      "commission_dual_harvest.py": "0db0d4221f24a57aae1239aa5109f9d1026e5e1b05205d04e37efef0ff735253",
+      "catcher_positioning.py": "7c54b92bdac15eeb83d0803b2e01ae0c57006c2b65c6fdcb930ec53ab25ab86a",
+      "dual_harvest.py": "cc58e768fad3ad8d8e6bbd3239a85511f379b42f9a3317494b763bf1901c7939"
+    },
+    "wall_s": 68.77054214477539,
+    "controller": "Frozen PPO catcher; scripted Jacobian cutter commissioning; finite-torque motors; event-driven fracture surrogate.",
+    "left_jaw_N": 10.64666505238106,
+    "right_jaw_N": 10.699705174931019,
+    "tool_slip_m": 0.00018156142394834296,
+    "tool_rotation_rad": 0.00039888361863828345,
+    "penetration_m": 0.0,
+    "peak_unexpected_contact": {
+      "force_N": 0.0,
+      "geoms": [],
+      "time_s": 0.0
+    },
+    "peak_neighbor_contact": {
+      "force_N": 0.0,
+      "geoms": [],
+      "time_s": 0.0
+    },
+    "peak_receiving_rim_contact_N": 0.0,
+    "phase": "Physics / receive and retain berry",
+    "sim_s": 5.72,
+    "is_success": true,
+    "invalid": false,
+    "catcher_ready": false,
+    "severed": true,
+    "cut_event": {
+      "time_s": 3.7025000000020096,
+      "blade_force_N": [
+        1.5431835472263764,
+        0.7407660881705977
+      ],
+      "work_J": 0.001503287012997628,
+      "threshold_J": 0.0015,
+      "qpos_jump": 0.0,
+      "qvel_jump": 0.0
+    },
+    "cut_work_J": 0.001503287012997628,
+    "blade_forces_N": [
+      0.0,
+      0.025723583628315852
+    ],
+    "net_contact_N": 0.14168040446460292,
+    "peak_net_N": 11.107955523994036,
+    "net_hold_steps": 81,
+    "peak_wrong_contact_N": 0.0,
+    "wrong_contact_N": 0.0,
+    "peak_interarm_N": 0.0,
+    "peak_penetration_m": 0.0,
+    "cut_distance_m": 0.08650886273546927,
+    "distance_m": 0.04392603406336087,
+    "normal_z": 0.9847313755637365,
+    "hold_steps": 0,
+    "domain_randomization": {
+      "offset_m": [
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "yaw_rad": 0.0,
+      "stiffness_scale": 1.0
+    }
+  }
+}

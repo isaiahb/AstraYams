@@ -58,3 +58,83 @@ the cutter. Commissioning is not PPO, behavioral cloning or a learned harvest.
 
 Each run preserves its trace and failure. New runs snapshot the scene and tools.
 Evaluation criteria must not be relaxed to obtain a passing demonstration.
+
+## Contact correction, 2026-09-10
+
+The user identified the cutter overlapping a neighboring strawberry in v6.
+This was a genuine modeling defect, not something to fix only in the renderer.
+The old carrier envelopes selected vertices in slices and omitted long faces
+between CAD tessellation rings. Calyx leaves also had no collision geometry.
+
+- `tools/cad_collision.py` clips triangle edges at slab boundaries, then creates
+  conservative convex envelopes. It accepts STL seam discontinuities without
+  relying on a solid boolean that can silently return empty geometry.
+- The six carrier/cover/liner surfaces have 135,336 audited vertex/triangle-center
+  samples. Previously 5,696 were uncovered; now zero are outside the envelope
+  union at the 2 micrometre numerical tolerance. These are coverage checks,
+  not tolerances of a manufactured tool.
+- Each calyx component now has a rigid contact envelope on its original dynamic
+  fruit body. It can transmit forces and torques through the plant. Sepal
+  flexibility and material parameters remain uncalibrated.
+- Replaying the old movement with corrected contacts failed at 3.798 s: a blade
+  struck the neighboring calyx at 1.063 N. The run was rejected, not relabeled.
+- Interpolating to the initial joint configuration dipped the cutter downward
+  into the recoiling neighbor. Withdrawal now lifts 20 mm and retreats 35 mm
+  in tool approach coordinates, through bounded joint targets and finite motor
+  torques. It starts on the next control tick after the physical cut event.
+- Contact records name the offending geometry. Target fruit/calyx-to-catcher-rim
+  contact is classified as receiving contact; it still records force and overlap.
+  It is not a collision with a neighboring fruit. The 0.8 N unexpected-contact
+  and 0.8 mm monitored-penetration rejection limits were not relaxed.
+
+### Evidence
+
+`contact-fix/collision-audit.json` preserves the coverage and dynamic ablation.
+Both ablation runs start from the **same already-cut physical state at 3.74 s**,
+with the same motor commands and stem separation. Only cutter/plant collision
+masks change in the explicitly labeled diagnostic counterfactual. With contact,
+the neighboring calyx exerts a 1.512 N peak on the blade and deflects the plant;
+without it the force is zero. Final neighboring fruit positions differ by
+10.74 mm after 0.2 s. Neither run reports solver warnings. This comparison tests
+contact causality, not measured botanical accuracy or harvest success.
+
+`contact-fix/commissioning-results.json` preserves the failed approach and two
+corrected full sequences:
+
+| Check | 0.25 ms step | 0.125 ms step |
+|---|---:|---:|
+| Cut and retained, no rejection | yes | yes |
+| Time observed after cut | 2.016 s | 2.018 s |
+| Cutter contact with neighboring fruit/calyx | 0 N | 0 N |
+| Inter-arm contact | 0 N | 0 N |
+| Maximum monitored penetration | 0.138 mm | 0 mm |
+| Net peak summed contact magnitude | 9.10 N | 11.11 N |
+| Target calyx/rim peak | 4.52 N | 0 N |
+| Catcher slip | 0.240 mm | 0.182 mm |
+| Pose/velocity jumps at fracture | zero | zero |
+
+The two steps agree on the task outcome and clearance, **not on detailed impact
+forces or the exact catch trajectory**. Those remain timestep-sensitive and
+uncalibrated; this is not evidence of bruise safety. Maximum penetration here
+covers monitored tool/net contacts, not every leaf-leaf contact in the plant.
+Same-arm self-collision is still unresolved.
+
+The corrected orbitable replay is `runs/dual-harvest-commission-v13/review/`.
+`tools/capture_dual_contact_review.cjs` captures its recorded poses from three
+cameras, with a visible controller label. v6/v8 reviews are marked rejected.
+The catcher remains a frozen PPO; the cutter is scripted commissioning. No new
+PPO cutter training occurred during this physics repair.
+
+Reproduce from the repository with the CAD/MuJoCo environment:
+
+```sh
+PYTHONPATH=src python tools/build_dual_harvest.py
+PYTHONPATH=src python tools/commission_dual_harvest.py --out runs/dual-harvest-contact-check
+PYTHONPATH=src python tools/commission_dual_harvest.py --out runs/dual-harvest-contact-halfstep --timestep 0.000125
+PYTHONPATH=src python tools/audit_dual_contacts.py
+```
+
+The audit intentionally depends on preserved v6/v10 run fixtures. Commissioning
+snapshots the task XML, meshes, trajectory, controls and controller source hashes.
+The sparse-face regression in `tests/test_cad_collision.py` also runs without
+those historical fixtures.
