@@ -1,0 +1,83 @@
+{
+  "mujoco_version": "3.12.0",
+  "status": "capability_checks_only",
+  "hardware_calibrated": false,
+  "integrated_into_yam_environment": false,
+  "constants": "Illustrative: R=1 ohm, K=0.1 Nm/A, L=2mH; not Damiao values",
+  "limitation": "No trajectory, delay, backlash hysteresis or real-hardware validation",
+  "checks": [
+    {
+      "name": "zero-speed voltage to torque: K*V/R",
+      "observed": 0.2,
+      "expected": 0.2,
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "scope": "constitutive law"
+    },
+    {
+      "name": "back-EMF: K*(V-K*speed)/R",
+      "observed": 0.09999999999999999,
+      "expected": 0.1,
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "scope": "constitutive law"
+    },
+    {
+      "name": "initial current rise: (V-R*i)/L",
+      "observed": 1000.0,
+      "expected": 1000.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "scope": "constitutive law"
+    },
+    {
+      "name": "steady current derivative at V/R",
+      "observed": 0.0,
+      "expected": 0.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "scope": "constitutive law"
+    },
+    {
+      "name": "cold heating derivative: V^2/(R*C)",
+      "observed": 0.2,
+      "expected": 0.2,
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "scope": "constitutive law"
+    },
+    {
+      "name": "hot voltage-driven torque",
+      "observed": 0.16736401673640167,
+      "expected": 0.16736401673640167,
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "scope": "constitutive law"
+    },
+    {
+      "name": "hot heating minus cooling",
+      "observed": -0.33263598326359833,
+      "expected": -0.33263598326359833,
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "scope": "constitutive law"
+    },
+    {
+      "name": "three-input torque controller feedforward",
+      "observed": 0.1,
+      "expected": 0.1,
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "scope": "constitutive law"
+    },
+    {
+      "name": "two coaxial backlash coordinates",
+      "observed": 2.0,
+      "expected": 2.0,
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "scope": "compilation only"
+    }
+  ],
+  "passed": true
+}

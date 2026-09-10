@@ -1,0 +1,701 @@
+{
+  "schema_version": 1,
+  "created": "2026-09-09",
+  "target": "YAM v1 and linear_4310 gripper",
+  "i2rt_commit": "5b72c47239bd056d0fa6c1a39edeb0537c89443c",
+  "status": "research_only_not_a_runtime_config",
+  "hardware_calibrated": false,
+  "rule": "null means unknown; no field is a hardware measurement; candidate variants require explicit identity selection and unit conversion before simulation use",
+  "parameters": [
+    {
+      "id": "motor_families",
+      "component": "arm",
+      "value": [
+        "DM4340",
+        "DM4340",
+        "DM4340",
+        "DM4310",
+        "DM4310",
+        "DM4310"
+      ],
+      "unit": "family",
+      "evidence_status": "sdk_configuration",
+      "source_ids": [
+        "2"
+      ],
+      "note": "Exact SKU, winding, firmware and physical units unverified.",
+      "hardware_measured": false
+    },
+    {
+      "id": "gear_ratios",
+      "component": "arm",
+      "value": [
+        40,
+        40,
+        40,
+        10,
+        10,
+        10
+      ],
+      "unit": "motor_rad/output_rad",
+      "evidence_status": "sdk_definition",
+      "source_ids": [
+        "3"
+      ],
+      "note": "Confirm installed motors via read-only Gr register.",
+      "hardware_measured": false
+    },
+    {
+      "id": "kp",
+      "component": "arm",
+      "value": [
+        80,
+        80,
+        80,
+        10,
+        10,
+        10
+      ],
+      "unit": "N*m/rad in SDK joint coordinates",
+      "evidence_status": "sdk_configuration",
+      "source_ids": [
+        "2"
+      ],
+      "note": "Controller gains, not physical stiffness of a gearbox.",
+      "hardware_measured": false
+    },
+    {
+      "id": "kd",
+      "component": "arm",
+      "value": [
+        5,
+        5,
+        5,
+        1.5,
+        1.5,
+        1.5
+      ],
+      "unit": "N*m*s/rad in SDK joint coordinates",
+      "evidence_status": "sdk_configuration",
+      "source_ids": [
+        "2"
+      ],
+      "note": "Do not combine with another equivalent PD controller.",
+      "hardware_measured": false
+    },
+    {
+      "id": "torque_encoding_bounds",
+      "component": "arm",
+      "value": [
+        [
+          -28,
+          28
+        ],
+        [
+          -28,
+          28
+        ],
+        [
+          -28,
+          28
+        ],
+        [
+          -10,
+          10
+        ],
+        [
+          -10,
+          10
+        ],
+        [
+          -10,
+          10
+        ]
+      ],
+      "unit": "N*m",
+      "evidence_status": "protocol_mapping",
+      "source_ids": [
+        "3"
+      ],
+      "note": "NOT verified continuous or peak motor capability.",
+      "hardware_measured": false
+    },
+    {
+      "id": "velocity_encoding_bounds",
+      "component": "arm",
+      "value": [
+        [
+          -10,
+          10
+        ],
+        [
+          -10,
+          10
+        ],
+        [
+          -10,
+          10
+        ],
+        [
+          -30,
+          30
+        ],
+        [
+          -30,
+          30
+        ],
+        [
+          -30,
+          30
+        ]
+      ],
+      "unit": "rad/s",
+      "evidence_status": "protocol_mapping",
+      "source_ids": [
+        "3"
+      ],
+      "note": "NOT the real torque-speed curve.",
+      "hardware_measured": false
+    },
+    {
+      "id": "position_encoding_bounds",
+      "component": "arm",
+      "value": [
+        -12.5,
+        12.5
+      ],
+      "unit": "rad",
+      "evidence_status": "protocol_mapping",
+      "source_ids": [
+        "3"
+      ],
+      "note": "16-bit position mapping, not joint range or encoder accuracy.",
+      "hardware_measured": false
+    },
+    {
+      "id": "feedback_bits",
+      "component": "arm",
+      "value": {
+        "position": 16,
+        "velocity": 12,
+        "effort": 12
+      },
+      "unit": "bits",
+      "evidence_status": "protocol_mapping",
+      "source_ids": [
+        "12"
+      ],
+      "note": "Hardware encoder resolution and accuracy are separate.",
+      "hardware_measured": false
+    },
+    {
+      "id": "can_nominal_bitrate",
+      "component": "arm",
+      "value": 1000000,
+      "unit": "bit/s",
+      "evidence_status": "sdk_default",
+      "source_ids": [
+        "12"
+      ],
+      "note": "Nominal bus setting; not latency.",
+      "hardware_measured": false
+    },
+    {
+      "id": "can_bandwidth_check_frequency",
+      "component": "arm",
+      "value": 250,
+      "unit": "Hz",
+      "evidence_status": "sdk_default",
+      "source_ids": [
+        "12"
+      ],
+      "note": "Argument for bandwidth check; observed loop is not proven fixed at 250Hz.",
+      "hardware_measured": false
+    },
+    {
+      "id": "can_slow_loop_reporting_threshold",
+      "component": "arm",
+      "value": 0.007,
+      "unit": "s",
+      "evidence_status": "sdk_default",
+      "source_ids": [
+        "12"
+      ],
+      "note": "Reporting threshold, not a measured delay.",
+      "hardware_measured": false
+    },
+    {
+      "id": "gripper_motor_travel",
+      "component": "linear_gripper",
+      "value": 6.57,
+      "unit": "rad",
+      "evidence_status": "sdk_configuration",
+      "source_ids": [
+        "7"
+      ],
+      "note": "Endpoint calibration required.",
+      "hardware_measured": false
+    },
+    {
+      "id": "gripper_configured_travel",
+      "component": "linear_gripper",
+      "value": 0.096,
+      "unit": "m",
+      "evidence_status": "sdk_configuration",
+      "source_ids": [
+        "7"
+      ],
+      "note": "Resolve aperture versus single-finger coordinates; URDF combined travel differs.",
+      "hardware_measured": false
+    },
+    {
+      "id": "gripper_map_derivative",
+      "component": "linear_gripper",
+      "value": 0.014611872146118721,
+      "unit": "m/rad",
+      "evidence_status": "derived_sdk_configuration",
+      "source_ids": [
+        "7"
+      ],
+      "note": "Linear mapping in SDK aperture convention, not verified mechanical Jacobian.",
+      "hardware_measured": false
+    },
+    {
+      "id": "gripper_motor_kp",
+      "component": "linear_gripper",
+      "value": 20,
+      "unit": "N*m/rad",
+      "evidence_status": "sdk_configuration",
+      "source_ids": [
+        "7"
+      ],
+      "note": "Rotary coordinate; do not apply directly to jaw meters.",
+      "hardware_measured": false
+    },
+    {
+      "id": "gripper_motor_kd",
+      "component": "linear_gripper",
+      "value": 0.5,
+      "unit": "N*m*s/rad",
+      "evidence_status": "sdk_configuration",
+      "source_ids": [
+        "7"
+      ],
+      "note": "Rotary coordinate; conversion pending.",
+      "hardware_measured": false
+    },
+    {
+      "id": "dm4310_2ec_v1_1_24v",
+      "component": "dm4310_2ec_v1_1_24v",
+      "value": {
+        "rated_voltage_V": 24,
+        "phase_resistance_ohm": 0.65,
+        "phase_inductance_H": 0.00034,
+        "rated_phase_current_A": 2.5,
+        "peak_phase_current_A": 7.5,
+        "rated_output_torque_Nm": 3,
+        "peak_output_torque_Nm": 7,
+        "rated_output_speed_rpm": 120,
+        "no_load_output_speed_rpm": 200
+      },
+      "unit": "units encoded in keys",
+      "evidence_status": "candidate_datasheet_variant",
+      "source_ids": [
+        "4"
+      ],
+      "note": "Do not use automatically: installed SKU/revision unknown; phase values require a consistent motor model. Peak duration and thermal mount unspecified.",
+      "hardware_measured": false
+    },
+    {
+      "id": "dm4340_2ec_24v_manual_v1_1",
+      "component": "dm4340_2ec_24v_manual_v1_1",
+      "value": {
+        "rated_voltage_V": 24,
+        "phase_resistance_ohm": 0.88,
+        "phase_inductance_H": 0.00036,
+        "rated_phase_current_A": 3,
+        "peak_phase_current_A": 8,
+        "rated_output_torque_Nm": 9,
+        "peak_output_torque_Nm": 27,
+        "rated_output_speed_rpm": 36,
+        "no_load_output_speed_rpm": 52.5
+      },
+      "unit": "units encoded in keys",
+      "evidence_status": "candidate_datasheet_variant",
+      "source_ids": [
+        "5"
+      ],
+      "note": "Do not use automatically: installed SKU/revision unknown; phase values require a consistent motor model. Peak duration and thermal mount unspecified.",
+      "hardware_measured": false
+    },
+    {
+      "id": "dm4340_2ec_24v_older_manual_v1_0",
+      "component": "dm4340_2ec_24v_older_manual_v1_0",
+      "value": {
+        "phase_resistance_ohm": 0.76,
+        "phase_inductance_H": 0.000317,
+        "rated_phase_current_A": 2.5
+      },
+      "unit": "units encoded in keys",
+      "evidence_status": "candidate_datasheet_variant",
+      "source_ids": [
+        "6"
+      ],
+      "note": "Do not use automatically: installed SKU/revision unknown; phase values require a consistent motor model. Peak duration and thermal mount unspecified.",
+      "hardware_measured": false
+    },
+    {
+      "id": "installed_sku_and_firmware",
+      "component": "arm",
+      "value": null,
+      "unit": "identity",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Identity labels, register capture and firmware revision.",
+      "hardware_measured": false
+    },
+    {
+      "id": "effective_rotor_Kt",
+      "component": "arm",
+      "value": null,
+      "unit": "N*m/A",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Resolve phase/dq/DC and motor/output coordinates; fit against independent load.",
+      "hardware_measured": false
+    },
+    {
+      "id": "effective_rotor_Ke",
+      "component": "arm",
+      "value": null,
+      "unit": "V*s/rad",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Back-EMF or consistent flux-based conversion; not a bare output torque/current ratio.",
+      "hardware_measured": false
+    },
+    {
+      "id": "rotor_inertia",
+      "component": "arm",
+      "value": null,
+      "unit": "kg*m^2",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Register value coordinate convention and independent dynamic identification.",
+      "hardware_measured": false
+    },
+    {
+      "id": "gearbox_backlash_full_width",
+      "component": "arm",
+      "value": null,
+      "unit": "output rad",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Reversal with motor/output encoders or independent output tracking.",
+      "hardware_measured": false
+    },
+    {
+      "id": "gearbox_torsional_stiffness",
+      "component": "arm",
+      "value": null,
+      "unit": "N*m/rad",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Known torque versus relative output deformation.",
+      "hardware_measured": false
+    },
+    {
+      "id": "gearbox_dissipation",
+      "component": "arm",
+      "value": null,
+      "unit": "model parameters",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Direction, speed, load and temperature dependent; avoid efficiency/friction double counting.",
+      "hardware_measured": false
+    },
+    {
+      "id": "current_loop_transfer",
+      "component": "arm",
+      "value": null,
+      "unit": "transfer parameters",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Register settings plus synchronized electrical/torque response.",
+      "hardware_measured": false
+    },
+    {
+      "id": "thermal_winding_capacity",
+      "component": "arm",
+      "value": null,
+      "unit": "J/K",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Multi-load heating and cooldown fits.",
+      "hardware_measured": false
+    },
+    {
+      "id": "thermal_housing_capacity",
+      "component": "arm",
+      "value": null,
+      "unit": "J/K",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Only add separately if observable.",
+      "hardware_measured": false
+    },
+    {
+      "id": "thermal_winding_to_housing",
+      "component": "arm",
+      "value": null,
+      "unit": "K/W",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Fit under known mounting conditions.",
+      "hardware_measured": false
+    },
+    {
+      "id": "thermal_housing_to_ambient",
+      "component": "arm",
+      "value": null,
+      "unit": "K/W",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Fit under known airflow and mount.",
+      "hardware_measured": false
+    },
+    {
+      "id": "temperature_sensor_response",
+      "component": "arm",
+      "value": null,
+      "unit": "s and bias",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Compare indicated and independent temperatures.",
+      "hardware_measured": false
+    },
+    {
+      "id": "continuous_peak_envelope",
+      "component": "arm",
+      "value": null,
+      "unit": "current/torque vs time/speed/temperature",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "No transient rating inferred from protocol limits.",
+      "hardware_measured": false
+    },
+    {
+      "id": "command_delay_distribution",
+      "component": "arm",
+      "value": null,
+      "unit": "s",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Per-joint send-to-apply timing; include jitter and held commands.",
+      "hardware_measured": false
+    },
+    {
+      "id": "observation_age_distribution",
+      "component": "arm",
+      "value": null,
+      "unit": "s",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Sample, bus-receive and policy-read timestamps; cached timestamps are not sensor timestamps.",
+      "hardware_measured": false
+    },
+    {
+      "id": "packet_loss_and_watchdog",
+      "component": "arm",
+      "value": null,
+      "unit": "probability and s",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Read watchdog; measure bus behavior without assuming random packet loss.",
+      "hardware_measured": false
+    },
+    {
+      "id": "supply_impedance_and_limits",
+      "component": "arm",
+      "value": null,
+      "unit": "ohm and A",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Shared supply and wiring measurements; bus current differs from phase current.",
+      "hardware_measured": false
+    },
+    {
+      "id": "encoder_bias_noise_hysteresis",
+      "component": "arm",
+      "value": null,
+      "unit": "rad",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Independent output reference and synchronized dual-encoder readings when supported.",
+      "hardware_measured": false
+    },
+    {
+      "id": "gripper_aperture_force_jacobian",
+      "component": "arm",
+      "value": null,
+      "unit": "m/rad",
+      "evidence_status": "unidentified",
+      "source_ids": [],
+      "note": "Endpoint, aperture and force calibration; per-finger versus combined force convention.",
+      "hardware_measured": false
+    }
+  ],
+  "sources": {
+    "1": {
+      "citation": "Russ Tedrake, [System Identification, Underactuated Robotics](https://underactuated.mit.edu/sysid.html), especially parameter identification, experiment design, and identifiability. Accessed September 9, 2026.",
+      "links": [
+        {
+          "title": "System Identification, Underactuated Robotics",
+          "url": "https://underactuated.mit.edu/sysid.html"
+        }
+      ]
+    },
+    "2": {
+      "citation": "I2RT, [YAM v1 motor configuration](https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/robots/config/yam_v1.yml), pinned to the imported asset snapshot.",
+      "links": [
+        {
+          "title": "YAM v1 motor configuration",
+          "url": "https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/robots/config/yam_v1.yml"
+        }
+      ]
+    },
+    "3": {
+      "citation": "I2RT, [motor constants and gearbox-ratio definitions](https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/motor_drivers/utils.py).",
+      "links": [
+        {
+          "title": "motor constants and gearbox-ratio definitions",
+          "url": "https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/motor_drivers/utils.py"
+        }
+      ]
+    },
+    "4": {
+      "citation": "Shenzhen Damiao Technology, [DM-J4310-2EC V1.1 Geared Motor User Manual V1.2](https://github.com/dmBots/DM-J4310-2EC/blob/9ccbaf6fa43c1ffee4ca5fcc08b615c826e4fefb/manual/DM-J4310-2EC%20V1.1%20Geared%20Motor%20User%20Manual%20V1.2%202026-09-08.pdf), September 8, 2026, pp. 7–9 and 31. Manufacturer-hosted original; no manual redistributed in this repository.",
+      "links": [
+        {
+          "title": "DM-J4310-2EC V1.1 Geared Motor User Manual V1.2",
+          "url": "https://github.com/dmBots/DM-J4310-2EC/blob/9ccbaf6fa43c1ffee4ca5fcc08b615c826e4fefb/manual/DM-J4310-2EC%20V1.1%20Geared%20Motor%20User%20Manual%20V1.2%202026-09-08.pdf"
+        }
+      ]
+    },
+    "5": {
+      "citation": "Shenzhen Damiao Technology, [DM-J4340-2EC Geared Motor User Manual V1.1](https://github.com/dmBots/DM-J4340-2EC/blob/986209a45dca29375faf190106eb00a36baa44e9/manual/DM-J4340-2EC%20%20Geared%20Motor%20User%20Manual%20V1.1%202026-09-08.pdf), September 8, 2026, pp. 7–9.",
+      "links": [
+        {
+          "title": "DM-J4340-2EC Geared Motor User Manual V1.1",
+          "url": "https://github.com/dmBots/DM-J4340-2EC/blob/986209a45dca29375faf190106eb00a36baa44e9/manual/DM-J4340-2EC%20%20Geared%20Motor%20User%20Manual%20V1.1%202026-09-08.pdf"
+        }
+      ]
+    },
+    "6": {
+      "citation": "Enactic, [English rendering of Damiao DM-J4340-2EC manual V1.0](https://damiao.enactic.ai/en/products/hardware/dm-j4340-2ec-v1.0/), original dated March 14, 2024. Used to expose revision differences, not silently override the newer manufacturer manual.",
+      "links": [
+        {
+          "title": "English rendering of Damiao DM-J4340-2EC manual V1.0",
+          "url": "https://damiao.enactic.ai/en/products/hardware/dm-j4340-2ec-v1.0/"
+        }
+      ]
+    },
+    "7": {
+      "citation": "I2RT, [linear gripper configuration](https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/robots/config/linear_4310.yml) and [force mapping implementation](https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/robots/utils.py).",
+      "links": [
+        {
+          "title": "linear gripper configuration",
+          "url": "https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/robots/config/linear_4310.yml"
+        },
+        {
+          "title": "force mapping implementation",
+          "url": "https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/robots/utils.py"
+        }
+      ]
+    },
+    "8": {
+      "citation": "Google DeepMind, [MuJoCo 3.12 XML actuator reference](https://mujoco.readthedocs.io/en/3.12.0/XMLreference.html#actuator-dcmotor), electrical, thermal, controller and activation-state definitions.",
+      "links": [
+        {
+          "title": "MuJoCo 3.12 XML actuator reference",
+          "url": "https://mujoco.readthedocs.io/en/3.12.0/XMLreference.html#actuator-dcmotor"
+        }
+      ]
+    },
+    "9": {
+      "citation": "Shenzhen Damiao Technology, [DM4310 V1.1 original manual V1.0](https://damiao.enactic.ai/en/assets/files/dm-j4310-2ec-v1.1-zh-5d089e0b013d8e2fc203c5b670008a66.pdf), November 16, 2023, p. 5, MIT control architecture; manufacturer document hosted by Enactic.",
+      "links": [
+        {
+          "title": "DM4310 V1.1 original manual V1.0",
+          "url": "https://damiao.enactic.ai/en/assets/files/dm-j4310-2ec-v1.1-zh-5d089e0b013d8e2fc203c5b670008a66.pdf"
+        }
+      ]
+    },
+    "10": {
+      "citation": "Google DeepMind, [MuJoCo backlash modeling](https://mujoco.readthedocs.io/en/3.12.0/modeling.html#backlash).",
+      "links": [
+        {
+          "title": "MuJoCo backlash modeling",
+          "url": "https://mujoco.readthedocs.io/en/3.12.0/modeling.html#backlash"
+        }
+      ]
+    },
+    "11": {
+      "citation": "Maxon, [Continuous operation range of BLDC motors](https://support.maxongroup.com/hc/en-us/articles/360000350014-Continuous-operation-range-of-BLDC-EC-Motors), August 29, 2024. General loss/thermal principles; not a source of Damiao parameter values.",
+      "links": [
+        {
+          "title": "Continuous operation range of BLDC motors",
+          "url": "https://support.maxongroup.com/hc/en-us/articles/360000350014-Continuous-operation-range-of-BLDC-EC-Motors"
+        }
+      ]
+    },
+    "12": {
+      "citation": "I2RT, [CAN motor driver](https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/motor_drivers/dm_driver.py), [CAN interface](https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/motor_drivers/can_interface.py), and [robot wrapper](https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/robots/motor_chain_robot.py).",
+      "links": [
+        {
+          "title": "CAN motor driver",
+          "url": "https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/motor_drivers/dm_driver.py"
+        },
+        {
+          "title": "CAN interface",
+          "url": "https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/motor_drivers/can_interface.py"
+        },
+        {
+          "title": "robot wrapper",
+          "url": "https://github.com/i2rt-robotics/i2rt/blob/5b72c47239bd056d0fa6c1a39edeb0537c89443c/i2rt/robots/motor_chain_robot.py"
+        }
+      ]
+    },
+    "13": {
+      "citation": "Google DeepMind, [MuJoCo 3.12 changelog](https://mujoco.readthedocs.io/en/3.12.0/changelog.html), DC motor input-signature and controller changes.",
+      "links": [
+        {
+          "title": "MuJoCo 3.12 changelog",
+          "url": "https://mujoco.readthedocs.io/en/3.12.0/changelog.html"
+        }
+      ]
+    },
+    "14": {
+      "citation": "Enactic, [Damiao DM-J4340P-2EC register appendix](https://damiao.enactic.ai/en/products/hardware/dm-j4340p-2ec-v1.0/#appendix-register-list-and-range). Related variant; availability and timing must be confirmed on the installed motors.",
+      "links": [
+        {
+          "title": "Damiao DM-J4340P-2EC register appendix",
+          "url": "https://damiao.enactic.ai/en/products/hardware/dm-j4340p-2ec-v1.0/#appendix-register-list-and-range"
+        }
+      ]
+    },
+    "15": {
+      "citation": "Wenhao Yu, Visak C. V. Kumar, Greg Turk, C. Karen Liu, [Sim-to-Real Transfer for Biped Locomotion](https://arxiv.org/abs/1903.01390), IROS 2019.",
+      "links": [
+        {
+          "title": "Sim-to-Real Transfer for Biped Locomotion",
+          "url": "https://arxiv.org/abs/1903.01390"
+        }
+      ]
+    }
+  },
+  "manual_content_sha256": {
+    "DM-J4310-2EC.pdf": "7107b810f2573a82712556030d8e74eec8162cc4835aa19ffcac8c43a223d886",
+    "DM-J4340-2EC.pdf": "1137924421c61fefa6b2c6d16bb7816c3dfb3b81086b60e29eb4a027f5722b4b"
+  }
+}

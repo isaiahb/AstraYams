@@ -97,6 +97,15 @@ response and gripping over the operating envelope of the next learned skill.
 Electrical detail should be added when it changes those responses, rather than
 assuming every transistor must be simulated to learn manipulation.
 
+Follow-up component research is recorded in
+[A calibratable actuator model for YAM manipulation](../research/yam-actuator-model/REPORT.md).
+It identifies the pinned SDK's DM4340/DM4310 families, compares manufacturer
+manual revisions, distinguishes protocol limits from physical ratings, and
+defines a hardware-calibration protocol. Its 39-entry parameter ledger retains
+unknown values explicitly. Nine isolated MuJoCo 3.12 capability checks passed;
+they do not constitute a calibrated motor or an integrated arm simulation.
+The execution-model limitations above remain applicable.
+
 ## Revised dexterity milestone
 
 Train a small policy to align, rotate and seat the custom keyed part from varied
