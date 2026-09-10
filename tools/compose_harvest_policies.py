@@ -29,22 +29,25 @@ def bind(skill,e,goal=None,R=None):
  assert before==state_hash(e),'Skill handoff changed physical state'
  return before
 
-def run(config,out,seed):
+def run(config,out,seed,through='unload'):
  cfg=json.loads(Path(config).read_text());out.mkdir(parents=True,exist_ok=True)
- required=['support','approach','clip','withdraw','carry','unload']
+ order=['support','approach','clip','withdraw','carry','unload'];required=order[:order.index(through)+1]
  for key in required:
   if not Path(cfg['policies'][key]).is_file():raise FileNotFoundError(f'Missing learned {key} checkpoint; scripted fallback is forbidden')
  shutil.copytree(cfg['task'],out/'task',dirs_exist_ok=True);e=HarvestBasketEnv(task_dir=out/'task',variation=cfg.get('variation',0));e.reset(seed=seed)
  policies={k:PPO.load(cfg['policies'][k],device='cpu') for k in required}
- profiles={k:HarvestJointSkill(k,source=cfg['placement_source'] if k in ['carry','unload'] else cfg['cut_source'],difficulty=1.) for k in ['approach','withdraw','carry','unload']}
- profiles['clip']=CutterSkillEnv(source=cfg['cut_source'],difficulty=.5,joint_scale=cfg.get('clip_joint_scale',.25))
+ profiles={k:HarvestJointSkill(k,source=cfg['placement_source'] if k in ['carry','unload'] else cfg['cut_source'],difficulty=1.) for k in ['approach','withdraw','carry','unload'] if k in required}
+ if 'clip' in required:profiles['clip']=CutterSkillEnv(source=cfg['cut_source'],difficulty=.5,joint_scale=cfg.get('clip_joint_scale',.25))
  # The cutter approach target is derived from the current physical target stalk.
  approach=profiles['approach'];reference_branch=approach.e.data.xpos[approach.e.branch].copy();offset=approach.goal_base-reference_branch
+ support_reference=approach.e.initial[approach.e.qids].copy()
  bind(approach,e,goal=e.data.xpos[e.branch]+offset);phase='position both';phase_steps=0;handoffs=[];trace=[];qs=[e.data.qpos.copy()];vs=[e.data.qvel.copy()];eq=[e.data.eq_active.copy()];net=[e.data.flexvert_xpos.copy()];catch_targets=[e.target.copy()];cut_targets=[e.cut_target.copy()];all_actions=[];reason='horizon';success=False
  for step in range(cfg.get('horizon_steps',1600)):
   ca=cu=None;active=[];e.phase='PPO / '+phase
   if phase=='position both':
-   ca=policies['support'].predict(e.observe(),deterministic=True)[0];a=policies['approach'].predict(approach.observe(),deterministic=True)[0];cu=np.r_[a,0.];active=['support','approach']
+   obs=e.observe();obs[:6]=e.data.qpos[e.qids]-support_reference
+   ca=None if e.hold>=20 else policies['support'].predict(obs,deterministic=True)[0]
+   a=np.zeros(6) if approach.hold>=10 else policies['approach'].predict(approach.observe(),deterministic=True)[0];cu=np.r_[a,0.];active=['support','approach']
   elif phase=='clip':
    s=profiles['clip'];a=policies['clip'].predict(s.observe(),deterministic=True)[0];cu=a.copy();cu[:6]*=s.joint_scale;active=['clip']
   else:
@@ -65,6 +68,8 @@ def run(config,out,seed):
     if phase=='withdraw' and e.net_hold>=25:next_phase='carry'
     elif phase=='carry':next_phase='unload'
     elif phase=='unload':success=True;reason='fruit settled in basket'
+  if next_phase and ((phase=='position both' and through=='approach') or phase==through):
+   success=True;reason='requested partial chain completed through '+through
   info.update(active_policies=active,coordinator_phase=phase,phase_steps=phase_steps,local_skill_contract=contract['is_success'],is_success=success)
   trace.append(info);qs.append(e.data.qpos.copy());vs.append(e.data.qvel.copy());eq.append(e.data.eq_active.copy());net.append(e.data.flexvert_xpos.copy());catch_targets.append(e.target.copy());cut_targets.append(e.cut_target.copy());all_actions.append(np.r_[np.zeros(6) if ca is None else ca,np.zeros(7) if cu is None else cu])
   if info['invalid']:reason='physical acceptance check failed';break
@@ -75,9 +80,9 @@ def run(config,out,seed):
    if next_phase=='withdraw':
     R=e.data.site_xmat[e.cutsite].reshape(3,3).copy();kwargs=dict(goal=e.data.site_xpos[e.cutsite]+R[:,2]*.035+[0,0,.020],R=R)
    digest=bind(s,e,**kwargs);handoffs.append(dict(from_skill=phase,to_skill=next_phase,time_s=e.elapsed,physical_state_sha256=digest));phase=next_phase;phase_steps=0
- result=dict(info,seed=seed,is_success=success,termination_reason=reason,handoffs=handoffs,policy_sha256={k:hashlib.sha256(Path(v).read_bytes()).hexdigest() for k,v in cfg['policies'].items()},controller='Six learned PPO specialists; support and approach run concurrently, then clipping, withdrawal, carrying and unloading. Idle-arm finite motor holding. No runtime IK or scripted movement fallback. Privileged simulation state; one designated fruit per episode.')
+ result=dict(info,seed=seed,is_success=success,full_harvest_success=success and through=='unload',tested_through=through,termination_reason=reason,handoffs=handoffs,policy_sha256={k:hashlib.sha256(Path(cfg['policies'][k]).read_bytes()).hexdigest() for k in required},controller='Learned PPO chain through '+through+'. Support and approach run concurrently; idle-arm finite motor holding. No runtime IK or scripted movement fallback. Privileged simulation state; one designated fruit per episode.')
  (out/f'episode-{seed}.json').write_text(json.dumps(dict(result=result,trace=trace),indent=2))
  np.savez_compressed(out/f'episode-{seed}.npz',qpos=qs,qvel=vs,eq_active=eq,flex_vertices=net,catch_targets=catch_targets,cut_targets=cut_targets,actions=all_actions,t=np.arange(len(qs))*.02)
  print(json.dumps(result),flush=True);return result
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--config',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--seed',type=int,default=91001);a=p.parse_args();torch.set_num_threads(1);run(a.config,a.out,a.seed)
+ p=argparse.ArgumentParser();p.add_argument('--config',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--seed',type=int,default=91001);p.add_argument('--through',choices=['approach','clip','withdraw','unload'],default='unload');a=p.parse_args();torch.set_num_threads(1);run(a.config,a.out,a.seed,a.through)

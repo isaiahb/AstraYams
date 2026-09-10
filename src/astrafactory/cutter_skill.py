@@ -18,12 +18,13 @@ class CutterSkillEnv(gym.Env):
   self.start=next(i for i,x in enumerate(self.trace) if x['catcher_ready'])+1;self.aligned=next(i for i,x in enumerate(self.trace) if x['phase']=='Commissioning / close stock jaws')
   self.near_cut=next(i for i,x in enumerate(self.trace) if x['severed'])-3
   self.action_space=spaces.Box(-1,1,(7,),np.float32);self.observation_space=spaces.Box(-np.inf,np.inf,(38,),np.float32);self.info={};self.last=np.zeros(7)
+  self.reference_q=self.e.initial[self.e.cq].copy()
   d=self.e.data;d.qpos[:]=self.z['qpos'][self.aligned,self.qmap];mujoco.mj_forward(self.e.model,d);self.R=d.site_xmat[self.e.cutsite].reshape(3,3).copy()
  def geometry(self):
   e=self.e;d=e.data;return d.xpos[e.branch]-d.site_xpos[e.cutsite],rotation_error(self.R,d.site_xmat[e.cutsite].reshape(3,3))
  def observe(self):
   e=self.e;d=e.data;error,rot=self.geometry();j=e.model.joint('cut_joint7')
-  return np.r_[d.qpos[e.cq]-e.initial[e.cq],d.qvel[e.cv],(e.cut_target-d.qpos[e.cq])*20,error*50,rot,(d.qpos[j.qposadr[0]]+.007)*200,(e.jaw_target+.007)*200,self.last,np.array(self.info.get('blade_forces_N',[0,0]))/5,min(e.work/e.threshold,1),float(e.severed),0.].astype(np.float32)
+  return np.r_[d.qpos[e.cq]-self.reference_q,d.qvel[e.cv],(e.cut_target-d.qpos[e.cq])*20,error*50,rot,(d.qpos[j.qposadr[0]]+.007)*200,(e.jaw_target+.007)*200,self.last,np.array(self.info.get('blade_forces_N',[0,0]))/5,min(e.work/e.threshold,1),float(e.severed),0.].astype(np.float32)
  def reset(self,*,seed=None,options=None):
   super().reset(seed=seed);e=self.e;m,d=e.model,e.data;mujoco.mj_resetData(m,d);m.exclude_signature[:]=e.excludes;m.body_pos[:]=e.pos;m.body_quat[:]=e.quat;m.jnt_stiffness[:]=e.stiff
   index=round(self.near_cut*(1-2*self.difficulty)+self.aligned*(2*self.difficulty)) if self.difficulty<=.5 else round(self.aligned*(2-2*self.difficulty)+self.start*(2*self.difficulty-1));d.qpos[:]=self.z['qpos'][index,self.qmap];d.qvel[:]=self.z['qvel'][index,self.vmap];d.time=.3

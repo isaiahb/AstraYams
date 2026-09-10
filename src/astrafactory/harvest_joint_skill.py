@@ -27,7 +27,8 @@ class HarvestJointSkill(gym.Env):
   else:
    goal_row=self.trace[self.end if skill=='carry' else -1]
    self.goal_base=np.array(goal_row['goal_position']);self.goal_R=np.array(goal_row['goal_rotation']).reshape(3,3)
-  self.action_space=spaces.Box(-1,1,(6,),np.float32);self.observation_space=spaces.Box(-np.inf,np.inf,(67,),np.float32);self.info={};self.last=np.zeros(6)
+  self.reference_q=e.initial[self.qids].copy()
+  self.action_space=spaces.Box(-1,1,(6,),np.float32);self.observation_space=spaces.Box(-np.inf,np.inf,(87 if skill in ['carry','unload'] else 67,),np.float32);self.info={};self.last=np.zeros(6)
  def geometry(self):
   e=self.e;return self.goal-e.data.site_xpos[self.site],rotation_error(self.goal_R,e.data.xmat[self.body].reshape(3,3))
  def obstacles(self):
@@ -40,7 +41,15 @@ class HarvestJointSkill(gym.Env):
   return result
  def observe(self):
   e=self.e;d=e.data;delta,rot=self.geometry();targets=e.cut_target if self.cutter else e.target;quality=np.clip(min(e.grip['left_jaw_N'],e.grip['right_jaw_N'])/5,0,1)
-  return np.r_[d.qpos[self.qids]-e.initial[self.qids],d.qvel[self.vids],(targets-d.qpos[self.qids])*10,delta*20,np.array([0,0,1])+rot,np.zeros(3),self.last,quality,min(self.hold,10)/10,self.obstacles()].astype(np.float32)
+  base=np.r_[d.qpos[self.qids]-self.reference_q,d.qvel[self.vids],(targets-d.qpos[self.qids])*10,delta*20,np.array([0,0,1])+rot,np.zeros(3),self.last,quality,min(self.hold,10)/10,self.obstacles()]
+  if self.skill in ['carry','unload']:
+   # Observe the payload and receiving contacts, not just an end-effector pose.
+   v=np.zeros(6);mujoco.mj_objectVelocity(e.model,d,mujoco.mjtObj.mjOBJ_BODY,e.fruit,v,0)
+   base=np.r_[base,20*(d.xipos[e.fruit]-d.site_xpos[e.site]),v,
+    self.info.get('net_contact_N',0.),e.current_basket_force,float(e.placement_contact),
+    min(e.placement_hold,25)/25,e.impact_energy_J*1000,e.placement_impulse_Ns*50,e.placement_peak_N,
+    10*(d.xipos[e.fruit]-d.xpos[e.basket]),min(e.net_hold,25)/25]
+  return base.astype(np.float32)
  def reset(self,*,seed=None,options=None):
   super().reset(seed=seed);e=self.e;m,d=e.model,e.data;mujoco.mj_resetData(m,d);d.time=.3;m.exclude_signature[:]=e.excludes;m.body_pos[:]=e.pos;m.body_quat[:]=e.quat;m.jnt_stiffness[:]=e.stiff
   index=round(self.end*(1-self.difficulty)+self.begin*self.difficulty);d.qpos[:]=self.z['qpos'][index,self.qmap];d.qvel[:]=self.z['qvel'][index,self.vmap];d.eq_active[:]=self.z['eq_active'][index]
