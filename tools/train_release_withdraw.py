@@ -9,6 +9,11 @@ from astrafactory.training_io import save_policy
 from train_harvest_joint_skill import Progress
 
 def dump(p,v):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(v,indent=2)+'\n')
+def development_score(rows):
+ # Rank against the entire unchanged contract, not only tool position. A more
+ # accurate pose with closed jaws is not necessarily a better release policy.
+ violations=sum(max(0.,x['goal_error_m']/.004-1)+max(0.,x['orientation_error_rad']/.06-1)+max(0.,(x['jaw_position_m']+.0065)/.001)+max(0.,(25-x['net_hold_steps'])/25) for x in rows)
+ return (sum(x['is_success'] for x in rows),sum(not x['invalid'] for x in rows),-violations,-sum(x['goal_error_m'] for x in rows))
 def evaluate(policy,config,seeds,out=None):
  e=ReleaseWithdrawSkill(**config);rows=[]
  if out:shutil.copytree(Path(config['source'])/'task',out/'task',dirs_exist_ok=True)
@@ -37,10 +42,10 @@ def main():
   elif k=='log_std':v.fill_(-2.)
  policy.policy.load_state_dict(dst)
  if a.resume:policy=PPO.load(a.resume,env=env,device='cpu')
- save_policy(policy,a.out/'initial');rounds=[];best=None;bestscore=(-1,-1e9)
+ save_policy(policy,a.out/'initial');rounds=[];best=None;bestscore=(-1,)
  dump(a.out/'proposal.json',dict(algorithm='PPO fine-tuning',initialization='Six-joint withdrawal PPO copied; new jaw head starts at zero. Four new observations start with zero input weights.',observations=71,actions=7,reason='One-jaw release in place hits neighboring calyx; retreat and opening must coordinate.',source=config))
  for j in range(a.rounds):
-  start=time.time();policy.learn(a.steps,reset_num_timesteps=False,callback=Progress(a.out/f'round-{j+1}-training'));cp=save_policy(policy,a.out/f'round-{j+1}');dev=evaluate(policy,config,[78001,78002]);score=(sum(x['is_success'] for x in dev),sum((not x['invalid'])-x['goal_error_m']*10 for x in dev));row=dict(round=j+1,seconds=time.time()-start,development=dev);rounds.append(row);dump(a.out/f'round-{j+1}.json',row)
+  start=time.time();policy.learn(a.steps,reset_num_timesteps=False,callback=Progress(a.out/f'round-{j+1}-training'));cp=save_policy(policy,a.out/f'round-{j+1}');dev=evaluate(policy,config,[78001,78002]);score=development_score(dev);row=dict(round=j+1,seconds=time.time()-start,development=dev);rounds.append(row);dump(a.out/f'round-{j+1}.json',row)
   if score>bestscore:bestscore=score;best=cp
  env.close();policy=PPO.load(best,device='cpu');full=dict(config,curriculum=None);hold=evaluate(policy,full,[79001,79002,79003,79004],a.out/'holdout');baseline=evaluate(None,full,[79001]);dump(a.out/'report.json',dict(checkpoint=str(best),successes=sum(x['is_success'] for x in hold),episodes=len(hold),rows=hold,baseline=baseline,rounds=rounds,scope='Local release/retreat after an actual learned cut; not a whole harvest.'))
 if __name__=='__main__':main()

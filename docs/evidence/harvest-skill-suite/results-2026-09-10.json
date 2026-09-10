@@ -141,5 +141,10 @@
         "physical_state_sha256": "4a4d9fb13f83006687c9055594304bae76b2fd21f96f0ffd1d7ce6cbaa7022f1"
       }
     ]
+  },
+  "neighbor_contact_causal_audit": {
+    "passed": true,
+    "max_neighbor_COM_difference_m": 0.02494214147612913,
+    "scope": "Diagnostic causal intervention only, not a policy demo: identical recorded cut state and fixed opening command, with neighboring-fruit collision enabled versus disabled. A response difference proves coupling, not real tissue calibration."
   }
 }
