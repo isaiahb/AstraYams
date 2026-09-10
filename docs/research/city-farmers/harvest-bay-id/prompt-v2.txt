@@ -1,0 +1,9 @@
+Use case: precise-object-edit
+Asset type: industrial design concept board, revision of Study 01
+Input image 1 is the EDIT TARGET. Preserve the overall bay, greenhouse, machine base, rails, mast, both arms and their mechanical connections, tray, materials, camera and main composition.
+
+Make ONE focused correction: show a coherent cut-and-catch operation. In the main view, the mesh catcher is currently beside the selected red berry. Repose only the lower arm's wrist/forearm and catcher enough to put the center of its horizontal open rim DIRECTLY BELOW the tip and centerline of that same selected red berry. Leave a small visible air gap between berry and net opening. The fruit would fall straight down into the center of the pocket under gravity. Do not move a different berry above the net and leave the intended target untouched. The upper arm's small shears engage only that selected berry's thin pedicel above its green calyx. Neither the blades nor gripper touch any fruit or neighboring branch. Keep both arms continuous, plausibly articulated, with distinct visible bases and correct tool connections.
+
+Replace the bottom-right side-profile inset with a DETAIL enlargement of this SAME working pose. It should clearly show the pedicel between two shear blades, calyx and red berry, and mesh pocket directly below. The cutter enters from upper left and net support from lower left; both are visibly attached to their respective wrists. Include an adjacent green berry untouched for context. This is an enlargement, not a different design, and the net does not contain a second berry. No extra grippers, detached tools or floating parts.
+
+Keep all board labels except change title to "Harvest bay / Study 01b". Preserve the bottom caption exactly: "CONCEPT STUDY — dimensions and robot reach unverified". Retain the receiving tray and its support in the main view unchanged. No new dimensions or claims. The arm representations remain illustrative.
