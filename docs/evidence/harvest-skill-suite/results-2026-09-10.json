@@ -146,5 +146,17 @@
     "passed": true,
     "max_neighbor_COM_difference_m": 0.02494214147612913,
     "scope": "Diagnostic causal intervention only, not a policy demo: identical recorded cut state and fixed opening command, with neighboring-fruit collision enabled versus disabled. A response difference proves coupling, not real tissue calibration."
+  },
+  "release_retreat_final": {
+    "checkpoint": "runs/harvest-skill-suite/release-withdraw-v2/round-3.zip",
+    "successes": 0,
+    "episodes": 4,
+    "scope": "Full plant and net, local recorded learned-cut starts. Concurrent learned support partner. No full-harvest or morphology generalization claim.",
+    "retained_payload_trials": 3
+  },
+  "wrist_release_final": {
+    "successes": 0,
+    "episodes": 4,
+    "scope": "Full-start/full-physics trials; no learned basket-placement success"
   }
 }
