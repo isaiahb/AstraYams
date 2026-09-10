@@ -1,0 +1,854 @@
+{
+  "checkpoint": "runs/yam-berry-support-ppo-v2/round-3.zip",
+  "sha256": "48172e6823c4ae253d95511821aaaf5203c71d3b73ae6f9008eda27e091040d4",
+  "split": "holdout",
+  "actor_parameters": 2374,
+  "steps_trained": 229376,
+  "successes": 11,
+  "episodes": 12,
+  "baseline_successes": 0,
+  "rows": [
+    {
+      "seed": 32001,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.003606987722188082,
+      "xy_error_m": 0.0036048086944175605,
+      "support_fraction": 0.9539365079603678,
+      "normal_z": 0.9984009126784059,
+      "joint_speed_norm": 0.10401029325379031,
+      "force_N": [
+        0.00909650379908825,
+        -0.0038623413865297176,
+        0.16891401443279627
+      ],
+      "peak_contact_N": 0.2194244714227309,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 2.800806270515387e-06,
+      "hold_steps": 20,
+      "sim_s": 1.54,
+      "first_contact_s": 0.68,
+      "return_sum": 171.46107793627647,
+      "domain_randomization": {
+        "offset_m": [
+          0.0076525322578695305,
+          -0.007135211182065674,
+          -0.00396112856038158
+        ],
+        "stiffness_scale": 1.0516021916437053,
+        "leaf_yaw_rad": [
+          -0.052603430667173656,
+          0.0138089167863807,
+          -0.04612653952314179
+        ]
+      }
+    },
+    {
+      "seed": 32002,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.003983824014180426,
+      "xy_error_m": 0.003980674185600447,
+      "support_fraction": 0.9000291206932608,
+      "normal_z": 0.9986337211423751,
+      "joint_speed_norm": 0.09674031239492979,
+      "force_N": [
+        0.009266030941979739,
+        -0.003208079682302081,
+        0.159368606415716
+      ],
+      "peak_contact_N": 0.3025235975025534,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 4.159794886151923e-06,
+      "hold_steps": 20,
+      "sim_s": 1.74,
+      "first_contact_s": 0.6,
+      "return_sum": 183.60717505304115,
+      "domain_randomization": {
+        "offset_m": [
+          -0.009007845029643406,
+          -0.007483450307009652,
+          0.0049906311741340385
+        ],
+        "stiffness_scale": 1.1673596830740256,
+        "leaf_yaw_rad": [
+          -0.017529056626126582,
+          0.06560898869212686,
+          0.025304826031636043
+        ]
+      }
+    },
+    {
+      "seed": 32003,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.0036934601801029625,
+      "xy_error_m": 0.003691066409711383,
+      "support_fraction": 0.9602438232648363,
+      "normal_z": 0.9982432445969244,
+      "joint_speed_norm": 0.11892132310707536,
+      "force_N": [
+        0.008867406995846734,
+        -0.0042407475321836864,
+        0.17003085390741615
+      ],
+      "peak_contact_N": 0.20551560273227337,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 4.412948155339795e-06,
+      "hold_steps": 20,
+      "sim_s": 1.4000000000000001,
+      "first_contact_s": 0.8200000000000001,
+      "return_sum": 149.56907664376178,
+      "domain_randomization": {
+        "offset_m": [
+          0.009525781990831348,
+          0.0033888312643426187,
+          -0.005841165388325145
+        ],
+        "stiffness_scale": 0.9639151326820332,
+        "leaf_yaw_rad": [
+          0.0900679447607794,
+          0.006995553518620513,
+          0.04512188489284777
+        ]
+      }
+    },
+    {
+      "seed": 32004,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.003615391125158001,
+      "xy_error_m": 0.0036132074075636202,
+      "support_fraction": 0.9294972079109249,
+      "normal_z": 0.9982856399118128,
+      "joint_speed_norm": 0.10421088400524357,
+      "force_N": [
+        0.009496345439927976,
+        -0.0035421273709462385,
+        0.1645865353533914
+      ],
+      "peak_contact_N": 0.2488772923110413,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 4.2366009057457325e-06,
+      "hold_steps": 20,
+      "sim_s": 1.6,
+      "first_contact_s": 0.74,
+      "return_sum": 173.3612951563633,
+      "domain_randomization": {
+        "offset_m": [
+          -0.0022198034706741926,
+          -0.0009579946533222845,
+          -0.0014991157717328325
+        ],
+        "stiffness_scale": 1.088335354166206,
+        "leaf_yaw_rad": [
+          0.09715841699025639,
+          0.012737217168082205,
+          -0.0969123531159696
+        ]
+      }
+    },
+    {
+      "seed": 32005,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.00441454945210903,
+      "xy_error_m": 0.004411498812788681,
+      "support_fraction": 0.9575917592501926,
+      "normal_z": 0.999159502705297,
+      "joint_speed_norm": 0.11903756835932398,
+      "force_N": [
+        0.008013603666224214,
+        -0.005049690406037742,
+        0.1695612516063112
+      ],
+      "peak_contact_N": 0.22195606154075312,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 4.329700435711225e-06,
+      "hold_steps": 20,
+      "sim_s": 1.26,
+      "first_contact_s": 0.72,
+      "return_sum": 142.08137535248963,
+      "domain_randomization": {
+        "offset_m": [
+          -0.008349217524876502,
+          -0.0007654158774955047,
+          0.001148685897887042
+        ],
+        "stiffness_scale": 0.946646636379602,
+        "leaf_yaw_rad": [
+          0.08722526695572615,
+          -0.07232824910046053,
+          0.09447582077635255
+        ]
+      }
+    },
+    {
+      "seed": 32006,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.0031672125359512747,
+      "xy_error_m": 0.003166179600115908,
+      "support_fraction": 0.9471731698257574,
+      "normal_z": 0.9984824491428447,
+      "joint_speed_norm": 0.11296892653372657,
+      "force_N": [
+        0.008954534693119914,
+        -0.003427381348355141,
+        0.16771642676763174
+      ],
+      "peak_contact_N": 0.2267780532139676,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 4.3664951763296795e-06,
+      "hold_steps": 20,
+      "sim_s": 1.54,
+      "first_contact_s": 0.86,
+      "return_sum": 164.22192717966394,
+      "domain_randomization": {
+        "offset_m": [
+          0.007035193719714426,
+          0.007919531753133913,
+          0.0032098015239723624
+        ],
+        "stiffness_scale": 0.978259546305873,
+        "leaf_yaw_rad": [
+          -0.08163765591357353,
+          0.0033442993095704754,
+          0.021807124329810357
+        ]
+      }
+    },
+    {
+      "seed": 32007,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.004930156633294276,
+      "xy_error_m": 0.004926528265696839,
+      "support_fraction": 0.98572746415242,
+      "normal_z": 0.9993908364219702,
+      "joint_speed_norm": 0.12772597933813834,
+      "force_N": [
+        0.0075525528801907,
+        -0.005521792961755053,
+        0.17454325494120104
+      ],
+      "peak_contact_N": 0.2663574909911487,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 2.081346346588841e-06,
+      "hold_steps": 20,
+      "sim_s": 1.12,
+      "first_contact_s": 0.74,
+      "return_sum": 124.00553701917647,
+      "domain_randomization": {
+        "offset_m": [
+          0.0013837958906472148,
+          -0.007849265966852856,
+          0.0035244416126078777
+        ],
+        "stiffness_scale": 0.8505275869390481,
+        "leaf_yaw_rad": [
+          -0.020953051770267697,
+          -0.03760151136827153,
+          -0.06452577498023275
+        ]
+      }
+    },
+    {
+      "seed": 32008,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.0035146163343327584,
+      "xy_error_m": 0.003507117728842446,
+      "support_fraction": 0.9708316073320956,
+      "normal_z": 0.9997715565356549,
+      "joint_speed_norm": 0.06468641800238542,
+      "force_N": [
+        0.007549101466472112,
+        -0.0017971740636397878,
+        0.1719056381260978
+      ],
+      "peak_contact_N": 0.3084400944699792,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 4.852871338402014e-06,
+      "hold_steps": 3,
+      "sim_s": 4.0,
+      "first_contact_s": 0.68,
+      "return_sum": 578.7195099024036,
+      "domain_randomization": {
+        "offset_m": [
+          -0.0024396482970617532,
+          -0.011938334529484486,
+          0.0017869588223565667
+        ],
+        "stiffness_scale": 0.8232714258157502,
+        "leaf_yaw_rad": [
+          0.06441105223110459,
+          -0.0627365343370606,
+          0.029385858087465012
+        ]
+      }
+    },
+    {
+      "seed": 32009,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.004501807595925717,
+      "xy_error_m": 0.004498723020448861,
+      "support_fraction": 0.9436294702695638,
+      "normal_z": 0.9992851435644723,
+      "joint_speed_norm": 0.12030801679557623,
+      "force_N": [
+        0.00756028799667968,
+        -0.0046754489414959485,
+        0.16708894211536676
+      ],
+      "peak_contact_N": 0.22148840337010958,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 4.3176902998068e-06,
+      "hold_steps": 20,
+      "sim_s": 1.2,
+      "first_contact_s": 0.72,
+      "return_sum": 134.30191125278802,
+      "domain_randomization": {
+        "offset_m": [
+          0.01117427849733913,
+          -0.010430011063682477,
+          0.0038488031034042028
+        ],
+        "stiffness_scale": 0.8965264563923497,
+        "leaf_yaw_rad": [
+          -0.03527009136916903,
+          -0.02763807500829876,
+          -0.08307177110813586
+        ]
+      }
+    },
+    {
+      "seed": 32010,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.004675856330317073,
+      "xy_error_m": 0.004672504297808007,
+      "support_fraction": 0.9291983572562114,
+      "normal_z": 0.9993960614202525,
+      "joint_speed_norm": 0.12171693025896563,
+      "force_N": [
+        0.007201903500806707,
+        -0.004603243381471773,
+        0.16453361771853595
+      ],
+      "peak_contact_N": 0.2366259833781967,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 4.0300508492490875e-06,
+      "hold_steps": 20,
+      "sim_s": 1.12,
+      "first_contact_s": 0.68,
+      "return_sum": 126.1410336367465,
+      "domain_randomization": {
+        "offset_m": [
+          0.0033324266566120333,
+          -0.007936250386765644,
+          0.002990555508134786
+        ],
+        "stiffness_scale": 0.9006293808606568,
+        "leaf_yaw_rad": [
+          0.0403520884589929,
+          0.02476349623748038,
+          0.03067617773883218
+        ]
+      }
+    },
+    {
+      "seed": 32011,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.003809251604406523,
+      "xy_error_m": 0.003806955732445869,
+      "support_fraction": 0.9274797171519438,
+      "normal_z": 0.9987410550598883,
+      "joint_speed_norm": 0.10270171231402037,
+      "force_N": [
+        0.009072970426138829,
+        -0.003488453828767683,
+        0.16422929725595323
+      ],
+      "peak_contact_N": 0.2629918497686778,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 4.256281535427999e-06,
+      "hold_steps": 20,
+      "sim_s": 1.58,
+      "first_contact_s": 0.74,
+      "return_sum": 172.4618100614577,
+      "domain_randomization": {
+        "offset_m": [
+          0.0007525627432748774,
+          -0.0069770391451260474,
+          0.0026905032099484353
+        ],
+        "stiffness_scale": 1.0695841375211779,
+        "leaf_yaw_rad": [
+          0.021250036296787636,
+          -0.03282877310361696,
+          -0.04999041088303616
+        ]
+      }
+    },
+    {
+      "seed": 32012,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.004409840737442684,
+      "xy_error_m": 0.004406317933229214,
+      "support_fraction": 0.9324963031772318,
+      "normal_z": 0.9993427346718128,
+      "joint_speed_norm": 0.10532510884973131,
+      "force_N": [
+        0.00838580038803317,
+        -0.00416750138105186,
+        0.16511758665174397
+      ],
+      "peak_contact_N": 0.3187039694864599,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 2.02569159993807e-06,
+      "hold_steps": 20,
+      "sim_s": 1.44,
+      "first_contact_s": 0.68,
+      "return_sum": 162.90278622645786,
+      "domain_randomization": {
+        "offset_m": [
+          -0.00816104293923691,
+          -0.011108947718556195,
+          0.004831869958968179
+        ],
+        "stiffness_scale": 1.0500586286385358,
+        "leaf_yaw_rad": [
+          -0.01204208627122978,
+          0.017426021655384785,
+          -0.023288304680291527
+        ]
+      }
+    }
+  ],
+  "baseline": [
+    {
+      "seed": 32001,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.040633123443511,
+      "xy_error_m": 0.038028745704674446,
+      "support_fraction": 0.0,
+      "normal_z": 0.9999999999890485,
+      "joint_speed_norm": 3.828288470695697e-12,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_contact_N": 0.0,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "hold_steps": 0,
+      "sim_s": 4.0,
+      "first_contact_s": null,
+      "return_sum": 69.31407326343877,
+      "domain_randomization": {
+        "offset_m": [
+          0.0076525322578695305,
+          -0.007135211182065674,
+          -0.00396112856038158
+        ],
+        "stiffness_scale": 1.0516021916437053,
+        "leaf_yaw_rad": [
+          -0.052603430667173656,
+          0.0138089167863807,
+          -0.04612653952314179
+        ]
+      }
+    },
+    {
+      "seed": 32002,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.044161346155180026,
+      "xy_error_m": 0.03715811436463333,
+      "support_fraction": 0.0,
+      "normal_z": 0.9999999999890485,
+      "joint_speed_norm": 3.822424027490846e-12,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_contact_N": 0.0,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "hold_steps": 0,
+      "sim_s": 4.0,
+      "first_contact_s": null,
+      "return_sum": 62.9478504147718,
+      "domain_randomization": {
+        "offset_m": [
+          -0.009007845029643406,
+          -0.007483450307009652,
+          0.0049906311741340385
+        ],
+        "stiffness_scale": 1.1673596830740256,
+        "leaf_yaw_rad": [
+          -0.017529056626126582,
+          0.06560898869212686,
+          0.025304826031636043
+        ]
+      }
+    },
+    {
+      "seed": 32003,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.051146085346308066,
+      "xy_error_m": 0.04972803460855533,
+      "support_fraction": 0.0,
+      "normal_z": 0.9999999999890485,
+      "joint_speed_norm": 3.828288470695697e-12,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_contact_N": 0.0,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "hold_steps": 0,
+      "sim_s": 4.0,
+      "first_contact_s": null,
+      "return_sum": 53.270275278204245,
+      "domain_randomization": {
+        "offset_m": [
+          0.009525781990831348,
+          0.0033888312643426187,
+          -0.005841165388325145
+        ],
+        "stiffness_scale": 0.9639151326820332,
+        "leaf_yaw_rad": [
+          0.0900679447607794,
+          0.006995553518620513,
+          0.04512188489284777
+        ]
+      }
+    },
+    {
+      "seed": 32004,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.046431013044236434,
+      "xy_error_m": 0.043219617923248875,
+      "support_fraction": 0.0,
+      "normal_z": 0.9999999999890485,
+      "joint_speed_norm": 3.825561744904041e-12,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_contact_N": 0.0,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "hold_steps": 0,
+      "sim_s": 4.0,
+      "first_contact_s": null,
+      "return_sum": 59.40983823958073,
+      "domain_randomization": {
+        "offset_m": [
+          -0.0022198034706741926,
+          -0.0009579946533222845,
+          -0.0014991157717328325
+        ],
+        "stiffness_scale": 1.088335354166206,
+        "leaf_yaw_rad": [
+          0.09715841699025639,
+          0.012737217168082205,
+          -0.0969123531159696
+        ]
+      }
+    },
+    {
+      "seed": 32005,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.04932603248843128,
+      "xy_error_m": 0.04558030863159765,
+      "support_fraction": 0.0,
+      "normal_z": 0.9999999999890485,
+      "joint_speed_norm": 3.828288470695697e-12,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_contact_N": 0.0,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "hold_steps": 0,
+      "sim_s": 4.0,
+      "first_contact_s": null,
+      "return_sum": 55.51176593795774,
+      "domain_randomization": {
+        "offset_m": [
+          -0.008349217524876502,
+          -0.0007654158774955047,
+          0.001148685897887042
+        ],
+        "stiffness_scale": 0.946646636379602,
+        "leaf_yaw_rad": [
+          0.08722526695572615,
+          -0.07232824910046053,
+          0.09447582077635255
+        ]
+      }
+    },
+    {
+      "seed": 32006,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.05762712101413576,
+      "xy_error_m": 0.053629336073941894,
+      "support_fraction": 0.0,
+      "normal_z": 0.9999999999890485,
+      "joint_speed_norm": 3.828288470695697e-12,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_contact_N": 0.0,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "hold_steps": 0,
+      "sim_s": 4.0,
+      "first_contact_s": null,
+      "return_sum": 46.82867838310208,
+      "domain_randomization": {
+        "offset_m": [
+          0.007035193719714426,
+          0.007919531753133913,
+          0.0032098015239723624
+        ],
+        "stiffness_scale": 0.978259546305873,
+        "leaf_yaw_rad": [
+          -0.08163765591357353,
+          0.0033442993095704754,
+          0.021807124329810357
+        ]
+      }
+    },
+    {
+      "seed": 32007,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.0440875012992286,
+      "xy_error_m": 0.03893424943567569,
+      "support_fraction": 0.0,
+      "normal_z": 0.9999999999890485,
+      "joint_speed_norm": 3.828288470695697e-12,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_contact_N": 0.0,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "hold_steps": 0,
+      "sim_s": 4.0,
+      "first_contact_s": null,
+      "return_sum": 63.17622064289723,
+      "domain_randomization": {
+        "offset_m": [
+          0.0013837958906472148,
+          -0.007849265966852856,
+          0.0035244416126078777
+        ],
+        "stiffness_scale": 0.8505275869390481,
+        "leaf_yaw_rad": [
+          -0.020953051770267697,
+          -0.03760151136827153,
+          -0.06452577498023275
+        ]
+      }
+    },
+    {
+      "seed": 32008,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.0398686041331935,
+      "xy_error_m": 0.0351647057610459,
+      "support_fraction": 0.0,
+      "normal_z": 0.9999999999890485,
+      "joint_speed_norm": 3.828288470695697e-12,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_contact_N": 0.0,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "hold_steps": 0,
+      "sim_s": 4.0,
+      "first_contact_s": null,
+      "return_sum": 70.98090045761721,
+      "domain_randomization": {
+        "offset_m": [
+          -0.0024396482970617532,
+          -0.011938334529484486,
+          0.0017869588223565667
+        ],
+        "stiffness_scale": 0.8232714258157502,
+        "leaf_yaw_rad": [
+          0.06441105223110459,
+          -0.0627365343370606,
+          0.029385858087465012
+        ]
+      }
+    },
+    {
+      "seed": 32009,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.04318313999663109,
+      "xy_error_m": 0.03757979365448006,
+      "support_fraction": 0.0,
+      "normal_z": 0.9999999999890485,
+      "joint_speed_norm": 3.828288470695697e-12,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_contact_N": 0.0,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "hold_steps": 0,
+      "sim_s": 4.0,
+      "first_contact_s": null,
+      "return_sum": 64.65499982160463,
+      "domain_randomization": {
+        "offset_m": [
+          0.01117427849733913,
+          -0.010430011063682477,
+          0.0038488031034042028
+        ],
+        "stiffness_scale": 0.8965264563923497,
+        "leaf_yaw_rad": [
+          -0.03527009136916903,
+          -0.02763807500829876,
+          -0.08307177110813586
+        ]
+      }
+    },
+    {
+      "seed": 32010,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.04347819620177642,
+      "xy_error_m": 0.03837495387758715,
+      "support_fraction": 0.0,
+      "normal_z": 0.9999999999890485,
+      "joint_speed_norm": 3.828288470695697e-12,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_contact_N": 0.0,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "hold_steps": 0,
+      "sim_s": 4.0,
+      "first_contact_s": null,
+      "return_sum": 64.16842659207514,
+      "domain_randomization": {
+        "offset_m": [
+          0.0033324266566120333,
+          -0.007936250386765644,
+          0.002990555508134786
+        ],
+        "stiffness_scale": 0.9006293808606568,
+        "leaf_yaw_rad": [
+          0.0403520884589929,
+          0.02476349623748038,
+          0.03067617773883218
+        ]
+      }
+    },
+    {
+      "seed": 32011,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.04283692883405534,
+      "xy_error_m": 0.0373028745793504,
+      "support_fraction": 0.0,
+      "normal_z": 0.9999999999890485,
+      "joint_speed_norm": 3.828288470695697e-12,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_contact_N": 0.0,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "hold_steps": 0,
+      "sim_s": 4.0,
+      "first_contact_s": null,
+      "return_sum": 65.21343162587654,
+      "domain_randomization": {
+        "offset_m": [
+          0.0007525627432748774,
+          -0.0069770391451260474,
+          0.0026905032099484353
+        ],
+        "stiffness_scale": 1.0695841375211779,
+        "leaf_yaw_rad": [
+          0.021250036296787636,
+          -0.03282877310361696,
+          -0.04999041088303616
+        ]
+      }
+    },
+    {
+      "seed": 32012,
+      "is_success": false,
+      "invalid": false,
+      "distance_m": 0.0414759590250599,
+      "xy_error_m": 0.03444909019640792,
+      "support_fraction": 0.0,
+      "normal_z": 0.9999999999890485,
+      "joint_speed_norm": 3.828288470695697e-12,
+      "force_N": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "peak_contact_N": 0.0,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "hold_steps": 0,
+      "sim_s": 4.0,
+      "first_contact_s": null,
+      "return_sum": 67.71687233976036,
+      "domain_randomization": {
+        "offset_m": [
+          -0.00816104293923691,
+          -0.011108947718556195,
+          0.004831869958968179
+        ],
+        "stiffness_scale": 1.0500586286385358,
+        "leaf_yaw_rad": [
+          -0.01204208627122978,
+          0.017426021655384785,
+          -0.023288304680291527
+        ]
+      }
+    }
+  ]
+}

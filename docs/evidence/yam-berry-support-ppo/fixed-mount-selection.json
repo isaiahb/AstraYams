@@ -1,0 +1,26 @@
+{
+  "selected_checkpoint": "runs/yam-berry-support-ppo-v2/round-3.zip",
+  "sha256": "48172e6823c4ae253d95511821aaaf5203c71d3b73ae6f9008eda27e091040d4",
+  "selection_rule": "Highest full-variation development success count; no holdout results used.",
+  "full_variation_dev_successes": {
+    "round-1": 0,
+    "round-2": 1,
+    "round-3": 3,
+    "round-4": 2
+  },
+  "holdout_seeds": [
+    32001,
+    32002,
+    32003,
+    32004,
+    32005,
+    32006,
+    32007,
+    32008,
+    32009,
+    32010,
+    32011,
+    32012
+  ],
+  "selection_frozen_before_holdout": true
+}

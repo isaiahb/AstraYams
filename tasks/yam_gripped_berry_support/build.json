@@ -1,0 +1,14 @@
+{
+  "tool_mass_kg": 0.026959999999999956,
+  "handle_mm": [
+    26,
+    18,
+    36
+  ],
+  "cup_opening_mm": 30,
+  "cup_depth_mm": 7,
+  "side_opening_degrees": 120,
+  "attachment": "Independent free body. No weld, equality or kinematic parenting to the robot.",
+  "initialization": "Tool is prepositioned between open jaws at reset. Grasp acquisition from a rack is not claimed.",
+  "source_scene": "/Users/isaiah/Documents/BallahTech/AstraFactory/tasks/yam_berry_support/scene.xml"
+}

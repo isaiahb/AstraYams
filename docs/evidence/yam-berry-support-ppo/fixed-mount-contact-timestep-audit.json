@@ -1,0 +1,92 @@
+{
+  "nominal": [
+    {
+      "seed": 31001,
+      "success": true,
+      "duration_s": 1.3800000000000001,
+      "support_fraction": 0.9636114977591875,
+      "max_target_force_N": 0.21394210360933114,
+      "peak_contact_N": 0.2281851456865936,
+      "invalid": false
+    },
+    {
+      "seed": 31002,
+      "success": true,
+      "duration_s": 1.12,
+      "support_fraction": 0.9508647975955761,
+      "max_target_force_N": 0.16862780590078114,
+      "peak_contact_N": 0.2298862628344103,
+      "invalid": false
+    },
+    {
+      "seed": 31003,
+      "success": true,
+      "duration_s": 1.22,
+      "support_fraction": 0.9104948540142441,
+      "max_target_force_N": 0.16145635564203925,
+      "peak_contact_N": 0.22146833427663185,
+      "invalid": false
+    }
+  ],
+  "cup_contact_disabled": [
+    {
+      "seed": 31001,
+      "success": false,
+      "duration_s": 4.0,
+      "support_fraction": 0.0,
+      "max_target_force_N": 0,
+      "peak_contact_N": 0.0,
+      "invalid": false
+    },
+    {
+      "seed": 31002,
+      "success": false,
+      "duration_s": 3.74,
+      "support_fraction": 0.0,
+      "max_target_force_N": 0,
+      "peak_contact_N": 0.0,
+      "invalid": true
+    },
+    {
+      "seed": 31003,
+      "success": false,
+      "duration_s": 4.0,
+      "support_fraction": 0.0,
+      "max_target_force_N": 0,
+      "peak_contact_N": 0.0,
+      "invalid": false
+    }
+  ],
+  "half_timestep": [
+    {
+      "seed": 31001,
+      "success": true,
+      "duration_s": 1.3800000000000001,
+      "support_fraction": 0.9632815713069259,
+      "max_target_force_N": 0.22527687244693986,
+      "peak_contact_N": 0.22843018111764998,
+      "invalid": false
+    },
+    {
+      "seed": 31002,
+      "success": true,
+      "duration_s": 1.12,
+      "support_fraction": 0.9508575599099224,
+      "max_target_force_N": 0.16862637877386594,
+      "peak_contact_N": 0.23837792517757292,
+      "invalid": false
+    },
+    {
+      "seed": 31003,
+      "success": true,
+      "duration_s": 1.34,
+      "support_fraction": 0.9471007770763954,
+      "max_target_force_N": 0.1679553724098519,
+      "peak_contact_N": 0.22192726712674538,
+      "invalid": false
+    }
+  ],
+  "single_observation_predict_mean_ms": 0.046180207980796695,
+  "checkpoint_sha256": "48172e6823c4ae253d95511821aaaf5203c71d3b73ae6f9008eda27e091040d4",
+  "scope": "Development seeds only. Not real-hardware calibration; only integration/contact-rubric checks."
+}

@@ -22,9 +22,16 @@ def evaluate(policy,seeds,variation,out=None):
  e.close();return rows
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--out',type=Path,default=Path('runs/yam-berry-support-ppo-v1'));p.add_argument('--rounds',type=int,default=4);p.add_argument('--steps',type=int,default=65536);p.add_argument('--envs',type=int,default=8);p.add_argument('--resume',type=Path);a=p.parse_args();a.out.mkdir(parents=True,exist_ok=True)
+ global BerrySupportEnv
+ p=argparse.ArgumentParser();p.add_argument('--out',type=Path,default=Path('runs/yam-berry-support-ppo-v1'));p.add_argument('--rounds',type=int,default=4);p.add_argument('--steps',type=int,default=65536);p.add_argument('--envs',type=int,default=8);p.add_argument('--resume',type=Path);p.add_argument('--gripped',action='store_true');a=p.parse_args();a.out.mkdir(parents=True,exist_ok=True)
+ if a.gripped:
+  from astrafactory.gripped_berry_support import GrippedBerrySupportEnv
+  BerrySupportEnv=GrippedBerrySupportEnv
  torch.set_num_threads(2)
  proposal=dict(algorithm='PPO from scratch; no BC or IK in policy execution',action='six coordinated joint-target increments, bounded to 0.015 rad at 50Hz',actor=[34,32,32,6],physics='MuJoCo 2kHz, finite torque PD; fixed mounted cup, articulated fruit stalks, frozen settled foliage obstacles',observations='privileged simulated joint state, relative fruit target, cup orientation and true contact force; not a vision or real-hardware policy',train_variations=[.1,.35,.7,1.0],dev_seeds=[31001,31002,31003],holdout_seeds=list(range(32001,32013)),acceptance='20 consecutive steps (0.4s): vertical support 60-110% of fruit body weight, XY error <5mm, cup normal Z >0.94, joint speed norm <0.3; abort >0.65N target load, >0.8N other robot contact or >0.8mm target penetration. These are engineering thresholds, not bruise limits.',horizon_s=4,initialization='One fixed arm posture built once using IK; not solved for each target; episode setup only.',scope='Support subskill only, not harvest/cutting; uncalibrated actuator/plant/contact models; robot self-collision disabled in this first constrained local task.',source_hashes={f:hashlib.sha256(Path(f).read_bytes()).hexdigest() for f in ['src/astrafactory/berry_support.py',__file__,'tools/build_yam_berry_support.py','tasks/yam_berry_support/scene.xml']})
+ if a.gripped:
+  proposal.update(train_variations=[.35,1.,1.,1.],physics='MuJoCo 2kHz, finite torque PD; independent free tool held by jaw contact and friction; articulated fruit stalks and frozen foliage',acceptance=proposal['acceptance']+' Also requires both jaws contacting the handle, tool slip below 5mm and rotation below 0.15rad.',initialization='One fixed initial arm posture; tool prepositioned between jaws at reset and released into contact dynamics. No rack pickup claim.',holdout_seeds=list(range(33001,33013)))
+  for f in ['src/astrafactory/gripped_berry_support.py','tools/build_gripped_berry_tool.py','tasks/yam_gripped_berry_support/scene.xml']:proposal['source_hashes'][f]=hashlib.sha256(Path(f).read_bytes()).hexdigest()
  if a.resume:proposal.update(algorithm='PPO finetune of earlier PPO approach checkpoint; no BC or execution IK',initial_checkpoint=str(a.resume),initial_checkpoint_sha256=hashlib.sha256(a.resume.read_bytes()).hexdigest())
  dump(a.out/'proposal.json',proposal)
  env=SubprocVecEnv([lambda:BerrySupportEnv(.1) for _ in range(a.envs)],start_method='spawn')

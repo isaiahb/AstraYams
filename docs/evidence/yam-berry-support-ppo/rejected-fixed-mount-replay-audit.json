@@ -1,0 +1,22 @@
+[
+  {
+    "seed": 32001,
+    "max_replay_qpos_error": 0.0,
+    "success": true
+  },
+  {
+    "seed": 32002,
+    "max_replay_qpos_error": 0.0,
+    "success": true
+  },
+  {
+    "seed": 32003,
+    "max_replay_qpos_error": 0.0,
+    "success": true
+  },
+  {
+    "seed": 32008,
+    "max_replay_qpos_error": 0.0,
+    "success": false
+  }
+]

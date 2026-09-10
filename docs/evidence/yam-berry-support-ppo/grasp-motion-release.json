@@ -1,0 +1,11 @@
+{
+  "initial": {
+    "left_jaw_N": 5.4691797010301215,
+    "right_jaw_N": 5.2256117831701925,
+    "tool_slip_m": 0.0002629884475049817,
+    "tool_rotation_rad": 0.001912555880639567
+  },
+  "held_max_slip_mm": 1.8008732267856162,
+  "released_final_slip_mm": 293.70587796808644,
+  "held_min_jaw_N": 5.101042910550003
+}

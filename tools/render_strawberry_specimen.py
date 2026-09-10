@@ -30,9 +30,10 @@ def render(kind='rest',video=False):
    if kind=='rest':
     for j in range(150):wr.append_data(np.array(frame(-1,110+j*1.8,-18)))
  renderer.close();print(P/kind)
-def export(kinds=None):
+def export(kinds=None,skip_finger_collision_visuals=False):
  m=mujoco.MjModel.from_xml_path(str(P/'scene.xml'));d=mujoco.MjData(m);groups={};mp=P/'meshes';mp.mkdir(exist_ok=True)
  for i in range(m.ngeom):
+  if skip_finger_collision_visuals and (m.geom(i).name or '').startswith('finger_'):continue
   typ=int(m.geom_type[i]);size=m.geom_size[i];color=m.geom_rgba[i]
   if color[3]==0 or typ==0:continue
   if typ==7:

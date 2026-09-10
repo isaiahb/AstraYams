@@ -7,8 +7,10 @@ import mujoco,numpy as np
 TASK=Path(__file__).resolve().parents[2]/'tasks/yam_berry_support'
 class BerrySupportEnv(gym.Env):
  metadata={'render_modes':['rgb_array'],'render_fps':25}
- def __init__(self,variation=1.,render_mode=None):
-  self.model=mujoco.MjModel.from_xml_path(str(TASK/'scene.xml'));self.data=mujoco.MjData(self.model);self.initial=np.load(TASK/'initial.npz')['qpos'].copy();m=self.model
+ def __init__(self,variation=1.,render_mode=None,task_dir=None):
+  task=Path(task_dir) if task_dir else TASK
+  self.model=mujoco.MjModel.from_xml_path(str(task/'scene.xml'));self.data=mujoco.MjData(self.model);self.initial=np.load(task/'initial.npz')['qpos'].copy();m=self.model
+  self.allowed_contact_pairs=set()
   self.qids=np.array([m.joint(f'joint{i}').qposadr[0] for i in range(1,7)]);self.vids=np.array([m.joint(f'joint{i}').dofadr[0] for i in range(1,7)]);self.aids=np.array([m.actuator(f'motor{i}').id for i in range(1,7)])
   self.limits=np.array([m.joint(f'joint{i}').range for i in range(1,7)]);self.cup=m.site('support_center').id;self.fruit=m.body('fruit_primary').id;self.frame=m.body('plant_frame').id
   self.stiff=m.jnt_stiffness.copy();self.damping=m.dof_damping.copy();self.pos=m.body_pos.copy();self.quat=m.body_quat.copy();self.mass=m.body_mass[self.fruit];self.weight=self.mass*9.81
@@ -42,11 +44,13 @@ class BerrySupportEnv(gym.Env):
   for i in range(d.ncon):
    c=d.contact[i];g1,g2=int(c.geom1),int(c.geom2)
    if g1 not in self.robotids and g2 not in self.robotids:continue
+   if tuple(sorted((g1,g2))) in self.allowed_contact_pairs:continue
    f=np.zeros(6);mujoco.mj_contactForce(m,d,i,f);world=c.frame.reshape(3,3).T@f[:3]
    if g1 in self.cupids and m.geom_bodyid[g2]==self.fruit:force+=world;depth=max(depth,-c.dist)
    elif g2 in self.cupids and m.geom_bodyid[g1]==self.fruit:force-=world;depth=max(depth,-c.dist)
    else:wrong+=np.linalg.norm(world)
   return force,wrong,depth
+ def additional_validity(self):return True
  def step(self,action):
   a=np.clip(np.asarray(action,dtype=float),-1,1)
   if a.shape!=(6,) or not np.isfinite(a).all():raise ValueError('Invalid joint action')
@@ -59,7 +63,7 @@ class BerrySupportEnv(gym.Env):
   invalid=bool(peak>.65 or wrong>.8 or depth>.0008 or not np.isfinite(self.data.qpos).all() or any(w.number for w in self.data.warning))
   contact=fraction>.1
   if contact and self.first_contact is None:self.first_contact=self.steps*.02
-  valid=bool(.6<=fraction<=1.1 and xy<.005 and angle>.94 and speed<.3 and not invalid)
+  valid=bool(.6<=fraction<=1.1 and xy<.005 and angle>.94 and speed<.3 and not invalid and self.additional_validity())
   self.hold=self.hold+1 if valid else 0;success=self.hold>=20
   reward=100*(self.prev_dist-dist)+1.5*np.exp(-dist/.02)+.15*angle-.003*float(a@a)-.005*float(np.square(a-self.last).sum())
   if dist<.015:reward+=1.5*np.exp(-((fraction-.8)/.35)**2)
