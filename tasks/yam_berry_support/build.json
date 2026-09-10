@@ -1,0 +1,22 @@
+{
+  "plant": "/Users/isaiah/Documents/BallahTech/AstraFactory/assets/workcells/strawberry-specimen/fruit-study/v14",
+  "arm": "/Users/isaiah/Documents/BallahTech/AstraFactory/tasks/yam_contact_curriculum/scene.xml",
+  "nq": 176,
+  "nv": 134,
+  "ngeom": 1691,
+  "initial_ik_error": 9.64270403561623e-07,
+  "initial_joint_position": [
+    0.2747383889003672,
+    1.820787824053687,
+    0.7223857835545517,
+    1.0984263757929658,
+    -1.2960495718251073,
+    -1.5707681066484223
+  ],
+  "nominal_target": [
+    0.3115913064211035,
+    0.07046318118022328,
+    0.19643277159959907
+  ],
+  "scope": "Fixed cup mounted to wrist; static settled foliage; dynamic fruit-bearing branches. IK used once to build constant initialization only."
+}
