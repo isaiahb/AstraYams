@@ -1,0 +1,5 @@
+{
+  "actor_sha256": "45b39715cbe25c84d52486530b760e1262ca415b4c0d1f3d7adf55f601968129",
+  "actor_path": "runs/yam-squeeze-ppo-v2/actor-3.npz",
+  "adapter_checks": "goal bounds, no arm-channel action, finite clipped jaw action, no qpos mutation"
+}

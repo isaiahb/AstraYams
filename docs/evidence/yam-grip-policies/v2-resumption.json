@@ -1,0 +1,6 @@
+{
+  "reason": "Disk full while saving round 2; unsaved optimizer work lost. Continue from last complete round.",
+  "last_complete_round": 1,
+  "resumed_source_sha256": "116bcef58e792afef57f64a9dc028bfe5f80f8096aaab63986b85220ff09da84",
+  "timing": "Report sums completed retained training rounds. Lost round duration was not recorded. Total seconds covers this resumed invocation only."
+}

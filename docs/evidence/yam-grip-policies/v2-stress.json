@@ -1,0 +1,1464 @@
+{
+  "methods": {
+    "ppo": {
+      "successes": 12,
+      "episodes": 12,
+      "trials": [
+        {
+          "seed": 84300,
+          "goal_n": 2.75,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.719999999999592,
+          "peak_load_n": 2.823817790697075,
+          "final_load_n": 2.7202995344950027,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.419999999999845,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84300,
+            "domain_seed": 184300,
+            "mass_scale": 0.9838283516849015,
+            "sliding_friction_scale": 1.096228134248972,
+            "peg_mass_kg": 0.03935313406739606,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84301,
+          "goal_n": 3.5,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.719999999999592,
+          "peak_load_n": 3.612780585410656,
+          "final_load_n": 3.409769254568494,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.4399999999998427,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84301,
+            "domain_seed": 184301,
+            "mass_scale": 0.823617525589768,
+            "sliding_friction_scale": 1.1806883496377583,
+            "peg_mass_kg": 0.03294470102359072,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84302,
+          "goal_n": 4.25,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.6799999999995965,
+          "peak_load_n": 4.390009521334818,
+          "final_load_n": 4.166071656062522,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84302,
+            "domain_seed": 184302,
+            "mass_scale": 0.8077420043657658,
+            "sliding_friction_scale": 1.037440084456949,
+            "peg_mass_kg": 0.03230968017463064,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84303,
+          "goal_n": 2.75,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.6799999999995965,
+          "peak_load_n": 2.8690976899436023,
+          "final_load_n": 2.7167722553718425,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84303,
+            "domain_seed": 184303,
+            "mass_scale": 0.8177339983845637,
+            "sliding_friction_scale": 1.1762602184337116,
+            "peg_mass_kg": 0.03270935993538255,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84304,
+          "goal_n": 3.5,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.73999999999959,
+          "peak_load_n": 3.5770062428470766,
+          "final_load_n": 3.427221337989301,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.419999999999845,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84304,
+            "domain_seed": 184304,
+            "mass_scale": 1.065930981299337,
+            "sliding_friction_scale": 0.9345330318899928,
+            "peg_mass_kg": 0.04263723925197348,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84305,
+          "goal_n": 4.25,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.73999999999959,
+          "peak_load_n": 4.352168763060711,
+          "final_load_n": 4.178702520898618,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84305,
+            "domain_seed": 184305,
+            "mass_scale": 1.1991730330313657,
+            "sliding_friction_scale": 0.9877236904851686,
+            "peg_mass_kg": 0.04796692132125463,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84306,
+          "goal_n": 2.75,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.73999999999959,
+          "peak_load_n": 2.814615361409045,
+          "final_load_n": 2.6998032363287088,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.419999999999845,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84306,
+            "domain_seed": 184306,
+            "mass_scale": 1.054177939290781,
+            "sliding_friction_scale": 0.9261439001382584,
+            "peg_mass_kg": 0.042167117571631246,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84307,
+          "goal_n": 3.5,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.699999999999594,
+          "peak_load_n": 3.5885630256586794,
+          "final_load_n": 3.5885630256586794,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84307,
+            "domain_seed": 184307,
+            "mass_scale": 0.9607895735421984,
+            "sliding_friction_scale": 1.0225172648098617,
+            "peg_mass_kg": 0.038431582941687935,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84308,
+          "goal_n": 4.25,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.719999999999592,
+          "peak_load_n": 4.366597520789027,
+          "final_load_n": 4.1956442356169195,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.419999999999845,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84308,
+            "domain_seed": 184308,
+            "mass_scale": 1.0290214338006411,
+            "sliding_friction_scale": 1.1162655041887402,
+            "peg_mass_kg": 0.04116085735202565,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84309,
+          "goal_n": 2.75,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.699999999999594,
+          "peak_load_n": 2.825995428418369,
+          "final_load_n": 2.6941377949398086,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.419999999999845,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84309,
+            "domain_seed": 184309,
+            "mass_scale": 0.8595284824136216,
+            "sliding_friction_scale": 0.9090202506361672,
+            "peg_mass_kg": 0.03438113929654486,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84310,
+          "goal_n": 3.5,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.73999999999959,
+          "peak_load_n": 3.5706975869457933,
+          "final_load_n": 3.4737823522926283,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84310,
+            "domain_seed": 184310,
+            "mass_scale": 1.1974252343814062,
+            "sliding_friction_scale": 0.9062723627661876,
+            "peg_mass_kg": 0.047897009375256254,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84311,
+          "goal_n": 4.25,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.6799999999995965,
+          "peak_load_n": 4.388867618830358,
+          "final_load_n": 4.177255880076438,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84311,
+            "domain_seed": 184311,
+            "mass_scale": 0.854951073037923,
+            "sliding_friction_scale": 1.136832149811254,
+            "peg_mass_kg": 0.034198042921516916,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        }
+      ]
+    },
+    "feedback": {
+      "successes": 12,
+      "episodes": 12,
+      "trials": [
+        {
+          "seed": 84300,
+          "goal_n": 2.75,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.699999999999594,
+          "peak_load_n": 2.818834381246468,
+          "final_load_n": 2.7327329653635366,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84300,
+            "domain_seed": 184300,
+            "mass_scale": 0.9838283516849015,
+            "sliding_friction_scale": 1.096228134248972,
+            "peg_mass_kg": 0.03935313406739606,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84301,
+          "goal_n": 3.5,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.6799999999995965,
+          "peak_load_n": 3.5909818392363615,
+          "final_load_n": 3.5797545324727764,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84301,
+            "domain_seed": 184301,
+            "mass_scale": 0.823617525589768,
+            "sliding_friction_scale": 1.1806883496377583,
+            "peg_mass_kg": 0.03294470102359072,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84302,
+          "goal_n": 4.25,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.6799999999995965,
+          "peak_load_n": 4.372668566103939,
+          "final_load_n": 4.3510370289251625,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84302,
+            "domain_seed": 184302,
+            "mass_scale": 0.8077420043657658,
+            "sliding_friction_scale": 1.037440084456949,
+            "peg_mass_kg": 0.03230968017463064,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84303,
+          "goal_n": 2.75,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.6799999999995965,
+          "peak_load_n": 2.8307980355024815,
+          "final_load_n": 2.8268371257857523,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84303,
+            "domain_seed": 184303,
+            "mass_scale": 0.8177339983845637,
+            "sliding_friction_scale": 1.1762602184337116,
+            "peg_mass_kg": 0.03270935993538255,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84304,
+          "goal_n": 3.5,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.719999999999592,
+          "peak_load_n": 3.578826985157753,
+          "final_load_n": 3.5610989943375495,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84304,
+            "domain_seed": 184304,
+            "mass_scale": 1.065930981299337,
+            "sliding_friction_scale": 0.9345330318899928,
+            "peg_mass_kg": 0.04263723925197348,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84305,
+          "goal_n": 4.25,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.73999999999959,
+          "peak_load_n": 4.337582234183307,
+          "final_load_n": 4.31680865312309,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84305,
+            "domain_seed": 184305,
+            "mass_scale": 1.1991730330313657,
+            "sliding_friction_scale": 0.9877236904851686,
+            "peg_mass_kg": 0.04796692132125463,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84306,
+          "goal_n": 2.75,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.719999999999592,
+          "peak_load_n": 2.8120848611966873,
+          "final_load_n": 2.797143423072938,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84306,
+            "domain_seed": 184306,
+            "mass_scale": 1.054177939290781,
+            "sliding_friction_scale": 0.9261439001382584,
+            "peg_mass_kg": 0.042167117571631246,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84307,
+          "goal_n": 3.5,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.699999999999594,
+          "peak_load_n": 3.579093625834859,
+          "final_load_n": 3.4364113845594897,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84307,
+            "domain_seed": 184307,
+            "mass_scale": 0.9607895735421984,
+            "sliding_friction_scale": 1.0225172648098617,
+            "peg_mass_kg": 0.038431582941687935,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84308,
+          "goal_n": 4.25,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.699999999999594,
+          "peak_load_n": 4.344831974629855,
+          "final_load_n": 4.17132725616454,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84308,
+            "domain_seed": 184308,
+            "mass_scale": 1.0290214338006411,
+            "sliding_friction_scale": 1.1162655041887402,
+            "peg_mass_kg": 0.04116085735202565,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84309,
+          "goal_n": 2.75,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.6799999999995965,
+          "peak_load_n": 2.819198798492738,
+          "final_load_n": 2.6945117006748203,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84309,
+            "domain_seed": 184309,
+            "mass_scale": 0.8595284824136216,
+            "sliding_friction_scale": 0.9090202506361672,
+            "peg_mass_kg": 0.03438113929654486,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84310,
+          "goal_n": 3.5,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.73999999999959,
+          "peak_load_n": 3.5698705280968914,
+          "final_load_n": 3.447333073915154,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84310,
+            "domain_seed": 184310,
+            "mass_scale": 1.1974252343814062,
+            "sliding_friction_scale": 0.9062723627661876,
+            "peg_mass_kg": 0.047897009375256254,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84311,
+          "goal_n": 4.25,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.6799999999995965,
+          "peak_load_n": 4.372871405772207,
+          "final_load_n": 4.157687851270119,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84311,
+            "domain_seed": 184311,
+            "mass_scale": 0.854951073037923,
+            "sliding_friction_scale": 1.136832149811254,
+            "peg_mass_kg": 0.034198042921516916,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        }
+      ]
+    },
+    "fixed": {
+      "successes": 8,
+      "episodes": 12,
+      "trials": [
+        {
+          "seed": 84300,
+          "goal_n": 2.75,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.699999999999594,
+          "peak_load_n": 4.008983161630203,
+          "final_load_n": 3.9923719033592997,
+          "final_load_in_band": false,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84300,
+            "domain_seed": 184300,
+            "mass_scale": 0.9838283516849015,
+            "sliding_friction_scale": 1.096228134248972,
+            "peg_mass_kg": 0.03935313406739606,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": false
+        },
+        {
+          "seed": 84301,
+          "goal_n": 3.5,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.6799999999995965,
+          "peak_load_n": 4.024284552399835,
+          "final_load_n": 4.008028991676904,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84301,
+            "domain_seed": 184301,
+            "mass_scale": 0.823617525589768,
+            "sliding_friction_scale": 1.1806883496377583,
+            "peg_mass_kg": 0.03294470102359072,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84302,
+          "goal_n": 4.25,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.6799999999995965,
+          "peak_load_n": 4.025501196988579,
+          "final_load_n": 3.8222296451334152,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84302,
+            "domain_seed": 184302,
+            "mass_scale": 0.8077420043657658,
+            "sliding_friction_scale": 1.037440084456949,
+            "peg_mass_kg": 0.03230968017463064,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84303,
+          "goal_n": 2.75,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.6799999999995965,
+          "peak_load_n": 4.024821797184815,
+          "final_load_n": 4.007902624857774,
+          "final_load_in_band": false,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84303,
+            "domain_seed": 184303,
+            "mass_scale": 0.8177339983845637,
+            "sliding_friction_scale": 1.1762602184337116,
+            "peg_mass_kg": 0.03270935993538255,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": false
+        },
+        {
+          "seed": 84304,
+          "goal_n": 3.5,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.719999999999592,
+          "peak_load_n": 3.999345027948408,
+          "final_load_n": 3.9853872901610257,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84304,
+            "domain_seed": 184304,
+            "mass_scale": 1.065930981299337,
+            "sliding_friction_scale": 0.9345330318899928,
+            "peg_mass_kg": 0.04263723925197348,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84305,
+          "goal_n": 4.25,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.73999999999959,
+          "peak_load_n": 3.9947593470661333,
+          "final_load_n": 3.8556450258953467,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84305,
+            "domain_seed": 184305,
+            "mass_scale": 1.1991730330313657,
+            "sliding_friction_scale": 0.9877236904851686,
+            "peg_mass_kg": 0.04796692132125463,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84306,
+          "goal_n": 2.75,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.719999999999592,
+          "peak_load_n": 3.9997380177191006,
+          "final_load_n": 3.9856039738358153,
+          "final_load_in_band": false,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84306,
+            "domain_seed": 184306,
+            "mass_scale": 1.054177939290781,
+            "sliding_friction_scale": 0.9261439001382584,
+            "peg_mass_kg": 0.042167117571631246,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": false
+        },
+        {
+          "seed": 84307,
+          "goal_n": 3.5,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.699999999999594,
+          "peak_load_n": 4.007553998226854,
+          "final_load_n": 3.8434478148385516,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84307,
+            "domain_seed": 184307,
+            "mass_scale": 0.9607895735421984,
+            "sliding_friction_scale": 1.0225172648098617,
+            "peg_mass_kg": 0.038431582941687935,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84308,
+          "goal_n": 4.25,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.699999999999594,
+          "peak_load_n": 4.006673991409792,
+          "final_load_n": 3.9912719869815074,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84308,
+            "domain_seed": 184308,
+            "mass_scale": 1.0290214338006411,
+            "sliding_friction_scale": 1.1162655041887402,
+            "peg_mass_kg": 0.04116085735202565,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84309,
+          "goal_n": 2.75,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.6799999999995965,
+          "peak_load_n": 4.01150961090825,
+          "final_load_n": 3.9994373644915964,
+          "final_load_in_band": false,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84309,
+            "domain_seed": 184309,
+            "mass_scale": 0.8595284824136216,
+            "sliding_friction_scale": 0.9090202506361672,
+            "peg_mass_kg": 0.03438113929654486,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": false
+        },
+        {
+          "seed": 84310,
+          "goal_n": 3.5,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.73999999999959,
+          "peak_load_n": 3.9928474428312044,
+          "final_load_n": 3.855087852015507,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84310,
+            "domain_seed": 184310,
+            "mass_scale": 1.1974252343814062,
+            "sliding_friction_scale": 0.9062723627661876,
+            "peg_mass_kg": 0.047897009375256254,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        },
+        {
+          "seed": 84311,
+          "goal_n": 4.25,
+          "handoff_success": true,
+          "elapsed_sim_s": 5.6799999999995965,
+          "peak_load_n": 4.024139580218241,
+          "final_load_n": 4.004985250590658,
+          "final_load_in_band": true,
+          "phase": "lift",
+          "handoffs": [
+            {
+              "phase": "close",
+              "time": 2.0999999999999903,
+              "guard": "tool error<0.8mm and arm speed<0.03rad/s"
+            },
+            {
+              "phase": "lift",
+              "time": 3.399999999999847,
+              "guard": "bilateral>1N and jaw/tool velocity settled for0.25s"
+            }
+          ],
+          "reset_between_skills": false,
+          "domain_randomization": {
+            "role": "stress",
+            "profile": "stress-v1",
+            "reset_seed": 84311,
+            "domain_seed": 184311,
+            "mass_scale": 0.854951073037923,
+            "sliding_friction_scale": 1.136832149811254,
+            "peg_mass_kg": 0.034198042921516916,
+            "curriculum": {
+              "peg_xy_m": 0.004,
+              "socket_xy_m": 0.004,
+              "yaw_rad": 0.04
+            },
+            "range_provenance": "uncalibrated engineering sensitivity assumption",
+            "profile_sha256": "9911c13b9d84ce978a78c7e60b34bdb1078c46e49b679371559dc8f31fe91882"
+          },
+          "passed": true
+        }
+      ]
+    }
+  },
+  "seconds": 14.767853708006442,
+  "frozen": true
+}
