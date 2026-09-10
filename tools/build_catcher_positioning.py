@@ -16,8 +16,8 @@ F=np.array([[0,0,-1],[0,1,0],[1,0,0]])
 def local(v):return (np.asarray(v)-[-200,0,-7])@F/1000
 
 def main():
- global OUT
- p=argparse.ArgumentParser();p.add_argument('--out',type=Path,default=OUT);p.add_argument('--comfortable',action='store_true');args=p.parse_args();OUT=args.out.resolve()
+ global OUT,PLANT
+ p=argparse.ArgumentParser();p.add_argument('--out',type=Path,default=OUT);p.add_argument('--plant',type=Path,default=PLANT);p.add_argument('--comfortable',action='store_true');args=p.parse_args();OUT=args.out.resolve();PLANT=args.plant.resolve()
  OUT.mkdir(exist_ok=True,parents=True);(OUT/'meshes').mkdir(exist_ok=True)
  root=E.parse(PLANT/'scene.xml').getroot();src=mujoco.MjModel.from_xml_path(str(PLANT/'scene.xml'))
  state=mujoco.MjData(src);z=np.load(PLANT/'initial-state.npz');state.qpos[:]=z['qpos'];mujoco.mj_forward(src,state)

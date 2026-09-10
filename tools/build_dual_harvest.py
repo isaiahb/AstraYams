@@ -11,6 +11,8 @@ from cad_collision import sliced_hulls
 SOURCE=ROOT/'tasks/yam_catcher_positioning_v2';OUT=ROOT/'tasks/yam_dual_harvest_v1'
 
 def main():
+ global SOURCE,OUT
+ parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path,default=SOURCE);parser.add_argument('--out',type=Path,default=OUT);args=parser.parse_args();SOURCE=args.source.resolve();OUT=args.out.resolve()
  OUT.mkdir(parents=True,exist_ok=True);(OUT/'meshes').mkdir(exist_ok=True)
  root=E.parse(SOURCE/'scene.xml').getroot();world=root.find('worldbody');asset=root.find('asset');eq=root.find('equality');contact=root.find('contact')
  src=mujoco.MjModel.from_xml_path(str(SOURCE/'scene.xml'));sd=mujoco.MjData(src);sd.qpos[:]=np.load(SOURCE/'initial.npz')['qpos'];mujoco.mj_forward(src,sd)
@@ -70,7 +72,7 @@ def main():
  # Calyx surfaces previously had no collision. Each connected sepal component
  # gets a conservative rigid contact envelope on its own fruit body. This is
  # an explicit first approximation, not a claim of calibrated flexible sepals.
- for fruitname in ['primary','secondary_a','secondary_b','green']:
+ for fruitname in [src.body(i).name.removeprefix('fruit_') for i in range(src.nbody) if src.body(i).name.startswith('fruit_')]:
   name=f'fruit_detail_{fruitname}_calyx';gi=src.geom(name).id;k=src.geom_dataid[gi]
   v=src.mesh_vert[src.mesh_vertadr[k]:src.mesh_vertadr[k]+src.mesh_vertnum[k]];faces=src.mesh_face[src.mesh_faceadr[k]:src.mesh_faceadr[k]+src.mesh_facenum[k]]
   rot=np.zeros(9);mujoco.mju_quat2Mat(rot,src.geom_quat[gi]);v=v@rot.reshape(3,3).T+src.geom_pos[gi]

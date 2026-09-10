@@ -15,6 +15,7 @@ class DualHarvestEnv(CatcherPositioningEnv):
   self.climits=np.array([m.joint(f'cut_joint{i}').range for i in range(1,7)]);self.cutsite=m.site('cut_center').id;self.branch=m.body('cut_branch').id;self.freeadr=m.joint('cut_branch_free').qposadr[0];self.eq=m.equality('stem_integrity').id
   self.blades=[{i for i in range(m.ngeom) if (m.geom(i).name or '').startswith(f'cut_{side}_blade_contact')} for side in ['left','right']]
   self.cutstems={m.geom(n).id for n in ['proximal_cut_stem','distal_cut_stem']};self.net=mujoco.mj_name2id(m,mujoco.mjtObj.mjOBJ_FLEX,'catcher_net')
+  self.neighbor_fruit_bodies={i for i in range(m.nbody) if m.body(i).name.startswith('fruit_') and i!=self.fruit}
   self.allowed=np.zeros((m.ngeom,m.ngeom),dtype=bool)
   for a,b in self.permitted:self.allowed[a,b]=self.allowed[b,a]=True
   self.threshold=cut_work_J;self.excludes=m.exclude_signature.copy();self.cut_target=self.initial[self.cq].copy();self.jaw_target=-.007;self.contact_peak=dict(force_N=0.,geoms=[],time_s=0.);self.neighbor_peak=dict(force_N=0.,geoms=[],time_s=0.);self.receive_peak=0.
@@ -51,7 +52,7 @@ class DualHarvestEnv(CatcherPositioningEnv):
     if ids&blade and ids&self.cutstems:forces[j]+=max(float(f[0]),0.);bladepair=True
    if bladepair:continue
    names=[m.geom(int(g)).name if g>=0 else 'flex' for g in c.geom]
-   if np.any(b&8) and any(any(n in name for n in ['primary','secondary_a','green']) for name in names) and force>self.neighbor_peak['force_N']:
+   if np.any(b&8) and any(m.geom_bodyid[g] in self.neighbor_fruit_bodies for g in ids) and force>self.neighbor_peak['force_N']:
     self.neighbor_peak=dict(force_N=force,geoms=names,time_s=float(d.time-.3),penetration_m=max(0.,-float(c.dist)))
    # Receiving the detached fruit includes its calyx on that same rigid body.
    # Keep its impact and penetration evidence; do not mislabel it as a neighbor.
@@ -61,6 +62,10 @@ class DualHarvestEnv(CatcherPositioningEnv):
     self.contact_peak=dict(force_N=force,geoms=[m.geom(int(g)).name if g>=0 else 'flex' for g in c.geom],time_s=float(d.time-.3),penetration_m=max(0.,-float(c.dist)))
    wrong=max(wrong,force);depth=max(depth,-float(c.dist))
   return forces,netforce,wrong,depth,interarm
+ def before_physics_step(self):
+  pass
+ def after_physics_step(self):
+  pass
  def advance(self,catch_action=None,cut_action=None,allow_cut=True):
   m,d=self.model,self.data
   if catch_action is not None:
@@ -69,7 +74,7 @@ class DualHarvestEnv(CatcherPositioningEnv):
    a=np.clip(np.asarray(cut_action),-1,1);self.cut_target=np.clip(self.cut_target+a[:6]*.008,self.climits[:,0]+.001,self.climits[:,1]-.001);self.jaw_target=float(np.clip(self.jaw_target+a[6]*.00025,-.009,-.0028));self.last_cut=a.copy()
   nf=wrong=depth=interarm=0.;bf=[0.,0.]
   for _ in range(self.skip):
-   self.servo();mujoco.mj_step(m,d);forces,net,w,dep,inter=self.contacts();nf=max(nf,net);wrong=max(wrong,w);depth=max(depth,dep);interarm=max(interarm,inter);bf=np.maximum(bf,forces)
+   self.servo();self.before_physics_step();mujoco.mj_step(m,d);self.after_physics_step();forces,net,w,dep,inter=self.contacts();nf=max(nf,net);wrong=max(wrong,w);depth=max(depth,dep);interarm=max(interarm,inter);bf=np.maximum(bf,forces)
    jaws=sum(float(d.qpos[m.joint(n).qposadr[0]]) for n in ['cut_joint7','cut_joint8']);closing=max(0.,jaws-self.jaw_previous);self.jaw_previous=jaws
    if not self.severed and min(forces)>.1 and closing>0:
     self.work+=min(forces)*closing
