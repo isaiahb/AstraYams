@@ -1,0 +1,15 @@
+{
+  "max_noncommuting_rotation_energy_gradient_error_nm": 9.240901858824369e-11,
+  "max_exact_relaxation_error_rad": 4.440892098500626e-16,
+  "max_dissipation_identity_error_j": 1.205632815803881e-16,
+  "max_scalar_creep_error_rad": 2.1898498108949283e-07,
+  "max_scalar_recovery_error_rad": 2.092156997819672e-07,
+  "checks": {
+    "conservative_torque": true,
+    "exact_relaxation": true,
+    "dissipation": true,
+    "scalar_creep": true,
+    "scalar_recovery": true
+  },
+  "scope": "Mathematical implementation checks only, not strawberry calibration."
+}

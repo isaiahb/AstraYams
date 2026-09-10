@@ -125,3 +125,38 @@ without confounding the result with a cut/fracture model.
 
 Reference implementation and limitations:
 `assets/workcells/strawberry-specimen/support-study/v2/README.md`.
+
+
+## Constitutive identification and baseline rejection
+
+A model may pass timestep checks while the experiment's initial condition is
+still unsuitable. In the first recovery study, the untouched controls moved
+0.106–0.228 mm, violating the declared 0.10 mm limit. Preserve that failure.
+Continue physical settling with unchanged material values and preserve its
+trajectory; do not zero velocities, shift poses, add damping, or loosen the
+limit merely to obtain a quiet baseline. Repeat the paired interventions from
+the improved shared state.
+
+Separate a material's constitutive evolution from an animation rule. The
+rotational Maxwell component evolves by stress-driven internal relaxation,
+with a checked energy gradient and nonnegative dissipation. Its internal state
+must not advance inside a solver callback that can execute repeatedly during
+one integration step. Check the constitutive update independently against an
+analytical scalar problem, then check the coupled simulation at a finer step.
+
+Use the same starting loaded state and intervention commands for competing
+laws. Measure actual instrument position: finite actuator stiffness means a
+fixed command is not a mathematically fixed displacement. Log force and
+recovery over several holds. Pair each with an untouched control. Keep plots
+on comparable axes without clipping small but relevant differences.
+
+A finite recovery window cannot establish permanent set. Pre-existing rest
+curvature is distinct from an evolving growth law, and changing both curvature
+and stiffness must be identified as a combined hypothesis. A single image
+cannot determine which history produced its loaded shape.
+
+Record research applicability by organ, species, age, loading mode and timescale.
+Do not pool petiole stiffness, fruit flesh compression, stalk cutting failure
+and electrical relaxation constants into an invented pedicel recovery fit.
+Absent matching measurements, the deliverable is an auditable discrimination
+experiment and measurement protocol, not biological calibration.

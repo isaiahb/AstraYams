@@ -13,7 +13,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from study_strawberry_recovery import P,BASE,HOLD_START,RETURN_DURATION
 
-LABELS={'elastic':'A · Elastic + damping','relaxing':'B · Relaxing component','retained':'C · Different rest curvature'}
+LABELS={'elastic':'A · Elastic + damping','relaxing':'B · Relaxing component','retained':'C · Rest curvature + 2× stiffness'}
 COLORS={'elastic':'#286ea7','relaxing':'#c46f30','retained':'#718642'}
 FONT='/System/Library/Fonts/Helvetica.ttc'
 ROOT=Path(__file__).resolve().parents[1]

@@ -1,0 +1,39 @@
+{
+  "source_checkpoint": "b02ff19",
+  "rejected_recovery_checkpoint": "05d0147",
+  "scene_path": "/Users/isaiah/Documents/BallahTech/AstraFactory/assets/workcells/strawberry-specimen/support-study/v2/scene.xml",
+  "scene_sha256": "57fde975caf585dbd88766da8153cf760a987f701bae0dd8fc6bc80e08f151c4",
+  "initial_state_sha256": "a0f1246806abc70416bcf682ff13f248a76c5d2d39186fdce296030d42db9219",
+  "intervention": "Identical position-actuator commands across material models. Replay approach/support to 5.9 s; freeze command 1 or 12 s; continuous translated withdrawal; observe 15 s after withdrawal. Actual tool position and forces remain dynamic.",
+  "holds_s": [
+    1.0,
+    12.0
+  ],
+  "recovery_s": 15.0,
+  "hold_start_s": 5.9,
+  "withdraw_duration_s": 3.7,
+  "material_hypotheses": {
+    "elastic": "Original 45 MPa equilibrium truss, existing viscous damping; fixed rest shape.",
+    "relaxing": "Original equilibrium branch plus equal-stiffness rotational Maxwell arm at all 42 truss joints; tau_relax=3 s, local scalar tau_creep=6 s. All numbers are uncalibrated sensitivity choices.",
+    "retained": "Before trial, assign half loaded joint rotation to fixed rest curvature and double spring stiffness, preserving initial restoring moments. No growth, damage or plastic flow during trial."
+  },
+  "unknown_parameter_ranges": {
+    "equilibrium_truss_modulus_mpa": "45 inherited modeling assumption, not a published fruit-stalk calibration",
+    "maxwell_ratio": "1 illustrative, unmeasured",
+    "relaxation_time_s": "3 illustrative; alternative 1/10/100 s scalar sensitivity, not biological bounds",
+    "retained_rest_fraction": ".5 illustrative and confounded with stiffness"
+  },
+  "acceptance": {
+    "initial_spring_moment_match_nm": 1e-10,
+    "maximum_contact_force_n": 0.45,
+    "maximum_tool_overlap_mm": 0.25,
+    "maximum_other_plant_overlap_mm": 0.1,
+    "unintended_instrument_contacts": 0,
+    "no_contact_control_drift_mm": 0.1,
+    "max_hold_stage_drift_mm": 1.0,
+    "newton_hold_residual_n": 0.005,
+    "half_timestep_fruit_path_difference_mm": 0.25
+  },
+  "outcome_not_acceptance": "Residual curvature, force relaxation and recovery time are model predictions. Do not tune them to pass a preferred rebound appearance.",
+  "limitations": "No real recovery observations fitted. Fixed crown, rigid fruit, no cutting, tissue damage, measured relaxation spectrum or evolved growth history. One relaxing branch is a discrimination prototype, not an established plant constitutive law."
+}

@@ -17,7 +17,7 @@ import study_strawberry_support as support
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE=support.P
-P=ROOT/'assets/workcells/strawberry-specimen/recovery-study/v1'
+P=ROOT/'assets/workcells/strawberry-specimen/recovery-study/v2'
 HOLD_START=5.9
 RETURN_DURATION=3.7
 RECOVERY=15.
@@ -123,9 +123,33 @@ def unit_checks():
     if not all(report['checks'].values()):raise RuntimeError('Constitutive checks failed')
 
 
+def settle():
+    """Continue gravity equilibration; never reset plant poses or velocities."""
+    m=mujoco.MjModel.from_xml_path(str(BASE/'scene.xml'));d=mujoco.MjData(m)
+    z=np.load(BASE/'initial-state.npz');d.qpos[:]=z['qpos'];d.qvel[:]=z['qvel'];d.ctrl[:]=z['ctrl']
+    mujoco.mj_forward(m,d)
+    bid=m.body('fruit_primary').id;start=d.xpos[bid].copy();history=[]
+    # The v1 controls showed a slow ~10-second mode. Observe at least 60 s,
+    # then require a quiet 20-second window, without changing material values.
+    for sec in range(1,181):
+        mujoco.mj_step(m,d,nstep=round(1/m.opt.timestep));mujoco.mj_forward(m,d)
+        history.append(dict(t_s=sec,position_m=d.xpos[bid].copy().tolist(),max_generalized_speed=float(abs(d.qvel).max())))
+        if any(w.number for w in d.warning):raise RuntimeError('Settling warning')
+        if sec>=60:
+            recent=np.array([h['position_m'] for h in history[-21:]])
+            drift=float(np.linalg.norm(recent-recent[0],axis=1).max()*1000)
+            if drift<.003 and abs(d.qvel).max()<1e-5:break
+    else:raise RuntimeError('Baseline did not settle within 180 s')
+    np.savez_compressed(P/'initial-state.npz',qpos=d.qpos.copy(),qvel=d.qvel.copy(),ctrl=d.ctrl.copy())
+    dump(P/'settling.json',dict(extra_gravity_time_s=sec,fruit_shift_from_v1_mm=((d.xpos[bid]-start)*1000).tolist(),last_20s_fruit_drift_mm=drift,max_generalized_speed=float(abs(d.qvel).max()),history=history,
+        scope='Unchanged geometry, masses, springs, damping and constraints. Actual integrated gravity settling, no velocity reset. Each trial still requires its matched no-contact control.'))
+    print('Settled baseline',sec,'s; final-window drift',drift,'mm',flush=True)
+
+
 def prepare():
     P.mkdir(parents=True,exist_ok=True)
-    dump(P/'protocol.json',dict(source_checkpoint='b02ff19',scene_path=str(BASE/'scene.xml'),scene_sha256=hashlib.sha256((BASE/'scene.xml').read_bytes()).hexdigest(),initial_state_sha256=hashlib.sha256((BASE/'initial-state.npz').read_bytes()).hexdigest(),
+    settle()
+    dump(P/'protocol.json',dict(source_checkpoint='b02ff19',rejected_recovery_checkpoint='05d0147',scene_path=str(BASE/'scene.xml'),scene_sha256=hashlib.sha256((BASE/'scene.xml').read_bytes()).hexdigest(),initial_state_sha256=hashlib.sha256((P/'initial-state.npz').read_bytes()).hexdigest(),
         intervention='Identical position-actuator commands across material models. Replay approach/support to 5.9 s; freeze command 1 or 12 s; continuous translated withdrawal; observe 15 s after withdrawal. Actual tool position and forces remain dynamic.',
         holds_s=[1.,12.],recovery_s=RECOVERY,hold_start_s=HOLD_START,withdraw_duration_s=RETURN_DURATION,
         material_hypotheses=dict(elastic='Original 45 MPa equilibrium truss, existing viscous damping; fixed rest shape.',relaxing='Original equilibrium branch plus equal-stiffness rotational Maxwell arm at all 42 truss joints; tau_relax=3 s, local scalar tau_creep=6 s. All numbers are uncalibrated sensitivity choices.',retained='Before trial, assign half loaded joint rotation to fixed rest curvature and double spring stiffness, preserving initial restoring moments. No growth, damage or plastic flow during trial.'),
@@ -139,7 +163,7 @@ def prepare():
 def run(material,hold,control=False,fine=False):
     name=f'{material}-{int(hold)}s'+('-control' if control else '')+('-fine' if fine else '')
     out=P/name;out.mkdir(parents=True,exist_ok=True)
-    m=mujoco.MjModel.from_xml_path(str(BASE/'scene.xml'));d=mujoco.MjData(m);z=np.load(BASE/'initial-state.npz')
+    m=mujoco.MjModel.from_xml_path(str(BASE/'scene.xml'));d=mujoco.MjData(m);z=np.load(P/'initial-state.npz')
     if fine:m.opt.timestep/=2
     d.qpos[:]=z['qpos'];d.qvel[:]=z['qvel'];d.ctrl[:]=z['ctrl']
     pg=m.geom('probe_surface').id;m.geom_contype[pg]=m.geom_conaffinity[pg]=0
@@ -196,6 +220,7 @@ def compare():
     rows=[];reference={};mass=json.loads((BASE/'protocol.json').read_text())['fruit_mass_kg']
     for hold in [1,12]:
         reference[hold]=np.load(P/f'elastic-{hold}s/commands.npz')['command_world']
+        initial_reference=np.load(P/f'elastic-{hold}s/rollout.npz')
         for material in ['elastic','relaxing','retained']:
             name=f'{material}-{hold}s';z=np.load(P/name/'rollout.npz');c=np.load(P/(name+'-control')/'rollout.npz')
             r=json.loads((P/name/'result.json').read_text());t=z['t'];endhold=HOLD_START+hold;delta=z['body_positions']-c['body_positions']
@@ -215,6 +240,10 @@ def compare():
                 final_tip_distance_mm=float(np.linalg.norm(delta[end,1],axis=1).max()*1000),recovery_after_last_contact=recover,
                 max_tip_displacement_mm=float(np.linalg.norm(delta[:,1],axis=1).max()*1000),max_neighbor_displacement_mm=float(np.linalg.norm(delta[:,3:6],axis=2).max()*1000),peak_contact_n=r['peak_target_contact_n'],max_overlap_mm=r['max_tool_overlap_mm'],
                 checks=dict(initial_state_matched=bool(np.array_equal(z['qpos'][0],c['qpos'][0]) and np.array_equal(z['qvel'][0],c['qvel'][0])),identical_model_commands=bool(np.array_equal(own_commands,reference[hold])),identical_control_commands=bool(np.array_equal(own_commands,control_commands)),no_unintended_contact=not r['unintended_contacts'],contact_force_budget=r['peak_target_contact_n']<=.45,tool_overlap=r['max_tool_overlap_mm']<=.25,other_overlap=r['max_other_plant_overlap_mm']<=.1,no_warnings=not any(r['warnings']),initial_moments=r['initial_spring_moment_error_nm']<=1e-10,constants_unchanged=r['constants_unchanged'],control_drift=control_drift<=.1,hold_stage_drift=stage_drift<=1.,force_balance=float(np.linalg.norm(residual[hi],axis=1).max())<=.005,dissipation_monotone=bool(np.min(np.diff(z['maxwell_dissipated_j']))>=-1e-12),final_tool_clear=bool(np.linalg.norm(z['tool_force'][end],axis=1).max()<1e-5)))
+            cr=json.loads((P/(name+'-control')/'result.json').read_text())
+            row['checks']['initial_state_matches_other_hypotheses']=bool(np.array_equal(z['qpos'][0],initial_reference['qpos'][0]) and np.array_equal(z['qvel'][0],initial_reference['qvel'][0]))
+            row['checks']['control_has_no_contact']=cr['peak_target_contact_n']==0 and not cr['unintended_contacts']
+            row['checks']['control_no_warnings_or_constant_changes']=not any(cr['warnings']) and cr['constants_unchanged']
             row['all_checks_pass']=all(row['checks'].values());rows.append(row)
     fine=None
     if (P/'relaxing-1s-fine/rollout.npz').exists():
