@@ -1,0 +1,133 @@
+{
+  "repository": "https://github.com/TheRobotStudio/SO-ARM100",
+  "revision": "eecbe3e0a9ebb23e25ad7b2759b03884c6660903",
+  "license": "Apache-2.0; see upstream/LICENSE",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1431,
+      "sha256": "103328279b4e3d5cd498e74d16c13b9245f557127f3af75be312ac6236efbd14"
+    },
+    {
+      "path": "assets/base_motor_holder_so101_v1.stl",
+      "bytes": 1877084,
+      "sha256": "8cd2f241037ea377af1191fffe0dd9d9006beea6dcc48543660ed41647072424"
+    },
+    {
+      "path": "assets/base_so101_v2.stl",
+      "bytes": 471584,
+      "sha256": "bb12b7026575e1f70ccc7240051f9d943553bf34e5128537de6cd86fae33924d"
+    },
+    {
+      "path": "assets/motor_holder_so101_base_v1.stl",
+      "bytes": 1129384,
+      "sha256": "31242ae6fb59d8b15c66617b88ad8e9bded62d57c35d11c0c43a70d2f4caa95b"
+    },
+    {
+      "path": "assets/motor_holder_so101_wrist_v1.stl",
+      "bytes": 1052184,
+      "sha256": "887f92e6013cb64ea3a1ab8675e92da1e0beacfd5e001f972523540545e08011"
+    },
+    {
+      "path": "assets/moving_jaw_so101_v1.stl",
+      "bytes": 1413584,
+      "sha256": "785a9dded2f474bc1d869e0d3dae398a3dcd9c0c345640040472210d2861fa9d"
+    },
+    {
+      "path": "assets/rotation_pitch_so101_v1.stl",
+      "bytes": 883684,
+      "sha256": "9be900cc2a2bf718102841ef82ef8d2873842427648092c8ed2ca1e2ef4ffa34"
+    },
+    {
+      "path": "assets/sts3215_03a_no_horn_v1.stl",
+      "bytes": 865884,
+      "sha256": "75ef3781b752e4065891aea855e34dc161a38a549549cd0970cedd07eae6f887"
+    },
+    {
+      "path": "assets/sts3215_03a_v1.stl",
+      "bytes": 954084,
+      "sha256": "a37c871fb502483ab96c256baf457d36f2e97afc9205313d9c5ab275ef941cd0"
+    },
+    {
+      "path": "assets/under_arm_so101_v1.stl",
+      "bytes": 1975884,
+      "sha256": "d01d1f2de365651dcad9d6669e94ff87ff7652b5bb2d10752a66a456a86dbc71"
+    },
+    {
+      "path": "assets/upper_arm_so101_v1.stl",
+      "bytes": 1303484,
+      "sha256": "475056e03a17e71919b82fd88ab9a0b898ab50164f2a7943652a6b2941bb2d4f"
+    },
+    {
+      "path": "assets/waveshare_mounting_plate_so101_v2.stl",
+      "bytes": 62784,
+      "sha256": "e197e24005a07d01bbc06a8c42311664eaeda415bf859f68fa247884d0f1a6e9"
+    },
+    {
+      "path": "assets/wrist_camera_mount_so101_v1.stl",
+      "bytes": 173884,
+      "sha256": "e17a626158951ac8cdf8d960962c1a3c8bf23b64635a02f88b62016fe895cef8"
+    },
+    {
+      "path": "assets/wrist_camera_so101_v1.stl",
+      "bytes": 128934,
+      "sha256": "1147857bb136876c81f98d18b533342bae2383f0e23bec216064c9f093bd3577"
+    },
+    {
+      "path": "assets/wrist_roll_follower_so101_v1.stl",
+      "bytes": 1439884,
+      "sha256": "4b17b410a12d64ec39554abc3e8054d8a97384b2dc4a8d95a5ecb2a93670f5f4"
+    },
+    {
+      "path": "assets/wrist_roll_pitch_so101_v2.stl",
+      "bytes": 2699784,
+      "sha256": "6c7ec5525b4d8b9e397a30ab4bb0037156a5d5f38a4adf2c7d943d6c56eda5ae"
+    },
+    {
+      "path": "joints_properties.xml",
+      "bytes": 470,
+      "sha256": "abbcc92761943befe3a24b1c13e82c62c5b8c2914303818f3c870b1f51cd45ed"
+    },
+    {
+      "path": "scene.xml",
+      "bytes": 931,
+      "sha256": "3b79a253a742f55ff0b16682173609229560d97744be472a238ea2e0a6a31ef6"
+    },
+    {
+      "path": "so101_new_calib.urdf",
+      "bytes": 16231,
+      "sha256": "3a65d2d35e68a8d2f0c2cc176d19b884506543c93ba72980145b80abe276022c"
+    },
+    {
+      "path": "so101_new_calib.xml",
+      "bytes": 13921,
+      "sha256": "d75253eb568e8a7214db9c631ab7bed4217f608a26f7276ebe9a7636cac82580"
+    },
+    {
+      "path": "so101_new_calib_camera.urdf",
+      "bytes": 18330,
+      "sha256": "4bc858e08883abfd6d5febeb07d5c4b7f682a4cd34c0ec35f821c5feac166060"
+    },
+    {
+      "path": "so101_new_calib_camera.xml",
+      "bytes": 15656,
+      "sha256": "67fa9fb658242a3d3fe0984a0401a6782c215e658880087a42914d7b9addd65c"
+    },
+    {
+      "path": "so101_old_calib.urdf",
+      "bytes": 15422,
+      "sha256": "a8151e4f7e5818d066680671d372ce49e7d30c4d068edb1666ab1bab2d5a8afc"
+    },
+    {
+      "path": "so101_old_calib.xml",
+      "bytes": 13567,
+      "sha256": "2e2c8453613edc7291931dd12e236721d6520a0e0766afc2fccc399cd21b5d04"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    }
+  ],
+  "modifications": "None in upstream/. Workcell adaptations are generated separately."
+}
