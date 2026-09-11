@@ -22,8 +22,12 @@ def mount(root, world, upper, cfg, add, vec, quat, append_robot):
     add(root.find('equality'),'joint',name='front_carriage_belt',
         joint1='lower_lift_z',joint2='lift_z',polycoef=vec([-gap,1,0,0,0]),
         solref='.003 1',solimp='.999 .999 .001')
-    # SO-101 base +Z points out of the plate, while its longitudinal +X is up.
-    rot=Rotation.from_euler('x',-90,degrees=True)*Rotation.from_euler('z',-90,degrees=True)
+    # Base +Z stays out of the plate. Roll the whole mount about that normal;
+    # 180 degrees reverses the V6 upside-down installation without changing
+    # joint calibration or just posing the links to disguise the mounting.
+    rot=(Rotation.from_euler('y',f.get('so101_mount_roll_deg',0),degrees=True)
+         *Rotation.from_euler('x',-90,degrees=True)
+         *Rotation.from_euler('z',-90,degrees=True))
     for side,carriage,plate_name in [('left',upper,'carriage_faceplate'),
                                       ('right',lower,'lower_carriage_faceplate')]:
         plate=carriage.find(f"body[@name='{plate_name}']")

@@ -1,17 +1,19 @@
 """Check built direct mounting geometry and the shared front belt constraint."""
 import json
+import os
 from pathlib import Path
 import unittest
 import mujoco
 import numpy as np
 
 ROOT=Path(__file__).resolve().parents[1]
-SCENE=ROOT/'runs/tower-lift-v6/so101'
+SCENE=ROOT/'runs'/os.environ.get('TOWER_LIFT_RUN','tower-lift-v7')/'so101'
 
 class StackedCarriageChecks(unittest.TestCase):
     def setUp(self):
         if not (SCENE/'scene.xml').exists():
-            self.skipTest('Build configs/tower_lift_v6.json before artifact checks')
+            self.skipTest('Build the selected tower-lift config before artifact checks')
+        self.cfg=json.loads((SCENE.parent/'config.json').read_text())
         self.m=mujoco.MjModel.from_xml_path(str(SCENE/'scene.xml'))
         self.d=mujoco.MjData(self.m)
         initial=np.load(SCENE/'initial.npz')
@@ -43,6 +45,34 @@ class StackedCarriageChecks(unittest.TestCase):
         self.assertEqual(sum('carriage_faceplate' in n for n in names),2)
         self.assertEqual(sum('carriage_belt_clamp' in n for n in names),2)
 
+    def test_corrected_mount_orientation_and_parked_clearance(self):
+        if self.cfg['revision']!='v7-upright-compact-so101':
+            self.skipTest('V7 orientation acceptance only')
+        m,d=self.m,self.d
+        # The complete base is inverted from V6 around its mounting normal:
+        # base +X is now down while +Z still points outward from the plate.
+        for side in ['left','right']:
+            axes=d.xmat[m.body(side+'_base').id].reshape(3,3)
+            np.testing.assert_allclose(axes[:,0],[0,0,-1],atol=1e-9)
+        upper=d.xpos[m.body('carriage_faceplate').id][2]
+        lower=d.xpos[m.body('lower_carriage_faceplate').id][2]
+        self.assertAlmostEqual(upper-lower,.2,places=8)
+        # Explicit distance queries include visual-only tool solids. They are
+        # conservative convex envelopes, not evidence of enabled tool contact.
+        geoms={s:[i for i in range(m.ngeom)
+                  if (m.body(m.geom_bodyid[i]).name or '').startswith(s+'_')
+                  and m.geom_rgba[i,3]>0] for s in ['left','right']}
+        jaw=int(m.joint('left_gripper').qposadr[0])
+        for degrees in [14,7,0]:
+            d.qpos[jaw]=np.deg2rad(degrees);mujoco.mj_forward(m,d)
+            distance=min(mujoco.mj_geomDistance(m,d,a,b,.1,None)
+                         for a in geoms['left'] for b in geoms['right'])
+            self.assertGreater(distance,.03, f'Parked jaw pose {degrees} degrees')
+            for contact in d.contact:
+                arm=any((m.body(m.geom_bodyid[g]).name or '').startswith(('left_','right_'))
+                        for g in [contact.geom1,contact.geom2])
+                if arm:self.assertGreaterEqual(contact.dist,-.0001)
+
     def test_lower_slider_follows_front_and_opposes_rear(self):
         m,d=self.m,self.d
         ids=[int(m.joint(n).qposadr[0]) for n in ['lift_z','lower_lift_z','counterweight_z']]
@@ -53,7 +83,8 @@ class StackedCarriageChecks(unittest.TestCase):
             d.ctrl[actuator]=start[0]+.08*min(d.time,.5)
             mujoco.mj_step(m,d)
             upper,lower,rear=d.qpos[ids]
-            maximum=max(maximum,abs(upper-lower-.30),abs(upper+rear-start[0]-start[2]))
+            gap=self.cfg['frame']['vertical_carriage_spacing_m']
+            maximum=max(maximum,abs(upper-lower-gap),abs(upper+rear-start[0]-start[2]))
         delta=d.qpos[ids]-start
         self.assertGreater(delta[0],.02)
         np.testing.assert_allclose(delta,[delta[0],delta[0],-delta[0]],atol=2e-5)
