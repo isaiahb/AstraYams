@@ -72,6 +72,10 @@ def cad_parts(out, cfg):
     parts['tower_core']=cq.Workplane('XY').circle(45).circle(42).extrude(cfg['tower']['height_m']*1000)
     parts['tank']=cq.Workplane('XY').circle(155).extrude(115).edges('>Z').fillet(7)
     parts['pulley']=cq.Workplane('XY').circle(20).circle(3).extrude(12)
+    if cfg['tower'].get('design')=='product_tier':
+        from tower_product import cad
+        for name in ['pocket','tower_core','tank']:parts.pop(name)
+        parts.update(cad(cfg['tower']))
     records=[]
     for name,shape in parts.items():
         assert shape.val().isValid(), name
@@ -205,37 +209,42 @@ def build(out, cfg, kind, parts):
         piece(carriage,side+'_adapter','adapter',[sign*b['base_spacing_m']/2,b['base_y_m'],.084],color='accent')
         append_robot(root,carriage,kind,side,cfg)
     add(root.find('actuator'),'position',name='lift_motor',joint='lift_z',kp='8000',kv='180',forcerange=vec([-f['lift_force_limit_N'],f['lift_force_limit_N']]),ctrlrange=vec(f['lift_range_m']))
-    t=cfg['tower'];tower=add(world,'body',name='growing_tower',pos=vec(t['center_m']))
-    piece(tower,'tower_core','tower_core',[0,0,0],color='white')
-    add(tower,'geom',name='core_collision',type='cylinder',size=vec([t['core_radius_m'],t['height_m']/2]),pos=vec([0,0,t['height_m']/2]),rgba='0 0 0 0',contype='4',conaffinity='3')
-    piece(tower,'reservoir','tank',[0,0,0],color='white')
-    add(tower,'geom',name='reservoir_collision',type='cylinder',size='.155 .0575',pos='0 0 .0575',rgba='0 0 0 0',contype='4',conaffinity='3')
-    active=None
-    for row in range(t['rows']):
-        for k in range(t['pockets_per_row']):
-            yaw=120*k+(60 if row%2==0 else 0)
-            rot=Rotation.from_euler('z',yaw,degrees=True)*Rotation.from_euler('x',t['pocket_tilt_from_vertical_deg'],degrees=True)
-            radial=Rotation.from_euler('z',yaw,degrees=True).apply([0,-.056,0])
-            pos=radial+np.array([0,0,t['first_row_base_m']+row*t['row_pitch_m']])
-            p=piece(tower,f'pocket_{row}_{k}','pocket',pos,rot,color='white')
-            # Hollow, tapered wall represented by 24 convex sectors.
-            for j in range(24):
-                angles=np.array([j,j+1])*2*np.pi/24
-                verts=[]
-                for z,outer,inner in [(0,.023,.0204),(.125,.043,.0406)]:
-                    for radius in [outer,inner]:
-                        for a in angles:verts.append([radius*np.cos(a),radius*np.sin(a),z])
-                nm=f'pocket_wall_mesh_{j}'
-                if row==0 and k==0:add(assets,'mesh',name=nm,vertex=vec(verts))
-                add(p,'geom',name=f'pocket_wall_{row}_{k}_{j}',type='mesh',mesh=nm,rgba='0 0 0 0',contype='4',conaffinity='3')
-                bottom=[]
-                for z in [0,.003]:
-                    for radius in [.014,.023]:
-                        for a in angles:bottom.append([radius*np.cos(a),radius*np.sin(a),z])
-                nm=f'pocket_bottom_mesh_{j}'
-                if row==0 and k==0:add(assets,'mesh',name=nm,vertex=vec(bottom))
-                add(p,'geom',name=f'pocket_bottom_{row}_{k}_{j}',type='mesh',mesh=nm,rgba='0 0 0 0',contype='4',conaffinity='3')
-            if row==t['active_row'] and k==t['active_pocket']:active=p
+    t=cfg['tower']
+    if t.get('design')=='product_tier':
+        from tower_product import add_tower
+        active=add_tower(root,world,assets,cfg,piece,add,vec,quat)
+    else:
+        t=cfg['tower'];tower=add(world,'body',name='growing_tower',pos=vec(t['center_m']))
+        piece(tower,'tower_core','tower_core',[0,0,0],color='white')
+        add(tower,'geom',name='core_collision',type='cylinder',size=vec([t['core_radius_m'],t['height_m']/2]),pos=vec([0,0,t['height_m']/2]),rgba='0 0 0 0',contype='4',conaffinity='3')
+        piece(tower,'reservoir','tank',[0,0,0],color='white')
+        add(tower,'geom',name='reservoir_collision',type='cylinder',size='.155 .0575',pos='0 0 .0575',rgba='0 0 0 0',contype='4',conaffinity='3')
+        active=None
+        for row in range(t['rows']):
+            for k in range(t['pockets_per_row']):
+                yaw=120*k+(60 if row%2==0 else 0)
+                rot=Rotation.from_euler('z',yaw,degrees=True)*Rotation.from_euler('x',t['pocket_tilt_from_vertical_deg'],degrees=True)
+                radial=Rotation.from_euler('z',yaw,degrees=True).apply([0,-.056,0])
+                pos=radial+np.array([0,0,t['first_row_base_m']+row*t['row_pitch_m']])
+                p=piece(tower,f'pocket_{row}_{k}','pocket',pos,rot,color='white')
+                # Hollow, tapered wall represented by 24 convex sectors.
+                for j in range(24):
+                    angles=np.array([j,j+1])*2*np.pi/24
+                    verts=[]
+                    for z,outer,inner in [(0,.023,.0204),(.125,.043,.0406)]:
+                        for radius in [outer,inner]:
+                            for a in angles:verts.append([radius*np.cos(a),radius*np.sin(a),z])
+                    nm=f'pocket_wall_mesh_{j}'
+                    if row==0 and k==0:add(assets,'mesh',name=nm,vertex=vec(verts))
+                    add(p,'geom',name=f'pocket_wall_{row}_{k}_{j}',type='mesh',mesh=nm,rgba='0 0 0 0',contype='4',conaffinity='3')
+                    bottom=[]
+                    for z in [0,.003]:
+                        for radius in [.014,.023]:
+                            for a in angles:bottom.append([radius*np.cos(a),radius*np.sin(a),z])
+                    nm=f'pocket_bottom_mesh_{j}'
+                    if row==0 and k==0:add(assets,'mesh',name=nm,vertex=vec(bottom))
+                    add(p,'geom',name=f'pocket_bottom_{row}_{k}_{j}',type='mesh',mesh=nm,rgba='0 0 0 0',contype='4',conaffinity='3')
+                if row==t['active_row'] and k==t['active_pocket']:active=p
     assert active is not None
     # Retain the anatomical specimen's masses, joints and material priors. Its
     # previous trough/substrate is replaced by the pocket support geometry.
@@ -245,7 +254,7 @@ def build(out, cfg, kind, parts):
         if 'file' in c.attrib:c.set('file',str((PLANT/c.get('file')).resolve()))
         assets.append(c)
     for d in plant.findall('default'):root.append(copy.deepcopy(d))
-    crown=copy.deepcopy(plant.find("worldbody/body[@name='crown']"));crown.set('pos','0 0 .128')
+    crown=copy.deepcopy(plant.find("worldbody/body[@name='crown']"));crown.set('pos',vec([0,0,t.get('crown_seating_offset_m',.128)]))
     for g in crown.iter('geom'):
         if g.get('contype')!='0':g.set('contype','1');g.set('conaffinity','7')
     active.append(crown)

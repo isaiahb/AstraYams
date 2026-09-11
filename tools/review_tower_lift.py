@@ -36,7 +36,7 @@ def record(folder,seconds):
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--root',type=Path,default=ROOT/'runs/tower-lift-v1')
-    p.add_argument('--seconds',type=float,default=5.5);p.add_argument('--layout-only',action='store_true');a=p.parse_args();root=a.root.resolve()
+    p.add_argument('--template',type=Path,default=ROOT/'tools/templates/tower-lift-review.html');p.add_argument('--seconds',type=float,default=5.5);p.add_argument('--layout-only',action='store_true');a=p.parse_args();root=a.root.resolve()
     results={}
     for kind in ['so101','yam']:
         folder=root/kind
@@ -47,7 +47,7 @@ def main():
         payload['scope']='Photo-informed lift workcell; stock '+kind+' arms; '+('static layout' if a.layout_only else 'recorded finite-motor commissioning')
         (folder/'replay.json').write_text(json.dumps(payload,separators=(',',':')))
     (root/'commission.json').write_text(json.dumps(results,indent=2)+'\n')
-    shutil.copy2(ROOT/'tools/templates/tower-lift-review.html',root/'index.html')
+    shutil.copy2(a.template,root/'index.html')
     print(root/'index.html')
 
 

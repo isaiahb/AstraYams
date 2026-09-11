@@ -1,0 +1,84 @@
+{
+  "revision": "tower-lift-v2",
+  "frame": {
+    "height_m": 1.8288,
+    "width_m": 1.2192,
+    "depth_m": 0.58,
+    "profile_m": 0.02,
+    "back_y_m": -0.4,
+    "guide_spacing_m": 0.16,
+    "carriage_width_m": 0.46,
+    "carriage_initial_height_m": 0.78,
+    "lift_range_m": [
+      0.25,
+      1.42
+    ],
+    "lift_force_limit_N": 350,
+    "command_speed_limit_m_s": 0.08
+  },
+  "tower": {
+    "design": "product_tier",
+    "source_asin": "B0FSCQMMT7",
+    "center_m": [
+      0,
+      0.24,
+      0
+    ],
+    "height_m": 1.84,
+    "reservoir_width_m": 0.4,
+    "reservoir_depth_m": 0.4,
+    "reservoir_body_height_m": 0.2,
+    "caster_height_m": 0.04,
+    "lid_thickness_m": 0.01,
+    "rows": 12,
+    "pockets_per_row": 5,
+    "first_row_base_m": 0.25,
+    "row_pitch_m": 0.12916666666666668,
+    "top_collar_height_m": 0.04,
+    "core_radius_m": 0.054,
+    "pocket_tilt_from_vertical_deg": 24,
+    "pocket_length_m": 0.119,
+    "pocket_base_radius_m": 0.027,
+    "pocket_top_radius_m": 0.038,
+    "pocket_base_offset_m": 0.039,
+    "mouth_radius_m": 0.025,
+    "wall_thickness_m": 0.0025,
+    "active_row": 5,
+    "active_pocket": 0,
+    "tier_rotation_offset_deg": 36,
+    "color": "white",
+    "crown_seating_offset_m": 0.006
+  },
+  "robots": {
+    "so101": {
+      "base_spacing_m": 0.34,
+      "base_y_m": -0.19,
+      "yaw_deg": 90
+    },
+    "yam": {
+      "base_spacing_m": 0.48,
+      "base_y_m": -0.25,
+      "yaw_deg": 90
+    }
+  },
+  "measured_or_user_supplied": {
+    "tower.height_m": "184 cm on user-supplied listing diagram; catalog specification, not a measurement of assembled hardware",
+    "tower.reservoir_width_m": "40 cm on supplied listing diagram",
+    "tower.reservoir_depth_m": "40 cm on supplied listing diagram",
+    "tower.reservoir_body_height_m": "20 cm on supplied listing diagram; wheel inclusion ambiguous, modeled excluding wheels",
+    "tower.rows": "12 tiers on ASIN B0FSCQMMT7 listing",
+    "tower.pockets_per_row": "60 planting sites / 12 tiers = 5 per tier",
+    "frame": "Previous 6 ft / 4 ft retained provisionally; user reports incorrect dimensions and will send updated photos"
+  },
+  "assumptions": [
+    "Frame dimensions and arm/tower spacing remain provisional pending updated user photos; no frame correction is claimed.",
+    "The product listing is black/grey; white is retained from photographs of the user\u2019s hardware. Exact variant equivalence is not established.",
+    "Five connected flared pockets form each hollow tier with circular net-basket seats. Curves, tilt, wall thickness, coupling geometry and basket dimensions are unmeasured photo fits.",
+    "Alternating 36 degree indexing is inferred from visible staggered pockets, not measured.",
+    "Caster height, lid thickness and top collar height are assumptions. Tier pitch is constrained by the stated overall height.",
+    "Reservoir-body 20 cm dimension is interpreted as excluding casters; updated hardware dimensions may change the stack-up.",
+    "Two arms share a carriage. Frame and reservoir remain anchored; no tipping, wheels, reservoir water, irrigation or structural flex dynamics are modeled.",
+    "Lift force and speed limits remain unmeasured priors. No harvest policies or tool adapters are transferred.",
+    "One V4 plant retains prior mechanics at a basket mouth. Growth at that angle and holder-root compliance are uncalibrated."
+  ]
+}
