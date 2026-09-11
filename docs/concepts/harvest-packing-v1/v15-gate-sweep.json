@@ -1,0 +1,294 @@
+{
+  "scope": "Check rigid gate sweep against its fixed frame and hinge ears.",
+  "method": "OpenCascade exact-solid intersections, 8 sampled angles; shaft-bearing clearance and structural loads excluded",
+  "records": [
+    {
+      "angle_deg": 0,
+      "moving": "floor",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 0,
+      "moving": "floor",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 0,
+      "moving": "lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 0,
+      "moving": "lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 0,
+      "moving": "opposite_lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 0,
+      "moving": "opposite_lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 5,
+      "moving": "floor",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 5,
+      "moving": "floor",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 5,
+      "moving": "lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 5,
+      "moving": "lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 5,
+      "moving": "opposite_lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 5,
+      "moving": "opposite_lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 15,
+      "moving": "floor",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 15,
+      "moving": "floor",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 15,
+      "moving": "lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 15,
+      "moving": "lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 15,
+      "moving": "opposite_lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 15,
+      "moving": "opposite_lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "moving": "floor",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "moving": "floor",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "moving": "lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "moving": "lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "moving": "opposite_lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "moving": "opposite_lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 45,
+      "moving": "floor",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 45,
+      "moving": "floor",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 45,
+      "moving": "lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 45,
+      "moving": "lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 45,
+      "moving": "opposite_lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 45,
+      "moving": "opposite_lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "moving": "floor",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "moving": "floor",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "moving": "lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "moving": "lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "moving": "opposite_lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 60,
+      "moving": "opposite_lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "moving": "floor",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "moving": "floor",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "moving": "lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "moving": "lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "moving": "opposite_lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 90,
+      "moving": "opposite_lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 105,
+      "moving": "floor",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 105,
+      "moving": "floor",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 105,
+      "moving": "lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 105,
+      "moving": "lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 105,
+      "moving": "opposite_lever",
+      "fixed": "pack_net_frame",
+      "intersection_mm3": 0.0
+    },
+    {
+      "angle_deg": 105,
+      "moving": "opposite_lever",
+      "fixed": "gate_fixed_ears",
+      "intersection_mm3": 0.0
+    }
+  ]
+}
