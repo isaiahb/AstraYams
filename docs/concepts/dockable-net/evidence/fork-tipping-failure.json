@@ -1,0 +1,94 @@
+[
+  {
+    "dt_s": 0.00025,
+    "mass_kg": 0.018549382080089497,
+    "stage_final_m": [
+      -0.06800515478313418,
+      0.0,
+      -0.005003380173446506
+    ],
+    "net_final_m": [
+      -0.0663179390558503,
+      2.1277138941868036e-10,
+      -0.0012479592797468586
+    ],
+    "max_net_origin_shift_mm": 66.33971759373087,
+    "peak_contact_N": 4.394441243424941,
+    "final_contacts": [
+      [
+        "net",
+        "fixed"
+      ],
+      [
+        "net",
+        "fixed"
+      ],
+      [
+        "net",
+        "fixed"
+      ],
+      [
+        "net",
+        "fixed"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ]
+    ],
+    "net_supported_by_dock": true,
+    "finger_contact_remaining": true,
+    "warnings": 0,
+    "scope": "Linear-stage fixture supplies the wrist motion through force-limited actuators. Net is a free body; flat-wall socket and rim-capsule proxies. No full-arm reach or textile validation."
+  },
+  {
+    "dt_s": 0.000125,
+    "mass_kg": 0.018549382080089497,
+    "stage_final_m": [
+      -0.06800529776771726,
+      0.0,
+      -0.005003326698552754
+    ],
+    "net_final_m": [
+      -0.06631810856405801,
+      -3.978440007169547e-09,
+      -0.0012479633305999434
+    ],
+    "max_net_origin_shift_mm": 66.33955970172694,
+    "peak_contact_N": 4.398452057920478,
+    "final_contacts": [
+      [
+        "net",
+        "fixed"
+      ],
+      [
+        "net",
+        "fixed"
+      ],
+      [
+        "net",
+        "fixed"
+      ],
+      [
+        "net",
+        "fixed"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ]
+    ],
+    "net_supported_by_dock": true,
+    "finger_contact_remaining": true,
+    "warnings": 0,
+    "scope": "Linear-stage fixture supplies the wrist motion through force-limited actuators. Net is a free body; flat-wall socket and rim-capsule proxies. No full-arm reach or textile validation."
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "cad_sha256": {
+    "fixed_finger.stl": "bff74ceb0e0997d87e94b241ba0175c19f8b0785d641efa304e528f1e3390dad",
+    "moving_finger.stl": "aae077822f16c270bce45b695d13b92eb20056be1a68f37940e65a5739129527",
+    "net_frame.stl": "ef77b264e2225d671ac0a9369362cc8b815aa22b654a5abe8bcf1dbf13c45914",
+    "mesh_keeper.stl": "498e4896311f122d6c1ba798b3ac590df07c4c6b4dec2775b67dbe658207c794",
+    "net_textile.stl": "a5a053f10018f8a60314732db3af278c7fc674fe4ccc4ab1a97e6520b3e073df",
+    "parking_fork.stl": "7ed33f89e36c72c2bfc69110b2393cdf9c8b4e3eec8f057d6a51d983cd945629"
+  },
+  "scope": "Isolated contact retention bench, analytic flat-wall socket collision proxy, fixed wrist. Not full-arm docking or mesh/fruit dynamics. All forces act through MuJoCo; tool is a free body.",
+  "applied_force_N": 1,
+  "servo_torque_limit_Nm": 0.35,
+  "tests": [
+    {
+      "dt_s": 0.00025,
+      "friction": 0.05,
+      "open_jaw_ablation": false,
+      "mass_kg": 0.018549382080089497,
+      "max_key_shift_mm": 0.31049864930795096,
+      "max_tool_rotation_deg": 1.880488516819155,
+      "peak_contact_force_N": 13.849393565682355,
+      "finite": true,
+      "warnings": 0,
+      "final_key_shift_mm": 0.07296157887596189,
+      "label": "low-friction"
+    },
+    {
+      "dt_s": 0.000125,
+      "friction": 0.05,
+      "open_jaw_ablation": false,
+      "mass_kg": 0.018549382080089497,
+      "max_key_shift_mm": 0.31152013748862006,
+      "max_tool_rotation_deg": 1.9209208153626454,
+      "peak_contact_force_N": 11.657809607886513,
+      "finite": true,
+      "warnings": 0,
+      "final_key_shift_mm": 0.06835655863086025,
+      "label": "half-timestep"
+    },
+    {
+      "dt_s": 0.00025,
+      "friction": 0,
+      "open_jaw_ablation": false,
+      "mass_kg": 0.018549382080089497,
+      "max_key_shift_mm": 0.3209725921221976,
+      "max_tool_rotation_deg": 2.2483286483810434,
+      "peak_contact_force_N": 7.52047490823454,
+      "finite": true,
+      "warnings": 0,
+      "final_key_shift_mm": 0.09338524000240131,
+      "label": "zero-friction"
+    },
+    {
+      "dt_s": 0.00025,
+      "friction": 0.05,
+      "open_jaw_ablation": true,
+      "mass_kg": 0.018549382080089497,
+      "max_key_shift_mm": 50.43958683049275,
+      "max_tool_rotation_deg": 13.654016604915173,
+      "peak_contact_force_N": 5.557583632810398,
+      "finite": true,
+      "warnings": 0,
+      "final_key_shift_mm": 50.43958683049275,
+      "label": "open-jaw-control"
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+[
+  {
+    "cad_sha256": {
+      "fixed_finger.stl": "bff74ceb0e0997d87e94b241ba0175c19f8b0785d641efa304e528f1e3390dad",
+      "moving_finger.stl": "aae077822f16c270bce45b695d13b92eb20056be1a68f37940e65a5739129527",
+      "net_frame.stl": "ef77b264e2225d671ac0a9369362cc8b815aa22b654a5abe8bcf1dbf13c45914",
+      "mesh_keeper.stl": "498e4896311f122d6c1ba798b3ac590df07c4c6b4dec2775b67dbe658207c794",
+      "net_textile.stl": "a5a053f10018f8a60314732db3af278c7fc674fe4ccc4ab1a97e6520b3e073df",
+      "parking_fork.stl": "7ed33f89e36c72c2bfc69110b2393cdf9c8b4e3eec8f057d6a51d983cd945629"
+    },
+    "dt_s": 0.00025,
+    "mass_kg": 0.018549382080089497,
+    "stage_final_m": [
+      -0.068,
+      0.0,
+      -0.004956216169894848
+    ],
+    "net_final_m": [
+      0.0003879190383919394,
+      1.6556882149773692e-06,
+      -0.0004999999282569791
+    ],
+    "max_net_origin_shift_mm": 1.0121287928837273,
+    "peak_contact_N": 7.7388774662739985,
+    "final_contacts": [
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ]
+    ],
+    "net_supported_by_dock": true,
+    "finger_contact_remaining": false,
+    "warnings": 0,
+    "scope": "Linear-stage fixture supplies the wrist motion through force-limited actuators. Net is a free body; flat-wall socket and rim-capsule proxies. No full-arm reach or textile validation."
+  },
+  {
+    "cad_sha256": {
+      "fixed_finger.stl": "bff74ceb0e0997d87e94b241ba0175c19f8b0785d641efa304e528f1e3390dad",
+      "moving_finger.stl": "aae077822f16c270bce45b695d13b92eb20056be1a68f37940e65a5739129527",
+      "net_frame.stl": "ef77b264e2225d671ac0a9369362cc8b815aa22b654a5abe8bcf1dbf13c45914",
+      "mesh_keeper.stl": "498e4896311f122d6c1ba798b3ac590df07c4c6b4dec2775b67dbe658207c794",
+      "net_textile.stl": "a5a053f10018f8a60314732db3af278c7fc674fe4ccc4ab1a97e6520b3e073df",
+      "parking_fork.stl": "7ed33f89e36c72c2bfc69110b2393cdf9c8b4e3eec8f057d6a51d983cd945629"
+    },
+    "dt_s": 0.000125,
+    "mass_kg": 0.018549382080089497,
+    "stage_final_m": [
+      -0.06800000000000046,
+      0.0,
+      -0.004956216169894858
+    ],
+    "net_final_m": [
+      0.0006196320464485796,
+      -4.4063947290631155e-06,
+      -0.0004999999284263899
+    ],
+    "max_net_origin_shift_mm": 1.032191631870316,
+    "peak_contact_N": 8.051526587931983,
+    "final_contacts": [
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ],
+      [
+        "net",
+        "dock"
+      ]
+    ],
+    "net_supported_by_dock": true,
+    "finger_contact_remaining": false,
+    "warnings": 0,
+    "scope": "Linear-stage fixture supplies the wrist motion through force-limited actuators. Net is a free body; flat-wall socket and rim-capsule proxies. No full-arm reach or textile validation."
+  }
+]

@@ -1,0 +1,312 @@
+{
+  "revision": "V16 dockable net",
+  "coordinate_system": "mm; net rim at z=0; wrist approaches from -X",
+  "jaw_closed_rad": 0.0276,
+  "jaw_open_rad": 0.55,
+  "jaw_pivot_mm": [
+    -141.6,
+    18.8,
+    69.2
+  ],
+  "key_clearance_per_side_mm": 0.15,
+  "key_depth_mm": 3,
+  "lower_escape_mm": 4,
+  "net_opening_mm": 76,
+  "mesh_depth_mm": 16,
+  "checks": [
+    {
+      "check": "closed fixed finger / net",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "net / moving finger q=0.0276",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "net / moving finger q=0.0929",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "net / moving finger q=0.1582",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "net / moving finger q=0.2235",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "net / moving finger q=0.2888",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "net / moving finger q=0.3541",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "net / moving finger q=0.4194",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "net / moving finger q=0.4847",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "net / moving finger q=0.5500",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock release lower jaw dz=0.0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock release upper jaw dz=0.0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock release lower jaw dz=-1.0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock release upper jaw dz=-1.0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock release lower jaw dz=-2.0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock release upper jaw dz=-2.0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock release lower jaw dz=-3.0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock release upper jaw dz=-3.0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock release lower jaw dz=-4.0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock release upper jaw dz=-4.0",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock / net frame",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock / mesh",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "lower finger retreat -5 mm",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "upper finger retreat -5 mm",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "lower finger retreat -15 mm",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "upper finger retreat -15 mm",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "lower finger retreat -30 mm",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "upper finger retreat -30 mm",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "lower finger retreat -55 mm",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "upper finger retreat -55 mm",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock support / clamshell",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "dock support / carrier",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "handle approach lower finger / deck",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "handle approach lower finger / carrier",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "handle approach lower finger / box",
+      "overlap_mm3": 0.0
+    },
+    {
+      "check": "handle approach upper finger / carrier",
+      "overlap_mm3": 0.0
+    }
+  ],
+  "shear_blocking": [
+    {
+      "direction_mm": [
+        1,
+        0,
+        0
+      ],
+      "overlap_mm3": 50.723298705108846
+    },
+    {
+      "direction_mm": [
+        -1,
+        0,
+        0
+      ],
+      "overlap_mm3": 50.72329870512296
+    },
+    {
+      "direction_mm": [
+        0,
+        1,
+        0
+      ],
+      "overlap_mm3": 71.12329870509961
+    },
+    {
+      "direction_mm": [
+        0,
+        -1,
+        0
+      ],
+      "overlap_mm3": 71.12329870509976
+    }
+  ],
+  "scope": "Exact CAD interference and obstruction checks; not hardware fit, robot reach, flexible-net simulation or learned motion.",
+  "source": "Upstream SO101 finger STEP; mounting datums preserved; finger tips modified",
+  "parts": [
+    {
+      "name": "fixed_finger",
+      "solid_count": 1,
+      "valid": true,
+      "volume_mm3": 59161.026191832396,
+      "bounds_mm": [
+        -166.02285155447217,
+        -57.99638626861551,
+        -28.00094012971195,
+        24.08179576157618,
+        13.713112694252803,
+        79.02331973771079
+      ]
+    },
+    {
+      "name": "moving_finger",
+      "solid_count": 1,
+      "valid": true,
+      "volume_mm3": 23144.519263997576,
+      "bounds_mm": [
+        -151.61764070695938,
+        -57.99638626861551,
+        -24.14412868645521,
+        23.94342235640264,
+        56.99477187606249,
+        79.21707041014676
+      ]
+    },
+    {
+      "name": "net_frame",
+      "solid_count": 1,
+      "valid": true,
+      "volume_mm3": 14020.50972646284,
+      "bounds_mm": [
+        -83.00240918758966,
+        43.094743711738765,
+        -43.09281142045161,
+        43.09281142045161,
+        -0.09474371173876793,
+        60.000722826276906
+      ]
+    },
+    {
+      "name": "mesh_keeper",
+      "solid_count": 1,
+      "valid": true,
+      "volume_mm3": 2502.215716731199,
+      "bounds_mm": [
+        -43.000000100000015,
+        43.05345248758635,
+        -43.04008731362145,
+        43.04008731362145,
+        3.9465475124136526,
+        6.053452487586347
+      ]
+    },
+    {
+      "name": "net_textile",
+      "solid_count": 18,
+      "valid": true,
+      "volume_mm3": 375.9816029438899,
+      "bounds_mm": [
+        -41.24635672201406,
+        41.260922493110996,
+        -41.27844435305796,
+        41.293010124154904,
+        -13.167768639910921,
+        5.14802218250968
+      ]
+    },
+    {
+      "name": "parking_fork",
+      "solid_count": 1,
+      "valid": true,
+      "volume_mm3": 20845.586376779866,
+      "bounds_mm": [
+        -46.37021041040083,
+        62.00240918758966,
+        -47.051785782512624,
+        47.051785782512624,
+        -6.056065702763181,
+        2.0560657027631817
+      ]
+    },
+    {
+      "name": "dock_shelf_support",
+      "solid_count": 1,
+      "valid": true,
+      "volume_mm3": 19098.727266073205,
+      "bounds_mm": [
+        43.99759081241034,
+        66.00240918758966,
+        -58.00240918758966,
+        46.00240918758966,
+        -83.00273487331837,
+        -5.9955719603121675
+      ]
+    },
+    {
+      "name": "mesh_screw",
+      "solid_count": 1,
+      "valid": true,
+      "volume_mm3": 48.92637858884403,
+      "bounds_mm": [
+        -2.1500001000000006,
+        2.1526727193793174,
+        -2.152004460681072,
+        2.152004460681072,
+        -0.0014917945372933386,
+        7.5026727193793175
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "scope": "Isolated contact retention bench, analytic flat-wall socket collision proxy, fixed wrist. Not full-arm docking or mesh/fruit dynamics. All forces act through MuJoCo; tool is a free body.",
+  "applied_force_N": 1,
+  "servo_torque_limit_Nm": 0.35,
+  "tests": [
+    {
+      "dt_s": 0.00025,
+      "friction": 0.05,
+      "open_jaw_ablation": false,
+      "mass_kg": 0.01747971743186029,
+      "max_key_shift_mm": 0.6771232671200114,
+      "max_tool_rotation_deg": 2.3086635762821373,
+      "peak_contact_force_N": 471366.0552666653,
+      "finite": true,
+      "warnings": 0,
+      "final_key_shift_mm": 0.6689297905897315,
+      "label": "low-friction"
+    },
+    {
+      "dt_s": 0.000125,
+      "friction": 0.05,
+      "open_jaw_ablation": false,
+      "mass_kg": 0.01747971743186029,
+      "max_key_shift_mm": 0.6771204814738413,
+      "max_tool_rotation_deg": 2.309393543105746,
+      "peak_contact_force_N": 471619.4193841291,
+      "finite": true,
+      "warnings": 0,
+      "final_key_shift_mm": 0.668929790288968,
+      "label": "half-timestep"
+    },
+    {
+      "dt_s": 0.00025,
+      "friction": 0,
+      "open_jaw_ablation": false,
+      "mass_kg": 0.01747971743186029,
+      "max_key_shift_mm": 21904.568930506925,
+      "max_tool_rotation_deg": 179.99790237597068,
+      "peak_contact_force_N": 13077734138608.309,
+      "finite": true,
+      "warnings": 0,
+      "final_key_shift_mm": 21756.05066917886,
+      "label": "zero-friction"
+    },
+    {
+      "dt_s": 0.00025,
+      "friction": 0.05,
+      "open_jaw_ablation": true,
+      "mass_kg": 0.01747971743186029,
+      "max_key_shift_mm": 0.6773563297573444,
+      "max_tool_rotation_deg": 2.3086635762821373,
+      "peak_contact_force_N": 471366.0552666653,
+      "finite": true,
+      "warnings": 0,
+      "final_key_shift_mm": 0.6691656395539968,
+      "label": "open-jaw-control"
+    }
+  ]
+}
