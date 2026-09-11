@@ -76,6 +76,10 @@ def cad_parts(out, cfg):
         from tower_product import cad
         for name in ['pocket','tower_core','tank']:parts.pop(name)
         parts.update(cad(cfg['tower']))
+    if cfg['frame'].get('design')=='photo_rig':
+        from lift_rig import cad as rig_cad
+        for name in ['shelf','gusset']:parts.pop(name,None)
+        parts.update(rig_cad(cfg,profile))
     records=[]
     for name,shape in parts.items():
         assert shape.val().isValid(), name
@@ -180,35 +184,40 @@ def build(out, cfg, kind, parts):
             dims,offset=box
             add(b,'geom',name=name+'_collision',type='box',size=vec(np.array(dims)/2),pos=vec(offset),rgba='0 0 0 0',contype='4',conaffinity='3',mass=str(mass))
         return b
-    f=cfg['frame'];W=f['width_m'];H=f['height_m'];s=f['profile_m'];back=f['back_y_m']
-    frame=add(world,'body',name='lift_frame')
-    for i,x in enumerate([-(W-s)/2,(W-s)/2]):
-        piece(frame,'outer_post_'+str(i),'upright',[x,back,0],box=([s,s,H],[0,0,H/2]))
-        piece(frame,'foot_'+str(i),'foot',[x,back-.15,s/2],Rotation.from_euler('x',-90,degrees=True),box=([s,s,f['depth_m']],[0,0,f['depth_m']/2]))
-    for i,z in enumerate([s/2,H-.11]):
-        piece(frame,'crossbar_'+str(i),'crossbar',[-(W-s)/2,back,z],Rotation.from_euler('y',90,degrees=True),box=([s,s,W-s],[0,0,(W-s)/2]))
-    for i,x in enumerate([-f['guide_spacing_m']/2,f['guide_spacing_m']/2]):
-        piece(frame,'linear_guide_'+str(i),'guide',[x,back+.035,.05],box=([s,s,H-.14],[0,0,(H-.14)/2]))
-    # Rear-plane crossing diagonals leave the moving front carriage clear.
-    for i,(a,b) in enumerate([([-.50,back-.04,.10],[.50,back-.04,H-.15]),([.50,back-.04,.10],[-.50,back-.04,H-.15])]):
-        add(frame,'geom',name='rear_brace_'+str(i),type='capsule',fromto=vec([a,b]),size='.008',rgba=vec(colors['metal']),contype='4',conaffinity='3')
-    for i,z in enumerate([.07,H-.15]):
-        piece(frame,'drive_pulley_'+str(i),'pulley',[0,back+.06,z],Rotation.from_euler('x',90,degrees=True),color='dark')
-    for x in [-.019,.019]:
-        add(frame,'geom',name='belt_'+str(x),type='box',pos=vec([x,back+.055,H/2-.04]),size=vec([.002,.004,(H-.20)/2]),rgba=vec(colors['dark']),contype='0',conaffinity='0')
-    add(frame,'geom',name='drive_motor',type='box',pos=vec([0,back-.015,H-.11]),size='.043 .036 .043',rgba=vec(colors['dark']),contype='4',conaffinity='3')
-    carriage=add(world,'body',name='lift_carriage',pos=vec([0,0,0]))
-    add(carriage,'joint',name='lift_z',type='slide',axis='0 0 1',range=vec(f['lift_range_m']),damping='20',armature='.4')
-    add(carriage,'inertial',mass='2.8',pos=vec([0,back+.09,.04]),diaginertia='.05 .08 .09')
-    piece(carriage,'carriage_backplate','carriage_plate',[0,back+.077,.015],color='dark',box=([.46,.008,.14],[0,0,0]))
-    piece(carriage,'arm_shelf','shelf',[0,back+.195,.076],box=([.6,.24,.008],[0,0,0]))
-    for i,x in enumerate([-.18,.18]):
-        piece(carriage,'shelf_gusset_'+str(i),'gusset',[x,back+.083,-.02],Rotation.from_euler('z',90,degrees=True),color='dark')
-    for side,sign in [('left',-1),('right',1)]:
-        b=cfg['robots'][kind]
-        piece(carriage,side+'_adapter','adapter',[sign*b['base_spacing_m']/2,b['base_y_m'],.084],color='accent')
-        append_robot(root,carriage,kind,side,cfg)
-    add(root.find('actuator'),'position',name='lift_motor',joint='lift_z',kp='8000',kv='180',forcerange=vec([-f['lift_force_limit_N'],f['lift_force_limit_N']]),ctrlrange=vec(f['lift_range_m']))
+    f=cfg['frame']
+    if f.get('design')=='photo_rig':
+        from lift_rig import frame as rig_frame
+        carriage=rig_frame(root,world,cfg,kind,piece,add,vec,quat,append_robot)
+    else:
+        f=cfg['frame'];W=f['width_m'];H=f['height_m'];s=f['profile_m'];back=f['back_y_m']
+        frame=add(world,'body',name='lift_frame')
+        for i,x in enumerate([-(W-s)/2,(W-s)/2]):
+            piece(frame,'outer_post_'+str(i),'upright',[x,back,0],box=([s,s,H],[0,0,H/2]))
+            piece(frame,'foot_'+str(i),'foot',[x,back-.15,s/2],Rotation.from_euler('x',-90,degrees=True),box=([s,s,f['depth_m']],[0,0,f['depth_m']/2]))
+        for i,z in enumerate([s/2,H-.11]):
+            piece(frame,'crossbar_'+str(i),'crossbar',[-(W-s)/2,back,z],Rotation.from_euler('y',90,degrees=True),box=([s,s,W-s],[0,0,(W-s)/2]))
+        for i,x in enumerate([-f['guide_spacing_m']/2,f['guide_spacing_m']/2]):
+            piece(frame,'linear_guide_'+str(i),'guide',[x,back+.035,.05],box=([s,s,H-.14],[0,0,(H-.14)/2]))
+        # Rear-plane crossing diagonals leave the moving front carriage clear.
+        for i,(a,b) in enumerate([([-.50,back-.04,.10],[.50,back-.04,H-.15]),([.50,back-.04,.10],[-.50,back-.04,H-.15])]):
+            add(frame,'geom',name='rear_brace_'+str(i),type='capsule',fromto=vec([a,b]),size='.008',rgba=vec(colors['metal']),contype='4',conaffinity='3')
+        for i,z in enumerate([.07,H-.15]):
+            piece(frame,'drive_pulley_'+str(i),'pulley',[0,back+.06,z],Rotation.from_euler('x',90,degrees=True),color='dark')
+        for x in [-.019,.019]:
+            add(frame,'geom',name='belt_'+str(x),type='box',pos=vec([x,back+.055,H/2-.04]),size=vec([.002,.004,(H-.20)/2]),rgba=vec(colors['dark']),contype='0',conaffinity='0')
+        add(frame,'geom',name='drive_motor',type='box',pos=vec([0,back-.015,H-.11]),size='.043 .036 .043',rgba=vec(colors['dark']),contype='4',conaffinity='3')
+        carriage=add(world,'body',name='lift_carriage',pos=vec([0,0,0]))
+        add(carriage,'joint',name='lift_z',type='slide',axis='0 0 1',range=vec(f['lift_range_m']),damping='20',armature='.4')
+        add(carriage,'inertial',mass='2.8',pos=vec([0,back+.09,.04]),diaginertia='.05 .08 .09')
+        piece(carriage,'carriage_backplate','carriage_plate',[0,back+.077,.015],color='dark',box=([.46,.008,.14],[0,0,0]))
+        piece(carriage,'arm_shelf','shelf',[0,back+.195,.076],box=([.6,.24,.008],[0,0,0]))
+        for i,x in enumerate([-.18,.18]):
+            piece(carriage,'shelf_gusset_'+str(i),'gusset',[x,back+.083,-.02],Rotation.from_euler('z',90,degrees=True),color='dark')
+        for side,sign in [('left',-1),('right',1)]:
+            b=cfg['robots'][kind]
+            piece(carriage,side+'_adapter','adapter',[sign*b['base_spacing_m']/2,b['base_y_m'],.084],color='accent')
+            append_robot(root,carriage,kind,side,cfg)
+        add(root.find('actuator'),'position',name='lift_motor',joint='lift_z',kp='8000',kv='180',forcerange=vec([-f['lift_force_limit_N'],f['lift_force_limit_N']]),ctrlrange=vec(f['lift_range_m']))
     t=cfg['tower']
     if t.get('design')=='product_tier':
         from tower_product import add_tower
@@ -273,7 +282,7 @@ def build(out, cfg, kind, parts):
         a=int(m.joint(name).qposadr[0]);b=int(pm.jnt_qposadr[j]);n={0:7,1:4,2:1,3:1}[int(pm.jnt_type[j])]
         d.qpos[a:a+n]=pz[b:b+n]
     d.qpos[m.joint('lift_z').qposadr[0]]=f['carriage_initial_height_m']
-    for side in ['left','right']:
+    for side in ([] if kind=='rig' else ['left','right']):
         if kind=='so101':
             vals={'shoulder_pan':0,'shoulder_lift':-.6,'elbow_flex':.9,'wrist_flex':.65,'wrist_roll':0,'gripper':.55}
         else:vals={f'joint{i}':v for i,v in enumerate([0,1.05,1.50,0,0,0,-.030,-.030],1)}
@@ -295,6 +304,7 @@ def build(out, cfg, kind, parts):
     for i in range(m.ngeom):
         name=m.geom(i).name
         if not name.startswith(('rear_brace_', 'belt_', 'drive_motor')):continue
+        if m.geom_rgba[i,3]<=0:continue  # Do not duplicate invisible contact envelopes in STEP.
         size=m.geom_size[i]*1000
         if m.geom_type[i]==mujoco.mjtGeom.mjGEOM_BOX:
             shape=cq.Workplane('XY').box(*tuple(2*size)).val()
@@ -324,7 +334,7 @@ def main():
     cfg=json.loads(a.config.read_text());out=a.out.resolve();out.mkdir(parents=True,exist_ok=True)
     (out/'config.json').write_text(json.dumps(cfg,indent=2)+'\n')
     parts=cad_parts(out,cfg)
-    for kind in ['so101','yam']:build(out,cfg,kind,parts)
+    for kind in cfg.get('embodiments',['so101','yam']):build(out,cfg,kind,parts)
 
 
 if __name__=='__main__':main()

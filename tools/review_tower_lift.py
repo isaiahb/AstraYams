@@ -38,13 +38,17 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--root',type=Path,default=ROOT/'runs/tower-lift-v1')
     p.add_argument('--template',type=Path,default=ROOT/'tools/templates/tower-lift-review.html');p.add_argument('--seconds',type=float,default=5.5);p.add_argument('--layout-only',action='store_true');a=p.parse_args();root=a.root.resolve()
     results={}
-    for kind in ['so101','yam']:
+    config=json.loads((root/'config.json').read_text())
+    for kind in config.get('embodiments',['so101','yam']):
         folder=root/kind
         if a.layout_only:phase='layout'
         else:phase='commission';results[kind]=record(folder,a.seconds)
         exporter.P=folder;exporter.export([phase])
         payload=json.loads((folder/phase/'replay.json').read_text())
-        payload['scope']='Photo-informed lift workcell; stock '+kind+' arms; '+('static layout' if a.layout_only else 'recorded finite-motor commissioning')
+        if config['frame'].get('design')=='photo_rig':
+            prefix='Photographed rig reconstruction; no robot arms; ' if kind=='rig' else 'Proposed '+kind+' arm bridge on reconstructed rig; '
+        else:prefix='Photo-informed lift workcell; stock '+kind+' arms; '
+        payload['scope']=prefix+('static layout' if a.layout_only else 'recorded finite-motor commissioning')
         (folder/'replay.json').write_text(json.dumps(payload,separators=(',',':')))
     (root/'commission.json').write_text(json.dumps(results,indent=2)+'\n')
     shutil.copy2(a.template,root/'index.html')

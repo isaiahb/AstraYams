@@ -1,0 +1,263 @@
+{
+  "revision": "tower-lift-v3",
+  "prior_checkpoint": "a1bfcc7",
+  "scope": "Estimated photo reconstruction; scripted finite-actuator lift commissioning; no harvesting PPO or hardware capacity validation",
+  "config_sha256": "a97cda3d76e78acbaa3265239d177cb6e6747197c557770865145a503530c659",
+  "scene_hashes": {
+    "rig": "b4711368a3382697fedaf4bd2b221e65b9d380e8a4244b1c6e1de6e7bd843246",
+    "so101": "5e42a32a90a32eef791f5b759a2187f40a1dfbdcced305891fadfe606dbe8647",
+    "yam": "67f523b1a8e6e492a38549e14db772528f366aa63efff3e1029a97f97496478d"
+  },
+  "support_step_hashes": {
+    "rig": "4669f1223e111b3c41e38f1acc59ff633e4247122f6c7a219651a832bbef1667",
+    "so101": "cf9e98fcd90294d2e6e6916ce5b731e49be8718c78a68c695588c58a047eaeec",
+    "yam": "7d4f6d6e999c2f62bbb7ae08aa5ba991d669ef6dd96f6fcbebca0586275afebb"
+  },
+  "results": {
+    "rig": {
+      "sim_s": 5.499999999998519,
+      "lift_height_m": 0.8340895081379116,
+      "lift_force_N": 47.2839335683002,
+      "peak_robot_contact_N": 0.0,
+      "peak_robot_overlap_m": 0.0,
+      "invalid": false,
+      "simulator_warning_count": 0,
+      "harvest_success": null,
+      "controller": "Finite actuator commands; scripted commissioning",
+      "scope": "Scripted lift commissioning; arm setpoints held constant. No learned harvest.",
+      "actuator_force_limits": [
+        [
+          -350.0,
+          350.0
+        ]
+      ],
+      "peak_actuator_force_N_or_Nm": [
+        60.175337668841166
+      ],
+      "lift_command_rate_limit_m_s": 0.08,
+      "lift_height_min_m": 0.8331170460997236,
+      "lift_height_max_m": 0.954702301444159
+    },
+    "so101": {
+      "sim_s": 5.499999999998519,
+      "lift_height_m": 0.8349339220135145,
+      "lift_force_N": 40.52882099916769,
+      "peak_robot_contact_N": 0.05256543725551196,
+      "peak_robot_overlap_m": 0.0006096108482400627,
+      "invalid": false,
+      "simulator_warning_count": 0,
+      "harvest_success": null,
+      "controller": "Finite actuator commands; scripted commissioning",
+      "scope": "Scripted lift commissioning; arm setpoints held constant. No learned harvest.",
+      "actuator_force_limits": [
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -350.0,
+          350.0
+        ]
+      ],
+      "peak_actuator_force_N_or_Nm": [
+        0.012399864437670736,
+        0.29262269554715203,
+        0.4881512993059687,
+        0.08304077910395335,
+        0.002268725031819949,
+        0.0037928552434323137,
+        0.018514500433454543,
+        0.29262269554715203,
+        0.4881512993059687,
+        0.08304077910395335,
+        0.003891534510964573,
+        0.004250313216402901,
+        50.95055457017406
+      ],
+      "lift_command_rate_limit_m_s": 0.08,
+      "lift_height_min_m": 0.8342430461146882,
+      "lift_height_max_m": 0.9554224505644386
+    },
+    "yam": {
+      "sim_s": 5.499999999998519,
+      "lift_height_m": 0.8242627171253323,
+      "lift_force_N": 125.91346175013587,
+      "peak_robot_contact_N": 0.0,
+      "peak_robot_overlap_m": 0.0,
+      "invalid": false,
+      "simulator_warning_count": 0,
+      "harvest_success": null,
+      "controller": "Finite actuator commands; scripted commissioning",
+      "scope": "Scripted lift commissioning; arm setpoints held constant. No learned harvest.",
+      "actuator_force_limits": [
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -30.0,
+          30.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -30.0,
+          30.0
+        ],
+        [
+          -350.0,
+          350.0
+        ]
+      ],
+      "peak_actuator_force_N_or_Nm": [
+        4.885878460590119e-05,
+        2.4488352599571783,
+        7.631045181758225,
+        1.9135052487291464,
+        0.0007412225281214725,
+        0.0017756918007400117,
+        1.2037413199550429e-06,
+        4.8858784605821115e-05,
+        2.4488352599571783,
+        7.631045181758225,
+        1.9135052487291464,
+        0.0007412225281215393,
+        0.0017756918007400663,
+        1.2037413199550429e-06,
+        176.6210347943088
+      ],
+      "lift_command_rate_limit_m_s": 0.08,
+      "lift_height_min_m": 0.8187928683264409,
+      "lift_height_max_m": 0.9459552233283804
+    }
+  },
+  "tests": {
+    "photo_rig_checks": "5 passed",
+    "prior_tower_lift_and_product_checks": "5 passed",
+    "step_export": "Invisible motor contact envelope not duplicated in support STEP",
+    "post_export_rebuild": "All three scene XML hashes identical to the commissioned models"
+  },
+  "visual_review": {
+    "browser_errors": [],
+    "views_inspected": [
+      "front",
+      "side",
+      "carriage",
+      "threequarter",
+      "so101-whole",
+      "yam-whole"
+    ],
+    "rig_motion_times_s": [
+      0,
+      3,
+      5.5
+    ],
+    "remaining_visual_limitations": [
+      "Source robot mesh shading artifacts in cel renderer",
+      "Uncalibrated photo scale and circular payload mounting interpretation"
+    ]
+  },
+  "so101_contact": {
+    "bodies": [
+      "right_moving_jaw_so101_v1",
+      "leaf_right_1_panel3"
+    ],
+    "description": "Light gripper/leaf brush during scripted lift; not declared collision-free",
+    "deepest_sample_time_s": 3.46
+  },
+  "source_files": [
+    "configs/tower_lift_v3.json",
+    "tools/lift_rig.py",
+    "tools/build_tower_lift.py",
+    "tools/review_tower_lift.py",
+    "tools/templates/rig-photo-review.html"
+  ],
+  "generated_directory": "runs/tower-lift-v3",
+  "photos_published": false
+}
