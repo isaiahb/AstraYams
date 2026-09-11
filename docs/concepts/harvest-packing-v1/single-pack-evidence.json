@@ -1,0 +1,242 @@
+{
+  "revision": "v8-single-clamshell-shelf",
+  "checks": {
+    "scope": "Exact STEP-solid static intersections for new fixture/rigid net; not contact dynamics, swept paths, deformation, fastener strength or bruise validation",
+    "poses": [
+      {
+        "pose": "catch approach",
+        "rigid_net_fixture_intersections": [],
+        "carrier_obstructions": [],
+        "robot_fixture_intersections": [],
+        "interarm_convex_clearance_mm": 6.6749286101199745,
+        "fixture_left_plane_clearance_mm": 3.5
+      },
+      {
+        "pose": "container access",
+        "rigid_net_fixture_intersections": [],
+        "carrier_obstructions": [],
+        "robot_fixture_intersections": [],
+        "interarm_convex_clearance_mm": 76.61730088979317,
+        "fixture_left_plane_clearance_mm": 3.5
+      },
+      {
+        "pose": "parked",
+        "rigid_net_fixture_intersections": [],
+        "carrier_obstructions": [],
+        "robot_fixture_intersections": [],
+        "interarm_convex_clearance_mm": 39.1407933773087,
+        "fixture_left_plane_clearance_mm": 3.5
+      }
+    ]
+  },
+  "reach": {
+    "method": "Offline numerical IK using original SO101 joints and limits; no policy or motion replay",
+    "poses": [
+      {
+        "arm": "left",
+        "site": "left_gripperframe",
+        "goal_m": [
+          0.012,
+          0.451,
+          0.875
+        ],
+        "position_error_m": 1.928198467992008e-12,
+        "normal_z": null,
+        "orientation_constraint": "tip position only; cutter orientation not commissioned",
+        "joint_positions": [
+          -0.5766084539305458,
+          -1.1522152678772721,
+          -0.9019796900437422,
+          1.3836691845588849,
+          -0.07805573721129025
+        ],
+        "enabled_contact_penetrations_m": []
+      },
+      {
+        "arm": "right",
+        "site": "packing_net_center",
+        "goal_m": [
+          0.012,
+          0.451,
+          0.789
+        ],
+        "position_error_m": 2.1083005945545266e-05,
+        "normal_z": 0.9999256459326433,
+        "orientation_constraint": "upward net normal",
+        "joint_positions": [
+          -0.054914706448559156,
+          -1.559581322774867,
+          -1.288481818517034,
+          1.2650545082147113,
+          0.10373569735867223
+        ],
+        "enabled_contact_penetrations_m": []
+      },
+      {
+        "arm": "right",
+        "site": "packing_net_center",
+        "goal_m": [
+          -0.205,
+          0.171,
+          0.62
+        ],
+        "position_error_m": 0.0001865743064862987,
+        "normal_z": 0.990430121476563,
+        "orientation_constraint": "upward net normal",
+        "joint_positions": [
+          -1.793321542644032,
+          -0.8127955618180089,
+          0.08010370422765047,
+          1.6280627293335332,
+          1.4417230091602657
+        ],
+        "enabled_contact_penetrations_m": []
+      }
+    ],
+    "scope": "Position/orientation and enabled original-model contact checks only; new CAD interfaces need explicit interference/contact commissioning"
+  },
+  "build": {
+    "phase": "CAD assembly and offline reach checks; no packing, net grasp, textile, gate or exchange physics validation",
+    "training_ready": false,
+    "source": "tower-lift-v7",
+    "preserved_joint_count": 425,
+    "new_cad_parts": 21,
+    "new_mass_kg": 1.2728304423621932,
+    "no_loaded_container_on_robot": true,
+    "instances": [
+      [
+        "pack_mount_plate",
+        "pack_mount_plate"
+      ],
+      [
+        "pack_web_0",
+        "pack_web"
+      ],
+      [
+        "pack_web_1",
+        "pack_web"
+      ],
+      [
+        "pack_deck",
+        "pack_deck"
+      ],
+      [
+        "pack_guide_0",
+        "pack_guide"
+      ],
+      [
+        "pack_guide_1",
+        "pack_guide"
+      ],
+      [
+        "pack_rear_stop",
+        "pack_rear_stop"
+      ],
+      [
+        "pack_latch",
+        "pack_latch"
+      ],
+      [
+        "pack_latch_pin",
+        "pack_latch_pin"
+      ],
+      [
+        "pack_carrier",
+        "pack_carrier"
+      ],
+      [
+        "pack_liner",
+        "pack_liner"
+      ],
+      [
+        "pack_clamshell",
+        "pack_clamshell"
+      ],
+      [
+        "pack_lid",
+        "pack_lid"
+      ],
+      [
+        "pack_hinge_0",
+        "pack_hinge"
+      ],
+      [
+        "pack_hinge_1",
+        "pack_hinge"
+      ],
+      [
+        "pack_lid_clip",
+        "pack_lid_clip"
+      ],
+      [
+        "pack_net_dock",
+        "pack_net_dock"
+      ],
+      [
+        "pack_dock_support",
+        "pack_dock_support"
+      ],
+      [
+        "pack_bolt_-0.102_-0.04",
+        "pack_m5_bolt"
+      ],
+      [
+        "pack_washer_-0.102_-0.04",
+        "pack_washer"
+      ],
+      [
+        "pack_bolt_-0.102_0.04",
+        "pack_m5_bolt"
+      ],
+      [
+        "pack_washer_-0.102_0.04",
+        "pack_washer"
+      ],
+      [
+        "pack_bolt_-0.085_-0.04",
+        "pack_m5_bolt"
+      ],
+      [
+        "pack_washer_-0.085_-0.04",
+        "pack_washer"
+      ],
+      [
+        "pack_bolt_-0.085_0.04",
+        "pack_m5_bolt"
+      ],
+      [
+        "pack_washer_-0.085_0.04",
+        "pack_washer"
+      ],
+      [
+        "right_pack_net_frame",
+        "pack_net_frame"
+      ],
+      [
+        "right_pack_net_retainer",
+        "pack_net_retainer"
+      ],
+      [
+        "right_pack_net_textile",
+        "pack_net_textile"
+      ],
+      [
+        "right_pack_net_screw_0",
+        "pack_net_screw"
+      ],
+      [
+        "right_pack_net_screw_1",
+        "pack_net_screw"
+      ],
+      [
+        "right_pack_net_screw_2",
+        "pack_net_screw"
+      ],
+      [
+        "right_pack_net_screw_3",
+        "pack_net_screw"
+      ]
+    ]
+  },
+  "validation": "Two single-pack tests and four preserved-V7 mounting/counterweight tests passed. Static geometry only."
+}

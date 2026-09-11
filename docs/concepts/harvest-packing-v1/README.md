@@ -1,5 +1,10 @@
 # Harvest and packing concepts — V1
 
+**Current selection:** the user chose A with one supported container. The arms
+will not lift filled packs. See [the V8 CAD checkpoint](SINGLE-PACK-CAD.md) for
+the resulting parts, static fit evidence and remaining release/motion work.
+The comparison below records the earlier ideation, not the current build scope.
+
 Concept exploration after the user accepted the stacked V7 SO-101 mounts.
 No changes to the accepted CAD, simulation, contact geometry or policies.
 
