@@ -1,0 +1,550 @@
+{
+  "scope": "Scripted finite-actuator lift commissioning, not learned harvesting or real hardware validation",
+  "config": {
+    "revision": "tower-lift-v1",
+    "frame": {
+      "height_m": 1.8288,
+      "width_m": 1.2192,
+      "depth_m": 0.58,
+      "profile_m": 0.02,
+      "back_y_m": -0.4,
+      "guide_spacing_m": 0.16,
+      "carriage_width_m": 0.46,
+      "carriage_initial_height_m": 0.78,
+      "lift_range_m": [
+        0.25,
+        1.42
+      ],
+      "lift_force_limit_N": 350,
+      "command_speed_limit_m_s": 0.08
+    },
+    "tower": {
+      "center_m": [
+        0.0,
+        0.24,
+        0.0
+      ],
+      "height_m": 1.56,
+      "core_radius_m": 0.045,
+      "rows": 8,
+      "row_pitch_m": 0.17,
+      "first_row_base_m": 0.11,
+      "pockets_per_row": 3,
+      "pocket_tilt_from_vertical_deg": 28,
+      "active_row": 5,
+      "active_pocket": 0
+    },
+    "robots": {
+      "so101": {
+        "base_spacing_m": 0.34,
+        "base_y_m": -0.19,
+        "yaw_deg": 90
+      },
+      "yam": {
+        "base_spacing_m": 0.48,
+        "base_y_m": -0.25,
+        "yaw_deg": 90
+      }
+    },
+    "measured_or_user_supplied": {
+      "frame.height_m": "User: 6 feet",
+      "frame.width_m": "User: 4 feet",
+      "bracing": "User: cross triangles in the middle for the lift; interpreted as rear-plane diagonals and carriage gussets"
+    },
+    "assumptions": [
+      "Both arms share one moving carriage; this remains an editable layout choice.",
+      "All dimensions other than frame height and width are photographic/layout estimates.",
+      "Triangular supports are placed behind the moving carriage; exact brace endpoints are unmeasured.",
+      "The frame is anchored to the world. Freestanding tipping, structural flexure and payload rating are unvalidated.",
+      "Lift dynamics use a finite-force linear actuator prior, not a measured belt, gearbox or motor model.",
+      "One existing dynamic strawberry specimen is transplanted to one angled pocket; growth at that angle is not calibrated.",
+      "SO-101 stock jaws are retained. YAM harvest-tool interfaces and trained policies are not transferred to SO-101."
+    ]
+  },
+  "results": {
+    "so101": {
+      "sim_s": 5.499999999998519,
+      "lift_height_m": 0.7750165052748461,
+      "lift_force_N": 39.86795756504125,
+      "peak_robot_contact_N": 0.0,
+      "peak_robot_overlap_m": 0.0,
+      "invalid": false,
+      "simulator_warning_count": 0,
+      "harvest_success": null,
+      "controller": "Finite actuator commands; scripted commissioning",
+      "scope": "Scripted lift commissioning; arm setpoints held constant. No learned harvest.",
+      "actuator_force_limits": [
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -350.0,
+          350.0
+        ]
+      ],
+      "peak_actuator_force_N_or_Nm": [
+        1.4173498677664222e-05,
+        0.2926907691406768,
+        0.48797946863749075,
+        0.08279338654710955,
+        3.650678731691233e-05,
+        0.0037050397853590766,
+        1.4173498677663877e-05,
+        0.2926907691406768,
+        0.48797946863749075,
+        0.08279338654710955,
+        3.6506787316914e-05,
+        0.0037050397853590766,
+        50.014206423710675
+      ],
+      "lift_command_rate_limit_m_s": 0.08,
+      "lift_height_min_m": 0.7743475966319362,
+      "lift_height_max_m": 0.8954973619235992
+    },
+    "yam": {
+      "sim_s": 5.499999999998519,
+      "lift_height_m": 0.7643460563444308,
+      "lift_force_N": 125.2467219110149,
+      "peak_robot_contact_N": 0.0,
+      "peak_robot_overlap_m": 0.0,
+      "invalid": false,
+      "simulator_warning_count": 0,
+      "harvest_success": null,
+      "controller": "Finite actuator commands; scripted commissioning",
+      "scope": "Scripted lift commissioning; arm setpoints held constant. No learned harvest.",
+      "actuator_force_limits": [
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -30.0,
+          30.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -30.0,
+          30.0
+        ],
+        [
+          -350.0,
+          350.0
+        ]
+      ],
+      "peak_actuator_force_N_or_Nm": [
+        4.9029855830610516e-05,
+        2.445414194987819,
+        7.626755028433138,
+        1.912540522967673,
+        0.0007411602827514768,
+        0.0017745137434725766,
+        1.2058513689794381e-06,
+        4.902985583053638e-05,
+        2.445414194987819,
+        7.626755028433081,
+        1.912540522967673,
+        0.0007411602827516594,
+        0.0017745137434727707,
+        1.2058513689794381e-06,
+        175.503236648824
+      ],
+      "lift_command_rate_limit_m_s": 0.08,
+      "lift_height_min_m": 0.7589251828973174,
+      "lift_height_max_m": 0.8860293124321952
+    }
+  },
+  "cad_parts": [
+    {
+      "name": "upright",
+      "step": "upright.step",
+      "mesh": "upright.stl",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 462651.6068285584
+    },
+    {
+      "name": "crossbar",
+      "step": "crossbar.step",
+      "mesh": "crossbar.stl",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 303374.7850551219
+    },
+    {
+      "name": "guide",
+      "step": "guide.step",
+      "mesh": "guide.stl",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 427234.2703478069
+    },
+    {
+      "name": "foot",
+      "step": "foot.step",
+      "mesh": "foot.stl",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 146728.96542025582
+    },
+    {
+      "name": "carriage_plate",
+      "step": "carriage_plate.step",
+      "mesh": "carriage_plate.stl",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 512763.214268388
+    },
+    {
+      "name": "shelf",
+      "step": "shelf.step",
+      "mesh": "shelf.stl",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1148276.148814871
+    },
+    {
+      "name": "gusset",
+      "step": "gusset.step",
+      "mesh": "gusset.stl",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 22562.5
+    },
+    {
+      "name": "adapter",
+      "step": "adapter.step",
+      "mesh": "adapter.stl",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 113933.536322795
+    },
+    {
+      "name": "pocket",
+      "step": "pocket.step",
+      "mesh": "pocket.stl",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 73066.84568822246
+    },
+    {
+      "name": "tower_core",
+      "step": "tower_core.step",
+      "mesh": "tower_core.stl",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1279130.8648356209
+    },
+    {
+      "name": "tank",
+      "step": "tank.step",
+      "mesh": "tank.stl",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 8669690.139737522
+    },
+    {
+      "name": "pulley",
+      "step": "pulley.step",
+      "mesh": "pulley.stl",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 14740.35273064331
+    }
+  ],
+  "tests": {
+    "command": "PYTHONPATH=src python -m unittest discover -s tests -p 'test_tower_lift.py' -v",
+    "passed": 3,
+    "failed": 0
+  },
+  "visual_review": {
+    "embodiments": [
+      "so101",
+      "yam"
+    ],
+    "views": [
+      "whole at 0 s",
+      "arms and plant at 3 s",
+      "side at 5.5 s",
+      "rear braces at 3 s"
+    ],
+    "browser_errors": []
+  },
+  "source_hashes": {
+    "configs/tower_lift_v1.json": "7554e02e4a7de0effc34009a625b83edc7f99ee3521df56d9da6eb552c0b052c",
+    "assets/robots/so101/source.json": "1095151ba75246681b47525aedfc8d9adf195867462566746984d66f2ca73f37",
+    "tools/build_tower_lift.py": "013de2a2e98e4878bb9a38d37e01c5db157f5fd51334f5adc10cd497809c5b92",
+    "src/astrafactory/tower_lift.py": "2db77ba6382f4c3453bd6d11f85733b525e6cd4bdeddcb239329044b5dc3237f",
+    "runs/tower-lift-v1/so101/scene.xml": "a80d17794ac84c73fedaefc6c02f1a90cca98490e936ad77c1893eb14f04efc1",
+    "runs/tower-lift-v1/so101/initial.npz": "b16a298ecbf71ab5b7d00faf079564c7e849cc537ea34b13d46482ad0a965185",
+    "runs/tower-lift-v1/so101/support-assembly.step": "51651fa83ef641647c43f0ac454609227d8124554fd11a9be1f2ba6cd0e25bd5",
+    "runs/tower-lift-v1/so101/commission/rollout.npz": "68bd290d900a3ada4287919b90907cc1921f295728610ad84c0f5962212dbe57",
+    "runs/tower-lift-v1/yam/scene.xml": "85557f928350a279a9ee05914238f7ed1591c16c8218cb9986ac2acb98d0ecd3",
+    "runs/tower-lift-v1/yam/initial.npz": "2fa60df162ee40e2d6c6d594bdbcbea6076bd178969626638eeb07471c7ebf84",
+    "runs/tower-lift-v1/yam/support-assembly.step": "51db008468f898992240b328690b9dd1979686779b73c8099afe1e4c2195499c",
+    "runs/tower-lift-v1/yam/commission/rollout.npz": "49049151905d093cb9fa6fa57faac33964cb8f0fafa9439b06e0e7fe9f69ecda"
+  },
+  "so101_build": {
+    "embodiment": "so101",
+    "config": {
+      "revision": "tower-lift-v1",
+      "frame": {
+        "height_m": 1.8288,
+        "width_m": 1.2192,
+        "depth_m": 0.58,
+        "profile_m": 0.02,
+        "back_y_m": -0.4,
+        "guide_spacing_m": 0.16,
+        "carriage_width_m": 0.46,
+        "carriage_initial_height_m": 0.78,
+        "lift_range_m": [
+          0.25,
+          1.42
+        ],
+        "lift_force_limit_N": 350,
+        "command_speed_limit_m_s": 0.08
+      },
+      "tower": {
+        "center_m": [
+          0.0,
+          0.24,
+          0.0
+        ],
+        "height_m": 1.56,
+        "core_radius_m": 0.045,
+        "rows": 8,
+        "row_pitch_m": 0.17,
+        "first_row_base_m": 0.11,
+        "pockets_per_row": 3,
+        "pocket_tilt_from_vertical_deg": 28,
+        "active_row": 5,
+        "active_pocket": 0
+      },
+      "robots": {
+        "so101": {
+          "base_spacing_m": 0.34,
+          "base_y_m": -0.19,
+          "yaw_deg": 90
+        },
+        "yam": {
+          "base_spacing_m": 0.48,
+          "base_y_m": -0.25,
+          "yaw_deg": 90
+        }
+      },
+      "measured_or_user_supplied": {
+        "frame.height_m": "User: 6 feet",
+        "frame.width_m": "User: 4 feet",
+        "bracing": "User: cross triangles in the middle for the lift; interpreted as rear-plane diagonals and carriage gussets"
+      },
+      "assumptions": [
+        "Both arms share one moving carriage; this remains an editable layout choice.",
+        "All dimensions other than frame height and width are photographic/layout estimates.",
+        "Triangular supports are placed behind the moving carriage; exact brace endpoints are unmeasured.",
+        "The frame is anchored to the world. Freestanding tipping, structural flexure and payload rating are unvalidated.",
+        "Lift dynamics use a finite-force linear actuator prior, not a measured belt, gearbox or motor model.",
+        "One existing dynamic strawberry specimen is transplanted to one angled pocket; growth at that angle is not calibrated.",
+        "SO-101 stock jaws are retained. YAM harvest-tool interfaces and trained policies are not transferred to SO-101."
+      ]
+    },
+    "nq": 421,
+    "nv": 337,
+    "actuators": [
+      "left_shoulder_pan",
+      "left_shoulder_lift",
+      "left_elbow_flex",
+      "left_wrist_flex",
+      "left_wrist_roll",
+      "left_gripper",
+      "right_shoulder_pan",
+      "right_shoulder_lift",
+      "right_elbow_flex",
+      "right_wrist_flex",
+      "right_wrist_roll",
+      "right_gripper",
+      "lift_motor"
+    ],
+    "inherited_plant_joint_count": 156,
+    "plant_source": "assets/workcells/strawberry-specimen/surface-study/v4",
+    "plant_scene_sha256": "12b7b9348b785c8a8f68321ae46b00970aa9e6c4161052a6b5919e24f8b710b0",
+    "control": "Finite-force actuator setpoints; initialization is offline. No PPO or harvest success in this layout.",
+    "phase": "Layout and physical commissioning; stock grippers, tool adapters pending",
+    "original_yam_runs_preserved": true
+  },
+  "yam_build": {
+    "embodiment": "yam",
+    "config": {
+      "revision": "tower-lift-v1",
+      "frame": {
+        "height_m": 1.8288,
+        "width_m": 1.2192,
+        "depth_m": 0.58,
+        "profile_m": 0.02,
+        "back_y_m": -0.4,
+        "guide_spacing_m": 0.16,
+        "carriage_width_m": 0.46,
+        "carriage_initial_height_m": 0.78,
+        "lift_range_m": [
+          0.25,
+          1.42
+        ],
+        "lift_force_limit_N": 350,
+        "command_speed_limit_m_s": 0.08
+      },
+      "tower": {
+        "center_m": [
+          0.0,
+          0.24,
+          0.0
+        ],
+        "height_m": 1.56,
+        "core_radius_m": 0.045,
+        "rows": 8,
+        "row_pitch_m": 0.17,
+        "first_row_base_m": 0.11,
+        "pockets_per_row": 3,
+        "pocket_tilt_from_vertical_deg": 28,
+        "active_row": 5,
+        "active_pocket": 0
+      },
+      "robots": {
+        "so101": {
+          "base_spacing_m": 0.34,
+          "base_y_m": -0.19,
+          "yaw_deg": 90
+        },
+        "yam": {
+          "base_spacing_m": 0.48,
+          "base_y_m": -0.25,
+          "yaw_deg": 90
+        }
+      },
+      "measured_or_user_supplied": {
+        "frame.height_m": "User: 6 feet",
+        "frame.width_m": "User: 4 feet",
+        "bracing": "User: cross triangles in the middle for the lift; interpreted as rear-plane diagonals and carriage gussets"
+      },
+      "assumptions": [
+        "Both arms share one moving carriage; this remains an editable layout choice.",
+        "All dimensions other than frame height and width are photographic/layout estimates.",
+        "Triangular supports are placed behind the moving carriage; exact brace endpoints are unmeasured.",
+        "The frame is anchored to the world. Freestanding tipping, structural flexure and payload rating are unvalidated.",
+        "Lift dynamics use a finite-force linear actuator prior, not a measured belt, gearbox or motor model.",
+        "One existing dynamic strawberry specimen is transplanted to one angled pocket; growth at that angle is not calibrated.",
+        "SO-101 stock jaws are retained. YAM harvest-tool interfaces and trained policies are not transferred to SO-101."
+      ]
+    },
+    "nq": 425,
+    "nv": 341,
+    "actuators": [
+      "left_motor1",
+      "left_motor2",
+      "left_motor3",
+      "left_motor4",
+      "left_motor5",
+      "left_motor6",
+      "left_grip",
+      "right_motor1",
+      "right_motor2",
+      "right_motor3",
+      "right_motor4",
+      "right_motor5",
+      "right_motor6",
+      "right_grip",
+      "lift_motor"
+    ],
+    "inherited_plant_joint_count": 156,
+    "plant_source": "assets/workcells/strawberry-specimen/surface-study/v4",
+    "plant_scene_sha256": "12b7b9348b785c8a8f68321ae46b00970aa9e6c4161052a6b5919e24f8b710b0",
+    "control": "Finite-force actuator setpoints; initialization is offline. No PPO or harvest success in this layout.",
+    "phase": "Layout and physical commissioning; stock grippers, tool adapters pending",
+    "original_yam_runs_preserved": true
+  }
+}

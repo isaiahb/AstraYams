@@ -1,0 +1,46 @@
+{
+  "revision": "tower-lift-v1",
+  "frame": {
+    "height_m": 1.8288,
+    "width_m": 1.2192,
+    "depth_m": 0.58,
+    "profile_m": 0.02,
+    "back_y_m": -0.40,
+    "guide_spacing_m": 0.16,
+    "carriage_width_m": 0.46,
+    "carriage_initial_height_m": 0.78,
+    "lift_range_m": [0.25, 1.42],
+    "lift_force_limit_N": 350,
+    "command_speed_limit_m_s": 0.08
+  },
+  "tower": {
+    "center_m": [0.0, 0.24, 0.0],
+    "height_m": 1.56,
+    "core_radius_m": 0.045,
+    "rows": 8,
+    "row_pitch_m": 0.17,
+    "first_row_base_m": 0.11,
+    "pockets_per_row": 3,
+    "pocket_tilt_from_vertical_deg": 28,
+    "active_row": 5,
+    "active_pocket": 0
+  },
+  "robots": {
+    "so101": {"base_spacing_m": 0.34, "base_y_m": -0.19, "yaw_deg": 90},
+    "yam": {"base_spacing_m": 0.48, "base_y_m": -0.25, "yaw_deg": 90}
+  },
+  "measured_or_user_supplied": {
+    "frame.height_m": "User: 6 feet",
+    "frame.width_m": "User: 4 feet",
+    "bracing": "User: cross triangles in the middle for the lift; interpreted as rear-plane diagonals and carriage gussets"
+  },
+  "assumptions": [
+    "Both arms share one moving carriage; this remains an editable layout choice.",
+    "All dimensions other than frame height and width are photographic/layout estimates.",
+    "Triangular supports are placed behind the moving carriage; exact brace endpoints are unmeasured.",
+    "The frame is anchored to the world. Freestanding tipping, structural flexure and payload rating are unvalidated.",
+    "Lift dynamics use a finite-force linear actuator prior, not a measured belt, gearbox or motor model.",
+    "One existing dynamic strawberry specimen is transplanted to one angled pocket; growth at that angle is not calibrated.",
+    "SO-101 stock jaws are retained. YAM harvest-tool interfaces and trained policies are not transferred to SO-101."
+  ]
+}
