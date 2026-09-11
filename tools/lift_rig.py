@@ -49,6 +49,10 @@ def cad(cfg,profile):
     p['gearhead']=cq.Workplane('XY').box(35,42,42).edges('|X').fillet(3)
     p['motor_foot']=cq.Workplane('XY').box(105,54,4).edges('|Z').fillet(3)
     p['belt_clamp']=cq.Workplane('XY').box(26,8,22).edges('|Y').fillet(2)
+    if f.get('counterweighted'):
+        from lift_counterweight import cad as counter_cad
+        p.update(counter_cad(cfg,p))
+        for name in ['payload_shaft','payload_spacer']:p.pop(name)
     return p
 
 
@@ -85,8 +89,16 @@ def frame(root,world,cfg,kind,piece,add,vec,quat,append_robot):
     piece(chassis,'drive_motor_body','motor_body',[.080,0,Z+.037],color='dark',box=([.057,.045,.045],[0,0,0]))
     piece(chassis,'drive_gearhead','gearhead',[.034,0,Z+.037],color='metal',box=([.035,.042,.042],[0,0,0]))
     for i,z in enumerate([.045,Z+.037]):
-        piece(chassis,f'drive_pulley_{i}','pulley',[0,0,z],Rotation.from_euler('y',90,degrees=True),color='dark')
-    for i,y in enumerate([-.019,.019]):
+        pulley=piece(chassis,f'drive_pulley_{i}','pulley',[0,0,z],Rotation.from_euler('y',90,degrees=True),color='dark')
+        if f.get('counterweighted'):
+            add(pulley,'joint',name=f'belt_pulley_{i}',type='hinge',axis='0 0 1',limited='false',damping='.0002')
+            add(pulley,'inertial',pos='0 0 .006',mass='.06',diaginertia='.000008 .000008 .000012')
+            piece(pulley,f'drive_pulley_mark_{i}','pulley_marker',[0,0,.012],color='accent')
+            r=f['belt_pitch_radius_m']
+            add(root.find('equality'),'joint',name=f'belt_pulley_coupling_{i}',joint1=f'belt_pulley_{i}',joint2='lift_z',polycoef=vec([-f['carriage_initial_height_m']/r,1/r,0,0,0]),solref='.003 1',solimp='.999 .999 .001')
+            piece(chassis,f'belt_wrap_{i}','belt_wrap_bottom' if i==0 else 'belt_wrap_top',[0,0,z],Rotation.from_euler('y',90,degrees=True),color='dark')
+    belt_r=f['belt_pitch_radius_m'] if f.get('counterweighted') else .019
+    for i,y in enumerate([-belt_r,belt_r]):
         add(chassis,'geom',name=f'belt_{i}',type='box',size=vec([.005,.0006,(Z+.037-.045)/2]),pos=vec([.006,y,(Z+.037+.045)/2]),rgba='.07 .09 .10 1',contype='0',conaffinity='0')
     carriage=add(world,'body',name='lift_carriage')
     add(carriage,'joint',name='lift_z',type='slide',axis='0 0 1',range=vec(f['lift_range_m']),damping='20',armature='.4')
@@ -96,18 +108,19 @@ def frame(root,world,cfg,kind,piece,add,vec,quat,append_robot):
             block=piece(carriage,f'carriage_guide_block_{i}_{j}','guide_block',[x,0,z],color='accent')
             # Contact envelopes around each rail keep the open rail channel.
             for k,(a,b) in enumerate([([-.020,0,0],[.004,.035,.03]),([.020,0,0],[.004,.035,.03]),([0,.025,0],[.032,.009,.03])]):
-                add(block,'geom',type='box',pos=vec(a),size=vec(np.array(b)/2),rgba='0 0 0 0',contype='4',conaffinity='3')
+                g=add(block,'geom',type='box',pos=vec(a),size=vec(np.array(b)/2),rgba='0 0 0 0',contype='4',conaffinity='3')
+                if f.get('counterweighted'):g.set('mass','0')
     plate=piece(carriage,'carriage_faceplate','carriage_plate',[0,.039,0],color='dark',box=([f['carriage_width_m'],.006,f['carriage_plate_height_m']],[0,0,0]))
     for x in [-.102,-.085,-.038,.038,.085,.102]:
         for z in [-.04,.04]:piece(carriage,f'plate_bolt_{x}_{z}','bolt_head',[x,.045,z],Rotation.from_euler('x',-90,degrees=True),color='metal')
-    piece(carriage,'carriage_belt_clamp','belt_clamp',[.006,.026,.067],color='dark',box=([.026,.008,.022],[0,0,0]))
-    if kind=='rig':
+    piece(carriage,'carriage_belt_clamp','belt_clamp',[.006,.029 if f.get('counterweighted') else .026,.067],color='dark',box=([.026,.022 if f.get('counterweighted') else .008,.022],[0,0,0]))
+    if kind=='rig' and not f.get('counterweighted'):
         disk=piece(carriage,'circular_payload','circular_payload',[0,-.045,0],Rotation.from_euler('x',90,degrees=True),color='dark')
         add(disk,'geom',type='cylinder',size=vec([f['payload_diameter_m']/2,f['payload_thickness_m']/2]),pos=vec([0,0,f['payload_thickness_m']/2]),rgba='0 0 0 0',contype='4',conaffinity='3')
         piece(carriage,'payload_hub','payload_hub',[0,-.052,0],Rotation.from_euler('x',90,degrees=True),color='accent')
         piece(carriage,'payload_shaft','payload_shaft',[0,.039,0],Rotation.from_euler('x',90,degrees=True),color='metal')
         piece(carriage,'payload_spacer','payload_spacer',[0,.036,0],Rotation.from_euler('x',90,degrees=True),color='accent')
-    else:
+    elif kind!='rig':
         piece(carriage,'proposed_arm_bridge','arm_bridge',[0,.130,.082],color='metal',box=([.56,.19,.008],[0,0,0]))
         for i,x in enumerate([-.065,.065]):piece(carriage,f'proposed_bridge_bracket_{i}','bridge_bracket',[x,.047,.039],color='dark')
         for side,sign in [('left',-1),('right',1)]:
@@ -119,4 +132,7 @@ def frame(root,world,cfg,kind,piece,add,vec,quat,append_robot):
             rootbody=list(carriage)[-1]
             rootbody.set('pos',vec([sign*rc['base_spacing_m']/2,rc['base_y_m'],.094]))
     add(root.find('actuator'),'position',name='lift_motor',joint='lift_z',kp='8000',kv='180',forcerange=vec([-f['lift_force_limit_N'],f['lift_force_limit_N']]),ctrlrange=vec(f['lift_range_m']))
+    if f.get('counterweighted'):
+        from lift_counterweight import assemble
+        assemble(root,world,cfg,piece,add,vec)
     return carriage

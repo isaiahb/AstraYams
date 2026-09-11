@@ -1,0 +1,280 @@
+{
+  "revision": "tower-lift-v4",
+  "previous_checkpoint": "ccd8359",
+  "user_correction": "Rear weight and front bracket move opposite each other.",
+  "model_scope": "Independent massive rear slider; ideal taut 1:1 belt equality and finite-force front drive. No learned harvest or hardware calibration.",
+  "config_sha256": "bcc3e7218f030a45cab9a4c292bf8d9e98e3d74447202ae11bd1887171b9fe38",
+  "scene_hashes": {
+    "rig": "fb45aea2c0f9d15f6b97fd75c38b4ec11849cdbd86e0c03a37915eb5d554e163",
+    "so101": "7d9317ea47cf2f2c1baea244aaad11820d1eed81dea585b18ce5766f71536422",
+    "yam": "b66f07639473456a8d4db47890c786c9fa809803b8ad666fd1e7708d6083c9cf"
+  },
+  "step_assembly_hashes": {
+    "rig": "588dc7495b2dac6e8e8ceef792e27b1fab10949555e79740440bdb0d9616f73f",
+    "so101": "dca03532afee6d035ab4214763e2283d9513155ddebe4e8cdeefa86badaafeac",
+    "yam": "9a1607dff270cc36176291e36f9d1b1f2a0ebc4d5a646fc0ac9876f182cde9c1"
+  },
+  "results": {
+    "rig": {
+      "sim_s": 5.499999999998519,
+      "lift_height_m": 0.8400000000402067,
+      "lift_force_N": 1.7777733773982618e-05,
+      "peak_robot_contact_N": 0.0,
+      "peak_robot_overlap_m": 0.0,
+      "invalid": false,
+      "simulator_warning_count": 0,
+      "harvest_success": null,
+      "controller": "Finite actuator commands; scripted commissioning",
+      "counterweight_height_m": 0.8399998344158843,
+      "counterweight_speed_m_s": 1.00694267371534e-07,
+      "belt_height_sum_m": 1.68,
+      "peak_belt_constraint_error_m": 2.68342764453422e-07,
+      "peak_counterweight_contact_N": 0.0,
+      "peak_counterweight_overlap_m": 0.0,
+      "scope": "Scripted single-drive lift with passive counterweight coupled by an ideal 1:1 belt constraint. Arms hold parked targets. No learned harvest.",
+      "actuator_force_limits": [
+        [
+          -350.0,
+          350.0
+        ]
+      ],
+      "peak_actuator_force_N_or_Nm": [
+        8.981106414156784
+      ],
+      "lift_command_rate_limit_m_s": 0.08,
+      "lift_height_min_m": 0.8392501122396627,
+      "lift_height_max_m": 0.9607498877603406,
+      "counterweight_height_min_m": 0.7192499980744508,
+      "counterweight_height_max_m": 0.8407496708380456,
+      "front_rear_height_correlation": -0.9999999999998587
+    },
+    "so101": {
+      "sim_s": 5.499999999998519,
+      "lift_height_m": 0.8384510839148337,
+      "lift_force_N": 12.391390127200793,
+      "peak_robot_contact_N": 0.05200499755656886,
+      "peak_robot_overlap_m": 0.0006124624757816848,
+      "invalid": false,
+      "simulator_warning_count": 0,
+      "harvest_success": null,
+      "controller": "Finite actuator commands; scripted commissioning",
+      "counterweight_height_m": 0.8415487697530707,
+      "counterweight_speed_m_s": 3.467616080885257e-07,
+      "belt_height_sum_m": 1.68,
+      "peak_belt_constraint_error_m": 2.105147014486164e-07,
+      "peak_counterweight_contact_N": 0.0,
+      "peak_counterweight_overlap_m": 0.0,
+      "scope": "Scripted single-drive lift with passive counterweight coupled by an ideal 1:1 belt constraint. Arms hold parked targets. No learned harvest.",
+      "actuator_force_limits": [
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -3.35,
+          3.35
+        ],
+        [
+          -350.0,
+          350.0
+        ]
+      ],
+      "peak_actuator_force_N_or_Nm": [
+        0.012341713727115651,
+        0.2876795518864128,
+        0.47500626098144494,
+        0.08023363926565708,
+        0.0022874175212551366,
+        0.003797928496055647,
+        0.018504774630688413,
+        0.2876795518864128,
+        0.47500626098144494,
+        0.08043339208177258,
+        0.0037868935940519105,
+        0.0042626292571412705,
+        22.67041742339552
+      ],
+      "lift_command_rate_limit_m_s": 0.08,
+      "lift_height_min_m": 0.8374855953730015,
+      "lift_height_max_m": 0.9594132649273203,
+      "counterweight_height_min_m": 0.7205866286906665,
+      "counterweight_height_max_m": 0.8425142183274649,
+      "front_rear_height_correlation": -0.999999999999933
+    },
+    "yam": {
+      "sim_s": 5.499999999998519,
+      "lift_height_m": 0.8277852784354809,
+      "lift_force_N": 97.68182982957023,
+      "peak_robot_contact_N": 0.0,
+      "peak_robot_overlap_m": 0.0,
+      "invalid": false,
+      "simulator_warning_count": 0,
+      "harvest_success": null,
+      "controller": "Finite actuator commands; scripted commissioning",
+      "counterweight_height_m": 0.8522145987049143,
+      "counterweight_speed_m_s": -0.00019986439688365228,
+      "belt_height_sum_m": 1.68,
+      "peak_belt_constraint_error_m": 1.9759095271076887e-07,
+      "peak_counterweight_contact_N": 0.0,
+      "peak_counterweight_overlap_m": 0.0,
+      "scope": "Scripted single-drive lift with passive counterweight coupled by an ideal 1:1 belt constraint. Arms hold parked targets. No learned harvest.",
+      "actuator_force_limits": [
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -30.0,
+          30.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -10.0,
+          10.0
+        ],
+        [
+          -30.0,
+          30.0
+        ],
+        [
+          -350.0,
+          350.0
+        ]
+      ],
+      "peak_actuator_force_N_or_Nm": [
+        1.8879500227937967e-05,
+        2.1903831854993996,
+        7.105138572526357,
+        1.7817641412020695,
+        0.0006573528956261038,
+        0.0016404618945119007,
+        1.2046971491486147e-06,
+        1.8879500227913077e-05,
+        2.1903831854993996,
+        7.105138572526414,
+        1.7817641412020735,
+        0.0006573528956261759,
+        0.0016404618945121375,
+        1.2046971491486147e-06,
+        140.43260770760753
+      ],
+      "lift_command_rate_limit_m_s": 0.08,
+      "lift_height_min_m": 0.8231479733557627,
+      "lift_height_max_m": 0.9498035943604601,
+      "counterweight_height_min_m": 0.7301962861860054,
+      "counterweight_height_max_m": 0.8568519136599828,
+      "front_rear_height_correlation": -0.9999999999999487
+    }
+  },
+  "validation": {
+    "counterweight_tests": "6 passed",
+    "v3_regression_tests": "5 passed",
+    "unpowered_mass_ablation": "Lighter counterweight lowers front; heavier lifts front; equal masses balance; disconnected belt drops both.",
+    "holding_force_ablation": "Balanced rear mass reduces required motor holding force by more than 20 N compared with a 0.1 kg rear mass in the reduced rig fixture.",
+    "guide_clearance": "Actual front/rear guide CAD solids have zero intersection volume across five passing offsets.",
+    "pulley_rotation": "Both recorded pulley angles agree with front travel divided by the 20 mm assumed radius, within 0.001 rad."
+  },
+  "visuals": {
+    "rig_views": [
+      "start",
+      "opposed",
+      "returned",
+      "side",
+      "whole-rig"
+    ],
+    "arm_views": [
+      "so101",
+      "yam"
+    ],
+    "browser_errors": [],
+    "source": "Recorded MuJoCo body transforms; no derived opposite motion in viewer."
+  },
+  "unmeasured": [
+    "Belt ratio",
+    "Rear weight mass",
+    "Belt pitch radius",
+    "Rear guide and mounting detail",
+    "Actual scale",
+    "Belt compliance/slip and drive capacity"
+  ],
+  "documentation": "docs/simulation/TOWER-LIFT-V4.md"
+}

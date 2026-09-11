@@ -24,23 +24,30 @@ class TowerLiftEnv(gym.Env):
         self.joints=m.actuator_trnid[:,0].copy()
         self.qids=m.jnt_qposadr[self.joints];self.vids=m.jnt_dofadr[self.joints]
         self.lift=m.actuator('lift_motor').id
+        self.counter_joint=mujoco.mj_name2id(m,mujoco.mjtObj.mjOBJ_JOINT,'counterweight_z')
+        self.counter_qid=int(m.jnt_qposadr[self.counter_joint]) if self.counter_joint>=0 else None
+        self.counter_vid=int(m.jnt_dofadr[self.counter_joint]) if self.counter_joint>=0 else None
+        self.height_sum=(float(self.initial['qpos'][self.qids[self.lift]]+self.initial['qpos'][self.counter_qid])
+                         if self.counter_qid is not None else None)
         self.rate=np.full(m.nu,.40);self.rate[self.lift]=.08
         self.rate[m.jnt_type[self.joints]==mujoco.mjtJoint.mjJNT_SLIDE]=.025
         self.rate[self.lift]=.08
         self.low=m.actuator_ctrlrange[:,0].copy();self.high=m.actuator_ctrlrange[:,1].copy()
         self.action_space=spaces.Box(-1,1,(m.nu,),dtype=np.float32)
-        self.observation_space=spaces.Box(-np.inf,np.inf,(2*m.nu+3,),dtype=np.float64)
+        self.observation_space=spaces.Box(-np.inf,np.inf,(2*m.nu+3+(2 if self.counter_qid is not None else 0),),dtype=np.float64)
         self.horizon=round(horizon_s/self.dt)
 
     def observation(self):
-        return np.r_[self.data.qpos[self.qids],self.data.qvel[self.vids],
-                     self.data.xpos[self.model.body('fruit_secondary_b').id]]
+        obs=np.r_[self.data.qpos[self.qids],self.data.qvel[self.vids],
+                  self.data.xpos[self.model.body('fruit_secondary_b').id]]
+        return np.r_[obs,self.data.qpos[self.counter_qid],self.data.qvel[self.counter_vid]] if self.counter_qid is not None else obs
 
     def reset(self,seed=None,options=None):
         super().reset(seed=seed)
         mujoco.mj_resetData(self.model,self.data)
         self.data.qpos[:]=self.initial['qpos'];self.target=self.initial['ctrl'].copy()
         self.data.ctrl[:]=self.target;self.steps=0;self.peak_overlap=0.;self.peak_contact=0.
+        self.peak_belt_error=0.;self.peak_counter_contact=0.;self.peak_counter_overlap=0.
         mujoco.mj_forward(self.model,self.data)
         return self.observation(),{'task':'commissioning only; no harvest reward'}
 
@@ -59,11 +66,23 @@ class TowerLiftEnv(gym.Env):
                     self.peak_overlap=max(self.peak_overlap,-float(c.dist))
                     f=np.zeros(6);mujoco.mj_contactForce(self.model,self.data,i,f)
                     self.peak_contact=max(self.peak_contact,float(max(0,f[0])))
+                if self.counter_qid is not None and (self.model.geom_contype[a]==8 or self.model.geom_contype[b]==8):
+                    self.peak_counter_overlap=max(self.peak_counter_overlap,-float(c.dist))
+                    f=np.zeros(6);mujoco.mj_contactForce(self.model,self.data,i,f)
+                    self.peak_counter_contact=max(self.peak_counter_contact,float(max(0,f[0])))
+            if self.counter_qid is not None:
+                self.peak_belt_error=max(self.peak_belt_error,abs(float(self.data.qpos[self.qids[self.lift]]+self.data.qpos[self.counter_qid]-self.height_sum)))
         self.steps+=1
         warnings=int(np.sum(self.data.warning.number))
         invalid=not(np.isfinite(self.data.qpos).all() and np.isfinite(self.data.qvel).all()) or warnings>0 or not np.isclose(self.data.time,self.steps*self.dt)
-        return self.observation(),0.,invalid,self.steps>=self.horizon,dict(
+        info=dict(
             sim_s=float(self.data.time),lift_height_m=float(self.data.qpos[self.qids[self.lift]]),
             lift_force_N=float(self.data.actuator_force[self.lift]),
             peak_robot_contact_N=self.peak_contact,peak_robot_overlap_m=self.peak_overlap,
             invalid=invalid,simulator_warning_count=warnings,harvest_success=None,controller='Finite actuator commands; scripted commissioning')
+        if self.counter_qid is not None:info.update(
+            counterweight_height_m=float(self.data.qpos[self.counter_qid]),
+            counterweight_speed_m_s=float(self.data.qvel[self.counter_vid]),
+            belt_height_sum_m=self.height_sum,peak_belt_constraint_error_m=self.peak_belt_error,
+            peak_counterweight_contact_N=self.peak_counter_contact,peak_counterweight_overlap_m=self.peak_counter_overlap)
+        return self.observation(),0.,invalid,self.steps>=self.horizon,info

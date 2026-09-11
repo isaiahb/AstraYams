@@ -282,6 +282,8 @@ def build(out, cfg, kind, parts):
         a=int(m.joint(name).qposadr[0]);b=int(pm.jnt_qposadr[j]);n={0:7,1:4,2:1,3:1}[int(pm.jnt_type[j])]
         d.qpos[a:a+n]=pz[b:b+n]
     d.qpos[m.joint('lift_z').qposadr[0]]=f['carriage_initial_height_m']
+    if f.get('counterweighted'):
+        d.qpos[m.joint('counterweight_z').qposadr[0]]=f['counterweight_initial_height_m']
     for side in ([] if kind=='rig' else ['left','right']):
         if kind=='so101':
             vals={'shoulder_pan':0,'shoulder_lift':-.6,'elbow_flex':.9,'wrist_flex':.65,'wrist_roll':0,'gripper':.55}

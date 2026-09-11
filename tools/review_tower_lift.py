@@ -29,6 +29,12 @@ def record(folder,seconds):
                 lift_command_rate_limit_m_s=float(env.rate[env.lift]),
                 lift_height_min_m=float(min(q[env.qids[env.lift]] for q in qs)),
                 lift_height_max_m=float(max(q[env.qids[env.lift]] for q in qs)))
+    if env.counter_qid is not None:
+        heights=np.asarray(qs)[:,[env.qids[env.lift],env.counter_qid]]
+        result.update(counterweight_height_min_m=float(heights[:,1].min()),
+                      counterweight_height_max_m=float(heights[:,1].max()),
+                      front_rear_height_correlation=float(np.corrcoef(heights.T)[0,1]),
+                      scope='Scripted single-drive lift with passive counterweight coupled by an ideal 1:1 belt constraint. Arms hold parked targets. No learned harvest.')
     (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
     print(folder.name,json.dumps(result),flush=True)
     return result
