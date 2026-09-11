@@ -132,6 +132,9 @@ def frame(root,world,cfg,kind,piece,add,vec,quat,append_robot):
         piece(carriage,'payload_hub','payload_hub',[0,-.052,0],Rotation.from_euler('x',90,degrees=True),color='accent')
         piece(carriage,'payload_shaft','payload_shaft',[0,.039,0],Rotation.from_euler('x',90,degrees=True),color='metal')
         piece(carriage,'payload_spacer','payload_spacer',[0,.036,0],Rotation.from_euler('x',90,degrees=True),color='accent')
+    elif kind=='so101' and f.get('arm_mount')=='stacked_direct_so101':
+        from lift_stack import mount
+        mount(root,world,carriage,cfg,add,vec,quat,append_robot)
     elif kind!='rig':
         compact=f.get('arm_mount')=='compact_so101' and kind=='so101'
         bridgepos=[0,.116,.064] if compact else [0,.130,.082]
