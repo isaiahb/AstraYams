@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "revision": "2026-09-10-v1",
+  "status": "research_and_simulation_exposure_only",
+  "physical_trials_completed": 0,
+  "predictor": {
+    "enabled": false,
+    "damage_probability": null,
+    "bruise_volume_mm3": null,
+    "safe_force_N": null,
+    "safe_pressure_Pa": null,
+    "calibration_dataset": null,
+    "reason": "Rigid fruit, unknown tissue contact patch and no measured damage labels."
+  },
+  "specimen_fields_required": [
+    "fruit_id", "harvest_batch_id", "cultivar", "ripeness_class", "mass_g",
+    "principal_dimensions_mm", "pulp_temperature_C", "harvest_time",
+    "storage_temperature_humidity_history", "prior_damage_photo_ids",
+    "test_assignment", "contact_geometry_id", "material_batch_id", "randomization_seed"
+  ],
+  "instrumentation": {
+    "simulation_contact_sampling": "every physics step",
+    "normal_force_aggregation": "scalar sum per fruit, anatomical surface and counterpart; retain largest point force",
+    "impulse_integration": "force times physics timestep; sustained loading included",
+    "contact_area": "unknown until measured or identified from validated tissue contact mechanics",
+    "solver_overlap_is_tissue_strain": false,
+    "physical_force_sampling_initial_Hz": 10000,
+    "sampling_basis": "proposed initial acquisition; verify bandwidth and anti-aliasing against measured transient spectrum",
+    "force_detection_floor_N": 0.000001,
+    "force_detection_floor_is_damage_threshold": false
+  },
+  "proposed_fixture_tests": [
+    {"id": "drop", "receivers": ["actual_net", "basket_liner", "rounded_rim", "supported_neighbor_fruit"], "surface_gap_mm": [5, 15, 30], "label": "hypothesis discrimination settings, not safe limits"},
+    {"id": "compression", "contactors": ["15mm_convex_probe", "actual_strand", "actual_rim"], "force_N": [0.1, 0.3, 1.0], "hold_s": [0.1, 1, 5], "label": "initial pilot settings; observe full unload/recovery"},
+    {"id": "abrasion", "contactors": ["strand", "rounded_edge"], "load_and_slide_range": "choose from instrumented robot histories and pilot data"},
+    {"id": "puncture", "contactors": ["actual_blade_edge"], "stop_rule": "first detected rupture; dedicated sacrificial fruit"},
+    {"id": "repetition", "conditions": ["single_contact", "repeated_same_patch", "repeated_different_patch", "sustained_basket_load"]},
+    {"id": "composed_task", "conditions": ["two_arms", "neighboring_fruit", "empty_basket", "occupied_basket", "unseen_anatomy"]}
+  ],
+  "pilot": {
+    "proposed_fruit_count": 60,
+    "groups": ["untouched", "sham_handled", "actual_net_catch", "liner_catch", "strand_compression", "broad_support_compression"],
+    "fruit_per_group": 10,
+    "purpose": "estimate spread and discriminating test levels; not a damage-rate validation",
+    "withhold_pilot_from_validation": true,
+    "blocked_followup": ["harvest_batch", "cultivar", "ripeness", "temperature"]
+  },
+  "outcomes": {
+    "photo_endpoints_h": [0, 24, 48],
+    "destructive_endpoint_allocation": "separate randomized fruit for each destructive endpoint",
+    "labels": ["skin_tear", "abrasion", "leakage", "internal_bruise_incidence", "internal_bruise_volume_mm3", "residual_deformation", "deterioration"],
+    "blinded_assessment": true,
+    "storage_conditions": "controlled and recorded; sham and untreated controls share the same conditions",
+    "acceptable_market_grade": null
+  },
+  "numerical_gates_proposed": {
+    "paired_same_initial_state": true,
+    "retune_between_timesteps": false,
+    "impulse_relative_difference_max": 0.05,
+    "peak_force_relative_difference_max": 0.10,
+    "duration_relative_difference_max": 0.05,
+    "duration_absolute_floor_in_fine_steps": 2,
+    "fruit_origin_path_difference_max_m": 0.001,
+    "mesh_convergence_is_separate": true,
+    "numerical_pass_is_biological_validation": false
+  },
+  "training_integration": {
+    "retain_exposure_across_policy_handoffs": true,
+    "count_each_affected_fruit": true,
+    "abstain_outside_calibration_domain": true,
+    "speed_objective": "accepted fruit per unit time including failures and recovery",
+    "damage_rubric_replacement_enabled": false
+  }
+}

@@ -1,0 +1,434 @@
+{
+  "status": "simulation measurements only; biological damage unknown",
+  "observer_sha256": "db9148dc387e3f542738248e7dfe77c274c9c03965b8c1b6f44355ac49feeffc",
+  "physical_trials_completed": 0,
+  "replays": [
+    {
+      "run": "runs/fruit-damage-validation/v1/learned-command-replay-v2",
+      "source": "runs/harvest-skill-suite/partial-chain-v6",
+      "source_episode_sha256": "fb38e17a46bb5e7697c13164254f27bfd964bd4e5b2d41c906765abb1ffabafe",
+      "source_physics_sha256": "9add1b030f93b3a21fe5b375474a5bb31d06b28cfdd37ce21913934de5b83945",
+      "replay_physics_sha256": "c8cfd32adc2a1fa01670a085c660ce42b3aa258a746ad9421e2661279463ee53",
+      "physics_state_arrays_bitwise_identical": {
+        "qpos": true,
+        "qvel": true,
+        "eq_active": true
+      },
+      "recording_frames": 661,
+      "elapsed_s": 13.200000000000001,
+      "timestep_s": 0.000125,
+      "pairs": [
+        {
+          "fruit": "fruit_secondary_b",
+          "surface": "flesh",
+          "counterpart": "flex:catcher_net",
+          "contact_duration_s": 1.308124999999955,
+          "normal_impulse_Ns": 0.16683012504615585,
+          "tangential_impulse_Ns": 0.05740420884358005,
+          "peak_sum_normal_N": 6.649263399827867,
+          "peak_point_normal_N": 6.649263399827867,
+          "max_solver_overlap_m": 0.0,
+          "contact_onsets": 44,
+          "first_contact_s": 11.857375000012562,
+          "last_contact_s": 13.200000000018973,
+          "peak_time_s": 11.858125000012565,
+          "peak_world_position_m": [
+            0.2990503134529744,
+            -0.07592855082042303,
+            0.32339954057656056
+          ],
+          "peak_body_position_m": [
+            -0.005899323679308134,
+            -0.012042042528713161,
+            -0.012866055249586183
+          ]
+        },
+        {
+          "fruit": "fruit_secondary_b",
+          "surface": "calyx",
+          "counterpart": "flex:catcher_net",
+          "contact_duration_s": 1.2709999999999755,
+          "normal_impulse_Ns": 0.12086121935810437,
+          "tangential_impulse_Ns": 0.048971750321911936,
+          "peak_sum_normal_N": 5.851425207731957,
+          "peak_point_normal_N": 5.5929205956429975,
+          "max_solver_overlap_m": 0.0,
+          "contact_onsets": 71,
+          "first_contact_s": 11.892000000012727,
+          "last_contact_s": 13.200000000018973,
+          "peak_time_s": 11.90112500001277,
+          "peak_world_position_m": [
+            0.3377669755964663,
+            -0.053167619643691315,
+            0.316104507522354
+          ],
+          "peak_body_position_m": [
+            0.011429956546588842,
+            0.00468444948494779,
+            0.001023768463423154
+          ]
+        },
+        {
+          "fruit": "fruit_primary",
+          "surface": "flesh",
+          "counterpart": "calyx_contact_secondary_a_7",
+          "contact_duration_s": 8.905624999997016,
+          "normal_impulse_Ns": 0.009542900505249497,
+          "tangential_impulse_Ns": 0.0026418434564179473,
+          "peak_sum_normal_N": 0.7800302549340202,
+          "peak_point_normal_N": 0.7800302549340202,
+          "max_solver_overlap_m": 2.5446584455800187e-05,
+          "contact_onsets": 1848,
+          "first_contact_s": 0.00662499999999927,
+          "last_contact_s": 9.504250000001326,
+          "peak_time_s": 0.00662499999999927,
+          "peak_world_position_m": [
+            0.25474336944715337,
+            -0.05414641338892734,
+            0.3705884995353322
+          ],
+          "peak_body_position_m": [
+            0.00894247640880176,
+            -0.007863255843478136,
+            -0.024659430158691584
+          ]
+        },
+        {
+          "fruit": "fruit_secondary_a",
+          "surface": "calyx",
+          "counterpart": "berry_primary",
+          "contact_duration_s": 8.905624999997016,
+          "normal_impulse_Ns": 0.009542900505249497,
+          "tangential_impulse_Ns": 0.0026418434564179473,
+          "peak_sum_normal_N": 0.7800302549340202,
+          "peak_point_normal_N": 0.7800302549340202,
+          "max_solver_overlap_m": 2.5446584455800187e-05,
+          "contact_onsets": 1848,
+          "first_contact_s": 0.00662499999999927,
+          "last_contact_s": 9.504250000001326,
+          "peak_time_s": 0.00662499999999927,
+          "peak_world_position_m": [
+            0.25474336944715337,
+            -0.05414641338892734,
+            0.3705884995353322
+          ],
+          "peak_body_position_m": [
+            -0.008556776935138465,
+            0.009128887062390987,
+            -0.0003809457019143536
+          ]
+        },
+        {
+          "fruit": "fruit_secondary_a",
+          "surface": "flesh",
+          "counterpart": "berry_secondary_b",
+          "contact_duration_s": 9.674000000000685,
+          "normal_impulse_Ns": 0.1898627581576117,
+          "tangential_impulse_Ns": 0.015179717767060142,
+          "peak_sum_normal_N": 0.3148435826137411,
+          "peak_point_normal_N": 0.21123390129913655,
+          "max_solver_overlap_m": 3.933136096756899e-05,
+          "contact_onsets": 132,
+          "first_contact_s": 0.00012499999999998623,
+          "last_contact_s": 10.874375000007868,
+          "peak_time_s": 0.00662499999999927,
+          "peak_world_position_m": [
+            0.27275131428303534,
+            -0.05558223612155076,
+            0.3449441310536811
+          ],
+          "peak_body_position_m": [
+            0.012933945003338367,
+            0.005092365593981821,
+            -0.02287175858078843
+          ]
+        },
+        {
+          "fruit": "fruit_secondary_b",
+          "surface": "flesh",
+          "counterpart": "berry_secondary_a",
+          "contact_duration_s": 9.674000000000685,
+          "normal_impulse_Ns": 0.1898627581576117,
+          "tangential_impulse_Ns": 0.015179717767060142,
+          "peak_sum_normal_N": 0.3148435826137411,
+          "peak_point_normal_N": 0.21123390129913655,
+          "max_solver_overlap_m": 3.933136096756899e-05,
+          "contact_onsets": 132,
+          "first_contact_s": 0.00012499999999998623,
+          "last_contact_s": 10.874375000007868,
+          "peak_time_s": 0.00662499999999927,
+          "peak_world_position_m": [
+            0.27275131428303534,
+            -0.05558223612155076,
+            0.3449441310536811
+          ],
+          "peak_body_position_m": [
+            -0.008209483240956845,
+            -0.009426022043416036,
+            -0.007506109253671936
+          ]
+        }
+      ]
+    },
+    {
+      "run": "runs/fruit-damage-validation/v1/basket-command-replay-v2",
+      "source": "runs/harvest-skill-suite/basket-commission-v8",
+      "source_episode_sha256": "752fe5893c054f8275172987bc6e74f272e148a63a26917acf84321574b74a04",
+      "source_physics_sha256": "f237d4d866e47126d71b721e9e1cfd3396a68d1bc8a41f2c667a382b9a156254",
+      "replay_physics_sha256": "7c27bad37590d707314131c6052137813d7864478ac99014811b353c5970af88",
+      "physics_state_arrays_bitwise_identical": {
+        "qpos": true,
+        "qvel": true,
+        "eq_active": true
+      },
+      "recording_frames": 785,
+      "elapsed_s": 15.68,
+      "timestep_s": 0.000125,
+      "pairs": [
+        {
+          "fruit": "fruit_secondary_b",
+          "surface": "flesh",
+          "counterpart": "flex:catcher_net",
+          "contact_duration_s": 14.39987500002325,
+          "normal_impulse_Ns": 1.8141999810862373,
+          "tangential_impulse_Ns": 0.5351672035496066,
+          "peak_sum_normal_N": 3.311424141867506,
+          "peak_point_normal_N": 2.6249664831180874,
+          "max_solver_overlap_m": 0.0,
+          "contact_onsets": 70,
+          "first_contact_s": 0.00012499999999998623,
+          "last_contact_s": 14.419000000024793,
+          "peak_time_s": 14.415375000024776,
+          "peak_world_position_m": [
+            0.30761222356426887,
+            -0.26004529752162364,
+            0.2425763342986844
+          ],
+          "peak_body_position_m": [
+            -0.00401246567205092,
+            -0.012442352177168943,
+            -0.013445841386058508
+          ]
+        },
+        {
+          "fruit": "fruit_secondary_b",
+          "surface": "calyx",
+          "counterpart": "catcher_rim_18",
+          "contact_duration_s": 0.010875000000000008,
+          "normal_impulse_Ns": 0.0013961041416199272,
+          "tangential_impulse_Ns": 0.0006282468637289673,
+          "peak_sum_normal_N": 0.6270905144057038,
+          "peak_point_normal_N": 0.6270905144057038,
+          "max_solver_overlap_m": 8.28248799202348e-06,
+          "contact_onsets": 39,
+          "first_contact_s": 13.41725000002001,
+          "last_contact_s": 13.585250000020812,
+          "peak_time_s": 13.41725000002001,
+          "peak_world_position_m": [
+            0.30192812769537336,
+            -0.2605691193898647,
+            0.24258696013874628
+          ],
+          "peak_body_position_m": [
+            -0.0005314213270649101,
+            -0.011919345800959966,
+            -0.0013989266421762067
+          ]
+        },
+        {
+          "fruit": "fruit_secondary_b",
+          "surface": "calyx",
+          "counterpart": "flex:catcher_net",
+          "contact_duration_s": 1.6241249999997798,
+          "normal_impulse_Ns": 0.0341011774438939,
+          "tangential_impulse_Ns": 0.016280630228625963,
+          "peak_sum_normal_N": 0.6163955824867174,
+          "peak_point_normal_N": 0.6163955824867174,
+          "max_solver_overlap_m": 0.0,
+          "contact_onsets": 2551,
+          "first_contact_s": 10.773375000007386,
+          "last_contact_s": 13.404125000019947,
+          "peak_time_s": 13.38387500001985,
+          "peak_world_position_m": [
+            0.30229658216643407,
+            -0.26180228927777627,
+            0.24371504242336678
+          ],
+          "peak_body_position_m": [
+            -0.0006413336549827941,
+            -0.01205258207445969,
+            -0.0019371114499362684
+          ]
+        },
+        {
+          "fruit": "fruit_secondary_b",
+          "surface": "calyx",
+          "counterpart": "basket_liner_surface",
+          "contact_duration_s": 0.8845000000000872,
+          "normal_impulse_Ns": 0.06762749650428546,
+          "tangential_impulse_Ns": 0.029279832650387257,
+          "peak_sum_normal_N": 0.3548979118291738,
+          "peak_point_normal_N": 0.3548979118291738,
+          "max_solver_overlap_m": 3.938487792348636e-06,
+          "contact_onsets": 389,
+          "first_contact_s": 14.710375000026184,
+          "last_contact_s": 15.680000000030814,
+          "peak_time_s": 14.710375000026184,
+          "peak_world_position_m": [
+            0.29744703048887233,
+            -0.25077815056940467,
+            0.23467357458589638
+          ],
+          "peak_body_position_m": [
+            -0.0005319913728690671,
+            -0.011920117108288619,
+            -0.0013985163406834678
+          ]
+        },
+        {
+          "fruit": "fruit_secondary_b",
+          "surface": "flesh",
+          "counterpart": "catcher_rim_18",
+          "contact_duration_s": 0.5582499999999783,
+          "normal_impulse_Ns": 0.0314976534622099,
+          "tangential_impulse_Ns": 0.018579833169644965,
+          "peak_sum_normal_N": 0.4445208431496007,
+          "peak_point_normal_N": 0.3102884849092793,
+          "max_solver_overlap_m": 4.356565384419426e-06,
+          "contact_onsets": 458,
+          "first_contact_s": 14.418875000024792,
+          "last_contact_s": 15.66012500003072,
+          "peak_time_s": 14.42262500002481,
+          "peak_world_position_m": [
+            0.3057194882885389,
+            -0.25910663513296184,
+            0.24127677705336528
+          ],
+          "peak_body_position_m": [
+            -0.0029989233774546107,
+            -0.012565952115577447,
+            -0.011918965842084808
+          ]
+        },
+        {
+          "fruit": "fruit_secondary_b",
+          "surface": "calyx",
+          "counterpart": "catcher_rim_16",
+          "contact_duration_s": 5.067499999999527,
+          "normal_impulse_Ns": 0.09979825675279667,
+          "tangential_impulse_Ns": 0.04375803684260033,
+          "peak_sum_normal_N": 0.16292807343962007,
+          "peak_point_normal_N": 0.16292807343962007,
+          "max_solver_overlap_m": 5.3115408990765905e-06,
+          "contact_onsets": 4514,
+          "first_contact_s": 6.849499999994695,
+          "last_contact_s": 13.422250000020034,
+          "peak_time_s": 13.407875000019965,
+          "peak_world_position_m": [
+            0.3108988783342013,
+            -0.24970817918815252,
+            0.24019405173594666
+          ],
+          "peak_body_position_m": [
+            -0.012319040728682626,
+            -0.0038142392422013975,
+            0.0014155670960543667
+          ]
+        },
+        {
+          "fruit": "fruit_secondary_b",
+          "surface": "flesh",
+          "counterpart": "catcher_rim_19",
+          "contact_duration_s": 0.8535000000000769,
+          "normal_impulse_Ns": 0.03593190332581003,
+          "tangential_impulse_Ns": 0.010476967002651846,
+          "peak_sum_normal_N": 0.161786410294187,
+          "peak_point_normal_N": 0.08089320515930559,
+          "max_solver_overlap_m": 4.469725019358773e-06,
+          "contact_onsets": 426,
+          "first_contact_s": 14.721125000026236,
+          "last_contact_s": 15.680000000030814,
+          "peak_time_s": 14.726000000026259,
+          "peak_world_position_m": [
+            0.3012913254751404,
+            -0.263327877633457,
+            0.24293010921656222
+          ],
+          "peak_body_position_m": [
+            0.0032574425975868708,
+            -0.010983592659251851,
+            -0.016629301654957716
+          ]
+        }
+      ]
+    }
+  ],
+  "convergence": {
+    "status": "FAIL",
+    "scope": "Numerical contact convergence, not biological validation",
+    "initial_state_sha256": "25a1553b4ad8e92ea52f0241973540066269029dbdb8cea66d15fc95147d0c98",
+    "timesteps_s": [
+      0.000125,
+      6.25e-05
+    ],
+    "peak_target_origin_path_difference_m": 0.009810853744509762,
+    "path_limit_m": 0.001,
+    "contacts": [
+      {
+        "surface": "flesh",
+        "counterpart": "flex:catcher_net",
+        "checks": {
+          "normal_impulse_Ns": {
+            "coarse": 0.1550572454346894,
+            "fine": 0.17703586899224663,
+            "relative_difference": 0.12414785592698048,
+            "limit": 0.05,
+            "passed": false
+          },
+          "peak_point_normal_N": {
+            "coarse": 3.096260826862826,
+            "fine": 2.0713858072700617,
+            "relative_difference": 0.3310040971681258,
+            "limit": 0.1,
+            "passed": false
+          },
+          "contact_duration_s": {
+            "coarse": 1.2391249999999931,
+            "fine": 1.2184375000000527,
+            "relative_difference": 0.016695248663323375,
+            "limit": 0.05,
+            "passed": true
+          }
+        }
+      },
+      {
+        "surface": "calyx",
+        "counterpart": "flex:catcher_net",
+        "checks": {
+          "normal_impulse_Ns": {
+            "coarse": 0.07293916192621935,
+            "fine": 0.05487116025322646,
+            "relative_difference": 0.24771331608209785,
+            "limit": 0.05,
+            "passed": false
+          },
+          "peak_point_normal_N": {
+            "coarse": 0.09571439577496327,
+            "fine": 0.17081304840838774,
+            "relative_difference": 0.43965407404869405,
+            "limit": 0.1,
+            "passed": false
+          },
+          "contact_duration_s": {
+            "coarse": 1.1541250000000403,
+            "fine": 1.139374999999956,
+            "relative_difference": 0.012780244774252079,
+            "limit": 0.05,
+            "passed": true
+          }
+        }
+      }
+    ],
+    "protocol": "Thresholds proposed in docs/simulation/fruit-damage-protocol.json; no retuning."
+  }
+}

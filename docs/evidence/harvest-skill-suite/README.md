@@ -27,6 +27,10 @@ Known limits: privileged simulator-state policies, no cameras; same-arm self-col
 
 ## Subsequent evidence
 
+- Fruit-damage validation: [research, instrumentation results and failed numerical
+  convergence check](FRUIT-DAMAGE-2026-09-10.md). Full-rate exposure now includes
+  all fruit and separates flesh/calyx. No biological damage threshold is claimed.
+
 - Speed audit: [human references, recorded phase timings and next training protocol](SPEED.md).
   New composition/commissioning reports separate partial skill time from accepted
   harvest-to-placement time. The current two recordings establish no complete
