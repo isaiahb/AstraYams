@@ -1,0 +1,90 @@
+{
+  "source": "User supplied AEROBERRY share snapshot, 2026-09-10; 01_SO101_v0.4",
+  "copied_without_modification": true,
+  "files": [
+    {
+      "path": "AEROBERRY-SO101-GripCut-v0.4-assembly.step",
+      "sha256": "e8f558c4d25c44c843ce9643d7bd72bcb93cee6334762a12be12030f217af954"
+    },
+    {
+      "path": "AEROBERRY-SO101-GripCut-v0.4.FCStd",
+      "sha256": "295c8a106c4b6a391cbe47ced5ea5d64a125b4dd057dfbd30b9dfb6abfd34b80"
+    },
+    {
+      "path": "NOTICE.md",
+      "sha256": "782d850f55a5e0b5927a283cad13b10d987714c9c00313907a16df274833681b"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e265a75a9fbcc15ccdd336d35a7eafd45f3b701ce82c13f65537073e85dc4a5b"
+    },
+    {
+      "path": "design.json",
+      "sha256": "63847bfbaec1b72397a00afb5304f94d0a16844c7f9b177d0969e42c4f0f778f"
+    },
+    {
+      "path": "parts/P01_FixedJaw.step",
+      "sha256": "6e3226fbe1730f04ab6d4d74825a5889ae74ac3f153b165305eec6343215033e"
+    },
+    {
+      "path": "parts/P01_FixedJaw.stl",
+      "sha256": "05e94a5ff52537db36d67a270ebccd2f4ec6a957cec6fe61522460404faaee0e"
+    },
+    {
+      "path": "parts/P02_UtilityCarrier.step",
+      "sha256": "b2ef8fea4206aafc6be4d31e91ee9ffe95ba8726220cd9a6aae17f5f0731af66"
+    },
+    {
+      "path": "parts/P02_UtilityCarrier.stl",
+      "sha256": "8726aa0f8a2c5e1a0a3cab92f7674d44995893964335cc8ae0c3ce3f2617c314"
+    },
+    {
+      "path": "parts/P03_Flexure_1p2.step",
+      "sha256": "82d36a69f6615d1c5e951cc268ba01f90ab7436d5cb54eaaa44d36508b5f3808"
+    },
+    {
+      "path": "parts/P03_Flexure_1p2.stl",
+      "sha256": "6b680d467aa1a006b8390f68ebd3682d691c3f7867a477084fe1ffee6fb93e80"
+    },
+    {
+      "path": "parts/P04_BladeCover.step",
+      "sha256": "72330b8fb66c41897cfd61d4662278105a6fb072e56c42dfdcc0b03acff46eb4"
+    },
+    {
+      "path": "parts/P04_BladeCover.stl",
+      "sha256": "2d03ff26cbb011ee717c351ca04850b9fbedf5bdeb4c3e212cde47d23294984f"
+    },
+    {
+      "path": "parts/P05_RearBrace.step",
+      "sha256": "1bfa15c303b57adae6cf71335e8e3dea004aec98b55bf3b894d83e9de276c008"
+    },
+    {
+      "path": "parts/P05_RearBrace.stl",
+      "sha256": "940de6e03fb7fd82e3ab1a7b84c155927f871156f9b7e575b00ba239baccfbc9"
+    },
+    {
+      "path": "reference/SO101-Apache-2.0-LICENSE.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "reference/SO101-source-NOTICE.md",
+      "sha256": "d8b986e9f0b6e28b83ec7e1f66d049601ffdad1526d4faff5b5c6cd10f5f64d9"
+    },
+    {
+      "path": "renders/assembly.png",
+      "sha256": "930417d07bd6254d16aa9b27ab38495ad5533b1e3387942973f566743c6de219"
+    },
+    {
+      "path": "verification/check.json",
+      "sha256": "449a69fc9a37d0978cce4ef3b85667418c9456fb45c38068ec321f96fbf9fdfc"
+    },
+    {
+      "path": "verification/cover-cleanup.json",
+      "sha256": "239f1365c2c2290dd0811723f804120a287505d6651fb04e80c8bf38746251d8"
+    },
+    {
+      "path": "verification/interfaces.json",
+      "sha256": "428fec1b3120829fc42537d937a783cbfbb92974e3190d1a04f0bb9b5988a7db"
+    }
+  ]
+}

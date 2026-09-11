@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "samples": 359,
+  "failures": [],
+  "bearing": {
+    "blade_bed_mm2": 618.6354503286846,
+    "blade_cover_mm2": 324.31518141531114,
+    "fixed_pad_back_mm2": 24.000000000000124,
+    "moving_pad_back_mm2": 24.00000000000011
+  },
+  "inherited_fixed_servo_overlap_mm3": 37.98387763475796,
+  "offset_scope": "Working jaw only; exact existing motor/cradle and curved stop interface retained. Offsets are sampled relative translations, not a manufacturing guarantee."
+}

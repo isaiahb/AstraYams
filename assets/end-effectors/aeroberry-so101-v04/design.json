@@ -1,0 +1,103 @@
+{
+  "revision": "SO-101 grip-cut v0.4",
+  "status": "CAD-checked print prototype; physical fit, cutting force, grip retention and fatigue untested",
+  "based_on": [
+    "SO-101 v0.3 reinforced fixed root R1",
+    "SO-101 v0.3 reinforced spring locator R1",
+    "SO-101 utility blade R1",
+    "Maker v0.3.3 thin solid receiver",
+    "Maker v0.3.4 cover ledge cleanup"
+  ],
+  "working_jaw": {
+    "solid_thickness_mm": 9,
+    "z_mm": [
+      2,
+      11
+    ],
+    "stem_capacity_mm": [
+      0.8,
+      6
+    ],
+    "throat_diameter_mm": 7,
+    "stem_center_x_mm": 40,
+    "fixed_pad_face_y_mm": 0.8,
+    "pad_contact_mm": [
+      10,
+      2.4
+    ],
+    "pad_thickness_mm": 1,
+    "funnel": "Preserved working funnel outline, adapted to the narrow SO wrist root"
+  },
+  "motion": {
+    "pivot_xyz_mm": [
+      0,
+      9,
+      0
+    ],
+    "opening_angle_deg": 14,
+    "closed_angle_deg": 0,
+    "blade_edge_y_at_close_mm": -1.2,
+    "final_followthrough_mm": 2,
+    "relative_cut_travel_for_6mm_stem_mm": 8,
+    "spring_length_mm": 44,
+    "spring_leaf_mm": 1.2,
+    "spring_rest_offset_mm": 0.8,
+    "max_absolute_cubic_shape_offset_mm": 9.6,
+    "max_travel_from_printed_rest_mm": 8.8,
+    "formula": "delta=max(0.8, -40*sin(a)+(0.8+d/2-9)*cos(a)+9+d/2+2.8)",
+    "spring_method": "Prescribed cubic CAD shape, not FEA or an equilibrium solution",
+    "free_open_pad_clearance_beyond_6mm_circle_mm": 0.7224136006218915
+  },
+  "blade": {
+    "nominal_mm": [
+      62,
+      19,
+      0.61
+    ],
+    "floor_z_mm": 6.2,
+    "support_lip_y_mm": 8,
+    "cover_window_x_mm": [
+      27.5,
+      51
+    ],
+    "cover_window_rear_y_mm": 12.3,
+    "bed": "Fixed positive bed, back stops, notch key and integral distal fence; no blade adjustment",
+    "cover_cleanup": "Fragile lower flanges removed from short cover wings. Main contact lands and full-depth distal fence retained."
+  },
+  "fasteners": {
+    "added": "4 M3 x 8 socket-head screws + 4 M3 nuts (2 blade cover, 2 rear brace)",
+    "servo_and_horn": "Original SO mount and horn hardware retained; not the Maker carriage M3 x 10 pattern",
+    "clamp_screws_xy_mm": [
+      [
+        14.5,
+        6
+      ],
+      [
+        72,
+        23
+      ]
+    ],
+    "clamp_screw_head_seat_z_mm": 8
+  },
+  "parts": [
+    "P01_FixedJaw",
+    "P02_UtilityCarrier",
+    "P03_Flexure_1p2",
+    "P04_BladeCover",
+    "P05_RearBrace"
+  ],
+  "unchanged_part": "P05_RearBrace",
+  "checks": {
+    "nominal_pairs": 2640,
+    "interfaces_and_working_head_offsets": 359,
+    "relative_working_head_translation_xyz_mm": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "offset_scope": "Working head only, not motor/cradle clearance",
+    "exported_STLs": "Valid single solids and closed reloadable meshes",
+    "inherited_fixed_housing_servo_overlap_mm3": 37.98387763475796,
+    "inherited_overlap_note": "Existing source reference overlap preserved; added receiver material does not intersect the servo. This is not a full manufacturing fit guarantee."
+  }
+}

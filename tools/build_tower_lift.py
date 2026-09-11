@@ -159,6 +159,10 @@ def append_robot(root, carriage, kind, side, cfg):
         for k in ['name','joint1','joint2']:
             if k in c.attrib:c.set(k,prefix+c.get(k))
         root.find('equality').append(c)
+    tool=cfg.get('end_effector',{})
+    if kind=='so101' and tool.get('design')=='aeroberry_v04' and side in tool.get('sides',['left']):
+        from aeroberry_tool import mount
+        mount(root,robot,side,Path(tool['generated_dir']))
     return prefix+'gripperframe' if kind=='so101' else prefix+'tool_site'
 
 
@@ -287,6 +291,8 @@ def build(out, cfg, kind, parts):
     for side in ([] if kind=='rig' else ['left','right']):
         if kind=='so101':
             vals={'shoulder_pan':0,'shoulder_lift':-.6,'elbow_flex':.9,'wrist_flex':.65,'wrist_roll':0,'gripper':.55}
+            vals.update(cfg['robots'][kind].get('parking',{}))
+            if side in cfg.get('end_effector',{}).get('sides',[]):vals['gripper']=np.deg2rad(14)
         else:vals={f'joint{i}':v for i,v in enumerate([0,1.05,1.50,0,0,0,-.030,-.030],1)}
         for j,v in vals.items():d.qpos[m.joint(side+'_'+j).qposadr[0]]=v
     mujoco.mj_forward(m,d)
@@ -326,6 +332,9 @@ def build(out, cfg, kind, parts):
                 control='Finite-force actuator setpoints; initialization is offline. No PPO or harvest success in this layout.',
                 phase='Layout and physical commissioning; stock grippers, tool adapters pending',
                 original_yam_runs_preserved=True)
+    if cfg.get('end_effector'):
+        report.update(phase='Mounted CAD fit review; tool contact and flexure dynamics NOT commissioned',training_ready=False,
+                      end_effector=cfg['end_effector'])
     (folder/'build.json').write_text(json.dumps(report,indent=2)+'\n')
     print(kind,'built',m.nq,'positions,',m.nu,'actuators',flush=True)
 
@@ -336,6 +345,10 @@ def main():
     cfg=json.loads(a.config.read_text());out=a.out.resolve();out.mkdir(parents=True,exist_ok=True)
     (out/'config.json').write_text(json.dumps(cfg,indent=2)+'\n')
     parts=cad_parts(out,cfg)
+    if cfg.get('end_effector',{}).get('design')=='aeroberry_v04':
+        from aeroberry_tool import prepare
+        prepare(out/'end-effector');cfg['end_effector']['generated_dir']=str(out/'end-effector')
+        (out/'config.json').write_text(json.dumps(cfg,indent=2)+'\n')
     for kind in cfg.get('embodiments',['so101','yam']):build(out,cfg,kind,parts)
 
 

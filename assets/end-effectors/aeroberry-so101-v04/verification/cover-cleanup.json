@@ -1,0 +1,63 @@
+{
+  "status": "pass",
+  "scope": "Cover-only material removal. Existing swept and offset clearance checks remain conservative because no new material was added. Fresh seating, positional-stop and selected-pose checks included.",
+  "added_material_mm3": 0,
+  "removed_material_mm3": 9.398218955998999,
+  "bearing_before_mm2": 324.31518141531114,
+  "bearing_after_mm2": 324.31518141531114,
+  "positional_stop_checks": [
+    {
+      "translation_mm": [
+        0.0,
+        0.6,
+        0.0
+      ],
+      "stop_intersection_mm3": 6.966120741863389
+    },
+    {
+      "translation_mm": [
+        0.0,
+        -0.6,
+        0.0
+      ],
+      "stop_intersection_mm3": 5.71576758157896
+    },
+    {
+      "translation_mm": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "stop_intersection_mm3": 2.0055201521683816
+    },
+    {
+      "translation_mm": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "stop_intersection_mm3": 1.8667009683891083
+    }
+  ],
+  "new_cover_pose_checks": [
+    {
+      "pose": 0,
+      "overlap_mm3": 0
+    },
+    {
+      "pose": 7,
+      "overlap_mm3": 0
+    },
+    {
+      "pose": 14,
+      "overlap_mm3": 0
+    }
+  ],
+  "closed_STLs": {
+    "P01_FixedJaw": true,
+    "P02_UtilityCarrier": true,
+    "P03_Flexure_1p2": true,
+    "P04_BladeCover": true,
+    "P05_RearBrace": true
+  }
+}

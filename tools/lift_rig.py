@@ -45,6 +45,18 @@ def cad(cfg,profile):
     support=upright.union(foot)
     for z in [-26,26]:support=support.cut(cq.Workplane('XZ').center(0,z).circle(3.3).extrude(10,both=True))
     p['bridge_bracket']=support
+    if f.get('arm_mount')=='compact_so101':
+        # A compact mounting study attached to the observed faceplate. The
+        # existing base clamp interface still needs its hardware/fit verified.
+        p['arm_bridge']=cq.Workplane('XY').box(360,130,6).edges('|Z').fillet(6)
+        for x in [-153,-87,87,153]:
+            for y in [-38,38]:
+                p['arm_bridge']=p['arm_bridge'].cut(cq.Workplane('XY').center(x,y).slot2D(20,5.5,90).extrude(8,both=True))
+        support=cq.Workplane('XY').box(40,6,70)
+        support=support.union(cq.Workplane('XY').box(40,114,6).translate((0,54,32)))
+        for z in [-25,25]:support=support.cut(cq.Workplane('XZ').center(0,z).circle(2.6).extrude(8,both=True))
+        p['bridge_bracket']=support
+        p['bridge_web']=cq.Workplane('YZ').polyline([(0,0),(85,0),(0,-60)]).close().extrude(4,both=True)
     p['motor_body']=cq.Workplane('XY').box(57,45,45).edges('|X').fillet(3)
     p['gearhead']=cq.Workplane('XY').box(35,42,42).edges('|X').fillet(3)
     p['motor_foot']=cq.Workplane('XY').box(105,54,4).edges('|Z').fillet(3)
@@ -121,16 +133,20 @@ def frame(root,world,cfg,kind,piece,add,vec,quat,append_robot):
         piece(carriage,'payload_shaft','payload_shaft',[0,.039,0],Rotation.from_euler('x',90,degrees=True),color='metal')
         piece(carriage,'payload_spacer','payload_spacer',[0,.036,0],Rotation.from_euler('x',90,degrees=True),color='accent')
     elif kind!='rig':
-        piece(carriage,'proposed_arm_bridge','arm_bridge',[0,.130,.082],color='metal',box=([.56,.19,.008],[0,0,0]))
-        for i,x in enumerate([-.065,.065]):piece(carriage,f'proposed_bridge_bracket_{i}','bridge_bracket',[x,.047,.039],color='dark')
+        compact=f.get('arm_mount')=='compact_so101' and kind=='so101'
+        bridgepos=[0,.116,.064] if compact else [0,.130,.082]
+        piece(carriage,'proposed_arm_bridge','arm_bridge',bridgepos,color='metal',box=([.36,.13,.006] if compact else [.56,.19,.008],[0,0,0]))
+        for i,x in enumerate([-.085,.085] if compact else [-.065,.065]):
+            piece(carriage,f'proposed_bridge_bracket_{i}','bridge_bracket',[x,.045,.026] if compact else [x,.047,.039],color='dark')
+            if compact:piece(carriage,f'proposed_bridge_web_{i}','bridge_web',[x,.051,.055],color='dark')
         for side,sign in [('left',-1),('right',1)]:
             rc=cfg['robots'][kind]
-            piece(carriage,'proposed_'+side+'_adapter','adapter',[sign*rc['base_spacing_m']/2,rc['base_y_m'],.090],color='accent')
+            if not compact:piece(carriage,'proposed_'+side+'_adapter','adapter',[sign*rc['base_spacing_m']/2,rc['base_y_m'],.090],color='accent')
             append_robot(root,carriage,kind,side,cfg)
             # Base origins in source files differ; relocate only the known root
             # appended last (adapter is already a separate explicit solid).
             rootbody=list(carriage)[-1]
-            rootbody.set('pos',vec([sign*rc['base_spacing_m']/2,rc['base_y_m'],.094]))
+            rootbody.set('pos',vec([sign*rc['base_spacing_m']/2,rc['base_y_m'],.0694 if compact else .094]))
     add(root.find('actuator'),'position',name='lift_motor',joint='lift_z',kp='8000',kv='180',forcerange=vec([-f['lift_force_limit_N'],f['lift_force_limit_N']]),ctrlrange=vec(f['lift_range_m']))
     if f.get('counterweighted'):
         from lift_counterweight import assemble
