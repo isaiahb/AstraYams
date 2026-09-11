@@ -1,0 +1,277 @@
+{
+  "scope": "Record separate fit/hold/release evidence, without treating stability as success.",
+  "container_center_m": [
+    -0.195,
+    0.171,
+    0.4965
+  ],
+  "frame_inner_plane_x_m": -0.29,
+  "nominal_left_frame_clearance_mm": 13.499998748302211,
+  "clearance_limiting_part": "pack_deck",
+  "cases": [
+    {
+      "name": "hold-gate-v2",
+      "grip_stable": true,
+      "berry_center_inside_container": false,
+      "net_empty": false,
+      "release_demonstrated": false,
+      "gate_max_deg": 17.067683396646277,
+      "result": {
+        "scope": "Finite-torque scripted commissioning, with no runtime position overwrites.",
+        "seconds": 1.5,
+        "wall_s": 4.848427167162299,
+        "dt": 0.00025,
+        "grip_torque_cap_Nm": 0.35,
+        "grip_patch_torsion_length_mm": 0,
+        "plan": "False",
+        "initial_path": "/Users/isaiah/Documents/BallahTech/AstraFactory/runs/tower-lift-v9/gate-bench/initial.npz",
+        "peak_forces_N": {
+          "grip": 12.139329316595143,
+          "cam": 0.0,
+          "berry": 1.1076782670063354,
+          "berry_fixture": 0.0,
+          "robot_fixture": 0.0
+        },
+        "maximum_grip_translation_error_mm": 0.08919249952197916,
+        "maximum_grip_rotation_error_deg": 0.0716371462129113,
+        "final": {
+          "time_s": 1.5000000000000846,
+          "grip_translation_error_mm": 0.031011351898917218,
+          "grip_rotation_error_deg": 0.023478679689162327,
+          "gate_deg": -0.0005897706379231373,
+          "net_center": [
+            0.012016147747905614,
+            0.4511024279054604,
+            0.7886955227921446
+          ],
+          "berry_com": [
+            0.014666110216703668,
+            0.45895703267034094,
+            0.7813335121831422
+          ],
+          "berry_in_net_frame": [
+            0.007775303572576903,
+            -0.0026408583363368814,
+            -0.007448948845794245
+          ],
+          "forces_N": {
+            "grip": 9.63401291264958,
+            "cam": 0.0,
+            "berry": 0.1955481764534777,
+            "berry_fixture": 0.0,
+            "robot_fixture": 0.0
+          },
+          "minimum_contact_distance_m": -9.548289097441177e-07,
+          "max_joint_speed_rad_s": 3.109732006785401e-06,
+          "warnings": 0
+        },
+        "warnings": 0,
+        "qualification": "Commissioning evidence only; no learned policy, hardware calibration or bruise-safe claim."
+      }
+    },
+    {
+      "name": "hold-refined-dt",
+      "grip_stable": true,
+      "berry_center_inside_container": false,
+      "net_empty": false,
+      "release_demonstrated": false,
+      "gate_max_deg": 16.99204855282401,
+      "result": {
+        "scope": "Finite-torque scripted commissioning, with no runtime position overwrites.",
+        "seconds": 1.5,
+        "wall_s": 13.016029292019084,
+        "dt": 0.000125,
+        "grip_torque_cap_Nm": 0.35,
+        "grip_patch_torsion_length_mm": 0,
+        "plan": "False",
+        "initial_path": "/Users/isaiah/Documents/BallahTech/AstraFactory/runs/tower-lift-v9/gate-bench/initial.npz",
+        "peak_forces_N": {
+          "grip": 12.11292978972283,
+          "cam": 0.0,
+          "berry": 0.9978400974480206,
+          "berry_fixture": 0.0,
+          "robot_fixture": 0.0,
+          "net_fixture": 0.0,
+          "interarm": 0.0
+        },
+        "force_sampling_hz": 50.0,
+        "maximum_grip_translation_error_mm": 0.08580734817209183,
+        "maximum_grip_rotation_error_deg": 0.06933007755065625,
+        "final": {
+          "time_s": 1.4999999999998486,
+          "grip_translation_error_mm": 0.029854253640928807,
+          "grip_rotation_error_deg": 0.022977397668026558,
+          "gate_deg": -0.0003693651431341582,
+          "net_center": [
+            0.012015477949319018,
+            0.45110379219602476,
+            0.7886978576045152
+          ],
+          "berry_com": [
+            0.01562704789141963,
+            0.4605487469541547,
+            0.7817022994319553
+          ],
+          "berry_in_net_frame": [
+            0.009370417790868826,
+            -0.003600930340975206,
+            -0.007100493861661156
+          ],
+          "forces_N": {
+            "grip": 9.66557663558195,
+            "cam": 0.0,
+            "berry": 0.1945432777663014,
+            "berry_fixture": 0.0,
+            "robot_fixture": 0.0,
+            "net_fixture": 0.0,
+            "interarm": 0.0
+          },
+          "minimum_contact_distance_m": -9.562241101903807e-07,
+          "max_joint_speed_rad_s": 1.064138870828881e-05,
+          "warnings": 0
+        },
+        "warnings": 0,
+        "qualification": "Commissioning evidence only; no learned policy, hardware calibration or bruise-safe claim."
+      }
+    },
+    {
+      "name": "corrected-release-final",
+      "grip_stable": false,
+      "berry_center_inside_container": false,
+      "net_empty": false,
+      "release_demonstrated": false,
+      "gate_max_deg": 55.51446574130948,
+      "result": {
+        "scope": "Finite-torque scripted commissioning, with no runtime position overwrites.",
+        "seconds": 9.0,
+        "wall_s": 43.17561429110356,
+        "dt": 0.00025,
+        "grip_torque_cap_Nm": 0.7,
+        "grip_patch_torsion_length_mm": 0,
+        "plan": "True",
+        "initial_path": "runs/tower-lift-v9/gate-bench/release-initial.npz",
+        "peak_forces_N": {
+          "grip": 62.81650306656526,
+          "cam": 7.055421019199165,
+          "berry": 1.5472093279149224,
+          "berry_fixture": 0.0,
+          "robot_fixture": 0.0,
+          "net_fixture": 12.233945294025798,
+          "interarm": 0.0
+        },
+        "force_sampling_hz": 50.0,
+        "maximum_grip_translation_error_mm": 13.4367142142123,
+        "maximum_grip_rotation_error_deg": 11.14215098962657,
+        "final": {
+          "time_s": 9.0000000000017,
+          "grip_translation_error_mm": 13.4367142142123,
+          "grip_rotation_error_deg": 11.14215098962657,
+          "gate_deg": -0.000709741214177666,
+          "net_center": [
+            -0.20450931047550258,
+            0.1805323214850196,
+            0.6345377460298836
+          ],
+          "berry_com": [
+            -0.1986733450189651,
+            0.19215608332668202,
+            0.6262431346479442
+          ],
+          "berry_in_net_frame": [
+            -0.013173953855252836,
+            -0.005797771577971258,
+            -0.005550107628534816
+          ],
+          "forces_N": {
+            "grip": 18.599258852857943,
+            "cam": 0.0,
+            "berry": 0.19363488733912276,
+            "berry_fixture": 0.0,
+            "robot_fixture": 0.0,
+            "net_fixture": 0.0,
+            "interarm": 0.0
+          },
+          "minimum_contact_distance_m": -1.550557919831789e-06,
+          "max_joint_speed_rad_s": 1.7248418117420466e-05,
+          "warnings": 0
+        },
+        "warnings": 0,
+        "qualification": "Commissioning evidence only; no learned policy, hardware calibration or bruise-safe claim."
+      }
+    },
+    {
+      "name": "ground-contact-check",
+      "grip_stable": true,
+      "berry_center_inside_container": false,
+      "net_empty": true,
+      "release_demonstrated": false,
+      "gate_max_deg": 0.0,
+      "result": {
+        "scope": "Finite-torque scripted commissioning, with no runtime position overwrites.",
+        "seconds": 1.0,
+        "wall_s": 1.9984282080549747,
+        "dt": 0.00025,
+        "grip_torque_cap_Nm": 0.35,
+        "grip_patch_torsion_length_mm": 0,
+        "plan": "False",
+        "initial_path": "runs/tower-lift-v9/gate-bench/ground-initial.npz",
+        "peak_forces_N": {
+          "grip": 11.623223394744986,
+          "cam": 0.0,
+          "berry": 1.0635715799437042,
+          "berry_fixture": 0.0,
+          "robot_fixture": 0.0,
+          "net_fixture": 0.0,
+          "interarm": 0.0
+        },
+        "force_sampling_hz": 50.0,
+        "maximum_grip_translation_error_mm": 0.00588091690968496,
+        "maximum_grip_rotation_error_deg": 0.006792381033546196,
+        "final": {
+          "time_s": 0.9999999999999176,
+          "grip_translation_error_mm": 0.00588091690968496,
+          "grip_rotation_error_deg": 0.006792381033546196,
+          "gate_deg": -0.0013165760691072992,
+          "net_center": [
+            0.011981033630052861,
+            0.4510798410622506,
+            0.7887515014548391
+          ],
+          "berry_com": [
+            0.44598955612304914,
+            0.646587078535606,
+            0.01633218272848166
+          ],
+          "berry_in_net_frame": [
+            0.18695254296324995,
+            -0.43377140726019864,
+            -0.7746671506949221
+          ],
+          "forces_N": {
+            "grip": 11.622876435595112,
+            "cam": 0.0,
+            "berry": 0.17681812959853468,
+            "berry_fixture": 0.0,
+            "robot_fixture": 0.0,
+            "net_fixture": 0.0,
+            "interarm": 0.0
+          },
+          "minimum_contact_distance_m": -1.9184989847806366e-05,
+          "max_joint_speed_rad_s": 1.6312483028670636e-06,
+          "warnings": 0
+        },
+        "warnings": 0,
+        "qualification": "Commissioning evidence only; no learned policy, hardware calibration or bruise-safe claim."
+      }
+    }
+  ],
+  "release_ready": false,
+  "force_evidence": "Contact-force peaks are sampled at 50 Hz; not injury thresholds or guaranteed peak loads.",
+  "further_work": [
+    "Mechanically resist net twisting at its interface or support it in a docking fixture.",
+    "Open the floor fully above the container without bottom/wall contact; evaluate side actuation.",
+    "Plan and check cutter retreat and lower-arm transport together.",
+    "Specify spring, travel stop, shaft retention, roller axle and actual jaw interface hardware.",
+    "Measure and calibrate forces, friction, textile stiffness and fruit damage response."
+  ]
+}

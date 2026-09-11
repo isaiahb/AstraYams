@@ -12,18 +12,18 @@ def rounded(w,l,h,r=3):
     return cq.Workplane('XY').box(w,l,h,centered=(True,True,False)).edges('|Z').fillet(r)
 
 
-def parts():
+def parts(shelf_inboard_mm=0, shelf_drop_mm=0):
     p={}
     # Mount plate reuses four photo-model M5 positions on the lower faceplate.
     # It sits in front of that plate, laterally clear of the robot mounting sole.
-    back=cq.Workplane('XY').box(205,4,170).translate((-177.5,44,-30)).edges('|Y').fillet(4)
+    back=cq.Workplane('XY').box(205-shelf_inboard_mm,4,170+shelf_drop_mm).translate((-177.5+shelf_inboard_mm/2,44,-30-shelf_drop_mm/2)).edges('|Y').fillet(4)
     for x in [-102,-85]:
         for z in [-40,40]:
             back=back.cut(cq.Workplane('XZ').center(x,z).circle(2.8).extrude(60,both=True))
     p['pack_mount_plate']=back
     # Two side webs remain outside the carrier path. The load goes into the
     # carriage plate/guide shoes, never through the plastic robot base.
-    p['pack_web']=cq.Workplane('YZ').polyline([(46,-108),(288,-108),(46,-26)]).close().extrude(3)
+    p['pack_web']=cq.Workplane('YZ').polyline([(46,-108-shelf_drop_mm),(288,-108-shelf_drop_mm),(46,-26)]).close().extrude(3)
     p['pack_deck']=rounded(163,246,4,5)
     # Fore/aft carrier guides have an open front end for supported exchange.
     p['pack_guide']=cq.Workplane('XY').box(3,224,6,centered=(True,True,False))

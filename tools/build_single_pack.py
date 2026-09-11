@@ -19,18 +19,22 @@ def vec(v):return ' '.join(f'{x:.10g}' for x in np.asarray(v).ravel())
 def add(p,t,**kw):return E.SubElement(p,t,{k:str(v) for k,v in kw.items()})
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--out',type=Path,default=ROOT/'runs/tower-lift-v8');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--out',type=Path,default=ROOT/'runs/tower-lift-v8')
+    parser.add_argument('--inboard-mm',type=float,default=0)
+    parser.add_argument('--drop-mm',type=float,default=0)
+    args=parser.parse_args()
+    shift=args.inboard_mm*.001;drop=args.drop_mm*.001
     out=args.out.resolve();source=ROOT/'runs/tower-lift-v7';folder=out/'so101'
     folder.mkdir(parents=True,exist_ok=True);shutil.copytree(source/'cad',out/'cad',dirs_exist_ok=True)
     shutil.copytree(source/'references',out/'references',dirs_exist_ok=True)
     shutil.copytree(source/'end-effector',out/'end-effector',dirs_exist_ok=True)
-    cfg=json.loads((source/'config.json').read_text());cfg['revision']='v8-single-clamshell-shelf'
-    cfg['packing']=dict(concept='A',container_count=1,shelf_center_m=[-.205,.171,-.112],container_envelope_mm=[123,186,81.8],
+    cfg=json.loads((source/'config.json').read_text());cfg['revision']=out.name.replace('tower-lift-','')+'-single-clamshell-shelf'
+    cfg['packing']=dict(concept='A',container_count=1,shelf_center_m=[-.205+shift,.171,-.112-drop],shelf_inboard_mm=args.inboard_mm,shelf_drop_mm=args.drop_mm,container_envelope_mm=[123,186,81.8],
         container_source='https://pactivevergreen.com/products/yyy9772',container_cad='Approximate envelope, not supplier CAD',
         carrier_size_mm=[139,208,11],lid_open_deg=95,loaded_container_handling='Shelf and future supported dock only; arms never lift filled containers',
         status='CAD assembly and offline reach checks; no packing, net grasp, textile, gate or exchange physics validation')
     (out/'config.json').write_text(json.dumps(cfg,indent=2)+'\n')
-    shapes=parts();records=json.loads((source/'cad/parts.json').read_text())
+    shapes=parts(args.inboard_mm,args.drop_mm);records=json.loads((source/'cad/parts.json').read_text())
     for name,shape in shapes.items():
         assert shape.val().isValid(),name
         cq.exporters.export(shape,str(out/'cad'/(name+'.step')))
@@ -58,8 +62,8 @@ def main():
             add(b,'inertial',pos=vec(mesh.center_mass),mass=mass,fullinertia=vec([I[0,0],I[1,1],I[2,2],I[0,1],I[0,2],I[1,2]]))
         instances.append((name,part));return b
     piece(lower,'pack_mount_plate','pack_mount_plate',density=2700)
-    for k,x in enumerate([-.283,-.130]):piece(lower,'pack_web_'+str(k),'pack_web',[x,0,0],density=2700)
-    deck=piece(lower,'pack_deck','pack_deck',[-.205,.171,-.112],density=2700)
+    for k,x in enumerate([-.283,-.130]):piece(lower,'pack_web_'+str(k),'pack_web',[x+shift,0,0],density=2700)
+    deck=piece(lower,'pack_deck','pack_deck',[-.205+shift,.171,-.112-drop],density=2700)
     for k,x in enumerate([-.072,.072]):piece(deck,'pack_guide_'+str(k),'pack_guide',[x,0,.004],color='dark')
     piece(deck,'pack_rear_stop','pack_rear_stop',[0,-.112,.004],color='dark')
     piece(deck,'pack_latch','pack_latch',[0,.119,.0115],color='dark')
@@ -70,8 +74,8 @@ def main():
     lid=piece(box,'pack_lid','pack_lid',[-.063,0,.078],Rotation.from_euler('y',-95,degrees=True),color='clear',density=1380)
     for k,y in enumerate([-.065,.065]):piece(box,'pack_hinge_'+str(k),'pack_hinge',[-.063,y,.078],Rotation.from_euler('x',90,degrees=True),color='clear',density=1380)
     piece(carrier,'pack_lid_clip','pack_lid_clip',[-.064,-.080,.072],color='teal')
-    piece(lower,'pack_net_dock','pack_net_dock',[-.205,.079,-.159],color='teal')
-    piece(lower,'pack_dock_support','pack_dock_support',[-.205,.062,-.127],color='teal',density=2700)
+    piece(lower,'pack_net_dock','pack_net_dock',[-.205+shift,.079,-.159-drop],color='teal')
+    piece(lower,'pack_dock_support','pack_dock_support',[-.205+shift,.062,-.127-drop],color='teal',density=2700)
     # Four explicit mounting bolts enter existing holes; grip length/grade and
     # receiver thread engagement need hardware verification.
     for x in [-.102,-.085]:
