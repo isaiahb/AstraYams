@@ -9,9 +9,12 @@ ROOT=Path(__file__).resolve().parents[1];BENCH=ROOT/'runs/tower-lift-v9/gate-ben
 def main(cases):
     exporter.P=BENCH;exporter.export(cases)
     m=mj.MjModel.from_xml_path(str(BENCH/'scene.xml'))
+    notes_path=BENCH/'review-notes.json'
+    notes=json.loads(notes_path.read_text()) if notes_path.exists() else {}
     for case in cases:
         folder=BENCH/case;z=np.load(folder/'rollout.npz');p=json.loads((folder/'replay.json').read_text());tr=json.loads((folder/'trace.json').read_text())
         p['case_name']=case
+        p['verdict']=notes.get(case,'Unqualified commissioning trial. Inspect the recorded contacts, tool retention and final berry position before treating this as a successful pack.')
         p.update(scope='Scripted finite-torque contact commissioning. Free tool, passive hinge and deformable net. No PPO or calibrated fruit-damage claim.',edges=m.flex_elem.reshape(-1,2).tolist(),result=json.loads((folder/'result.json').read_text()))
         for f,i in zip(p['frames'],range(0,len(z['t']),2)):
             f['net']=z['flex_vertices'][i].round(7).tolist();f['metrics']=tr[i]
@@ -19,7 +22,8 @@ def main(cases):
             if o['body'] in ['pack_clamshell','pack_lid']:o['opacity']=.25
         (folder/'replay.json').write_text(json.dumps(p,separators=(',',':')))
     (BENCH/'cases.json').write_text(json.dumps(cases))
-    shutil.copy2(ROOT/'tools/templates/packing-gate-review.html',BENCH/'index.html')
-    (BENCH.parent/'index.html').write_text('''<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=gate-bench/index.html"><a href="gate-bench/index.html">Open V9 contact commissioning</a>''')
+    template=(ROOT/'tools/templates/packing-gate-review.html').read_text().replace('@@REVISION@@',BENCH.parent.name.replace('tower-lift-','').upper())
+    (BENCH/'index.html').write_text(template)
+    (BENCH.parent/'index.html').write_text('''<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=gate-bench/index.html"><a href="gate-bench/index.html">Open contact commissioning</a>''')
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('cases',nargs='+');a=p.parse_args();main(a.cases)
+    p=argparse.ArgumentParser();p.add_argument('--bench',type=Path,default=BENCH);p.add_argument('cases',nargs='+');a=p.parse_args();BENCH=a.bench.resolve();main(a.cases)

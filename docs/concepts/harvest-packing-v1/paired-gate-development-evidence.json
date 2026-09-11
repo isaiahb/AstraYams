@@ -1,0 +1,1238 @@
+[
+  {
+    "revision": 9,
+    "case": "corrected-release-final",
+    "result": {
+      "scope": "Finite-torque scripted commissioning, with no runtime position overwrites.",
+      "seconds": 9.0,
+      "wall_s": 43.17561429110356,
+      "dt": 0.00025,
+      "grip_torque_cap_Nm": 0.7,
+      "grip_patch_torsion_length_mm": 0,
+      "plan": "True",
+      "initial_path": "runs/tower-lift-v9/gate-bench/release-initial.npz",
+      "peak_forces_N": {
+        "grip": 62.81650306656526,
+        "cam": 7.055421019199165,
+        "berry": 1.5472093279149224,
+        "berry_fixture": 0.0,
+        "robot_fixture": 0.0,
+        "net_fixture": 12.233945294025798,
+        "interarm": 0.0
+      },
+      "force_sampling_hz": 50.0,
+      "maximum_grip_translation_error_mm": 13.4367142142123,
+      "maximum_grip_rotation_error_deg": 11.14215098962657,
+      "final": {
+        "time_s": 9.0000000000017,
+        "grip_translation_error_mm": 13.4367142142123,
+        "grip_rotation_error_deg": 11.14215098962657,
+        "gate_deg": -0.000709741214177666,
+        "net_center": [
+          -0.20450931047550258,
+          0.1805323214850196,
+          0.6345377460298836
+        ],
+        "berry_com": [
+          -0.1986733450189651,
+          0.19215608332668202,
+          0.6262431346479442
+        ],
+        "berry_in_net_frame": [
+          -0.013173953855252836,
+          -0.005797771577971258,
+          -0.005550107628534816
+        ],
+        "forces_N": {
+          "grip": 18.599258852857943,
+          "cam": 0.0,
+          "berry": 0.19363488733912276,
+          "berry_fixture": 0.0,
+          "robot_fixture": 0.0,
+          "net_fixture": 0.0,
+          "interarm": 0.0
+        },
+        "minimum_contact_distance_m": -1.550557919831789e-06,
+        "max_joint_speed_rad_s": 1.7248418117420466e-05,
+        "warnings": 0
+      },
+      "warnings": 0,
+      "qualification": "Commissioning evidence only; no learned policy, hardware calibration or bruise-safe claim."
+    }
+  },
+  {
+    "revision": 10,
+    "case": "side-actuation-v1",
+    "result": {
+      "scope": "Finite-torque scripted commissioning, with no runtime position overwrites.",
+      "seconds": 14.0,
+      "wall_s": 49.892139208037406,
+      "dt": 0.00025,
+      "grip_torque_cap_Nm": 0.7,
+      "grip_patch_torsion_length_mm": 0,
+      "plan": "True",
+      "initial_path": "/Users/isaiah/Documents/BallahTech/AstraFactory/runs/tower-lift-v10/gate-bench/initial.npz",
+      "peak_forces_N": {
+        "grip": 22.38335962457326,
+        "cam": 0.0,
+        "berry": 0.9454741791777282,
+        "berry_fixture": 0.0,
+        "robot_fixture": 0.0,
+        "net_fixture": 0.0,
+        "interarm": 0.0
+      },
+      "force_sampling_hz": 50.0,
+      "maximum_grip_translation_error_mm": 9.112590452021072,
+      "maximum_grip_rotation_error_deg": 7.546888118154941,
+      "final": {
+        "time_s": 13.999999999990047,
+        "grip_translation_error_mm": 6.998340054085543,
+        "grip_rotation_error_deg": 5.798542135867518,
+        "gate_deg": -0.0006016166553719322,
+        "net_center": [
+          -0.1648014899075161,
+          0.2034718438413693,
+          0.60174020173785
+        ],
+        "berry_com": [
+          -0.16246871965639645,
+          0.21838727801848434,
+          0.5936686106614159
+        ],
+        "berry_in_net_frame": [
+          -0.010112622164903768,
+          -0.013200096937103197,
+          -0.004068770089659654
+        ],
+        "forces_N": {
+          "grip": 18.58557586117937,
+          "cam": 0.0,
+          "berry": 0.20089658271440514,
+          "berry_fixture": 0.0,
+          "robot_fixture": 0.0,
+          "net_fixture": 0.0,
+          "interarm": 0.0
+        },
+        "minimum_contact_distance_m": -1.3960954725466716e-06,
+        "max_joint_speed_rad_s": 1.170495829026659e-05,
+        "warnings": 0
+      },
+      "warnings": 0,
+      "qualification": "Commissioning evidence only; no learned policy, hardware calibration or bruise-safe claim."
+    }
+  },
+  {
+    "revision": 11,
+    "case": "outboard-release-v1",
+    "result": {
+      "scope": "Finite-torque scripted commissioning, with no runtime position overwrites.",
+      "seconds": 9.0,
+      "wall_s": 45.78445587493479,
+      "dt": 0.00025,
+      "grip_torque_cap_Nm": 0.7,
+      "grip_patch_torsion_length_mm": 0,
+      "plan": "True",
+      "initial_path": "runs/tower-lift-v11/gate-bench/release-initial.npz",
+      "peak_forces_N": {
+        "grip": 26.482981788487905,
+        "cam": 1.3725467077055873,
+        "berry": 0.8408285767572976,
+        "berry_fixture": 0.0,
+        "robot_fixture": 0.0,
+        "net_fixture": 0.0,
+        "interarm": 0.0
+      },
+      "force_sampling_hz": 50.0,
+      "maximum_grip_translation_error_mm": 34.516292245053535,
+      "maximum_grip_rotation_error_deg": 28.855694761158066,
+      "final": {
+        "time_s": 9.0000000000017,
+        "grip_translation_error_mm": 34.516292245053535,
+        "grip_rotation_error_deg": 28.855694761158066,
+        "gate_deg": -0.0006701582941683589,
+        "net_center": [
+          -0.21396924161440467,
+          0.19980404324288936,
+          0.6326157933492709
+        ],
+        "berry_com": [
+          -0.20837392386729686,
+          0.2114393682921804,
+          0.6253667973862582
+        ],
+        "berry_in_net_frame": [
+          -0.010385496230089754,
+          -0.009520362133884916,
+          -0.004554172269470541
+        ],
+        "forces_N": {
+          "grip": 19.478505837602192,
+          "cam": 0.0,
+          "berry": 0.20560250748965198,
+          "berry_fixture": 0.0,
+          "robot_fixture": 0.0,
+          "net_fixture": 0.0,
+          "interarm": 0.0
+        },
+        "minimum_contact_distance_m": -1.401228225398824e-06,
+        "max_joint_speed_rad_s": 5.8145850871278905e-05,
+        "warnings": 0
+      },
+      "warnings": 0,
+      "qualification": "Commissioning evidence only; no learned policy, hardware calibration or bruise-safe claim."
+    }
+  },
+  {
+    "revision": 12,
+    "case": "paired-release-impact-audit",
+    "result": {
+      "scope": "Finite-torque scripted commissioning, with no runtime position overwrites.",
+      "seconds": 9.0,
+      "wall_s": 27.938556582899764,
+      "dt": 0.00025,
+      "grip_torque_cap_Nm": 0.7,
+      "grip_patch_torsion_length_mm": 0,
+      "plan": "True",
+      "initial_path": "runs/tower-lift-v12/gate-bench/release-initial.npz",
+      "peak_forces_N": {
+        "grip": 25.242469770811077,
+        "cam": 3.9079600669045913,
+        "berry": 10.083139032859439,
+        "berry_fixture": 10.083139032859439,
+        "robot_fixture": 0.0,
+        "net_fixture": 0.0,
+        "interarm": 0.0
+      },
+      "force_sampling_hz": 50.0,
+      "solver_step_fruit_contacts": {
+        "sampling_hz": 4000.0,
+        "peak_berry_force_N": 10.083139032859439,
+        "peak_fixture_force_N": 10.083139032859439,
+        "peak_fixture_event": {
+          "time_s": 2.539749999999952,
+          "force_N": 10.083139032859439,
+          "parts": [
+            "container_floor"
+          ],
+          "berry_speed_m_s": 0.8229860199367668
+        },
+        "first_fixture_event": {
+          "time_s": 2.539749999999952,
+          "force_N": 10.083139032859439,
+          "parts": [
+            "container_floor"
+          ],
+          "berry_speed_m_s": 0.8229860199367668
+        }
+      },
+      "maximum_grip_translation_error_mm": 3.178697485113221,
+      "maximum_grip_rotation_error_deg": 2.2946843784300555,
+      "final": {
+        "time_s": 9.0000000000017,
+        "grip_translation_error_mm": 0.7596044253403412,
+        "grip_rotation_error_deg": 0.5452884669038661,
+        "gate_deg": -0.0011636619764564284,
+        "net_center": [
+          -0.19537228283459404,
+          0.17169331295963267,
+          0.6348233515578984
+        ],
+        "berry_com": [
+          -0.23038655592135776,
+          0.10235828606549416,
+          0.4928507996234638
+        ],
+        "berry_in_net_frame": [
+          0.04512419108411224,
+          0.017444039545109206,
+          -0.1544314205086981
+        ],
+        "forces_N": {
+          "grip": 18.532365274242657,
+          "cam": 0.0,
+          "berry": 0.18696542007020223,
+          "berry_fixture": 0.18696542007020223,
+          "robot_fixture": 0.0,
+          "net_fixture": 0.0,
+          "interarm": 0.0
+        },
+        "minimum_contact_distance_m": -1.4393795221790428e-06,
+        "max_joint_speed_rad_s": 1.696407840909758e-06,
+        "warnings": 0
+      },
+      "warnings": 0,
+      "qualification": "Commissioning evidence only; no learned policy, hardware calibration or bruise-safe claim."
+    },
+    "fixture_fit": {
+      "scope": "Exact-solid fit checks for roller supports versus the fixed packing fixture.",
+      "checks": [
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_mount_plate",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_web_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_web_1",
+          "intersection_mm3": 420.000000000002
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_guide_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_guide_1",
+          "intersection_mm3": 420.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_rear_stop",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_latch",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_latch_pin",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_carrier",
+          "intersection_mm3": 3579.9491781734732
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_liner",
+          "intersection_mm3": 897.2742121864904
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_clamshell",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_lid",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_lid_clip",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_mount_plate",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_web_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_web_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_guide_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_guide_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_rear_stop",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_latch",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_latch_pin",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_carrier",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_liner",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_clamshell",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_lid",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_lid_clip",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_mount_plate",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_web_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_web_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_guide_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_guide_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_rear_stop",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_latch",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_latch_pin",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_carrier",
+          "intersection_mm3": 6541.720716191561
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_liner",
+          "intersection_mm3": 167.65886755479573
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_clamshell",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_lid",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_lid_clip",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_mount_plate",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_web_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_web_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_guide_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_guide_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_rear_stop",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_latch",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_latch_pin",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_carrier",
+          "intersection_mm3": 344.1033207045946
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_liner",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_clamshell",
+          "intersection_mm3": 1.202000891247294
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_lid",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_lid_clip",
+          "intersection_mm3": 0.0
+        }
+      ],
+      "maximum_intersection_mm3": 6541.720716191561,
+      "passed": false,
+      "minimum_static_pack_x_mm": -276.5,
+      "exclusions": "Intended fastener/thread engagement and post-to-foot joints are excluded. No strength or dynamic clearance certification."
+    }
+  },
+  {
+    "revision": 13,
+    "case": "mounted-release",
+    "result": {
+      "scope": "Finite-torque scripted commissioning, with no runtime position overwrites.",
+      "seconds": 9.0,
+      "wall_s": 28.260753249982372,
+      "dt": 0.00025,
+      "grip_torque_cap_Nm": 0.7,
+      "grip_patch_torsion_length_mm": 0,
+      "plan": "True",
+      "initial_path": "runs/tower-lift-v13/gate-bench/release-initial.npz",
+      "peak_forces_N": {
+        "grip": 24.385091450657047,
+        "cam": 3.553201091146448,
+        "berry": 1.516648510559787,
+        "berry_fixture": 1.516648510559787,
+        "robot_fixture": 0.0,
+        "net_fixture": 0.0,
+        "interarm": 0.0
+      },
+      "force_sampling_hz": 50.0,
+      "solver_step_fruit_contacts": {
+        "sampling_hz": 4000.0,
+        "peak_berry_force_N": 9.996192621813789,
+        "peak_fixture_force_N": 9.996192621813789,
+        "peak_fixture_event": {
+          "time_s": 2.5279999999999587,
+          "force_N": 9.996192621813789,
+          "parts": [
+            "container_floor"
+          ],
+          "berry_speed_m_s": 0.8205029931952126
+        },
+        "first_fixture_event": {
+          "time_s": 2.5279999999999587,
+          "force_N": 9.996192621813789,
+          "parts": [
+            "container_floor"
+          ],
+          "berry_speed_m_s": 0.8205029931952126
+        }
+      },
+      "maximum_grip_translation_error_mm": 3.174261361061426,
+      "maximum_grip_rotation_error_deg": 2.295036653929917,
+      "final": {
+        "time_s": 9.0000000000017,
+        "grip_translation_error_mm": 0.753380739585219,
+        "grip_rotation_error_deg": 0.540324268580589,
+        "gate_deg": -0.0011656303187328667,
+        "net_center": [
+          -0.19536240623927636,
+          0.17169125171093041,
+          0.6348237451212895
+        ],
+        "berry_com": [
+          -0.220245872023295,
+          0.18813341396245697,
+          0.4922766457928104
+        ],
+        "berry_in_net_frame": [
+          -0.024924646997164852,
+          -0.031020515830621893,
+          -0.14009174374516872
+        ],
+        "forces_N": {
+          "grip": 21.28501493191316,
+          "cam": 0.0,
+          "berry": 0.17636987022380912,
+          "berry_fixture": 0.17636987022380912,
+          "robot_fixture": 0.0,
+          "net_fixture": 0.0,
+          "interarm": 0.0
+        },
+        "minimum_contact_distance_m": -1.6490202188586325e-06,
+        "max_joint_speed_rad_s": 1.5906100477315874e-06,
+        "warnings": 0
+      },
+      "warnings": 0,
+      "qualification": "Commissioning evidence only; no learned policy, hardware calibration or bruise-safe claim."
+    },
+    "fixture_fit": {
+      "scope": "Exact-solid fit checks for roller supports versus the fixed packing fixture.",
+      "checks": [
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_mount_plate",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_web_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_web_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_guide_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_guide_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_rear_stop",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_latch",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_latch_pin",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_carrier",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_liner",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_clamshell",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_lid",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_lid_clip",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_mount_plate",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_web_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_web_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_guide_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_guide_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_rear_stop",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_latch",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_latch_pin",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_carrier",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_liner",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_clamshell",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_lid",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_lid_clip",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_mount_plate",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_web_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_web_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_guide_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_guide_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_rear_stop",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_latch",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_latch_pin",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_carrier",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_liner",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_clamshell",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_lid",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_lid_clip",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_mount_plate",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_web_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_web_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_guide_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_guide_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_rear_stop",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_latch",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_latch_pin",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_carrier",
+          "intersection_mm3": 674.8774394002451
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_liner",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_clamshell",
+          "intersection_mm3": 1.202000891247294
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_lid",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_lid_clip",
+          "intersection_mm3": 0.0
+        }
+      ],
+      "maximum_intersection_mm3": 674.8774394002451,
+      "passed": false,
+      "minimum_static_pack_x_mm": -276.5,
+      "exclusions": "Intended fastener/thread engagement and post-to-foot joints are excluded. No strength or dynamic clearance certification."
+    }
+  },
+  {
+    "revision": 14,
+    "case": "release-contact-audit",
+    "result": {
+      "scope": "Finite-torque scripted commissioning, with no runtime position overwrites.",
+      "seconds": 9.0,
+      "wall_s": 27.852454708889127,
+      "dt": 0.00025,
+      "grip_torque_cap_Nm": 0.7,
+      "grip_patch_torsion_length_mm": 0,
+      "plan": "True",
+      "initial_path": "runs/tower-lift-v14/gate-bench/release-initial.npz",
+      "peak_forces_N": {
+        "grip": 23.358796682119998,
+        "cam": 2.260949074472097,
+        "berry": 0.8074762090617327,
+        "berry_fixture": 0.6505544352374056,
+        "robot_fixture": 0.0,
+        "net_fixture": 1.0892751003030874,
+        "interarm": 0.0
+      },
+      "force_sampling_hz": 50.0,
+      "solver_step_fruit_contacts": {
+        "sampling_hz": 4000.0,
+        "peak_berry_force_N": 14.612501907146497,
+        "peak_fixture_force_N": 9.580323545986317,
+        "peak_fixture_event": {
+          "time_s": 2.6724999999998786,
+          "force_N": 9.580323545986317,
+          "parts": [
+            "container_floor"
+          ],
+          "berry_speed_m_s": 0.8071717447483371
+        },
+        "first_fixture_event": {
+          "time_s": 2.6724999999998786,
+          "force_N": 9.580323545986317,
+          "parts": [
+            "container_floor"
+          ],
+          "berry_speed_m_s": 0.8071717447483371
+        }
+      },
+      "maximum_grip_translation_error_mm": 3.1746739594299824,
+      "maximum_grip_rotation_error_deg": 2.2929393958004494,
+      "final": {
+        "time_s": 9.0000000000017,
+        "grip_translation_error_mm": 0.80771167119442,
+        "grip_rotation_error_deg": 0.5677403061093141,
+        "gate_deg": -0.001168580888256103,
+        "net_center": [
+          -0.19539556296064248,
+          0.17173621332951605,
+          0.6348245518827347
+        ],
+        "berry_com": [
+          -0.2331304041204499,
+          0.13958431327312582,
+          0.4905998774300627
+        ],
+        "berry_in_net_frame": [
+          0.0189181823708516,
+          -0.008960667981833828,
+          -0.15106365691546658
+        ],
+        "forces_N": {
+          "grip": 21.13869605354616,
+          "cam": 0.0,
+          "berry": 0.17661913647613459,
+          "berry_fixture": 0.17661913647613459,
+          "robot_fixture": 0.0,
+          "net_fixture": 0.0,
+          "interarm": 0.0
+        },
+        "minimum_contact_distance_m": -1.5512151818249688e-06,
+        "max_joint_speed_rad_s": 6.311454743934566e-07,
+        "warnings": 0
+      },
+      "warnings": 0,
+      "qualification": "Commissioning evidence only; no learned policy, hardware calibration or bruise-safe claim."
+    },
+    "fixture_fit": {
+      "scope": "Exact-solid fit checks for roller supports versus the fixed packing fixture.",
+      "checks": [
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_mount_plate",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_web_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_web_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_guide_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_guide_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_rear_stop",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_latch",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_latch_pin",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_carrier",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_liner",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_clamshell",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_lid",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot",
+          "fixture": "pack_lid_clip",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_mount_plate",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_web_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_web_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_guide_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_guide_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_rear_stop",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_latch",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_latch_pin",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_carrier",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_liner",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_clamshell",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_lid",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post",
+          "fixture": "pack_lid_clip",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_mount_plate",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_web_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_web_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_guide_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_guide_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_rear_stop",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_latch",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_latch_pin",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_carrier",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_liner",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_clamshell",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_lid",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_foot_opposite",
+          "fixture": "pack_lid_clip",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_mount_plate",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_web_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_web_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_guide_0",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_guide_1",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_rear_stop",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_latch",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_latch_pin",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_carrier",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_liner",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_clamshell",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_lid",
+          "intersection_mm3": 0.0
+        },
+        {
+          "support": "pack_gate_roller_post_opposite",
+          "fixture": "pack_lid_clip",
+          "intersection_mm3": 0.0
+        }
+      ],
+      "maximum_intersection_mm3": 0.0,
+      "passed": true,
+      "minimum_static_pack_x_mm": -276.5,
+      "exclusions": "Intended fastener/thread engagement and post-to-foot joints are excluded. No strength or dynamic clearance certification."
+    }
+  }
+]

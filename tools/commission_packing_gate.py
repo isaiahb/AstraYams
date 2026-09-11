@@ -24,6 +24,9 @@ def run(seconds=1.5,name='settle',plan=None,dt=.00025,initial_path=None,grip_tor
     d.qpos[:]=initial['qpos'];d.ctrl[:]=initial['ctrl'];mj.mj_forward(m,d)
     net=m.body('right_packing_net').id;wrist=m.body('right_gripper').id;berry=m.body('packing_berry').id
     gate=m.joint('right_gate_hinge').qposadr[0]
+    berry_geom=m.geom('packing_berry_contact').id
+    fixture_geoms={i for i in range(m.ngeom) if (m.geom(i).name or '').startswith(('container_','pack_liner'))}
+    resolved_contacts=dict(sampling_hz=1/dt,peak_berry_force_N=0.,peak_fixture_force_N=0.,peak_fixture_event=None,first_fixture_event=None)
     rel0=d.xmat[wrist].reshape(3,3).T@(d.xpos[net]-d.xpos[wrist])
     rot0=d.xmat[wrist].reshape(3,3).T@d.xmat[net].reshape(3,3)
     base=d.ctrl.copy();trace=[];qs=[];vs=[];cs=[];flex=[];times=[];maxima={};start=time.monotonic()
@@ -40,12 +43,15 @@ def run(seconds=1.5,name='settle',plan=None,dt=.00025,initial_path=None,grip_tor
             f=np.zeros(6);mj.mj_contactForce(m,d,i,f);force=float(np.linalg.norm(f[:3]));joined=' '.join(names)
             if 'robot_geom' in joined and 'pack_net_frame' in joined:forces['grip']+=force
             if any(n.startswith('left_') for n in names) and any(n.startswith('right_') for n in names):forces['interarm']+=force
-            if any(s in joined for s in ['gate_ring','pack_net_frame']) and any(s in joined for s in ['container_','carrier_','pack_liner']):forces['net_fixture']+=force
+            fixture=any(n.startswith(('pack_','container_','carrier_')) for n in names)
+            mobile_net=any(n.startswith(('gate_ring','gate_trigger','right_pack_net_frame')) or n=='textile' for n in names)
+            roller_actuation='gate_trigger' in joined and any(n in ['pack_gate_roller_visual_contact','pack_gate_roller_opposite_visual_contact'] for n in names)
+            if mobile_net and fixture and not roller_actuation:forces['net_fixture']+=force
             if 'gate_trigger' in joined and 'roller' in joined:forces['cam']+=force
             if 'packing_berry_contact' in joined:
                 forces['berry']+=force
                 if any(s in joined for s in ['container_','pack_deck','pack_liner','pack_clamshell']):forces['berry_fixture']+=force
-            if 'robot_geom' in joined and any(s in joined for s in ['container_','pack_gate','pack_mount','pack_deck']):forces['robot_fixture']+=force
+            if 'robot_geom' in joined and fixture:forces['robot_fixture']+=force
             minimum=min(minimum,float(c.dist))
         local=d.xmat[net].reshape(3,3).T@(d.xipos[berry]-d.xpos[net])
         r=dict(time_s=float(d.time),grip_translation_error_mm=float(np.linalg.norm(rel-rel0)*1000),
@@ -65,12 +71,30 @@ def run(seconds=1.5,name='settle',plan=None,dt=.00025,initial_path=None,grip_tor
                     target=np.interp(d.time,[p['time_s'] for p in plan['waypoints']],[p[side][j] for p in plan['waypoints']])
                     d.ctrl[m.actuator(side+'_'+namej).id]=target
         mj.mj_step(m,d)
+        # Resolve short fruit impacts at every solver step. Replay frames and
+        # the other force categories retain their disclosed 50 Hz sampling.
+        total=0.;fixture_total=0.;fixture_names=[]
+        for ci,c in enumerate(d.contact):
+            if c.geom1!=berry_geom and c.geom2!=berry_geom:continue
+            f=np.zeros(6);mj.mj_contactForce(m,d,ci,f);force=float(np.linalg.norm(f[:3]));total+=force
+            other=c.geom2 if c.geom1==berry_geom else c.geom1
+            if other in fixture_geoms:
+                fixture_total+=force
+                if force>.001:fixture_names.append(m.geom(other).name)
+        resolved_contacts['peak_berry_force_N']=max(resolved_contacts['peak_berry_force_N'],total)
+        if fixture_total>resolved_contacts['peak_fixture_force_N'] or (fixture_total>.01 and resolved_contacts['first_fixture_event'] is None):
+            velocity=np.zeros(6);mj.mj_objectVelocity(m,d,mj.mjtObj.mjOBJ_BODY,berry,velocity,0)
+            event=dict(time_s=float(d.time-dt),force_N=fixture_total,parts=sorted(set(fixture_names)),berry_speed_m_s=float(np.linalg.norm(velocity[3:])))
+            if resolved_contacts['first_fixture_event'] is None and fixture_total>.01:resolved_contacts['first_fixture_event']=event
+            if fixture_total>resolved_contacts['peak_fixture_force_N']:
+                resolved_contacts['peak_fixture_force_N']=fixture_total;resolved_contacts['peak_fixture_event']=event
         if step%stride==stride-1:record()
         if step%(stride*25)==0 and step:print(name,round(d.time,2),'grip mm',round(trace[-1]['grip_translation_error_mm'],2),'gate',round(trace[-1]['gate_deg'],1),'berry z',round(d.xipos[berry][2],3),flush=True)
         if d.warning.number.sum():break
     report=dict(scope=__doc__,seconds=seconds,wall_s=time.monotonic()-start,dt=dt,grip_torque_cap_Nm=grip_torque,grip_patch_torsion_length_mm=grip_patch_mm,
         plan=str(plan is not None),initial_path=str(initial_path or BENCH/'initial.npz'),peak_forces_N=maxima,
         force_sampling_hz=1/(stride*dt),
+        solver_step_fruit_contacts=resolved_contacts,
         maximum_grip_translation_error_mm=max(x['grip_translation_error_mm'] for x in trace),
         maximum_grip_rotation_error_deg=max(x['grip_rotation_error_deg'] for x in trace),
         final=trace[-1],warnings=int(d.warning.number.sum()),
@@ -82,5 +106,6 @@ def run(seconds=1.5,name='settle',plan=None,dt=.00025,initial_path=None,grip_tor
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--seconds',type=float,default=1.5);p.add_argument('--name',default='settle');p.add_argument('--plan');p.add_argument('--grip-patch-mm',type=float,default=0);p.add_argument('--grip-torque',type=float,default=.35);p.add_argument('--initial');p.add_argument('--dt',type=float,default=.00025);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--bench',type=Path,default=BENCH);p.add_argument('--seconds',type=float,default=1.5);p.add_argument('--name',default='settle');p.add_argument('--plan');p.add_argument('--grip-patch-mm',type=float,default=0);p.add_argument('--grip-torque',type=float,default=.35);p.add_argument('--initial');p.add_argument('--dt',type=float,default=.00025);a=p.parse_args()
+    BENCH=a.bench.resolve()
     run(a.seconds,a.name,a.plan,a.dt,a.initial,a.grip_torque,a.grip_patch_mm)
