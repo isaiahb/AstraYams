@@ -1,0 +1,34 @@
+{
+  "status": "narrow geometric checks pass; contact physics unvalidated",
+  "max_node_to_parent_centerline_error_m": 1.3593204320890305e-07,
+  "max_branch_or_petiole_to_node_error_m": 0.0,
+  "specimens": [
+    {
+      "id": "A",
+      "root_wall_min_margin_m": 0.02101398112884359,
+      "root_bottom_min_margin_m": 0.029641900000000006,
+      "pot_bottom_to_tray_m": 0.0,
+      "overhead_vertical_margin_m": 0.3784514999999997,
+      "geometry_sha256": "d793c6a62433ca352e0b1a5e3540cac30b8ead3e579074030288886be3d6211b"
+    },
+    {
+      "id": "B",
+      "root_wall_min_margin_m": 0.0177804090757335,
+      "root_bottom_min_margin_m": 0.03563600000000001,
+      "pot_bottom_to_tray_m": 0.0,
+      "overhead_vertical_margin_m": 0.3305172999999997,
+      "geometry_sha256": "791a1b7614c72cbe026458e0f4753f582928d562b67c72bde65d029ec503235a"
+    },
+    {
+      "id": "C",
+      "root_wall_min_margin_m": 0.010934019212102686,
+      "root_bottom_min_margin_m": 0.02146280000000001,
+      "pot_bottom_to_tray_m": 0.0,
+      "overhead_vertical_margin_m": 0.3155562999999997,
+      "geometry_sha256": "020befc604fb8ca1aaf2e605de06f7953708d84ff9645fcad5e3afea8acde9fd"
+    }
+  ],
+  "all_leaf_hardware_collisions_checked": false,
+  "trellis_contact_solved": false,
+  "biological_calibration": false
+}

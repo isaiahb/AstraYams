@@ -10,7 +10,8 @@ The user has requested all three operations: selected leaf removal on standing p
 
 ## Contents
 
-- [Whole-plant anatomy study](whole-plant/ANATOMY.md) — current visual model
+- [Indoor whole-plant context](indoor/README.md) — current visual model
+- [Whole-plant anatomy study](whole-plant/ANATOMY.md) — preserved isolated specimen
 - [Partner task brief](TASK-BRIEF.md)
 - [First morphology diagnostic and rejected physics candidate](diagnostics/README.md)
 - [Model and validation plan](MODEL-PLAN.md)

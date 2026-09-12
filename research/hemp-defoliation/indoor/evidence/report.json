@@ -1,0 +1,155 @@
+{
+  "status": "Static indoor layout and anatomy candidates; not a calibrated simulator",
+  "unique_ids": true,
+  "parents_resolve": true,
+  "acyclic": true,
+  "nondegenerate_meshes": true,
+  "specimens": [
+    {
+      "id": "A",
+      "seed": 109,
+      "x_m": -0.73,
+      "y_m": 0.02,
+      "yaw_rad": 0.18,
+      "above_substrate_height_m": 0.79,
+      "main_nodes": 12,
+      "basal_paired_nodes": 2,
+      "branch_max_length_m": 0.46,
+      "fan_leaf_central_length_m": 0.135,
+      "substrate_origin_m": [
+        -0.73,
+        0.02,
+        0.78
+      ],
+      "bounds_m": [
+        [
+          -1.0272249689003519,
+          -0.2735888426988948,
+          0.73
+        ],
+        [
+          -0.42978024209588334,
+          0.34429033824845495,
+          1.7485485
+        ]
+      ],
+      "organ_counts": {
+        "root_collar": 1,
+        "root": 13,
+        "lateral_root": 52,
+        "main_stem": 1,
+        "node": 143,
+        "petiole": 145,
+        "leaflet": 838,
+        "stipule": 290,
+        "branch": 36,
+        "inflorescence_axis": 37,
+        "floral_branchlet": 629,
+        "floral_unit": 5081,
+        "container": 1,
+        "substrate": 1
+      },
+      "geometry_sha256": "d793c6a62433ca352e0b1a5e3540cac30b8ead3e579074030288886be3d6211b"
+    },
+    {
+      "id": "B",
+      "seed": 251,
+      "x_m": 0.0,
+      "y_m": -0.025,
+      "yaw_rad": -0.32,
+      "above_substrate_height_m": 0.87,
+      "main_nodes": 13,
+      "basal_paired_nodes": 3,
+      "branch_max_length_m": 0.49,
+      "fan_leaf_central_length_m": 0.15,
+      "substrate_origin_m": [
+        0.0,
+        -0.025,
+        0.78
+      ],
+      "bounds_m": [
+        [
+          -0.3744070861815339,
+          -0.3953704978759057,
+          0.73
+        ],
+        [
+          0.3771008169803809,
+          0.3694820078294681,
+          1.7964827
+        ]
+      ],
+      "organ_counts": {
+        "root_collar": 1,
+        "root": 13,
+        "lateral_root": 52,
+        "main_stem": 1,
+        "node": 155,
+        "petiole": 158,
+        "leaflet": 912,
+        "stipule": 316,
+        "branch": 39,
+        "inflorescence_axis": 40,
+        "floral_branchlet": 680,
+        "floral_unit": 5494,
+        "container": 1,
+        "substrate": 1
+      },
+      "geometry_sha256": "791a1b7614c72cbe026458e0f4753f582928d562b67c72bde65d029ec503235a"
+    },
+    {
+      "id": "C",
+      "seed": 683,
+      "x_m": 0.73,
+      "y_m": 0.035,
+      "yaw_rad": 0.49,
+      "above_substrate_height_m": 0.83,
+      "main_nodes": 11,
+      "basal_paired_nodes": 2,
+      "branch_max_length_m": 0.44,
+      "fan_leaf_central_length_m": 0.142,
+      "substrate_origin_m": [
+        0.73,
+        0.035,
+        0.78
+      ],
+      "bounds_m": [
+        [
+          0.4385400219214095,
+          -0.22145631653934886,
+          0.73
+        ],
+        [
+          1.0424475157451711,
+          0.36602227257247955,
+          1.8114437
+        ]
+      ],
+      "organ_counts": {
+        "root_collar": 1,
+        "root": 13,
+        "lateral_root": 52,
+        "main_stem": 1,
+        "node": 142,
+        "petiole": 144,
+        "leaflet": 831,
+        "stipule": 288,
+        "branch": 36,
+        "inflorescence_axis": 37,
+        "floral_branchlet": 629,
+        "floral_unit": 5081,
+        "container": 1,
+        "substrate": 1
+      },
+      "geometry_sha256": "020befc604fb8ca1aaf2e605de06f7953708d84ff9645fcad5e3afea8acde9fd"
+    }
+  ],
+  "triangles": 3939782,
+  "physical_contact_validated": false,
+  "growth_model": false,
+  "fitted_domain_randomization": false,
+  "geometry_source_sha256": "6eb47cac1a6c09c321195df5297002e011cf42641641f73e6b70f3a34275f77c",
+  "scene_source_sha256": "3c244943e67b65e04967faa67c732749be6f94c700bbf6e82daa8795aeaa5bbd",
+  "config_sha256": "8964668062279301abbb5bf0a43ba1f9c851fbbfa9cd76e11bc4ee33622992b1",
+  "glb_sha256": "01fbf736847d697209d16497b96d229433827a7fcde997afbf51eff56de6792f"
+}

@@ -1,0 +1,18 @@
+{
+  "status": "Static anatomy and layout only; no physical contact validation",
+  "files": {
+    "research/hemp-defoliation/indoor/README.md": "a6ee4ef1112679b5d72efc1afcfc1b0d70fc75e03aa26d237b99b685f15b89da",
+    "research/hemp-defoliation/indoor/audit.py": "3d9fe9e6736426f5f0c8cf144cf4de165a22d8ad85569630f6a45fe11f12eefe",
+    "research/hemp-defoliation/indoor/build.py": "3c244943e67b65e04967faa67c732749be6f94c700bbf6e82daa8795aeaa5bbd",
+    "research/hemp-defoliation/indoor/config.json": "8964668062279301abbb5bf0a43ba1f9c851fbbfa9cd76e11bc4ee33622992b1",
+    "research/hemp-defoliation/indoor/render.py": "95c54c3812d72b6a0de0e74d35034f57921bb6da6a3b5707bb8fa93e4f16579e",
+    "research/hemp-defoliation/indoor/review.html": "995f16a482c452adc7249c57386f1665a19bfc31c8ab6e48d193d200a88f5735",
+    "research/hemp-defoliation/indoor/viewer.js": "87c2fe49bd4397a24928bd18b8b112c9ff97df2893a4592f5471612c8737dd31"
+  },
+  "render_images": {
+    "aisle.png": "4e0aa6ac9ee160a5ca5912a8901e606883529a37b545a8bdcb9394aedba4b026",
+    "trellis.png": "edd42e5452c58f34c1779869ef1e25973c425feca84bcf274ac4f2c3933e4d0d",
+    "indoor.png": "b50f17a3c0fbeb483b8f38cf6de09343b419abed89b0e2fd12752cdad47d040d"
+  },
+  "previous_checkpoint_preserved": "95af97a"
+}
