@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "status": "unfilled_record_template_not_simulator_input",
+  "units": {"length": "m", "mass": "kg", "time": "s", "force": "N", "angle": "rad"},
+  "missing_value_semantics": "null means unknown, not zero or an accepted default",
+  "specimen": {
+    "id": null,
+    "cultivar": null,
+    "plant_stage": null,
+    "observation_date": null,
+    "condition_notes": null,
+    "photos": [],
+    "scale_reference": null
+  },
+  "task": {
+    "purpose": null,
+    "target_selection_rule": null,
+    "manual_removal_method": null,
+    "robot": null,
+    "tool": null,
+    "deployment_observations": [],
+    "protected_structures": [],
+    "acceptance_criteria": null
+  },
+  "structures": [],
+  "structure_record_fields": ["id", "organ", "parent_id", "attachment", "geometry_evidence", "mass_evidence", "material_evidence", "uncertainties"],
+  "measurements": [],
+  "measurement_record_fields": ["specimen_id", "organ_id", "quantity", "value", "unit", "method", "condition", "uncertainty", "source", "evidence_label"],
+  "evidence_labels": ["measured", "reported", "estimated", "assumed", "unknown"],
+  "simulator_parameters": null,
+  "calibration_status": "not_started",
+  "training_status": "not_started"
+}

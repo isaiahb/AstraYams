@@ -2,6 +2,8 @@
 
 Started: 2026-09-12.
 
+Follow-up: the user clarified that the intended crop is non-psychoactive hemp. The active agricultural engineering study is in [hemp-defoliation](../hemp-defoliation/README.md). This folder preserves the earlier descriptive literature checkpoint.
+
 This separate folder contains descriptive botanical research and an inventory of evidence gaps. It does not contain cultivation guidance, defoliation automation, a robot task, or a calibrated simulation.
 
 ## Read first

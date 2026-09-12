@@ -1,0 +1,45 @@
+{
+  "created": "2026-09-12",
+  "scope": "Non-psychoactive hemp anatomy and agricultural robotics, as clarified by the user",
+  "sources": [
+    {
+      "id": "LEAF-SHAPE-2024",
+      "title": "Intra-leaf modeling of Cannabis leaflet shape produces leaf models that predict genetic and developmental identities",
+      "doi": "10.1111/nph.19817",
+      "url": "https://nph.onlinelibrary.wiley.com/doi/10.1111/nph.19817",
+      "type": "original morphometric methods study",
+      "reviewed": "Publisher summary, sampling, image analysis, and reconstruction methods",
+      "use": "Geometry methodology; developmental and accession context",
+      "limit": "Mixed accessions; not a partner-specific hemp population or mechanics dataset"
+    },
+    {
+      "id": "FRESH-STALK-2023",
+      "title": "Research on the Construction of a Finite Element Model and Parameter Calibration for Industrial Hemp Stalks",
+      "url": "https://www.mdpi.com/2073-4395/13/7/1918",
+      "type": "original mechanical testing and calibration study",
+      "reviewed": "Indexed methods excerpt; direct publisher retrieval returned HTTP 429",
+      "use": "Organ-specific fresh stalk testing and model calibration",
+      "limit": "Stalk tissue is not leaf or petiole tissue; complete results not reviewed"
+    },
+    {
+      "id": "DRY-STEM-2018",
+      "title": "Exploring the link between flexural behaviour of hemp and flax stems and fibre stiffness",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0926669018300347",
+      "type": "original flexural mechanics study",
+      "reviewed": "Indexed abstract and methods excerpt; direct retrieval failed",
+      "use": "Tissue distribution and geometry in stem bending",
+      "limit": "Dry stems and extracted fibres; no live leaf calibration"
+    },
+    {
+      "id": "HYDRATION-1991",
+      "title": "Biomechanical Responses of Chamaedorea and Spathiphyllum Petioles to Tissue Dehydration",
+      "doi": "10.1093/oxfordjournals.aob.a088101",
+      "url": "https://academic.oup.com/aob/article-abstract/67/1/67/257967",
+      "type": "original comparative biomechanics study",
+      "reviewed": "Indexed abstract",
+      "use": "Evidence that specimen hydration and age can matter mechanically",
+      "limit": "Other species; no hemp material values inferred"
+    }
+  ],
+  "media": "No source images or datasets copied; permissions and applicability must be reviewed before reuse"
+}
