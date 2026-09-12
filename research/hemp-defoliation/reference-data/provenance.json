@@ -1,0 +1,21 @@
+{
+  "paper": "https://doi.org/10.1111/nph.19817",
+  "authors": "Balant, Garnatje, Vitales, Hidalgo, Chitwood (2024)",
+  "repository": "https://github.com/BalantM/Cannabis_leaf_morpho_updated",
+  "revision": "1cb442ede3bd249348c37c8f789936d79e0ff2ab",
+  "specimen": "FUT75_2_12_4a_7",
+  "meaning": "Published Futura 75 hemp leaf coordinate measurements; not a partner specimen. Physical scale is not yet established.",
+  "license_note": "No explicit repository license found in the inspected tree. Original code and photographs are not copied. Attribution retained for these coordinate measurements; no broader redistribution license asserted.",
+  "files": [
+    {
+      "file": "out_FUT75_2_12_4a_7.txt",
+      "url": "https://raw.githubusercontent.com/BalantM/Cannabis_leaf_morpho_updated/1cb442ede3bd249348c37c8f789936d79e0ff2ab/03_out/out_FUT75_2_12_4a_7.txt",
+      "sha256": "474ad75cd5b7fbb0e1c932274282cc035cea65597c2d394e5600a25e0c0adc06"
+    },
+    {
+      "file": "land_FUT75_2_12_4a_7.txt",
+      "url": "https://raw.githubusercontent.com/BalantM/Cannabis_leaf_morpho_updated/1cb442ede3bd249348c37c8f789936d79e0ff2ab/04_land/land_FUT75_2_12_4a_7.txt",
+      "sha256": "5edc088b869596eba9a28cd7c32aca64599ff3734ddb53ff45d81342b9130d39"
+    }
+  ]
+}

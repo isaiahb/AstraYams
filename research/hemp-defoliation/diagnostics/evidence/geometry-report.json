@@ -1,0 +1,11 @@
+{
+  "vertices": 484,
+  "triangles": 570,
+  "pin_vertices": 14,
+  "reference_area_m2_at_assumed_scale": 0.0057052753747823814,
+  "mesh_area_m2": 0.00541073424270265,
+  "relative_area_difference": -0.05162610263855427,
+  "central_leaflet_length_m": 0.11,
+  "scale_status": "assumed; not established from source scan",
+  "shape_status": "measured 2D outline; simplified triangulation, assumed initially planar pose"
+}

@@ -1,0 +1,27 @@
+{
+  "status": "rejected",
+  "reason": "Numerical instability and unjustified merging of leaflet surfaces",
+  "source_script_sha256": "1074c7d3b24005a9bd795f959e509e9b548c6106e76c6537e2307969104b3feb",
+  "files": {
+    "failure.json": {
+      "sha256": "7691f4862f7347775e3a00f3b1c1a6799fbd4509f2ea2e02fd3c3a5b7b5b021f",
+      "bytes": 499
+    },
+    "geometry-report.json": {
+      "sha256": "0855f2305322bc6f6332a0fdea0d2e585820d63fd6d8e3087db8dd6ec357e455",
+      "bytes": 414
+    },
+    "candidate.xml": {
+      "sha256": "9659fb01de344c0dab175a8d6059e065a64cf76fa2f715a44adcd977d1269a04",
+      "bytes": 23556
+    },
+    "leaflet-topology.png": {
+      "sha256": "043088521764acdd9c48421023b4aed3ba42dd5f2471dd60e7ac304ff5d6be64",
+      "bytes": 196665
+    },
+    "outline-comparison.png": {
+      "sha256": "2628f77bf02241cdcb0d522c907cfbf2c71904f5ebfa559e81962dbe052baebc",
+      "bytes": 245685
+    }
+  }
+}

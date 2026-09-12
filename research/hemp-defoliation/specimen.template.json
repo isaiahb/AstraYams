@@ -13,7 +13,10 @@
     "scale_reference": null
   },
   "task": {
-    "purpose": null,
+    "purpose": "Commercial CBD hemp flower production for consumption; automate the partner's leaf-removal process",
+    "purpose_evidence": "User clarification on 2026-09-12",
+    "requested_operations": ["standing_plant_leaf_removal", "cut_branch_large_leaf_removal", "harvested_flower_fine_trimming"],
+    "specimen_condition_per_operation": null,
     "target_selection_rule": null,
     "manual_removal_method": null,
     "robot": null,

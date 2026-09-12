@@ -1,0 +1,10 @@
+{
+  "status": "rejected",
+  "stage": "contact",
+  "dt_s": 0.0005,
+  "reason": "Settling is unstable",
+  "biologically_calibrated": false,
+  "source_script_sha256": "1074c7d3b24005a9bd795f959e509e9b548c6106e76c6537e2307969104b3feb",
+  "next_check": "Reconstruct separate leaflet surfaces and attachment topology before remeshing and contact simulation.",
+  "additional_anatomy_rejection": "A union silhouette is insufficient evidence for joining overlapping leaflets into a single material sheet."
+}
