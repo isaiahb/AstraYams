@@ -1,0 +1,47 @@
+{
+  "created": "2026-09-12",
+  "scope": "Descriptive botanical anatomy; no cultivation or defoliation automation",
+  "sources": [
+    {
+      "id": "FNA-CANNABIS",
+      "title": "Cannabis — Flora of North America",
+      "url": "https://www.efloras.org/florataxon.aspx?flora_id=1&taxon_id=105522",
+      "type": "taxonomic flora",
+      "access": "Search-index description reviewed; direct-page retrieval timed out",
+      "supports": ["whole-plant habit", "compound leaf terminology"],
+      "does_not_establish": ["partner specimen anatomy", "mechanical properties"]
+    },
+    {
+      "id": "FOP-CANNABIS",
+      "title": "Cannabis — Flora of Pakistan",
+      "url": "https://www.efloras.org/florataxon.aspx?flora_id=5&taxon_id=105522",
+      "type": "taxonomic flora",
+      "access": "Search-index description reviewed",
+      "supports": ["leaf arrangement", "petioles and stipules"],
+      "does_not_establish": ["universal specimen geometry", "mechanical properties"]
+    },
+    {
+      "id": "FOP-SATIVA",
+      "title": "Cannabis sativa — Flora of Pakistan",
+      "url": "https://www.efloras.org/florataxon.aspx?flora_id=5&taxon_id=200006342",
+      "type": "taxonomic flora",
+      "access": "Search-index description reviewed",
+      "supports": ["leaflet outline", "surface anatomy", "described morphological variation"],
+      "does_not_establish": ["statistical population distribution", "mechanical properties"]
+    },
+    {
+      "id": "LEAF-2022",
+      "title": "Assessment of pharmacognostic specification of Cannabis sativa leaves in Thailand",
+      "authors": ["Kanittha Nakkliang", "Chitlada Areesantichai", "Kanchana Rungsihirunrat"],
+      "year": 2022,
+      "doi": "10.4103/japtr.japtr_96_22",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9355051/",
+      "metadata_url": "https://pubmed.ncbi.nlm.nih.gov/35935686/",
+      "type": "original botanical identification and microscopy study",
+      "access": "Indexed abstract, methods excerpt, and figure caption reviewed; PMC direct access returned a browser challenge; complete paper and figures not inspected",
+      "supports": ["leaf morphology", "microscopic tissue identification"],
+      "does_not_establish": ["live tissue mechanical calibration", "damage thresholds", "robot task performance"]
+    }
+  ],
+  "media": "No source images downloaded, copied, or redistributed"
+}
