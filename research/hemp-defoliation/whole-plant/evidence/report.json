@@ -1,0 +1,41 @@
+{
+  "status": "static anatomy candidate",
+  "organ_counts": {
+    "root_collar": 1,
+    "root": 13,
+    "lateral_root": 52,
+    "main_stem": 1,
+    "node": 150,
+    "petiole": 153,
+    "leaflet": 883,
+    "stipule": 306,
+    "branch": 37,
+    "inflorescence_axis": 38,
+    "floral_branchlet": 646,
+    "floral_unit": 5224,
+    "container": 1,
+    "substrate": 1
+  },
+  "triangles": 1332242,
+  "graph_is_acyclic": true,
+  "all_parent_ids_resolve": true,
+  "finite_nondegenerate_meshes": true,
+  "bounds_m": [
+    [
+      -0.3236425,
+      -0.3130528,
+      -0.26
+    ],
+    [
+      0.3420327,
+      0.311277,
+      1.1790216
+    ]
+  ],
+  "independent_leaflet_surfaces": true,
+  "physical_contact_validated": false,
+  "partner_specimen_matched": false,
+  "material_properties_measured": false,
+  "source_sha256": "6eb47cac1a6c09c321195df5297002e011cf42641641f73e6b70f3a34275f77c",
+  "config_sha256": "06b87df8ce35a7f9cc6e28a4da66d65d33ef191fab30f43db2cf8b2f27f8d730"
+}

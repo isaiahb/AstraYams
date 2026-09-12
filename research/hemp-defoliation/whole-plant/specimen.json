@@ -1,0 +1,16 @@
+{
+  "id": "hemp-whole-plant-v1",
+  "seed": 41,
+  "description": "Illustrative female flowering hemp anatomy; not a reconstruction of the partner's cultivar",
+  "parameter_status": "All dimensions, branching counts, pose and materials are assumed. Structural relationships are literature-informed.",
+  "above_substrate_height_m": 1.05,
+  "main_nodes": 14,
+  "basal_paired_nodes": 3,
+  "main_basal_radius_m": 0.008,
+  "branch_max_length_m": 0.43,
+  "fan_leaf_central_length_m": 0.155,
+  "pot_radius_m": 0.18,
+  "pot_depth_m": 0.26,
+  "root_hypothesis": "adventitious root system of a rooted cutting; propagation method unconfirmed",
+  "physics_status": "Static anatomy geometry. No constitutive, fracture or contact model; no trained policy."
+}

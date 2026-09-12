@@ -10,6 +10,7 @@ The user has requested all three operations: selected leaf removal on standing p
 
 ## Contents
 
+- [Whole-plant anatomy study](whole-plant/ANATOMY.md) — current visual model
 - [Partner task brief](TASK-BRIEF.md)
 - [First morphology diagnostic and rejected physics candidate](diagnostics/README.md)
 - [Model and validation plan](MODEL-PLAN.md)
@@ -20,14 +21,14 @@ The user has requested all three operations: selected leaf removal on standing p
 
 ## First deliverable
 
-One stem section containing a visible node, petiole, compound leaf, and neighboring protected structures. Review it beside photographs from comparable viewpoints, then show contact, release, and recovery with collision overlays and an orbitable replay.
+Current user direction: a complete plant, with an inspectable hierarchy from roots through stems, nodes, branches, leaves and flower structures. The whole-plant anatomy study supersedes an isolated leaf as the visible deliverable. Later contact diagnostics must remain traceable to this complete anatomical context.
 
 The model must distinguish the stem, leaf stalk, individual leaflets, midribs, and their attachment regions. Their mass and mechanical properties are separate quantities. The specimen template leaves unsupported values empty; an empty value is unknown, never zero.
 
 ## Current status
 
-The workspace contains a measured-outline geometry diagnostic and a rejected elastic-shell candidate. The candidate has both numerical stability and leaflet-topology problems; it is not a valid task environment. There is no calibrated simulator, trained policy, or validated removal tool yet. No strawberry material values have been transferred.
+The workspace contains a whole-plant static anatomy candidate, plus the preserved measured-outline diagnostic and rejected elastic-shell candidate. The new model separates leaflet surfaces and retains organ parents and attachment locations. It has no calibrated physics, trained policy or validated removal tool. No strawberry material values have been transferred.
 
 The reusable assets are the evidence ledger, contact accounting, matched control experiments, replay approach, numerical convergence checks, and policy evaluation methodology. Hemp geometry and material behavior need their own evidence.
 
-The next anatomy work is separating individual leaflet surfaces and their attachments using the published landmarks, with hidden portions labeled as inferred. Partner photos and examples of the three manual operations will be needed to establish representative anatomy and task constraints; neither is present in this folder.
+The next anatomy work is matching complete-plant structure, branching and node geometry against representative specimens. Partner photos and examples of the three manual operations will be needed to establish task constraints; neither is present in this folder.

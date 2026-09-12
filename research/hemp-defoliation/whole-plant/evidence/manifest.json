@@ -1,0 +1,44 @@
+{
+  "status": "static anatomy candidate; physics and partner specimen not validated",
+  "builder_sha256": "6eb47cac1a6c09c321195df5297002e011cf42641641f73e6b70f3a34275f77c",
+  "renderer_sha256": "6391b25e131aba34aea9b921611cf6aefbaf008c9792935e7637582bbfd6b2b2",
+  "files": {
+    "report.json": {
+      "sha256": "c7e7f886d0dd4d6b56d7284b599975b36583b60f715c429c794d52e3bf0e3b77",
+      "bytes": 966
+    },
+    "attachment-checks.json": {
+      "sha256": "1802d5e3aa2e0a022ed4036b2bfd2894f637546a947765163379ba86509c8994",
+      "bytes": 226
+    },
+    "whole-and-structure.png": {
+      "sha256": "d0cd14d187dca760b1b4bad6cd24862a216a74e099c6cbdd95420e29ba714bbd",
+      "bytes": 288684
+    },
+    "whole.png": {
+      "sha256": "1b74e8fdaf2c2968d8623126b160d963b7bdea4c6a5d2a8deda7bd4a5fd32ab8",
+      "bytes": 242364
+    },
+    "side.png": {
+      "sha256": "972c0813a557def5262b7bb54b7aa1423d19a6b589a37533185f09d53ed1ef54",
+      "bytes": 238905
+    },
+    "structure.png": {
+      "sha256": "3b729825f7354a19c48b8a0efe43e9ff71fcc59515611abcd203ef76fcbe080d",
+      "bytes": 116255
+    },
+    "node.png": {
+      "sha256": "6979b2761aed060a2dfb630886a4bfcd662e2d829c2e752b4fa7e944d42bbc4e",
+      "bytes": 594489
+    },
+    "roots.png": {
+      "sha256": "a1d66b244c24f7aab225434b53b744e192693c5e948b8df313523fbe090d31c0",
+      "bytes": 127486
+    },
+    "flower.png": {
+      "sha256": "7b8267b9ac41823f29ccce692fb38b5aefad36bffc8defe2b8c40e6bc22eafc4",
+      "bytes": 206291
+    }
+  },
+  "generated_geometry_sha256": "9e2905b03d88163d57bf3044ad3fe5a0410141e111a99c5ade9cf5fc22d6163d"
+}
