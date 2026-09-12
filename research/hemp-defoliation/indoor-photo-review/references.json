@@ -1,0 +1,86 @@
+{
+  "reviewed_on": "2026-09-12",
+  "scope": "Published photographs for indoor whole-plant morphology comparison. Not a cultivation protocol or mechanical calibration.",
+  "references": [
+    {
+      "id": "commercial-canopy",
+      "group": "Commercial facility",
+      "title": "Buckeye Relief: vegetative canopy",
+      "image": "https://img.cannabisbusinesstimes.com/files/base/transpire/all/image/2023/02/cbt.buckeyeveg.jpg?auto=format%2Ccompress&dpr=2&fit=max&q=70&w=400",
+      "source": "https://www.cannabisbusinesstimes.com/videos/video/15687940/watch-how-to-defoliate-a-canopy",
+      "credit": "Cannabis Business Times · Buckeye Relief · February 2023",
+      "classification": "Commercial medical cannabis facility; not verified CBD hemp. Prior removal history unknown.",
+      "observation": "Overlapping foliage forms a shared canopy. This is not a documented untreated control."
+    },
+    {
+      "id": "commercial-plant",
+      "group": "Commercial facility",
+      "title": "Buckeye Relief: plant structure at working height",
+      "image": "https://img.cannabisbusinesstimes.com/files/base/transpire/all/image/2023/02/cbt.buckeye92cookies_600.jpg?auto=format%2Ccompress&dpr=2&fit=max&q=70&w=400",
+      "source": "https://www.cannabisbusinesstimes.com/videos/video/15687940/watch-how-to-defoliate-a-canopy",
+      "credit": "Cannabis Business Times · Buckeye Relief · February 2023",
+      "classification": "Commercial medical cannabis; source identifies 92 Cookies. Not a same-plant before/after pair.",
+      "observation": "Compare exposed lower stems, upper shoot arrangement, canopy depth and support hardware."
+    },
+    {
+      "id": "commercial-defoliation",
+      "group": "Commercial facility",
+      "title": "Buckeye Relief: leaf removal in progress",
+      "image": "https://img.cannabisbusinesstimes.com/files/base/transpire/all/image/2023/02/cbt.defol2_400.jpg?auto=format%2Ccompress&dpr=2&fit=max&q=70&w=400",
+      "source": "https://www.cannabisbusinesstimes.com/videos/video/15687940/watch-how-to-defoliate-a-canopy",
+      "credit": "Cannabis Business Times · Buckeye Relief · February 2023",
+      "classification": "Commercial medical cannabis facility; photographed during defoliation.",
+      "observation": "A close view of real access and occlusion around shoots; it cannot establish cutting forces or stiffness."
+    },
+    {
+      "id": "lollipopping-pair",
+      "group": "Before / after",
+      "title": "Lollipopping: publisher-labeled before / after",
+      "image": "https://www.royalqueenseeds.com/img/cms/Before-after-desktop-mobile-2.jpg",
+      "source": "https://www.royalqueenseeds.com/blog-how-to-dramatically-boost-yields-with-cannabis-lollipopping-n1314",
+      "credit": "Royal Queen Seeds · published comparison photograph",
+      "classification": "Indoor tent example, not a factory. Not verified CBD hemp. Different framing between panels.",
+      "observation": "The lower panel exposes long bare branches below the retained upper canopy. Before means before this pictured intervention, not never previously pruned."
+    },
+    {
+      "id": "vegetative-pair",
+      "group": "Before / after",
+      "title": "Defoliation reference: vegetative phase",
+      "image": "https://www.royalqueenseeds.com/img/cms/vegetativeMOBILE.jpg",
+      "source": "https://www.royalqueenseeds.com/blog-defoliation-a-high-risk-way-to-increase-yield-n562",
+      "credit": "Royal Queen Seeds · published defoliation photographs",
+      "classification": "Indoor example; not a verified commercial facility or CBD cultivar.",
+      "observation": "Compare leaf coverage and the branch framework visible beneath it."
+    },
+    {
+      "id": "flowering-pair",
+      "group": "Before / after",
+      "title": "Defoliation reference: flowering phase",
+      "image": "https://www.royalqueenseeds.com/img/cms/floweringMOBILE.jpg",
+      "source": "https://www.royalqueenseeds.com/blog-defoliation-a-high-risk-way-to-increase-yield-n562",
+      "credit": "Royal Queen Seeds · published defoliation photographs",
+      "classification": "Indoor example; not a verified commercial facility or CBD cultivar.",
+      "observation": "Compare the distribution of flowers, foliage and visible stems across the panels."
+    },
+    {
+      "id": "cbd-research",
+      "group": "CBD hemp",
+      "title": "Verified CBD hemp: indoor research plants",
+      "image": "https://www.frontiersin.org/files/Articles/984410/xml-images/fpls-13-984410-g009.webp",
+      "source": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2022.984410/full",
+      "credit": "Islam et al. (2022), Frontiers in Plant Science · Figure 9 · CC BY",
+      "classification": "Alpine Star CBD hemp in indoor research chambers. Not a commercial factory or defoliation comparison.",
+      "observation": "A chemotype-confirmed reference for whole-plant appearance. The panels show experimental groups, not a pruning sequence."
+    },
+    {
+      "id": "our-model",
+      "group": "Our model",
+      "title": "Our current indoor model",
+      "image": "../indoor/evidence/indoor.png",
+      "source": "../indoor/README.md",
+      "credit": "AstraFactory · indoor model v1 · existing checkpoint",
+      "classification": "Synthetic geometry with assumed architecture. Not a photograph or validated mechanical model.",
+      "observation": "Compare this open, separated canopy with the reference photographs. Lighting, perspective and stage also differ, so this is a qualitative comparison."
+    }
+  ]
+}
