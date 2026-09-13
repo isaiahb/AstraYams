@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "status": "provisional visual review anchors; not ground-truth masks",
+  "annotator": "Astra assistant, manual visual interpretation; not independent expert review",
+  "image_size": [381, 444],
+  "reference": "runs/hemp-sam3-comparison-v1/results/sam3/reference/input.png",
+  "source_url": "https://doi.org/10.1371/journal.pone.0252985.g001",
+  "license": "CC BY; derived crop and review annotations",
+  "coordinates": "original image pixels, origin top left, x right and y down",
+  "selection": "Post-hoc diagnostic regions selected after seeing segmentation failures. This is a calibration/review set, not a held-out test.",
+  "regions": [
+    {
+      "id": "upper-left-fan",
+      "crop_xywh": [69, 122, 65, 55],
+      "whole_leaf_candidate_roi_xyxy": [76, 132, 120, 169],
+      "junction_hypothesis_xy": [108, 147],
+      "connection_status": "candidate fan grouping; petiole attachment not established",
+      "anchors": [
+        {"id": "UL-left", "xy": [94, 146], "level": "leaflet", "boundary_status": "untraced", "certainty": "review required"},
+        {"id": "UL-downleft", "xy": [97, 156], "level": "leaflet", "boundary_status": "untraced", "certainty": "review required"}
+      ],
+      "question": "Does the full fan receive one compound-leaf identity, and do the separate narrow blades remain children rather than additional whole leaves?"
+    },
+    {
+      "id": "central-downward-fan",
+      "crop_xywh": [139, 195, 72, 80],
+      "whole_leaf_candidate_roi_xyxy": [150, 211, 199, 263],
+      "junction_hypothesis_xy": [177, 222],
+      "connection_status": "junction partly visible; other shoots overlap this region",
+      "anchors": [
+        {"id": "C-down", "xy": [174, 241], "level": "leaflet", "boundary_status": "untraced", "certainty": "review required"},
+        {"id": "C-right", "xy": [186, 232], "level": "leaflet", "boundary_status": "untraced", "certainty": "review required"}
+      ],
+      "question": "Does a proposed mask follow one blade, bridge the dark gap to its neighbor, or include the entire fan?"
+    },
+    {
+      "id": "lower-right-drooping-fan",
+      "crop_xywh": [228, 337, 67, 76],
+      "whole_leaf_candidate_roi_xyxy": [239, 350, 286, 403],
+      "junction_hypothesis_xy": [255, 361],
+      "connection_status": "candidate common junction; dense foliage behind it is unresolved",
+      "anchors": [
+        {"id": "LR-downright", "xy": [267, 381], "level": "leaflet", "boundary_status": "untraced", "certainty": "review required"},
+        {"id": "LR-down", "xy": [253, 382], "level": "leaflet", "boundary_status": "untraced", "certainty": "review required"}
+      ],
+      "question": "Are the long drooping blades separate instances, and are pixels from the dense canopy behind them incorrectly included?"
+    }
+  ],
+  "excluded_regions": [
+    {"id": "dense-left-interior", "roi_xyxy": [98, 292, 164, 360], "reason": "Overlapping small surfaces; do not infer a complete leaf count or invisible boundaries."},
+    {"id": "terminal-interior", "roi_xyxy": [160, 65, 230, 137], "reason": "Fine overlapping structures and ambiguous organ classes at this resolution; leave unresolved."}
+  ],
+  "scoring_rules": {
+    "roi_is_not_mask": true,
+    "point_hit_is_not_boundary_accuracy": true,
+    "parent_and_child_counts_are_not_additive": true,
+    "unseen_organ_is_unknown_not_negative": true,
+    "boundary_iou_allowed": false,
+    "geometry_fitting_allowed": false
+  }
+}

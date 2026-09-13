@@ -184,3 +184,24 @@ No automatic geometry fitting accepted. Raw predictions preserved, scores and
 source checked; replacement GPU verified EXITED after checksum-verified retrieval.
 Next bounded outcome: reviewed real-photo organ labels at both anatomical levels,
 then explicit multiscale fusion with no parent/child double counting.
+
+
+## Organ identity review COMPLETE — 2026-09-13, heartbeat 20:35 UTC
+
+Created /runs/hemp-organ-review-v1/index.html from saved source pixels and SAM3
+outputs: three enlarged regions with six candidate leaflet anchors, unresolved
+parent groups and excluded dense regions. These are assistant visual annotations,
+not expert-reviewed masks or held-out test data. No new ML, rendering batch,
+GPU allocation or fitting; static SVG overlays only.
+
+Visual inspection caught and corrected two initial anchors on the stem and in
+a gap. Rejected proposals are preserved. The central shared-leaf hypothesis was
+removed instead of forcing adjacent blades into one parent. Old approximate
+central downward leaf geometry remains suspect and must not be treated as a
+validated landmark. Whole-leaf boundaries are untraced; no IoU or count accuracy
+claim is permitted from these points/ROIs.
+
+Inspected existing connection, side and top panels: the thin depth/rear geometry
+is unverified from one photo. No plant geometry or mechanics changed. Next:
+trace one clearly visible upper-left blade with an uncertainty band, then remote
+mask correspondence scoring; retain independence/annotation limitations.

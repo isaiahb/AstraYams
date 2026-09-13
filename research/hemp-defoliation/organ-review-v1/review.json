@@ -1,0 +1,204 @@
+{
+  "version": 1,
+  "status": "provisional visual review anchors; not ground-truth masks",
+  "annotator": "Astra assistant, manual visual interpretation; not independent expert review",
+  "image_size": [
+    381,
+    444
+  ],
+  "reference": "runs/hemp-sam3-comparison-v1/results/sam3/reference/input.png",
+  "source_url": "https://doi.org/10.1371/journal.pone.0252985.g001",
+  "license": "CC BY; derived crop and review annotations",
+  "coordinates": "original image pixels, origin top left, x right and y down",
+  "selection": "Post-hoc diagnostic regions selected after seeing segmentation failures. This is a calibration/review set, not a held-out test.",
+  "regions": [
+    {
+      "id": "upper-left-fan",
+      "crop_xywh": [
+        69,
+        122,
+        65,
+        55
+      ],
+      "junction_hypothesis_xy": [
+        112,
+        143
+      ],
+      "connection_status": "candidate fan grouping; petiole attachment not established",
+      "anchors": [
+        {
+          "id": "UL-left",
+          "xy": [
+            94,
+            146
+          ],
+          "level": "leaflet",
+          "boundary_status": "untraced",
+          "certainty": "assistant checked enlarged reference pixels; boundary and expert validation pending",
+          "parent_leaf_id": null
+        },
+        {
+          "id": "UL-downleft",
+          "xy": [
+            97,
+            156
+          ],
+          "level": "leaflet",
+          "boundary_status": "untraced",
+          "certainty": "assistant checked enlarged reference pixels; boundary and expert validation pending",
+          "parent_leaf_id": null
+        }
+      ],
+      "question": "Does the full fan receive one compound-leaf identity, and do the separate narrow blades remain children rather than additional whole leaves?",
+      "review_roi_xyxy": [
+        76,
+        132,
+        120,
+        169
+      ],
+      "parent_grouping_status": "provisional shared fan, not proven"
+    },
+    {
+      "id": "central-overlap",
+      "crop_xywh": [
+        139,
+        195,
+        72,
+        80
+      ],
+      "junction_hypothesis_xy": null,
+      "connection_status": "No common parent assigned: this region includes the main stem and overlapping leaves from different candidate fans",
+      "anchors": [
+        {
+          "id": "C-short-blade",
+          "xy": [
+            174,
+            227
+          ],
+          "level": "leaflet",
+          "boundary_status": "untraced",
+          "certainty": "assistant checked enlarged reference pixels; boundary and expert validation pending",
+          "parent_leaf_id": null
+        },
+        {
+          "id": "C-separate-right-blade",
+          "xy": [
+            194,
+            240
+          ],
+          "level": "leaflet",
+          "boundary_status": "untraced",
+          "certainty": "assistant checked enlarged reference pixels; boundary and expert validation pending",
+          "parent_leaf_id": null
+        }
+      ],
+      "question": "Do masks distinguish the stem from nearby leaf blades, without treating adjacent leaves as one fan?",
+      "review_roi_xyxy": [
+        150,
+        211,
+        199,
+        263
+      ],
+      "parent_grouping_status": "unassigned"
+    },
+    {
+      "id": "lower-right-drooping-fan",
+      "crop_xywh": [
+        228,
+        337,
+        67,
+        76
+      ],
+      "junction_hypothesis_xy": [
+        249,
+        363
+      ],
+      "connection_status": "candidate common junction; dense foliage behind it is unresolved",
+      "anchors": [
+        {
+          "id": "LR-upper-diagonal",
+          "xy": [
+            262,
+            371
+          ],
+          "level": "leaflet",
+          "boundary_status": "untraced",
+          "certainty": "assistant checked enlarged reference pixels; boundary and expert validation pending",
+          "parent_leaf_id": null
+        },
+        {
+          "id": "LR-down",
+          "xy": [
+            253,
+            382
+          ],
+          "level": "leaflet",
+          "boundary_status": "untraced",
+          "certainty": "assistant checked enlarged reference pixels; boundary and expert validation pending",
+          "parent_leaf_id": null
+        }
+      ],
+      "question": "Are the long drooping blades separate instances, and are pixels from the dense canopy behind them incorrectly included?",
+      "review_roi_xyxy": [
+        239,
+        350,
+        286,
+        403
+      ],
+      "parent_grouping_status": "provisional shared fan, not proven"
+    }
+  ],
+  "excluded_regions": [
+    {
+      "id": "dense-left-interior",
+      "roi_xyxy": [
+        98,
+        292,
+        164,
+        360
+      ],
+      "reason": "Overlapping small surfaces; do not infer a complete leaf count or invisible boundaries."
+    },
+    {
+      "id": "terminal-interior",
+      "roi_xyxy": [
+        160,
+        65,
+        230,
+        137
+      ],
+      "reason": "Fine overlapping structures and ambiguous organ classes at this resolution; leave unresolved."
+    }
+  ],
+  "scoring_rules": {
+    "roi_is_not_mask": true,
+    "point_hit_is_not_boundary_accuracy": true,
+    "parent_and_child_counts_are_not_additive": true,
+    "unseen_organ_is_unknown_not_negative": true,
+    "boundary_iou_allowed": false,
+    "geometry_fitting_allowed": false
+  },
+  "review_findings": [
+    {
+      "id": "central-stem-confusion",
+      "rejected_xy": [
+        174,
+        241
+      ],
+      "observation": "Initial candidate anchor lands on the main stem, not a leaflet. Moved to the nearby visible short blade; removed the shared-fan hypothesis."
+    },
+    {
+      "id": "lower-gap-confusion",
+      "rejected_xy": [
+        267,
+        381
+      ],
+      "observation": "Initial candidate anchor lands in a gap/edge region near the diagonal blade. Moved into that blade."
+    },
+    {
+      "id": "junction-offsets",
+      "observation": "Adjusted upper-left and lower-right candidate junctions after enlarged review; they remain hypotheses, not measured attachment coordinates."
+    }
+  ],
+  "next_required_review": "Trace only visible blade boundaries, with ambiguous pixels excluded; independently review before accuracy claims or fitting."
+}
