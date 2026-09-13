@@ -1,0 +1,97 @@
+<!doctype html><meta charset='utf-8'><title>Segmentation alternatives v1 review</title>
+<style>
+body{font:15px/1.45 system-ui,sans-serif;margin:28px;max-width:1450px;color:#17251d;background:#f5f6f2} h1,h2{color:#173d2c} h2{margin-top:42px} .notice{background:#fff3c6;padding:12px;border-left:4px solid #bf8916} .missing{color:#922} .gallery{display:flex;flex-wrap:wrap;gap:14px} figure{margin:0;max-width:300px;background:white;padding:8px;border:1px solid #d1d7d0} img{display:block;width:100%;height:auto} figcaption{font-size:12px;margin-top:5px} table{border-collapse:collapse;background:white;margin:12px 0}th,td{border:1px solid #cbd2cb;padding:5px 7px;text-align:right}th{background:#e4eee6} code{font-size:12px} .diag{font-size:12px;background:#e9eef0;padding:8px}
+</style>
+<h1>Segmentation alternatives v1 — inspection report</h1>
+<p>Frozen 381×444 source; compare only under the stated fixed proxy/ROI/threshold diagnostics. The color proxy is not a mask ground truth; these results make no leaf, leaflet, stem, hierarchy, or boundary-accuracy claim.</p>
+<h2>Research-only candidates — not executed here</h2>
+<ul><li>SAM 3.1 is a new checkpoint release for Object Multiplex/video tracking; official release material does not establish a still-image gain for this input.</li><li>SAM2 automatic/interactive, HQ-SAM, ZeroPlantSeg, and trained plant-instance models remain candidates described in the project README, with their setup, license, and domain limits.</li></ul>
+<h2>Executed: SAM3 visual-region-exemplar diagnostic</h2>
+<p class='notice'>Same SAM3 checkpoint, not an independent model. Each broad post-hoc region box may contain multiple blades, stem or background. Do not infer tight-exemplar quality, organ accuracy, or a held-out result.</p>
+<p>Input SHA-256: <code>2f338a5ce241e5844cb3bfaa517b611e9b1fc0b87270755a1dc4d9971c53fa7a</code>; device: NVIDIA A40; elapsed: 1.2689 s.</p>
+<figure class='source'><a href='visual-exemplar/input.png'><img src='visual-exemplar/input.png'></a><figcaption>Frozen input image used by the tiled/residual baseline and every alternative run.</figcaption></figure>
+<h3>Frozen tiled/residual baseline — same proxy/ROI diagnostic</h3>
+<p>This is a comparison table only; it is not ground truth and does not select an alternative candidate.</p>
+<table><thead><tr><th>threshold</th><th>foreground_coverage</th><th>core_coverage</th><th>proxy_precision</th><th>proxy_iou</th><th>definite_background_pixels</th><th>predicted_pixels</th></tr></thead><tbody><tr><td>0.5000</td><td>0.3047</td><td>0.3339</td><td>0.9826</td><td>0.3030</td><td>79</td><td>13083</td></tr><tr><td>0.2500</td><td>0.6581</td><td>0.7080</td><td>0.9663</td><td>0.6434</td><td>437</td><td>28739</td></tr><tr><td>0.1000</td><td>0.9151</td><td>0.9583</td><td>0.9412</td><td>0.8656</td><td>1377</td><td>41023</td></tr></tbody></table>
+<h3>Seed region: upper-left-fan</h3>
+<p>Normalized box: <code>[0.2664041994750656, 0.3367117117117117, 0.17060367454068243, 0.12387387387387387]</code>; proposals ≥0.1: 66</p>
+<table><thead><tr><th>threshold</th><th>foreground_coverage</th><th>core_coverage</th><th>proxy_precision</th><th>proxy_iou</th><th>definite_background_pixels</th><th>predicted_pixels</th></tr></thead><tbody><tr><td>0.5000</td><td>0.0192</td><td>0.0175</td><td>0.3540</td><td>0.0185</td><td>1329</td><td>2288</td></tr><tr><td>0.2500</td><td>0.0192</td><td>0.0175</td><td>0.3540</td><td>0.0185</td><td>1329</td><td>2288</td></tr><tr><td>0.1000</td><td>0.2303</td><td>0.2144</td><td>0.1155</td><td>0.0833</td><td>72961</td><td>84136</td></tr></tbody></table>
+<div class='gallery'>
+<figure><a href='visual-exemplar/upper-left-fan-coverage-0.5.png'><img src='visual-exemplar/upper-left-fan-coverage-0.5.png' loading='lazy'></a><figcaption>upper-left-fan · score ≥ 0.5</figcaption></figure>
+<figure><a href='visual-exemplar/upper-left-fan-coverage-0.25.png'><img src='visual-exemplar/upper-left-fan-coverage-0.25.png' loading='lazy'></a><figcaption>upper-left-fan · score ≥ 0.25</figcaption></figure>
+<figure><a href='visual-exemplar/upper-left-fan-coverage-0.1.png'><img src='visual-exemplar/upper-left-fan-coverage-0.1.png' loading='lazy'></a><figcaption>upper-left-fan · score ≥ 0.1</figcaption></figure>
+</div>
+<p class='diag'>Threshold 0.5: upper-left-fan: UL-left=hit, UL-downleft=hit; ROI predicted pixels=1597 | central-overlap: C-short-blade=miss, C-separate-right-blade=miss; ROI predicted pixels=0 | lower-right-drooping-fan: LR-upper-diagonal=miss, LR-down=miss; ROI predicted pixels=0</p>
+<p class='diag'>Threshold 0.25: upper-left-fan: UL-left=hit, UL-downleft=hit; ROI predicted pixels=1597 | central-overlap: C-short-blade=miss, C-separate-right-blade=miss; ROI predicted pixels=0 | lower-right-drooping-fan: LR-upper-diagonal=miss, LR-down=miss; ROI predicted pixels=0</p>
+<p class='diag'>Threshold 0.1: upper-left-fan: UL-left=hit, UL-downleft=hit; ROI predicted pixels=1597 | central-overlap: C-short-blade=miss, C-separate-right-blade=miss; ROI predicted pixels=0 | lower-right-drooping-fan: LR-upper-diagonal=miss, LR-down=miss; ROI predicted pixels=126</p>
+<p>Raw files: <a href='visual-exemplar/upper-left-fan-proposals.npz'>packed proposals</a> · <a href='visual-exemplar/upper-left-fan-scores.npz'>score map</a>.</p>
+<h3>Seed region: central-overlap</h3>
+<p>Normalized box: <code>[0.45931758530183725, 0.5292792792792793, 0.1889763779527559, 0.18018018018018017]</code>; proposals ≥0.1: 121</p>
+<table><thead><tr><th>threshold</th><th>foreground_coverage</th><th>core_coverage</th><th>proxy_precision</th><th>proxy_iou</th><th>definite_background_pixels</th><th>predicted_pixels</th></tr></thead><tbody><tr><td>0.5000</td><td>0.0451</td><td>0.0493</td><td>0.8106</td><td>0.0447</td><td>363</td><td>2349</td></tr><tr><td>0.2500</td><td>0.0567</td><td>0.0614</td><td>0.8226</td><td>0.0560</td><td>409</td><td>2909</td></tr><tr><td>0.1000</td><td>0.9853</td><td>0.9954</td><td>0.6747</td><td>0.6680</td><td>17128</td><td>61617</td></tr></tbody></table>
+<div class='gallery'>
+<figure><a href='visual-exemplar/central-overlap-coverage-0.5.png'><img src='visual-exemplar/central-overlap-coverage-0.5.png' loading='lazy'></a><figcaption>central-overlap · score ≥ 0.5</figcaption></figure>
+<figure><a href='visual-exemplar/central-overlap-coverage-0.25.png'><img src='visual-exemplar/central-overlap-coverage-0.25.png' loading='lazy'></a><figcaption>central-overlap · score ≥ 0.25</figcaption></figure>
+<figure><a href='visual-exemplar/central-overlap-coverage-0.1.png'><img src='visual-exemplar/central-overlap-coverage-0.1.png' loading='lazy'></a><figcaption>central-overlap · score ≥ 0.1</figcaption></figure>
+</div>
+<p class='diag'>Threshold 0.5: upper-left-fan: UL-left=miss, UL-downleft=miss; ROI predicted pixels=0 | central-overlap: C-short-blade=hit, C-separate-right-blade=hit; ROI predicted pixels=1283 | lower-right-drooping-fan: LR-upper-diagonal=miss, LR-down=miss; ROI predicted pixels=0</p>
+<p class='diag'>Threshold 0.25: upper-left-fan: UL-left=hit, UL-downleft=hit; ROI predicted pixels=560 | central-overlap: C-short-blade=hit, C-separate-right-blade=hit; ROI predicted pixels=1283 | lower-right-drooping-fan: LR-upper-diagonal=miss, LR-down=miss; ROI predicted pixels=0</p>
+<p class='diag'>Threshold 0.1: upper-left-fan: UL-left=hit, UL-downleft=hit; ROI predicted pixels=999 | central-overlap: C-short-blade=hit, C-separate-right-blade=hit; ROI predicted pixels=2545 | lower-right-drooping-fan: LR-upper-diagonal=hit, LR-down=hit; ROI predicted pixels=2291</p>
+<p>Raw files: <a href='visual-exemplar/central-overlap-proposals.npz'>packed proposals</a> · <a href='visual-exemplar/central-overlap-scores.npz'>score map</a>.</p>
+<h3>Seed region: lower-right-drooping-fan</h3>
+<p>Normalized box: <code>[0.6863517060367454, 0.8445945945945946, 0.17585301837270342, 0.17117117117117117]</code>; proposals ≥0.1: 127</p>
+<table><thead><tr><th>threshold</th><th>foreground_coverage</th><th>core_coverage</th><th>proxy_precision</th><th>proxy_iou</th><th>definite_background_pixels</th><th>predicted_pixels</th></tr></thead><tbody><tr><td>0.5000</td><td>0.0744</td><td>0.0798</td><td>0.8877</td><td>0.0737</td><td>312</td><td>3535</td></tr><tr><td>0.2500</td><td>0.9822</td><td>0.9943</td><td>0.6602</td><td>0.6524</td><td>18337</td><td>62773</td></tr><tr><td>0.1000</td><td>0.9866</td><td>0.9962</td><td>0.6587</td><td>0.6529</td><td>18530</td><td>63195</td></tr></tbody></table>
+<div class='gallery'>
+<figure><a href='visual-exemplar/lower-right-drooping-fan-coverage-0.5.png'><img src='visual-exemplar/lower-right-drooping-fan-coverage-0.5.png' loading='lazy'></a><figcaption>lower-right-drooping-fan · score ≥ 0.5</figcaption></figure>
+<figure><a href='visual-exemplar/lower-right-drooping-fan-coverage-0.25.png'><img src='visual-exemplar/lower-right-drooping-fan-coverage-0.25.png' loading='lazy'></a><figcaption>lower-right-drooping-fan · score ≥ 0.25</figcaption></figure>
+<figure><a href='visual-exemplar/lower-right-drooping-fan-coverage-0.1.png'><img src='visual-exemplar/lower-right-drooping-fan-coverage-0.1.png' loading='lazy'></a><figcaption>lower-right-drooping-fan · score ≥ 0.1</figcaption></figure>
+</div>
+<p class='diag'>Threshold 0.5: upper-left-fan: UL-left=miss, UL-downleft=miss; ROI predicted pixels=0 | central-overlap: C-short-blade=miss, C-separate-right-blade=miss; ROI predicted pixels=0 | lower-right-drooping-fan: LR-upper-diagonal=hit, LR-down=hit; ROI predicted pixels=2272</p>
+<p class='diag'>Threshold 0.25: upper-left-fan: UL-left=hit, UL-downleft=hit; ROI predicted pixels=1084 | central-overlap: C-short-blade=hit, C-separate-right-blade=hit; ROI predicted pixels=2548 | lower-right-drooping-fan: LR-upper-diagonal=hit, LR-down=hit; ROI predicted pixels=2299</p>
+<p class='diag'>Threshold 0.1: upper-left-fan: UL-left=hit, UL-downleft=hit; ROI predicted pixels=1084 | central-overlap: C-short-blade=hit, C-separate-right-blade=hit; ROI predicted pixels=2548 | lower-right-drooping-fan: LR-upper-diagonal=hit, LR-down=hit; ROI predicted pixels=2299</p>
+<p>Raw files: <a href='visual-exemplar/lower-right-drooping-fan-proposals.npz'>packed proposals</a> · <a href='visual-exemplar/lower-right-drooping-fan-scores.npz'>score map</a>.</p>
+<h2>Executed: SAM3 targeted point refinement</h2>
+<p class='notice'>Oracle-assisted interaction: all six points were selected post-hoc. Each run has one reviewed positive point and one same-region negative point. These are not autonomous prompts or validation labels; predicted IoU is model output, not observed IoU.</p>
+<p>Input SHA-256: <code>2f338a5ce241e5844cb3bfaa517b611e9b1fc0b87270755a1dc4d9971c53fa7a</code>; device: NVIDIA A40; elapsed: 4.6204 s.</p>
+<p class='diag'>The initial point attempt omitted <code>enable_inst_interactivity=True</code>; it was corrected before this completed run. <a href='point-refinement/initial-config-failure.log'>Preserved initial configuration log</a>.</p>
+<h3>UL-left — positive [94, 146], negative UL-downleft [97, 156]</h3>
+<div class='gallery'>
+<figure><a href='point-refinement/UL-left-candidate-0.png'><img src='point-refinement/UL-left-candidate-0.png' loading='lazy'></a><figcaption>candidate 0; predicted IoU 0.5977; proxy IoU 0.0073; proxy coverage 0.0073</figcaption></figure>
+<figure><a href='point-refinement/UL-left-candidate-1.png'><img src='point-refinement/UL-left-candidate-1.png' loading='lazy'></a><figcaption>candidate 1; predicted IoU 0.0065; proxy IoU 0.6411; proxy coverage 0.9841</figcaption></figure>
+<figure><a href='point-refinement/UL-left-candidate-2.png'><img src='point-refinement/UL-left-candidate-2.png' loading='lazy'></a><figcaption>candidate 2; predicted IoU 0.4961; proxy IoU 0.0115; proxy coverage 0.0116</figcaption></figure>
+</div>
+<p><a href='point-refinement/UL-left-raw-multimask.npz'>Raw three-mask output, predicted quality, and logits</a>.</p>
+<h3>UL-downleft — positive [97, 156], negative UL-left [94, 146]</h3>
+<div class='gallery'>
+<figure><a href='point-refinement/UL-downleft-candidate-0.png'><img src='point-refinement/UL-downleft-candidate-0.png' loading='lazy'></a><figcaption>candidate 0; predicted IoU 0.6875; proxy IoU 0.0074; proxy coverage 0.0074</figcaption></figure>
+<figure><a href='point-refinement/UL-downleft-candidate-1.png'><img src='point-refinement/UL-downleft-candidate-1.png' loading='lazy'></a><figcaption>candidate 1; predicted IoU 0.0069; proxy IoU 0.6389; proxy coverage 0.9863</figcaption></figure>
+<figure><a href='point-refinement/UL-downleft-candidate-2.png'><img src='point-refinement/UL-downleft-candidate-2.png' loading='lazy'></a><figcaption>candidate 2; predicted IoU 0.2695; proxy IoU 0.0476; proxy coverage 0.0483</figcaption></figure>
+</div>
+<p><a href='point-refinement/UL-downleft-raw-multimask.npz'>Raw three-mask output, predicted quality, and logits</a>.</p>
+<h3>C-short-blade — positive [174, 227], negative C-separate-right-blade [194, 240]</h3>
+<div class='gallery'>
+<figure><a href='point-refinement/C-short-blade-candidate-0.png'><img src='point-refinement/C-short-blade-candidate-0.png' loading='lazy'></a><figcaption>candidate 0; predicted IoU 0.7500; proxy IoU 0.0023; proxy coverage 0.0023</figcaption></figure>
+<figure><a href='point-refinement/C-short-blade-candidate-1.png'><img src='point-refinement/C-short-blade-candidate-1.png' loading='lazy'></a><figcaption>candidate 1; predicted IoU 0.0020; proxy IoU 0.6434; proxy coverage 0.9808</figcaption></figure>
+<figure><a href='point-refinement/C-short-blade-candidate-2.png'><img src='point-refinement/C-short-blade-candidate-2.png' loading='lazy'></a><figcaption>candidate 2; predicted IoU 0.1201; proxy IoU 0.0196; proxy coverage 0.0196</figcaption></figure>
+</div>
+<p><a href='point-refinement/C-short-blade-raw-multimask.npz'>Raw three-mask output, predicted quality, and logits</a>.</p>
+<h3>C-separate-right-blade — positive [194, 240], negative C-short-blade [174, 227]</h3>
+<div class='gallery'>
+<figure><a href='point-refinement/C-separate-right-blade-candidate-0.png'><img src='point-refinement/C-separate-right-blade-candidate-0.png' loading='lazy'></a><figcaption>candidate 0; predicted IoU 0.7617; proxy IoU 0.0041; proxy coverage 0.0041</figcaption></figure>
+<figure><a href='point-refinement/C-separate-right-blade-candidate-1.png'><img src='point-refinement/C-separate-right-blade-candidate-1.png' loading='lazy'></a><figcaption>candidate 1; predicted IoU 0.0041; proxy IoU 0.6437; proxy coverage 0.9818</figcaption></figure>
+<figure><a href='point-refinement/C-separate-right-blade-candidate-2.png'><img src='point-refinement/C-separate-right-blade-candidate-2.png' loading='lazy'></a><figcaption>candidate 2; predicted IoU 0.2031; proxy IoU 0.0183; proxy coverage 0.0183</figcaption></figure>
+</div>
+<p><a href='point-refinement/C-separate-right-blade-raw-multimask.npz'>Raw three-mask output, predicted quality, and logits</a>.</p>
+<h3>LR-upper-diagonal — positive [262, 371], negative LR-down [253, 382]</h3>
+<div class='gallery'>
+<figure><a href='point-refinement/LR-upper-diagonal-candidate-0.png'><img src='point-refinement/LR-upper-diagonal-candidate-0.png' loading='lazy'></a><figcaption>candidate 0; predicted IoU 0.5898; proxy IoU 0.0031; proxy coverage 0.0031</figcaption></figure>
+<figure><a href='point-refinement/LR-upper-diagonal-candidate-1.png'><img src='point-refinement/LR-upper-diagonal-candidate-1.png' loading='lazy'></a><figcaption>candidate 1; predicted IoU 0.0065; proxy IoU 0.6433; proxy coverage 0.9853</figcaption></figure>
+<figure><a href='point-refinement/LR-upper-diagonal-candidate-2.png'><img src='point-refinement/LR-upper-diagonal-candidate-2.png' loading='lazy'></a><figcaption>candidate 2; predicted IoU 0.1758; proxy IoU 0.0214; proxy coverage 0.0214</figcaption></figure>
+</div>
+<p><a href='point-refinement/LR-upper-diagonal-raw-multimask.npz'>Raw three-mask output, predicted quality, and logits</a>.</p>
+<h3>LR-down — positive [253, 382], negative LR-upper-diagonal [262, 371]</h3>
+<div class='gallery'>
+<figure><a href='point-refinement/LR-down-candidate-0.png'><img src='point-refinement/LR-down-candidate-0.png' loading='lazy'></a><figcaption>candidate 0; predicted IoU 0.7227; proxy IoU 0.0088; proxy coverage 0.0088</figcaption></figure>
+<figure><a href='point-refinement/LR-down-candidate-1.png'><img src='point-refinement/LR-down-candidate-1.png' loading='lazy'></a><figcaption>candidate 1; predicted IoU 0.0107; proxy IoU 0.6454; proxy coverage 0.9867</figcaption></figure>
+<figure><a href='point-refinement/LR-down-candidate-2.png'><img src='point-refinement/LR-down-candidate-2.png' loading='lazy'></a><figcaption>candidate 2; predicted IoU 0.4395; proxy IoU 0.0269; proxy coverage 0.0269</figcaption></figure>
+</div>
+<p><a href='point-refinement/LR-down-raw-multimask.npz'>Raw three-mask output, predicted quality, and logits</a>.</p>

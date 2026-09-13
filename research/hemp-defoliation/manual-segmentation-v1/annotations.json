@@ -1,0 +1,4347 @@
+{
+  "image": "runs/hemp-sam3-comparison-v1/results/sam3/reference/input.png",
+  "width": 381,
+  "height": 444,
+  "annotator": "Astra assistant: visual interpretation and hand-entered vector polygons",
+  "status": "Completed first manual review of all 25 cells; incomplete tissue coverage and approximate boundaries; not independent ground truth",
+  "grid_columns": [
+    0,
+    76,
+    152,
+    229,
+    305,
+    381
+  ],
+  "grid_rows": [
+    0,
+    89,
+    178,
+    266,
+    355,
+    444
+  ],
+  "polygons": [
+    {
+      "id": "M001",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          176,
+          59
+        ],
+        [
+          169,
+          55
+        ],
+        [
+          156,
+          48
+        ],
+        [
+          143,
+          43
+        ],
+        [
+          135,
+          40
+        ],
+        [
+          143,
+          41
+        ],
+        [
+          155,
+          44
+        ],
+        [
+          165,
+          49
+        ],
+        [
+          173,
+          55
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M002",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          175,
+          58
+        ],
+        [
+          172,
+          51
+        ],
+        [
+          166,
+          44
+        ],
+        [
+          158,
+          39
+        ],
+        [
+          151,
+          34
+        ],
+        [
+          156,
+          36
+        ],
+        [
+          165,
+          40
+        ],
+        [
+          171,
+          46
+        ],
+        [
+          175,
+          53
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M003",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          177,
+          58
+        ],
+        [
+          175,
+          53
+        ],
+        [
+          175,
+          48
+        ],
+        [
+          178,
+          44
+        ],
+        [
+          179,
+          41
+        ],
+        [
+          180,
+          46
+        ],
+        [
+          179,
+          52
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M004",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          178,
+          60
+        ],
+        [
+          182,
+          56
+        ],
+        [
+          188,
+          54
+        ],
+        [
+          194,
+          54
+        ],
+        [
+          189,
+          55
+        ],
+        [
+          183,
+          58
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M005",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          215,
+          62
+        ],
+        [
+          211,
+          56
+        ],
+        [
+          207,
+          50
+        ],
+        [
+          201,
+          45
+        ],
+        [
+          198,
+          43
+        ],
+        [
+          201,
+          43
+        ],
+        [
+          208,
+          48
+        ],
+        [
+          213,
+          55
+        ],
+        [
+          217,
+          61
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M006",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          216,
+          63
+        ],
+        [
+          224,
+          62
+        ],
+        [
+          232,
+          63
+        ],
+        [
+          239,
+          65
+        ],
+        [
+          247,
+          69
+        ],
+        [
+          239,
+          67
+        ],
+        [
+          231,
+          65
+        ],
+        [
+          222,
+          65
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M007",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          187,
+          73
+        ],
+        [
+          180,
+          69
+        ],
+        [
+          173,
+          64
+        ],
+        [
+          166,
+          62
+        ],
+        [
+          171,
+          63
+        ],
+        [
+          180,
+          66
+        ],
+        [
+          187,
+          70
+        ],
+        [
+          191,
+          76
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M008",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          177,
+          73
+        ],
+        [
+          185,
+          67
+        ],
+        [
+          195,
+          66
+        ],
+        [
+          199,
+          61
+        ],
+        [
+          202,
+          65
+        ],
+        [
+          207,
+          62
+        ],
+        [
+          211,
+          66
+        ],
+        [
+          218,
+          64
+        ],
+        [
+          213,
+          72
+        ],
+        [
+          210,
+          79
+        ],
+        [
+          219,
+          80
+        ],
+        [
+          222,
+          88
+        ],
+        [
+          217,
+          96
+        ],
+        [
+          202,
+          96
+        ],
+        [
+          193,
+          91
+        ],
+        [
+          185,
+          86
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M009",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          112,
+          145
+        ],
+        [
+          104,
+          141
+        ],
+        [
+          94,
+          138
+        ],
+        [
+          89,
+          134
+        ],
+        [
+          97,
+          137
+        ],
+        [
+          108,
+          141
+        ],
+        [
+          114,
+          145
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M010",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          111,
+          146
+        ],
+        [
+          102,
+          145
+        ],
+        [
+          94,
+          146
+        ],
+        [
+          82,
+          148
+        ],
+        [
+          80,
+          150
+        ],
+        [
+          94,
+          150
+        ],
+        [
+          104,
+          149
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M011",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          111,
+          146
+        ],
+        [
+          101,
+          150
+        ],
+        [
+          91,
+          156
+        ],
+        [
+          80,
+          164
+        ],
+        [
+          89,
+          161
+        ],
+        [
+          101,
+          155
+        ],
+        [
+          111,
+          149
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M012",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          112,
+          147
+        ],
+        [
+          104,
+          154
+        ],
+        [
+          99,
+          163
+        ],
+        [
+          95,
+          172
+        ],
+        [
+          102,
+          165
+        ],
+        [
+          109,
+          156
+        ],
+        [
+          114,
+          148
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M013",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          114,
+          148
+        ],
+        [
+          112,
+          154
+        ],
+        [
+          110,
+          165
+        ],
+        [
+          113,
+          161
+        ],
+        [
+          115,
+          154
+        ],
+        [
+          115,
+          148
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M014",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          256,
+          152
+        ],
+        [
+          259,
+          144
+        ],
+        [
+          264,
+          140
+        ],
+        [
+          263,
+          145
+        ],
+        [
+          260,
+          151
+        ],
+        [
+          258,
+          154
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M015",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          258,
+          153
+        ],
+        [
+          264,
+          147
+        ],
+        [
+          272,
+          142
+        ],
+        [
+          269,
+          147
+        ],
+        [
+          262,
+          154
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M016",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          260,
+          153
+        ],
+        [
+          268,
+          148
+        ],
+        [
+          277,
+          145
+        ],
+        [
+          283,
+          145
+        ],
+        [
+          279,
+          148
+        ],
+        [
+          269,
+          152
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M017",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          260,
+          154
+        ],
+        [
+          270,
+          152
+        ],
+        [
+          283,
+          151
+        ],
+        [
+          286,
+          152
+        ],
+        [
+          279,
+          155
+        ],
+        [
+          267,
+          155
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M018",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          257,
+          150
+        ],
+        [
+          253,
+          144
+        ],
+        [
+          254,
+          136
+        ],
+        [
+          256,
+          139
+        ],
+        [
+          257,
+          145
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M019",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          258,
+          156
+        ],
+        [
+          263,
+          158
+        ],
+        [
+          269,
+          162
+        ],
+        [
+          264,
+          161
+        ],
+        [
+          257,
+          158
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M020",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          195,
+          129
+        ],
+        [
+          205,
+          130
+        ],
+        [
+          215,
+          132
+        ],
+        [
+          226,
+          137
+        ],
+        [
+          216,
+          136
+        ],
+        [
+          204,
+          133
+        ],
+        [
+          195,
+          132
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M021",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          194,
+          129
+        ],
+        [
+          183,
+          129
+        ],
+        [
+          171,
+          131
+        ],
+        [
+          164,
+          133
+        ],
+        [
+          176,
+          133
+        ],
+        [
+          187,
+          132
+        ],
+        [
+          194,
+          131
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M022",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          223,
+          103
+        ],
+        [
+          233,
+          105
+        ],
+        [
+          246,
+          111
+        ],
+        [
+          262,
+          120
+        ],
+        [
+          272,
+          129
+        ],
+        [
+          263,
+          124
+        ],
+        [
+          249,
+          116
+        ],
+        [
+          234,
+          108
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M023",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          226,
+          101
+        ],
+        [
+          237,
+          102
+        ],
+        [
+          248,
+          106
+        ],
+        [
+          254,
+          109
+        ],
+        [
+          243,
+          106
+        ],
+        [
+          233,
+          105
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M024",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          144,
+          161
+        ],
+        [
+          139,
+          160
+        ],
+        [
+          130,
+          160
+        ],
+        [
+          113,
+          162
+        ],
+        [
+          118,
+          164
+        ],
+        [
+          135,
+          163
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M025",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          145,
+          172
+        ],
+        [
+          138,
+          169
+        ],
+        [
+          128,
+          170
+        ],
+        [
+          113,
+          173
+        ],
+        [
+          124,
+          173
+        ],
+        [
+          139,
+          174
+        ],
+        [
+          149,
+          175
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M026",
+      "label": "stem",
+      "certainty": "moderate",
+      "points": [
+        [
+          196,
+          100
+        ],
+        [
+          196,
+          110
+        ],
+        [
+          194,
+          122
+        ],
+        [
+          192,
+          124
+        ],
+        [
+          192,
+          119
+        ],
+        [
+          194,
+          108
+        ],
+        [
+          194,
+          100
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M027",
+      "label": "stem",
+      "certainty": "moderate",
+      "points": [
+        [
+          193,
+          133
+        ],
+        [
+          192,
+          146
+        ],
+        [
+          191,
+          151
+        ],
+        [
+          189,
+          150
+        ],
+        [
+          190,
+          139
+        ],
+        [
+          191,
+          132
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M028",
+      "label": "stem",
+      "certainty": "moderate",
+      "points": [
+        [
+          189,
+          157
+        ],
+        [
+          189,
+          164
+        ],
+        [
+          186,
+          180
+        ],
+        [
+          187,
+          183
+        ],
+        [
+          190,
+          175
+        ],
+        [
+          192,
+          158
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M029",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          140,
+          106
+        ],
+        [
+          147,
+          107
+        ],
+        [
+          150,
+          104
+        ],
+        [
+          158,
+          107
+        ],
+        [
+          164,
+          105
+        ],
+        [
+          168,
+          111
+        ],
+        [
+          163,
+          117
+        ],
+        [
+          152,
+          120
+        ],
+        [
+          143,
+          116
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M030",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          123,
+          123
+        ],
+        [
+          130,
+          122
+        ],
+        [
+          131,
+          116
+        ],
+        [
+          134,
+          122
+        ],
+        [
+          139,
+          119
+        ],
+        [
+          144,
+          125
+        ],
+        [
+          140,
+          130
+        ],
+        [
+          131,
+          132
+        ],
+        [
+          122,
+          128
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M031",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          126,
+          135
+        ],
+        [
+          132,
+          134
+        ],
+        [
+          138,
+          128
+        ],
+        [
+          140,
+          133
+        ],
+        [
+          145,
+          132
+        ],
+        [
+          146,
+          137
+        ],
+        [
+          140,
+          143
+        ],
+        [
+          128,
+          149
+        ],
+        [
+          123,
+          144
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M032",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          213,
+          118
+        ],
+        [
+          220,
+          119
+        ],
+        [
+          224,
+          114
+        ],
+        [
+          225,
+          118
+        ],
+        [
+          230,
+          117
+        ],
+        [
+          235,
+          122
+        ],
+        [
+          231,
+          126
+        ],
+        [
+          221,
+          129
+        ],
+        [
+          216,
+          125
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M033",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          149,
+          160
+        ],
+        [
+          153,
+          161
+        ],
+        [
+          158,
+          159
+        ],
+        [
+          166,
+          164
+        ],
+        [
+          169,
+          170
+        ],
+        [
+          161,
+          175
+        ],
+        [
+          148,
+          170
+        ],
+        [
+          143,
+          165
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M034",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          108,
+          197
+        ],
+        [
+          103,
+          191
+        ],
+        [
+          96,
+          185
+        ],
+        [
+          89,
+          181
+        ],
+        [
+          93,
+          181
+        ],
+        [
+          101,
+          187
+        ],
+        [
+          109,
+          194
+        ],
+        [
+          112,
+          199
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M035",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          108,
+          198
+        ],
+        [
+          101,
+          194
+        ],
+        [
+          91,
+          191
+        ],
+        [
+          85,
+          188
+        ],
+        [
+          90,
+          189
+        ],
+        [
+          101,
+          191
+        ],
+        [
+          110,
+          196
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M036",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          108,
+          198
+        ],
+        [
+          100,
+          196
+        ],
+        [
+          93,
+          196
+        ],
+        [
+          82,
+          200
+        ],
+        [
+          87,
+          202
+        ],
+        [
+          99,
+          201
+        ],
+        [
+          107,
+          200
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M037",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          107,
+          200
+        ],
+        [
+          99,
+          202
+        ],
+        [
+          90,
+          207
+        ],
+        [
+          95,
+          207
+        ],
+        [
+          103,
+          204
+        ],
+        [
+          109,
+          201
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M038",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          109,
+          200
+        ],
+        [
+          107,
+          202
+        ],
+        [
+          108,
+          210
+        ],
+        [
+          110,
+          212
+        ],
+        [
+          110,
+          205
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M039",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          109,
+          196
+        ],
+        [
+          105,
+          190
+        ],
+        [
+          104,
+          182
+        ],
+        [
+          107,
+          186
+        ],
+        [
+          111,
+          195
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M040",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          121,
+          199
+        ],
+        [
+          131,
+          193
+        ],
+        [
+          142,
+          188
+        ],
+        [
+          145,
+          188
+        ],
+        [
+          137,
+          193
+        ],
+        [
+          126,
+          199
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M041",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          134,
+          210
+        ],
+        [
+          138,
+          203
+        ],
+        [
+          141,
+          198
+        ],
+        [
+          140,
+          205
+        ],
+        [
+          136,
+          211
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M042",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          135,
+          210
+        ],
+        [
+          141,
+          209
+        ],
+        [
+          149,
+          211
+        ],
+        [
+          152,
+          214
+        ],
+        [
+          144,
+          214
+        ],
+        [
+          136,
+          212
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M043",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          134,
+          212
+        ],
+        [
+          134,
+          216
+        ],
+        [
+          138,
+          221
+        ],
+        [
+          138,
+          217
+        ],
+        [
+          136,
+          211
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M044",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          108,
+          224
+        ],
+        [
+          101,
+          219
+        ],
+        [
+          91,
+          215
+        ],
+        [
+          80,
+          212
+        ],
+        [
+          83,
+          215
+        ],
+        [
+          95,
+          221
+        ],
+        [
+          105,
+          225
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M045",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          107,
+          225
+        ],
+        [
+          98,
+          222
+        ],
+        [
+          90,
+          221
+        ],
+        [
+          78,
+          223
+        ],
+        [
+          82,
+          225
+        ],
+        [
+          96,
+          225
+        ],
+        [
+          106,
+          226
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M046",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          107,
+          226
+        ],
+        [
+          102,
+          225
+        ],
+        [
+          97,
+          228
+        ],
+        [
+          103,
+          228
+        ],
+        [
+          108,
+          227
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M047",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          199,
+          225
+        ],
+        [
+          192,
+          231
+        ],
+        [
+          187,
+          241
+        ],
+        [
+          185,
+          252
+        ],
+        [
+          190,
+          247
+        ],
+        [
+          195,
+          239
+        ],
+        [
+          200,
+          229
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M048",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          201,
+          226
+        ],
+        [
+          201,
+          235
+        ],
+        [
+          204,
+          247
+        ],
+        [
+          208,
+          255
+        ],
+        [
+          211,
+          262
+        ],
+        [
+          211,
+          251
+        ],
+        [
+          207,
+          237
+        ],
+        [
+          204,
+          228
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M049",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          200,
+          223
+        ],
+        [
+          190,
+          227
+        ],
+        [
+          183,
+          232
+        ],
+        [
+          179,
+          238
+        ],
+        [
+          183,
+          237
+        ],
+        [
+          192,
+          230
+        ],
+        [
+          201,
+          225
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M050",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          199,
+          223
+        ],
+        [
+          191,
+          220
+        ],
+        [
+          184,
+          220
+        ],
+        [
+          177,
+          222
+        ],
+        [
+          184,
+          224
+        ],
+        [
+          195,
+          224
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M051",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          203,
+          224
+        ],
+        [
+          211,
+          228
+        ],
+        [
+          219,
+          235
+        ],
+        [
+          224,
+          242
+        ],
+        [
+          220,
+          239
+        ],
+        [
+          211,
+          233
+        ],
+        [
+          203,
+          227
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M052",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          203,
+          222
+        ],
+        [
+          211,
+          221
+        ],
+        [
+          221,
+          222
+        ],
+        [
+          229,
+          224
+        ],
+        [
+          219,
+          224
+        ],
+        [
+          207,
+          224
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M053",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          172,
+          225
+        ],
+        [
+          169,
+          222
+        ],
+        [
+          160,
+          223
+        ],
+        [
+          148,
+          231
+        ],
+        [
+          154,
+          229
+        ],
+        [
+          166,
+          227
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M054",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          172,
+          226
+        ],
+        [
+          169,
+          230
+        ],
+        [
+          173,
+          240
+        ],
+        [
+          176,
+          242
+        ],
+        [
+          175,
+          233
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M055",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          156,
+          253
+        ],
+        [
+          147,
+          251
+        ],
+        [
+          140,
+          252
+        ],
+        [
+          130,
+          257
+        ],
+        [
+          120,
+          262
+        ],
+        [
+          130,
+          260
+        ],
+        [
+          142,
+          255
+        ],
+        [
+          151,
+          254
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M056",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          101,
+          246
+        ],
+        [
+          95,
+          251
+        ],
+        [
+          87,
+          257
+        ],
+        [
+          79,
+          266
+        ],
+        [
+          83,
+          258
+        ],
+        [
+          91,
+          251
+        ],
+        [
+          99,
+          244
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M057",
+      "label": "stem",
+      "certainty": "moderate",
+      "points": [
+        [
+          183,
+          184
+        ],
+        [
+          181,
+          194
+        ],
+        [
+          180,
+          198
+        ],
+        [
+          182,
+          198
+        ],
+        [
+          184,
+          188
+        ],
+        [
+          185,
+          184
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M058",
+      "label": "stem",
+      "certainty": "moderate",
+      "points": [
+        [
+          176,
+          236
+        ],
+        [
+          174,
+          251
+        ],
+        [
+          174,
+          266
+        ],
+        [
+          177,
+          266
+        ],
+        [
+          179,
+          249
+        ],
+        [
+          179,
+          236
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M059",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          107,
+          193
+        ],
+        [
+          116,
+          188
+        ],
+        [
+          122,
+          194
+        ],
+        [
+          126,
+          199
+        ],
+        [
+          122,
+          204
+        ],
+        [
+          113,
+          204
+        ],
+        [
+          108,
+          200
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M060",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          180,
+          199
+        ],
+        [
+          187,
+          191
+        ],
+        [
+          196,
+          188
+        ],
+        [
+          204,
+          191
+        ],
+        [
+          209,
+          188
+        ],
+        [
+          213,
+          195
+        ],
+        [
+          216,
+          203
+        ],
+        [
+          207,
+          211
+        ],
+        [
+          192,
+          209
+        ],
+        [
+          181,
+          207
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M061",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          251,
+          203
+        ],
+        [
+          257,
+          199
+        ],
+        [
+          263,
+          200
+        ],
+        [
+          271,
+          204
+        ],
+        [
+          268,
+          211
+        ],
+        [
+          260,
+          214
+        ],
+        [
+          251,
+          210
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M062",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          275,
+          213
+        ],
+        [
+          281,
+          211
+        ],
+        [
+          285,
+          215
+        ],
+        [
+          291,
+          217
+        ],
+        [
+          293,
+          222
+        ],
+        [
+          283,
+          226
+        ],
+        [
+          275,
+          223
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M063",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          96,
+          237
+        ],
+        [
+          103,
+          232
+        ],
+        [
+          107,
+          236
+        ],
+        [
+          112,
+          237
+        ],
+        [
+          117,
+          244
+        ],
+        [
+          112,
+          250
+        ],
+        [
+          101,
+          249
+        ],
+        [
+          93,
+          243
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M064",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          304,
+          243
+        ],
+        [
+          313,
+          241
+        ],
+        [
+          320,
+          244
+        ],
+        [
+          321,
+          249
+        ],
+        [
+          330,
+          252
+        ],
+        [
+          334,
+          257
+        ],
+        [
+          327,
+          263
+        ],
+        [
+          314,
+          264
+        ],
+        [
+          305,
+          259
+        ],
+        [
+          298,
+          253
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M065",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          108,
+          269
+        ],
+        [
+          98,
+          274
+        ],
+        [
+          89,
+          282
+        ],
+        [
+          82,
+          292
+        ],
+        [
+          88,
+          287
+        ],
+        [
+          100,
+          277
+        ],
+        [
+          110,
+          272
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M066",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          106,
+          269
+        ],
+        [
+          98,
+          270
+        ],
+        [
+          89,
+          273
+        ],
+        [
+          85,
+          276
+        ],
+        [
+          93,
+          275
+        ],
+        [
+          105,
+          272
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M067",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          109,
+          271
+        ],
+        [
+          103,
+          279
+        ],
+        [
+          98,
+          290
+        ],
+        [
+          100,
+          287
+        ],
+        [
+          106,
+          281
+        ],
+        [
+          111,
+          273
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M068",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          111,
+          272
+        ],
+        [
+          107,
+          281
+        ],
+        [
+          103,
+          289
+        ],
+        [
+          105,
+          280
+        ],
+        [
+          109,
+          273
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M069",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          265,
+          266
+        ],
+        [
+          269,
+          272
+        ],
+        [
+          267,
+          281
+        ],
+        [
+          264,
+          291
+        ],
+        [
+          263,
+          283
+        ],
+        [
+          264,
+          274
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M070",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          269,
+          267
+        ],
+        [
+          273,
+          272
+        ],
+        [
+          280,
+          281
+        ],
+        [
+          284,
+          286
+        ],
+        [
+          278,
+          282
+        ],
+        [
+          272,
+          275
+        ],
+        [
+          267,
+          269
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M071",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          318,
+          267
+        ],
+        [
+          322,
+          271
+        ],
+        [
+          327,
+          279
+        ],
+        [
+          331,
+          286
+        ],
+        [
+          329,
+          283
+        ],
+        [
+          322,
+          276
+        ],
+        [
+          318,
+          270
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M072",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          132,
+          301
+        ],
+        [
+          138,
+          305
+        ],
+        [
+          143,
+          312
+        ],
+        [
+          146,
+          321
+        ],
+        [
+          140,
+          313
+        ],
+        [
+          134,
+          307
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M073",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          133,
+          302
+        ],
+        [
+          135,
+          311
+        ],
+        [
+          133,
+          316
+        ],
+        [
+          131,
+          307
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M074",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          103,
+          333
+        ],
+        [
+          98,
+          340
+        ],
+        [
+          93,
+          349
+        ],
+        [
+          89,
+          359
+        ],
+        [
+          95,
+          352
+        ],
+        [
+          101,
+          341
+        ],
+        [
+          106,
+          335
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M075",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          104,
+          334
+        ],
+        [
+          103,
+          343
+        ],
+        [
+          105,
+          354
+        ],
+        [
+          107,
+          360
+        ],
+        [
+          108,
+          349
+        ],
+        [
+          107,
+          340
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M076",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          101,
+          333
+        ],
+        [
+          94,
+          337
+        ],
+        [
+          89,
+          344
+        ],
+        [
+          86,
+          354
+        ],
+        [
+          85,
+          363
+        ],
+        [
+          89,
+          355
+        ],
+        [
+          97,
+          343
+        ],
+        [
+          104,
+          336
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M077",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          106,
+          335
+        ],
+        [
+          111,
+          341
+        ],
+        [
+          119,
+          347
+        ],
+        [
+          115,
+          342
+        ],
+        [
+          110,
+          337
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M078",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          132,
+          316
+        ],
+        [
+          127,
+          321
+        ],
+        [
+          124,
+          329
+        ],
+        [
+          124,
+          335
+        ],
+        [
+          129,
+          328
+        ],
+        [
+          134,
+          319
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M079",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          173,
+          324
+        ],
+        [
+          178,
+          322
+        ],
+        [
+          181,
+          326
+        ],
+        [
+          184,
+          337
+        ],
+        [
+          179,
+          332
+        ],
+        [
+          173,
+          328
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M080",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          163,
+          328
+        ],
+        [
+          157,
+          327
+        ],
+        [
+          151,
+          330
+        ],
+        [
+          143,
+          335
+        ],
+        [
+          151,
+          332
+        ],
+        [
+          162,
+          332
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M081",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          201,
+          304
+        ],
+        [
+          208,
+          306
+        ],
+        [
+          216,
+          311
+        ],
+        [
+          222,
+          317
+        ],
+        [
+          226,
+          322
+        ],
+        [
+          221,
+          318
+        ],
+        [
+          212,
+          312
+        ],
+        [
+          205,
+          309
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M082",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          290,
+          318
+        ],
+        [
+          301,
+          320
+        ],
+        [
+          312,
+          325
+        ],
+        [
+          323,
+          332
+        ],
+        [
+          331,
+          337
+        ],
+        [
+          324,
+          333
+        ],
+        [
+          312,
+          328
+        ],
+        [
+          302,
+          324
+        ],
+        [
+          292,
+          321
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M083",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          292,
+          321
+        ],
+        [
+          301,
+          325
+        ],
+        [
+          312,
+          333
+        ],
+        [
+          320,
+          342
+        ],
+        [
+          314,
+          338
+        ],
+        [
+          304,
+          331
+        ],
+        [
+          296,
+          326
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M084",
+      "label": "stem",
+      "certainty": "moderate",
+      "points": [
+        [
+          173,
+          280
+        ],
+        [
+          173,
+          290
+        ],
+        [
+          172,
+          300
+        ],
+        [
+          170,
+          305
+        ],
+        [
+          170,
+          295
+        ],
+        [
+          171,
+          286
+        ],
+        [
+          171,
+          280
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M085",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          99,
+          302
+        ],
+        [
+          105,
+          299
+        ],
+        [
+          110,
+          305
+        ],
+        [
+          111,
+          314
+        ],
+        [
+          106,
+          322
+        ],
+        [
+          100,
+          322
+        ],
+        [
+          93,
+          316
+        ],
+        [
+          93,
+          309
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M086",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          153,
+          305
+        ],
+        [
+          161,
+          302
+        ],
+        [
+          166,
+          307
+        ],
+        [
+          168,
+          315
+        ],
+        [
+          175,
+          318
+        ],
+        [
+          172,
+          327
+        ],
+        [
+          164,
+          328
+        ],
+        [
+          158,
+          322
+        ],
+        [
+          148,
+          322
+        ],
+        [
+          146,
+          315
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M087",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          186,
+          279
+        ],
+        [
+          195,
+          274
+        ],
+        [
+          206,
+          276
+        ],
+        [
+          208,
+          282
+        ],
+        [
+          205,
+          290
+        ],
+        [
+          195,
+          294
+        ],
+        [
+          186,
+          290
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M088",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          211,
+          268
+        ],
+        [
+          221,
+          266
+        ],
+        [
+          230,
+          263
+        ],
+        [
+          240,
+          267
+        ],
+        [
+          245,
+          273
+        ],
+        [
+          237,
+          279
+        ],
+        [
+          224,
+          276
+        ],
+        [
+          216,
+          273
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M089",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          228,
+          311
+        ],
+        [
+          236,
+          310
+        ],
+        [
+          243,
+          315
+        ],
+        [
+          247,
+          321
+        ],
+        [
+          244,
+          327
+        ],
+        [
+          234,
+          327
+        ],
+        [
+          227,
+          322
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M090",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          282,
+          298
+        ],
+        [
+          290,
+          297
+        ],
+        [
+          296,
+          302
+        ],
+        [
+          298,
+          310
+        ],
+        [
+          294,
+          316
+        ],
+        [
+          283,
+          316
+        ],
+        [
+          277,
+          310
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M091",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          220,
+          340
+        ],
+        [
+          231,
+          337
+        ],
+        [
+          236,
+          343
+        ],
+        [
+          241,
+          349
+        ],
+        [
+          236,
+          354
+        ],
+        [
+          227,
+          354
+        ],
+        [
+          219,
+          349
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M092",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          250,
+          367
+        ],
+        [
+          255,
+          373
+        ],
+        [
+          261,
+          384
+        ],
+        [
+          267,
+          397
+        ],
+        [
+          271,
+          408
+        ],
+        [
+          265,
+          402
+        ],
+        [
+          258,
+          391
+        ],
+        [
+          253,
+          381
+        ],
+        [
+          249,
+          371
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M093",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          249,
+          369
+        ],
+        [
+          247,
+          377
+        ],
+        [
+          249,
+          389
+        ],
+        [
+          253,
+          403
+        ],
+        [
+          256,
+          418
+        ],
+        [
+          259,
+          410
+        ],
+        [
+          258,
+          399
+        ],
+        [
+          253,
+          380
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M094",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          252,
+          368
+        ],
+        [
+          260,
+          372
+        ],
+        [
+          268,
+          380
+        ],
+        [
+          275,
+          391
+        ],
+        [
+          278,
+          399
+        ],
+        [
+          272,
+          393
+        ],
+        [
+          264,
+          384
+        ],
+        [
+          256,
+          375
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M095",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          248,
+          368
+        ],
+        [
+          243,
+          375
+        ],
+        [
+          241,
+          387
+        ],
+        [
+          240,
+          399
+        ],
+        [
+          243,
+          394
+        ],
+        [
+          246,
+          383
+        ],
+        [
+          249,
+          374
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M096",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          254,
+          368
+        ],
+        [
+          264,
+          369
+        ],
+        [
+          273,
+          373
+        ],
+        [
+          281,
+          378
+        ],
+        [
+          271,
+          376
+        ],
+        [
+          261,
+          373
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M097",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          252,
+          365
+        ],
+        [
+          260,
+          365
+        ],
+        [
+          267,
+          367
+        ],
+        [
+          269,
+          369
+        ],
+        [
+          260,
+          368
+        ],
+        [
+          254,
+          367
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M098",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          236,
+          380
+        ],
+        [
+          234,
+          390
+        ],
+        [
+          234,
+          403
+        ],
+        [
+          232,
+          419
+        ],
+        [
+          231,
+          420
+        ],
+        [
+          230,
+          414
+        ],
+        [
+          231,
+          397
+        ],
+        [
+          233,
+          383
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M099",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          233,
+          379
+        ],
+        [
+          230,
+          385
+        ],
+        [
+          228,
+          398
+        ],
+        [
+          228,
+          404
+        ],
+        [
+          231,
+          397
+        ],
+        [
+          235,
+          386
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M100",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          209,
+          385
+        ],
+        [
+          206,
+          392
+        ],
+        [
+          206,
+          402
+        ],
+        [
+          208,
+          406
+        ],
+        [
+          211,
+          400
+        ],
+        [
+          213,
+          391
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M101",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          212,
+          387
+        ],
+        [
+          216,
+          390
+        ],
+        [
+          219,
+          395
+        ],
+        [
+          220,
+          400
+        ],
+        [
+          216,
+          396
+        ],
+        [
+          211,
+          390
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M102",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          154,
+          388
+        ],
+        [
+          150,
+          389
+        ],
+        [
+          144,
+          395
+        ],
+        [
+          140,
+          401
+        ],
+        [
+          144,
+          399
+        ],
+        [
+          153,
+          394
+        ],
+        [
+          158,
+          389
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M103",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          119,
+          357
+        ],
+        [
+          114,
+          361
+        ],
+        [
+          111,
+          368
+        ],
+        [
+          112,
+          376
+        ],
+        [
+          116,
+          370
+        ],
+        [
+          121,
+          361
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M104",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          149,
+          373
+        ],
+        [
+          145,
+          378
+        ],
+        [
+          138,
+          384
+        ],
+        [
+          136,
+          388
+        ],
+        [
+          141,
+          385
+        ],
+        [
+          149,
+          381
+        ],
+        [
+          153,
+          375
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M105",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          176,
+          377
+        ],
+        [
+          179,
+          383
+        ],
+        [
+          179,
+          391
+        ],
+        [
+          176,
+          398
+        ],
+        [
+          174,
+          393
+        ],
+        [
+          175,
+          383
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M106",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          185,
+          376
+        ],
+        [
+          189,
+          383
+        ],
+        [
+          188,
+          393
+        ],
+        [
+          187,
+          400
+        ],
+        [
+          185,
+          394
+        ],
+        [
+          184,
+          384
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M107",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          191,
+          383
+        ],
+        [
+          194,
+          388
+        ],
+        [
+          198,
+          399
+        ],
+        [
+          198,
+          409
+        ],
+        [
+          196,
+          402
+        ],
+        [
+          191,
+          391
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M108",
+      "label": "leaflet",
+      "certainty": "low",
+      "points": [
+        [
+          280,
+          369
+        ],
+        [
+          284,
+          375
+        ],
+        [
+          289,
+          385
+        ],
+        [
+          290,
+          391
+        ],
+        [
+          287,
+          384
+        ],
+        [
+          281,
+          374
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M109",
+      "label": "leaflet",
+      "certainty": "moderate",
+      "points": [
+        [
+          139,
+          369
+        ],
+        [
+          133,
+          373
+        ],
+        [
+          125,
+          381
+        ],
+        [
+          121,
+          387
+        ],
+        [
+          129,
+          382
+        ],
+        [
+          137,
+          375
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M110",
+      "label": "support",
+      "certainty": "moderate",
+      "points": [
+        [
+          125,
+          397
+        ],
+        [
+          141,
+          402
+        ],
+        [
+          156,
+          403
+        ],
+        [
+          162,
+          401
+        ],
+        [
+          162,
+          406
+        ],
+        [
+          158,
+          408
+        ],
+        [
+          141,
+          406
+        ],
+        [
+          125,
+          402
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M111",
+      "label": "support",
+      "certainty": "moderate",
+      "points": [
+        [
+          178,
+          389
+        ],
+        [
+          180,
+          389
+        ],
+        [
+          180,
+          403
+        ],
+        [
+          178,
+          403
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "approximate visual trace; independent review pending"
+    },
+    {
+      "id": "M112",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          127,
+          359
+        ],
+        [
+          136,
+          356
+        ],
+        [
+          142,
+          361
+        ],
+        [
+          147,
+          369
+        ],
+        [
+          140,
+          375
+        ],
+        [
+          130,
+          375
+        ],
+        [
+          123,
+          368
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M113",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          167,
+          364
+        ],
+        [
+          174,
+          359
+        ],
+        [
+          183,
+          363
+        ],
+        [
+          189,
+          369
+        ],
+        [
+          184,
+          378
+        ],
+        [
+          176,
+          383
+        ],
+        [
+          169,
+          377
+        ],
+        [
+          164,
+          372
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M114",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          239,
+          355
+        ],
+        [
+          247,
+          354
+        ],
+        [
+          253,
+          359
+        ],
+        [
+          255,
+          365
+        ],
+        [
+          246,
+          369
+        ],
+        [
+          239,
+          365
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    },
+    {
+      "id": "M115",
+      "label": "unknown_cluster",
+      "certainty": "unresolved overlapping fine structures",
+      "points": [
+        [
+          269,
+          351
+        ],
+        [
+          277,
+          349
+        ],
+        [
+          284,
+          354
+        ],
+        [
+          286,
+          359
+        ],
+        [
+          280,
+          365
+        ],
+        [
+          271,
+          361
+        ]
+      ],
+      "parent_leaf_id": null,
+      "trainable": false,
+      "boundary_status": "ignore/review region; NOT a tissue or organ mask"
+    }
+  ],
+  "unannotated_pixels_status": "unknown, never implicit background",
+  "source_sha256": "2f338a5ce241e5844cb3bfaa517b611e9b1fc0b87270755a1dc4d9971c53fa7a",
+  "source_url": "https://doi.org/10.1371/journal.pone.0252985.g001",
+  "source_license": "CC BY 4.0; publisher-derived crop"
+}

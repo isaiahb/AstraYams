@@ -1,0 +1,755 @@
+{
+  "method": "SAM3 full-image visual-region-exemplar box prompting",
+  "comparison_type": "same SAM3 checkpoint, different prompt/inference method; not an independent model comparison",
+  "input_sha256": "2f338a5ce241e5844cb3bfaa517b611e9b1fc0b87270755a1dc4d9971c53fa7a",
+  "image_size": [
+    381,
+    444
+  ],
+  "device": "NVIDIA A40",
+  "pod_id": "87q94u6g8kjyo3",
+  "elapsed_seconds": 1.2688967309950385,
+  "fixed_evaluation": "same foreground proxy/ROI/thresholds as sam3-grid-search-v1; proxy is not ground truth",
+  "review_notice": "The three seeds are broad, post-hoc review rectangles that contain multiple blades, and may include stem/background; they are not tight single-organ exemplars. The six point anchors are also not held out. ROI pixels and point hits are diagnostics only, not boundary or organ accuracy.",
+  "background_rgb": [
+    14.0,
+    17.0,
+    10.0
+  ],
+  "runs": [
+    {
+      "seed_region": "upper-left-fan",
+      "seed_box_cxcywh_normalized": [
+        0.2664041994750656,
+        0.3367117117117117,
+        0.17060367454068243,
+        0.12387387387387387
+      ],
+      "proposal_count_score_ge_0_1": 66,
+      "metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.019196587273373623,
+          "core_coverage": 0.017491420347614303,
+          "proxy_precision": 0.354020979020979,
+          "proxy_iou": 0.018546928308107984,
+          "definite_background_pixels": 1329,
+          "background_fraction_of_prediction": 0.5808566433566433,
+          "predicted_pixels": 2288
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.019196587273373623,
+          "core_coverage": 0.017491420347614303,
+          "proxy_precision": 0.354020979020979,
+          "proxy_iou": 0.018546928308107984,
+          "definite_background_pixels": 1329,
+          "background_fraction_of_prediction": 0.5808566433566433,
+          "predicted_pixels": 2288
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.23033534779002252,
+          "core_coverage": 0.2144082807483671,
+          "proxy_precision": 0.11551535609013977,
+          "proxy_iou": 0.08334476726237437,
+          "definite_background_pixels": 72961,
+          "background_fraction_of_prediction": 0.8671793287059048,
+          "predicted_pixels": 84136
+        }
+      ],
+      "review_diagnostic": [
+        {
+          "threshold": 0.5,
+          "regions": [
+            {
+              "id": "upper-left-fan",
+              "roi_predicted_pixels": 1597,
+              "anchors": [
+                {
+                  "id": "UL-left",
+                  "covered": true
+                },
+                {
+                  "id": "UL-downleft",
+                  "covered": true
+                }
+              ]
+            },
+            {
+              "id": "central-overlap",
+              "roi_predicted_pixels": 0,
+              "anchors": [
+                {
+                  "id": "C-short-blade",
+                  "covered": false
+                },
+                {
+                  "id": "C-separate-right-blade",
+                  "covered": false
+                }
+              ]
+            },
+            {
+              "id": "lower-right-drooping-fan",
+              "roi_predicted_pixels": 0,
+              "anchors": [
+                {
+                  "id": "LR-upper-diagonal",
+                  "covered": false
+                },
+                {
+                  "id": "LR-down",
+                  "covered": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.25,
+          "regions": [
+            {
+              "id": "upper-left-fan",
+              "roi_predicted_pixels": 1597,
+              "anchors": [
+                {
+                  "id": "UL-left",
+                  "covered": true
+                },
+                {
+                  "id": "UL-downleft",
+                  "covered": true
+                }
+              ]
+            },
+            {
+              "id": "central-overlap",
+              "roi_predicted_pixels": 0,
+              "anchors": [
+                {
+                  "id": "C-short-blade",
+                  "covered": false
+                },
+                {
+                  "id": "C-separate-right-blade",
+                  "covered": false
+                }
+              ]
+            },
+            {
+              "id": "lower-right-drooping-fan",
+              "roi_predicted_pixels": 0,
+              "anchors": [
+                {
+                  "id": "LR-upper-diagonal",
+                  "covered": false
+                },
+                {
+                  "id": "LR-down",
+                  "covered": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "regions": [
+            {
+              "id": "upper-left-fan",
+              "roi_predicted_pixels": 1597,
+              "anchors": [
+                {
+                  "id": "UL-left",
+                  "covered": true
+                },
+                {
+                  "id": "UL-downleft",
+                  "covered": true
+                }
+              ]
+            },
+            {
+              "id": "central-overlap",
+              "roi_predicted_pixels": 0,
+              "anchors": [
+                {
+                  "id": "C-short-blade",
+                  "covered": false
+                },
+                {
+                  "id": "C-separate-right-blade",
+                  "covered": false
+                }
+              ]
+            },
+            {
+              "id": "lower-right-drooping-fan",
+              "roi_predicted_pixels": 126,
+              "anchors": [
+                {
+                  "id": "LR-upper-diagonal",
+                  "covered": false
+                },
+                {
+                  "id": "LR-down",
+                  "covered": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed_region": "central-overlap",
+      "seed_box_cxcywh_normalized": [
+        0.45931758530183725,
+        0.5292792792792793,
+        0.1889763779527559,
+        0.18018018018018017
+      ],
+      "proposal_count_score_ge_0_1": 121,
+      "metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.04512382983765849,
+          "core_coverage": 0.0493468393667663,
+          "proxy_precision": 0.8105576841209026,
+          "proxy_iou": 0.04465290806754221,
+          "definite_background_pixels": 363,
+          "background_fraction_of_prediction": 0.1545338441890166,
+          "predicted_pixels": 2349
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.05671288067306553,
+          "core_coverage": 0.0614137053027787,
+          "proxy_precision": 0.8226194568580268,
+          "proxy_iou": 0.05602772119594484,
+          "definite_background_pixels": 409,
+          "background_fraction_of_prediction": 0.14059814369199036,
+          "predicted_pixels": 2909
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.9853300154046688,
+          "core_coverage": 0.9953780582309311,
+          "proxy_precision": 0.6747488517779184,
+          "proxy_iou": 0.668037791631853,
+          "definite_background_pixels": 17128,
+          "background_fraction_of_prediction": 0.2779752341074703,
+          "predicted_pixels": 61617
+        }
+      ],
+      "review_diagnostic": [
+        {
+          "threshold": 0.5,
+          "regions": [
+            {
+              "id": "upper-left-fan",
+              "roi_predicted_pixels": 0,
+              "anchors": [
+                {
+                  "id": "UL-left",
+                  "covered": false
+                },
+                {
+                  "id": "UL-downleft",
+                  "covered": false
+                }
+              ]
+            },
+            {
+              "id": "central-overlap",
+              "roi_predicted_pixels": 1283,
+              "anchors": [
+                {
+                  "id": "C-short-blade",
+                  "covered": true
+                },
+                {
+                  "id": "C-separate-right-blade",
+                  "covered": true
+                }
+              ]
+            },
+            {
+              "id": "lower-right-drooping-fan",
+              "roi_predicted_pixels": 0,
+              "anchors": [
+                {
+                  "id": "LR-upper-diagonal",
+                  "covered": false
+                },
+                {
+                  "id": "LR-down",
+                  "covered": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.25,
+          "regions": [
+            {
+              "id": "upper-left-fan",
+              "roi_predicted_pixels": 560,
+              "anchors": [
+                {
+                  "id": "UL-left",
+                  "covered": true
+                },
+                {
+                  "id": "UL-downleft",
+                  "covered": true
+                }
+              ]
+            },
+            {
+              "id": "central-overlap",
+              "roi_predicted_pixels": 1283,
+              "anchors": [
+                {
+                  "id": "C-short-blade",
+                  "covered": true
+                },
+                {
+                  "id": "C-separate-right-blade",
+                  "covered": true
+                }
+              ]
+            },
+            {
+              "id": "lower-right-drooping-fan",
+              "roi_predicted_pixels": 0,
+              "anchors": [
+                {
+                  "id": "LR-upper-diagonal",
+                  "covered": false
+                },
+                {
+                  "id": "LR-down",
+                  "covered": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "regions": [
+            {
+              "id": "upper-left-fan",
+              "roi_predicted_pixels": 999,
+              "anchors": [
+                {
+                  "id": "UL-left",
+                  "covered": true
+                },
+                {
+                  "id": "UL-downleft",
+                  "covered": true
+                }
+              ]
+            },
+            {
+              "id": "central-overlap",
+              "roi_predicted_pixels": 2545,
+              "anchors": [
+                {
+                  "id": "C-short-blade",
+                  "covered": true
+                },
+                {
+                  "id": "C-separate-right-blade",
+                  "covered": true
+                }
+              ]
+            },
+            {
+              "id": "lower-right-drooping-fan",
+              "roi_predicted_pixels": 2291,
+              "anchors": [
+                {
+                  "id": "LR-upper-diagonal",
+                  "covered": true
+                },
+                {
+                  "id": "LR-down",
+                  "covered": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed_region": "lower-right-drooping-fan",
+      "seed_box_cxcywh_normalized": [
+        0.6863517060367454,
+        0.8445945945945946,
+        0.17585301837270342,
+        0.17117117117117117
+      ],
+      "proposal_count_score_ge_0_1": 127,
+      "metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.07436900106647706,
+          "core_coverage": 0.07979076718698107,
+          "proxy_precision": 0.8876944837340877,
+          "proxy_iou": 0.07367580766341097,
+          "definite_background_pixels": 312,
+          "background_fraction_of_prediction": 0.08826025459688826,
+          "predicted_pixels": 3535
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.9821779831733618,
+          "core_coverage": 0.9942986826082143,
+          "proxy_precision": 0.6602042279323913,
+          "proxy_iou": 0.6523888232979143,
+          "definite_background_pixels": 18337,
+          "background_fraction_of_prediction": 0.29211603714973,
+          "predicted_pixels": 62773
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.9865860883990994,
+          "core_coverage": 0.9961529945754456,
+          "proxy_precision": 0.6587388242740723,
+          "proxy_iou": 0.6528912658207996,
+          "definite_background_pixels": 18530,
+          "background_fraction_of_prediction": 0.2932194002690086,
+          "predicted_pixels": 63195
+        }
+      ],
+      "review_diagnostic": [
+        {
+          "threshold": 0.5,
+          "regions": [
+            {
+              "id": "upper-left-fan",
+              "roi_predicted_pixels": 0,
+              "anchors": [
+                {
+                  "id": "UL-left",
+                  "covered": false
+                },
+                {
+                  "id": "UL-downleft",
+                  "covered": false
+                }
+              ]
+            },
+            {
+              "id": "central-overlap",
+              "roi_predicted_pixels": 0,
+              "anchors": [
+                {
+                  "id": "C-short-blade",
+                  "covered": false
+                },
+                {
+                  "id": "C-separate-right-blade",
+                  "covered": false
+                }
+              ]
+            },
+            {
+              "id": "lower-right-drooping-fan",
+              "roi_predicted_pixels": 2272,
+              "anchors": [
+                {
+                  "id": "LR-upper-diagonal",
+                  "covered": true
+                },
+                {
+                  "id": "LR-down",
+                  "covered": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.25,
+          "regions": [
+            {
+              "id": "upper-left-fan",
+              "roi_predicted_pixels": 1084,
+              "anchors": [
+                {
+                  "id": "UL-left",
+                  "covered": true
+                },
+                {
+                  "id": "UL-downleft",
+                  "covered": true
+                }
+              ]
+            },
+            {
+              "id": "central-overlap",
+              "roi_predicted_pixels": 2548,
+              "anchors": [
+                {
+                  "id": "C-short-blade",
+                  "covered": true
+                },
+                {
+                  "id": "C-separate-right-blade",
+                  "covered": true
+                }
+              ]
+            },
+            {
+              "id": "lower-right-drooping-fan",
+              "roi_predicted_pixels": 2299,
+              "anchors": [
+                {
+                  "id": "LR-upper-diagonal",
+                  "covered": true
+                },
+                {
+                  "id": "LR-down",
+                  "covered": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "regions": [
+            {
+              "id": "upper-left-fan",
+              "roi_predicted_pixels": 1084,
+              "anchors": [
+                {
+                  "id": "UL-left",
+                  "covered": true
+                },
+                {
+                  "id": "UL-downleft",
+                  "covered": true
+                }
+              ]
+            },
+            {
+              "id": "central-overlap",
+              "roi_predicted_pixels": 2548,
+              "anchors": [
+                {
+                  "id": "C-short-blade",
+                  "covered": true
+                },
+                {
+                  "id": "C-separate-right-blade",
+                  "covered": true
+                }
+              ]
+            },
+            {
+              "id": "lower-right-drooping-fan",
+              "roi_predicted_pixels": 2299,
+              "anchors": [
+                {
+                  "id": "LR-upper-diagonal",
+                  "covered": true
+                },
+                {
+                  "id": "LR-down",
+                  "covered": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "optional_baseline": {
+    "requested": "/workspace/residual-segmentation/baseline-scores.npz",
+    "available": true,
+    "metrics": [
+      {
+        "threshold": 0.5,
+        "foreground_coverage": 0.3046569498755777,
+        "core_coverage": 0.3338591829956825,
+        "proxy_precision": 0.9825728044026599,
+        "proxy_iou": 0.30301958843080407,
+        "definite_background_pixels": 79,
+        "background_fraction_of_prediction": 0.006038370404341512,
+        "predicted_pixels": 13083
+      },
+      {
+        "threshold": 0.25,
+        "foreground_coverage": 0.6581348501007228,
+        "core_coverage": 0.7079597033100853,
+        "proxy_precision": 0.9662827516615052,
+        "proxy_iou": 0.643360207580391,
+        "definite_background_pixels": 437,
+        "background_fraction_of_prediction": 0.015205817878144682,
+        "predicted_pixels": 28739
+      },
+      {
+        "threshold": 0.1,
+        "foreground_coverage": 0.9150847256783979,
+        "core_coverage": 0.9583471714823425,
+        "proxy_precision": 0.941228091558394,
+        "proxy_iou": 0.8656234587275254,
+        "definite_background_pixels": 1377,
+        "background_fraction_of_prediction": 0.03356653584574507,
+        "predicted_pixels": 41023
+      }
+    ],
+    "review_diagnostic": [
+      {
+        "threshold": 0.5,
+        "regions": [
+          {
+            "id": "upper-left-fan",
+            "roi_predicted_pixels": 517,
+            "anchors": [
+              {
+                "id": "UL-left",
+                "covered": true
+              },
+              {
+                "id": "UL-downleft",
+                "covered": false
+              }
+            ]
+          },
+          {
+            "id": "central-overlap",
+            "roi_predicted_pixels": 726,
+            "anchors": [
+              {
+                "id": "C-short-blade",
+                "covered": true
+              },
+              {
+                "id": "C-separate-right-blade",
+                "covered": true
+              }
+            ]
+          },
+          {
+            "id": "lower-right-drooping-fan",
+            "roi_predicted_pixels": 872,
+            "anchors": [
+              {
+                "id": "LR-upper-diagonal",
+                "covered": true
+              },
+              {
+                "id": "LR-down",
+                "covered": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "threshold": 0.25,
+        "regions": [
+          {
+            "id": "upper-left-fan",
+            "roi_predicted_pixels": 584,
+            "anchors": [
+              {
+                "id": "UL-left",
+                "covered": true
+              },
+              {
+                "id": "UL-downleft",
+                "covered": false
+              }
+            ]
+          },
+          {
+            "id": "central-overlap",
+            "roi_predicted_pixels": 979,
+            "anchors": [
+              {
+                "id": "C-short-blade",
+                "covered": true
+              },
+              {
+                "id": "C-separate-right-blade",
+                "covered": true
+              }
+            ]
+          },
+          {
+            "id": "lower-right-drooping-fan",
+            "roi_predicted_pixels": 1673,
+            "anchors": [
+              {
+                "id": "LR-upper-diagonal",
+                "covered": true
+              },
+              {
+                "id": "LR-down",
+                "covered": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "threshold": 0.1,
+        "regions": [
+          {
+            "id": "upper-left-fan",
+            "roi_predicted_pixels": 629,
+            "anchors": [
+              {
+                "id": "UL-left",
+                "covered": true
+              },
+              {
+                "id": "UL-downleft",
+                "covered": false
+              }
+            ]
+          },
+          {
+            "id": "central-overlap",
+            "roi_predicted_pixels": 1381,
+            "anchors": [
+              {
+                "id": "C-short-blade",
+                "covered": true
+              },
+              {
+                "id": "C-separate-right-blade",
+                "covered": true
+              }
+            ]
+          },
+          {
+            "id": "lower-right-drooping-fan",
+            "roi_predicted_pixels": 2096,
+            "anchors": [
+              {
+                "id": "LR-upper-diagonal",
+                "covered": true
+              },
+              {
+                "id": "LR-down",
+                "covered": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

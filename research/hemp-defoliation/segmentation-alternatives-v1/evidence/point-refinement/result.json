@@ -1,0 +1,574 @@
+{
+  "method": "SAM3 interactive image predictor, one positive and one negative point, raw multimask outputs",
+  "comparison_type": "same checkpoint, targeted oracle-assisted refinement; not automatic instance discovery and not an independent model comparison",
+  "input_sha256": "2f338a5ce241e5844cb3bfaa517b611e9b1fc0b87270755a1dc4d9971c53fa7a",
+  "image_size": [
+    381,
+    444
+  ],
+  "device": "NVIDIA A40",
+  "pod_id": "mi70bjvnphais8",
+  "elapsed_seconds": 4.620422997511923,
+  "prompt_notice": "Points are post-hoc manually reviewed anchors. The negative point is another reviewed point in the same ROI. This tests an interactive labeling technique, not a held-out benchmark or autonomous prompt generation.",
+  "evaluation_notice": "Raw multimask candidates are retained. Predicted IoU is a model confidence output, not observed IoU. Color-proxy and review-ROI values are diagnostics only; no boundary/organ accuracy is claimed.",
+  "runs": [
+    {
+      "region": "upper-left-fan",
+      "target_anchor": "UL-left",
+      "positive_xy": [
+        94,
+        146
+      ],
+      "negative_anchor": "UL-downleft",
+      "negative_xy": [
+        97,
+        156
+      ],
+      "candidates": [
+        {
+          "candidate_index": 0,
+          "predicted_iou": 0.59765625,
+          "diagnostic": {
+            "foreground_coverage": 0.0073468420428960774,
+            "core_coverage": 0.007998450127310971,
+            "proxy_precision": 0.9480122324159022,
+            "proxy_iou": 0.007343883255946176,
+            "definite_background_pixels": 10,
+            "predicted_pixels": 327,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 327
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 0
+              }
+            ]
+          }
+        },
+        {
+          "candidate_index": 1,
+          "predicted_iou": 0.006500244140625,
+          "diagnostic": {
+            "foreground_coverage": 0.9840502429197773,
+            "core_coverage": 0.9940495959260489,
+            "proxy_precision": 0.6477994289904364,
+            "proxy_iou": 0.6410683958622819,
+            "definite_background_pixels": 19486,
+            "predicted_pixels": 64097,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 1146
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 2548
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 2274
+              }
+            ]
+          }
+        },
+        {
+          "candidate_index": 2,
+          "predicted_iou": 0.49609375,
+          "diagnostic": {
+            "foreground_coverage": 0.011565351344946084,
+            "core_coverage": 0.012039189637994023,
+            "proxy_precision": 0.8356164383561644,
+            "proxy_iou": 0.011539098153271381,
+            "definite_background_pixels": 69,
+            "predicted_pixels": 584,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 584
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "region": "upper-left-fan",
+      "target_anchor": "UL-downleft",
+      "positive_xy": [
+        97,
+        156
+      ],
+      "negative_anchor": "UL-left",
+      "negative_xy": [
+        94,
+        146
+      ],
+      "candidates": [
+        {
+          "candidate_index": 0,
+          "predicted_iou": 0.6875,
+          "diagnostic": {
+            "foreground_coverage": 0.007394241023817988,
+            "core_coverage": 0.008275213107494742,
+            "proxy_precision": 0.9258160237388724,
+            "proxy_iou": 0.00738986262434865,
+            "definite_background_pixels": 17,
+            "predicted_pixels": 337,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 337
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 0
+              }
+            ]
+          }
+        },
+        {
+          "candidate_index": 1,
+          "predicted_iou": 0.00689697265625,
+          "diagnostic": {
+            "foreground_coverage": 0.9862542955326461,
+            "core_coverage": 0.9955441160190412,
+            "proxy_precision": 0.6446540880503144,
+            "proxy_iou": 0.6389136242208371,
+            "definite_background_pixels": 19827,
+            "predicted_pixels": 64554,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 1100
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 2548
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 2284
+              }
+            ]
+          }
+        },
+        {
+          "candidate_index": 2,
+          "predicted_iou": 0.26953125,
+          "diagnostic": {
+            "foreground_coverage": 0.048299561559426475,
+            "core_coverage": 0.04926381047271117,
+            "proxy_precision": 0.7581845238095238,
+            "proxy_iou": 0.04756681059633563,
+            "definite_background_pixels": 518,
+            "predicted_pixels": 2688,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 808
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "region": "central-overlap",
+      "target_anchor": "C-short-blade",
+      "positive_xy": [
+        174,
+        227
+      ],
+      "negative_anchor": "C-separate-right-blade",
+      "negative_xy": [
+        194,
+        240
+      ],
+      "candidates": [
+        {
+          "candidate_index": 0,
+          "predicted_iou": 0.75,
+          "diagnostic": {
+            "foreground_coverage": 0.0022514515937907334,
+            "core_coverage": 0.002629248311745821,
+            "proxy_precision": 1.0,
+            "proxy_iou": 0.0022514515937907334,
+            "definite_background_pixels": 0,
+            "predicted_pixels": 95,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 95
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 0
+              }
+            ]
+          }
+        },
+        {
+          "candidate_index": 1,
+          "predicted_iou": 0.002044677734375,
+          "diagnostic": {
+            "foreground_coverage": 0.9807797132361654,
+            "core_coverage": 0.9914480239123215,
+            "proxy_precision": 0.6516652232107708,
+            "proxy_iou": 0.6434479756203744,
+            "definite_background_pixels": 19048,
+            "predicted_pixels": 63505,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 1110
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 2548
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 2257
+              }
+            ]
+          }
+        },
+        {
+          "candidate_index": 2,
+          "predicted_iou": 0.1201171875,
+          "diagnostic": {
+            "foreground_coverage": 0.01959947861120986,
+            "core_coverage": 0.01630133953282409,
+            "proxy_precision": 0.9138121546961326,
+            "proxy_iou": 0.019563314645281858,
+            "definite_background_pixels": 42,
+            "predicted_pixels": 905,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 285
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "region": "central-overlap",
+      "target_anchor": "C-separate-right-blade",
+      "positive_xy": [
+        194,
+        240
+      ],
+      "negative_anchor": "C-short-blade",
+      "negative_xy": [
+        174,
+        227
+      ],
+      "candidates": [
+        {
+          "candidate_index": 0,
+          "predicted_iou": 0.76171875,
+          "diagnostic": {
+            "foreground_coverage": 0.004147410830667141,
+            "core_coverage": 0.004704970663124101,
+            "proxy_precision": 0.9668508287292817,
+            "proxy_iou": 0.0041468211653752285,
+            "definite_background_pixels": 2,
+            "predicted_pixels": 181,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 160
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 0
+              }
+            ]
+          }
+        },
+        {
+          "candidate_index": 1,
+          "predicted_iou": 0.004058837890625,
+          "diagnostic": {
+            "foreground_coverage": 0.9818224908164475,
+            "core_coverage": 0.9926934573231485,
+            "proxy_precision": 0.6514860827174084,
+            "proxy_iou": 0.6437217396708983,
+            "definite_background_pixels": 19123,
+            "predicted_pixels": 63590,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 732
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 2548
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 2294
+              }
+            ]
+          }
+        },
+        {
+          "candidate_index": 2,
+          "predicted_iou": 0.203125,
+          "diagnostic": {
+            "foreground_coverage": 0.01834340561677924,
+            "core_coverage": 0.020092992361341745,
+            "proxy_precision": 0.9236276849642004,
+            "proxy_iou": 0.018315625073948745,
+            "definite_background_pixels": 48,
+            "predicted_pixels": 838,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 337
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "region": "lower-right-drooping-fan",
+      "target_anchor": "LR-upper-diagonal",
+      "positive_xy": [
+        262,
+        371
+      ],
+      "negative_anchor": "LR-down",
+      "negative_xy": [
+        253,
+        382
+      ],
+      "candidates": [
+        {
+          "candidate_index": 0,
+          "predicted_iou": 0.58984375,
+          "diagnostic": {
+            "foreground_coverage": 0.0030572342694632063,
+            "core_coverage": 0.003542566146352264,
+            "proxy_precision": 1.0,
+            "proxy_iou": 0.0030572342694632063,
+            "definite_background_pixels": 0,
+            "predicted_pixels": 129,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 129
+              }
+            ]
+          }
+        },
+        {
+          "candidate_index": 1,
+          "predicted_iou": 0.006500244140625,
+          "diagnostic": {
+            "foreground_coverage": 0.9853300154046688,
+            "core_coverage": 0.9960699656813905,
+            "proxy_precision": 0.6495133648904095,
+            "proxy_iou": 0.6432925885811542,
+            "definite_background_pixels": 19361,
+            "predicted_pixels": 64011,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 1004
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 2548
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 2340
+              }
+            ]
+          }
+        },
+        {
+          "candidate_index": 2,
+          "predicted_iou": 0.17578125,
+          "diagnostic": {
+            "foreground_coverage": 0.021448038867164357,
+            "core_coverage": 0.024327465958153438,
+            "proxy_precision": 0.9617428267800212,
+            "proxy_iou": 0.02142975539295778,
+            "definite_background_pixels": 26,
+            "predicted_pixels": 941,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 879
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "region": "lower-right-drooping-fan",
+      "target_anchor": "LR-down",
+      "positive_xy": [
+        253,
+        382
+      ],
+      "negative_anchor": "LR-upper-diagonal",
+      "negative_xy": [
+        262,
+        371
+      ],
+      "candidates": [
+        {
+          "candidate_index": 0,
+          "predicted_iou": 0.72265625,
+          "diagnostic": {
+            "foreground_coverage": 0.008816210451475293,
+            "core_coverage": 0.010184877670762758,
+            "proxy_precision": 0.9893617021276596,
+            "proxy_iou": 0.008815374771914027,
+            "definite_background_pixels": 2,
+            "predicted_pixels": 376,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 376
+              }
+            ]
+          }
+        },
+        {
+          "candidate_index": 1,
+          "predicted_iou": 0.01068115234375,
+          "diagnostic": {
+            "foreground_coverage": 0.9867282853418652,
+            "core_coverage": 0.9968172257278867,
+            "proxy_precision": 0.6510046126182472,
+            "proxy_iou": 0.6453537936913896,
+            "definite_background_pixels": 19222,
+            "predicted_pixels": 63955,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 1028
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 2548
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 2340
+              }
+            ]
+          }
+        },
+        {
+          "candidate_index": 2,
+          "predicted_iou": 0.439453125,
+          "diagnostic": {
+            "foreground_coverage": 0.02692262116364498,
+            "core_coverage": 0.030305546330122883,
+            "proxy_precision": 0.9498327759197325,
+            "proxy_iou": 0.026884392379600046,
+            "definite_background_pixels": 44,
+            "predicted_pixels": 1196,
+            "review_region_pixels": [
+              {
+                "id": "upper-left-fan",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "central-overlap",
+                "roi_predicted_pixels": 0
+              },
+              {
+                "id": "lower-right-drooping-fan",
+                "roi_predicted_pixels": 1015
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

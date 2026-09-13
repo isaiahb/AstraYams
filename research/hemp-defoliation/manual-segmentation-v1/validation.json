@@ -1,0 +1,12 @@
+{
+  "counts": {
+    "leaflet": 84,
+    "unknown_cluster": 23,
+    "stem": 6,
+    "support": 2
+  },
+  "geometry_errors": [],
+  "geometry_checks_only": true,
+  "boundary_accuracy_measured": false,
+  "all_25_cells_visually_reviewed": true
+}
