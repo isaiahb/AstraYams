@@ -1,0 +1,197 @@
+{
+  "source": "Anderson et al. 2021 Figure 1, Cherry Wine, 50 ppm N column",
+  "source_url": "https://doi.org/10.1371/journal.pone.0252985.g001",
+  "source_hash": "15c19864bc0bd84de52a9d9e910353c665b14ccd4433450f81fc1b96e1e19dcc",
+  "scale": {
+    "cohort_median_height_m": 1.095,
+    "cohort_median_radius_m": 0.00478,
+    "m_per_pixel": 0.003201754385964912,
+    "actual_photo_scale_known": false
+  },
+  "camera": {
+    "width": 381,
+    "height": 444,
+    "root_pixel": [
+      157.0,
+      397.0
+    ],
+    "m_per_pixel": 0.003201754385964912
+  },
+  "segmentation": "Green-dominant pixels inside fixed ROI; excludes white support/pot; no semantic ground truth.",
+  "initial_parameters": {
+    "leaf_scale": 0.8,
+    "width": 0.8,
+    "cup": 0.1
+  },
+  "fitted_parameters": {
+    "leaf_scale": 1.65,
+    "width": 1.6,
+    "cup": -0.08
+  },
+  "fitting_history": [
+    {
+      "epoch": 0,
+      "parameter": "leaf_scale",
+      "params": {
+        "leaf_scale": 1.65,
+        "width": 0.8,
+        "cup": 0.1
+      },
+      "metrics": {
+        "raw_iou": 0.3587131367292225,
+        "coarse_iou": 0.5326530612244897,
+        "band_occupancy_mae": 0.04370960295475531,
+        "loss": 0.5032561712163051
+      }
+    },
+    {
+      "epoch": 0,
+      "parameter": "width",
+      "params": {
+        "leaf_scale": 1.65,
+        "width": 1.6,
+        "cup": 0.1
+      },
+      "metrics": {
+        "raw_iou": 0.3915741822429907,
+        "coarse_iou": 0.5543385142577408,
+        "band_occupancy_mae": 0.02789961013645224,
+        "loss": 0.47712924758831604
+      }
+    },
+    {
+      "epoch": 0,
+      "parameter": "cup",
+      "params": {
+        "leaf_scale": 1.65,
+        "width": 1.6,
+        "cup": -0.08
+      },
+      "metrics": {
+        "raw_iou": 0.3940919037199125,
+        "coarse_iou": 0.5557390081330643,
+        "band_occupancy_mae": 0.028280496563045043,
+        "loss": 0.475404139322465
+      }
+    },
+    {
+      "epoch": 1,
+      "parameter": "leaf_scale",
+      "params": {
+        "leaf_scale": 1.65,
+        "width": 1.6,
+        "cup": -0.08
+      },
+      "metrics": {
+        "raw_iou": 0.3940919037199125,
+        "coarse_iou": 0.5557390081330643,
+        "band_occupancy_mae": 0.028280496563045043,
+        "loss": 0.475404139322465
+      }
+    },
+    {
+      "epoch": 1,
+      "parameter": "width",
+      "params": {
+        "leaf_scale": 1.65,
+        "width": 1.6,
+        "cup": -0.08
+      },
+      "metrics": {
+        "raw_iou": 0.3940919037199125,
+        "coarse_iou": 0.5557390081330643,
+        "band_occupancy_mae": 0.028280496563045043,
+        "loss": 0.475404139322465
+      }
+    },
+    {
+      "epoch": 1,
+      "parameter": "cup",
+      "params": {
+        "leaf_scale": 1.65,
+        "width": 1.6,
+        "cup": -0.08
+      },
+      "metrics": {
+        "raw_iou": 0.3940919037199125,
+        "coarse_iou": 0.5557390081330643,
+        "band_occupancy_mae": 0.028280496563045043,
+        "loss": 0.475404139322465
+      }
+    }
+  ],
+  "variants": [
+    {
+      "id": "initial",
+      "metrics": {
+        "raw_iou": 0.2627818521865215,
+        "coarse_iou": 0.3321992451225347,
+        "band_occupancy_mae": 0.10764701709583598,
+        "loss": 0.6430232079205083
+      },
+      "axis_count": 15,
+      "leaf_count": 64,
+      "part_count": 935
+    },
+    {
+      "id": "fitted",
+      "metrics": {
+        "raw_iou": 0.36931187046973546,
+        "coarse_iou": 0.4395032386563342,
+        "band_occupancy_mae": 0.034788725733607626,
+        "loss": 0.5395120734666294
+      },
+      "axis_count": 15,
+      "leaf_count": 64,
+      "part_count": 935
+    },
+    {
+      "id": "depth-b",
+      "metrics": {
+        "raw_iou": 0.36931187046973546,
+        "coarse_iou": 0.4395032386563342,
+        "band_occupancy_mae": 0.034788725733607626,
+        "loss": 0.5395120734666294
+      },
+      "axis_count": 15,
+      "leaf_count": 64,
+      "part_count": 935
+    },
+    {
+      "id": "depth-c",
+      "metrics": {
+        "raw_iou": 0.36931187046973546,
+        "coarse_iou": 0.4395032386563342,
+        "band_occupancy_mae": 0.034788725733607626,
+        "loss": 0.5395120734666294
+      },
+      "axis_count": 15,
+      "leaf_count": 64,
+      "part_count": 935
+    }
+  ],
+  "scope": {
+    "independent_validation": false,
+    "cultivar_geometry_distribution_fitted": false,
+    "whole_plant_physics": false,
+    "fresh_mass_measured": false
+  },
+  "checks": {
+    "max_attachment_error_m": 0.0,
+    "persistent_part_ids": true,
+    "annotation_axes": 15,
+    "observed_leaf_landmarks": 37
+  },
+  "sources": [
+    "https://doi.org/10.1371/journal.pone.0252985.g001",
+    "../nominal-cultivars-v1/nominal-models.json",
+    "../reference-data/provenance.json"
+  ],
+  "limits": [
+    "Single low-resolution image is ambiguous in depth and topology.",
+    "Cohort median scale is not the individual photo scale.",
+    "Futura75 margins are transferred to Cherry Wine; not cultivar-matched.",
+    "Unobserved leaves and all depth hypotheses are synthetic assumptions.",
+    "Image fitting cannot establish stiffness, contact, growth or cutting behavior."
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "scope": "Software and topology consistency, not empirical botanical or mechanical validation.",
+  "unchecked": [
+    "Self-contact/interpenetration",
+    "Branch stiffness and fresh mass",
+    "Depth accuracy",
+    "Cultivar generalization"
+  ],
+  "variants": [
+    {
+      "variant": "initial",
+      "parts": 1663,
+      "triangles": 184352,
+      "max_attachment_error_m": 0.0,
+      "min_triangle_area_m2": 2.4844171277313825e-09,
+      "finite": true,
+      "unique_ids": true,
+      "parent_references_resolve": true,
+      "nondegenerate": true
+    },
+    {
+      "variant": "fitted",
+      "parts": 1663,
+      "triangles": 184352,
+      "max_attachment_error_m": 0.0,
+      "min_triangle_area_m2": 1.0418652303166251e-08,
+      "finite": true,
+      "unique_ids": true,
+      "parent_references_resolve": true,
+      "nondegenerate": true
+    },
+    {
+      "variant": "shape-constrained",
+      "parts": 1663,
+      "triangles": 184352,
+      "max_attachment_error_m": 0.0,
+      "min_triangle_area_m2": 7.89580771042924e-09,
+      "finite": true,
+      "unique_ids": true,
+      "parent_references_resolve": true,
+      "nondegenerate": true
+    },
+    {
+      "variant": "depth-b",
+      "parts": 1663,
+      "triangles": 184352,
+      "max_attachment_error_m": 0.0,
+      "min_triangle_area_m2": 7.905025469365121e-09,
+      "finite": true,
+      "unique_ids": true,
+      "parent_references_resolve": true,
+      "nondegenerate": true
+    },
+    {
+      "variant": "depth-c",
+      "parts": 1663,
+      "triangles": 184352,
+      "max_attachment_error_m": 0.0,
+      "min_triangle_area_m2": 7.905025469355526e-09,
+      "finite": true,
+      "unique_ids": true,
+      "parent_references_resolve": true,
+      "nondegenerate": true
+    }
+  ]
+}
