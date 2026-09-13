@@ -1,0 +1,7 @@
+{
+  "model": "facebook/sam3",
+  "file": "sam3.pt",
+  "sha256": "9999e2341ceef5e136daa386eecb55cb414446a00ac2b55eb2dfd2f7c3cf8c9e",
+  "bytes": 3450062241,
+  "official_hash_matches": true
+}

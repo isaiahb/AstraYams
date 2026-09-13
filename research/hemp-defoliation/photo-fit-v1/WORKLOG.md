@@ -163,7 +163,7 @@ recall and boundary agreement, not proposal count. No automatic geometry updates
 from unreviewed segmentation, and no extra GPU spend in this metadata pass.
 
 
-## Overlapping SAM3 tiles ACTIVE — 2026-09-13
+## Overlapping SAM3 tiles COMPLETE — 2026-09-13
 
 User proposes cropping and stitching. Prior three broad crops were not a tiled
 comparison. New pass freezes 1x1, 2x2, 3x3 grids with 30% overlap, leaf prompt,
@@ -172,3 +172,15 @@ suppress duplicates without merging distinct leaves. Exact synthetic whole-leaf
 IDs provide one-to-one precision/recall; real-photo predictions require review.
 RunPod replacement worker dvayjyonatj1n6 (A40, $0.49/hour), 30-minute stop
 watchdog. Old worker lacked free GPU capacity and remains stopped. No local ML.
+
+
+Tiled result: /runs/hemp-sam3-tiles-v1/index.html. Reference proposals at 0.5
+increase 0 -> 15 -> 51 after deduplication and crop-edge exclusion. Broad
+synthetic whole-leaf matching improves 27 -> 58/134, but narrow 3x3 predictions
+switch toward leaflets: 81/402 leaflet matches versus only 3/139 whole-leaf
+matches. Leaf and leaflet identities must stay separate in any future fusion.
+Real-photo masks remain unvalidated; visible dense regions are still missed.
+No automatic geometry fitting accepted. Raw predictions preserved, scores and
+source checked; replacement GPU verified EXITED after checksum-verified retrieval.
+Next bounded outcome: reviewed real-photo organ labels at both anatomical levels,
+then explicit multiscale fusion with no parent/child double counting.

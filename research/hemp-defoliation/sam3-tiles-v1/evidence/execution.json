@@ -1,0 +1,7 @@
+{
+  "id": "dvayjyonatj1n6",
+  "desiredStatus": "EXITED",
+  "verified_at_unix": 1789330657.773835,
+  "costPerHr": 0.49,
+  "local_inference": false
+}

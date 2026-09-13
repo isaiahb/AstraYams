@@ -20,19 +20,27 @@ def windows(w,h,n):
  tw=math.ceil(w/(n-(n-1)*.3));th=math.ceil(h/(n-(n-1)*.3))
  return [(round(i*(w-tw)/(n-1)),round(j*(h-th)/(n-1)),round(i*(w-tw)/(n-1))+tw,round(j*(h-th)/(n-1))+th) for j in range(n) for i in range(n)]
 def dedup(items):
- # Prefer complete masks, then confidence. Suppress IoU duplicates, never union
- # masks merely because they overlap (neighboring leaves can legitimately overlap).
- ordered=sorted(items,key=lambda q:(q['edge'], -q['score']));kept=[]
- for q in ordered:
-  if any((q['mask']&k['mask']).sum()/max(1,(q['mask']|k['mask']).sum())>=.5 for k in kept):continue
-  kept.append(q)
+ # Exact same IoU criterion, bounding-box acceleration; never fuse neighbors.
+ for q in items:
+  if '_area' not in q:
+   yy,xx=np.nonzero(q['mask']);q['_area']=len(xx);q['_box']=(int(xx.min()),int(yy.min()),int(xx.max())+1,int(yy.max())+1)
+ kept=[]
+ for q in sorted(items,key=lambda q:(q['edge'],-q['score'])):
+  duplicate=False
+  for k in kept:
+   a,b=q['_box'],k['_box'];x0,y0=max(a[0],b[0]),max(a[1],b[1]);x1,y1=min(a[2],b[2]),min(a[3],b[3])
+   if x1<=x0 or y1<=y0:continue
+   inter=np.count_nonzero(q['mask'][y0:y1,x0:x1]&k['mask'][y0:y1,x0:x1])
+   if inter/max(1,q['_area']+k['_area']-inter)>=.5:duplicate=True;break
+  if not duplicate:kept.append(q)
  return kept
 def evaluate(items,ids):
- organs=[int(v) for v in np.unique(ids) if v>=0 and (ids==v).sum()>=16]
- a=np.zeros((len(items),len(organs)))
+ values,counts=np.unique(ids,return_counts=True);organs=[int(v) for v,c in zip(values,counts) if v>=0 and c>=16]
+ areas=dict(zip(values,counts));indices={v:j for j,v in enumerate(organs)};a=np.zeros((len(items),len(organs)))
  for i,q in enumerate(items):
-  for j,v in enumerate(organs):
-   gt=ids==v;a[i,j]=(q['mask']&gt).sum()/max(1,(q['mask']|gt).sum())
+  vv,cc=np.unique(ids[q['mask']],return_counts=True);area=np.count_nonzero(q['mask'])
+  for v,c in zip(vv,cc):
+   if int(v) in indices:a[i,indices[int(v)]]=c/(area+areas[v]-c)
  matches=0
  if a.size:
   ii,jj=linear_sum_assignment(-((a>=.5).astype(float)+.001*a));matches=int((a[ii,jj]>=.5).sum())
@@ -49,28 +57,34 @@ for name in ['reference','broad-render','narrow-render']:
  for n in [1,2,3]:
   start=time.monotonic();items=[];tiles=windows(w,h,n);dest=base/f'grid-{n}';dest.mkdir(exist_ok=True)
   guide=im.copy();d=ImageDraw.Draw(guide)
-  for ti,(x0,y0,x1,y1) in enumerate(tiles):
-   crop=im.crop((x0,y0,x1,y1));crop.save(dest/f'tile-{ti}.png');d.rectangle((x0,y0,x1-1,y1-1),outline='#ffdd33',width=1)
-   with torch.inference_mode(),torch.autocast('cuda',dtype=torch.bfloat16):
-    state=engine.set_image(crop);r=engine.set_text_prompt(state=state,prompt='leaf')
-    masks=r['masks'].detach().cpu().numpy().reshape(-1,crop.height,crop.width)>.5
-    scores=r['scores'].detach().float().cpu().numpy().reshape(-1)
-   for m,score in zip(masks,scores):
-    if not m.any():continue
-    edge=bool((x0>0 and m[:,:2].any()) or (x1<w and m[:,-2:].any()) or (y0>0 and m[:2].any()) or (y1<h and m[-2:].any()))
-    full=np.zeros((h,w),bool);full[y0:y1,x0:x1]=m
-    items.append({'mask':full,'score':float(score),'edge':edge,'tile':ti})
-   del state,r
-  guide.save(dest/'tile-layout.png')
-  np.savez_compressed(dest/'raw-masks.npz',masks=np.stack([q['mask'] for q in items]) if items else np.zeros((0,h,w),bool))
-  metadata=[{k:v for k,v in q.items() if k!='mask'} for q in items]
-  (dest/'raw-metadata.json').write_text(json.dumps({'tiles_xyxy':tiles,'proposals':metadata},indent=2))
+  if (dest/'raw-metadata.json').exists():
+   meta=json.loads((dest/'raw-metadata.json').read_text());cached=np.load(dest/'raw-masks.npz')['masks']
+   assert tiles==[tuple(v) for v in meta['tiles_xyxy']]
+   assert len(cached)==len(meta['proposals'])
+   items=[dict(q,mask=m) for q,m in zip(meta['proposals'],cached)]
+  else:
+   for ti,(x0,y0,x1,y1) in enumerate(tiles):
+    crop=im.crop((x0,y0,x1,y1));crop.save(dest/f'tile-{ti}.png');d.rectangle((x0,y0,x1-1,y1-1),outline='#ffdd33',width=1)
+    with torch.inference_mode(),torch.autocast('cuda',dtype=torch.bfloat16):
+     state=engine.set_image(crop);r=engine.set_text_prompt(state=state,prompt='leaf')
+     masks=r['masks'].detach().cpu().numpy().reshape(-1,crop.height,crop.width)>.5
+     scores=r['scores'].detach().float().cpu().numpy().reshape(-1)
+    for m,score in zip(masks,scores):
+     if not m.any():continue
+     edge=bool((x0>0 and m[:,:2].any()) or (x1<w and m[:,-2:].any()) or (y0>0 and m[:2].any()) or (y1<h and m[-2:].any()))
+     full=np.zeros((h,w),bool);full[y0:y1,x0:x1]=m
+     items.append({'mask':full,'score':float(score),'edge':edge,'tile':ti})
+    del state,r
+   guide.save(dest/'tile-layout.png')
+   np.savez_compressed(dest/'raw-masks.npz',masks=np.stack([q['mask'] for q in items]) if items else np.zeros((0,h,w),bool))
+   metadata=[{k:v for k,v in q.items() if k!='mask'} for q in items]
+   (dest/'raw-metadata.json').write_text(json.dumps({'tiles_xyxy':tiles,'proposals':metadata},indent=2))
   for threshold in [.5,.1]:
    selected=[q for q in items if q['score']>=threshold];all_merged=dedup(selected);complete=dedup([q for q in selected if not q['edge']])
    tag='standard' if threshold==.5 else 'low-confidence'
    overlay(im,all_merged).save(dest/f'{tag}-all.png');overlay(im,complete).save(dest/f'{tag}-complete.png')
    np.savez_compressed(dest/f'{tag}-complete.npz',masks=np.stack([q['mask'] for q in complete]) if complete else np.zeros((0,h,w),bool))
-   row={'image':name,'grid':n,'tiles':len(tiles),'threshold':threshold,'raw':len(selected),'edge_fragments':sum(q['edge'] for q in selected),'deduplicated_all':len(all_merged),'deduplicated_complete':len(complete),'seconds_grid_both_thresholds':time.monotonic()-start}
+   row={'image':name,'grid':n,'tiles':len(tiles),'threshold':threshold,'raw':len(selected),'edge_fragments':sum(q['edge'] for q in selected),'deduplicated_all':len(all_merged),'deduplicated_complete':len(complete),'processing_seconds_this_pass':time.monotonic()-start,'timing_notice':'May reuse cached masks; not end-to-end inference latency'}
    if ids is not None:row['complete_audit']=evaluate(complete,ids);row['all_audit']=evaluate(all_merged,ids)
    rows.append(row);print(json.dumps(row),flush=True)
  # Panels compare full vs tiled with the same display and no filtering hidden.

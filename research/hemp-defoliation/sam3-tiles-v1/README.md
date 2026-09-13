@@ -26,3 +26,38 @@ Run only on RunPod Linux with CUDA. Mac: source edits, metadata, SSH transfer an
 viewing retrieved artifacts only. Deadline 30 minutes; verified stop after
 retrieval. Previous worker could not resume because its host had no free GPU;
 use one replacement worker, leaving the previous pod stopped.
+
+## Observed outcome
+
+Actual review: /runs/hemp-sam3-tiles-v1/index.html. Same 0.5 confidence threshold:
+reference full / 2x2 / 3x3 complete proposals = 0 / 15 / 51. Visual inspection
+shows recovered leaf surfaces but no real-photo ground-truth accuracy claim.
+Broad synthetic whole-leaf matches rise 27 -> 42 -> 58 (of 134 visible leaves),
+while precision falls from 93% to 87% for full versus 3x3. Narrow geometry has
+an important granularity shift: full image matches 10/139 whole leaves and
+0/402 leaflets; 3x3 matches 3/139 whole leaves and 81/402 leaflets (88% leaflet
+precision, 20% leaflet recall). Do not present 92 proposals as 92 whole leaves.
+Supplemental leaflet audit was added after observing the shift, explicitly
+separate from the frozen whole-leaf metric; no threshold or labels changed.
+
+0.1 yields many more candidates with reduced precision. It remains diagnostic.
+Tiling is a useful component, not validated complete plant segmentation. Next:
+keep full-frame context and crop proposals at separate anatomical levels, review
+small real-photo annotation samples, and assess fusion without double counting
+leaflets inside compound leaves. No automatic model-fitting acceptance yet.
+
+## Execution and verification
+
+Ran on replacement RunPod A40 dvayjyonatj1n6. All artifacts retrieved and archive
+hash verified; worker verified EXITED. No ML or image processing on the Mac.
+SSH did not inherit RUNPOD_POD_ID initially; guard refused imports. The known pod
+ID was supplied only on the authenticated remote command after host/GPU checks.
+
+The first implementation spent too long comparing full-sized binary masks.
+Its process was interrupted after masks had been cached. Bounding-box IoU and
+per-instance pixel histograms accelerated exact postprocessing; cached masks
+were reused, not regenerated. Completed first-pass metrics were checked against
+the accelerated pass and all agree (see acceleration-check.json). Timings in
+final report may include cached masks and are not inference latency claims.
+Source syntax, all 18 result rows, required image assets, and browser rendering
+were checked. The reference and narrow comparison sheets were visually reviewed.
