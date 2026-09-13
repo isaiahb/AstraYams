@@ -1,0 +1,17 @@
+{
+  "images": {
+    "reference": {
+      "path": "runs/hemp-sam3-comparison-v1/results/sam3/reference/input.png",
+      "sha256": "2f338a5ce241e5844cb3bfaa517b611e9b1fc0b87270755a1dc4d9971c53fa7a"
+    },
+    "broad-render": {
+      "path": "runs/hemp-sam3-comparison-v1/results/sam3/broad-render/input.png",
+      "sha256": "974fdb154a645e3fcf50313ca977245ee51cc13112c77f8eaa0776984b8ba39c"
+    },
+    "narrow-render": {
+      "path": "runs/hemp-sam3-comparison-v1/results/sam3/narrow-render/input.png",
+      "sha256": "63b68e7673ce32e61753d6844632a711b185d8e77634631533baf81dd762a501"
+    }
+  },
+  "checkpoint_sha256": "9999e2341ceef5e136daa386eecb55cb414446a00ac2b55eb2dfd2f7c3cf8c9e"
+}

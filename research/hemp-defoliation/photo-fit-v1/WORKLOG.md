@@ -161,3 +161,14 @@ input, then annotate a small fixed sample of clearly visible leaves and difficul
 overlaps. Keep calibration separate from held-out evaluation; score precision,
 recall and boundary agreement, not proposal count. No automatic geometry updates
 from unreviewed segmentation, and no extra GPU spend in this metadata pass.
+
+
+## Overlapping SAM3 tiles ACTIVE — 2026-09-13
+
+User proposes cropping and stitching. Prior three broad crops were not a tiled
+comparison. New pass freezes 1x1, 2x2, 3x3 grids with 30% overlap, leaf prompt,
+0.5 primary and 0.1 diagnostic thresholds. Record raw masks and edge flags;
+suppress duplicates without merging distinct leaves. Exact synthetic whole-leaf
+IDs provide one-to-one precision/recall; real-photo predictions require review.
+RunPod replacement worker dvayjyonatj1n6 (A40, $0.49/hour), 30-minute stop
+watchdog. Old worker lacked free GPU capacity and remains stopped. No local ML.
