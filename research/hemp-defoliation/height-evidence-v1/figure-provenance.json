@@ -1,0 +1,28 @@
+[
+  {
+    "source": "papers/massuela-2022.pdf",
+    "page": 5,
+    "source_sha256": "bb38888565aa8b86434c016c584dbbbcd54792e4800f22c99b144d1c7c34ff04",
+    "crop_pixels_at_1273_by_1800": [
+      100,
+      210,
+      1180,
+      644
+    ],
+    "output": "figures/dated-architecture.png",
+    "changes": "Page crop only; no alterations to plants, plots or labels. Captions paraphrased on review page."
+  },
+  {
+    "source": "papers/burgel-2020.pdf",
+    "page": 6,
+    "source_sha256": "587c1e94683cae38d39f1f592f1d11f0f148cd309588c70ba3db5969b12370f0",
+    "crop_pixels_at_1273_by_1800": [
+      382,
+      330,
+      888,
+      1409
+    ],
+    "output": "figures/measured-height-curves.png",
+    "changes": "Page crop only; no alterations to plants, plots or labels. Captions paraphrased on review page."
+  }
+]

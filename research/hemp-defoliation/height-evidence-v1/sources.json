@@ -1,0 +1,57 @@
+{
+  "review_date": "2026-09-12",
+  "scope": "Botanical morphology and simulation evidence, not a production-height recommendation",
+  "commercial_partner_target_height_verified": false,
+  "existing_model_calibrated": false,
+  "same_plant_full_lifecycle_photo_sequence_verified": false,
+  "sources": [
+    {
+      "id": "massuela-2022",
+      "doi": "10.3390/plants11010140",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8747189/",
+      "pdf_source": "https://pdfs.semanticscholar.org/73a5/5d8b887f1d388b41440540c4af97beadebef.pdf",
+      "license": "CC BY 4.0",
+      "evidence": "Original Figure 1 visually inspected, PDF page 5",
+      "environment": "Research cultivation room within greenhouse complex",
+      "time_origin": "Rooted clone planting",
+      "whole_plant_photo_DAP": 65,
+      "separate_flower_closeup_DAP": 93,
+      "scale_marker_cm": 80,
+      "individual_plant_heights_measured_from_photo": false,
+      "caveat": "Same-age treatment comparison, not a time series; sampling-region lines are not development stages"
+    },
+    {
+      "id": "burgel-2020",
+      "doi": "10.3390/plants9060725",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7355821/",
+      "pdf_source": "https://pdfs.semanticscholar.org/0373/7a3bffd3fb945a00a8a8d931154892f2434f.pdf",
+      "license": "CC BY 4.0",
+      "evidence": "Original Figure 1 visually inspected, PDF page 6; methods/results text reviewed",
+      "control_height_at_132_DAP_cm": {"value": 96.47, "reported_plus_minus": 4.43, "pooling": "Across three genotypes"},
+      "genotype_heights_at_132_DAP_cm": {"KANADA": 113.01, "FED": 72.45, "0.2x-genetic": 59.88, "reported_plus_minus_each": 3.83, "pooling": "Across treatments"},
+      "caveat": "Previously topped plants; control means no added PGR. Reported transition timing requires reconciliation before a flowering calendar is inferred. No digitization or fit performed."
+    },
+    {
+      "id": "schober-2023",
+      "doi": "10.1016/j.indcrop.2023.117172",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0926669023009378",
+      "evidence": "Publisher results text retrieved in search; full figure not accessed",
+      "environment": "Semi-controlled greenhouse, CBD-type",
+      "fitted_height_asymptote_cm": {"value": 80.3, "reported_plus_minus": 2.9},
+      "caveat": "Fitted logistic parameter across media, not a universal observed commercial height"
+    },
+    {
+      "id": "anderson-2021",
+      "doi": "10.1371/journal.pone.0252985",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0252985",
+      "evidence": "Primary article methods and figure captions verified; image display failed",
+      "environment": "Greenhouse, five essential-oil hemp cultivars",
+      "height_definition": "Growing medium surface to dominant apical growth point",
+      "observation_DAS": [31, 36, 52, 67, 77, 99, 114],
+      "same_experiment_photo_and_curves": true,
+      "images_imported": false,
+      "raw_data_imported": false,
+      "caveat": "Near-harvest photos and serial heights, not a verified full photographic development sequence"
+    }
+  ]
+}
