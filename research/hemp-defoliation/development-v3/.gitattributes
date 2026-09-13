@@ -1,0 +1,2 @@
+# Preserve the attributed publisher dataset byte-for-byte, including CRLF endings.
+evidence/anderson-2021-phenotypes.csv -text whitespace=cr-at-eol

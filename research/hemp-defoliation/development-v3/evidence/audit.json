@@ -1,0 +1,498 @@
+{
+  "status": "Generator invariants passed; no biological or physical validation claimed",
+  "case_count": 16,
+  "states_checked": 1344,
+  "deterministic": true,
+  "persistent_unique_ids": true,
+  "max_attachment_error_m": 0,
+  "max_internode_shrinkage_m": 1.1796119636642288e-16,
+  "distinct_default_scaffolds": 8,
+  "assumed_parent_topology": true,
+  "growth_physically_validated": false,
+  "commercial_distribution_fitted": false,
+  "geometry_hash": "8eca0b3cdac0d79f847eedb04a2add1a8fc7e1cc5408252f0a1b101cfa13fded",
+  "viewer_hash": "0c1d3b7c9b1e89c177c0c0b903d606e067bb7d968e7d4d524f42ab766c94dae8",
+  "reference_hash": "0d17e8adbae6b06ddc6cd9ee6287ab75d972be14c4d3d7cceb3c9f7f2eb51a0b",
+  "cases": [
+    {
+      "index": 0,
+      "options": {
+        "family": 0,
+        "seed": 31,
+        "curve": 0,
+        "height": 0.95,
+        "spread": 1.07,
+        "density": 1.04,
+        "leafWidth": 1
+      },
+      "axes": 24,
+      "leaves": 171,
+      "early": {
+        "height": 0.09410932467906559,
+        "width": 0.019818524460907386,
+        "depth": 0.010244361728372937,
+        "leaves": 8,
+        "reference_height": 0.19,
+        "flower": 0
+      },
+      "final": {
+        "height": 0.77185125,
+        "width": 0.6712681028055931,
+        "depth": 0.6318357258247187,
+        "leaves": 171,
+        "reference_height": 1.1775,
+        "flower": 1
+      }
+    },
+    {
+      "index": 1,
+      "options": {
+        "family": 0,
+        "seed": 110,
+        "curve": 1,
+        "height": 1.05,
+        "spread": 0.92,
+        "density": 0.9,
+        "leafWidth": 1
+      },
+      "axes": 15,
+      "leaves": 109,
+      "early": {
+        "height": 0.10849994597323526,
+        "width": 0.017793923352793502,
+        "depth": 0.012186613326293432,
+        "leaves": 8,
+        "reference_height": 0.2,
+        "flower": 0
+      },
+      "final": {
+        "height": 0.8972104911676072,
+        "width": 0.585668454603047,
+        "depth": 0.6337816552248885,
+        "leaves": 109,
+        "reference_height": 1.24,
+        "flower": 1
+      }
+    },
+    {
+      "index": 2,
+      "options": {
+        "family": 1,
+        "seed": 189,
+        "curve": 2,
+        "height": 0.95,
+        "spread": 1.07,
+        "density": 1.04,
+        "leafWidth": 1
+      },
+      "axes": 26,
+      "leaves": 162,
+      "early": {
+        "height": 0.1845946328007079,
+        "width": 0.0370023612110658,
+        "depth": 0.0239835221713911,
+        "leaves": 6,
+        "reference_height": 0.185,
+        "flower": 0
+      },
+      "final": {
+        "height": 1.1779999999999993,
+        "width": 0.5748310304823361,
+        "depth": 0.7769045971329049,
+        "leaves": 162,
+        "reference_height": 1.24,
+        "flower": 1
+      }
+    },
+    {
+      "index": 3,
+      "options": {
+        "family": 1,
+        "seed": 268,
+        "curve": 3,
+        "height": 1.05,
+        "spread": 0.92,
+        "density": 0.9,
+        "leafWidth": 1
+      },
+      "axes": 21,
+      "leaves": 135,
+      "early": {
+        "height": 0.19115983894786337,
+        "width": 0.03214982699165762,
+        "depth": 0.0422345941354614,
+        "leaves": 6,
+        "reference_height": 0.1785,
+        "flower": 0
+      },
+      "final": {
+        "height": 1.1970000000000003,
+        "width": 0.7551935104437111,
+        "depth": 0.5832724231808748,
+        "leaves": 135,
+        "reference_height": 1.14,
+        "flower": 1
+      }
+    },
+    {
+      "index": 4,
+      "options": {
+        "family": 2,
+        "seed": 347,
+        "curve": 4,
+        "height": 0.95,
+        "spread": 1.07,
+        "density": 1.04,
+        "leafWidth": 1
+      },
+      "axes": 21,
+      "leaves": 130,
+      "early": {
+        "height": 0.1912425280696419,
+        "width": 0.01899899948308151,
+        "depth": 0.043931196007077594,
+        "leaves": 8,
+        "reference_height": 0.16,
+        "flower": 0
+      },
+      "final": {
+        "height": 1.14143498816295,
+        "width": 0.6061230977792439,
+        "depth": 0.5810081083297295,
+        "leaves": 130,
+        "reference_height": 1.02,
+        "flower": 1
+      }
+    },
+    {
+      "index": 5,
+      "options": {
+        "family": 2,
+        "seed": 426,
+        "curve": 0,
+        "height": 1.05,
+        "spread": 0.92,
+        "density": 0.9,
+        "leafWidth": 1
+      },
+      "axes": 17,
+      "leaves": 113,
+      "early": {
+        "height": 0.23740499996326062,
+        "width": 0.062159888821063866,
+        "depth": 0.01677187303694316,
+        "leaves": 9,
+        "reference_height": 0.19,
+        "flower": 0
+      },
+      "final": {
+        "height": 1.4712862499999997,
+        "width": 0.8187591910883598,
+        "depth": 0.7187157557198638,
+        "leaves": 113,
+        "reference_height": 1.1775,
+        "flower": 1
+      }
+    },
+    {
+      "index": 6,
+      "options": {
+        "family": 3,
+        "seed": 505,
+        "curve": 1,
+        "height": 0.95,
+        "spread": 1.07,
+        "density": 1.04,
+        "leafWidth": 1
+      },
+      "axes": 35,
+      "leaves": 222,
+      "early": {
+        "height": 0.11891652210841015,
+        "width": 0.029448980489502924,
+        "depth": 0.021601128936283492,
+        "leaves": 12,
+        "reference_height": 0.2,
+        "flower": 0
+      },
+      "final": {
+        "height": 0.9777399999999996,
+        "width": 0.9415653500251053,
+        "depth": 1.0001887305870714,
+        "leaves": 222,
+        "reference_height": 1.24,
+        "flower": 1
+      }
+    },
+    {
+      "index": 7,
+      "options": {
+        "family": 3,
+        "seed": 584,
+        "curve": 2,
+        "height": 1.05,
+        "spread": 0.92,
+        "density": 0.9,
+        "leafWidth": 1
+      },
+      "axes": 30,
+      "leaves": 193,
+      "early": {
+        "height": 0.12312512169306686,
+        "width": 0.017941935317759523,
+        "depth": 0.01876556116300864,
+        "leaves": 10,
+        "reference_height": 0.185,
+        "flower": 0
+      },
+      "final": {
+        "height": 1.0806599999999997,
+        "width": 1.0104486090599598,
+        "depth": 0.9226424987442752,
+        "leaves": 193,
+        "reference_height": 1.24,
+        "flower": 1
+      }
+    },
+    {
+      "index": 8,
+      "options": {
+        "family": 0,
+        "seed": 713,
+        "curve": 0,
+        "height": 0.75,
+        "spread": 0.65,
+        "density": 0.65,
+        "leafWidth": 0.7
+      },
+      "axes": 9,
+      "leaves": 74,
+      "early": {
+        "height": 0.07635350831608888,
+        "width": 0.014399594773079663,
+        "depth": 0.008087653996083898,
+        "leaves": 8,
+        "reference_height": 0.19,
+        "flower": 0
+      },
+      "final": {
+        "height": 0.6069221123764784,
+        "width": 0.281462629847167,
+        "depth": 0.3124755448964669,
+        "leaves": 74,
+        "reference_height": 1.1775,
+        "flower": 1
+      }
+    },
+    {
+      "index": 9,
+      "options": {
+        "family": 0,
+        "seed": 713,
+        "curve": 0,
+        "height": 1.25,
+        "spread": 1.3,
+        "density": 1.3,
+        "leafWidth": 1.25
+      },
+      "axes": 29,
+      "leaves": 183,
+      "early": {
+        "height": 0.1213252811012042,
+        "width": 0.02914472726976304,
+        "depth": 0.0173006881398023,
+        "leaves": 8,
+        "reference_height": 0.19,
+        "flower": 0
+      },
+      "final": {
+        "height": 1.0155937499999999,
+        "width": 1.0902627262622442,
+        "depth": 0.8793042778471096,
+        "leaves": 183,
+        "reference_height": 1.1775,
+        "flower": 1
+      }
+    },
+    {
+      "index": 10,
+      "options": {
+        "family": 1,
+        "seed": 714,
+        "curve": 1,
+        "height": 0.75,
+        "spread": 0.65,
+        "density": 0.65,
+        "leafWidth": 0.7
+      },
+      "axes": 11,
+      "leaves": 81,
+      "early": {
+        "height": 0.14787791457106433,
+        "width": 0.029015895358421025,
+        "depth": 0.009743774886815732,
+        "leaves": 7,
+        "reference_height": 0.2,
+        "flower": 0
+      },
+      "final": {
+        "height": 0.9190930928761311,
+        "width": 0.3441913210525822,
+        "depth": 0.3147795381173145,
+        "leaves": 81,
+        "reference_height": 1.24,
+        "flower": 1
+      }
+    },
+    {
+      "index": 11,
+      "options": {
+        "family": 1,
+        "seed": 714,
+        "curve": 1,
+        "height": 1.25,
+        "spread": 1.3,
+        "density": 1.3,
+        "leafWidth": 1.25
+      },
+      "axes": 37,
+      "leaves": 222,
+      "early": {
+        "height": 0.2606289910654332,
+        "width": 0.08514353849839748,
+        "depth": 0.05032199764849381,
+        "leaves": 7,
+        "reference_height": 0.2,
+        "flower": 0
+      },
+      "final": {
+        "height": 1.5499999999999998,
+        "width": 1.0615375536836398,
+        "depth": 1.1590673715660338,
+        "leaves": 222,
+        "reference_height": 1.24,
+        "flower": 1
+      }
+    },
+    {
+      "index": 12,
+      "options": {
+        "family": 2,
+        "seed": 715,
+        "curve": 2,
+        "height": 0.75,
+        "spread": 0.65,
+        "density": 0.65,
+        "leafWidth": 0.7
+      },
+      "axes": 11,
+      "leaves": 77,
+      "early": {
+        "height": 0.17185631033514887,
+        "width": 0.014281823950819745,
+        "depth": 0.011115922008021495,
+        "leaves": 8,
+        "reference_height": 0.185,
+        "flower": 0
+      },
+      "final": {
+        "height": 1.1066999999999998,
+        "width": 0.16574712403562616,
+        "depth": 0.46494949255252616,
+        "leaves": 77,
+        "reference_height": 1.24,
+        "flower": 1
+      }
+    },
+    {
+      "index": 13,
+      "options": {
+        "family": 2,
+        "seed": 715,
+        "curve": 2,
+        "height": 1.25,
+        "spread": 1.3,
+        "density": 1.3,
+        "leafWidth": 1.25
+      },
+      "axes": 29,
+      "leaves": 167,
+      "early": {
+        "height": 0.28602382453038244,
+        "width": 0.07609853065200965,
+        "depth": 0.022703852528768886,
+        "leaves": 8,
+        "reference_height": 0.185,
+        "flower": 0
+      },
+      "final": {
+        "height": 1.8236371299089356,
+        "width": 1.1398075356338455,
+        "depth": 1.2806964049098124,
+        "leaves": 167,
+        "reference_height": 1.24,
+        "flower": 1
+      }
+    },
+    {
+      "index": 14,
+      "options": {
+        "family": 3,
+        "seed": 716,
+        "curve": 3,
+        "height": 0.75,
+        "spread": 0.65,
+        "density": 0.65,
+        "leafWidth": 0.7
+      },
+      "axes": 13,
+      "leaves": 97,
+      "early": {
+        "height": 0.08669742822077194,
+        "width": 0.015382875060294517,
+        "depth": 0.012883155975531906,
+        "leaves": 12,
+        "reference_height": 0.1785,
+        "flower": 0
+      },
+      "final": {
+        "height": 0.7096499999999999,
+        "width": 0.3706383366512743,
+        "depth": 0.27082287550811746,
+        "leaves": 97,
+        "reference_height": 1.14,
+        "flower": 1
+      }
+    },
+    {
+      "index": 15,
+      "options": {
+        "family": 3,
+        "seed": 716,
+        "curve": 3,
+        "height": 1.25,
+        "spread": 1.3,
+        "density": 1.3,
+        "leafWidth": 1.25
+      },
+      "axes": 42,
+      "leaves": 257,
+      "early": {
+        "height": 0.13790034575538507,
+        "width": 0.02769104602509911,
+        "depth": 0.029965450093513007,
+        "leaves": 12,
+        "reference_height": 0.1785,
+        "flower": 0
+      },
+      "final": {
+        "height": 1.1827499999999995,
+        "width": 1.5055526325766486,
+        "depth": 1.5155087417821134,
+        "leaves": 257,
+        "reference_height": 1.14,
+        "flower": 1
+      }
+    }
+  ]
+}

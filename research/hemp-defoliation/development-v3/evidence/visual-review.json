@@ -1,0 +1,41 @@
+{
+  "renders": [
+    {
+      "file": "cohort-late.png",
+      "source_export": "hemp-v3-gallery-front-day-114-plant-3.png",
+      "origin": "Actual WebGL canvas exported by viewer Save view",
+      "sha256": "00d9b7d6a5c2d9c0a4f4133bc74e797787c0185a0c9d12b974f2fa9c688759e3"
+    },
+    {
+      "file": "cohort-early.png",
+      "source_export": "hemp-v3-gallery-front-day-31-plant-3.png",
+      "origin": "Actual WebGL canvas exported by viewer Save view",
+      "sha256": "ff8c99cdbeb315b52759ee89ec0df88a79b79d11fc86fd7e7afde659912c3aee"
+    },
+    {
+      "file": "cohort-mid.png",
+      "source_export": "hemp-v3-gallery-front-day-52-plant-3.png",
+      "origin": "Actual WebGL canvas exported by viewer Save view",
+      "sha256": "a3dfc9d4d468b46c08255e8fabe35095661c09d16c7acdf3c2851f395294d09b"
+    },
+    {
+      "file": "compact-oblique.png",
+      "source_export": "hemp-v3-single-three-day-114-plant-1.png",
+      "origin": "Actual WebGL canvas exported by viewer Save view",
+      "sha256": "eec8587993f8d498bcde4596eb4c93e5803528eab44d5b1534b6d59450de1996"
+    }
+  ],
+  "checks": [
+    "Gallery at 31, 52 and 114 reference DAS",
+    "Compact specimen oblique",
+    "Branch-abundance keyboard control changed visible geometry and leaf count",
+    "Early stage shows growing organs rather than a scaled mature canopy",
+    "Full browser replay reached day 114 and stopped; 1235 visible leaves match the mature starting state."
+  ],
+  "correction": "Compressed upper internodes and redistributed secondary foliage after initial close-up review.",
+  "limits": [
+    "Flower envelopes remain coarse",
+    "No fitted multi-view plant reconstruction",
+    "No calibrated commercial distribution or contact solver"
+  ]
+}
