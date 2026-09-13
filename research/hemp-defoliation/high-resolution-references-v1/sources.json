@@ -1,0 +1,53 @@
+[
+  {
+    "id": "potted-plant",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Potted_marijuana_plant.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Potted_marijuana_plant.jpg",
+    "author": "Danielstjohn",
+    "license": "CC BY-SA 4.0",
+    "published_dimensions": [
+      3456,
+      4608
+    ],
+    "bytes": 4926645,
+    "sha256": "9bc5998b6fc6ae4d76b170b408b1a37e37ad2b638792510ef06939f2833e4ed7",
+    "file": "research/hemp-defoliation/high-resolution-references-v1/images/potted-plant.jpg",
+    "transforms": "None; original downloaded bytes",
+    "review_title": "Best whole-plant replacement",
+    "visual_review": "Upright plant with pot rim and much clearer leaf silhouettes, serrations and visible branches. Outdoor flag/fence/vegetation background; pot bottom is cropped and some foliage overlaps. Cultivar and cannabinoid profile are not established by the source."
+  },
+  {
+    "id": "cbd-facility",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Cannabidiol_%28CBD%29.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cannabidiol_(CBD).jpg",
+    "author": "Felix Br\u00f6nnimann",
+    "license": "CC BY-SA 4.0",
+    "published_dimensions": [
+      3158,
+      4737
+    ],
+    "bytes": 8444455,
+    "sha256": "0f5d2bb9cc323328df06f207ee954d748e4a93dcdd25c8fca0c7443ddfdca551",
+    "file": "research/hemp-defoliation/high-resolution-references-v1/images/cbd-facility.jpg",
+    "transforms": "None; original downloaded bytes",
+    "review_title": "Rejected as the primary whole-plant image",
+    "visual_review": "High-resolution photograph, but much of the frame is a person, with cropped plants, occlusion and out-of-focus foreground. Retained as context only, not selected as a whole-plant replacement."
+  },
+  {
+    "id": "indoor-two-plants",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Two_hydroponic_cannabis_plants.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Two_hydroponic_cannabis_plants.jpg",
+    "author": "Plantlady223",
+    "license": "CC BY-SA 4.0",
+    "published_dimensions": [
+      3300,
+      2475
+    ],
+    "bytes": 1046300,
+    "sha256": "94efd2a17ac19a36416b583cbabae78796dbdbbf6473a7a426679b237d103933",
+    "file": "research/hemp-defoliation/high-resolution-references-v1/images/indoor-two-plants.jpg",
+    "transforms": "None; original downloaded bytes",
+    "review_title": "Indoor alternative",
+    "visual_review": "Two living plants in containers, dense overlapping foliage and a reflective indoor background. Useful harder segmentation image. Lower leaves are shaded; this is a tent photograph, not evidence of a specific commercial factory layout. Cultivar is unknown."
+  }
+]
