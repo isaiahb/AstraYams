@@ -1,0 +1,5733 @@
+{
+  "schema_version": 1,
+  "generated_from": "research/hemp-defoliation/development-v3/evidence/anderson-2021-phenotypes.csv",
+  "source_sha256": "e1ad580c3ce1aaa0fa5d6324e42da7c00e0342f253a47bfa1a21a984e7621e80",
+  "primary_dataset": {
+    "citation": "Anderson II, Pearson, Kjelgren & Brym (2021), Response of essential oil hemp growth, biomass, and cannabinoid profiles to varying fertigation rates",
+    "doi": "10.1371/journal.pone.0252985",
+    "license": "CC BY 4.0",
+    "design": "Five feminized, seed-grown cultivars; six fertilizer treatments; six blocks; greenhouse; 8 weeks vegetative plus 8 weeks flowering."
+  },
+  "recommended_first_nominal": {
+    "cultivar": "Cherry Blossom",
+    "condition": "50 ppm N",
+    "status": "research placeholder until the design partner supplies the production cultivar, clone line, plant age, and management history"
+  },
+  "cultivars": [
+    {
+      "name": "Cherry Blossom",
+      "slug": "cherry-blossom",
+      "role": "starter placeholder",
+      "nominal_photo": "evidence/cherry-blossom-50ppm.jpg",
+      "nominal_condition": {
+        "fertigation": "50 ppm N",
+        "reason": "The paper reports 50 and 150 ppm N as tall, highly branched, healthy plants and 50 ppm N as the optimum measured fertilizer rate.",
+        "summary": {
+          "plant_records": 6,
+          "height_series": [
+            {
+              "day_after_sowing": 31,
+              "height_cm": {
+                "n": 5,
+                "min": 18.0,
+                "q25": 20.6,
+                "median": 21.0,
+                "q75": 21.0,
+                "max": 21.0,
+                "mean": 20.32,
+                "sd": 1.3084
+              }
+            },
+            {
+              "day_after_sowing": 36,
+              "height_cm": {
+                "n": 5,
+                "min": 25.0,
+                "q25": 29.0,
+                "median": 30.0,
+                "q75": 31.0,
+                "max": 31.0,
+                "mean": 29.2,
+                "sd": 2.49
+              }
+            },
+            {
+              "day_after_sowing": 52,
+              "height_cm": {
+                "n": 5,
+                "min": 52.0,
+                "q25": 54.0,
+                "median": 57.0,
+                "q75": 61.0,
+                "max": 67.0,
+                "mean": 58.2,
+                "sd": 5.9749
+              }
+            },
+            {
+              "day_after_sowing": 67,
+              "height_cm": {
+                "n": 5,
+                "min": 102.0,
+                "q25": 103.0,
+                "median": 111.0,
+                "q75": 115.0,
+                "max": 121.0,
+                "mean": 110.4,
+                "sd": 8.0498
+              }
+            },
+            {
+              "day_after_sowing": 77,
+              "height_cm": {
+                "n": 5,
+                "min": 129.0,
+                "q25": 134.0,
+                "median": 139.0,
+                "q75": 148.0,
+                "max": 151.0,
+                "mean": 140.2,
+                "sd": 9.2574
+              }
+            },
+            {
+              "day_after_sowing": 99,
+              "height_cm": {
+                "n": 5,
+                "min": 140.0,
+                "q25": 145.0,
+                "median": 152.0,
+                "q75": 159.0,
+                "max": 163.0,
+                "mean": 151.8,
+                "sd": 9.5237
+              }
+            },
+            {
+              "day_after_sowing": 114,
+              "height_cm": {
+                "n": 5,
+                "min": 140.0,
+                "q25": 143.5,
+                "median": 151.0,
+                "q75": 157.0,
+                "max": 163.0,
+                "mean": 150.9,
+                "sd": 9.4499
+              }
+            }
+          ],
+          "metrics": {
+            "height_114_cm": {
+              "unit": "cm",
+              "meaning": "dominant-apex height",
+              "distribution": {
+                "n": 5,
+                "min": 140.0,
+                "q25": 143.5,
+                "median": 151.0,
+                "q75": 157.0,
+                "max": 163.0,
+                "mean": 150.9,
+                "sd": 9.4499
+              }
+            },
+            "stem_diameter_max_mm": {
+              "unit": "mm",
+              "meaning": "maximum stem diameter at soil level",
+              "distribution": {
+                "n": 5,
+                "min": 13.0,
+                "q25": 14.9,
+                "median": 16.2,
+                "q75": 16.89,
+                "max": 17.0,
+                "mean": 15.598,
+                "sd": 1.6759
+              }
+            },
+            "stem_diameter_orthogonal_mm": {
+              "unit": "mm",
+              "meaning": "orthogonal stem diameter at soil level",
+              "distribution": {
+                "n": 5,
+                "min": 12.4,
+                "q25": 12.6,
+                "median": 15.82,
+                "q75": 16.0,
+                "max": 16.4,
+                "mean": 14.644,
+                "sd": 1.9697
+              }
+            },
+            "cola_length_cm": {
+              "unit": "cm",
+              "meaning": "15 cm apical floral sample length measurement",
+              "distribution": {
+                "n": 5,
+                "min": 8.5,
+                "q25": 11.0,
+                "median": 12.0,
+                "q75": 14.0,
+                "max": 15.0,
+                "mean": 12.1,
+                "sd": 2.5593
+              }
+            },
+            "cola_mass_g": {
+              "unit": "g",
+              "meaning": "mass of the sampled apical floral material",
+              "distribution": {
+                "n": 5,
+                "min": 2.54,
+                "q25": 2.753,
+                "median": 2.785,
+                "q75": 3.622,
+                "max": 4.308,
+                "mean": 3.2016,
+                "sd": 0.7439
+              }
+            },
+            "cola_linear_density_g_per_cm": {
+              "unit": "g/cm",
+              "meaning": "reported mass-to-length ratio",
+              "distribution": {
+                "n": 5,
+                "min": 0.1857,
+                "q25": 0.2117,
+                "median": 0.3077,
+                "q75": 0.3239,
+                "max": 0.3293,
+                "mean": 0.2716,
+                "sd": 0.0677
+              }
+            },
+            "flower_biomass_g": {
+              "unit": "g",
+              "meaning": "dry flower biomass",
+              "distribution": {
+                "n": 5,
+                "min": 34.94,
+                "q25": 57.185,
+                "median": 64.308,
+                "q75": 67.822,
+                "max": 111.753,
+                "mean": 67.2016,
+                "sd": 27.9943
+              }
+            },
+            "total_biomass_g": {
+              "unit": "g",
+              "meaning": "dry total above-ground biomass",
+              "distribution": {
+                "n": 5,
+                "min": 106.6,
+                "q25": 148.6,
+                "median": 176.6,
+                "q75": 190.2,
+                "max": 236.7,
+                "mean": 171.74,
+                "sd": 48.381
+              }
+            },
+            "stem_mass_g": {
+              "unit": "g",
+              "meaning": "dry stem mass",
+              "distribution": {
+                "n": 4,
+                "min": 24.2,
+                "q25": 30.8,
+                "median": 43.0,
+                "q75": 53.0,
+                "max": 53.0,
+                "mean": 40.8,
+                "sd": 14.5382
+              }
+            }
+          }
+        },
+        "empirical_joint_vectors": [
+          {
+            "record_id": "MR19-NITR-003",
+            "treatment": "50 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 18.0,
+              "36": 25.0,
+              "52": 52.0,
+              "67": 103.0,
+              "77": 134.0,
+              "99": 145.0,
+              "114": 143.5
+            },
+            "measured": {
+              "height_114_cm": 143.5,
+              "stem_diameter_max_mm": 16.89,
+              "stem_diameter_orthogonal_mm": 15.82,
+              "cola_length_cm": 8.5,
+              "cola_mass_g": 2.753,
+              "cola_linear_density_g_per_cm": 0.323882353,
+              "flower_biomass_g": 111.753,
+              "total_biomass_g": 236.7,
+              "stem_mass_g": 53.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0012",
+            "treatment": "50 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 20.6,
+              "36": 29.0,
+              "52": 54.0,
+              "67": 102.0,
+              "77": 129.0,
+              "99": 140.0,
+              "114": 140.0
+            },
+            "measured": {
+              "height_114_cm": 140.0,
+              "stem_diameter_max_mm": 17.0,
+              "stem_diameter_orthogonal_mm": 16.4,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 3.622,
+              "cola_linear_density_g_per_cm": 0.329272727,
+              "flower_biomass_g": 67.822,
+              "total_biomass_g": 176.6,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0014",
+            "treatment": "50 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 21.0,
+              "36": 30.0,
+              "52": 57.0,
+              "67": 111.0,
+              "77": 139.0,
+              "99": 152.0,
+              "114": 151.0
+            },
+            "measured": {
+              "height_114_cm": 151.0,
+              "stem_diameter_max_mm": 13.0,
+              "stem_diameter_orthogonal_mm": 12.4,
+              "cola_length_cm": 12.0,
+              "cola_mass_g": 2.54,
+              "cola_linear_density_g_per_cm": 0.211666667,
+              "flower_biomass_g": 34.94,
+              "total_biomass_g": 106.6,
+              "stem_mass_g": 24.2
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0016",
+            "treatment": "50 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": null,
+              "36": null,
+              "52": null,
+              "67": null,
+              "77": null,
+              "99": null,
+              "114": null
+            },
+            "measured": {
+              "height_114_cm": null,
+              "stem_diameter_max_mm": null,
+              "stem_diameter_orthogonal_mm": null,
+              "cola_length_cm": null,
+              "cola_mass_g": null,
+              "cola_linear_density_g_per_cm": null,
+              "flower_biomass_g": null,
+              "total_biomass_g": null,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0020",
+            "treatment": "50 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 21.0,
+              "36": 31.0,
+              "52": 61.0,
+              "67": 115.0,
+              "77": 148.0,
+              "99": 163.0,
+              "114": 163.0
+            },
+            "measured": {
+              "height_114_cm": 163.0,
+              "stem_diameter_max_mm": 14.9,
+              "stem_diameter_orthogonal_mm": 12.6,
+              "cola_length_cm": 15.0,
+              "cola_mass_g": 2.785,
+              "cola_linear_density_g_per_cm": 0.185666667,
+              "flower_biomass_g": 57.185,
+              "total_biomass_g": 148.6,
+              "stem_mass_g": 33.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0025",
+            "treatment": "50 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": 21.0,
+              "36": 31.0,
+              "52": 67.0,
+              "67": 121.0,
+              "77": 151.0,
+              "99": 159.0,
+              "114": 157.0
+            },
+            "measured": {
+              "height_114_cm": 157.0,
+              "stem_diameter_max_mm": 16.2,
+              "stem_diameter_orthogonal_mm": 16.0,
+              "cola_length_cm": 14.0,
+              "cola_mass_g": 4.308,
+              "cola_linear_density_g_per_cm": 0.307714286,
+              "flower_biomass_g": 64.308,
+              "total_biomass_g": 190.2,
+              "stem_mass_g": 53.0
+            }
+          }
+        ]
+      },
+      "healthy_condition_envelope": {
+        "fertigation": [
+          "50 ppm N",
+          "150 ppm N"
+        ],
+        "summary": {
+          "plant_records": 12,
+          "height_series": [
+            {
+              "day_after_sowing": 31,
+              "height_cm": {
+                "n": 8,
+                "min": 17.5,
+                "q25": 19.125,
+                "median": 20.8,
+                "q75": 21.0,
+                "max": 21.0,
+                "mean": 19.95,
+                "sd": 1.456
+              }
+            },
+            {
+              "day_after_sowing": 36,
+              "height_cm": {
+                "n": 8,
+                "min": 24.0,
+                "q25": 26.5,
+                "median": 29.5,
+                "q75": 31.0,
+                "max": 32.0,
+                "mean": 28.625,
+                "sd": 2.9731
+              }
+            },
+            {
+              "day_after_sowing": 52,
+              "height_cm": {
+                "n": 8,
+                "min": 52.0,
+                "q25": 53.75,
+                "median": 56.5,
+                "q75": 61.5,
+                "max": 67.0,
+                "mean": 57.875,
+                "sd": 5.3033
+              }
+            },
+            {
+              "day_after_sowing": 67,
+              "height_cm": {
+                "n": 8,
+                "min": 96.0,
+                "q25": 100.75,
+                "median": 107.0,
+                "q75": 115.5,
+                "max": 121.0,
+                "mean": 107.75,
+                "sd": 9.5131
+              }
+            },
+            {
+              "day_after_sowing": 77,
+              "height_cm": {
+                "n": 8,
+                "min": 118.0,
+                "q25": 127.0,
+                "median": 136.5,
+                "q75": 142.0,
+                "max": 151.0,
+                "mean": 135.0,
+                "sd": 11.8804
+              }
+            },
+            {
+              "day_after_sowing": 99,
+              "height_cm": {
+                "n": 8,
+                "min": 124.0,
+                "q25": 136.25,
+                "median": 143.5,
+                "q75": 153.75,
+                "max": 163.0,
+                "mean": 143.75,
+                "sd": 14.3003
+              }
+            },
+            {
+              "day_after_sowing": 114,
+              "height_cm": {
+                "n": 8,
+                "min": 122.5,
+                "q25": 136.125,
+                "median": 142.0,
+                "q75": 152.5,
+                "max": 163.0,
+                "mean": 142.75,
+                "sd": 14.3303
+              }
+            }
+          ],
+          "metrics": {
+            "height_114_cm": {
+              "unit": "cm",
+              "meaning": "dominant-apex height",
+              "distribution": {
+                "n": 8,
+                "min": 122.5,
+                "q25": 136.125,
+                "median": 142.0,
+                "q75": 152.5,
+                "max": 163.0,
+                "mean": 142.75,
+                "sd": 14.3303
+              }
+            },
+            "stem_diameter_max_mm": {
+              "unit": "mm",
+              "meaning": "maximum stem diameter at soil level",
+              "distribution": {
+                "n": 8,
+                "min": 13.0,
+                "q25": 13.925,
+                "median": 14.8,
+                "q75": 16.3725,
+                "max": 17.0,
+                "mean": 15.0488,
+                "sd": 1.5016
+              }
+            },
+            "stem_diameter_orthogonal_mm": {
+              "unit": "mm",
+              "meaning": "orthogonal stem diameter at soil level",
+              "distribution": {
+                "n": 8,
+                "min": 12.4,
+                "q25": 12.9,
+                "median": 13.7,
+                "q75": 15.865,
+                "max": 16.4,
+                "mean": 14.2025,
+                "sd": 1.6373
+              }
+            },
+            "cola_length_cm": {
+              "unit": "cm",
+              "meaning": "15 cm apical floral sample length measurement",
+              "distribution": {
+                "n": 8,
+                "min": 8.5,
+                "q25": 10.5,
+                "median": 11.5,
+                "q75": 13.625,
+                "max": 15.0,
+                "mean": 11.875,
+                "sd": 2.1671
+              }
+            },
+            "cola_mass_g": {
+              "unit": "g",
+              "meaning": "mass of the sampled apical floral material",
+              "distribution": {
+                "n": 8,
+                "min": 2.54,
+                "q25": 2.7098,
+                "median": 3.0225,
+                "q75": 3.7935,
+                "max": 4.408,
+                "mean": 3.282,
+                "sd": 0.7566
+              }
+            },
+            "cola_linear_density_g_per_cm": {
+              "unit": "g/cm",
+              "meaning": "reported mass-to-length ratio",
+              "distribution": {
+                "n": 8,
+                "min": 0.1857,
+                "q25": 0.2372,
+                "median": 0.3091,
+                "q75": 0.3245,
+                "max": 0.3293,
+                "mean": 0.2801,
+                "sd": 0.0573
+              }
+            },
+            "flower_biomass_g": {
+              "unit": "g",
+              "meaning": "dry flower biomass",
+              "distribution": {
+                "n": 8,
+                "min": 34.94,
+                "q25": 39.665,
+                "median": 57.2965,
+                "q75": 65.1865,
+                "max": 111.753,
+                "mean": 58.9445,
+                "sd": 24.7005
+              }
+            },
+            "total_biomass_g": {
+              "unit": "g",
+              "meaning": "dry total above-ground biomass",
+              "distribution": {
+                "n": 8,
+                "min": 106.6,
+                "q25": 128.2,
+                "median": 157.75,
+                "q75": 180.0,
+                "max": 236.7,
+                "mean": 159.975,
+                "sd": 41.8742
+              }
+            },
+            "stem_mass_g": {
+              "unit": "g",
+              "meaning": "dry stem mass",
+              "distribution": {
+                "n": 7,
+                "min": 24.2,
+                "q25": 31.25,
+                "median": 33.1,
+                "q75": 44.25,
+                "max": 53.0,
+                "mean": 37.3286,
+                "sd": 11.2901
+              }
+            }
+          }
+        },
+        "empirical_joint_vectors": [
+          {
+            "record_id": "MR19-NITR-003",
+            "treatment": "50 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 18.0,
+              "36": 25.0,
+              "52": 52.0,
+              "67": 103.0,
+              "77": 134.0,
+              "99": 145.0,
+              "114": 143.5
+            },
+            "measured": {
+              "height_114_cm": 143.5,
+              "stem_diameter_max_mm": 16.89,
+              "stem_diameter_orthogonal_mm": 15.82,
+              "cola_length_cm": 8.5,
+              "cola_mass_g": 2.753,
+              "cola_linear_density_g_per_cm": 0.323882353,
+              "flower_biomass_g": 111.753,
+              "total_biomass_g": 236.7,
+              "stem_mass_g": 53.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0012",
+            "treatment": "50 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 20.6,
+              "36": 29.0,
+              "52": 54.0,
+              "67": 102.0,
+              "77": 129.0,
+              "99": 140.0,
+              "114": 140.0
+            },
+            "measured": {
+              "height_114_cm": 140.0,
+              "stem_diameter_max_mm": 17.0,
+              "stem_diameter_orthogonal_mm": 16.4,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 3.622,
+              "cola_linear_density_g_per_cm": 0.329272727,
+              "flower_biomass_g": 67.822,
+              "total_biomass_g": 176.6,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0014",
+            "treatment": "50 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 21.0,
+              "36": 30.0,
+              "52": 57.0,
+              "67": 111.0,
+              "77": 139.0,
+              "99": 152.0,
+              "114": 151.0
+            },
+            "measured": {
+              "height_114_cm": 151.0,
+              "stem_diameter_max_mm": 13.0,
+              "stem_diameter_orthogonal_mm": 12.4,
+              "cola_length_cm": 12.0,
+              "cola_mass_g": 2.54,
+              "cola_linear_density_g_per_cm": 0.211666667,
+              "flower_biomass_g": 34.94,
+              "total_biomass_g": 106.6,
+              "stem_mass_g": 24.2
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0016",
+            "treatment": "50 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": null,
+              "36": null,
+              "52": null,
+              "67": null,
+              "77": null,
+              "99": null,
+              "114": null
+            },
+            "measured": {
+              "height_114_cm": null,
+              "stem_diameter_max_mm": null,
+              "stem_diameter_orthogonal_mm": null,
+              "cola_length_cm": null,
+              "cola_mass_g": null,
+              "cola_linear_density_g_per_cm": null,
+              "flower_biomass_g": null,
+              "total_biomass_g": null,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0020",
+            "treatment": "50 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 21.0,
+              "36": 31.0,
+              "52": 61.0,
+              "67": 115.0,
+              "77": 148.0,
+              "99": 163.0,
+              "114": 163.0
+            },
+            "measured": {
+              "height_114_cm": 163.0,
+              "stem_diameter_max_mm": 14.9,
+              "stem_diameter_orthogonal_mm": 12.6,
+              "cola_length_cm": 15.0,
+              "cola_mass_g": 2.785,
+              "cola_linear_density_g_per_cm": 0.185666667,
+              "flower_biomass_g": 57.185,
+              "total_biomass_g": 148.6,
+              "stem_mass_g": 33.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0025",
+            "treatment": "50 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": 21.0,
+              "36": 31.0,
+              "52": 67.0,
+              "67": 121.0,
+              "77": 151.0,
+              "99": 159.0,
+              "114": 157.0
+            },
+            "measured": {
+              "height_114_cm": 157.0,
+              "stem_diameter_max_mm": 16.2,
+              "stem_diameter_orthogonal_mm": 16.0,
+              "cola_length_cm": 14.0,
+              "cola_mass_g": 4.308,
+              "cola_linear_density_g_per_cm": 0.307714286,
+              "flower_biomass_g": 64.308,
+              "total_biomass_g": 190.2,
+              "stem_mass_g": 53.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0032",
+            "treatment": "150 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 21.0,
+              "36": 32.0,
+              "52": 63.0,
+              "67": 117.0,
+              "77": 140.0,
+              "99": 142.0,
+              "114": 140.5
+            },
+            "measured": {
+              "height_114_cm": 140.5,
+              "stem_diameter_max_mm": 14.0,
+              "stem_diameter_orthogonal_mm": 13.3,
+              "cola_length_cm": 10.5,
+              "cola_mass_g": 2.58,
+              "cola_linear_density_g_per_cm": 0.245714286,
+              "flower_biomass_g": 37.88,
+              "total_biomass_g": 124.9,
+              "stem_mass_g": 29.5
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0037",
+            "treatment": "150 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 17.5,
+              "36": 24.0,
+              "52": 53.0,
+              "67": 96.0,
+              "77": 118.0,
+              "99": 124.0,
+              "114": 122.5
+            },
+            "measured": {
+              "height_114_cm": 122.5,
+              "stem_diameter_max_mm": 13.7,
+              "stem_diameter_orthogonal_mm": 13.0,
+              "cola_length_cm": 10.5,
+              "cola_mass_g": 3.26,
+              "cola_linear_density_g_per_cm": 0.310476191,
+              "flower_biomass_g": 40.26,
+              "total_biomass_g": 129.3,
+              "stem_mass_g": 33.1
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0040",
+            "treatment": "150 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 19.5,
+              "36": 27.0,
+              "52": 56.0,
+              "67": 97.0,
+              "77": 121.0,
+              "99": 125.0,
+              "114": 124.5
+            },
+            "measured": {
+              "height_114_cm": 124.5,
+              "stem_diameter_max_mm": 14.7,
+              "stem_diameter_orthogonal_mm": 14.1,
+              "cola_length_cm": 13.5,
+              "cola_mass_g": 4.408,
+              "cola_linear_density_g_per_cm": 0.326518519,
+              "flower_biomass_g": 57.408,
+              "total_biomass_g": 166.9,
+              "stem_mass_g": 35.5
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0048",
+            "treatment": "150 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": null,
+              "36": null,
+              "52": null,
+              "67": null,
+              "77": null,
+              "99": null,
+              "114": null
+            },
+            "measured": {
+              "height_114_cm": null,
+              "stem_diameter_max_mm": null,
+              "stem_diameter_orthogonal_mm": null,
+              "cola_length_cm": null,
+              "cola_mass_g": null,
+              "cola_linear_density_g_per_cm": null,
+              "flower_biomass_g": null,
+              "total_biomass_g": null,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0056",
+            "treatment": "150 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": null,
+              "36": null,
+              "52": null,
+              "67": null,
+              "77": null,
+              "99": null,
+              "114": null
+            },
+            "measured": {
+              "height_114_cm": null,
+              "stem_diameter_max_mm": null,
+              "stem_diameter_orthogonal_mm": null,
+              "cola_length_cm": null,
+              "cola_mass_g": null,
+              "cola_linear_density_g_per_cm": null,
+              "flower_biomass_g": null,
+              "total_biomass_g": null,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0058",
+            "treatment": "150 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": null,
+              "36": null,
+              "52": null,
+              "67": null,
+              "77": null,
+              "99": null,
+              "114": null
+            },
+            "measured": {
+              "height_114_cm": null,
+              "stem_diameter_max_mm": null,
+              "stem_diameter_orthogonal_mm": null,
+              "cola_length_cm": null,
+              "cola_mass_g": null,
+              "cola_linear_density_g_per_cm": null,
+              "flower_biomass_g": null,
+              "total_biomass_g": null,
+              "stem_mass_g": null
+            }
+          }
+        ]
+      },
+      "all_treatment_context": {
+        "plant_records": 36,
+        "height_series": [
+          {
+            "day_after_sowing": 31,
+            "height_cm": {
+              "n": 31,
+              "min": 13.0,
+              "q25": 18.5,
+              "median": 20.0,
+              "q75": 21.0,
+              "max": 24.0,
+              "mean": 19.5355,
+              "sd": 2.2962
+            }
+          },
+          {
+            "day_after_sowing": 36,
+            "height_cm": {
+              "n": 31,
+              "min": 17.0,
+              "q25": 25.0,
+              "median": 28.0,
+              "q75": 30.0,
+              "max": 33.0,
+              "mean": 27.2903,
+              "sd": 3.437
+            }
+          },
+          {
+            "day_after_sowing": 52,
+            "height_cm": {
+              "n": 31,
+              "min": 22.0,
+              "q25": 45.0,
+              "median": 53.0,
+              "q75": 57.0,
+              "max": 67.0,
+              "mean": 49.0968,
+              "sd": 12.5442
+            }
+          },
+          {
+            "day_after_sowing": 67,
+            "height_cm": {
+              "n": 31,
+              "min": 31.0,
+              "q25": 72.5,
+              "median": 100.0,
+              "q75": 106.0,
+              "max": 121.0,
+              "mean": 87.1613,
+              "sd": 28.0382
+            }
+          },
+          {
+            "day_after_sowing": 77,
+            "height_cm": {
+              "n": 31,
+              "min": 38.0,
+              "q25": 90.0,
+              "median": 118.0,
+              "q75": 132.0,
+              "max": 151.0,
+              "mean": 106.0,
+              "sd": 34.7659
+            }
+          },
+          {
+            "day_after_sowing": 99,
+            "height_cm": {
+              "n": 31,
+              "min": 42.0,
+              "q25": 93.5,
+              "median": 124.0,
+              "q75": 140.0,
+              "max": 163.0,
+              "mean": 111.9677,
+              "sd": 36.7582
+            }
+          },
+          {
+            "day_after_sowing": 114,
+            "height_cm": {
+              "n": 31,
+              "min": 40.0,
+              "q25": 92.5,
+              "median": 123.5,
+              "q75": 138.0,
+              "max": 163.0,
+              "mean": 110.9194,
+              "sd": 36.476
+            }
+          }
+        ],
+        "metrics": {
+          "height_114_cm": {
+            "unit": "cm",
+            "meaning": "dominant-apex height",
+            "distribution": {
+              "n": 31,
+              "min": 40.0,
+              "q25": 92.5,
+              "median": 123.5,
+              "q75": 138.0,
+              "max": 163.0,
+              "mean": 110.9194,
+              "sd": 36.476
+            }
+          },
+          "stem_diameter_max_mm": {
+            "unit": "mm",
+            "meaning": "maximum stem diameter at soil level",
+            "distribution": {
+              "n": 31,
+              "min": 3.8,
+              "q25": 8.9,
+              "median": 11.7,
+              "q75": 14.15,
+              "max": 17.0,
+              "mean": 10.9835,
+              "sd": 4.0325
+            }
+          },
+          "stem_diameter_orthogonal_mm": {
+            "unit": "mm",
+            "meaning": "orthogonal stem diameter at soil level",
+            "distribution": {
+              "n": 31,
+              "min": 3.8,
+              "q25": 8.65,
+              "median": 11.1,
+              "q75": 13.45,
+              "max": 16.4,
+              "mean": 10.4974,
+              "sd": 3.8477
+            }
+          },
+          "cola_length_cm": {
+            "unit": "cm",
+            "meaning": "15 cm apical floral sample length measurement",
+            "distribution": {
+              "n": 31,
+              "min": 8.5,
+              "q25": 11.75,
+              "median": 12.0,
+              "q75": 14.0,
+              "max": 20.0,
+              "mean": 12.7581,
+              "sd": 2.2244
+            }
+          },
+          "cola_mass_g": {
+            "unit": "g",
+            "meaning": "mass of the sampled apical floral material",
+            "distribution": {
+              "n": 31,
+              "min": 0.991,
+              "q25": 2.56,
+              "median": 2.938,
+              "q75": 3.5505,
+              "max": 4.784,
+              "mean": 2.9021,
+              "sd": 1.0622
+            }
+          },
+          "cola_linear_density_g_per_cm": {
+            "unit": "g/cm",
+            "meaning": "reported mass-to-length ratio",
+            "distribution": {
+              "n": 31,
+              "min": 0.0821,
+              "q25": 0.1767,
+              "median": 0.2448,
+              "q75": 0.3105,
+              "max": 0.3613,
+              "mean": 0.2322,
+              "sd": 0.0883
+            }
+          },
+          "flower_biomass_g": {
+            "unit": "g",
+            "meaning": "dry flower biomass",
+            "distribution": {
+              "n": 31,
+              "min": 0.991,
+              "q25": 8.0935,
+              "median": 34.813,
+              "q75": 60.6935,
+              "max": 111.753,
+              "mean": 38.1473,
+              "sd": 31.7675
+            }
+          },
+          "total_biomass_g": {
+            "unit": "g",
+            "meaning": "dry total above-ground biomass",
+            "distribution": {
+              "n": 31,
+              "min": 11.6,
+              "q25": 45.4,
+              "median": 106.6,
+              "q75": 153.15,
+              "max": 240.7,
+              "mean": 104.4065,
+              "sd": 69.7648
+            }
+          },
+          "stem_mass_g": {
+            "unit": "g",
+            "meaning": "dry stem mass",
+            "distribution": {
+              "n": 30,
+              "min": 0.8,
+              "q25": 8.825,
+              "median": 21.6,
+              "q75": 32.225,
+              "max": 53.0,
+              "mean": 21.9167,
+              "sd": 16.2764
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Cherry Blossom (Tuan)",
+      "slug": "cherry-blossom-tuan",
+      "role": "alternative measured cultivar",
+      "nominal_photo": "evidence/cherry-blossom-tuan-50ppm.jpg",
+      "nominal_condition": {
+        "fertigation": "50 ppm N",
+        "reason": "The paper reports 50 and 150 ppm N as tall, highly branched, healthy plants and 50 ppm N as the optimum measured fertilizer rate.",
+        "summary": {
+          "plant_records": 6,
+          "height_series": [
+            {
+              "day_after_sowing": 31,
+              "height_cm": {
+                "n": 5,
+                "min": 15.0,
+                "q25": 16.6,
+                "median": 17.5,
+                "q75": 19.8,
+                "max": 22.8,
+                "mean": 18.34,
+                "sd": 3.0378
+              }
+            },
+            {
+              "day_after_sowing": 36,
+              "height_cm": {
+                "n": 5,
+                "min": 20.0,
+                "q25": 25.0,
+                "median": 26.0,
+                "q75": 28.0,
+                "max": 29.0,
+                "mean": 25.6,
+                "sd": 3.5071
+              }
+            },
+            {
+              "day_after_sowing": 52,
+              "height_cm": {
+                "n": 5,
+                "min": 52.0,
+                "q25": 52.0,
+                "median": 56.0,
+                "q75": 57.0,
+                "max": 60.0,
+                "mean": 55.4,
+                "sd": 3.4351
+              }
+            },
+            {
+              "day_after_sowing": 67,
+              "height_cm": {
+                "n": 5,
+                "min": 96.0,
+                "q25": 101.0,
+                "median": 102.0,
+                "q75": 105.0,
+                "max": 107.0,
+                "mean": 102.2,
+                "sd": 4.2071
+              }
+            },
+            {
+              "day_after_sowing": 77,
+              "height_cm": {
+                "n": 5,
+                "min": 125.0,
+                "q25": 125.0,
+                "median": 134.0,
+                "q75": 135.0,
+                "max": 137.0,
+                "mean": 131.2,
+                "sd": 5.7619
+              }
+            },
+            {
+              "day_after_sowing": 99,
+              "height_cm": {
+                "n": 5,
+                "min": 131.0,
+                "q25": 140.0,
+                "median": 141.0,
+                "q75": 145.0,
+                "max": 152.0,
+                "mean": 141.8,
+                "sd": 7.6616
+              }
+            },
+            {
+              "day_after_sowing": 114,
+              "height_cm": {
+                "n": 5,
+                "min": 130.0,
+                "q25": 141.0,
+                "median": 142.0,
+                "q75": 145.0,
+                "max": 151.0,
+                "mean": 141.8,
+                "sd": 7.6616
+              }
+            }
+          ],
+          "metrics": {
+            "height_114_cm": {
+              "unit": "cm",
+              "meaning": "dominant-apex height",
+              "distribution": {
+                "n": 5,
+                "min": 130.0,
+                "q25": 141.0,
+                "median": 142.0,
+                "q75": 145.0,
+                "max": 151.0,
+                "mean": 141.8,
+                "sd": 7.6616
+              }
+            },
+            "stem_diameter_max_mm": {
+              "unit": "mm",
+              "meaning": "maximum stem diameter at soil level",
+              "distribution": {
+                "n": 5,
+                "min": 13.2,
+                "q25": 13.45,
+                "median": 15.15,
+                "q75": 15.2,
+                "max": 22.87,
+                "mean": 15.974,
+                "sd": 3.9654
+              }
+            },
+            "stem_diameter_orthogonal_mm": {
+              "unit": "mm",
+              "meaning": "orthogonal stem diameter at soil level",
+              "distribution": {
+                "n": 5,
+                "min": 12.5,
+                "q25": 12.6,
+                "median": 12.6,
+                "q75": 14.72,
+                "max": 19.93,
+                "mean": 14.47,
+                "sd": 3.1917
+              }
+            },
+            "cola_length_cm": {
+              "unit": "cm",
+              "meaning": "15 cm apical floral sample length measurement",
+              "distribution": {
+                "n": 5,
+                "min": 10.0,
+                "q25": 10.0,
+                "median": 12.0,
+                "q75": 15.0,
+                "max": 16.0,
+                "mean": 12.6,
+                "sd": 2.7928
+              }
+            },
+            "cola_mass_g": {
+              "unit": "g",
+              "meaning": "mass of the sampled apical floral material",
+              "distribution": {
+                "n": 5,
+                "min": 3.248,
+                "q25": 3.437,
+                "median": 4.044,
+                "q75": 4.075,
+                "max": 4.628,
+                "mean": 3.8864,
+                "sd": 0.5522
+              }
+            },
+            "cola_linear_density_g_per_cm": {
+              "unit": "g/cm",
+              "meaning": "reported mass-to-length ratio",
+              "distribution": {
+                "n": 5,
+                "min": 0.2527,
+                "q25": 0.3085,
+                "median": 0.3248,
+                "q75": 0.3396,
+                "max": 0.3437,
+                "mean": 0.3139,
+                "sd": 0.0369
+              }
+            },
+            "flower_biomass_g": {
+              "unit": "g",
+              "meaning": "dry flower biomass",
+              "distribution": {
+                "n": 5,
+                "min": 39.644,
+                "q25": 73.228,
+                "median": 73.275,
+                "q75": 75.837,
+                "max": 98.848,
+                "mean": 72.1664,
+                "sd": 21.1273
+              }
+            },
+            "total_biomass_g": {
+              "unit": "g",
+              "meaning": "dry total above-ground biomass",
+              "distribution": {
+                "n": 5,
+                "min": 116.2,
+                "q25": 161.8,
+                "median": 176.6,
+                "q75": 178.2,
+                "max": 257.6,
+                "mean": 178.08,
+                "sd": 51.0387
+              }
+            },
+            "stem_mass_g": {
+              "unit": "g",
+              "meaning": "dry stem mass",
+              "distribution": {
+                "n": 4,
+                "min": 22.0,
+                "q25": 31.6,
+                "median": 39.2,
+                "q75": 53.05,
+                "max": 81.4,
+                "mean": 45.45,
+                "sd": 25.5548
+              }
+            }
+          }
+        },
+        "empirical_joint_vectors": [
+          {
+            "record_id": "MR19-NITR-002",
+            "treatment": "50 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 17.5,
+              "36": 26.0,
+              "52": 56.0,
+              "67": 96.0,
+              "77": 125.0,
+              "99": 131.0,
+              "114": 130.0
+            },
+            "measured": {
+              "height_114_cm": 130.0,
+              "stem_diameter_max_mm": 22.87,
+              "stem_diameter_orthogonal_mm": 19.93,
+              "cola_length_cm": 10.0,
+              "cola_mass_g": 3.248,
+              "cola_linear_density_g_per_cm": 0.3248,
+              "flower_biomass_g": 98.848,
+              "total_biomass_g": 257.6,
+              "stem_mass_g": 81.4
+            }
+          },
+          {
+            "record_id": "MR19-NITR-006",
+            "treatment": "50 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 16.6,
+              "36": 25.0,
+              "52": 52.0,
+              "67": 101.0,
+              "77": 134.0,
+              "99": 141.0,
+              "114": 141.0
+            },
+            "measured": {
+              "height_114_cm": 141.0,
+              "stem_diameter_max_mm": 15.15,
+              "stem_diameter_orthogonal_mm": 14.72,
+              "cola_length_cm": 10.0,
+              "cola_mass_g": 3.437,
+              "cola_linear_density_g_per_cm": 0.3437,
+              "flower_biomass_g": 75.837,
+              "total_biomass_g": 178.2,
+              "stem_mass_g": 43.6
+            }
+          },
+          {
+            "record_id": "MR19-NITR-009",
+            "treatment": "50 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 19.8,
+              "36": 28.0,
+              "52": 57.0,
+              "67": 105.0,
+              "77": 135.0,
+              "99": 152.0,
+              "114": 151.0
+            },
+            "measured": {
+              "height_114_cm": 151.0,
+              "stem_diameter_max_mm": 13.45,
+              "stem_diameter_orthogonal_mm": 12.6,
+              "cola_length_cm": 15.0,
+              "cola_mass_g": 4.628,
+              "cola_linear_density_g_per_cm": 0.308533333,
+              "flower_biomass_g": 73.228,
+              "total_biomass_g": 161.8,
+              "stem_mass_g": 34.8
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0021",
+            "treatment": "50 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": 22.8,
+              "36": 29.0,
+              "52": 60.0,
+              "67": 107.0,
+              "77": 137.0,
+              "99": 145.0,
+              "114": 145.0
+            },
+            "measured": {
+              "height_114_cm": 145.0,
+              "stem_diameter_max_mm": 15.2,
+              "stem_diameter_orthogonal_mm": 12.6,
+              "cola_length_cm": 12.0,
+              "cola_mass_g": 4.075,
+              "cola_linear_density_g_per_cm": 0.339583333,
+              "flower_biomass_g": 73.275,
+              "total_biomass_g": 176.6,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0024",
+            "treatment": "50 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": null,
+              "36": null,
+              "52": null,
+              "67": null,
+              "77": null,
+              "99": null,
+              "114": null
+            },
+            "measured": {
+              "height_114_cm": null,
+              "stem_diameter_max_mm": null,
+              "stem_diameter_orthogonal_mm": null,
+              "cola_length_cm": null,
+              "cola_mass_g": null,
+              "cola_linear_density_g_per_cm": null,
+              "flower_biomass_g": null,
+              "total_biomass_g": null,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0029",
+            "treatment": "50 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 15.0,
+              "36": 20.0,
+              "52": 52.0,
+              "67": 102.0,
+              "77": 125.0,
+              "99": 140.0,
+              "114": 142.0
+            },
+            "measured": {
+              "height_114_cm": 142.0,
+              "stem_diameter_max_mm": 13.2,
+              "stem_diameter_orthogonal_mm": 12.5,
+              "cola_length_cm": 16.0,
+              "cola_mass_g": 4.044,
+              "cola_linear_density_g_per_cm": 0.25275,
+              "flower_biomass_g": 39.644,
+              "total_biomass_g": 116.2,
+              "stem_mass_g": 22.0
+            }
+          }
+        ]
+      },
+      "healthy_condition_envelope": {
+        "fertigation": [
+          "50 ppm N",
+          "150 ppm N"
+        ],
+        "summary": {
+          "plant_records": 11,
+          "height_series": [
+            {
+              "day_after_sowing": 31,
+              "height_cm": {
+                "n": 9,
+                "min": 14.3,
+                "q25": 15.0,
+                "median": 17.5,
+                "q75": 19.0,
+                "max": 22.8,
+                "mean": 17.5889,
+                "sd": 2.7647
+              }
+            },
+            {
+              "day_after_sowing": 36,
+              "height_cm": {
+                "n": 9,
+                "min": 20.0,
+                "q25": 23.0,
+                "median": 25.0,
+                "q75": 26.0,
+                "max": 29.0,
+                "mean": 24.8889,
+                "sd": 2.848
+              }
+            },
+            {
+              "day_after_sowing": 52,
+              "height_cm": {
+                "n": 9,
+                "min": 47.0,
+                "q25": 52.0,
+                "median": 55.0,
+                "q75": 56.0,
+                "max": 60.0,
+                "mean": 54.1111,
+                "sd": 3.7896
+              }
+            },
+            {
+              "day_after_sowing": 67,
+              "height_cm": {
+                "n": 9,
+                "min": 83.0,
+                "q25": 96.0,
+                "median": 98.0,
+                "q75": 102.0,
+                "max": 107.0,
+                "mean": 98.3333,
+                "sd": 6.9642
+              }
+            },
+            {
+              "day_after_sowing": 77,
+              "height_cm": {
+                "n": 9,
+                "min": 104.0,
+                "q25": 120.0,
+                "median": 125.0,
+                "q75": 134.0,
+                "max": 137.0,
+                "mean": 125.0,
+                "sd": 10.2713
+              }
+            },
+            {
+              "day_after_sowing": 99,
+              "height_cm": {
+                "n": 9,
+                "min": 116.0,
+                "q25": 128.0,
+                "median": 140.0,
+                "q75": 142.0,
+                "max": 152.0,
+                "mean": 135.6667,
+                "sd": 11.1915
+              }
+            },
+            {
+              "day_after_sowing": 114,
+              "height_cm": {
+                "n": 9,
+                "min": 113.5,
+                "q25": 126.0,
+                "median": 140.5,
+                "q75": 142.0,
+                "max": 151.0,
+                "mean": 134.9444,
+                "sd": 11.8834
+              }
+            }
+          ],
+          "metrics": {
+            "height_114_cm": {
+              "unit": "cm",
+              "meaning": "dominant-apex height",
+              "distribution": {
+                "n": 9,
+                "min": 113.5,
+                "q25": 126.0,
+                "median": 140.5,
+                "q75": 142.0,
+                "max": 151.0,
+                "mean": 134.9444,
+                "sd": 11.8834
+              }
+            },
+            "stem_diameter_max_mm": {
+              "unit": "mm",
+              "meaning": "maximum stem diameter at soil level",
+              "distribution": {
+                "n": 9,
+                "min": 9.5,
+                "q25": 11.6,
+                "median": 13.45,
+                "q75": 15.15,
+                "max": 22.87,
+                "mean": 14.1189,
+                "sd": 3.7999
+              }
+            },
+            "stem_diameter_orthogonal_mm": {
+              "unit": "mm",
+              "meaning": "orthogonal stem diameter at soil level",
+              "distribution": {
+                "n": 9,
+                "min": 9.3,
+                "q25": 10.8,
+                "median": 12.6,
+                "q75": 14.5,
+                "max": 19.93,
+                "mean": 13.0833,
+                "sd": 3.1046
+              }
+            },
+            "cola_length_cm": {
+              "unit": "cm",
+              "meaning": "15 cm apical floral sample length measurement",
+              "distribution": {
+                "n": 9,
+                "min": 10.0,
+                "q25": 10.5,
+                "median": 12.0,
+                "q75": 13.5,
+                "max": 16.0,
+                "mean": 12.2778,
+                "sd": 2.181
+              }
+            },
+            "cola_mass_g": {
+              "unit": "g",
+              "meaning": "mass of the sampled apical floral material",
+              "distribution": {
+                "n": 9,
+                "min": 3.095,
+                "q25": 3.356,
+                "median": 3.785,
+                "q75": 4.075,
+                "max": 4.763,
+                "mean": 3.8257,
+                "sd": 0.5993
+              }
+            },
+            "cola_linear_density_g_per_cm": {
+              "unit": "g/cm",
+              "meaning": "reported mass-to-length ratio",
+              "distribution": {
+                "n": 9,
+                "min": 0.2527,
+                "q25": 0.2804,
+                "median": 0.3085,
+                "q75": 0.3396,
+                "max": 0.433,
+                "mean": 0.3162,
+                "sd": 0.0538
+              }
+            },
+            "flower_biomass_g": {
+              "unit": "g",
+              "meaning": "dry flower biomass",
+              "distribution": {
+                "n": 9,
+                "min": 19.495,
+                "q25": 39.644,
+                "median": 68.756,
+                "q75": 73.275,
+                "max": 98.848,
+                "mean": 58.4701,
+                "sd": 25.7969
+              }
+            },
+            "total_biomass_g": {
+              "unit": "g",
+              "meaning": "dry total above-ground biomass",
+              "distribution": {
+                "n": 9,
+                "min": 59.7,
+                "q25": 116.2,
+                "median": 161.8,
+                "q75": 178.2,
+                "max": 257.6,
+                "mean": 152.2333,
+                "sd": 58.5031
+              }
+            },
+            "stem_mass_g": {
+              "unit": "g",
+              "meaning": "dry stem mass",
+              "distribution": {
+                "n": 8,
+                "min": 13.0,
+                "q25": 21.85,
+                "median": 30.55,
+                "q75": 45.75,
+                "max": 81.4,
+                "mean": 36.8375,
+                "sd": 22.0695
+              }
+            }
+          }
+        },
+        "empirical_joint_vectors": [
+          {
+            "record_id": "MR19-NITR-002",
+            "treatment": "50 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 17.5,
+              "36": 26.0,
+              "52": 56.0,
+              "67": 96.0,
+              "77": 125.0,
+              "99": 131.0,
+              "114": 130.0
+            },
+            "measured": {
+              "height_114_cm": 130.0,
+              "stem_diameter_max_mm": 22.87,
+              "stem_diameter_orthogonal_mm": 19.93,
+              "cola_length_cm": 10.0,
+              "cola_mass_g": 3.248,
+              "cola_linear_density_g_per_cm": 0.3248,
+              "flower_biomass_g": 98.848,
+              "total_biomass_g": 257.6,
+              "stem_mass_g": 81.4
+            }
+          },
+          {
+            "record_id": "MR19-NITR-006",
+            "treatment": "50 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 16.6,
+              "36": 25.0,
+              "52": 52.0,
+              "67": 101.0,
+              "77": 134.0,
+              "99": 141.0,
+              "114": 141.0
+            },
+            "measured": {
+              "height_114_cm": 141.0,
+              "stem_diameter_max_mm": 15.15,
+              "stem_diameter_orthogonal_mm": 14.72,
+              "cola_length_cm": 10.0,
+              "cola_mass_g": 3.437,
+              "cola_linear_density_g_per_cm": 0.3437,
+              "flower_biomass_g": 75.837,
+              "total_biomass_g": 178.2,
+              "stem_mass_g": 43.6
+            }
+          },
+          {
+            "record_id": "MR19-NITR-009",
+            "treatment": "50 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 19.8,
+              "36": 28.0,
+              "52": 57.0,
+              "67": 105.0,
+              "77": 135.0,
+              "99": 152.0,
+              "114": 151.0
+            },
+            "measured": {
+              "height_114_cm": 151.0,
+              "stem_diameter_max_mm": 13.45,
+              "stem_diameter_orthogonal_mm": 12.6,
+              "cola_length_cm": 15.0,
+              "cola_mass_g": 4.628,
+              "cola_linear_density_g_per_cm": 0.308533333,
+              "flower_biomass_g": 73.228,
+              "total_biomass_g": 161.8,
+              "stem_mass_g": 34.8
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0021",
+            "treatment": "50 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": 22.8,
+              "36": 29.0,
+              "52": 60.0,
+              "67": 107.0,
+              "77": 137.0,
+              "99": 145.0,
+              "114": 145.0
+            },
+            "measured": {
+              "height_114_cm": 145.0,
+              "stem_diameter_max_mm": 15.2,
+              "stem_diameter_orthogonal_mm": 12.6,
+              "cola_length_cm": 12.0,
+              "cola_mass_g": 4.075,
+              "cola_linear_density_g_per_cm": 0.339583333,
+              "flower_biomass_g": 73.275,
+              "total_biomass_g": 176.6,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0024",
+            "treatment": "50 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": null,
+              "36": null,
+              "52": null,
+              "67": null,
+              "77": null,
+              "99": null,
+              "114": null
+            },
+            "measured": {
+              "height_114_cm": null,
+              "stem_diameter_max_mm": null,
+              "stem_diameter_orthogonal_mm": null,
+              "cola_length_cm": null,
+              "cola_mass_g": null,
+              "cola_linear_density_g_per_cm": null,
+              "flower_biomass_g": null,
+              "total_biomass_g": null,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0029",
+            "treatment": "50 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 15.0,
+              "36": 20.0,
+              "52": 52.0,
+              "67": 102.0,
+              "77": 125.0,
+              "99": 140.0,
+              "114": 142.0
+            },
+            "measured": {
+              "height_114_cm": 142.0,
+              "stem_diameter_max_mm": 13.2,
+              "stem_diameter_orthogonal_mm": 12.5,
+              "cola_length_cm": 16.0,
+              "cola_mass_g": 4.044,
+              "cola_linear_density_g_per_cm": 0.25275,
+              "flower_biomass_g": 39.644,
+              "total_biomass_g": 116.2,
+              "stem_mass_g": 22.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0034",
+            "treatment": "150 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 14.8,
+              "36": 22.0,
+              "52": 52.0,
+              "67": 96.0,
+              "77": 120.0,
+              "99": 128.0,
+              "114": 126.0
+            },
+            "measured": {
+              "height_114_cm": 126.0,
+              "stem_diameter_max_mm": 11.4,
+              "stem_diameter_orthogonal_mm": 10.8,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 4.763,
+              "cola_linear_density_g_per_cm": 0.433,
+              "flower_biomass_g": 48.163,
+              "total_biomass_g": 141.0,
+              "stem_mass_g": 26.3
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0038",
+            "treatment": "150 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 14.3,
+              "36": 23.0,
+              "52": 47.0,
+              "67": 83.0,
+              "77": 104.0,
+              "99": 116.0,
+              "114": 113.5
+            },
+            "measured": {
+              "height_114_cm": 113.5,
+              "stem_diameter_max_mm": 9.5,
+              "stem_diameter_orthogonal_mm": 9.3,
+              "cola_length_cm": 10.5,
+              "cola_mass_g": 3.095,
+              "cola_linear_density_g_per_cm": 0.294761905,
+              "flower_biomass_g": 19.495,
+              "total_biomass_g": 59.7,
+              "stem_mass_g": 13.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0046",
+            "treatment": "150 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": 18.5,
+              "36": 25.0,
+              "52": 56.0,
+              "67": 98.0,
+              "77": 127.0,
+              "99": 142.0,
+              "114": 140.5
+            },
+            "measured": {
+              "height_114_cm": 140.5,
+              "stem_diameter_max_mm": 14.7,
+              "stem_diameter_orthogonal_mm": 14.5,
+              "cola_length_cm": 12.5,
+              "cola_mass_g": 3.356,
+              "cola_linear_density_g_per_cm": 0.26848,
+              "flower_biomass_g": 68.756,
+              "total_biomass_g": 187.5,
+              "stem_mass_g": 52.2
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0049",
+            "treatment": "150 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": null,
+              "36": null,
+              "52": null,
+              "67": null,
+              "77": null,
+              "99": null,
+              "114": null
+            },
+            "measured": {
+              "height_114_cm": null,
+              "stem_diameter_max_mm": null,
+              "stem_diameter_orthogonal_mm": null,
+              "cola_length_cm": null,
+              "cola_mass_g": null,
+              "cola_linear_density_g_per_cm": null,
+              "flower_biomass_g": null,
+              "total_biomass_g": null,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0053",
+            "treatment": "150 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 19.0,
+              "36": 26.0,
+              "52": 55.0,
+              "67": 97.0,
+              "77": 118.0,
+              "99": 126.0,
+              "114": 125.5
+            },
+            "measured": {
+              "height_114_cm": 125.5,
+              "stem_diameter_max_mm": 11.6,
+              "stem_diameter_orthogonal_mm": 10.8,
+              "cola_length_cm": 13.5,
+              "cola_mass_g": 3.785,
+              "cola_linear_density_g_per_cm": 0.28037037,
+              "flower_biomass_g": 28.985,
+              "total_biomass_g": 91.5,
+              "stem_mass_g": 21.4
+            }
+          }
+        ]
+      },
+      "all_treatment_context": {
+        "plant_records": 36,
+        "height_series": [
+          {
+            "day_after_sowing": 31,
+            "height_cm": {
+              "n": 28,
+              "min": 13.5,
+              "q25": 16.45,
+              "median": 18.5,
+              "q75": 20.125,
+              "max": 22.8,
+              "mean": 18.2964,
+              "sd": 2.5619
+            }
+          },
+          {
+            "day_after_sowing": 36,
+            "height_cm": {
+              "n": 28,
+              "min": 18.0,
+              "q25": 23.0,
+              "median": 26.0,
+              "q75": 28.25,
+              "max": 32.0,
+              "mean": 25.8214,
+              "sd": 3.8205
+            }
+          },
+          {
+            "day_after_sowing": 52,
+            "height_cm": {
+              "n": 28,
+              "min": 21.0,
+              "q25": 44.75,
+              "median": 52.5,
+              "q75": 56.25,
+              "max": 69.0,
+              "mean": 48.5714,
+              "sd": 13.0283
+            }
+          },
+          {
+            "day_after_sowing": 67,
+            "height_cm": {
+              "n": 28,
+              "min": 38.0,
+              "q25": 79.5,
+              "median": 97.0,
+              "q75": 100.25,
+              "max": 115.0,
+              "mean": 87.5357,
+              "sd": 23.0595
+            }
+          },
+          {
+            "day_after_sowing": 77,
+            "height_cm": {
+              "n": 28,
+              "min": 31.0,
+              "q25": 95.75,
+              "median": 117.5,
+              "q75": 127.25,
+              "max": 143.0,
+              "mean": 106.9286,
+              "sd": 31.377
+            }
+          },
+          {
+            "day_after_sowing": 99,
+            "height_cm": {
+              "n": 28,
+              "min": 33.0,
+              "q25": 98.75,
+              "median": 124.0,
+              "q75": 140.25,
+              "max": 161.0,
+              "mean": 113.3214,
+              "sd": 34.1663
+            }
+          },
+          {
+            "day_after_sowing": 114,
+            "height_cm": {
+              "n": 28,
+              "min": 32.0,
+              "q25": 100.25,
+              "median": 123.25,
+              "q75": 140.125,
+              "max": 159.0,
+              "mean": 112.9286,
+              "sd": 34.2379
+            }
+          }
+        ],
+        "metrics": {
+          "height_114_cm": {
+            "unit": "cm",
+            "meaning": "dominant-apex height",
+            "distribution": {
+              "n": 28,
+              "min": 32.0,
+              "q25": 100.25,
+              "median": 123.25,
+              "q75": 140.125,
+              "max": 159.0,
+              "mean": 112.9286,
+              "sd": 34.2379
+            }
+          },
+          "stem_diameter_max_mm": {
+            "unit": "mm",
+            "meaning": "maximum stem diameter at soil level",
+            "distribution": {
+              "n": 28,
+              "min": 4.1,
+              "q25": 9.35,
+              "median": 12.7,
+              "q75": 14.725,
+              "max": 22.87,
+              "mean": 12.0382,
+              "sd": 4.6182
+            }
+          },
+          "stem_diameter_orthogonal_mm": {
+            "unit": "mm",
+            "meaning": "orthogonal stem diameter at soil level",
+            "distribution": {
+              "n": 28,
+              "min": 3.8,
+              "q25": 9.025,
+              "median": 11.8,
+              "q75": 14.35,
+              "max": 19.93,
+              "mean": 11.2054,
+              "sd": 4.2216
+            }
+          },
+          "cola_length_cm": {
+            "unit": "cm",
+            "meaning": "15 cm apical floral sample length measurement",
+            "distribution": {
+              "n": 28,
+              "min": 10.0,
+              "q25": 11.0,
+              "median": 12.0,
+              "q75": 13.0,
+              "max": 16.0,
+              "mean": 12.25,
+              "sd": 1.5957
+            }
+          },
+          "cola_mass_g": {
+            "unit": "g",
+            "meaning": "mass of the sampled apical floral material",
+            "distribution": {
+              "n": 28,
+              "min": 0.801,
+              "q25": 3.1235,
+              "median": 3.681,
+              "q75": 4.4047,
+              "max": 6.319,
+              "mean": 3.4972,
+              "sd": 1.2811
+            }
+          },
+          "cola_linear_density_g_per_cm": {
+            "unit": "g/cm",
+            "meaning": "reported mass-to-length ratio",
+            "distribution": {
+              "n": 28,
+              "min": 0.0616,
+              "q25": 0.2645,
+              "median": 0.3098,
+              "q75": 0.345,
+              "max": 0.4861,
+              "mean": 0.2896,
+              "sd": 0.1083
+            }
+          },
+          "flower_biomass_g": {
+            "unit": "g",
+            "meaning": "dry flower biomass",
+            "distribution": {
+              "n": 28,
+              "min": 0.801,
+              "q25": 18.4632,
+              "median": 43.9035,
+              "q75": 63.5308,
+              "max": 98.848,
+              "mean": 42.4865,
+              "sd": 29.5879
+            }
+          },
+          "total_biomass_g": {
+            "unit": "g",
+            "meaning": "dry total above-ground biomass",
+            "distribution": {
+              "n": 28,
+              "min": 12.9,
+              "q25": 57.65,
+              "median": 126.25,
+              "q75": 168.625,
+              "max": 262.5,
+              "mean": 115.4071,
+              "sd": 71.3762
+            }
+          },
+          "stem_mass_g": {
+            "unit": "g",
+            "meaning": "dry stem mass",
+            "distribution": {
+              "n": 27,
+              "min": 0.8,
+              "q25": 11.0,
+              "median": 26.3,
+              "q75": 39.1,
+              "max": 81.4,
+              "mean": 26.9704,
+              "sd": 21.0471
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Berry Blossom",
+      "slug": "berry-blossom",
+      "role": "alternative measured cultivar",
+      "nominal_photo": "evidence/berry-blossom-50ppm.jpg",
+      "nominal_condition": {
+        "fertigation": "50 ppm N",
+        "reason": "The paper reports 50 and 150 ppm N as tall, highly branched, healthy plants and 50 ppm N as the optimum measured fertilizer rate.",
+        "summary": {
+          "plant_records": 6,
+          "height_series": [
+            {
+              "day_after_sowing": 31,
+              "height_cm": {
+                "n": 6,
+                "min": 18.5,
+                "q25": 20.15,
+                "median": 21.45,
+                "q75": 23.2,
+                "max": 24.0,
+                "mean": 21.4833,
+                "sd": 2.1424
+              }
+            },
+            {
+              "day_after_sowing": 36,
+              "height_cm": {
+                "n": 6,
+                "min": 26.0,
+                "q25": 28.75,
+                "median": 31.5,
+                "q75": 32.75,
+                "max": 33.0,
+                "mean": 30.5,
+                "sd": 2.881
+              }
+            },
+            {
+              "day_after_sowing": 52,
+              "height_cm": {
+                "n": 6,
+                "min": 59.0,
+                "q25": 61.25,
+                "median": 62.5,
+                "q75": 63.75,
+                "max": 64.0,
+                "mean": 62.1667,
+                "sd": 1.9408
+              }
+            },
+            {
+              "day_after_sowing": 67,
+              "height_cm": {
+                "n": 6,
+                "min": 85.0,
+                "q25": 108.25,
+                "median": 116.0,
+                "q75": 117.0,
+                "max": 123.0,
+                "mean": 110.5,
+                "sd": 13.6492
+              }
+            },
+            {
+              "day_after_sowing": 77,
+              "height_cm": {
+                "n": 6,
+                "min": 105.0,
+                "q25": 135.0,
+                "median": 147.5,
+                "q75": 153.25,
+                "max": 156.0,
+                "mean": 140.3333,
+                "sd": 19.377
+              }
+            },
+            {
+              "day_after_sowing": 99,
+              "height_cm": {
+                "n": 6,
+                "min": 109.0,
+                "q25": 140.5,
+                "median": 158.5,
+                "q75": 163.75,
+                "max": 172.0,
+                "mean": 149.6667,
+                "sd": 23.5089
+              }
+            },
+            {
+              "day_after_sowing": 114,
+              "height_cm": {
+                "n": 6,
+                "min": 107.0,
+                "q25": 140.625,
+                "median": 154.75,
+                "q75": 161.75,
+                "max": 172.0,
+                "mean": 148.0833,
+                "sd": 23.4444
+              }
+            }
+          ],
+          "metrics": {
+            "height_114_cm": {
+              "unit": "cm",
+              "meaning": "dominant-apex height",
+              "distribution": {
+                "n": 6,
+                "min": 107.0,
+                "q25": 140.625,
+                "median": 154.75,
+                "q75": 161.75,
+                "max": 172.0,
+                "mean": 148.0833,
+                "sd": 23.4444
+              }
+            },
+            "stem_diameter_max_mm": {
+              "unit": "mm",
+              "meaning": "maximum stem diameter at soil level",
+              "distribution": {
+                "n": 6,
+                "min": 11.6,
+                "q25": 15.2,
+                "median": 16.7,
+                "q75": 17.075,
+                "max": 20.3,
+                "mean": 16.2,
+                "sd": 2.8782
+              }
+            },
+            "stem_diameter_orthogonal_mm": {
+              "unit": "mm",
+              "meaning": "orthogonal stem diameter at soil level",
+              "distribution": {
+                "n": 6,
+                "min": 11.4,
+                "q25": 14.2,
+                "median": 15.7,
+                "q75": 16.3,
+                "max": 19.0,
+                "mean": 15.3333,
+                "sd": 2.5633
+              }
+            },
+            "cola_length_cm": {
+              "unit": "cm",
+              "meaning": "15 cm apical floral sample length measurement",
+              "distribution": {
+                "n": 6,
+                "min": 8.0,
+                "q25": 9.875,
+                "median": 11.5,
+                "q75": 13.5,
+                "max": 18.0,
+                "mean": 12.0833,
+                "sd": 3.5555
+              }
+            },
+            "cola_mass_g": {
+              "unit": "g",
+              "meaning": "mass of the sampled apical floral material",
+              "distribution": {
+                "n": 6,
+                "min": 2.423,
+                "q25": 2.7268,
+                "median": 3.343,
+                "q75": 3.621,
+                "max": 4.252,
+                "mean": 3.266,
+                "sd": 0.6922
+              }
+            },
+            "cola_linear_density_g_per_cm": {
+              "unit": "g/cm",
+              "meaning": "reported mass-to-length ratio",
+              "distribution": {
+                "n": 6,
+                "min": 0.1346,
+                "q25": 0.2633,
+                "median": 0.303,
+                "q75": 0.3473,
+                "max": 0.3816,
+                "mean": 0.289,
+                "sd": 0.0885
+              }
+            },
+            "flower_biomass_g": {
+              "unit": "g",
+              "meaning": "dry flower biomass",
+              "distribution": {
+                "n": 6,
+                "min": 22.277,
+                "q25": 68.4698,
+                "median": 82.031,
+                "q75": 86.2698,
+                "max": 102.025,
+                "mean": 73.3327,
+                "sd": 27.8274
+              }
+            },
+            "total_biomass_g": {
+              "unit": "g",
+              "meaning": "dry total above-ground biomass",
+              "distribution": {
+                "n": 6,
+                "min": 84.0,
+                "q25": 183.1,
+                "median": 203.7,
+                "q75": 225.125,
+                "max": 236.6,
+                "mean": 189.4167,
+                "sd": 55.9305
+              }
+            },
+            "stem_mass_g": {
+              "unit": "g",
+              "meaning": "dry stem mass",
+              "distribution": {
+                "n": 5,
+                "min": 18.0,
+                "q25": 48.0,
+                "median": 50.4,
+                "q75": 54.8,
+                "max": 66.6,
+                "mean": 47.56,
+                "sd": 18.0069
+              }
+            }
+          }
+        },
+        "empirical_joint_vectors": [
+          {
+            "record_id": "MR19-NITR-004",
+            "treatment": "50 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 23.5,
+              "36": 33.0,
+              "52": 64.0,
+              "67": 117.0,
+              "77": 132.0,
+              "99": 135.0,
+              "114": 136.0
+            },
+            "measured": {
+              "height_114_cm": 136.0,
+              "stem_diameter_max_mm": 17.0,
+              "stem_diameter_orthogonal_mm": 16.4,
+              "cola_length_cm": 8.0,
+              "cola_mass_g": 2.61,
+              "cola_linear_density_g_per_cm": 0.32625,
+              "flower_biomass_g": 81.81,
+              "total_biomass_g": 207.8,
+              "stem_mass_g": 50.4
+            }
+          },
+          {
+            "record_id": "MR19-NITR-008",
+            "treatment": "50 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 20.0,
+              "36": 31.0,
+              "52": 62.0,
+              "67": 117.0,
+              "77": 144.0,
+              "99": 157.0,
+              "114": 154.5
+            },
+            "measured": {
+              "height_114_cm": 154.5,
+              "stem_diameter_max_mm": 17.1,
+              "stem_diameter_orthogonal_mm": 16.0,
+              "cola_length_cm": 9.5,
+              "cola_mass_g": 3.625,
+              "cola_linear_density_g_per_cm": 0.381578947,
+              "flower_biomass_g": 102.025,
+              "total_biomass_g": 230.9,
+              "stem_mass_g": 54.8
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0013",
+            "treatment": "50 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 22.3,
+              "36": 28.0,
+              "52": 59.0,
+              "67": 106.0,
+              "77": 156.0,
+              "99": 165.0,
+              "114": 164.0
+            },
+            "measured": {
+              "height_114_cm": 164.0,
+              "stem_diameter_max_mm": 16.4,
+              "stem_diameter_orthogonal_mm": 15.4,
+              "cola_length_cm": 18.0,
+              "cola_mass_g": 2.423,
+              "cola_linear_density_g_per_cm": 0.134611111,
+              "flower_biomass_g": 64.023,
+              "total_biomass_g": 177.6,
+              "stem_mass_g": 48.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0017",
+            "treatment": "50 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 20.6,
+              "36": 32.0,
+              "52": 63.0,
+              "67": 115.0,
+              "77": 151.0,
+              "99": 172.0,
+              "114": 172.0
+            },
+            "measured": {
+              "height_114_cm": 172.0,
+              "stem_diameter_max_mm": 14.8,
+              "stem_diameter_orthogonal_mm": 13.8,
+              "cola_length_cm": 14.0,
+              "cola_mass_g": 3.609,
+              "cola_linear_density_g_per_cm": 0.257785714,
+              "flower_biomass_g": 87.609,
+              "total_biomass_g": 199.6,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0027",
+            "treatment": "50 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": 18.5,
+              "36": 26.0,
+              "52": 61.0,
+              "67": 85.0,
+              "77": 105.0,
+              "99": 109.0,
+              "114": 107.0
+            },
+            "measured": {
+              "height_114_cm": 107.0,
+              "stem_diameter_max_mm": 11.6,
+              "stem_diameter_orthogonal_mm": 11.4,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 3.077,
+              "cola_linear_density_g_per_cm": 0.279727273,
+              "flower_biomass_g": 22.277,
+              "total_biomass_g": 84.0,
+              "stem_mass_g": 18.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0030",
+            "treatment": "50 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": 24.0,
+              "36": 33.0,
+              "52": 64.0,
+              "67": 123.0,
+              "77": 154.0,
+              "99": 160.0,
+              "114": 155.0
+            },
+            "measured": {
+              "height_114_cm": 155.0,
+              "stem_diameter_max_mm": 20.3,
+              "stem_diameter_orthogonal_mm": 19.0,
+              "cola_length_cm": 12.0,
+              "cola_mass_g": 4.252,
+              "cola_linear_density_g_per_cm": 0.354333333,
+              "flower_biomass_g": 82.252,
+              "total_biomass_g": 236.6,
+              "stem_mass_g": 66.6
+            }
+          }
+        ]
+      },
+      "healthy_condition_envelope": {
+        "fertigation": [
+          "50 ppm N",
+          "150 ppm N"
+        ],
+        "summary": {
+          "plant_records": 12,
+          "height_series": [
+            {
+              "day_after_sowing": 31,
+              "height_cm": {
+                "n": 12,
+                "min": 17.5,
+                "q25": 19.75,
+                "median": 21.45,
+                "q75": 23.625,
+                "max": 24.5,
+                "mean": 21.475,
+                "sd": 2.4473
+              }
+            },
+            {
+              "day_after_sowing": 36,
+              "height_cm": {
+                "n": 12,
+                "min": 23.0,
+                "q25": 27.0,
+                "median": 28.0,
+                "q75": 31.25,
+                "max": 33.0,
+                "mean": 28.5833,
+                "sd": 3.0588
+              }
+            },
+            {
+              "day_after_sowing": 52,
+              "height_cm": {
+                "n": 12,
+                "min": 51.0,
+                "q25": 53.75,
+                "median": 59.0,
+                "q75": 62.25,
+                "max": 64.0,
+                "mean": 58.4167,
+                "sd": 4.757
+              }
+            },
+            {
+              "day_after_sowing": 67,
+              "height_cm": {
+                "n": 12,
+                "min": 81.0,
+                "q25": 90.25,
+                "median": 100.5,
+                "q75": 115.5,
+                "max": 123.0,
+                "mean": 101.4167,
+                "sd": 15.2938
+              }
+            },
+            {
+              "day_after_sowing": 77,
+              "height_cm": {
+                "n": 12,
+                "min": 105.0,
+                "q25": 115.5,
+                "median": 130.5,
+                "q75": 145.75,
+                "max": 156.0,
+                "mean": 130.9167,
+                "sd": 18.6959
+              }
+            },
+            {
+              "day_after_sowing": 99,
+              "height_cm": {
+                "n": 12,
+                "min": 109.0,
+                "q25": 124.0,
+                "median": 136.0,
+                "q75": 157.75,
+                "max": 172.0,
+                "mean": 139.1667,
+                "sd": 21.7123
+              }
+            },
+            {
+              "day_after_sowing": 114,
+              "height_cm": {
+                "n": 12,
+                "min": 107.0,
+                "q25": 125.0,
+                "median": 136.0,
+                "q75": 157.25,
+                "max": 172.0,
+                "mean": 140.625,
+                "sd": 22.3456
+              }
+            }
+          ],
+          "metrics": {
+            "height_114_cm": {
+              "unit": "cm",
+              "meaning": "dominant-apex height",
+              "distribution": {
+                "n": 12,
+                "min": 107.0,
+                "q25": 125.0,
+                "median": 136.0,
+                "q75": 157.25,
+                "max": 172.0,
+                "mean": 140.625,
+                "sd": 22.3456
+              }
+            },
+            "stem_diameter_max_mm": {
+              "unit": "mm",
+              "meaning": "maximum stem diameter at soil level",
+              "distribution": {
+                "n": 12,
+                "min": 9.3,
+                "q25": 11.375,
+                "median": 14.3,
+                "q75": 16.55,
+                "max": 20.3,
+                "mean": 14.0,
+                "sd": 3.3898
+              }
+            },
+            "stem_diameter_orthogonal_mm": {
+              "unit": "mm",
+              "meaning": "orthogonal stem diameter at soil level",
+              "distribution": {
+                "n": 12,
+                "min": 9.0,
+                "q25": 11.05,
+                "median": 13.6,
+                "q75": 15.55,
+                "max": 19.0,
+                "mean": 13.325,
+                "sd": 3.1195
+              }
+            },
+            "cola_length_cm": {
+              "unit": "cm",
+              "meaning": "15 cm apical floral sample length measurement",
+              "distribution": {
+                "n": 12,
+                "min": 8.0,
+                "q25": 11.0,
+                "median": 11.5,
+                "q75": 14.25,
+                "max": 18.0,
+                "mean": 12.375,
+                "sd": 2.7562
+              }
+            },
+            "cola_mass_g": {
+              "unit": "g",
+              "meaning": "mass of the sampled apical floral material",
+              "distribution": {
+                "n": 12,
+                "min": 2.423,
+                "q25": 2.703,
+                "median": 3.262,
+                "q75": 3.6947,
+                "max": 4.252,
+                "mean": 3.2767,
+                "sd": 0.6406
+              }
+            },
+            "cola_linear_density_g_per_cm": {
+              "unit": "g/cm",
+              "meaning": "reported mass-to-length ratio",
+              "distribution": {
+                "n": 12,
+                "min": 0.1346,
+                "q25": 0.2501,
+                "median": 0.2769,
+                "q75": 0.3197,
+                "max": 0.3816,
+                "mean": 0.2757,
+                "sd": 0.0705
+              }
+            },
+            "flower_biomass_g": {
+              "unit": "g",
+              "meaning": "dry flower biomass",
+              "distribution": {
+                "n": 12,
+                "min": 16.734,
+                "q25": 29.8805,
+                "median": 69.035,
+                "q75": 83.5912,
+                "max": 124.304,
+                "mean": 61.9768,
+                "sd": 35.7336
+              }
+            },
+            "total_biomass_g": {
+              "unit": "g",
+              "meaning": "dry total above-ground biomass",
+              "distribution": {
+                "n": 12,
+                "min": 68.4,
+                "q25": 87.6,
+                "median": 169.0,
+                "q75": 213.575,
+                "max": 255.0,
+                "mean": 158.3083,
+                "sd": 68.9325
+              }
+            },
+            "stem_mass_g": {
+              "unit": "g",
+              "meaning": "dry stem mass",
+              "distribution": {
+                "n": 11,
+                "min": 15.6,
+                "q25": 17.45,
+                "median": 34.8,
+                "q75": 49.9,
+                "max": 66.6,
+                "mean": 36.1818,
+                "sd": 18.4491
+              }
+            }
+          }
+        },
+        "empirical_joint_vectors": [
+          {
+            "record_id": "MR19-NITR-004",
+            "treatment": "50 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 23.5,
+              "36": 33.0,
+              "52": 64.0,
+              "67": 117.0,
+              "77": 132.0,
+              "99": 135.0,
+              "114": 136.0
+            },
+            "measured": {
+              "height_114_cm": 136.0,
+              "stem_diameter_max_mm": 17.0,
+              "stem_diameter_orthogonal_mm": 16.4,
+              "cola_length_cm": 8.0,
+              "cola_mass_g": 2.61,
+              "cola_linear_density_g_per_cm": 0.32625,
+              "flower_biomass_g": 81.81,
+              "total_biomass_g": 207.8,
+              "stem_mass_g": 50.4
+            }
+          },
+          {
+            "record_id": "MR19-NITR-008",
+            "treatment": "50 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 20.0,
+              "36": 31.0,
+              "52": 62.0,
+              "67": 117.0,
+              "77": 144.0,
+              "99": 157.0,
+              "114": 154.5
+            },
+            "measured": {
+              "height_114_cm": 154.5,
+              "stem_diameter_max_mm": 17.1,
+              "stem_diameter_orthogonal_mm": 16.0,
+              "cola_length_cm": 9.5,
+              "cola_mass_g": 3.625,
+              "cola_linear_density_g_per_cm": 0.381578947,
+              "flower_biomass_g": 102.025,
+              "total_biomass_g": 230.9,
+              "stem_mass_g": 54.8
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0013",
+            "treatment": "50 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 22.3,
+              "36": 28.0,
+              "52": 59.0,
+              "67": 106.0,
+              "77": 156.0,
+              "99": 165.0,
+              "114": 164.0
+            },
+            "measured": {
+              "height_114_cm": 164.0,
+              "stem_diameter_max_mm": 16.4,
+              "stem_diameter_orthogonal_mm": 15.4,
+              "cola_length_cm": 18.0,
+              "cola_mass_g": 2.423,
+              "cola_linear_density_g_per_cm": 0.134611111,
+              "flower_biomass_g": 64.023,
+              "total_biomass_g": 177.6,
+              "stem_mass_g": 48.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0017",
+            "treatment": "50 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 20.6,
+              "36": 32.0,
+              "52": 63.0,
+              "67": 115.0,
+              "77": 151.0,
+              "99": 172.0,
+              "114": 172.0
+            },
+            "measured": {
+              "height_114_cm": 172.0,
+              "stem_diameter_max_mm": 14.8,
+              "stem_diameter_orthogonal_mm": 13.8,
+              "cola_length_cm": 14.0,
+              "cola_mass_g": 3.609,
+              "cola_linear_density_g_per_cm": 0.257785714,
+              "flower_biomass_g": 87.609,
+              "total_biomass_g": 199.6,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0027",
+            "treatment": "50 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": 18.5,
+              "36": 26.0,
+              "52": 61.0,
+              "67": 85.0,
+              "77": 105.0,
+              "99": 109.0,
+              "114": 107.0
+            },
+            "measured": {
+              "height_114_cm": 107.0,
+              "stem_diameter_max_mm": 11.6,
+              "stem_diameter_orthogonal_mm": 11.4,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 3.077,
+              "cola_linear_density_g_per_cm": 0.279727273,
+              "flower_biomass_g": 22.277,
+              "total_biomass_g": 84.0,
+              "stem_mass_g": 18.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0030",
+            "treatment": "50 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": 24.0,
+              "36": 33.0,
+              "52": 64.0,
+              "67": 123.0,
+              "77": 154.0,
+              "99": 160.0,
+              "114": 155.0
+            },
+            "measured": {
+              "height_114_cm": 155.0,
+              "stem_diameter_max_mm": 20.3,
+              "stem_diameter_orthogonal_mm": 19.0,
+              "cola_length_cm": 12.0,
+              "cola_mass_g": 4.252,
+              "cola_linear_density_g_per_cm": 0.354333333,
+              "flower_biomass_g": 82.252,
+              "total_biomass_g": 236.6,
+              "stem_mass_g": 66.6
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0033",
+            "treatment": "150 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 24.5,
+              "36": 28.0,
+              "52": 59.0,
+              "67": 95.0,
+              "77": 129.0,
+              "99": 137.0,
+              "114": 136.0
+            },
+            "measured": {
+              "height_114_cm": 136.0,
+              "stem_diameter_max_mm": 12.4,
+              "stem_diameter_orthogonal_mm": 11.7,
+              "cola_length_cm": 15.0,
+              "cola_mass_g": 2.734,
+              "cola_linear_density_g_per_cm": 0.182266667,
+              "flower_biomass_g": 16.734,
+              "total_biomass_g": 112.8,
+              "stem_mass_g": 27.7
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0035",
+            "treatment": "150 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 19.0,
+              "36": 27.0,
+              "52": 59.0,
+              "67": 112.0,
+              "77": 144.0,
+              "99": 153.0,
+              "114": 172.0
+            },
+            "measured": {
+              "height_114_cm": 172.0,
+              "stem_diameter_max_mm": 13.8,
+              "stem_diameter_orthogonal_mm": 13.4,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 3.447,
+              "cola_linear_density_g_per_cm": 0.313363636,
+              "flower_biomass_g": 74.047,
+              "total_biomass_g": 160.4,
+              "stem_mass_g": 34.8
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0042",
+            "treatment": "150 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 17.5,
+              "36": 23.0,
+              "52": 51.0,
+              "67": 81.0,
+              "77": 111.0,
+              "99": 115.0,
+              "114": 114.0
+            },
+            "measured": {
+              "height_114_cm": 114.0,
+              "stem_diameter_max_mm": 9.3,
+              "stem_diameter_orthogonal_mm": 9.3,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 2.497,
+              "cola_linear_density_g_per_cm": 0.227,
+              "flower_biomass_g": 19.297,
+              "total_biomass_g": 68.4,
+              "stem_mass_g": 15.8
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0047",
+            "treatment": "150 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 24.0,
+              "36": 28.0,
+              "52": 53.0,
+              "67": 93.0,
+              "77": 117.0,
+              "99": 127.0,
+              "114": 126.0
+            },
+            "measured": {
+              "height_114_cm": 126.0,
+              "stem_diameter_max_mm": 9.6,
+              "stem_diameter_orthogonal_mm": 9.0,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 3.015,
+              "cola_linear_density_g_per_cm": 0.274090909,
+              "flower_biomass_g": 32.415,
+              "total_biomass_g": 77.8,
+              "stem_mass_g": 15.6
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0057",
+            "treatment": "150 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": 20.3,
+              "36": 27.0,
+              "52": 54.0,
+              "67": 81.0,
+              "77": 107.0,
+              "99": 113.0,
+              "114": 122.0
+            },
+            "measured": {
+              "height_114_cm": 122.0,
+              "stem_diameter_max_mm": 10.7,
+              "stem_diameter_orthogonal_mm": 10.0,
+              "cola_length_cm": 13.0,
+              "cola_mass_g": 4.128,
+              "cola_linear_density_g_per_cm": 0.317538462,
+              "flower_biomass_g": 36.928,
+              "total_biomass_g": 88.8,
+              "stem_mass_g": 16.9
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0060",
+            "treatment": "150 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": 23.5,
+              "36": 27.0,
+              "52": 52.0,
+              "67": 92.0,
+              "77": 121.0,
+              "99": 127.0,
+              "114": 129.0
+            },
+            "measured": {
+              "height_114_cm": 129.0,
+              "stem_diameter_max_mm": 15.0,
+              "stem_diameter_orthogonal_mm": 14.5,
+              "cola_length_cm": 15.0,
+              "cola_mass_g": 3.904,
+              "cola_linear_density_g_per_cm": 0.260266667,
+              "flower_biomass_g": 124.304,
+              "total_biomass_g": 255.0,
+              "stem_mass_g": 49.4
+            }
+          }
+        ]
+      },
+      "all_treatment_context": {
+        "plant_records": 36,
+        "height_series": [
+          {
+            "day_after_sowing": 31,
+            "height_cm": {
+              "n": 36,
+              "min": 13.0,
+              "q25": 17.0,
+              "median": 19.0,
+              "q75": 22.0,
+              "max": 24.5,
+              "mean": 19.3083,
+              "sd": 3.0614
+            }
+          },
+          {
+            "day_after_sowing": 36,
+            "height_cm": {
+              "n": 36,
+              "min": 16.0,
+              "q25": 24.75,
+              "median": 27.0,
+              "q75": 28.25,
+              "max": 33.0,
+              "mean": 26.8056,
+              "sd": 4.1598
+            }
+          },
+          {
+            "day_after_sowing": 52,
+            "height_cm": {
+              "n": 36,
+              "min": 22.0,
+              "q25": 45.75,
+              "median": 52.5,
+              "q75": 59.0,
+              "max": 67.0,
+              "mean": 50.9167,
+              "sd": 10.9971
+            }
+          },
+          {
+            "day_after_sowing": 67,
+            "height_cm": {
+              "n": 36,
+              "min": 22.0,
+              "q25": 77.25,
+              "median": 90.0,
+              "q75": 102.25,
+              "max": 124.0,
+              "mean": 84.4722,
+              "sd": 28.0127
+            }
+          },
+          {
+            "day_after_sowing": 77,
+            "height_cm": {
+              "n": 36,
+              "min": 24.0,
+              "q25": 91.5,
+              "median": 112.0,
+              "q75": 128.25,
+              "max": 156.0,
+              "mean": 104.6111,
+              "sd": 36.0288
+            }
+          },
+          {
+            "day_after_sowing": 99,
+            "height_cm": {
+              "n": 36,
+              "min": 25.0,
+              "q25": 97.75,
+              "median": 116.0,
+              "q75": 135.0,
+              "max": 172.0,
+              "mean": 110.2222,
+              "sd": 38.1591
+            }
+          },
+          {
+            "day_after_sowing": 114,
+            "height_cm": {
+              "n": 36,
+              "min": 23.5,
+              "q25": 97.25,
+              "median": 117.75,
+              "q75": 135.25,
+              "max": 172.0,
+              "mean": 110.3889,
+              "sd": 39.0516
+            }
+          }
+        ],
+        "metrics": {
+          "height_114_cm": {
+            "unit": "cm",
+            "meaning": "dominant-apex height",
+            "distribution": {
+              "n": 36,
+              "min": 23.5,
+              "q25": 97.25,
+              "median": 117.75,
+              "q75": 135.25,
+              "max": 172.0,
+              "mean": 110.3889,
+              "sd": 39.0516
+            }
+          },
+          "stem_diameter_max_mm": {
+            "unit": "mm",
+            "meaning": "maximum stem diameter at soil level",
+            "distribution": {
+              "n": 36,
+              "min": 3.8,
+              "q25": 9.3,
+              "median": 11.5,
+              "q75": 14.55,
+              "max": 20.3,
+              "mean": 11.3361,
+              "sd": 4.2318
+            }
+          },
+          "stem_diameter_orthogonal_mm": {
+            "unit": "mm",
+            "meaning": "orthogonal stem diameter at soil level",
+            "distribution": {
+              "n": 36,
+              "min": 3.6,
+              "q25": 8.95,
+              "median": 11.25,
+              "q75": 13.425,
+              "max": 19.0,
+              "mean": 10.8722,
+              "sd": 3.8816
+            }
+          },
+          "cola_length_cm": {
+            "unit": "cm",
+            "meaning": "15 cm apical floral sample length measurement",
+            "distribution": {
+              "n": 36,
+              "min": 7.5,
+              "q25": 11.375,
+              "median": 13.25,
+              "q75": 14.625,
+              "max": 18.0,
+              "mean": 13.0556,
+              "sd": 2.3868
+            }
+          },
+          "cola_mass_g": {
+            "unit": "g",
+            "meaning": "mass of the sampled apical floral material",
+            "distribution": {
+              "n": 36,
+              "min": 0.871,
+              "q25": 2.2367,
+              "median": 3.1335,
+              "q75": 3.9318,
+              "max": 5.546,
+              "mean": 3.0984,
+              "sd": 1.1981
+            }
+          },
+          "cola_linear_density_g_per_cm": {
+            "unit": "g/cm",
+            "meaning": "reported mass-to-length ratio",
+            "distribution": {
+              "n": 36,
+              "min": 0.0861,
+              "q25": 0.1389,
+              "median": 0.2639,
+              "q75": 0.2968,
+              "max": 0.5214,
+              "mean": 0.2425,
+              "sd": 0.0992
+            }
+          },
+          "flower_biomass_g": {
+            "unit": "g",
+            "meaning": "dry flower biomass",
+            "distribution": {
+              "n": 36,
+              "min": 0.871,
+              "q25": 14.5128,
+              "median": 25.941,
+              "q75": 56.241,
+              "max": 124.304,
+              "mean": 38.0678,
+              "sd": 34.7563
+            }
+          },
+          "total_biomass_g": {
+            "unit": "g",
+            "meaning": "dry total above-ground biomass",
+            "distribution": {
+              "n": 36,
+              "min": 9.3,
+              "q25": 56.9,
+              "median": 87.25,
+              "q75": 157.7,
+              "max": 280.3,
+              "mean": 107.3694,
+              "sd": 76.413
+            }
+          },
+          "stem_mass_g": {
+            "unit": "g",
+            "meaning": "dry stem mass",
+            "distribution": {
+              "n": 35,
+              "min": 0.4,
+              "q25": 11.1,
+              "median": 18.4,
+              "q75": 36.65,
+              "max": 71.8,
+              "mean": 24.2457,
+              "sd": 19.8965
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Cherry Blossom x Trump",
+      "slug": "cherry-blossom-trump",
+      "role": "alternative measured cultivar",
+      "nominal_photo": "evidence/cherry-blossom-trump-50ppm.jpg",
+      "nominal_condition": {
+        "fertigation": "50 ppm N",
+        "reason": "The paper reports 50 and 150 ppm N as tall, highly branched, healthy plants and 50 ppm N as the optimum measured fertilizer rate.",
+        "summary": {
+          "plant_records": 6,
+          "height_series": [
+            {
+              "day_after_sowing": 31,
+              "height_cm": {
+                "n": 6,
+                "min": 17.7,
+                "q25": 18.25,
+                "median": 19.0,
+                "q75": 19.375,
+                "max": 19.5,
+                "mean": 18.7833,
+                "sd": 0.7627
+              }
+            },
+            {
+              "day_after_sowing": 36,
+              "height_cm": {
+                "n": 6,
+                "min": 26.0,
+                "q25": 27.0,
+                "median": 27.0,
+                "q75": 28.5,
+                "max": 30.0,
+                "mean": 27.6667,
+                "sd": 1.5055
+              }
+            },
+            {
+              "day_after_sowing": 52,
+              "height_cm": {
+                "n": 6,
+                "min": 46.0,
+                "q25": 46.5,
+                "median": 48.5,
+                "q75": 49.75,
+                "max": 51.0,
+                "mean": 48.3333,
+                "sd": 2.0656
+              }
+            },
+            {
+              "day_after_sowing": 67,
+              "height_cm": {
+                "n": 6,
+                "min": 84.0,
+                "q25": 84.5,
+                "median": 91.5,
+                "q75": 97.75,
+                "max": 116.0,
+                "mean": 94.1667,
+                "sd": 12.4325
+              }
+            },
+            {
+              "day_after_sowing": 77,
+              "height_cm": {
+                "n": 6,
+                "min": 106.0,
+                "q25": 109.0,
+                "median": 115.5,
+                "q75": 116.0,
+                "max": 152.0,
+                "mean": 118.6667,
+                "sd": 16.943
+              }
+            },
+            {
+              "day_after_sowing": 99,
+              "height_cm": {
+                "n": 6,
+                "min": 111.0,
+                "q25": 114.0,
+                "median": 120.0,
+                "q75": 123.75,
+                "max": 158.0,
+                "mean": 124.3333,
+                "sd": 17.3282
+              }
+            },
+            {
+              "day_after_sowing": 114,
+              "height_cm": {
+                "n": 6,
+                "min": 111.0,
+                "q25": 118.875,
+                "median": 120.0,
+                "q75": 123.375,
+                "max": 157.0,
+                "mean": 125.1667,
+                "sd": 16.2008
+              }
+            }
+          ],
+          "metrics": {
+            "height_114_cm": {
+              "unit": "cm",
+              "meaning": "dominant-apex height",
+              "distribution": {
+                "n": 6,
+                "min": 111.0,
+                "q25": 118.875,
+                "median": 120.0,
+                "q75": 123.375,
+                "max": 157.0,
+                "mean": 125.1667,
+                "sd": 16.2008
+              }
+            },
+            "stem_diameter_max_mm": {
+              "unit": "mm",
+              "meaning": "maximum stem diameter at soil level",
+              "distribution": {
+                "n": 5,
+                "min": 8.3,
+                "q25": 13.4,
+                "median": 13.5,
+                "q75": 15.6,
+                "max": 15.7,
+                "mean": 13.3,
+                "sd": 3.0042
+              }
+            },
+            "stem_diameter_orthogonal_mm": {
+              "unit": "mm",
+              "meaning": "orthogonal stem diameter at soil level",
+              "distribution": {
+                "n": 5,
+                "min": 8.0,
+                "q25": 12.7,
+                "median": 12.95,
+                "q75": 13.9,
+                "max": 14.3,
+                "mean": 12.37,
+                "sd": 2.5302
+              }
+            },
+            "cola_length_cm": {
+              "unit": "cm",
+              "meaning": "15 cm apical floral sample length measurement",
+              "distribution": {
+                "n": 6,
+                "min": 10.0,
+                "q25": 10.625,
+                "median": 11.25,
+                "q75": 11.875,
+                "max": 14.0,
+                "mean": 11.5,
+                "sd": 1.4142
+              }
+            },
+            "cola_mass_g": {
+              "unit": "g",
+              "meaning": "mass of the sampled apical floral material",
+              "distribution": {
+                "n": 6,
+                "min": 1.73,
+                "q25": 3.0915,
+                "median": 4.2895,
+                "q75": 4.427,
+                "max": 4.679,
+                "mean": 3.6922,
+                "sd": 1.1868
+              }
+            },
+            "cola_linear_density_g_per_cm": {
+              "unit": "g/cm",
+              "meaning": "reported mass-to-length ratio",
+              "distribution": {
+                "n": 6,
+                "min": 0.173,
+                "q25": 0.2735,
+                "median": 0.342,
+                "q75": 0.3773,
+                "max": 0.4069,
+                "mean": 0.3173,
+                "sd": 0.0881
+              }
+            },
+            "flower_biomass_g": {
+              "unit": "g",
+              "meaning": "dry flower biomass",
+              "distribution": {
+                "n": 6,
+                "min": 11.33,
+                "q25": 50.5947,
+                "median": 57.429,
+                "q75": 69.6467,
+                "max": 98.329,
+                "mean": 57.7588,
+                "sd": 28.7805
+              }
+            },
+            "total_biomass_g": {
+              "unit": "g",
+              "meaning": "dry total above-ground biomass",
+              "distribution": {
+                "n": 6,
+                "min": 43.2,
+                "q25": 129.25,
+                "median": 138.55,
+                "q75": 182.425,
+                "max": 210.1,
+                "mean": 142.2667,
+                "sd": 59.1377
+              }
+            },
+            "stem_mass_g": {
+              "unit": "g",
+              "meaning": "dry stem mass",
+              "distribution": {
+                "n": 5,
+                "min": 27.0,
+                "q25": 28.6,
+                "median": 36.0,
+                "q75": 45.9,
+                "max": 46.6,
+                "mean": 36.82,
+                "sd": 9.257
+              }
+            }
+          }
+        },
+        "empirical_joint_vectors": [
+          {
+            "record_id": "MR19-NITR-001",
+            "treatment": "50 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 19.5,
+              "36": 27.0,
+              "52": 48.0,
+              "67": 84.0,
+              "77": 116.0,
+              "99": 120.0,
+              "114": 118.5
+            },
+            "measured": {
+              "height_114_cm": 118.5,
+              "stem_diameter_max_mm": null,
+              "stem_diameter_orthogonal_mm": null,
+              "cola_length_cm": 10.5,
+              "cola_mass_g": 2.729,
+              "cola_linear_density_g_per_cm": 0.259904762,
+              "flower_biomass_g": 98.329,
+              "total_biomass_g": 210.1,
+              "stem_mass_g": 46.6
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0011",
+            "treatment": "50 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 19.0,
+              "36": 29.0,
+              "52": 46.0,
+              "67": 84.0,
+              "77": 107.0,
+              "99": 112.0,
+              "114": 111.0
+            },
+            "measured": {
+              "height_114_cm": 111.0,
+              "stem_diameter_max_mm": 8.3,
+              "stem_diameter_orthogonal_mm": 8.0,
+              "cola_length_cm": 10.0,
+              "cola_mass_g": 1.73,
+              "cola_linear_density_g_per_cm": 0.173,
+              "flower_biomass_g": 11.33,
+              "total_biomass_g": 43.2,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0015",
+            "treatment": "50 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 17.7,
+              "36": 27.0,
+              "52": 50.0,
+              "67": 86.0,
+              "77": 106.0,
+              "99": 111.0,
+              "114": 120.0
+            },
+            "measured": {
+              "height_114_cm": 120.0,
+              "stem_diameter_max_mm": 13.4,
+              "stem_diameter_orthogonal_mm": 12.95,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 4.179,
+              "cola_linear_density_g_per_cm": 0.379909091,
+              "flower_biomass_g": 57.179,
+              "total_biomass_g": 131.8,
+              "stem_mass_g": 27.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0018",
+            "treatment": "50 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": 19.0,
+              "36": 26.0,
+              "52": 46.0,
+              "67": 98.0,
+              "77": 116.0,
+              "99": 120.0,
+              "114": 120.0
+            },
+            "measured": {
+              "height_114_cm": 120.0,
+              "stem_diameter_max_mm": 13.5,
+              "stem_diameter_orthogonal_mm": 12.7,
+              "cola_length_cm": 14.0,
+              "cola_mass_g": 4.4,
+              "cola_linear_density_g_per_cm": 0.314285714,
+              "flower_biomass_g": 48.4,
+              "total_biomass_g": 128.4,
+              "stem_mass_g": 28.6
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0022",
+            "treatment": "50 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": 18.0,
+              "36": 27.0,
+              "52": 49.0,
+              "67": 97.0,
+              "77": 115.0,
+              "99": 125.0,
+              "114": 124.5
+            },
+            "measured": {
+              "height_114_cm": 124.5,
+              "stem_diameter_max_mm": 15.7,
+              "stem_diameter_orthogonal_mm": 13.9,
+              "cola_length_cm": 11.5,
+              "cola_mass_g": 4.679,
+              "cola_linear_density_g_per_cm": 0.406869565,
+              "flower_biomass_g": 57.679,
+              "total_biomass_g": 145.3,
+              "stem_mass_g": 36.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0026",
+            "treatment": "50 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 19.5,
+              "36": 30.0,
+              "52": 51.0,
+              "67": 116.0,
+              "77": 152.0,
+              "99": 158.0,
+              "114": 157.0
+            },
+            "measured": {
+              "height_114_cm": 157.0,
+              "stem_diameter_max_mm": 15.6,
+              "stem_diameter_orthogonal_mm": 14.3,
+              "cola_length_cm": 12.0,
+              "cola_mass_g": 4.436,
+              "cola_linear_density_g_per_cm": 0.369666667,
+              "flower_biomass_g": 73.636,
+              "total_biomass_g": 194.8,
+              "stem_mass_g": 45.9
+            }
+          }
+        ]
+      },
+      "healthy_condition_envelope": {
+        "fertigation": [
+          "50 ppm N",
+          "150 ppm N"
+        ],
+        "summary": {
+          "plant_records": 12,
+          "height_series": [
+            {
+              "day_after_sowing": 31,
+              "height_cm": {
+                "n": 12,
+                "min": 16.5,
+                "q25": 17.375,
+                "median": 18.0,
+                "q75": 19.125,
+                "max": 22.5,
+                "mean": 18.4333,
+                "sd": 1.6261
+              }
+            },
+            {
+              "day_after_sowing": 36,
+              "height_cm": {
+                "n": 12,
+                "min": 22.0,
+                "q25": 24.75,
+                "median": 27.0,
+                "q75": 27.5,
+                "max": 31.0,
+                "mean": 26.4167,
+                "sd": 2.8431
+              }
+            },
+            {
+              "day_after_sowing": 52,
+              "height_cm": {
+                "n": 12,
+                "min": 46.0,
+                "q25": 47.5,
+                "median": 48.5,
+                "q75": 51.75,
+                "max": 60.0,
+                "mean": 50.0,
+                "sd": 4.1996
+              }
+            },
+            {
+              "day_after_sowing": 67,
+              "height_cm": {
+                "n": 12,
+                "min": 81.0,
+                "q25": 85.5,
+                "median": 91.5,
+                "q75": 97.25,
+                "max": 116.0,
+                "mean": 93.0,
+                "sd": 9.798
+              }
+            },
+            {
+              "day_after_sowing": 77,
+              "height_cm": {
+                "n": 12,
+                "min": 105.0,
+                "q25": 112.25,
+                "median": 115.5,
+                "q75": 118.75,
+                "max": 152.0,
+                "mean": 117.6667,
+                "sd": 12.4924
+              }
+            },
+            {
+              "day_after_sowing": 99,
+              "height_cm": {
+                "n": 12,
+                "min": 106.0,
+                "q25": 118.0,
+                "median": 120.5,
+                "q75": 126.25,
+                "max": 158.0,
+                "mean": 123.0,
+                "sd": 13.184
+              }
+            },
+            {
+              "day_after_sowing": 114,
+              "height_cm": {
+                "n": 12,
+                "min": 105.0,
+                "q25": 118.375,
+                "median": 121.0,
+                "q75": 125.625,
+                "max": 157.0,
+                "mean": 123.0833,
+                "sd": 12.6578
+              }
+            }
+          ],
+          "metrics": {
+            "height_114_cm": {
+              "unit": "cm",
+              "meaning": "dominant-apex height",
+              "distribution": {
+                "n": 12,
+                "min": 105.0,
+                "q25": 118.375,
+                "median": 121.0,
+                "q75": 125.625,
+                "max": 157.0,
+                "mean": 123.0833,
+                "sd": 12.6578
+              }
+            },
+            "stem_diameter_max_mm": {
+              "unit": "mm",
+              "meaning": "maximum stem diameter at soil level",
+              "distribution": {
+                "n": 11,
+                "min": 8.3,
+                "q25": 11.85,
+                "median": 13.4,
+                "q75": 14.6,
+                "max": 15.7,
+                "mean": 12.9273,
+                "sd": 2.3401
+              }
+            },
+            "stem_diameter_orthogonal_mm": {
+              "unit": "mm",
+              "meaning": "orthogonal stem diameter at soil level",
+              "distribution": {
+                "n": 11,
+                "min": 8.0,
+                "q25": 11.35,
+                "median": 12.7,
+                "q75": 13.425,
+                "max": 15.2,
+                "mean": 12.2682,
+                "sd": 2.0613
+              }
+            },
+            "cola_length_cm": {
+              "unit": "cm",
+              "meaning": "15 cm apical floral sample length measurement",
+              "distribution": {
+                "n": 12,
+                "min": 10.0,
+                "q25": 10.875,
+                "median": 11.25,
+                "q75": 12.25,
+                "max": 14.0,
+                "mean": 11.6667,
+                "sd": 1.3872
+              }
+            },
+            "cola_mass_g": {
+              "unit": "g",
+              "meaning": "mass of the sampled apical floral material",
+              "distribution": {
+                "n": 12,
+                "min": 1.73,
+                "q25": 3.5405,
+                "median": 4.093,
+                "q75": 4.409,
+                "max": 5.043,
+                "mean": 3.8127,
+                "sd": 0.9606
+              }
+            },
+            "cola_linear_density_g_per_cm": {
+              "unit": "g/cm",
+              "meaning": "reported mass-to-length ratio",
+              "distribution": {
+                "n": 12,
+                "min": 0.173,
+                "q25": 0.2707,
+                "median": 0.3436,
+                "q75": 0.385,
+                "max": 0.4069,
+                "mean": 0.3259,
+                "sd": 0.0749
+              }
+            },
+            "flower_biomass_g": {
+              "unit": "g",
+              "meaning": "dry flower biomass",
+              "distribution": {
+                "n": 12,
+                "min": 11.33,
+                "q25": 44.2432,
+                "median": 58.143,
+                "q75": 62.8835,
+                "max": 98.329,
+                "mean": 54.5211,
+                "sd": 22.6465
+              }
+            },
+            "total_biomass_g": {
+              "unit": "g",
+              "meaning": "dry total above-ground biomass",
+              "distribution": {
+                "n": 12,
+                "min": 43.2,
+                "q25": 121.45,
+                "median": 142.85,
+                "q75": 152.65,
+                "max": 210.1,
+                "mean": 135.3833,
+                "sd": 45.9506
+              }
+            },
+            "stem_mass_g": {
+              "unit": "g",
+              "meaning": "dry stem mass",
+              "distribution": {
+                "n": 11,
+                "min": 18.0,
+                "q25": 27.8,
+                "median": 30.2,
+                "q75": 34.8,
+                "max": 46.6,
+                "mean": 32.0091,
+                "sd": 8.6365
+              }
+            }
+          }
+        },
+        "empirical_joint_vectors": [
+          {
+            "record_id": "MR19-NITR-001",
+            "treatment": "50 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 19.5,
+              "36": 27.0,
+              "52": 48.0,
+              "67": 84.0,
+              "77": 116.0,
+              "99": 120.0,
+              "114": 118.5
+            },
+            "measured": {
+              "height_114_cm": 118.5,
+              "stem_diameter_max_mm": null,
+              "stem_diameter_orthogonal_mm": null,
+              "cola_length_cm": 10.5,
+              "cola_mass_g": 2.729,
+              "cola_linear_density_g_per_cm": 0.259904762,
+              "flower_biomass_g": 98.329,
+              "total_biomass_g": 210.1,
+              "stem_mass_g": 46.6
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0011",
+            "treatment": "50 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 19.0,
+              "36": 29.0,
+              "52": 46.0,
+              "67": 84.0,
+              "77": 107.0,
+              "99": 112.0,
+              "114": 111.0
+            },
+            "measured": {
+              "height_114_cm": 111.0,
+              "stem_diameter_max_mm": 8.3,
+              "stem_diameter_orthogonal_mm": 8.0,
+              "cola_length_cm": 10.0,
+              "cola_mass_g": 1.73,
+              "cola_linear_density_g_per_cm": 0.173,
+              "flower_biomass_g": 11.33,
+              "total_biomass_g": 43.2,
+              "stem_mass_g": null
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0015",
+            "treatment": "50 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 17.7,
+              "36": 27.0,
+              "52": 50.0,
+              "67": 86.0,
+              "77": 106.0,
+              "99": 111.0,
+              "114": 120.0
+            },
+            "measured": {
+              "height_114_cm": 120.0,
+              "stem_diameter_max_mm": 13.4,
+              "stem_diameter_orthogonal_mm": 12.95,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 4.179,
+              "cola_linear_density_g_per_cm": 0.379909091,
+              "flower_biomass_g": 57.179,
+              "total_biomass_g": 131.8,
+              "stem_mass_g": 27.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0018",
+            "treatment": "50 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": 19.0,
+              "36": 26.0,
+              "52": 46.0,
+              "67": 98.0,
+              "77": 116.0,
+              "99": 120.0,
+              "114": 120.0
+            },
+            "measured": {
+              "height_114_cm": 120.0,
+              "stem_diameter_max_mm": 13.5,
+              "stem_diameter_orthogonal_mm": 12.7,
+              "cola_length_cm": 14.0,
+              "cola_mass_g": 4.4,
+              "cola_linear_density_g_per_cm": 0.314285714,
+              "flower_biomass_g": 48.4,
+              "total_biomass_g": 128.4,
+              "stem_mass_g": 28.6
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0022",
+            "treatment": "50 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": 18.0,
+              "36": 27.0,
+              "52": 49.0,
+              "67": 97.0,
+              "77": 115.0,
+              "99": 125.0,
+              "114": 124.5
+            },
+            "measured": {
+              "height_114_cm": 124.5,
+              "stem_diameter_max_mm": 15.7,
+              "stem_diameter_orthogonal_mm": 13.9,
+              "cola_length_cm": 11.5,
+              "cola_mass_g": 4.679,
+              "cola_linear_density_g_per_cm": 0.406869565,
+              "flower_biomass_g": 57.679,
+              "total_biomass_g": 145.3,
+              "stem_mass_g": 36.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0026",
+            "treatment": "50 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 19.5,
+              "36": 30.0,
+              "52": 51.0,
+              "67": 116.0,
+              "77": 152.0,
+              "99": 158.0,
+              "114": 157.0
+            },
+            "measured": {
+              "height_114_cm": 157.0,
+              "stem_diameter_max_mm": 15.6,
+              "stem_diameter_orthogonal_mm": 14.3,
+              "cola_length_cm": 12.0,
+              "cola_mass_g": 4.436,
+              "cola_linear_density_g_per_cm": 0.369666667,
+              "flower_biomass_g": 73.636,
+              "total_biomass_g": 194.8,
+              "stem_mass_g": 45.9
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0031",
+            "treatment": "150 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 16.5,
+              "36": 22.0,
+              "52": 48.0,
+              "67": 91.0,
+              "77": 115.0,
+              "99": 121.0,
+              "114": 122.0
+            },
+            "measured": {
+              "height_114_cm": 122.0,
+              "stem_diameter_max_mm": 11.8,
+              "stem_diameter_orthogonal_mm": 11.3,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 2.673,
+              "cola_linear_density_g_per_cm": 0.243,
+              "flower_biomass_g": 31.773,
+              "total_biomass_g": 100.6,
+              "stem_mass_g": 23.2
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0041",
+            "treatment": "150 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 17.5,
+              "36": 24.0,
+              "52": 48.0,
+              "67": 92.0,
+              "77": 114.0,
+              "99": 120.0,
+              "114": 118.0
+            },
+            "measured": {
+              "height_114_cm": 118.0,
+              "stem_diameter_max_mm": 10.1,
+              "stem_diameter_orthogonal_mm": 9.8,
+              "cola_length_cm": 13.0,
+              "cola_mass_g": 5.043,
+              "cola_linear_density_g_per_cm": 0.387923077,
+              "flower_biomass_g": 28.443,
+              "total_biomass_g": 76.8,
+              "stem_mass_g": 18.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0045",
+            "treatment": "150 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 18.0,
+              "36": 27.0,
+              "52": 54.0,
+              "67": 91.0,
+              "77": 117.0,
+              "99": 123.0,
+              "114": 123.0
+            },
+            "measured": {
+              "height_114_cm": 123.0,
+              "stem_diameter_max_mm": 15.6,
+              "stem_diameter_orthogonal_mm": 15.2,
+              "cola_length_cm": 12.0,
+              "cola_mass_g": 3.811,
+              "cola_linear_density_g_per_cm": 0.317583333,
+              "flower_biomass_g": 65.411,
+              "total_biomass_g": 155.8,
+              "stem_mass_g": 33.6
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0050",
+            "treatment": "150 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 22.5,
+              "36": 31.0,
+              "52": 60.0,
+              "67": 104.0,
+              "77": 124.0,
+              "99": 130.0,
+              "114": 129.0
+            },
+            "measured": {
+              "height_114_cm": 129.0,
+              "stem_diameter_max_mm": 12.7,
+              "stem_diameter_orthogonal_mm": 12.5,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 4.225,
+              "cola_linear_density_g_per_cm": 0.384090909,
+              "flower_biomass_g": 61.425,
+              "total_biomass_g": 145.8,
+              "stem_mass_g": 33.4
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0052",
+            "treatment": "150 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": 17.0,
+              "36": 25.0,
+              "52": 54.0,
+              "67": 92.0,
+              "77": 125.0,
+              "99": 130.0,
+              "114": 129.0
+            },
+            "measured": {
+              "height_114_cm": 129.0,
+              "stem_diameter_max_mm": 11.9,
+              "stem_diameter_orthogonal_mm": 11.4,
+              "cola_length_cm": 14.0,
+              "cola_mass_g": 3.841,
+              "cola_linear_density_g_per_cm": 0.274357143,
+              "flower_biomass_g": 62.041,
+              "total_biomass_g": 140.4,
+              "stem_mass_g": 30.2
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0055",
+            "treatment": "150 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": 17.0,
+              "36": 22.0,
+              "52": 46.0,
+              "67": 81.0,
+              "77": 105.0,
+              "99": 106.0,
+              "114": 105.0
+            },
+            "measured": {
+              "height_114_cm": 105.0,
+              "stem_diameter_max_mm": 13.6,
+              "stem_diameter_orthogonal_mm": 12.9,
+              "cola_length_cm": 10.0,
+              "cola_mass_g": 4.007,
+              "cola_linear_density_g_per_cm": 0.4007,
+              "flower_biomass_g": 58.607,
+              "total_biomass_g": 151.6,
+              "stem_mass_g": 29.6
+            }
+          }
+        ]
+      },
+      "all_treatment_context": {
+        "plant_records": 36,
+        "height_series": [
+          {
+            "day_after_sowing": 31,
+            "height_cm": {
+              "n": 36,
+              "min": 14.0,
+              "q25": 17.0,
+              "median": 17.85,
+              "q75": 19.0,
+              "max": 24.0,
+              "mean": 18.0639,
+              "sd": 1.9258
+            }
+          },
+          {
+            "day_after_sowing": 36,
+            "height_cm": {
+              "n": 36,
+              "min": 20.0,
+              "q25": 23.0,
+              "median": 24.0,
+              "q75": 27.0,
+              "max": 33.0,
+              "mean": 24.9722,
+              "sd": 2.9712
+            }
+          },
+          {
+            "day_after_sowing": 52,
+            "height_cm": {
+              "n": 36,
+              "min": 24.0,
+              "q25": 38.75,
+              "median": 46.5,
+              "q75": 51.0,
+              "max": 60.0,
+              "mean": 45.0556,
+              "sd": 9.0331
+            }
+          },
+          {
+            "day_after_sowing": 67,
+            "height_cm": {
+              "n": 36,
+              "min": 31.0,
+              "q25": 68.0,
+              "median": 84.0,
+              "q75": 92.0,
+              "max": 116.0,
+              "mean": 77.3333,
+              "sd": 23.5627
+            }
+          },
+          {
+            "day_after_sowing": 77,
+            "height_cm": {
+              "n": 36,
+              "min": 34.0,
+              "q25": 79.5,
+              "median": 107.0,
+              "q75": 116.0,
+              "max": 152.0,
+              "mean": 96.5,
+              "sd": 32.0682
+            }
+          },
+          {
+            "day_after_sowing": 99,
+            "height_cm": {
+              "n": 36,
+              "min": 36.0,
+              "q25": 82.5,
+              "median": 111.5,
+              "q75": 121.5,
+              "max": 158.0,
+              "mean": 100.6667,
+              "sd": 33.5781
+            }
+          },
+          {
+            "day_after_sowing": 114,
+            "height_cm": {
+              "n": 36,
+              "min": 36.0,
+              "q25": 81.75,
+              "median": 114.0,
+              "q75": 122.25,
+              "max": 157.0,
+              "mean": 100.8056,
+              "sd": 33.6412
+            }
+          }
+        ],
+        "metrics": {
+          "height_114_cm": {
+            "unit": "cm",
+            "meaning": "dominant-apex height",
+            "distribution": {
+              "n": 36,
+              "min": 36.0,
+              "q25": 81.75,
+              "median": 114.0,
+              "q75": 122.25,
+              "max": 157.0,
+              "mean": 100.8056,
+              "sd": 33.6412
+            }
+          },
+          "stem_diameter_max_mm": {
+            "unit": "mm",
+            "meaning": "maximum stem diameter at soil level",
+            "distribution": {
+              "n": 35,
+              "min": 4.0,
+              "q25": 8.35,
+              "median": 10.6,
+              "q75": 12.9,
+              "max": 15.7,
+              "mean": 10.36,
+              "sd": 3.4836
+            }
+          },
+          "stem_diameter_orthogonal_mm": {
+            "unit": "mm",
+            "meaning": "orthogonal stem diameter at soil level",
+            "distribution": {
+              "n": 35,
+              "min": 3.5,
+              "q25": 7.85,
+              "median": 10.3,
+              "q75": 12.55,
+              "max": 15.2,
+              "mean": 9.9014,
+              "sd": 3.3208
+            }
+          },
+          "cola_length_cm": {
+            "unit": "cm",
+            "meaning": "15 cm apical floral sample length measurement",
+            "distribution": {
+              "n": 36,
+              "min": 9.0,
+              "q25": 10.5,
+              "median": 11.75,
+              "q75": 14.0,
+              "max": 18.0,
+              "mean": 12.25,
+              "sd": 2.2599
+            }
+          },
+          "cola_mass_g": {
+            "unit": "g",
+            "meaning": "mass of the sampled apical floral material",
+            "distribution": {
+              "n": 36,
+              "min": 1.074,
+              "q25": 2.573,
+              "median": 3.43,
+              "q75": 4.1943,
+              "max": 5.043,
+              "mean": 3.2521,
+              "sd": 1.1665
+            }
+          },
+          "cola_linear_density_g_per_cm": {
+            "unit": "g/cm",
+            "meaning": "reported mass-to-length ratio",
+            "distribution": {
+              "n": 36,
+              "min": 0.0895,
+              "q25": 0.2153,
+              "median": 0.2746,
+              "q75": 0.3292,
+              "max": 0.4076,
+              "mean": 0.268,
+              "sd": 0.0937
+            }
+          },
+          "flower_biomass_g": {
+            "unit": "g",
+            "meaning": "dry flower biomass",
+            "distribution": {
+              "n": 36,
+              "min": 1.108,
+              "q25": 10.641,
+              "median": 32.958,
+              "q75": 59.3115,
+              "max": 98.329,
+              "mean": 36.1188,
+              "sd": 29.174
+            }
+          },
+          "total_biomass_g": {
+            "unit": "g",
+            "meaning": "dry total above-ground biomass",
+            "distribution": {
+              "n": 36,
+              "min": 11.2,
+              "q25": 41.35,
+              "median": 98.1,
+              "q75": 145.425,
+              "max": 210.1,
+              "mean": 96.1889,
+              "sd": 65.4756
+            }
+          },
+          "stem_mass_g": {
+            "unit": "g",
+            "meaning": "dry stem mass",
+            "distribution": {
+              "n": 35,
+              "min": 0.6,
+              "q25": 7.5,
+              "median": 21.4,
+              "q75": 32.45,
+              "max": 49.8,
+              "mean": 21.2943,
+              "sd": 15.7613
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Cherry Wine",
+      "slug": "cherry-wine",
+      "role": "alternative measured cultivar",
+      "nominal_photo": "evidence/cherry-wine-50ppm.jpg",
+      "nominal_condition": {
+        "fertigation": "50 ppm N",
+        "reason": "The paper reports 50 and 150 ppm N as tall, highly branched, healthy plants and 50 ppm N as the optimum measured fertilizer rate.",
+        "summary": {
+          "plant_records": 6,
+          "height_series": [
+            {
+              "day_after_sowing": 31,
+              "height_cm": {
+                "n": 6,
+                "min": 12.7,
+                "q25": 15.725,
+                "median": 16.6,
+                "q75": 17.25,
+                "max": 18.2,
+                "mean": 16.1667,
+                "sd": 1.9273
+              }
+            },
+            {
+              "day_after_sowing": 36,
+              "height_cm": {
+                "n": 6,
+                "min": 19.0,
+                "q25": 23.0,
+                "median": 23.5,
+                "q75": 24.75,
+                "max": 27.0,
+                "mean": 23.5,
+                "sd": 2.6646
+              }
+            },
+            {
+              "day_after_sowing": 52,
+              "height_cm": {
+                "n": 6,
+                "min": 38.0,
+                "q25": 39.0,
+                "median": 39.5,
+                "q75": 46.0,
+                "max": 54.0,
+                "mean": 43.0,
+                "sd": 6.5115
+              }
+            },
+            {
+              "day_after_sowing": 67,
+              "height_cm": {
+                "n": 6,
+                "min": 65.0,
+                "q25": 74.0,
+                "median": 83.0,
+                "q75": 91.25,
+                "max": 94.0,
+                "mean": 81.6667,
+                "sd": 11.7246
+              }
+            },
+            {
+              "day_after_sowing": 77,
+              "height_cm": {
+                "n": 6,
+                "min": 81.0,
+                "q25": 87.0,
+                "median": 107.5,
+                "q75": 116.0,
+                "max": 117.0,
+                "mean": 102.0,
+                "sd": 16.8997
+              }
+            },
+            {
+              "day_after_sowing": 99,
+              "height_cm": {
+                "n": 6,
+                "min": 85.0,
+                "q25": 91.5,
+                "median": 109.0,
+                "q75": 119.75,
+                "max": 120.0,
+                "mean": 105.3333,
+                "sd": 16.3544
+              }
+            },
+            {
+              "day_after_sowing": 114,
+              "height_cm": {
+                "n": 6,
+                "min": 84.0,
+                "q25": 93.0,
+                "median": 109.5,
+                "q75": 120.0,
+                "max": 120.0,
+                "mean": 105.6667,
+                "sd": 16.4033
+              }
+            }
+          ],
+          "metrics": {
+            "height_114_cm": {
+              "unit": "cm",
+              "meaning": "dominant-apex height",
+              "distribution": {
+                "n": 6,
+                "min": 84.0,
+                "q25": 93.0,
+                "median": 109.5,
+                "q75": 120.0,
+                "max": 120.0,
+                "mean": 105.6667,
+                "sd": 16.4033
+              }
+            },
+            "stem_diameter_max_mm": {
+              "unit": "mm",
+              "meaning": "maximum stem diameter at soil level",
+              "distribution": {
+                "n": 6,
+                "min": 7.0,
+                "q25": 7.875,
+                "median": 9.56,
+                "q75": 11.23,
+                "max": 15.95,
+                "mean": 10.195,
+                "sd": 3.2863
+              }
+            },
+            "stem_diameter_orthogonal_mm": {
+              "unit": "mm",
+              "meaning": "orthogonal stem diameter at soil level",
+              "distribution": {
+                "n": 6,
+                "min": 6.8,
+                "q25": 7.275,
+                "median": 9.28,
+                "q75": 10.94,
+                "max": 15.5,
+                "mean": 9.8267,
+                "sd": 3.2847
+              }
+            },
+            "cola_length_cm": {
+              "unit": "cm",
+              "meaning": "15 cm apical floral sample length measurement",
+              "distribution": {
+                "n": 6,
+                "min": 9.0,
+                "q25": 11.25,
+                "median": 13.0,
+                "q75": 14.0,
+                "max": 15.0,
+                "mean": 12.5,
+                "sd": 2.2583
+              }
+            },
+            "cola_mass_g": {
+              "unit": "g",
+              "meaning": "mass of the sampled apical floral material",
+              "distribution": {
+                "n": 6,
+                "min": 1.57,
+                "q25": 1.9072,
+                "median": 2.49,
+                "q75": 2.598,
+                "max": 2.765,
+                "mean": 2.277,
+                "sd": 0.5028
+              }
+            },
+            "cola_linear_density_g_per_cm": {
+              "unit": "g/cm",
+              "meaning": "reported mass-to-length ratio",
+              "distribution": {
+                "n": 6,
+                "min": 0.1121,
+                "q25": 0.1333,
+                "median": 0.1919,
+                "q75": 0.2433,
+                "max": 0.2787,
+                "mean": 0.1915,
+                "sd": 0.0688
+              }
+            },
+            "flower_biomass_g": {
+              "unit": "g",
+              "meaning": "dry flower biomass",
+              "distribution": {
+                "n": 6,
+                "min": 3.719,
+                "q25": 5.2455,
+                "median": 10.49,
+                "q75": 20.5008,
+                "max": 35.428,
+                "mean": 14.577,
+                "sd": 12.51
+              }
+            },
+            "total_biomass_g": {
+              "unit": "g",
+              "meaning": "dry total above-ground biomass",
+              "distribution": {
+                "n": 6,
+                "min": 28.6,
+                "q25": 36.2,
+                "median": 54.1,
+                "q75": 83.7,
+                "max": 108.0,
+                "mean": 61.4333,
+                "sd": 32.2449
+              }
+            },
+            "stem_mass_g": {
+              "unit": "g",
+              "meaning": "dry stem mass",
+              "distribution": {
+                "n": 6,
+                "min": 4.8,
+                "q25": 6.5,
+                "median": 12.9,
+                "q75": 21.25,
+                "max": 30.4,
+                "mean": 14.9,
+                "sd": 10.3319
+              }
+            }
+          }
+        },
+        "empirical_joint_vectors": [
+          {
+            "record_id": "MR19-NITR-005",
+            "treatment": "50 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 16.8,
+              "36": 27.0,
+              "52": 54.0,
+              "67": 94.0,
+              "77": 116.0,
+              "99": 120.0,
+              "114": 120.0
+            },
+            "measured": {
+              "height_114_cm": 120.0,
+              "stem_diameter_max_mm": 10.12,
+              "stem_diameter_orthogonal_mm": 10.16,
+              "cola_length_cm": 9.0,
+              "cola_mass_g": 2.508,
+              "cola_linear_density_g_per_cm": 0.278666667,
+              "flower_biomass_g": 15.508,
+              "total_biomass_g": 67.8,
+              "stem_mass_g": 17.8
+            }
+          },
+          {
+            "record_id": "MR19-NITR-007",
+            "treatment": "50 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 16.4,
+              "36": 24.0,
+              "52": 48.0,
+              "67": 92.0,
+              "77": 116.0,
+              "99": 119.0,
+              "114": 120.0
+            },
+            "measured": {
+              "height_114_cm": 120.0,
+              "stem_diameter_max_mm": 15.95,
+              "stem_diameter_orthogonal_mm": 15.5,
+              "cola_length_cm": 12.0,
+              "cola_mass_g": 2.628,
+              "cola_linear_density_g_per_cm": 0.219,
+              "flower_biomass_g": 35.428,
+              "total_biomass_g": 108.0,
+              "stem_mass_g": 30.4
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0010",
+            "treatment": "50 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 18.2,
+              "36": 25.0,
+              "52": 40.0,
+              "67": 89.0,
+              "77": 117.0,
+              "99": 120.0,
+              "114": 120.0
+            },
+            "measured": {
+              "height_114_cm": 120.0,
+              "stem_diameter_max_mm": 11.6,
+              "stem_diameter_orthogonal_mm": 11.2,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 2.765,
+              "cola_linear_density_g_per_cm": 0.251363636,
+              "flower_biomass_g": 22.165,
+              "total_biomass_g": 89.0,
+              "stem_mass_g": 22.4
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0019",
+            "treatment": "50 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": 15.5,
+              "36": 23.0,
+              "52": 38.0,
+              "67": 73.0,
+              "77": 83.0,
+              "99": 89.0,
+              "114": 91.0
+            },
+            "measured": {
+              "height_114_cm": 91.0,
+              "stem_diameter_max_mm": 9.0,
+              "stem_diameter_orthogonal_mm": 8.4,
+              "cola_length_cm": 15.0,
+              "cola_mass_g": 2.472,
+              "cola_linear_density_g_per_cm": 0.1648,
+              "flower_biomass_g": 5.472,
+              "total_biomass_g": 40.4,
+              "stem_mass_g": 8.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0023",
+            "treatment": "50 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 12.7,
+              "36": 19.0,
+              "52": 39.0,
+              "67": 77.0,
+              "77": 99.0,
+              "99": 99.0,
+              "114": 99.0
+            },
+            "measured": {
+              "height_114_cm": 99.0,
+              "stem_diameter_max_mm": 7.0,
+              "stem_diameter_orthogonal_mm": 6.8,
+              "cola_length_cm": 14.0,
+              "cola_mass_g": 1.719,
+              "cola_linear_density_g_per_cm": 0.122785714,
+              "flower_biomass_g": 3.719,
+              "total_biomass_g": 28.6,
+              "stem_mass_g": 4.8
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0028",
+            "treatment": "50 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": 17.4,
+              "36": 23.0,
+              "52": 39.0,
+              "67": 65.0,
+              "77": 81.0,
+              "99": 85.0,
+              "114": 84.0
+            },
+            "measured": {
+              "height_114_cm": 84.0,
+              "stem_diameter_max_mm": 7.5,
+              "stem_diameter_orthogonal_mm": 6.9,
+              "cola_length_cm": 14.0,
+              "cola_mass_g": 1.57,
+              "cola_linear_density_g_per_cm": 0.112142857,
+              "flower_biomass_g": 5.17,
+              "total_biomass_g": 34.8,
+              "stem_mass_g": 6.0
+            }
+          }
+        ]
+      },
+      "healthy_condition_envelope": {
+        "fertigation": [
+          "50 ppm N",
+          "150 ppm N"
+        ],
+        "summary": {
+          "plant_records": 11,
+          "height_series": [
+            {
+              "day_after_sowing": 31,
+              "height_cm": {
+                "n": 11,
+                "min": 12.7,
+                "q25": 14.0,
+                "median": 16.4,
+                "q75": 17.1,
+                "max": 18.2,
+                "mean": 15.7273,
+                "sd": 1.9085
+              }
+            },
+            {
+              "day_after_sowing": 36,
+              "height_cm": {
+                "n": 11,
+                "min": 19.0,
+                "q25": 21.0,
+                "median": 23.0,
+                "q75": 24.5,
+                "max": 27.0,
+                "mean": 22.7273,
+                "sd": 2.6867
+              }
+            },
+            {
+              "day_after_sowing": 52,
+              "height_cm": {
+                "n": 11,
+                "min": 38.0,
+                "q25": 39.5,
+                "median": 42.0,
+                "q75": 49.0,
+                "max": 54.0,
+                "mean": 44.3636,
+                "sd": 5.7493
+              }
+            },
+            {
+              "day_after_sowing": 67,
+              "height_cm": {
+                "n": 11,
+                "min": 65.0,
+                "q25": 75.5,
+                "median": 87.0,
+                "q75": 93.0,
+                "max": 106.0,
+                "mean": 85.3636,
+                "sd": 11.9271
+              }
+            },
+            {
+              "day_after_sowing": 77,
+              "height_cm": {
+                "n": 11,
+                "min": 81.0,
+                "q25": 97.0,
+                "median": 108.0,
+                "q75": 116.5,
+                "max": 124.0,
+                "mean": 106.0,
+                "sd": 14.6492
+              }
+            },
+            {
+              "day_after_sowing": 99,
+              "height_cm": {
+                "n": 11,
+                "min": 85.0,
+                "q25": 101.0,
+                "median": 114.0,
+                "q75": 120.0,
+                "max": 127.0,
+                "mean": 109.7273,
+                "sd": 13.8643
+              }
+            },
+            {
+              "day_after_sowing": 114,
+              "height_cm": {
+                "n": 11,
+                "min": 84.0,
+                "q25": 100.5,
+                "median": 112.0,
+                "q75": 120.0,
+                "max": 125.5,
+                "mean": 109.2273,
+                "sd": 13.5044
+              }
+            }
+          ],
+          "metrics": {
+            "height_114_cm": {
+              "unit": "cm",
+              "meaning": "dominant-apex height",
+              "distribution": {
+                "n": 11,
+                "min": 84.0,
+                "q25": 100.5,
+                "median": 112.0,
+                "q75": 120.0,
+                "max": 125.5,
+                "mean": 109.2273,
+                "sd": 13.5044
+              }
+            },
+            "stem_diameter_max_mm": {
+              "unit": "mm",
+              "meaning": "maximum stem diameter at soil level",
+              "distribution": {
+                "n": 11,
+                "min": 7.0,
+                "q25": 9.56,
+                "median": 11.6,
+                "q75": 14.4,
+                "max": 16.8,
+                "mean": 11.87,
+                "sd": 3.3511
+              }
+            },
+            "stem_diameter_orthogonal_mm": {
+              "unit": "mm",
+              "meaning": "orthogonal stem diameter at soil level",
+              "distribution": {
+                "n": 11,
+                "min": 6.8,
+                "q25": 9.28,
+                "median": 11.2,
+                "q75": 13.85,
+                "max": 15.9,
+                "mean": 11.4418,
+                "sd": 3.2553
+              }
+            },
+            "cola_length_cm": {
+              "unit": "cm",
+              "meaning": "15 cm apical floral sample length measurement",
+              "distribution": {
+                "n": 11,
+                "min": 9.0,
+                "q25": 12.0,
+                "median": 14.0,
+                "q75": 14.25,
+                "max": 15.0,
+                "mean": 12.9545,
+                "sd": 1.9033
+              }
+            },
+            "cola_mass_g": {
+              "unit": "g",
+              "meaning": "mass of the sampled apical floral material",
+              "distribution": {
+                "n": 11,
+                "min": 1.57,
+                "q25": 2.49,
+                "median": 2.725,
+                "q75": 3.161,
+                "max": 5.42,
+                "mean": 2.9451,
+                "sd": 1.0959
+              }
+            },
+            "cola_linear_density_g_per_cm": {
+              "unit": "g/cm",
+              "meaning": "reported mass-to-length ratio",
+              "distribution": {
+                "n": 11,
+                "min": 0.1121,
+                "q25": 0.1797,
+                "median": 0.2497,
+                "q75": 0.2779,
+                "max": 0.3613,
+                "mean": 0.2296,
+                "sd": 0.076
+              }
+            },
+            "flower_biomass_g": {
+              "unit": "g",
+              "meaning": "dry flower biomass",
+              "distribution": {
+                "n": 11,
+                "min": 3.719,
+                "q25": 10.49,
+                "median": 20.997,
+                "q75": 30.5765,
+                "max": 45.42,
+                "mean": 21.9815,
+                "sd": 14.3717
+              }
+            },
+            "total_biomass_g": {
+              "unit": "g",
+              "meaning": "dry total above-ground biomass",
+              "distribution": {
+                "n": 11,
+                "min": 28.6,
+                "q25": 54.1,
+                "median": 80.8,
+                "q75": 98.5,
+                "max": 155.3,
+                "mean": 83.1909,
+                "sd": 42.4176
+              }
+            },
+            "stem_mass_g": {
+              "unit": "g",
+              "meaning": "dry stem mass",
+              "distribution": {
+                "n": 11,
+                "min": 4.8,
+                "q25": 12.9,
+                "median": 19.4,
+                "q75": 26.4,
+                "max": 50.0,
+                "mean": 21.2545,
+                "sd": 13.632
+              }
+            }
+          }
+        },
+        "empirical_joint_vectors": [
+          {
+            "record_id": "MR19-NITR-005",
+            "treatment": "50 ppm N",
+            "replicate": 2.0,
+            "height_cm_by_das": {
+              "31": 16.8,
+              "36": 27.0,
+              "52": 54.0,
+              "67": 94.0,
+              "77": 116.0,
+              "99": 120.0,
+              "114": 120.0
+            },
+            "measured": {
+              "height_114_cm": 120.0,
+              "stem_diameter_max_mm": 10.12,
+              "stem_diameter_orthogonal_mm": 10.16,
+              "cola_length_cm": 9.0,
+              "cola_mass_g": 2.508,
+              "cola_linear_density_g_per_cm": 0.278666667,
+              "flower_biomass_g": 15.508,
+              "total_biomass_g": 67.8,
+              "stem_mass_g": 17.8
+            }
+          },
+          {
+            "record_id": "MR19-NITR-007",
+            "treatment": "50 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 16.4,
+              "36": 24.0,
+              "52": 48.0,
+              "67": 92.0,
+              "77": 116.0,
+              "99": 119.0,
+              "114": 120.0
+            },
+            "measured": {
+              "height_114_cm": 120.0,
+              "stem_diameter_max_mm": 15.95,
+              "stem_diameter_orthogonal_mm": 15.5,
+              "cola_length_cm": 12.0,
+              "cola_mass_g": 2.628,
+              "cola_linear_density_g_per_cm": 0.219,
+              "flower_biomass_g": 35.428,
+              "total_biomass_g": 108.0,
+              "stem_mass_g": 30.4
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0010",
+            "treatment": "50 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 18.2,
+              "36": 25.0,
+              "52": 40.0,
+              "67": 89.0,
+              "77": 117.0,
+              "99": 120.0,
+              "114": 120.0
+            },
+            "measured": {
+              "height_114_cm": 120.0,
+              "stem_diameter_max_mm": 11.6,
+              "stem_diameter_orthogonal_mm": 11.2,
+              "cola_length_cm": 11.0,
+              "cola_mass_g": 2.765,
+              "cola_linear_density_g_per_cm": 0.251363636,
+              "flower_biomass_g": 22.165,
+              "total_biomass_g": 89.0,
+              "stem_mass_g": 22.4
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0019",
+            "treatment": "50 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": 15.5,
+              "36": 23.0,
+              "52": 38.0,
+              "67": 73.0,
+              "77": 83.0,
+              "99": 89.0,
+              "114": 91.0
+            },
+            "measured": {
+              "height_114_cm": 91.0,
+              "stem_diameter_max_mm": 9.0,
+              "stem_diameter_orthogonal_mm": 8.4,
+              "cola_length_cm": 15.0,
+              "cola_mass_g": 2.472,
+              "cola_linear_density_g_per_cm": 0.1648,
+              "flower_biomass_g": 5.472,
+              "total_biomass_g": 40.4,
+              "stem_mass_g": 8.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0023",
+            "treatment": "50 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 12.7,
+              "36": 19.0,
+              "52": 39.0,
+              "67": 77.0,
+              "77": 99.0,
+              "99": 99.0,
+              "114": 99.0
+            },
+            "measured": {
+              "height_114_cm": 99.0,
+              "stem_diameter_max_mm": 7.0,
+              "stem_diameter_orthogonal_mm": 6.8,
+              "cola_length_cm": 14.0,
+              "cola_mass_g": 1.719,
+              "cola_linear_density_g_per_cm": 0.122785714,
+              "flower_biomass_g": 3.719,
+              "total_biomass_g": 28.6,
+              "stem_mass_g": 4.8
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0028",
+            "treatment": "50 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": 17.4,
+              "36": 23.0,
+              "52": 39.0,
+              "67": 65.0,
+              "77": 81.0,
+              "99": 85.0,
+              "114": 84.0
+            },
+            "measured": {
+              "height_114_cm": 84.0,
+              "stem_diameter_max_mm": 7.5,
+              "stem_diameter_orthogonal_mm": 6.9,
+              "cola_length_cm": 14.0,
+              "cola_mass_g": 1.57,
+              "cola_linear_density_g_per_cm": 0.112142857,
+              "flower_biomass_g": 5.17,
+              "total_biomass_g": 34.8,
+              "stem_mass_g": 6.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0036",
+            "treatment": "150 ppm N",
+            "replicate": 1.0,
+            "height_cm_by_das": {
+              "31": 18.0,
+              "36": 26.0,
+              "52": 51.0,
+              "67": 106.0,
+              "77": 124.0,
+              "99": 127.0,
+              "114": 125.5
+            },
+            "measured": {
+              "height_114_cm": 125.5,
+              "stem_diameter_max_mm": 16.8,
+              "stem_diameter_orthogonal_mm": 15.9,
+              "cola_length_cm": 14.5,
+              "cola_mass_g": 4.267,
+              "cola_linear_density_g_per_cm": 0.294275862,
+              "flower_biomass_g": 41.667,
+              "total_biomass_g": 155.3,
+              "stem_mass_g": 50.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0039",
+            "treatment": "150 ppm N",
+            "replicate": 3.0,
+            "height_cm_by_das": {
+              "31": 13.5,
+              "36": 20.0,
+              "52": 47.0,
+              "67": 95.0,
+              "77": 119.0,
+              "99": 120.0,
+              "114": 118.0
+            },
+            "measured": {
+              "height_114_cm": 118.0,
+              "stem_diameter_max_mm": 11.2,
+              "stem_diameter_orthogonal_mm": 11.1,
+              "cola_length_cm": 12.0,
+              "cola_mass_g": 3.325,
+              "cola_linear_density_g_per_cm": 0.277083333,
+              "flower_biomass_g": 20.525,
+              "total_biomass_g": 77.0,
+              "stem_mass_g": 18.2
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0051",
+            "treatment": "150 ppm N",
+            "replicate": 6.0,
+            "height_cm_by_das": {
+              "31": 16.5,
+              "36": 22.0,
+              "52": 50.0,
+              "67": 87.0,
+              "77": 108.0,
+              "99": 114.0,
+              "114": 112.0
+            },
+            "measured": {
+              "height_114_cm": 112.0,
+              "stem_diameter_max_mm": 13.1,
+              "stem_diameter_orthogonal_mm": 12.4,
+              "cola_length_cm": 12.0,
+              "cola_mass_g": 2.997,
+              "cola_linear_density_g_per_cm": 0.24975,
+              "flower_biomass_g": 20.997,
+              "total_biomass_g": 80.8,
+              "stem_mass_g": 19.4
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0054",
+            "treatment": "150 ppm N",
+            "replicate": 4.0,
+            "height_cm_by_das": {
+              "31": 14.0,
+              "36": 22.0,
+              "52": 40.0,
+              "67": 74.0,
+              "77": 95.0,
+              "99": 103.0,
+              "114": 102.0
+            },
+            "measured": {
+              "height_114_cm": 102.0,
+              "stem_diameter_max_mm": 12.6,
+              "stem_diameter_orthogonal_mm": 12.2,
+              "cola_length_cm": 14.0,
+              "cola_mass_g": 2.725,
+              "cola_linear_density_g_per_cm": 0.194642857,
+              "flower_biomass_g": 25.725,
+              "total_biomass_g": 81.6,
+              "stem_mass_g": 20.0
+            }
+          },
+          {
+            "record_id": "MR19-NITR-0059",
+            "treatment": "150 ppm N",
+            "replicate": 5.0,
+            "height_cm_by_das": {
+              "31": 14.0,
+              "36": 19.0,
+              "52": 42.0,
+              "67": 87.0,
+              "77": 108.0,
+              "99": 111.0,
+              "114": 110.0
+            },
+            "measured": {
+              "height_114_cm": 110.0,
+              "stem_diameter_max_mm": 15.7,
+              "stem_diameter_orthogonal_mm": 15.3,
+              "cola_length_cm": 15.0,
+              "cola_mass_g": 5.42,
+              "cola_linear_density_g_per_cm": 0.361333333,
+              "flower_biomass_g": 45.42,
+              "total_biomass_g": 151.8,
+              "stem_mass_g": 36.8
+            }
+          }
+        ]
+      },
+      "all_treatment_context": {
+        "plant_records": 36,
+        "height_series": [
+          {
+            "day_after_sowing": 31,
+            "height_cm": {
+              "n": 30,
+              "min": 11.0,
+              "q25": 14.0,
+              "median": 16.0,
+              "q75": 16.725,
+              "max": 19.5,
+              "mean": 15.5167,
+              "sd": 1.9607
+            }
+          },
+          {
+            "day_after_sowing": 36,
+            "height_cm": {
+              "n": 30,
+              "min": 16.0,
+              "q25": 19.0,
+              "median": 22.0,
+              "q75": 24.75,
+              "max": 27.0,
+              "mean": 21.9667,
+              "sd": 3.3475
+            }
+          },
+          {
+            "day_after_sowing": 52,
+            "height_cm": {
+              "n": 30,
+              "min": 21.0,
+              "q25": 36.0,
+              "median": 41.0,
+              "q75": 48.0,
+              "max": 59.0,
+              "mean": 41.2667,
+              "sd": 9.2919
+            }
+          },
+          {
+            "day_after_sowing": 67,
+            "height_cm": {
+              "n": 30,
+              "min": 26.0,
+              "q25": 58.25,
+              "median": 81.0,
+              "q75": 88.75,
+              "max": 106.0,
+              "mean": 72.4667,
+              "sd": 23.9996
+            }
+          },
+          {
+            "day_after_sowing": 77,
+            "height_cm": {
+              "n": 30,
+              "min": 31.0,
+              "q25": 71.25,
+              "median": 98.0,
+              "q75": 108.0,
+              "max": 127.0,
+              "mean": 88.0333,
+              "sd": 30.0958
+            }
+          },
+          {
+            "day_after_sowing": 99,
+            "height_cm": {
+              "n": 30,
+              "min": 32.0,
+              "q25": 74.0,
+              "median": 101.0,
+              "q75": 111.0,
+              "max": 129.0,
+              "mean": 91.0333,
+              "sd": 30.5484
+            }
+          },
+          {
+            "day_after_sowing": 114,
+            "height_cm": {
+              "n": 30,
+              "min": 31.5,
+              "q25": 74.25,
+              "median": 102.0,
+              "q75": 111.5,
+              "max": 129.0,
+              "mean": 90.8833,
+              "sd": 30.7741
+            }
+          }
+        ],
+        "metrics": {
+          "height_114_cm": {
+            "unit": "cm",
+            "meaning": "dominant-apex height",
+            "distribution": {
+              "n": 30,
+              "min": 31.5,
+              "q25": 74.25,
+              "median": 102.0,
+              "q75": 111.5,
+              "max": 129.0,
+              "mean": 90.8833,
+              "sd": 30.7741
+            }
+          },
+          "stem_diameter_max_mm": {
+            "unit": "mm",
+            "meaning": "maximum stem diameter at soil level",
+            "distribution": {
+              "n": 30,
+              "min": 3.3,
+              "q25": 7.625,
+              "median": 10.01,
+              "q75": 13.1,
+              "max": 19.7,
+              "mean": 10.1857,
+              "sd": 4.3729
+            }
+          },
+          "stem_diameter_orthogonal_mm": {
+            "unit": "mm",
+            "meaning": "orthogonal stem diameter at soil level",
+            "distribution": {
+              "n": 30,
+              "min": 3.2,
+              "q25": 7.075,
+              "median": 9.25,
+              "q75": 12.625,
+              "max": 19.4,
+              "mean": 9.7387,
+              "sd": 4.3056
+            }
+          },
+          "cola_length_cm": {
+            "unit": "cm",
+            "meaning": "15 cm apical floral sample length measurement",
+            "distribution": {
+              "n": 30,
+              "min": 9.0,
+              "q25": 12.0,
+              "median": 13.0,
+              "q75": 14.0,
+              "max": 16.0,
+              "mean": 12.95,
+              "sd": 1.7973
+            }
+          },
+          "cola_mass_g": {
+            "unit": "g",
+            "meaning": "mass of the sampled apical floral material",
+            "distribution": {
+              "n": 30,
+              "min": 0.597,
+              "q25": 1.784,
+              "median": 2.639,
+              "q75": 3.316,
+              "max": 5.42,
+              "mean": 2.6887,
+              "sd": 1.2572
+            }
+          },
+          "cola_linear_density_g_per_cm": {
+            "unit": "g/cm",
+            "meaning": "reported mass-to-length ratio",
+            "distribution": {
+              "n": 30,
+              "min": 0.0498,
+              "q25": 0.1265,
+              "median": 0.2266,
+              "q75": 0.2559,
+              "max": 0.3731,
+              "mean": 0.2049,
+              "sd": 0.0852
+            }
+          },
+          "flower_biomass_g": {
+            "unit": "g",
+            "meaning": "dry flower biomass",
+            "distribution": {
+              "n": 30,
+              "min": 0.894,
+              "q25": 3.768,
+              "median": 11.6655,
+              "q75": 22.6045,
+              "max": 104.923,
+              "mean": 17.202,
+              "sd": 20.8436
+            }
+          },
+          "total_biomass_g": {
+            "unit": "g",
+            "meaning": "dry total above-ground biomass",
+            "distribution": {
+              "n": 30,
+              "min": 11.4,
+              "q25": 27.55,
+              "median": 53.7,
+              "q75": 88.35,
+              "max": 210.6,
+              "mean": 65.8333,
+              "sd": 50.1097
+            }
+          },
+          "stem_mass_g": {
+            "unit": "g",
+            "meaning": "dry stem mass",
+            "distribution": {
+              "n": 30,
+              "min": 0.4,
+              "q25": 4.0,
+              "median": 9.85,
+              "q75": 20.975,
+              "max": 50.0,
+              "mean": 13.9,
+              "sd": 12.8217
+            }
+          }
+        }
+      }
+    }
+  ],
+  "randomization_contract": {
+    "identity": [
+      "cultivar",
+      "seed lot or clone line",
+      "developmental stage",
+      "management history",
+      "facility recipe"
+    ],
+    "nominal_sampling": "Select one complete measured row from the 50 ppm N group for the chosen cultivar. Preserve that row's height trajectory, stem cross-section, flower mass, and biomass together.",
+    "healthy_envelope_sampling": "For a broader but still evidence-linked envelope, select one complete row from the 50 or 150 ppm N groups for the chosen cultivar.",
+    "do_not_do": [
+      "Do not draw every scalar independently from its marginal range; that destroys measured covariance.",
+      "Do not treat fertilizer-stressed plants as ordinary within-clone variation.",
+      "Do not infer branch topology, leaf attachment angles, tissue stiffness, cutting force, or contact damping from this scalar dataset."
+    ],
+    "geometry_gap": "The source supplies one frontal cultivar-by-treatment photo grid and scalar plant measurements, not 3D organ coordinates. A nominal graph must be traced from photographs or measured from partner plants.",
+    "mechanics_gap": "No flexural stiffness, damping, failure strain, petiole detachment force, or fresh-tissue mass distribution is reported. Those require separate literature priors and physical calibration tests."
+  },
+  "secondary_datasets": [
+    {
+      "name": "Gill et al. industrial hemp phenotyping",
+      "doi": "10.25909/29097107.v2",
+      "license": "CC BY 4.0 for tabular data; related time-series image archives are CC BY-NC 4.0",
+      "genotypes": [
+        "Felina 32",
+        "Ferimon 12",
+        "Han NE"
+      ],
+      "sample_sizes": {
+        "Felina 32": 10,
+        "Ferimon 12": 10,
+        "Han NE": 20
+      },
+      "use": "Daily side-view image sequences and plant-level projected shoot area through day 36; useful for early growth shape and within-genotype visual variation, not flowering architecture."
+    },
+    {
+      "name": "LAST-Straw",
+      "url": "https://lcas.github.io/LAST-Straw/",
+      "license": "Not stated on the project page; verify before redistribution or product use.",
+      "cultivars": [
+        "Driscoll's Katrina",
+        "Driscoll's Zara"
+      ],
+      "sample_sizes": {
+        "Driscoll's Katrina": 3,
+        "Driscoll's Zara": 3
+      },
+      "use": "Fourteen 3D point-cloud captures per plant over 11 weeks, with organ labels on 28 scans and stem-like skeletons. This is a stronger geometric template for cultivar-conditioned strawberry models than any open Cannabis dataset found in this pass."
+    }
+  ],
+  "limits": [
+    "The five greenhouse cultivars were seed-grown, so within-cultivar spread includes sibling genetic variation as well as environmental and measurement variation.",
+    "The 50 ppm N nominal group contains at most six records per cultivar and some fields are missing. Empirical resampling is safer than fitting a high-dimensional Gaussian.",
+    "No open, cultivar-labeled, whole-plant 3D Cannabis time series was found in this search."
+  ]
+}

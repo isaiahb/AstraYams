@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cultivar-conditioned nominal plant models</title>
+  <style>
+    :root { --ink:#153129; --muted:#5f716a; --paper:#f6f3e9; --panel:#fffdf6; --line:#c7d2c4; --green:#286746; --lime:#b4d88d; --gold:#d6a84d; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:linear-gradient(145deg,#e9eee2,#f7f1e2 55%,#dfe9dc); font:16px/1.45 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { width:min(1240px,calc(100% - 32px)); margin:0 auto; padding:34px 0 70px; }
+    header { display:grid; grid-template-columns:1.45fr .8fr; gap:24px; align-items:end; margin-bottom:22px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.16em; font-size:12px; font-weight:800; color:var(--green); }
+    h1 { font-size:clamp(35px,5vw,66px); line-height:.96; letter-spacing:-.05em; margin:8px 0 14px; max-width:900px; }
+    h2 { margin:0 0 8px; font-size:22px; }
+    p { margin:0 0 10px; }
+    .lede { font-size:19px; max-width:800px; color:#31463f; }
+    .stamp,.card,.chart,.note,.photo-grid { border:1px solid var(--line); background:rgba(255,253,246,.92); border-radius:20px; box-shadow:0 14px 35px rgba(32,65,48,.08); }
+    .stamp { padding:18px; }
+    .stamp strong { display:block; font-size:24px; margin:3px 0; }
+    .stamp small,.muted { color:var(--muted); }
+    .tabs { display:flex; flex-wrap:wrap; gap:9px; margin:20px 0; }
+    button { border:1px solid #9eb2a5; background:#fffdf7; color:var(--ink); padding:11px 15px; border-radius:999px; font:inherit; cursor:pointer; }
+    button.active { color:white; background:var(--green); border-color:var(--green); }
+    .overview { display:grid; grid-template-columns:1fr 1.25fr; gap:18px; }
+    .card { overflow:hidden; }
+    .card img { width:100%; aspect-ratio:.88; object-fit:cover; object-position:center; display:block; background:#050706; }
+    .card .body { padding:18px; }
+    .metric-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:12px; }
+    .metric { background:#edf2e8; border-radius:13px; padding:12px; }
+    .metric span { color:var(--muted); font-size:12px; display:block; }
+    .metric strong { font-size:20px; }
+    .metric small { display:block; color:var(--muted); margin-top:2px; }
+    .chart { padding:18px; min-height:520px; }
+    svg { width:100%; height:390px; display:block; overflow:visible; }
+    .axis { stroke:#82968a; stroke-width:1; }
+    .grid { stroke:#dae2d6; stroke-width:1; }
+    .band { fill:rgba(40,103,70,.17); }
+    .curve { fill:none; stroke:var(--green); stroke-width:4; stroke-linejoin:round; stroke-linecap:round; }
+    .dot { fill:var(--green); stroke:#fff; stroke-width:2; }
+    .chart-note { display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:13px; }
+    .photo-grid { margin-top:18px; padding:18px; }
+    .photos { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:14px; }
+    .photos figure { margin:0; background:#080b09; border-radius:15px; overflow:hidden; }
+    .photos img { width:100%; display:block; aspect-ratio:3/4; object-fit:cover; }
+    figcaption { padding:10px 12px; color:#dce8df; font-size:13px; }
+    .notes { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px; }
+    .note { padding:18px; }
+    .note strong { display:block; font-size:18px; margin-bottom:5px; }
+    .warning { border-color:#d7b76f; background:#fff8e6; }
+    .source { margin-top:18px; color:var(--muted); font-size:13px; }
+    a { color:var(--green); }
+    @media (max-width:850px) { header,.overview { grid-template-columns:1fr; } .notes { grid-template-columns:1fr; } .photos { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <div class="eyebrow">Research slice · measured nominal models</div>
+      <h1>Randomize around a cultivar, not a generic plant.</h1>
+      <p class="lede">Five named CBD/essential-oil hemp profiles, conditioned on one measured greenhouse environment. The visible plant, growth curve, stem dimensions and flower metrics all come from the same cultivar subset.</p>
+    </div>
+    <div class="stamp"><small>Recommended first placeholder</small><strong>Cherry Blossom · 50 ppm N</strong><span>Replace when the partner supplies cultivar + clone line + facility recipe.</span></div>
+  </header>
+
+  <div class="tabs" id="tabs"></div>
+
+  <section class="overview">
+    <article class="card">
+      <img id="cultivarPhoto" alt="Measured flowering-stage cultivar reference">
+      <div class="body">
+        <div class="eyebrow">50 ppm N reference</div>
+        <h2 id="cultivarName"></h2>
+        <p id="cultivarRole" class="muted"></p>
+        <div class="metric-grid" id="metrics"></div>
+      </div>
+    </article>
+    <article class="chart">
+      <div class="eyebrow">Plant-level distribution</div>
+      <h2>Dominant-apex height through the full cycle</h2>
+      <p class="muted">Median and observed range for the selected cultivar at exactly 50 ppm N. The dashed line marks the reported start of flowering.</p>
+      <svg id="heightChart" viewBox="0 0 760 390" role="img" aria-label="Cultivar height curve"></svg>
+      <div class="chart-note"><span>Days after sowing</span><span id="sampleNote"></span></div>
+    </article>
+  </section>
+
+  <section class="notes">
+    <div class="note"><strong>Nominal draw</strong>Select one complete 50 ppm plant record. Keep its height series, stem cross-section, cola dimensions and biomass coupled.</div>
+    <div class="note"><strong>Healthy envelope</strong>Select one complete record from 50 or 150 ppm N. Keep cultivar identity fixed and treat condition as an explicit variable.</div>
+    <div class="note warning"><strong>Still unmeasured</strong>Branch graph, leaf pose, tissue stiffness, damping, cutting force and detachment thresholds need photos, literature priors and physical tests.</div>
+  </section>
+
+  <section class="photo-grid">
+    <div class="eyebrow">Independent early-growth dataset</div>
+    <h2>Genotype changes architecture even under one imaging protocol</h2>
+    <p class="muted">Final day-36 side frames from a separate indoor phenotyping study. These are research thumbnails from CC BY-NC image archives, useful for shape comparison but unsuitable as a commercial product dependency.</p>
+    <div class="photos">
+      <figure><img src="evidence/felina-32-nominal-side.jpg" alt="Felina 32 plant"><figcaption>Felina 32 · 10 plants · final height median 153.5 cm</figcaption></figure>
+      <figure><img src="evidence/ferimon-12-nominal-side.jpg" alt="Ferimon 12 plant"><figcaption>Ferimon 12 · 10 plants · final height median 156 cm</figcaption></figure>
+      <figure><img src="evidence/han-ne-nominal-side.jpg" alt="Han NE plant"><figcaption>Han NE · 20 plants · final height median 75.5 cm</figcaption></figure>
+    </div>
+  </section>
+
+  <p class="source">Primary source: <a href="https://doi.org/10.1371/journal.pone.0252985">Anderson et al. 2021</a>, CC BY 4.0. Secondary tabular source: <a href="https://doi.org/10.25909/29097107.v2">Gill et al. 2025</a>, CC BY 4.0; associated images <a href="https://doi.org/10.25909/23211779.v1">CC BY-NC 4.0</a>. The page shows measured subsets and research limits; it is not a validated 3D reconstruction or mechanics model.</p>
+</main>
+<script>
+const colors = {green:'#286746', grid:'#dae2d6', axis:'#82968a', band:'rgba(40,103,70,.17)'};
+const fmt = n => Number.isFinite(n) ? (Math.round(n*10)/10).toString() : '—';
+const svgEl = (name, attrs={}) => { const el=document.createElementNS('http://www.w3.org/2000/svg',name); Object.entries(attrs).forEach(([k,v])=>el.setAttribute(k,v)); return el; };
+
+function drawChart(profile){
+  const svg=document.querySelector('#heightChart'); svg.innerHTML='';
+  const points=profile.nominal_condition.summary.height_series.filter(p=>p.height_cm && Number.isFinite(p.height_cm.median));
+  const W=760,H=390,m={l:58,r:24,t:26,b:44}, maxY=Math.ceil(Math.max(...points.map(p=>p.height_cm.max))/20)*20;
+  const x=d=>m.l+(d-31)/(114-31)*(W-m.l-m.r), y=v=>H-m.b-v/maxY*(H-m.t-m.b);
+  for(let v=0;v<=maxY;v+=40){ svg.append(svgEl('line',{x1:m.l,y1:y(v),x2:W-m.r,y2:y(v),class:'grid'})); const t=svgEl('text',{x:m.l-10,y:y(v)+4,'text-anchor':'end',fill:colors.axis,'font-size':12});t.textContent=v;svg.append(t); }
+  points.forEach(p=>{ const t=svgEl('text',{x:x(p.day_after_sowing),y:H-18,'text-anchor':'middle',fill:colors.axis,'font-size':12});t.textContent=p.day_after_sowing;svg.append(t); });
+  svg.append(svgEl('line',{x1:m.l,y1:H-m.b,x2:W-m.r,y2:H-m.b,class:'axis'}));
+  svg.append(svgEl('line',{x1:m.l,y1:m.t,x2:m.l,y2:H-m.b,class:'axis'}));
+  const flowerX=x(58); svg.append(svgEl('line',{x1:flowerX,y1:m.t,x2:flowerX,y2:H-m.b,stroke:'#d6a84d','stroke-width':2,'stroke-dasharray':'7 6'}));
+  const ft=svgEl('text',{x:flowerX+7,y:m.t+13,fill:'#997024','font-size':12});ft.textContent='flower induction · 58 DAS';svg.append(ft);
+  const top=points.map(p=>[x(p.day_after_sowing),y(p.height_cm.max)]), bottom=[...points].reverse().map(p=>[x(p.day_after_sowing),y(p.height_cm.min)]);
+  const band=[...top,...bottom].map((p,i)=>(i?'L':'M')+p.join(',')).join(' ')+' Z'; svg.append(svgEl('path',{d:band,class:'band'}));
+  const med=points.map((p,i)=>(i?'L':'M')+[x(p.day_after_sowing),y(p.height_cm.median)].join(',')).join(' '); svg.append(svgEl('path',{d:med,class:'curve'}));
+  points.forEach(p=>{ svg.append(svgEl('circle',{cx:x(p.day_after_sowing),cy:y(p.height_cm.median),r:5,class:'dot'})); });
+  const ylabel=svgEl('text',{x:15,y:205,transform:'rotate(-90 15 205)','text-anchor':'middle',fill:colors.axis,'font-size':12});ylabel.textContent='height (cm)';svg.append(ylabel);
+}
+
+function show(profile){
+  document.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.slug===profile.slug));
+  document.querySelector('#cultivarPhoto').src=profile.nominal_photo;
+  document.querySelector('#cultivarName').textContent=profile.name;
+  document.querySelector('#cultivarRole').textContent=profile.role==='starter placeholder' ? 'Selected as the first placeholder nominal until the partner cultivar is known.' : 'Measured alternative cultivar under the same nominal condition.';
+  const m=profile.nominal_condition.summary.metrics;
+  const fields=[['Final height',m.height_114_cm],['Stem diameter',m.stem_diameter_max_mm],['Cola length',m.cola_length_cm],['Flower biomass',m.flower_biomass_g]];
+  document.querySelector('#metrics').innerHTML=fields.map(([name,item])=>{const d=item.distribution;return `<div class="metric"><span>${name} · median [IQR]</span><strong>${fmt(d?.median)} ${item.unit}</strong><small>${fmt(d?.q25)}–${fmt(d?.q75)} · n=${d?.n??0}</small></div>`}).join('');
+  const ns=profile.nominal_condition.summary.height_series.map(p=>p.height_cm?.n||0); document.querySelector('#sampleNote').textContent=`${Math.min(...ns)}–${Math.max(...ns)} measured plants per time point`;
+  drawChart(profile);
+}
+
+fetch('nominal-models.json').then(r=>r.json()).then(data=>{
+  const tabs=document.querySelector('#tabs');
+  data.cultivars.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p.name;b.dataset.slug=p.slug;b.onclick=()=>show(p);tabs.append(b);if(i===0)show(p);});
+});
+</script>
+</body>
+</html>

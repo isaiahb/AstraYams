@@ -1,0 +1,54 @@
+{
+  "sources": [
+    {
+      "title": "Response of essential oil hemp (Cannabis sativa L.) growth, biomass, and cannabinoid profiles to varying fertigation rates",
+      "authors": "Anderson II, Pearson, Kjelgren and Brym",
+      "year": 2021,
+      "doi": "10.1371/journal.pone.0252985",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0252985",
+      "license": "CC BY 4.0",
+      "local_inputs": [
+        "../development-v3/evidence/anderson-2021-phenotypes.csv",
+        "evidence/anderson-2021-cultivar-treatment-grid.jpg",
+        "evidence/cherry-blossom-50ppm.jpg",
+        "evidence/cherry-blossom-tuan-50ppm.jpg",
+        "evidence/berry-blossom-50ppm.jpg",
+        "evidence/cherry-blossom-trump-50ppm.jpg",
+        "evidence/cherry-wine-50ppm.jpg"
+      ],
+      "use": "Primary cultivar-conditioned flowering-stage scalar data and reference imagery. Crops are derived from Figure 1 and retain the article's CC BY attribution requirement."
+    },
+    {
+      "title": "Data for phenotyping of industrial hemp (Cannabis sativa L.) experiments",
+      "authors": "Gill et al.",
+      "year": 2025,
+      "doi": "10.25909/29097107.v2",
+      "url": "https://figshare.com/articles/dataset/29097107",
+      "license": "CC BY 4.0",
+      "use": "Tabular early-growth distributions for Felina 32, Ferimon 12 and Han NE."
+    },
+    {
+      "title": "APPF TPA phenotyping dataset: UA (Gill) - Hemp (PIA)",
+      "authors": "Australian Plant Phenomics Facility / Gill",
+      "year": 2023,
+      "doi": "10.25909/23211779.v1",
+      "url": "https://projects.pawsey.org.au/appf-tpa-0541-ph-ua-gill-hemp-pia/index.html",
+      "license": "CC BY-NC 4.0",
+      "local_inputs": [
+        "evidence/felina-32-nominal-side.jpg",
+        "evidence/ferimon-12-nominal-side.jpg",
+        "evidence/han-ne-nominal-side.jpg"
+      ],
+      "use": "Research-only visual reference thumbnails derived from final side-view frames. Do not make these images a commercial product dependency."
+    },
+    {
+      "title": "Lincoln's Annotated Spatio-Temporal Strawberry Dataset (LAST-Straw)",
+      "authors": "James, Heiwolt, Sargent and Cielniak",
+      "year": 2024,
+      "url": "https://lcas.github.io/LAST-Straw/",
+      "paper": "https://arxiv.org/abs/2403.00566",
+      "license": "Not stated on the project page; verify before redistribution or product use.",
+      "use": "Candidate 3D cultivar-conditioned strawberry geometry dataset; no files redistributed here."
+    }
+  ]
+}
