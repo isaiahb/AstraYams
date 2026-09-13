@@ -1,0 +1,110 @@
+[
+  {
+    "file": "images/RGB_3D_3D_side_far_0_084290-H_2021-02-25_09-18-27.png",
+    "archive": "https://projects.pawsey.org.au/appf-tpa-0541-ph-ua-gill-hemp-pia/RGB_3D_3D_side_far_0_084290-H.zip",
+    "member": "RGB_3D_3D_side_far_0_084290-H_2021-02-25_09-18-27.png",
+    "sha256": "938167781ec2417759355b9c969f1f9d96f81731a94a171f86ae2ef950df4bbe",
+    "pixels": [
+      2472,
+      3296
+    ],
+    "source": "https://doi.org/10.25909/23211779.v1",
+    "id": "084290-H",
+    "title": "Rejected: clipped shoot tip",
+    "observed_strengths": "Research origin and native resolution verified.",
+    "limitations": "Shoot tip is outside the frame; blue cage, dark foliage and substantial dead tissue.",
+    "license": "CC BY-NC 4.0",
+    "attribution": "Rachel Burton; APPF Plant Accelerator, University of Adelaide; UA (Gill) hemp phenotyping dataset",
+    "status": "rejected"
+  },
+  {
+    "file": "images/RGB_3D_3D_side_far_0_084305-H_2021-02-25_09-33-57.png",
+    "archive": "https://projects.pawsey.org.au/appf-tpa-0541-ph-ua-gill-hemp-pia/RGB_3D_3D_side_far_0_084305-H.zip",
+    "member": "RGB_3D_3D_side_far_0_084305-H_2021-02-25_09-33-57.png",
+    "sha256": "2480a7205e849832d0544aac7731a348ab9625bf57448e6f73f80f7d8eb1c2a4",
+    "pixels": [
+      2472,
+      3296
+    ],
+    "source": "https://doi.org/10.25909/23211779.v1",
+    "id": "084305-H",
+    "title": "Rejected: clipped shoot tip",
+    "observed_strengths": "Research origin and native resolution verified.",
+    "limitations": "Shoot tip is outside the frame; blue cage and long sparse stem make this a poor replacement.",
+    "license": "CC BY-NC 4.0",
+    "attribution": "Rachel Burton; APPF Plant Accelerator, University of Adelaide; UA (Gill) hemp phenotyping dataset",
+    "status": "rejected"
+  },
+  {
+    "file": "images/RGB_3D_3D_side_far_0_084847-W_2021-02-22_11-48-51.png",
+    "archive": "https://projects.pawsey.org.au/appf-tpa-0546-ph-ua-gill-hemp-ds-pia/RGB_3D_3D_side_far_0_084847-W.zip",
+    "member": "RGB_3D_3D_side_far_0_084847-W_2021-02-22_11-48-51.png",
+    "sha256": "b5fb5d55f8ee33a7737f0f43c4d422891055b6ea8a578f121f652f3ad5bf3abd",
+    "pixels": [
+      2472,
+      3296
+    ],
+    "source": "https://doi.org/10.25909/23211776.v1",
+    "id": "084847-W",
+    "title": "Simpler structure for annotation",
+    "observed_strengths": "One intact potted specimen, visible shoot tip and main stem, no blue cage. A useful second example with broader, drooping leaves.",
+    "limitations": "The pot bottom is cropped and foliage overlaps. Some lower tissue is yellow; the top of the frame contains substantial empty background.",
+    "license": "CC BY-NC 4.0",
+    "attribution": "Rachel Burton; APPF Plant Accelerator, University of Adelaide; UA (Gill) hemp phenotyping dataset",
+    "status": "candidate"
+  },
+  {
+    "file": "images/RGB_3D_3D_side_far_0_084850-W_2021-02-22_12-07-27.png",
+    "archive": "https://projects.pawsey.org.au/appf-tpa-0546-ph-ua-gill-hemp-ds-pia/RGB_3D_3D_side_far_0_084850-W.zip",
+    "member": "RGB_3D_3D_side_far_0_084850-W_2021-02-22_12-07-27.png",
+    "sha256": "26304250375cf28276799ad1b22c076e65aa6f5d3fb54549d289d9b5936b3712",
+    "pixels": [
+      2472,
+      3296
+    ],
+    "source": "https://doi.org/10.25909/23211776.v1",
+    "id": "084850-W",
+    "title": "Denser comparison specimen",
+    "observed_strengths": "One potted specimen with more overlapping foliage and visible side branches, photographed in the same controlled imaging system.",
+    "limitations": "Yellow/brown lower tissue, dark leaves and a cropped pot bottom. Keep this variation explicit rather than treating it as an ideal healthy plant.",
+    "license": "CC BY-NC 4.0",
+    "attribution": "Rachel Burton; APPF Plant Accelerator, University of Adelaide; UA (Gill) hemp phenotyping dataset",
+    "status": "candidate"
+  },
+  {
+    "file": "images/RGB_3D_3D_side_far_0_084877-W_2021-02-22_12-02-48.png",
+    "archive": "https://projects.pawsey.org.au/appf-tpa-0546-ph-ua-gill-hemp-ds-pia/RGB_3D_3D_side_far_0_084877-W.zip",
+    "member": "RGB_3D_3D_side_far_0_084877-W_2021-02-22_12-02-48.png",
+    "sha256": "d75e577cbde3e40da76494dd8c41fb2794fd829d338bf83fa87a49dca45d10d7",
+    "pixels": [
+      2472,
+      3296
+    ],
+    "source": "https://doi.org/10.25909/23211776.v1",
+    "id": "084877-W",
+    "title": "Best whole-plant candidate",
+    "observed_strengths": "One upright, branched specimen with its shoot tip visible, a plain black background, and no support cage. Individual leaf edges and branching are distinguishable.",
+    "limitations": "The pot bottom is cropped; upper leaves are dark; yellow basal tissue is present. This is not evidence of a mature production canopy.",
+    "license": "CC BY-NC 4.0",
+    "attribution": "Rachel Burton; APPF Plant Accelerator, University of Adelaide; UA (Gill) hemp phenotyping dataset",
+    "status": "candidate"
+  },
+  {
+    "file": "images/RGB_3D_3D_side_upper0_084847-W_2021-02-22_11-48-51.png",
+    "archive": "https://projects.pawsey.org.au/appf-tpa-0546-ph-ua-gill-hemp-ds-pia/RGB_3D_3D_side_upper0_084847-W.zip",
+    "member": "RGB_3D_3D_side_upper0_084847-W_2021-02-22_11-48-51.png",
+    "sha256": "ef66e7b47d556061b7aa14f974a94a47b17054efbd5d138f96454d1fddbc2ec4",
+    "pixels": [
+      2472,
+      3296
+    ],
+    "source": "https://doi.org/10.25909/23211776.v1",
+    "id": "084847-W-detail",
+    "title": "Same specimen from an elevated camera",
+    "observed_strengths": "Same plant ID and timestamp as 084847-W. This original elevated view shows the pot and mounting carrier, offering extra structural context.",
+    "limitations": "This is not a magnified crop or registered stereo pair. Imaging hardware occupies the background and the plant uses fewer pixels.",
+    "license": "CC BY-NC 4.0",
+    "attribution": "Rachel Burton; APPF Plant Accelerator, University of Adelaide; UA (Gill) hemp phenotyping dataset",
+    "status": "candidate"
+  }
+]
