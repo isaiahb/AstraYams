@@ -220,3 +220,9 @@ User requested denser crop grids, near-total visible-plant coverage and organ la
 - Artifacts: runs/hemp-sam3-grid-search-v1/index.html and results/. Reproducible sources and compact evidence: research/hemp-defoliation/sam3-grid-search-v1/. Initial source commit 86a1218, protocol/viewer commit b42687b.
 
 Remaining priority: trustworthy organ boundaries and semantic labels, not more grid density. Before fitting model anatomy from masks, create a small explicitly reviewed set of clear leaf/leaflet/stem boundaries on native-resolution images; mark hidden connections and dense clusters unknown. Evaluate prompted exemplars or corrected masks against those annotations. Keep whole-plant foreground coverage separate from instance correctness and from biological/mechanical validity. Do not claim this experiment reached near-100% correctly labeled organs or validated a plant model.
+
+## 2026-09-13 — reference suitability correction; residual masking proposal
+
+User explicitly rejected detached-shoot photos for the living upright potted-plant task. Archived them in the review and relabeled dataset controls; retain metrics as diagnostics only. Do not use their posture or geometry to fit the target plant. Verified original PLOS Fig. 1 caption says one week before harvest; pot is not shown in our crop, so task-stage/context suitability remains unverified. Next reference selection must establish living rooted/potted plants, natural pose and intended facility/task-stage context before optimizing segmentation.
+
+User proposed masking accepted plant pixels black then rerunning on residuals. Discussed as an untested hypothesis with artificial-boundary/context-loss/early-error risks. Prefer testing black-fill against residual-directed crops of original pixels under the same inference budget and reviewed acceptance mask. Experimental design recorded in sam3-grid-search-v1/README.md. No GPU or inference started in this discussion.
