@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Living hemp reference search v2</title>
+    <style>
+      :root { color-scheme: dark; font-family: ui-sans-serif, system-ui, sans-serif; background: #101412; color: #edf2eb; }
+      body { margin: 0 auto; max-width: 1220px; padding: 32px; }
+      h1 { margin: 0 0 8px; } p, li { color: #c9d2c7; line-height: 1.48; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 24px; margin: 24px 0; }
+      figure { margin: 0; border: 1px solid #3a4739; background: #171e18; padding: 14px; }
+      img { display: block; width: 100%; max-height: 720px; object-fit: contain; background: #050605; }
+      figcaption { margin-top: 12px; font-size: .92rem; }
+      code { color: #b9dfa9; overflow-wrap: anywhere; } a { color: #b9dfa9; }
+      .rank { border-top: 1px solid #3a4739; margin-top: 30px; padding-top: 12px; }
+    </style>
+  </head>
+  <body>
+    <h1>Living upright hemp: verified source improvement</h1>
+    <p>The left image is the original unprocessed archive member, displayed by CSS only. It verifies an upright plant with its apical tip, main stem, and pot opening in a single native 2472 × 3296 frame. The pot’s lower edge is cropped by the image boundary. The right image is a different inherited sample/view/time and is included only to make the wider field of view inspectable; no paired lineage is established.</p>
+    <section class="grid">
+      <figure>
+        <img src="evidence/appf-sidefar0-084267-2021-02-25-native.png" alt="Upright hemp plant with visible pot opening and support cage against black phenotyping background">
+        <figcaption>
+          <strong>Verified native APPF frame — preferred research reference.</strong><br>
+          <code>RGB_3D_3D_side_far_0_084267-H.zip</code> / <code>RGB_3D_3D_side_far_0_084267-H_2021-02-25_09-08-57.png</code><br>
+          2472 × 3296 RGBA PNG; SHA-256 <code>d24fb912dd3c6a575302238bbe18cd869b93b4899c925e32711558cec2d5eb63</code>.<br>
+          The uncut tip, main stem, and pot opening are visible; the pot bottom is cropped. The cage, sparse elongated habit, dark upper leaves, and yellow/dead basal tissue remain part of the observed source context. No exact cultivar mapping for plant ID <code>084267-H</code> has been verified.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="../nominal-cultivars-v1/evidence/felina-32-nominal-side.jpg" alt="Inherited nominal Felina 32 crop from the APPF source">
+        <figcaption>
+          <strong>Inherited derived crop — comparison only; not a paired crop.</strong><br>
+          This different sample/view/time clips the plant tip and omits the full pot field of view. It must not be treated as evidence that all plant tissue is green; the native frame at left visibly contains senescent basal tissue.
+        </figcaption>
+      </figure>
+    </section>
+    <p>Archive landing page: <a href="https://projects.pawsey.org.au/appf-tpa-0541-ph-ua-gill-hemp-pia/index.html">APPF hemp PIA public S3 listing</a>. Direct archive: <a href="https://projects.pawsey.org.au/appf-tpa-0541-ph-ua-gill-hemp-pia/RGB_3D_3D_side_far_0_084267-H.zip">side-far 0 / plant 084267-H</a>. DOI: <a href="https://doi.org/10.25909/23211779.v1">10.25909/23211779.v1</a>. License: CC BY-NC 4.0.</p>
+    <section class="rank">
+      <h2>Shortlist and limits</h2>
+      <ol>
+        <li><strong>APPF TPA Hemp PIA, native <code>side_far</code> RGB:</strong> only verified high-resolution, public source found that satisfies upright living plant, visible pot opening/main stem, and indoor phenotyping context. It is a research-only CC BY-NC 4.0 dependency and its plants retain cages and a sparse, elongated architecture. The verified frame does not show the pot bottom and plant ID 084267-H has no verified cultivar mapping.</li>
+        <li><strong>PLOS ONE 2021 Figure 1:</strong> a CC BY 4.0, 2250 × 2300 composite that provides dense, flowering/pre-harvest whole-plant examples. It is a paper figure rather than a downloadable image dataset; each plant is only a panel within the composite and pot context is limited. It is an anatomy reference, not a segmentation-data replacement.</li>
+        <li><strong>Mendeley Data 2025 greenhouse monitoring set:</strong> verified whole, front-view potted plants under controlled greenhouse imaging, CC BY 4.0, but released sample frames are only 273 × 552 pixels even though the paper reports 1080p capture. It is unsuitable as the requested high-resolution replacement.</li>
+      </ol>
+    </section>
+  </body>
+</html>
