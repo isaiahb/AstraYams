@@ -1,0 +1,45 @@
+{
+  "notice": "Exploratory threshold comparison, not calibrated real-photo accuracy. Synthetic coverage gate unchanged.",
+  "results": {
+    "broad-render": {
+      "0.1": {
+        "proposals": 121,
+        "visible_leaves_ge16px": 134,
+        "covered_at_iou_05": 66,
+        "median_best_iou": 0.44911377498641225
+      },
+      "0.25": {
+        "proposals": 74,
+        "visible_leaves_ge16px": 134,
+        "covered_at_iou_05": 58,
+        "median_best_iou": 0.3418726469143886
+      },
+      "0.5": {
+        "proposals": 29,
+        "visible_leaves_ge16px": 134,
+        "covered_at_iou_05": 27,
+        "median_best_iou": 0.0
+      }
+    },
+    "narrow-render": {
+      "0.1": {
+        "proposals": 150,
+        "visible_leaves_ge16px": 139,
+        "covered_at_iou_05": 35,
+        "median_best_iou": 0.2786885245901639
+      },
+      "0.25": {
+        "proposals": 74,
+        "visible_leaves_ge16px": 139,
+        "covered_at_iou_05": 32,
+        "median_best_iou": 0.22509225092250923
+      },
+      "0.5": {
+        "proposals": 15,
+        "visible_leaves_ge16px": 139,
+        "covered_at_iou_05": 10,
+        "median_best_iou": 0.0
+      }
+    }
+  }
+}

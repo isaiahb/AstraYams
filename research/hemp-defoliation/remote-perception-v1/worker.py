@@ -24,6 +24,7 @@ def main():
     parser.add_argument('--manifest',type=Path,required=True)
     parser.add_argument('--out',type=Path,required=True)
     parser.add_argument('--sam-preset',choices=['standard','recall-probe'],default='standard')
+    parser.add_argument('--checkpoint',type=Path,help='Official SAM3 checkpoint already staged on remote worker')
     args=parser.parse_args()
     import numpy as np
     import torch
@@ -49,7 +50,8 @@ def main():
         from sam3.model_builder import build_sam3_image_model
         from sam3.model.sam3_image_processor import Sam3Processor
         model_id='facebook/sam3'
-        model=build_sam3_image_model()
+        model=build_sam3_image_model(checkpoint_path=str(args.checkpoint) if args.checkpoint else None,
+                                   load_from_HF=args.checkpoint is None)
         engine=Sam3Processor(model,device='cuda',confidence_threshold=.5)
     else:
         from depth_anything_3.api import DepthAnything3
@@ -65,7 +67,8 @@ def main():
         size=tuple(config['comparison_size']);im=im.resize(size,Image.Resampling.LANCZOS)
         rgb=np.array(im);dest=args.out/item['id'];dest.mkdir(exist_ok=True)
         im.save(dest/'input.png');record={'id':item['id'],'source_sha256':actual_hash,'groups':[]}
-        with torch.inference_mode(),torch.autocast('cuda',dtype=torch.float16):
+        precision = torch.autocast('cuda',dtype=torch.bfloat16 if args.backend=='sam3' else torch.float16)
+        with torch.inference_mode(),precision:
             if args.backend=='depth':
                 # Never feed different specimens as a multi-view reconstruction.
                 pred=model.inference([str(dest/'input.png')])
@@ -87,7 +90,7 @@ def main():
                         state=engine.set_image(im)
                         result=engine.set_text_prompt(state=state,prompt=prompt)
                         masks=result['masks'].detach().cpu().numpy().reshape(-1,size[1],size[0])>.5
-                        scores=result['scores'].detach().cpu().numpy().reshape(-1)
+                        scores=result['scores'].detach().float().cpu().numpy().reshape(-1)
                         metadata=[{'score':float(x)} for x in scores]
                         del state,result
                     np.savez_compressed(dest/f'masks-{group_i}.npz',masks=masks)
@@ -107,6 +110,7 @@ def main():
         reports.append(record)
         print(item['id'],args.backend,'complete',round(record['seconds'],2),flush=True)
     report={'backend':args.backend,'model':model_id,'torch':torch.__version__,
+        'precision':'bfloat16 autocast' if args.backend=='sam3' else 'float16 autocast',
         'gpu':torch.cuda.get_device_name(),'status':'predictions awaiting manual audit',
         'input_manifest':config,'sam_preset':args.sam_preset,'sam_configuration':sam_config if args.backend=='sam2' else None,'results':reports}
     (args.out/'report.json').write_text(json.dumps(report,indent=2))

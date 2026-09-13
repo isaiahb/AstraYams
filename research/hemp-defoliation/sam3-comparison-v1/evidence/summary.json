@@ -1,0 +1,154 @@
+{
+  "model": "facebook/sam3",
+  "precision": "bfloat16 autocast",
+  "image_results": [
+    {
+      "image": "reference",
+      "groups": [
+        {
+          "prompt": "leaf",
+          "proposals": 0,
+          "union_fraction": 0.0
+        },
+        {
+          "prompt": "leaflet",
+          "proposals": 0,
+          "union_fraction": 0.0
+        },
+        {
+          "prompt": "plant stem",
+          "proposals": 1,
+          "union_fraction": 0.005556737840202407
+        },
+        {
+          "prompt": "flower cluster",
+          "proposals": 0,
+          "union_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "image": "broad-render",
+      "groups": [
+        {
+          "prompt": "leaf",
+          "proposals": 29,
+          "union_fraction": 0.10006266108628313
+        },
+        {
+          "prompt": "leaflet",
+          "proposals": 0,
+          "union_fraction": 0.0
+        },
+        {
+          "prompt": "plant stem",
+          "proposals": 0,
+          "union_fraction": 0.0
+        },
+        {
+          "prompt": "flower cluster",
+          "proposals": 0,
+          "union_fraction": 0.0
+        }
+      ],
+      "audit": {
+        "leaf": {
+          "sam2_default": {
+            "visible_organs_ge16px": 134,
+            "organs_with_any_mask_iou_ge05": 25,
+            "median_best_iou": 0.0
+          },
+          "sam2_recall": {
+            "visible_organs_ge16px": 134,
+            "organs_with_any_mask_iou_ge05": 62,
+            "median_best_iou": 0.42237986010817546
+          },
+          "sam3_text": {
+            "visible_organs_ge16px": 134,
+            "organs_with_any_mask_iou_ge05": 27,
+            "median_best_iou": 0.0
+          }
+        },
+        "leaflet": {
+          "sam2_default": {
+            "visible_organs_ge16px": 441,
+            "organs_with_any_mask_iou_ge05": 0,
+            "median_best_iou": 0.0
+          },
+          "sam2_recall": {
+            "visible_organs_ge16px": 441,
+            "organs_with_any_mask_iou_ge05": 18,
+            "median_best_iou": 0.11472868217054263
+          },
+          "sam3_text": {
+            "visible_organs_ge16px": 441,
+            "organs_with_any_mask_iou_ge05": 0,
+            "median_best_iou": 0.0
+          }
+        }
+      }
+    },
+    {
+      "image": "narrow-render",
+      "groups": [
+        {
+          "prompt": "leaf",
+          "proposals": 13,
+          "union_fraction": 0.042112979120853135
+        },
+        {
+          "prompt": "leaflet",
+          "proposals": 0,
+          "union_fraction": 0.0
+        },
+        {
+          "prompt": "plant stem",
+          "proposals": 0,
+          "union_fraction": 0.0
+        },
+        {
+          "prompt": "flower cluster",
+          "proposals": 0,
+          "union_fraction": 0.0
+        }
+      ],
+      "audit": {
+        "leaf": {
+          "sam2_default": {
+            "visible_organs_ge16px": 139,
+            "organs_with_any_mask_iou_ge05": 1,
+            "median_best_iou": 0.0
+          },
+          "sam2_recall": {
+            "visible_organs_ge16px": 139,
+            "organs_with_any_mask_iou_ge05": 34,
+            "median_best_iou": 0.1875
+          },
+          "sam3_text": {
+            "visible_organs_ge16px": 139,
+            "organs_with_any_mask_iou_ge05": 10,
+            "median_best_iou": 0.0
+          }
+        },
+        "leaflet": {
+          "sam2_default": {
+            "visible_organs_ge16px": 402,
+            "organs_with_any_mask_iou_ge05": 0,
+            "median_best_iou": 0.0
+          },
+          "sam2_recall": {
+            "visible_organs_ge16px": 402,
+            "organs_with_any_mask_iou_ge05": 19,
+            "median_best_iou": 0.07251937984496123
+          },
+          "sam3_text": {
+            "visible_organs_ge16px": 402,
+            "organs_with_any_mask_iou_ge05": 0,
+            "median_best_iou": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "notice": "Best-overlap synthetic coverage only; not real-photo accuracy or one-to-one AP. SAM2 and SAM3 prompt interfaces differ."
+}

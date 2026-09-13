@@ -123,3 +123,22 @@ prefer genuinely higher-resolution originals to upsampling. Any prompted
 inference or new rendering/raycast batch must run on one isolated RunPod worker,
 with deadline and verified shutdown. Do not automatically optimize the plant
 against unreviewed masks or start duplicate workers. No new fitting accepted.
+
+## SAM3 comparison COMPLETE — 2026-09-13
+
+User requests the strongest current model. Cached Hugging Face authentication
+was found and official SAM3 access verified: earlier access-blocked conclusion
+was incomplete. Task worker astra-sam3-comparison-20260913 was verified stopped after retrieval.
+SAM3 same-image text, example boxes, native crops and alternate concept prompts
+were executed remotely; results retained with synthetic coverage audits.
+SAM3.1 is a video multiplexing release; image factory still uses SAM3 weights.
+
+Actual review: /runs/hemp-sam3-comparison-v1/index.html. SAM3 is integrated but
+not validated as the best segmenter for this domain. Plain 0.5 leaf prompt found
+no reference masks. A 0.1 diagnostic found 119 regions but some swallow canopy
+and background gaps. Text+example found two masks; native crops 1/0/1. Do not
+promote these numbers to a true organ census. The immediate next step remains
+reviewed boundaries and better-resolution original sources; keep automated
+fit decisions paused until the observation model is validated. Do not revert to
+SAM2 solely because it is easier to run. Document which model/prompt/threshold
+is used and why. No new terms or mirror downloads were needed for SAM3.

@@ -93,7 +93,9 @@ checkpoint hashes and dependency versions before treating the run as reproducibl
 Remote dependency installation and both SAM2/DA3 inference are tested.
 `run_remote.sh` captures the working pinned installation, including an isolated-pod
 blinker dependency repair. Checkpoint hashes and dependency versions are in
-`evidence/`. SAM3 was not run: no existing gated checkpoint access was available.
+`evidence/`. SAM3 was not run in this first pilot. Correction from the next pass: an
+existing Hugging Face cached credential was overlooked; official checkpoint
+access is available. See `../sam3-comparison-v1/README.md` for the actual SAM3 run.
 
 ## Primary sources
 
