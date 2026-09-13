@@ -1,5 +1,13 @@
 # Photo-constrained plant iteration
 
+## Resource constraint — latest user direction
+
+Never run SAM, Depth Anything, ML inference/training or heavy batches on the
+user's Mac. They are actively working there. Use RunPod for model computation;
+local work is lightweight source editing and finished-artifact inspection only.
+See `../remote-perception-v1/README.md` for the prepared, unexecuted pilot.
+Do not resume the earlier local parameter fitting/render batch automatically.
+
 ## Pass complete; next pass ready — 2026-09-13
 
 Initial reconstruction and visual/geometry checks are complete. The recurring

@@ -1,0 +1,35 @@
+{
+  "status": "prepared_not_executed",
+  "comparison_size": [
+    381,
+    444
+  ],
+  "prompts": [
+    "leaf",
+    "leaflet",
+    "plant stem",
+    "flower cluster"
+  ],
+  "images": [
+    {
+      "id": "reference",
+      "file": "inputs/reference.jpg",
+      "local_source": "/Users/isaiah/Documents/BallahTech/AstraFactory/research/hemp-defoliation/nominal-cultivars-v1/evidence/cherry-wine-50ppm.jpg",
+      "sha256": "15c19864bc0bd84de52a9d9e910353c665b14ccd4433450f81fc1b96e1e19dcc"
+    },
+    {
+      "id": "broad-render",
+      "file": "inputs/broad-render.png",
+      "local_source": "/Users/isaiah/Documents/BallahTech/AstraFactory/runs/hemp-photo-fit-v1/fitted-front.png",
+      "sha256": "58f3741c2cb1ee136689a5bb7e7c1bb313957920d1c849d386d307293d7dbd35"
+    },
+    {
+      "id": "narrow-render",
+      "file": "inputs/narrow-render.png",
+      "local_source": "/Users/isaiah/Documents/BallahTech/AstraFactory/runs/hemp-photo-fit-v1/shape-constrained-front.png",
+      "sha256": "0413ea1929aa3e3c3ac53abd38ee6d04cdc2c2db3dfe910c67559297b5de3a02"
+    }
+  ],
+  "source_license": "Anderson2021 CC BY; derived geometry from project",
+  "same_specimen_multiview": false
+}
