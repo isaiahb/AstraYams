@@ -1,0 +1,342 @@
+{
+  "source": "Crispim Massuela et al. 2022, Figure 1b, control C, 65 DAP",
+  "doi": "10.3390/plants11010140",
+  "license": "CC BY 4.0",
+  "input_image": "../height-evidence-v1/figures/dated-architecture.png",
+  "crop_pixels": [
+    596,
+    0,
+    864,
+    434
+  ],
+  "annotation_image_size": [
+    536,
+    868
+  ],
+  "annotation_method": "Manually selected approximate centerlines from the displayed photo crop; branch attachments partly occluded",
+  "scale": {
+    "root_pixel": [
+      330,
+      827
+    ],
+    "apex_pixel": [
+      395,
+      75
+    ],
+    "working_axis_height_m": 0.8,
+    "status": "Estimated working scale only. The photo includes an 80 cm ruler but its zero and perspective are unresolved. No precise metric reconstruction claimed."
+  },
+  "depth": "Not recovered from this single image; branches receive labeled hypothesis depths",
+  "axes": [
+    {
+      "id": "main",
+      "parent": null,
+      "node": 0,
+      "confidence": "visible axis, some occlusion",
+      "xy": [
+        [
+          330,
+          827
+        ],
+        [
+          329,
+          773
+        ],
+        [
+          330,
+          725
+        ],
+        [
+          332,
+          678
+        ],
+        [
+          334,
+          630
+        ],
+        [
+          336,
+          590
+        ],
+        [
+          341,
+          538
+        ],
+        [
+          348,
+          476
+        ],
+        [
+          351,
+          436
+        ],
+        [
+          355,
+          390
+        ],
+        [
+          362,
+          367
+        ],
+        [
+          367,
+          326
+        ],
+        [
+          373,
+          277
+        ],
+        [
+          373,
+          246
+        ],
+        [
+          382,
+          193
+        ],
+        [
+          378,
+          155
+        ],
+        [
+          386,
+          116
+        ],
+        [
+          395,
+          75
+        ]
+      ],
+      "depth": 0
+    },
+    {
+      "id": "lower-right",
+      "parent": "main",
+      "node": 1,
+      "confidence": "partially visible; basal connection inferred",
+      "xy": [
+        [
+          329,
+          773
+        ],
+        [
+          373,
+          744
+        ],
+        [
+          416,
+          700
+        ],
+        [
+          451,
+          665
+        ],
+        [
+          480,
+          619
+        ],
+        [
+          497,
+          583
+        ]
+      ],
+      "depth": -0.025
+    },
+    {
+      "id": "lower-left",
+      "parent": "main",
+      "node": 3,
+      "confidence": "partially visible; attachment inferred",
+      "xy": [
+        [
+          332,
+          678
+        ],
+        [
+          290,
+          645
+        ],
+        [
+          260,
+          614
+        ],
+        [
+          237,
+          581
+        ],
+        [
+          228,
+          548
+        ]
+      ],
+      "depth": 0.025
+    },
+    {
+      "id": "mid-right",
+      "parent": "main",
+      "node": 5,
+      "confidence": "partially visible",
+      "xy": [
+        [
+          336,
+          590
+        ],
+        [
+          362,
+          553
+        ],
+        [
+          383,
+          507
+        ],
+        [
+          398,
+          462
+        ],
+        [
+          412,
+          408
+        ]
+      ],
+      "depth": 0.055
+    },
+    {
+      "id": "mid-left",
+      "parent": "main",
+      "node": 6,
+      "confidence": "partially visible; connection inferred",
+      "xy": [
+        [
+          341,
+          538
+        ],
+        [
+          328,
+          495
+        ],
+        [
+          316,
+          465
+        ],
+        [
+          307,
+          441
+        ]
+      ],
+      "depth": -0.055
+    },
+    {
+      "id": "upper-left",
+      "parent": "main",
+      "node": 8,
+      "confidence": "partially visible",
+      "xy": [
+        [
+          351,
+          436
+        ],
+        [
+          335,
+          393
+        ],
+        [
+          333,
+          346
+        ],
+        [
+          342,
+          294
+        ]
+      ],
+      "depth": 0.018
+    },
+    {
+      "id": "upper-right",
+      "parent": "main",
+      "node": 10,
+      "confidence": "partially visible",
+      "xy": [
+        [
+          362,
+          367
+        ],
+        [
+          384,
+          354
+        ],
+        [
+          401,
+          346
+        ],
+        [
+          416,
+          338
+        ]
+      ],
+      "depth": -0.02
+    },
+    {
+      "id": "inner-low",
+      "parent": "main",
+      "node": 2,
+      "confidence": "hypothesis in occluded canopy",
+      "xy": [
+        [
+          330,
+          725
+        ],
+        [
+          315,
+          689
+        ],
+        [
+          305,
+          646
+        ],
+        [
+          297,
+          604
+        ]
+      ],
+      "depth": 0.1
+    },
+    {
+      "id": "inner-mid",
+      "parent": "main",
+      "node": 4,
+      "confidence": "hypothesis in occluded canopy",
+      "xy": [
+        [
+          334,
+          630
+        ],
+        [
+          352,
+          598
+        ],
+        [
+          377,
+          565
+        ],
+        [
+          390,
+          530
+        ]
+      ],
+      "depth": -0.08
+    }
+  ],
+  "rejected_envelope_trial": {
+    "status": "Rejected continuous-envelope trial; not active in viewer",
+    "main_start_node": 12,
+    "main_radius_pixels": [
+      7,
+      10,
+      15,
+      20,
+      15,
+      1
+    ],
+    "note": "Working pixel scale converts these radii; root/apex calibration and depth remain unresolved."
+  }
+}

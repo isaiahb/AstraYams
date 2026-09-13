@@ -1,0 +1,33 @@
+{
+  "id": "hemp-development-v2",
+  "seeds": [
+    17,
+    53,
+    89
+  ],
+  "development_steps": 100,
+  "snapshot_stride": 2,
+  "time_unit": "dimensionless developmental step; not a calendar day",
+  "architecture": {
+    "main_apex_history": "Retained dominant main axis; approximate photo centerlines at index 100",
+    "leaf_area_mass_kg_m2": 0.14,
+    "fresh_stem_density_kg_m3": 850,
+    "illustrative_stem_E_Pa": 80000000,
+    "leaf_expansion_steps": 16,
+    "internode_expansion_steps": 18,
+    "source": "reference.json centerlines; per-organ leaf priors in build.py"
+  },
+  "event": {
+    "at_step": 82,
+    "type": "recorded_leaf_removal",
+    "selection": "Fixed leaf IDs only for continuity comparison; not a horticultural recommendation",
+    "status": "Constructed comparison event; not measured grower history or a cutting simulation"
+  },
+  "status": {
+    "geometry": "Approximate single-view photo centerlines with explicitly assumed depth, tissue properties and developmental timing",
+    "mechanics": "Per-organ mass and beam rigidity exported with assumed material values. Whole-plant contact is not solved.",
+    "growth": "Organ birth and age-dependent expansion; no carbon, water, hormone or light-response solver",
+    "variation": "A is photo-constrained; B/C are uncertainty variants of depth and organ pose, not a calibrated cultivar population",
+    "flowers": "Simplified external envelopes, not calibrated inflorescence development"
+  }
+}

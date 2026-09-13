@@ -1,0 +1,36 @@
+{
+  "review_date": "2026-09-12",
+  "new_research": [{
+    "title": "Morphometric relationships and their contribution to biomass and cannabinoid yield in hybrids of hemp (Cannabis sativa)",
+    "authors": "Carlson et al.", "year": 2021,
+    "doi": "10.1093/jxb/erab346",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8643699/",
+    "applied": "Explicit architecture descriptors: height, branch span, trunk length and internode spacing. Plant history and foliar traits recorded separately.",
+    "not_applied": "Field cultivar heights, branch-angle distributions or biomass correlations as indoor calibration"
+  }],
+  "geometry_reference": {
+    "doi": "10.3390/plants11010140",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8747189/",
+    "figure": "1b, control C at 65 DAP",
+    "license": "CC BY 4.0",
+    "annotation_file": "reference.json",
+    "applied": "Approximate projected stem centerlines; hidden connections labeled",
+    "scale_measured": false, "depth_recovered": false,
+    "different_source_growth_curves_spliced_into_timeline": false
+  },
+  "leaf_reference": {
+    "doi": "10.1111/nph.19817",
+    "url": "https://nph.onlinelibrary.wiley.com/doi/10.1111/nph.19817",
+    "data_provenance": "../reference-data/provenance.json",
+    "applied": "Existing Futura75 2D outlines",
+    "assumed": ["physical size", "petiole length", "3D plane", "curvature", "rank-dependent leaflet count", "width variation", "asymmetry"]
+  },
+  "validation_status": {
+    "stable_organ_identity": true,
+    "independent_shape_validation": false,
+    "calendar_growth_calibrated": false,
+    "material_properties_measured": false,
+    "whole_plant_contact": false,
+    "commercial_partner_crop_match": false
+  }
+}

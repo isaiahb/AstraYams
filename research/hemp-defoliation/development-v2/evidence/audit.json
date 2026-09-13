@@ -1,0 +1,58 @@
+{
+  "status": "structural and bookkeeping checks only",
+  "specimens": [
+    {
+      "projected_trace_roundtrip_error_m": 9.621633238906982e-08,
+      "fit_is_independent_validation": false,
+      "seed": 17,
+      "axes": 9,
+      "leaf_organs": 45,
+      "max_attachment_error_m": 0.0,
+      "parent_birth_order_valid": true,
+      "unborn_internodes_have_zero_length": true,
+      "retained_scaffold_identical_across_event": true,
+      "removed_leaf_count": 25,
+      "removed_leaf_mass_kg": 0.014691831251654804,
+      "biological_growth_validated": false,
+      "material_values_measured": false,
+      "whole_plant_equilibrium_solved": false
+    },
+    {
+      "projected_trace_roundtrip_error_m": 9.621633238906982e-08,
+      "fit_is_independent_validation": false,
+      "seed": 53,
+      "axes": 9,
+      "leaf_organs": 45,
+      "max_attachment_error_m": 0.0,
+      "parent_birth_order_valid": true,
+      "unborn_internodes_have_zero_length": true,
+      "retained_scaffold_identical_across_event": true,
+      "removed_leaf_count": 25,
+      "removed_leaf_mass_kg": 0.015683183577033147,
+      "biological_growth_validated": false,
+      "material_values_measured": false,
+      "whole_plant_equilibrium_solved": false
+    },
+    {
+      "projected_trace_roundtrip_error_m": 9.621633238906982e-08,
+      "fit_is_independent_validation": false,
+      "seed": 89,
+      "axes": 9,
+      "leaf_organs": 45,
+      "max_attachment_error_m": 0.0,
+      "parent_birth_order_valid": true,
+      "unborn_internodes_have_zero_length": true,
+      "retained_scaffold_identical_across_event": true,
+      "removed_leaf_count": 25,
+      "removed_leaf_mass_kg": 0.015105320457009406,
+      "biological_growth_validated": false,
+      "material_values_measured": false,
+      "whole_plant_equilibrium_solved": false
+    }
+  ],
+  "config_sha256": "cfbb7660d76942fd04432a4ec12f9fb61e204402857f3a2a9d0da6af5b355cb6",
+  "source_sha256": "ec75978a25b8118807dedcb95cca8569d008ede98d9d5bb7305033d85f16ad01",
+  "reference_sha256": "0407d8893fb8f41197210537c89d3b8b88bf955fca9ba21f17e465472f33b50d",
+  "viewer_sha256": "3019693f177a8bc2f2b3ce1efb88c84f454fb58473c165a2f56ef0ab1b3e2cb0",
+  "data_bytes": 2100740
+}

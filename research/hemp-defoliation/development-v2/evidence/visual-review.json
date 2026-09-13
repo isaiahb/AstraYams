@@ -1,0 +1,75 @@
+{
+  "renders": [
+    {
+      "file": "front.png",
+      "source_export": "hemp-development-v2-v2-A-100-intact-front (1).png",
+      "sha256": "2eb48b9bf77992b590bec657052e2549d55f015e53e5f92763992253ab58f9c3",
+      "origin": "Actual WebGL viewer Save view export"
+    },
+    {
+      "file": "side.png",
+      "source_export": "hemp-development-v2-v2-A-100-intact-side (1).png",
+      "sha256": "595559fb12c00c4855e47ae0d2cb84e2327d5c3786ce65f1645d68882733365c",
+      "origin": "Actual WebGL viewer Save view export"
+    },
+    {
+      "file": "oblique.png",
+      "source_export": "hemp-development-v2-v2-A-100-intact-three (1).png",
+      "sha256": "a8243c4396b9dfeced618dc5e8f36ce22d56108bbe64faa38f39fd8dabddf90c",
+      "origin": "Actual WebGL viewer Save view export"
+    },
+    {
+      "file": "early.png",
+      "source_export": "hemp-development-v2-v2-A-30-intact-front (1).png",
+      "sha256": "d3eaf627ed5538da9c557a05f8ef0ea1e23fcfd8c39c156a3d2eb43ade9cc2a5",
+      "origin": "Actual WebGL viewer Save view export"
+    },
+    {
+      "file": "previous-scaffold.png",
+      "source_export": "hemp-development-v2-v1-A-100-intact-front.png",
+      "sha256": "766cb8827550955570d5abaff1e7418d13c988812817e84e869eeb2466b83699",
+      "origin": "Actual WebGL viewer Save view export"
+    }
+  ],
+  "comparison": {
+    "alignment": "Uniform resampling and translation under the orthographic working camera. Root/apex normalization only; not calibrated photogrammetry.",
+    "affine_output_to_input": [
+      0.6515957446808511,
+      0,
+      389.0359042553191,
+      0,
+      0.6515957446808511,
+      36.880319148936124
+    ]
+  },
+  "browser_checks": [
+    "front",
+    "side",
+    "oblique",
+    "early",
+    "previous scaffold selector",
+    "depth alternative B",
+    "development replay reached index100 and stopped",
+    "scaffold-only attachment inspection",
+    "Reloaded restored final viewer after rejecting the continuous floral envelope; screenshot confirms cluster placeholders and no continuous cone."
+  ],
+  "remaining_mismatches": [
+    "Unobserved branch depth",
+    "Approximate lower connections",
+    "Unfitted petiole/blade positions",
+    "Insufficient reproductive geometry",
+    "No mechanics or contact validation"
+  ],
+  "final_comparison_assessment": "Main-axis and branch proportions closer to target; flower clusters too sparse and leaf placements still unfitted. Not a validation pass.",
+  "rejected_trials": [
+    {
+      "file": "first-pass-drooped-front.png",
+      "reason": "Excessively uniform downward leaf inclination."
+    },
+    {
+      "file": "rejected-continuous-flower.png",
+      "source": "rejected-floral-envelope.js",
+      "reason": "Continuous envelope produced a solid cone rather than the observed irregular clusters."
+    }
+  ]
+}
