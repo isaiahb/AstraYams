@@ -1,0 +1,53 @@
+{
+  "reviewed_on": "2026-09-12",
+  "exports": [
+    {
+      "file": "early.png",
+      "source_export": "hemp-development-A-30-intact-front.png",
+      "sha256": "f3bbb0b6cf5171b91dd52c0ddade342485945650c3e0872a82627fb6500451f1",
+      "type": "actual WebGL canvas export via viewer Save view"
+    },
+    {
+      "file": "later.png",
+      "source_export": "hemp-development-A-100-intact-front (2).png",
+      "sha256": "609983210e861650954ac7e807dd1920448b20c7268dc2cca0a517e94d459c38",
+      "type": "actual WebGL canvas export via viewer Save view"
+    },
+    {
+      "file": "event.png",
+      "source_export": "hemp-development-A-100-event-front (1).png",
+      "sha256": "4f3d28cf7272f0ce538addf2ef829a9f9a1fc9db399a15f58c38eb244ccf6282",
+      "type": "actual WebGL canvas export via viewer Save view"
+    },
+    {
+      "file": "variation-b.png",
+      "source_export": "hemp-development-B-100-intact-front.png",
+      "sha256": "e95e25b49c59040877509bd9ecc5122909e726b742a2b6ffb40a28a5d6a844e1",
+      "type": "actual WebGL canvas export via viewer Save view"
+    },
+    {
+      "file": "variation-c-side.png",
+      "source_export": "hemp-development-C-100-intact-side.png",
+      "sha256": "f1ae7082d8544b85467c828b3b18c15284a4cf230d7b1e17b654616e36f6111f",
+      "type": "actual WebGL canvas export via viewer Save view"
+    }
+  ],
+  "comparison": "Unaltered canvas renders resized and arranged with labels; same camera preset. Steps are not calendar days.",
+  "browser_checks": [
+    "early30/later100",
+    "three specimen selectors",
+    "front/side/branch-bases views",
+    "recorded event on/off",
+    "growth playback completed at100",
+    "save-view PNG export",
+    "beam positive load at1s and released at4s",
+    "no browser console errors in inspected tabs"
+  ],
+  "remaining_mismatches": [
+    "branch curves too regular",
+    "repeated leaflet templates",
+    "junction geometry simplified",
+    "flower envelopes uncalibrated",
+    "no contact or whole-plant elastic equilibrium"
+  ]
+}

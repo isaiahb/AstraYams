@@ -1,0 +1,35 @@
+{
+  "id": "hemp-development-v1",
+  "seeds": [17, 53, 89],
+  "development_steps": 100,
+  "snapshot_stride": 2,
+  "time_unit": "dimensionless developmental step; not a calendar day",
+  "architecture": {
+    "main_nodes": 5,
+    "main_internode_m": 0.037,
+    "main_apex_history": "Prior apex arrest represented as an assumed starting architecture, not predicted from a hormone model",
+    "primary_shoot_count": 8,
+    "primary_nodes_range": [9, 12],
+    "primary_internode_m": 0.063,
+    "secondary_node_count": 4,
+    "leaf_length_m": 0.155,
+    "leaf_area_mass_kg_m2": 0.14,
+    "fresh_stem_density_kg_m3": 850,
+    "illustrative_stem_E_Pa": 80000000,
+    "leaf_expansion_steps": 16,
+    "internode_expansion_steps": 18
+  },
+  "event": {
+    "at_step": 82,
+    "type": "recorded_leaf_removal",
+    "selection": "Fixed organ IDs selected below an assumed 0.38 m boundary at the pre-event snapshot",
+    "status": "Constructed comparison event; not measured grower history or a cutting simulation"
+  },
+  "status": {
+    "geometry": "Developmental architecture hypothesis informed by reference photographs; not fitted to a longitudinal specimen",
+    "mechanics": "Per-organ mass and beam rigidity exported with assumed material values. Whole-plant contact is not solved.",
+    "growth": "Organ birth and age-dependent expansion; no carbon, water, hormone or light-response solver",
+    "variation": "Coupled specimen vigor and local variation; not a measured population distribution",
+    "flowers": "Simplified external envelopes, not calibrated inflorescence development"
+  }
+}

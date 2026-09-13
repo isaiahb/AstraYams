@@ -1,0 +1,50 @@
+{
+  "status": "structural and bookkeeping checks only",
+  "specimens": [
+    {
+      "seed": 17,
+      "axes": 30,
+      "leaf_organs": 172,
+      "max_attachment_error_m": 0.0,
+      "parent_birth_order_valid": true,
+      "unborn_internodes_have_zero_length": true,
+      "retained_scaffold_identical_across_event": true,
+      "removed_leaf_count": 78,
+      "removed_leaf_mass_kg": 0.0866145765204369,
+      "biological_growth_validated": false,
+      "material_values_measured": false,
+      "whole_plant_equilibrium_solved": false
+    },
+    {
+      "seed": 53,
+      "axes": 25,
+      "leaf_organs": 153,
+      "max_attachment_error_m": 0.0,
+      "parent_birth_order_valid": true,
+      "unborn_internodes_have_zero_length": true,
+      "retained_scaffold_identical_across_event": true,
+      "removed_leaf_count": 88,
+      "removed_leaf_mass_kg": 0.07367889000315424,
+      "biological_growth_validated": false,
+      "material_values_measured": false,
+      "whole_plant_equilibrium_solved": false
+    },
+    {
+      "seed": 89,
+      "axes": 25,
+      "leaf_organs": 151,
+      "max_attachment_error_m": 0.0,
+      "parent_birth_order_valid": true,
+      "unborn_internodes_have_zero_length": true,
+      "retained_scaffold_identical_across_event": true,
+      "removed_leaf_count": 87,
+      "removed_leaf_mass_kg": 0.0771921007194672,
+      "biological_growth_validated": false,
+      "material_values_measured": false,
+      "whole_plant_equilibrium_solved": false
+    }
+  ],
+  "config_sha256": "2fdeb8e14e3009b4a9a289b5d05ce2820a3df116e68d64f34027f9c7e2094c2a",
+  "source_sha256": "64c6762432585ed20893fdfef1e3810ea8bdaebf022e43f1dcaa0cadbb9edb1e",
+  "data_bytes": 6872352
+}

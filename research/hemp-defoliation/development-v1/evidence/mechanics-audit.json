@@ -1,0 +1,34 @@
+{
+  "status": "analytical and numerical verification only; uncalibrated plant material",
+  "coupon": {
+    "length_m": 0.16,
+    "radius_m": 0.0026,
+    "E_Pa": 80000000.0,
+    "density_kg_m3": 850.0,
+    "EI_Nm2": 0.0028712648889336985,
+    "boundary": "root clamped, incremental tip force, no gravity or tool contact",
+    "rest_curve": "15 mm x/L squared; assumed shallow persistent shape, not fitted growth"
+  },
+  "fine_checks": {
+    "static_tip_error_relative": 2.8090094348608454e-11,
+    "energy_balance_relative": 3.4185452608029794e-10,
+    "dissipated_energy_J": 3.2384459204361374e-08,
+    "final_elastic_tip_m": -7.302186617207499e-08,
+    "max_elastic_tip_m": 0.0014339414676173418,
+    "analytical_static_tip_m": 0.0014265489804812584,
+    "final_energy_J": 7.491139371405488e-15
+  },
+  "max_refinement_tip_difference_m": 1.3553808995007812e-07,
+  "persistent_rest_curve_preserved_by_construction": true,
+  "biologically_validated": false,
+  "whole_plant_test": false,
+  "base_checks": {
+    "static_tip_error_relative": 7.34024889796104e-13,
+    "energy_balance_relative": 5.201701350504329e-12,
+    "dissipated_energy_J": 3.238567993611731e-08,
+    "final_elastic_tip_m": -7.075254011351741e-08,
+    "max_elastic_tip_m": 0.0014339543587290713,
+    "analytical_static_tip_m": 0.0014265489804812584,
+    "final_energy_J": 7.674559363300823e-15
+  }
+}

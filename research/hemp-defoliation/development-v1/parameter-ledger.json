@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "status": "hypothesis with explicit calibration gaps",
+  "parameters": [
+    {"group": "leaflet outline", "basis": "Published Futura 75 2D coordinate measurements", "measured": true, "limits": "Physical scale, 3D curvature, plant age and mechanical properties not established"},
+    {"group": "branch topology", "basis": "Candidate architecture informed by indoor photograph differences", "measured": false, "fit_targets": ["parent-node graph", "node positions in calibrated views", "branch-order distribution", "visible apex history"]},
+    {"group": "growth and emergence", "basis": "Smoothstep expansion, assumed emergence intervals, coupled vigor", "measured": false, "fit_targets": ["same-organ dimensions versus timestamp", "visible organ emergence", "held-out later silhouettes"]},
+    {"group": "plant scale", "basis": "Assumed metric dimensions", "measured": false, "fit_targets": ["known ruler or pot dimensions", "camera calibration"]},
+    {"group": "stem mass", "basis": "Tapered frustum volume times assumed 850 kg/m3 density", "measured": false, "fit_targets": ["fresh organ mass", "diameter and taper"]},
+    {"group": "leaf mass", "basis": "Planar outline area times assumed 0.14 kg/m2", "measured": false, "limits": "Not a tissue thickness model; surface crease area correction omitted", "fit_targets": ["fresh area-specific mass"]},
+    {"group": "stiffness and damping", "basis": "Illustrative E prior and separate Rayleigh beam diagnostic", "measured": false, "fit_targets": ["force-deflection", "load-hold-release time series", "repeatability by age and hydration"]},
+    {"group": "rest curvature and growth memory", "basis": "Prescribed intrinsic geometry", "measured": false, "limits": "Persistence is implemented by construction, not inferred", "fit_targets": ["unloaded geometry before/after load", "persistent versus recoverable displacement"]},
+    {"group": "history event", "basis": "Fixed ID membership change at development index 82", "measured": false, "limits": "No physical cutting, unloading equilibrium, wound response or production recommendation"},
+    {"group": "flowers and roots", "basis": "Optional flower envelope and fixed substrate boundary", "measured": false, "limits": "No floral growth/mass or root anatomy simulation"}
+  ]
+}

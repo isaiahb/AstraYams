@@ -1,0 +1,12 @@
+{
+  "purpose": "Record calibration evidence without silently filling hidden anatomy with certainty",
+  "required_per_capture": ["specimen_id", "timestamp", "development_stage_if_known", "camera_id", "image_source", "license_or_permission", "scale_reference", "view_direction", "known_intervention_history"],
+  "organ_measurement_fields": ["organ_id", "parent_organ_id", "parent_node_id", "visibility", "birth_interval_if_observed", "length_m", "basal_diameter_m", "tip_diameter_m", "attachment_position_m", "attachment_angle_rad", "outline_landmarks", "measurement_uncertainty", "observer", "source_frame"],
+  "allowed_visibility": ["visible", "partly_occluded", "unobserved"],
+  "missing_values": "Use null, never invented zero measurements. Hidden parent connections remain hypotheses.",
+  "mechanical_measurement_fields": ["specimen_id", "organ_id", "hydration_context", "loading_point", "force_N", "time_s", "displacement_m", "unloaded_rest_geometry", "temperature_if_known", "sensor_calibration", "repeat_id"],
+  "proposed_partition": "Split by specimen, reserve later timestamps; neighboring frames must not leak into an independent test set.",
+  "comparison_metrics": ["matched-view landmark error with uncertainty", "silhouette overlap", "internode-length error", "visible leaf-count error", "branch-topology mismatches", "force-displacement error", "recovery-time error", "residual deformation error"],
+  "current_observations": [],
+  "calibrated": false
+}
