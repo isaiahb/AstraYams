@@ -1,0 +1,77 @@
+{
+  "summary": "A useful three-target result: cropped SAM3 masks with 2, 2 and 3 prompt points isolate plausible visible blades. Cropping and correcting the target helped; 4x enlargement showed no clear visual boundary advantage. Dense foliage is still unresolved. These are provisional labels, not validated ground truth.",
+  "decisions": [
+    {
+      "target": "exposed",
+      "round": 0,
+      "observation": "Full image merges multiple fan blades; crop candidate 0 isolates the intended leftward leaflet. Upscaling changes confidence much more than visible shape. Whole-image 2x does not fix fan merging."
+    },
+    {
+      "target": "overlap",
+      "round": 0,
+      "observation": "Candidate 0 isolates a plausible short blade beside the main stem; candidate 2 includes the stem and candidate 1 floods the scene. Crop 1x and 4x have similar visible outlines."
+    },
+    {
+      "target": "dense",
+      "round": 0,
+      "observation": "Rejected. The tentative point was misplaced on a cluster edge. No returned candidate establishes one leaf. Correct the point using the coordinate grid, rather than calling this successful segmentation."
+    },
+    {
+      "target": "exposed",
+      "round": 1,
+      "condition": "full-1x",
+      "observation": "Rejected as a single leaflet: adding one negative point still leaves multiple fan blades in candidate 0. Confidence increased without fixing the identity error."
+    },
+    {
+      "target": "exposed",
+      "round": 1,
+      "condition": "crop-1x",
+      "observation": "Candidate 0 provisionally retained: the intended leftward blade is separated from neighboring fan blades. Two prompt points. The initial crop already isolated it; the negative point was not necessary to create the initial separation. Fine edge and junction pixels remain uncertain."
+    },
+    {
+      "target": "exposed",
+      "round": 1,
+      "condition": "crop-4x",
+      "observation": "Candidate 0 is visually similar to native crop. Higher confidence does not prove a more accurate boundary."
+    },
+    {
+      "target": "overlap",
+      "round": 1,
+      "observation": "Crop candidate 0 provisionally retained. A negative point on the main stem makes candidate 2 local as well; candidate 0 was already plausible before correction. No demonstrated need for extra upscaling."
+    },
+    {
+      "target": "dense",
+      "round": 1,
+      "observation": "Crop candidate 0 provisionally retained as the visible diagonal blade. Replaced the misplaced positive point and added two negatives (cluster and neighboring blade). This changes prompt placement as well as exclusions; it is not proof that negatives alone recovered the target. The surrounding dense cluster remains unresolved."
+    }
+  ],
+  "selection": [
+    {
+      "target": "exposed",
+      "round": 1,
+      "condition": "crop-1x",
+      "candidate": 0,
+      "independent_validation": false
+    },
+    {
+      "target": "overlap",
+      "round": 1,
+      "condition": "crop-1x",
+      "candidate": 0,
+      "independent_validation": false
+    },
+    {
+      "target": "dense",
+      "round": 1,
+      "condition": "crop-1x",
+      "candidate": 0,
+      "independent_validation": false
+    }
+  ],
+  "effort": {
+    "final_points": 7,
+    "initial_point_actions": 3,
+    "correction_actions": 5,
+    "note": "Includes one relocated positive point plus four added negative points. Three target crops and visual candidate selection also required; not a matched-effort comparison against 84 hand polygons."
+  }
+}

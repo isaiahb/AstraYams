@@ -1,0 +1,106 @@
+{
+  "purpose": "Calibration experiment: Astra chooses points, SAM3 draws boundaries, Astra inspects and corrects. Not autonomous accuracy evaluation.",
+  "input_sha256": "2f338a5ce241e5844cb3bfaa517b611e9b1fc0b87270755a1dc4d9971c53fa7a",
+  "image_size": [
+    381,
+    444
+  ],
+  "source": "https://doi.org/10.1371/journal.pone.0252985.g001",
+  "license": "CC BY 4.0; derived image crop",
+  "round": 1,
+  "conditions": [
+    "full-1x",
+    "crop-1x",
+    "crop-4x"
+  ],
+  "targets": [
+    {
+      "id": "exposed",
+      "description": "Upper-left fan: one leftward leaflet",
+      "crop": [
+        59,
+        110,
+        139,
+        190
+      ],
+      "points": [
+        [
+          94,
+          146
+        ],
+        [
+          97,
+          156
+        ]
+      ],
+      "labels": [
+        1,
+        0
+      ],
+      "correction_reason": "Full-image candidates include neighboring down-left blade. Add negative inside that blade."
+    },
+    {
+      "id": "overlap",
+      "description": "Central short blade beside main stem",
+      "crop": [
+        135,
+        195,
+        215,
+        275
+      ],
+      "points": [
+        [
+          174,
+          227
+        ],
+        [
+          174,
+          241
+        ]
+      ],
+      "labels": [
+        1,
+        0
+      ],
+      "correction_reason": "Candidate 2 includes the main stem below the short blade. Add negative on that stem; retain plausible candidate 0 as control."
+    },
+    {
+      "id": "dense",
+      "description": "Down-right blade within dense lower-left foliage; tentative anchor",
+      "crop": [
+        111,
+        277,
+        191,
+        357
+      ],
+      "points": [
+        [
+          140,
+          303
+        ],
+        [
+          155,
+          313
+        ],
+        [
+          136,
+          315
+        ]
+      ],
+      "labels": [
+        1,
+        0,
+        0
+      ],
+      "correction_reason": "Original tentative anchor 149,311 landed on an ambiguous cluster edge, not securely inside intended diagonal blade. Replace positive using enlarged original coordinate grid; exclude cluster and neighboring drooping blade. This is an anchor correction, not recovery of the original cluster."
+    }
+  ],
+  "criteria": [
+    "Target visible surface retained",
+    "Neighboring blades and stems excluded",
+    "Tips and boundary alignment inspected against original pixels",
+    "No reward for number of fragments",
+    "All ambiguous candidates and failed corrections retained"
+  ],
+  "limits": "At most two corrective rounds after initial comparison. No more than four additional points per target. No true IoU or percentage-accuracy claim without independent reference labels. Enlarging uses bicubic interpolation, not generated detail."
+}
