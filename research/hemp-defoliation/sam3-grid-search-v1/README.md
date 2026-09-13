@@ -31,3 +31,7 @@ Primary dataset: Elisa Morales, Marcus Griffiths, Christopher Topp, *Images and 
 Acceptance requires visually checking missed pixels, leakage, false organ assignments, overlaps and crop boundaries. Near-100% foreground coverage does not establish near-100% correctly segmented organs. No cultivation, pruning, robotic control or biological-damage conclusions follow from this experiment.
 
 After the coarse sweep, refine the original reference at grids 7, 8, 9, 11, 12 and 15 in a separate output folder. The viewer combines leaf-area results, preserving which pass each row came from. The original semantic audit retains its initial chosen grids rather than silently changing its selection rule after refinement.
+
+## Search-direction correction
+
+The user explicitly corrected the search after 50×50 regressed: turn toward smaller crops-per-axis/grid counts rather than trying 100×100. The already completed 100×100 pass is retained as evidence, not a recommended search step. Future coarse searches must bracket the best score and refine inside that bracket; expansion into a direction already shown worse requires new evidence. In this run 5×5 and 20×20 bracketed the initial 10×10 primary-IoU winner.

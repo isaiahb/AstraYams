@@ -1,0 +1,9 @@
+{
+  "sam3_revision": "660a5e9e1b8b4c02c0ad97229b88a09a6e4ff5b7",
+  "experiment_initial_source_commit": "86a1218",
+  "refinement_source_commit": "b42687b",
+  "execution": "RunPod A40 only",
+  "study_type": "Inference comparison; no fine-tuning",
+  "search_correction": "After regression, bracket and refine toward smaller grids. 100x100 was an unnecessary completed check retained transparently.",
+  "validation": "Foreground and organ overlays inspected; browser selectors checked. No expert organ-instance ground truth."
+}

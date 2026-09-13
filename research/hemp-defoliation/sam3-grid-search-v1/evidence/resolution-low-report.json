@@ -1,0 +1,908 @@
+{
+  "input_sha256": "1b54d0e6ba72a4f507443a4fed2974163098813fb9d5046fdcf9b48007dc0d45",
+  "image_size": [
+    381,
+    811
+  ],
+  "background_rgb": [
+    68.0,
+    72.0,
+    73.0
+  ],
+  "foreground_proxy_pixels": 19388,
+  "core_pixels": 13732,
+  "excluded": "3px image border; bottom 6% stand. White tag excluded by green dominance.",
+  "proxy_not_ground_truth": true,
+  "overlap": 0.3,
+  "grids_requested": [
+    1,
+    3,
+    5,
+    10,
+    20
+  ],
+  "thresholds": [
+    0.5,
+    0.25,
+    0.1
+  ],
+  "tile_skip": "No permissive foreground pixels; score only retained tiles. Skipped background tiles are not tested for false positives.",
+  "results": [
+    {
+      "grid": 1,
+      "prompt": "leaf",
+      "crop_size": [
+        381,
+        811
+      ],
+      "total_tiles": 1,
+      "processed": 1,
+      "skipped_empty": 0,
+      "complete_run": true,
+      "proposals": 132,
+      "edge_proposals": 0,
+      "seconds": 2.2745735542848706,
+      "all_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.1603569218073035,
+          "core_coverage": 0.18919312554616954,
+          "proxy_precision": 0.91737975804072,
+          "proxy_iou": 0.158074028879398,
+          "definite_background_pixels": 169,
+          "background_fraction_of_prediction": 0.049867217468279726,
+          "predicted_pixels": 3389
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.924334639983495,
+          "core_coverage": 0.9680308767841538,
+          "proxy_precision": 0.7412723362011913,
+          "proxy_iou": 0.6988651873805717,
+          "definite_background_pixels": 4334,
+          "background_fraction_of_prediction": 0.1792686962276638,
+          "predicted_pixels": 24176
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.9397565504435733,
+          "core_coverage": 0.9766239440722401,
+          "proxy_precision": 0.7378011743267868,
+          "proxy_iou": 0.7044813053396745,
+          "definite_background_pixels": 4469,
+          "background_fraction_of_prediction": 0.18096780724843087,
+          "predicted_pixels": 24695
+        }
+      ],
+      "complete_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.1603569218073035,
+          "core_coverage": 0.18919312554616954,
+          "proxy_precision": 0.91737975804072,
+          "proxy_iou": 0.158074028879398,
+          "definite_background_pixels": 169,
+          "background_fraction_of_prediction": 0.049867217468279726,
+          "predicted_pixels": 3389
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.924334639983495,
+          "core_coverage": 0.9680308767841538,
+          "proxy_precision": 0.7412723362011913,
+          "proxy_iou": 0.6988651873805717,
+          "definite_background_pixels": 4334,
+          "background_fraction_of_prediction": 0.1792686962276638,
+          "predicted_pixels": 24176
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.9397565504435733,
+          "core_coverage": 0.9766239440722401,
+          "proxy_precision": 0.7378011743267868,
+          "proxy_iou": 0.7044813053396745,
+          "definite_background_pixels": 4469,
+          "background_fraction_of_prediction": 0.18096780724843087,
+          "predicted_pixels": 24695
+        }
+      ]
+    },
+    {
+      "grid": 3,
+      "prompt": "leaf",
+      "crop_size": [
+        159,
+        338
+      ],
+      "total_tiles": 9,
+      "processed": 9,
+      "skipped_empty": 0,
+      "complete_run": true,
+      "proposals": 681,
+      "edge_proposals": 166,
+      "seconds": 1.7470655450597405,
+      "all_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.29817412832680007,
+          "core_coverage": 0.3604718904748034,
+          "proxy_precision": 0.9530168150346192,
+          "proxy_iou": 0.2938545214253037,
+          "definite_background_pixels": 159,
+          "background_fraction_of_prediction": 0.026211671612265085,
+          "predicted_pixels": 6066
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.8528987002269445,
+          "core_coverage": 0.9204777162831342,
+          "proxy_precision": 0.8400304800609601,
+          "proxy_iou": 0.7337267604383902,
+          "definite_background_pixels": 2236,
+          "background_fraction_of_prediction": 0.11358902717805436,
+          "predicted_pixels": 19685
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.9481638126676295,
+          "core_coverage": 0.9860908826099621,
+          "proxy_precision": 0.8330538813613088,
+          "proxy_iou": 0.7967666435506241,
+          "definite_background_pixels": 2613,
+          "background_fraction_of_prediction": 0.11841210857842027,
+          "predicted_pixels": 22067
+        }
+      ],
+      "complete_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.2921394677119868,
+          "core_coverage": 0.35391785610253423,
+          "proxy_precision": 0.9562721593786933,
+          "proxy_iou": 0.2882882882882883,
+          "definite_background_pixels": 147,
+          "background_fraction_of_prediction": 0.024818504136417355,
+          "predicted_pixels": 5923
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.5623065813905509,
+          "core_coverage": 0.6473201281677833,
+          "proxy_precision": 0.9338701387699161,
+          "proxy_iou": 0.5407738095238095,
+          "definite_background_pixels": 500,
+          "background_fraction_of_prediction": 0.04283022100394038,
+          "predicted_pixels": 11674
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.7899731792861564,
+          "core_coverage": 0.8719050393242063,
+          "proxy_precision": 0.8932695672460049,
+          "proxy_iou": 0.7218399472146291,
+          "definite_background_pixels": 1301,
+          "background_fraction_of_prediction": 0.07587775574478012,
+          "predicted_pixels": 17146
+        }
+      ]
+    },
+    {
+      "grid": 5,
+      "prompt": "leaf",
+      "crop_size": [
+        101,
+        214
+      ],
+      "total_tiles": 25,
+      "processed": 24,
+      "skipped_empty": 1,
+      "complete_run": true,
+      "proposals": 1022,
+      "edge_proposals": 434,
+      "seconds": 3.9457724252715707,
+      "all_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.4113369094285125,
+          "core_coverage": 0.48121176813282845,
+          "proxy_precision": 0.9583032924777698,
+          "proxy_iou": 0.40410438307575375,
+          "definite_background_pixels": 187,
+          "background_fraction_of_prediction": 0.022470559961547704,
+          "predicted_pixels": 8322
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.85166082112647,
+          "core_coverage": 0.9273958636760851,
+          "proxy_precision": 0.8859795031389172,
+          "proxy_iou": 0.7675359085204295,
+          "definite_background_pixels": 1530,
+          "background_fraction_of_prediction": 0.08209475773997961,
+          "predicted_pixels": 18637
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.9192283886940376,
+          "core_coverage": 0.9709437809496068,
+          "proxy_precision": 0.8739273280047075,
+          "proxy_iou": 0.8116034427797258,
+          "definite_background_pixels": 1818,
+          "background_fraction_of_prediction": 0.08914823714019517,
+          "predicted_pixels": 20393
+        }
+      ],
+      "complete_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.35434289251083145,
+          "core_coverage": 0.4286338479464026,
+          "proxy_precision": 0.9685605526575497,
+          "proxy_iou": 0.3503135995104788,
+          "definite_background_pixels": 120,
+          "background_fraction_of_prediction": 0.01691808825602707,
+          "predicted_pixels": 7093
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.5918093666185269,
+          "core_coverage": 0.6833673172152637,
+          "proxy_precision": 0.9379547126624703,
+          "proxy_iou": 0.5695140715739316,
+          "definite_background_pixels": 501,
+          "background_fraction_of_prediction": 0.04095479440856699,
+          "predicted_pixels": 12233
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.7886321435939757,
+          "core_coverage": 0.8814448004660647,
+          "proxy_precision": 0.9121823171459253,
+          "proxy_iou": 0.7329817833173538,
+          "definite_background_pixels": 996,
+          "background_fraction_of_prediction": 0.0594201169311538,
+          "predicted_pixels": 16762
+        }
+      ]
+    },
+    {
+      "grid": 10,
+      "prompt": "leaf",
+      "crop_size": [
+        53,
+        112
+      ],
+      "total_tiles": 100,
+      "processed": 72,
+      "skipped_empty": 28,
+      "complete_run": true,
+      "proposals": 2037,
+      "edge_proposals": 1118,
+      "seconds": 11.620284038595855,
+      "all_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.4191252321023313,
+          "core_coverage": 0.49249927177395864,
+          "proxy_precision": 0.9639383155397391,
+          "proxy_iou": 0.41265488523258176,
+          "definite_background_pixels": 138,
+          "background_fraction_of_prediction": 0.016370106761565837,
+          "predicted_pixels": 8430
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.758871466886734,
+          "core_coverage": 0.8362219632974075,
+          "proxy_precision": 0.9384487817323638,
+          "proxy_iou": 0.7228909743035424,
+          "definite_background_pixels": 599,
+          "background_fraction_of_prediction": 0.03820640387804567,
+          "predicted_pixels": 15678
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.9097895605529194,
+          "core_coverage": 0.9706524905330615,
+          "proxy_precision": 0.9115291199421218,
+          "proxy_iou": 0.8359715639810427,
+          "definite_background_pixels": 1142,
+          "background_fraction_of_prediction": 0.0590150379825332,
+          "predicted_pixels": 19351
+        }
+      ],
+      "complete_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.22188982876005778,
+          "core_coverage": 0.26471016603553743,
+          "proxy_precision": 0.9833142857142857,
+          "proxy_iou": 0.22105749961461385,
+          "definite_background_pixels": 27,
+          "background_fraction_of_prediction": 0.006171428571428572,
+          "predicted_pixels": 4375
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.4935527130183619,
+          "core_coverage": 0.5699825225750073,
+          "proxy_precision": 0.9605500903433045,
+          "proxy_iou": 0.48374702997826197,
+          "definite_background_pixels": 233,
+          "background_fraction_of_prediction": 0.023388877735394498,
+          "predicted_pixels": 9962
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.758355683928203,
+          "core_coverage": 0.8454704340227207,
+          "proxy_precision": 0.934770169750143,
+          "proxy_iou": 0.7202410110708337,
+          "definite_background_pixels": 652,
+          "background_fraction_of_prediction": 0.041452094856634245,
+          "predicted_pixels": 15729
+        }
+      ]
+    },
+    {
+      "grid": 20,
+      "prompt": "leaf",
+      "crop_size": [
+        27,
+        57
+      ],
+      "total_tiles": 400,
+      "processed": 171,
+      "skipped_empty": 229,
+      "complete_run": true,
+      "proposals": 3740,
+      "edge_proposals": 2662,
+      "seconds": 27.48534936690703,
+      "all_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.40519909222199296,
+          "core_coverage": 0.4853626565685989,
+          "proxy_precision": 0.9817545613596601,
+          "proxy_iou": 0.40217057438312687,
+          "definite_background_pixels": 58,
+          "background_fraction_of_prediction": 0.007248187953011747,
+          "predicted_pixels": 8002
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.6829997936868166,
+          "core_coverage": 0.7847363821730265,
+          "proxy_precision": 0.9660052524073534,
+          "proxy_iou": 0.66696887277123,
+          "definite_background_pixels": 221,
+          "background_fraction_of_prediction": 0.0161219725707616,
+          "predicted_pixels": 13708
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.9101506086238911,
+          "core_coverage": 0.9761870084474221,
+          "proxy_precision": 0.9228596830709691,
+          "proxy_iou": 0.8458035757081915,
+          "definite_background_pixels": 954,
+          "background_fraction_of_prediction": 0.049892788034098634,
+          "predicted_pixels": 19121
+        }
+      ],
+      "complete_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.13719826696925932,
+          "core_coverage": 0.1653801339935916,
+          "proxy_precision": 0.981549815498155,
+          "proxy_iou": 0.13684535446033544,
+          "definite_background_pixels": 15,
+          "background_fraction_of_prediction": 0.005535055350553505,
+          "predicted_pixels": 2710
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.2970909841138849,
+          "core_coverage": 0.3383338188173609,
+          "proxy_precision": 0.9744544070377262,
+          "proxy_iou": 0.29479502533394747,
+          "definite_background_pixels": 51,
+          "background_fraction_of_prediction": 0.008627981728979868,
+          "predicted_pixels": 5911
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.5464720445636476,
+          "core_coverage": 0.6115642295368482,
+          "proxy_precision": 0.943035157988429,
+          "proxy_iou": 0.5290093868583983,
+          "definite_background_pixels": 373,
+          "background_fraction_of_prediction": 0.03319982198486871,
+          "predicted_pixels": 11235
+        }
+      ]
+    },
+    {
+      "grid": 10,
+      "prompt": "stem",
+      "crop_size": [
+        53,
+        112
+      ],
+      "total_tiles": 100,
+      "processed": 72,
+      "skipped_empty": 28,
+      "complete_run": true,
+      "proposals": 604,
+      "edge_proposals": 443,
+      "seconds": 11.599535242654383,
+      "all_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.11450381679389313,
+          "core_coverage": 0.06743373143023594,
+          "proxy_precision": 0.9390862944162437,
+          "proxy_iou": 0.11365963546999795,
+          "definite_background_pixels": 58,
+          "background_fraction_of_prediction": 0.024534686971235193,
+          "predicted_pixels": 2364
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.15194965958324738,
+          "core_coverage": 0.09874745120885522,
+          "proxy_precision": 0.8405135520684736,
+          "proxy_iou": 0.14769138216273123,
+          "definite_background_pixels": 403,
+          "background_fraction_of_prediction": 0.11497860199714693,
+          "predicted_pixels": 3505
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.605580771611306,
+          "core_coverage": 0.6035537430818526,
+          "proxy_precision": 0.7889396586480312,
+          "proxy_iou": 0.5211505171112788,
+          "definite_background_pixels": 2765,
+          "background_fraction_of_prediction": 0.18579492003762935,
+          "predicted_pixels": 14882
+        }
+      ],
+      "complete_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.013874561584485249,
+          "core_coverage": 0.007355083017768715,
+          "proxy_precision": 0.8621794871794872,
+          "proxy_iou": 0.013843857753074984,
+          "definite_background_pixels": 19,
+          "background_fraction_of_prediction": 0.060897435897435896,
+          "predicted_pixels": 312
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.04033422735712812,
+          "core_coverage": 0.020535974366443343,
+          "proxy_precision": 0.8708240534521158,
+          "proxy_iou": 0.04009433962264151,
+          "definite_background_pixels": 58,
+          "background_fraction_of_prediction": 0.0645879732739421,
+          "predicted_pixels": 898
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.20930472457190014,
+          "core_coverage": 0.18780949606757938,
+          "proxy_precision": 0.9185151652331371,
+          "proxy_iou": 0.20548916345959084,
+          "definite_background_pixels": 214,
+          "background_fraction_of_prediction": 0.04843820733363513,
+          "predicted_pixels": 4418
+        }
+      ]
+    },
+    {
+      "grid": 10,
+      "prompt": "flower",
+      "crop_size": [
+        53,
+        112
+      ],
+      "total_tiles": 100,
+      "processed": 72,
+      "skipped_empty": 28,
+      "complete_run": true,
+      "proposals": 14,
+      "edge_proposals": 11,
+      "seconds": 11.662904345430434,
+      "all_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.01604085001031566,
+          "core_coverage": 0.019079522283716864,
+          "proxy_precision": 0.9749216300940439,
+          "proxy_iou": 0.016034233862652094,
+          "definite_background_pixels": 4,
+          "background_fraction_of_prediction": 0.012539184952978056,
+          "predicted_pixels": 319
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.045182587167319994,
+          "core_coverage": 0.05184969414506263,
+          "proxy_precision": 0.955288985823337,
+          "proxy_iou": 0.045087240722631115,
+          "definite_background_pixels": 22,
+          "background_fraction_of_prediction": 0.023991275899672846,
+          "predicted_pixels": 917
+        }
+      ],
+      "complete_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.016711367856406024,
+          "core_coverage": 0.020171861345761724,
+          "proxy_precision": 0.9614243323442137,
+          "proxy_iou": 0.016700170094325034,
+          "definite_background_pixels": 4,
+          "background_fraction_of_prediction": 0.011869436201780416,
+          "predicted_pixels": 337
+        }
+      ]
+    },
+    {
+      "grid": 10,
+      "prompt": "leaflet",
+      "crop_size": [
+        53,
+        112
+      ],
+      "total_tiles": 100,
+      "processed": 72,
+      "skipped_empty": 28,
+      "complete_run": true,
+      "proposals": 0,
+      "edge_proposals": 0,
+      "seconds": 11.485980852041394,
+      "all_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        }
+      ],
+      "complete_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        }
+      ]
+    },
+    {
+      "grid": 5,
+      "prompt": "stem",
+      "crop_size": [
+        101,
+        214
+      ],
+      "total_tiles": 25,
+      "processed": 24,
+      "skipped_empty": 1,
+      "complete_run": true,
+      "proposals": 317,
+      "edge_proposals": 184,
+      "seconds": 3.876172289252281,
+      "all_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.12677945120693213,
+          "core_coverage": 0.07406058840664143,
+          "proxy_precision": 0.8941433248453984,
+          "proxy_iou": 0.12490472076833173,
+          "definite_background_pixels": 140,
+          "background_fraction_of_prediction": 0.05092761004001455,
+          "predicted_pixels": 2749
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.1429750361048071,
+          "core_coverage": 0.08753277017186134,
+          "proxy_precision": 0.8859060402684564,
+          "proxy_iou": 0.1403899721448468,
+          "definite_background_pixels": 173,
+          "background_fraction_of_prediction": 0.05528922978587408,
+          "predicted_pixels": 3129
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.6944501753662059,
+          "core_coverage": 0.7143169239732012,
+          "proxy_precision": 0.7440318302387268,
+          "proxy_iou": 0.5605328892589508,
+          "definite_background_pixels": 4185,
+          "background_fraction_of_prediction": 0.23126657824933686,
+          "predicted_pixels": 18096
+        }
+      ],
+      "complete_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.03770373426861977,
+          "core_coverage": 0.01988057092921643,
+          "proxy_precision": 0.8828502415458938,
+          "proxy_iou": 0.037516037977931745,
+          "definite_background_pixels": 33,
+          "background_fraction_of_prediction": 0.03985507246376811,
+          "predicted_pixels": 828
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.06297709923664122,
+          "core_coverage": 0.033789688319254295,
+          "proxy_precision": 0.8828633405639913,
+          "proxy_iou": 0.062455242966751916,
+          "definite_background_pixels": 65,
+          "background_fraction_of_prediction": 0.046999276934201015,
+          "predicted_pixels": 1383
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.23122550030946978,
+          "core_coverage": 0.200990387416254,
+          "proxy_precision": 0.8817859952793077,
+          "proxy_iou": 0.22427335034268847,
+          "definite_background_pixels": 357,
+          "background_fraction_of_prediction": 0.07022029897718332,
+          "predicted_pixels": 5084
+        }
+      ]
+    },
+    {
+      "grid": 5,
+      "prompt": "flower",
+      "crop_size": [
+        101,
+        214
+      ],
+      "total_tiles": 25,
+      "processed": 24,
+      "skipped_empty": 1,
+      "complete_run": true,
+      "proposals": 1,
+      "edge_proposals": 1,
+      "seconds": 3.825263536069542,
+      "all_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.005673612543841551,
+          "core_coverage": 0.004951937081270026,
+          "proxy_precision": 0.9090909090909091,
+          "proxy_iou": 0.005670395381205217,
+          "definite_background_pixels": 3,
+          "background_fraction_of_prediction": 0.024793388429752067,
+          "predicted_pixels": 121
+        }
+      ],
+      "complete_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        }
+      ]
+    },
+    {
+      "grid": 5,
+      "prompt": "leaflet",
+      "crop_size": [
+        101,
+        214
+      ],
+      "total_tiles": 25,
+      "processed": 24,
+      "skipped_empty": 1,
+      "complete_run": true,
+      "proposals": 0,
+      "edge_proposals": 0,
+      "seconds": 3.9046388678252697,
+      "all_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        }
+      ],
+      "complete_mask_metrics": [
+        {
+          "threshold": 0.5,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.25,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        },
+        {
+          "threshold": 0.1,
+          "foreground_coverage": 0.0,
+          "core_coverage": 0.0,
+          "proxy_precision": 0.0,
+          "proxy_iou": 0.0,
+          "definite_background_pixels": 0,
+          "background_fraction_of_prediction": 0.0,
+          "predicted_pixels": 0
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 107.90785060217604,
+  "device": "NVIDIA A40",
+  "pod_id": "jly533nd5mlwnl",
+  "selected_semantic_grids": [
+    10,
+    5
+  ]
+}

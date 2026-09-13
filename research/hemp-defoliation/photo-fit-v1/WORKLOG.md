@@ -205,3 +205,18 @@ Inspected existing connection, side and top panels: the thin depth/rear geometry
 is unverified from one photo. No plant geometry or mechanics changed. Next:
 trace one clearly visible upper-left blade with an uncertainty band, then remote
 mask correspondence scoring; retain independence/annotation limitations.
+
+## 2026-09-13 — completed grid search, resolution ablation and organ-conflict audit
+
+User requested denser crop grids, near-total visible-plant coverage and organ labels. They then corrected the search direction: after 50×50 regressed, turn toward smaller grids. I had unnecessarily completed a 100×100 check; preserve its evidence but do not repeat that expansion pattern. Bracket the winning region and refine there.
+
+- Isolated A40 pod jly533nd5mlwnl, verified EXITED after checksum-verified retrieval. No Mac inference, training, image processing or rendering jobs. No desktop-app edits.
+- Original image: initial grids 1,3,5,10,20,25,50,100; refinement 7,8,9,11,12,15. Fixed 30% overlap, primary confidence 0.5; 0.25/0.1 diagnostic. Fixed green-foreground estimate, conservative core and uncertainty band. No manual organ ground truth.
+- Primary foreground-proxy IoU winner: 11×11, 30.47% plant-area coverage, 30.30% IoU, 0.60% definite-background fraction of prediction. Neighbors 10×10 and 12×12 score lower. At confidence 0.1, 12×12 is the best tested IoU tradeoff: 91.75% coverage, 86.93% IoU, 3.14% background fraction.
+- 50×50 and 100×100 collapse on the 381×444 input. 100×100 processed 4,330 nonempty crops out of 10,000 and took 683 seconds; this was a poor use of search budget once the regression was known.
+- Multi-prompt leaf/leaflet, stem and flower audit at the initially selected 10/5 grids: lowering confidence to 0.1 covers 98.5% of estimated foreground but 89.5% of that foreground has conflicting organ labels. This does NOT establish correct organ segmentation. At 0.25, 21.4% remains unclassified and 8.7% has conflicts. Leaves/leaflets are combined only as tissue, never counted as independent biological leaves.
+- Found primary CC BY 4.0 dataset DOI 10.5281/zenodo.17783092 (Morales, Griffiths, Topp). Checked archive MD5 and inspected six 4000×6000 shoot photographs. These are excised shoots on cloth, NOT living whole-plant shape or mechanical evidence. Compared a fixed 1950×4150 crop with its 381px-wide downsample. At 20×20 and confidence 0.5: native coverage 59.65% vs 40.5% downsized. The color-based proxy has visible background speckles and uncertain edges; do not treat it as exact annotation.
+- Added inspectable raw crop-local masks, full score maps, foreground mask/cutout, organ-ID PNG/NPZ exports with distinct background/unclassified/conflict IDs, and a static comparison viewer. Visually inspected original and native overviews; tested confidence and image controls in browser.
+- Artifacts: runs/hemp-sam3-grid-search-v1/index.html and results/. Reproducible sources and compact evidence: research/hemp-defoliation/sam3-grid-search-v1/. Initial source commit 86a1218, protocol/viewer commit b42687b.
+
+Remaining priority: trustworthy organ boundaries and semantic labels, not more grid density. Before fitting model anatomy from masks, create a small explicitly reviewed set of clear leaf/leaflet/stem boundaries on native-resolution images; mark hidden connections and dense clusters unknown. Evaluate prompted exemplars or corrected masks against those annotations. Keep whole-plant foreground coverage separate from instance correctness and from biological/mechanical validity. Do not claim this experiment reached near-100% correctly labeled organs or validated a plant model.

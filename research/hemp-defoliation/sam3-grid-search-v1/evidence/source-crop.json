@@ -1,0 +1,19 @@
+{
+  "sample": "sample-0.png",
+  "box_xyxy": [
+    500,
+    950,
+    2450,
+    5100
+  ],
+  "native_size": [
+    1950,
+    4150
+  ],
+  "low_size": [
+    381,
+    811
+  ],
+  "method": "Fixed crop selected from source contact sheet before segmentation; excised shoot, not an intact standing plant.",
+  "native_sha256": "ad8b54c53894b0e08d6c247bce0efc677d9d314e55586c92a7177c5c343a8d34"
+}

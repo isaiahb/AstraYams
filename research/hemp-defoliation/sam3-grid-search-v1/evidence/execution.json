@@ -1,0 +1,7 @@
+{
+  "id": "jly533nd5mlwnl",
+  "desiredStatus": "EXITED",
+  "verified_at_unix": 1789334270.011619,
+  "costPerHr": 0.49,
+  "local_inference": false
+}

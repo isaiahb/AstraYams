@@ -1,0 +1,40 @@
+{
+  "label_ids": {
+    "0": "background",
+    "1": "leaf tissue",
+    "2": "stem",
+    "3": "flower",
+    "4": "conflicting",
+    "5": "unclassified plant"
+  },
+  "notice": "Unverified text-prompt proposals. Colors clipped to foreground proxy for display only. Raw leakage scores remain un-clipped. Leaf and leaflet combined only as semantic tissue, never instance counts. Conflicts are not resolved by pretending confidence scores are calibrated between prompts.",
+  "results": [
+    {
+      "threshold": 0.5,
+      "leaf_only": 300527,
+      "stem_only": 58966,
+      "flower_only": 541,
+      "conflicting_labels": 7522,
+      "unclassified": 132833,
+      "foreground": 500389
+    },
+    {
+      "threshold": 0.25,
+      "leaf_only": 332571,
+      "stem_only": 50011,
+      "flower_only": 0,
+      "conflicting_labels": 55312,
+      "unclassified": 62495,
+      "foreground": 500389
+    },
+    {
+      "threshold": 0.1,
+      "leaf_only": 132608,
+      "stem_only": 34900,
+      "flower_only": 17,
+      "conflicting_labels": 296270,
+      "unclassified": 36594,
+      "foreground": 500389
+    }
+  ]
+}
