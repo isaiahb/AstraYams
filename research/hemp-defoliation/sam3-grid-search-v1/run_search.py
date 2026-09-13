@@ -9,9 +9,9 @@ from PIL import Image,ImageDraw
 import torch
 from sam3.model_builder import build_sam3_image_model
 from sam3.model.sam3_image_processor import Sam3Processor
-root=Path('/workspace/sam3-comparison');out=root/'grid-search';out.mkdir(exist_ok=True)
-start=time.monotonic();deadline=start+3900
-im=Image.open(root/'input.png').convert('RGB');a=np.asarray(im).astype(float);h,w=a.shape[:2]
+root=Path('/workspace/sam3-comparison');out=root/os.environ.get('SEARCH_OUT','grid-search');out.mkdir(exist_ok=True)
+start=time.monotonic();deadline=start+int(os.environ.get('SEARCH_SECONDS','3900'))
+input_path=root/os.environ.get('SEARCH_INPUT','input.png');im=Image.open(input_path).convert('RGB');a=np.asarray(im).astype(float);h,w=a.shape[:2]
 im.save(out/'input.png')
 # Reference has green organs, a near-black background, a white frame and tag.
 # Ignore border and bottom support, not dark plant areas inside the evaluation ROI.
@@ -26,7 +26,7 @@ background=roi&~permissive
 np.savez_compressed(out/'foreground-proxies.npz',core=core,foreground=fg,permissive=permissive,roi=roi)
 proxy=np.zeros((h,w,3),np.uint8);proxy[permissive]=[110,100,35];proxy[fg]=[75,135,50];proxy[core]=[115,245,80];proxy[~roi]=[65,65,65]
 Image.fromarray(proxy).save(out/'foreground-proxy.png')
-meta={'input_sha256':hashlib.sha256((root/'input.png').read_bytes()).hexdigest(),'image_size':[w,h],'background_rgb':bg.tolist(),'foreground_proxy_pixels':int(fg.sum()),'core_pixels':int(core.sum()),'excluded':'3px image border; bottom 6% stand. White tag excluded by green dominance.','proxy_not_ground_truth':True,'overlap':.3,'grids_requested':[1,3,5,10,20,25,50,100],'thresholds':[.5,.25,.1],'tile_skip':'No permissive foreground pixels; score only retained tiles. Skipped background tiles are not tested for false positives.','results':[]}
+meta={'input_sha256':hashlib.sha256(input_path.read_bytes()).hexdigest(),'image_size':[w,h],'background_rgb':bg.tolist(),'foreground_proxy_pixels':int(fg.sum()),'core_pixels':int(core.sum()),'excluded':'3px image border; bottom 6% stand. White tag excluded by green dominance.','proxy_not_ground_truth':True,'overlap':.3,'grids_requested':[int(n) for n in os.environ.get('SEARCH_GRIDS','1,3,5,10,20,25,50,100').split(',')],'thresholds':[.5,.25,.1],'tile_skip':'No permissive foreground pixels; score only retained tiles. Skipped background tiles are not tested for false positives.','results':[]}
 (out/'protocol.json').write_text(json.dumps(meta,indent=2))
 assert torch.cuda.is_available();torch.set_num_threads(2);torch.manual_seed(71)
 engine=Sam3Processor(build_sam3_image_model(checkpoint_path=str(root/'sam3.pt'),load_from_HF=False,device='cuda'),device='cuda',confidence_threshold=.1)
@@ -74,7 +74,7 @@ def sweep(n,prompt):
  meta['results'].append(row);(out/'report.json').write_text(json.dumps(meta,indent=2));print(json.dumps(row),flush=True)
  return row
 rows=[]
-for n in [1,3,5,10,20,25,50,100]:
+for n in meta['grids_requested']:
  if time.monotonic()>deadline-120:break
  rows.append(sweep(n,'leaf'))
 # Grid scale chosen from proxy IoU, not maximum area alone. Multi-scale semantics
