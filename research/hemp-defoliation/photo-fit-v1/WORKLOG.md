@@ -115,7 +115,8 @@ Denser SAM2 recovered region proposals but missed/merged fine foliage. Exact
 synthetic audits found only 19/402 visible narrow leaflets with best IoU >=0.5.
 DA3 depth rank correlation with known narrow mesh depth was 0.012. Neither
 backend provides validated organ census, contact geometry or physical parameters.
-SAM3 was not run because existing gated weight access was unavailable.
+SAM3 was not run in that pilot because access was mistakenly thought unavailable;
+the later SAM3 comparison below corrects this credential-discovery error.
 
 Next pass: freeze a small reviewed sample of clear and overlapping visible
 organs before further automated scoring. Inspect source resolution and metadata;
@@ -142,3 +143,21 @@ reviewed boundaries and better-resolution original sources; keep automated
 fit decisions paused until the observation model is validated. Do not revert to
 SAM2 solely because it is easier to run. Document which model/prompt/threshold
 is used and why. No new terms or mirror downloads were needed for SAM3.
+
+## Source-resolution audit COMPLETE — 2026-09-13
+
+Publisher PNG (large) and TIFF (original) both report 2250 x 2300 pixels for
+the complete 30-plant grid. Metadata read through bounded 262144-byte HTTP
+Range requests; no raster decoding, inference, weights or rendering on Mac.
+Local grid JPEG is 1761 x 1800, so original offers about 1.28x linear resolution
+relative to that overview. Existing single-plant input is 381 x 444; its exact
+crop/resampling lineage remains unresolved. Do not call it verified native sensor
+resolution. Original-grid dimensions alone do not demonstrate better detail than
+that existing crop. No claim that the source resolution caused SAM3 failure.
+
+Evidence: source-resolution-audit.json. Next discriminating step: trace crop
+provenance and compare a remote extraction from the original against the frozen
+input, then annotate a small fixed sample of clearly visible leaves and difficult
+overlaps. Keep calibration separate from held-out evaluation; score precision,
+recall and boundary agreement, not proposal count. No automatic geometry updates
+from unreviewed segmentation, and no extra GPU spend in this metadata pass.

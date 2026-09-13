@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-13",
+  "method": "HTTP Range first 262144 bytes; parse image headers only",
+  "assets": [
+    {
+      "url": "https://journals.plos.org/plosone/article/figure/image?download&size=large&id=10.1371/journal.pone.0252985.g001",
+      "format": "PNG",
+      "dimensions": [
+        2250,
+        2300
+      ],
+      "bytes_total": 4409803
+    },
+    {
+      "url": "https://journals.plos.org/plosone/article/figure/image?download&size=original&id=10.1371/journal.pone.0252985.g001",
+      "format": "TIFF",
+      "dimensions": [
+        2250,
+        2300
+      ],
+      "bytes_total": 6080764
+    }
+  ],
+  "local_grid_dimensions": [
+    1761,
+    1800
+  ],
+  "current_crop_dimensions": [
+    381,
+    444
+  ],
+  "crop_resampling_lineage": "unresolved",
+  "local_inference": false,
+  "new_gpu_worker": false,
+  "interpretation": "Original is about 1.28x larger linearly than local overview; improvement over existing single-plant crop is not established."
+}
