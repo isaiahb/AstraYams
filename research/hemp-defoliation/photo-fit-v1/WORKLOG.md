@@ -5,7 +5,11 @@
 Never run SAM, Depth Anything, ML inference/training or heavy batches on the
 user's Mac. They are actively working there. Use RunPod for model computation;
 local work is lightweight source editing and finished-artifact inspection only.
-See `../remote-perception-v1/README.md` for the prepared, unexecuted pilot.
+See `../remote-perception-v1/README.md` for the remote pilot. User has now
+authorized RunPod spending and reasonable overruns without asking again.
+Pilot is COMPLETE. Task worker astra-plant-perception-20260913 was verified
+stopped after artifact retrieval. SAM2.1 and DA3-Small ran sequentially remotely.
+See remote-perception-v1/evidence/execution.json for shutdown/rate, not an exact invoice.
 Do not resume the earlier local parameter fitting/render batch automatically.
 
 ## Pass complete; next pass ready — 2026-09-13
@@ -102,3 +106,20 @@ posture and brighter illumination. Current mesh is sparse there and the apex
 still resembles a generic fan. Preserve this criticism in subsequent passes;
 do not declare success merely because the viewer renders or a score improves.
 There is no whole-plant growth/contact solver or PPO training in this pass.
+
+## Remote perception pass complete — 2026-09-13
+
+Actual comparison: /runs/hemp-perception-pilot-v1/index.html. Source/scripts and
+compact evidence: ../remote-perception-v1/. Mac performed no ML inference.
+Denser SAM2 recovered region proposals but missed/merged fine foliage. Exact
+synthetic audits found only 19/402 visible narrow leaflets with best IoU >=0.5.
+DA3 depth rank correlation with known narrow mesh depth was 0.012. Neither
+backend provides validated organ census, contact geometry or physical parameters.
+SAM3 was not run because existing gated weight access was unavailable.
+
+Next pass: freeze a small reviewed sample of clear and overlapping visible
+organs before further automated scoring. Inspect source resolution and metadata;
+prefer genuinely higher-resolution originals to upsampling. Any prompted
+inference or new rendering/raycast batch must run on one isolated RunPod worker,
+with deadline and verified shutdown. Do not automatically optimize the plant
+against unreviewed masks or start duplicate workers. No new fitting accepted.

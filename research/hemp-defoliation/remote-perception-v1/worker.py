@@ -23,6 +23,7 @@ def main():
     parser.add_argument('--backend',choices=['sam2','sam3','depth'],required=True)
     parser.add_argument('--manifest',type=Path,required=True)
     parser.add_argument('--out',type=Path,required=True)
+    parser.add_argument('--sam-preset',choices=['standard','recall-probe'],default='standard')
     args=parser.parse_args()
     import numpy as np
     import torch
@@ -40,8 +41,10 @@ def main():
         from sam2.automatic_mask_generator import SAM2AutomaticMaskGenerator
         model_id='facebook/sam2.1-hiera-large'
         model=build_sam2_hf(model_id,device='cuda')
-        engine=SAM2AutomaticMaskGenerator(model,points_per_side=32,points_per_batch=16,
-            crop_n_layers=1,pred_iou_thresh=.8,stability_score_thresh=.95)
+        sam_config=({'points_per_side':64,'crop_n_layers':2,'crop_n_points_downscale_factor':2,
+            'pred_iou_thresh':.65,'stability_score_thresh':.85} if args.sam_preset=='recall-probe' else
+            {'points_per_side':32,'crop_n_layers':1,'pred_iou_thresh':.8,'stability_score_thresh':.95})
+        engine=SAM2AutomaticMaskGenerator(model,points_per_batch=16,**sam_config)
     elif args.backend=='sam3':
         from sam3.model_builder import build_sam3_image_model
         from sam3.model.sam3_image_processor import Sam3Processor
@@ -105,7 +108,7 @@ def main():
         print(item['id'],args.backend,'complete',round(record['seconds'],2),flush=True)
     report={'backend':args.backend,'model':model_id,'torch':torch.__version__,
         'gpu':torch.cuda.get_device_name(),'status':'predictions awaiting manual audit',
-        'input_manifest':config,'results':reports}
+        'input_manifest':config,'sam_preset':args.sam_preset,'sam_configuration':sam_config if args.backend=='sam2' else None,'results':reports}
     (args.out/'report.json').write_text(json.dumps(report,indent=2))
 
 
