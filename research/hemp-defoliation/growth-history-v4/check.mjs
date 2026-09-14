@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {simulate} from './growth.mjs';
+const base=simulate(),last=h=>h.frames.at(-1),leaf=h=>last(h).leaves.find(l=>l.node===18&&l.axis==='main');
+assert.equal(last(base).axes.length,1);
+assert.ok(last(base).buds.every(b=>b.state==='unresolved'&&!b.active));
+const legacy=simulate({activationMode:'legacy-scenario'});
+assert.ok(last(legacy).axes.length>1);
+const slowerBlade=simulate({leafExpansion:8.4});
+assert.deepEqual(last(base).axes,last(slowerBlade).axes);
+assert.ok(leaf(slowerBlade).length<leaf(base).length);
+assert.deepEqual(leaf(slowerBlade).junction,leaf(base).junction);
+const slowerPetiole=simulate({petioleExpansion:8.4});
+assert.equal(leaf(slowerPetiole).length,leaf(base).length);
+assert.notDeepEqual(leaf(slowerPetiole).junction,leaf(base).junction);
+const slowerThickening=simulate({thickeningDuration:36});
+assert.deepEqual(last(base).axes[0].points,last(slowerThickening).axes[0].points);
+assert.ok(last(slowerThickening).axes[0].radii[0]<last(base).axes[0].radii[0]);
+const data=JSON.parse(fs.readFileSync(new URL('./leaf-observations.json',import.meta.url)));
+assert.deepEqual(data.records.map(r=>r.leaflets),[7,9,7]);
+assert.ok(data.records.every(r=>r.outline.length>20&&r.outline.every(p=>p.every(Number.isFinite))));
+for(const frame of legacy.frames)for(const b of frame.buds){const axis=frame.axes.find(a=>a.id===b.axis);assert.deepEqual(b.at,axis.points[b.node]);}
+const result={passed:true,checks:['Unresolved outgrowth never fabricates branches','Legacy branching preserved','Blade window changes blade length without changing stems or petiole endpoint','Petiole window changes endpoint without changing blade length','Thickening window changes radii without changing stem length','Observed 7/9/7 profiles finite','Bud attachments preserved across legacy history'],limits:'Software consistency checks only; no biological or force validation.',counts:{mainAxisLeaves:last(base).metrics.leaves,legacyShoots:last(legacy).axes.length}};
+fs.writeFileSync(new URL('./checks.json',import.meta.url),JSON.stringify(result,null,2));console.log(result);

@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": [
+    "Unresolved outgrowth never fabricates branches",
+    "Legacy branching preserved",
+    "Blade window changes blade length without changing stems or petiole endpoint",
+    "Petiole window changes endpoint without changing blade length",
+    "Thickening window changes radii without changing stem length",
+    "Observed 7/9/7 profiles finite",
+    "Bud attachments preserved across legacy history"
+  ],
+  "limits": "Software consistency checks only; no biological or force validation.",
+  "counts": {
+    "mainAxisLeaves": 23,
+    "legacyShoots": 24
+  }
+}

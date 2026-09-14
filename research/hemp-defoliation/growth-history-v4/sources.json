@@ -1,0 +1,53 @@
+{
+  "revision": "v4",
+  "current_rule_audit": "RULES.md",
+  "measured_leaf_provenance": "leaf-observations.json",
+  "prior_context": {
+    "scope": "Above-ground developmental geometry from seedling emergence. Non-psychoactive hemp context; no production or cultivation optimization.",
+    "time": "Development units, not days. Numerical times and dimensions are uncalibrated scenario priors.",
+    "sources": [
+      {
+        "url": "https://www.ars.usda.gov/ARSUSERFILES/80600500/HDM_DATA/HDMV3.PDF",
+        "use": "Opposite-to-alternate branching distinction and seed-versus-cutting developmental history.",
+        "limit": "Does not calibrate transition node 6 or the 145-degree rotation used in this scenario."
+      },
+      {
+        "url": "https://doi.org/10.1111/nph.19817",
+        "use": "Leaf form varies with developmental position and accession. Supports node-associated leaf morphology.",
+        "limit": "Our discrete leaflet progression and dimensions are not a fit to any of its 24 individuals."
+      },
+      {
+        "url": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2019.00350/full",
+        "use": "Phytomer hierarchy: nodes, internodes, leaves and axillary shoots.",
+        "limit": "Study material differs from the partner's hemp. No flowering or cultivation conditions are modeled here."
+      },
+      {
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4332863/",
+        "use": "Separation of active posture development from passive loading.",
+        "limit": "Our direction update is an uncalibrated heuristic, not this paper's AC model. No full phototropism or gravimechanical solver."
+      }
+    ],
+    "leaf_outline_transfer": "/research/hemp-defoliation/development-v3/reference-data.json; retained prior Futura75 outline profiles, not newly measured leaves",
+    "assumptions": [
+      "finite vegetative study scope",
+      "fixed node-production intervals",
+      "smooth organ expansion",
+      "fixed bud activation delay",
+      "scenario-specific branch-order caps",
+      "age-based stem thickening",
+      "kinematic leaf unfolding",
+      "growth-window direction response"
+    ],
+    "missing": [
+      "empirical growth-rate calibration",
+      "live-material stiffness and damping",
+      "self-weight equilibrium",
+      "contact and damage mechanics",
+      "self-shading and resource allocation",
+      "root development",
+      "flowering",
+      "measured greenhouse or indoor phenotype fit"
+    ]
+  },
+  "warning": "Prior general references do not calibrate numerical rules. See RULES.md for scope and unsupported behavior."
+}
