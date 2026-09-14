@@ -10,7 +10,7 @@
       230,
       434
     ],
-    "stage": "65 DAP per source; not a growth time series"
+    "stage": "Panel (a) caption identifies L specimen but does not independently date it. 65 DAP explicitly labels panel (b); panel (a) age unverified."
   },
   "units": "Source image pixels, displayed in normalized specimen-height coordinates; physical scale not inferred from a different panel",
   "status": "Assistant visual traces, not expert annotations. Publisher main/side guide lines aid tracing but partly obscure tissue. No inferred connections treated as observed.",

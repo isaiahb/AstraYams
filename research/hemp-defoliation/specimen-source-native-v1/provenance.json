@@ -1,0 +1,16 @@
+{
+  "source": "research/hemp-defoliation/height-evidence-v1/papers/massuela-2022.pdf",
+  "sourceSha256": "bb38888565aa8b86434c016c584dbbbcd54792e4800f22c99b144d1c7c34ff04",
+  "page": 5,
+  "embeddedName": "Image41.jp2",
+  "nativeSize": [
+    1552,
+    627
+  ],
+  "extraction": "Embedded image extracted without resampling; PNG is a lossless decoded copy. No sharpening, generation or inferred details.",
+  "sourceImageSha256": "425cd6fbd9d0ecb6aa7ae67e7c3541bdd30990e119c37a2433e4ea06da52f2b7",
+  "doi": "https://doi.org/10.3390/plants11010140",
+  "license": "CC BY 4.0",
+  "credit": "Crispim Massuela et al. (2022), Figure 1",
+  "limitation": "Composite published figure; individual panels are different specimens/views, not a reconstruction camera series."
+}
