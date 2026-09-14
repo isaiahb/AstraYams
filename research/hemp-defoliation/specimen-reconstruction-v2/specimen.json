@@ -1,0 +1,406 @@
+{
+  "source": {
+    "image": "/research/hemp-defoliation/height-evidence-v1/figures/dated-architecture.png",
+    "doi": "https://doi.org/10.3390/plants11010140",
+    "panel": "(a), L specimen \u2014 treated plant, not untreated control or partner cultivar",
+    "credit": "Crispim Massuela et al. 2022, Figure 1, CC BY 4.0",
+    "crop": [
+      0,
+      0,
+      230,
+      434
+    ],
+    "stage": "65 DAP per source; not a growth time series"
+  },
+  "units": "Source image pixels, displayed in normalized specimen-height coordinates; physical scale not inferred from a different panel",
+  "status": "Assistant visual traces, not expert annotations. Publisher main/side guide lines aid tracing but partly obscure tissue. No inferred connections treated as observed.",
+  "root": [
+    110,
+    370
+  ],
+  "tip": [
+    96,
+    34
+  ],
+  "axes": [
+    {
+      "id": "main",
+      "parent": null,
+      "status": "approximate main-axis path aided by publisher solid guide",
+      "points": [
+        [
+          110,
+          370
+        ],
+        [
+          107,
+          314
+        ],
+        [
+          105,
+          249
+        ],
+        [
+          104,
+          194
+        ],
+        [
+          101,
+          132
+        ],
+        [
+          98,
+          78
+        ],
+        [
+          96,
+          34
+        ]
+      ]
+    },
+    {
+      "id": "side-left",
+      "parent": "main",
+      "status": "hypothesized attachment; dashed publisher guide aids distal path",
+      "points": [
+        [
+          107,
+          314
+        ],
+        [
+          90,
+          256
+        ],
+        [
+          74,
+          210
+        ],
+        [
+          67,
+          181
+        ]
+      ]
+    },
+    {
+      "id": "side-right",
+      "parent": "main",
+      "status": "hypothesized attachment; dashed publisher guide aids distal path",
+      "points": [
+        [
+          107,
+          314
+        ],
+        [
+          120,
+          256
+        ],
+        [
+          131,
+          207
+        ],
+        [
+          141,
+          171
+        ],
+        [
+          146,
+          139
+        ]
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "id": "upper-left-blade",
+      "kind": "visible blade region",
+      "points": [
+        [
+          97,
+          105
+        ],
+        [
+          77,
+          110
+        ],
+        [
+          50,
+          125
+        ],
+        [
+          73,
+          120
+        ],
+        [
+          92,
+          115
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ"
+    },
+    {
+      "id": "upper-right-blade",
+      "kind": "visible blade region",
+      "points": [
+        [
+          102,
+          90
+        ],
+        [
+          125,
+          91
+        ],
+        [
+          155,
+          103
+        ],
+        [
+          129,
+          98
+        ],
+        [
+          106,
+          97
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ"
+    },
+    {
+      "id": "lower-left-blade",
+      "kind": "visible blade region",
+      "points": [
+        [
+          87,
+          257
+        ],
+        [
+          63,
+          276
+        ],
+        [
+          35,
+          300
+        ],
+        [
+          56,
+          289
+        ],
+        [
+          82,
+          270
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ"
+    },
+    {
+      "id": "lower-right-blade",
+      "kind": "visible blade region",
+      "points": [
+        [
+          120,
+          279
+        ],
+        [
+          149,
+          291
+        ],
+        [
+          188,
+          322
+        ],
+        [
+          154,
+          310
+        ],
+        [
+          126,
+          292
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ"
+    },
+    {
+      "id": "basal-left",
+      "kind": "visible blade region",
+      "points": [
+        [
+          101,
+          327
+        ],
+        [
+          88,
+          336
+        ],
+        [
+          80,
+          357
+        ],
+        [
+          92,
+          347
+        ],
+        [
+          104,
+          333
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "annotationStatus": "Coarse assistant contour from native source; not an expert mask or complete leaf"
+    },
+    {
+      "id": "basal-right",
+      "kind": "visible blade region",
+      "points": [
+        [
+          115,
+          328
+        ],
+        [
+          129,
+          332
+        ],
+        [
+          146,
+          343
+        ],
+        [
+          129,
+          339
+        ],
+        [
+          116,
+          335
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "annotationStatus": "Coarse assistant contour from native source; not an expert mask or complete leaf"
+    },
+    {
+      "id": "low-left-tip",
+      "kind": "visible blade region",
+      "points": [
+        [
+          80,
+          294
+        ],
+        [
+          69,
+          305
+        ],
+        [
+          47,
+          340
+        ],
+        [
+          63,
+          325
+        ],
+        [
+          80,
+          304
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "annotationStatus": "Coarse assistant contour from native source; not an expert mask or complete leaf"
+    },
+    {
+      "id": "middle-left-horizontal",
+      "kind": "visible blade region",
+      "points": [
+        [
+          65,
+          235
+        ],
+        [
+          47,
+          244
+        ],
+        [
+          16,
+          264
+        ],
+        [
+          37,
+          258
+        ],
+        [
+          61,
+          245
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "annotationStatus": "Coarse assistant contour from native source; not an expert mask or complete leaf"
+    },
+    {
+      "id": "middle-right-horizontal",
+      "kind": "visible blade region",
+      "points": [
+        [
+          139,
+          252
+        ],
+        [
+          156,
+          255
+        ],
+        [
+          191,
+          270
+        ],
+        [
+          167,
+          266
+        ],
+        [
+          142,
+          259
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "annotationStatus": "Coarse assistant contour from native source; not an expert mask or complete leaf"
+    },
+    {
+      "id": "middle-right-descending",
+      "kind": "visible blade region",
+      "points": [
+        [
+          143,
+          222
+        ],
+        [
+          156,
+          227
+        ],
+        [
+          177,
+          246
+        ],
+        [
+          160,
+          237
+        ],
+        [
+          143,
+          228
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "annotationStatus": "Coarse assistant contour from native source; not an expert mask or complete leaf"
+    }
+  ],
+  "limitations": [
+    "Only selected exposed blade regions traced; these are not complete compound leaves.",
+    "Untraced foliage and floral structures are unknown, not absent.",
+    "All initial depth is zero because this photograph does not establish depth.",
+    "No gravity, elasticity, contacts or growth response simulated."
+  ]
+}
