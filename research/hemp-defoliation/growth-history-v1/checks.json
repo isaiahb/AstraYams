@@ -1,0 +1,57 @@
+{
+  "status": "implementation checks passed; biological accuracy is unvalidated",
+  "frames": 69,
+  "events": 339,
+  "maxAttachmentErrorM": 0,
+  "maxHalfStepDimensionDifferenceM": 0.0008414583596275671,
+  "finalMetrics": {
+    "nodes": 121,
+    "shoots": 24,
+    "leaves": 171,
+    "height": 0.9859999999999995,
+    "skeletonWidth": 0.29787113537614773,
+    "skeletonDepth": 0.2902907117979755
+  },
+  "earlyMetrics": {
+    "nodes": 3,
+    "shoots": 1,
+    "leaves": 6,
+    "height": 0.09782673497226271,
+    "skeletonWidth": 0,
+    "skeletonDepth": 0
+  },
+  "halfStepFinalMetrics": {
+    "nodes": 121,
+    "shoots": 24,
+    "leaves": 171,
+    "height": 0.9859999999999995,
+    "skeletonWidth": 0.29829628312813605,
+    "skeletonDepth": 0.29113217015760307
+  },
+  "responseDisabledFinalMetrics": {
+    "nodes": 121,
+    "shoots": 24,
+    "leaves": 171,
+    "height": 0.9859999999999995,
+    "skeletonWidth": 0.5278575760196872,
+    "skeletonDepth": 0.5278575760196872
+  },
+  "checked": [
+    "stable node identity and monotone segment extension",
+    "child and petiole attachment",
+    "finite coordinates",
+    "birth precedes appearance",
+    "deterministic replay",
+    "non-planar study geometry",
+    "direction-response ablation changes morphology"
+  ],
+  "notChecked": [
+    "biological growth rates",
+    "cultivar fit",
+    "self-collision",
+    "elastic bending",
+    "live tissue stiffness",
+    "light competition",
+    "root physiology"
+  ]
+}
