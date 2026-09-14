@@ -266,3 +266,7 @@ Added persistent dormant/active bud states for all modeled true-leaf axils; pres
 ## Basal bud audit — 2026-09-13
 
 Latest user explicitly asks not to add lower buds merely to match their suggestion. Audited model rather than adding geometry: lowest two main-axis node ranks are held inactive; ranks 3–12 activate under an inherited eligibility rule and fixed delay. Added reproducible audit-buds.mjs and compact main-axis timeline JSON. Chronology assertions pass. This is a model explanation, not biological evidence. Primary developmental article publisher retry returned 429; no new empirical rate established. Existing visual views unchanged; no new visual inspection or validation claimed. No remote worker or heavy local job. Next evidence must resolve the same basal nodes over time, not compare unrelated plants.
+
+## Biological justification requirement
+
+User now explicitly requires researched justification for every scripted biological behavior. Added repository-level rule-provenance requirement and growth-history-v3/RULE-AUDIT.md. Audit separates supported anatomy from unsupported numerical timing, node eligibility, angles, dimensions, senescence and kinematic posture. Current model is not compliant as a biological forecast. No geometry or empirical claims changed. Next revisions must resolve documented unsupported behaviors individually with evidence; preserve exploratory legacy models.

@@ -33,3 +33,7 @@ conflicting priorities or a material scope/cost commitment actually requires it.
 Do not invent real measurements, silently expand scope, or imply background
 execution after the active turn ends. See docs/simulation/REALISM-METHOD.md and
 the current work ledger for the detailed review loop and chosen milestone.
+
+## Biological rule provenance
+
+User requirement: every scripted biological behavior must be justified by researched biological findings. For plant generators, track each behavior separately from its numeric parameters. A general anatomy citation does not justify a node cutoff, fixed delay, growth rate, branch angle, organ lifespan or universal cultivar rule. Record exact source, relevant finding, study population, supported scope and transfer limitations. Unsupported behavior must be explicitly labeled a hypothesis and excluded from claims of biological realism; do not silently substitute an arbitrary rule. Numerical defaults remain uncalibrated unless source-linked measurements justify them. Computational limits must be labeled study limits, not biological termination. Preserve legacy versions and audit them before claiming compliance. Do not claim all rules are supported merely because the model has a sources list.
