@@ -1,0 +1,32 @@
+[
+  {
+    "id": "commercial-canopy",
+    "group": "Commercial facility",
+    "title": "Buckeye Relief: vegetative canopy",
+    "image": "https://img.cannabisbusinesstimes.com/files/base/transpire/all/image/2023/02/cbt.buckeyeveg.jpg?auto=format%2Ccompress&dpr=2&fit=max&q=70&w=400",
+    "source": "https://www.cannabisbusinesstimes.com/videos/video/15687940/watch-how-to-defoliate-a-canopy",
+    "credit": "Cannabis Business Times \u00b7 Buckeye Relief \u00b7 February 2023",
+    "classification": "Commercial medical cannabis facility; not verified CBD hemp. Prior removal history unknown.",
+    "observation": "Overlapping foliage forms a shared canopy. This is not a documented untreated control."
+  },
+  {
+    "id": "commercial-plant",
+    "group": "Commercial facility",
+    "title": "Buckeye Relief: plant structure at working height",
+    "image": "https://img.cannabisbusinesstimes.com/files/base/transpire/all/image/2023/02/cbt.buckeye92cookies_600.jpg?auto=format%2Ccompress&dpr=2&fit=max&q=70&w=400",
+    "source": "https://www.cannabisbusinesstimes.com/videos/video/15687940/watch-how-to-defoliate-a-canopy",
+    "credit": "Cannabis Business Times \u00b7 Buckeye Relief \u00b7 February 2023",
+    "classification": "Commercial medical cannabis; source identifies 92 Cookies. Not a same-plant before/after pair.",
+    "observation": "Compare exposed lower stems, upper shoot arrangement, canopy depth and support hardware."
+  },
+  {
+    "id": "cbd-research",
+    "group": "CBD hemp",
+    "title": "Verified CBD hemp: indoor research plants",
+    "image": "https://www.frontiersin.org/files/Articles/984410/xml-images/fpls-13-984410-g009.webp",
+    "source": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2022.984410/full",
+    "credit": "Islam et al. (2022), Frontiers in Plant Science \u00b7 Figure 9 \u00b7 CC BY",
+    "classification": "Alpine Star CBD hemp in indoor research chambers. Not a commercial factory or defoliation comparison.",
+    "observation": "A chemotype-confirmed reference for whole-plant appearance. The panels show experimental groups, not a pruning sequence."
+  }
+]
