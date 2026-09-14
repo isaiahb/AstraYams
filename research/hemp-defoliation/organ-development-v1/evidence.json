@@ -1,0 +1,74 @@
+{
+  "scope": "anatomical simulation; no cultivation optimization",
+  "records": [
+    {
+      "quantity": "leaf_pair_appearance",
+      "value": 0.152,
+      "unit": "pairs/day",
+      "population": "field fibre hemp; thesis chapter 4",
+      "source": "https://doi.org/10.18174/202103",
+      "status": "indexed_text_only",
+      "deploy_as_default": false
+    },
+    {
+      "quantity": "leaf_pair_thermal_appearance",
+      "value": 0.0149,
+      "unit": "pairs/degree-day",
+      "base_temperature_C": 1,
+      "population": "field fibre hemp; thesis chapter 4",
+      "source": "https://doi.org/10.18174/202103",
+      "status": "indexed_text_only",
+      "deploy_as_default": false
+    },
+    {
+      "quantity": "leaf_pairs_at_40_days_after_emergence",
+      "range": [
+        4,
+        10
+      ],
+      "range_type": "reported observed spread; not confidence interval",
+      "source": "https://doi.org/10.18174/202103",
+      "status": "indexed_text_only",
+      "deploy_as_default": false
+    },
+    {
+      "quantity": "hypocotyl_histology_observation_ages",
+      "values": [
+        6,
+        9,
+        12,
+        15,
+        17,
+        20
+      ],
+      "unit": "days after sowing",
+      "population": "Santhica 27",
+      "source": "https://doi.org/10.3389/fpls.2016.01733",
+      "status": "full_text_results_checked",
+      "deploy_as_default": false,
+      "note": "Sampling times, not growth-rate estimates"
+    },
+    {
+      "quantity": "petiole_length",
+      "range": [
+        1.2,
+        8.0
+      ],
+      "mean": 3.86,
+      "unit": "cm",
+      "population": "hybrid study; table sampling scope needs verification",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8643699/",
+      "status": "indexed_table_only",
+      "deploy_as_default": false
+    }
+  ],
+  "unknown_target_cohort_parameters": [
+    "leaf expansion duration",
+    "petiole elongation duration",
+    "bud activation probability and delay",
+    "leaf retention duration",
+    "internode rank-specific expansion",
+    "live tissue stiffness and damping"
+  ],
+  "simulation_modified": false
+}
