@@ -88,7 +88,12 @@
           144.32040518433945,
           61.26469633251833
         ]
-      ]
+      ],
+      "attachmentEvidence": {
+        "state": "not-applicable",
+        "basis": "Main-axis interpretive path; publisher guide partly obscures tissue."
+      },
+      "physicalAttachmentVerified": false
     },
     {
       "id": "side-left",
@@ -129,7 +134,12 @@
           102.73887728931007,
           272.06654205378976
         ]
-      ]
+      ],
+      "attachmentEvidence": {
+        "state": "unresolved",
+        "basis": "The basal junction is obscured in the reference; shared coordinates encode a hypothesis, not an observed connection."
+      },
+      "physicalAttachmentVerified": false
     },
     {
       "id": "side-right",
@@ -178,7 +188,12 @@
           216.01269465852806,
           211.83744327628358
         ]
-      ]
+      ],
+      "attachmentEvidence": {
+        "state": "unresolved",
+        "basis": "The basal junction is obscured in the reference; shared coordinates encode a hypothesis, not an observed connection."
+      },
+      "physicalAttachmentVerified": false
     }
   ],
   "regions": [

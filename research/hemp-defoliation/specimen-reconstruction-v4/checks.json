@@ -1,6 +1,8 @@
 {
   "coordinateRoundTripMaxPixels": 2.842170943040401e-14,
-  "attachmentCheck": "Declared branch paths start on parent path vertices",
+  "attachmentCheck": "Only encoded coordinate continuity checked; no physical or observational attachment verification",
+  "observedLateralAttachments": 0,
+  "unresolvedLateralAttachments": 2,
   "biologicalValidation": false,
   "depthRecovered": false,
   "physics": false,
