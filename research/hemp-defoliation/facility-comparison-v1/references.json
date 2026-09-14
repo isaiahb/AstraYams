@@ -28,5 +28,14 @@
     "credit": "Islam et al. (2022), Frontiers in Plant Science \u00b7 Figure 9 \u00b7 CC BY",
     "classification": "Alpine Star CBD hemp in indoor research chambers. Not a commercial factory or defoliation comparison.",
     "observation": "A chemotype-confirmed reference for whole-plant appearance. The panels show experimental groups, not a pruning sequence."
+  },
+  {
+    "id": "dated-individuals",
+    "title": "Potted individuals \u00b7 dated research figure",
+    "image": "/research/hemp-defoliation/height-evidence-v1/figures/dated-architecture.png",
+    "source": "https://doi.org/10.3390/plants11010140",
+    "credit": "Crispim Massuela et al. (2022), Figure 1 \u00b7 CC BY 4.0",
+    "classification": "Research plants, not a factory. Whole-plant panels at 65 DAP; C denotes control, L and T have different intervention histories. Rightmost 93-DAP flower closeup is not a second whole-plant time point.",
+    "observation": "Control panel shows a tall central axis with lateral foliage and substantial floral structures. Lower junctions remain partly occluded. Our vegetative model omits the floral structures entirely."
   }
 ]
