@@ -270,3 +270,7 @@ Latest user explicitly asks not to add lower buds merely to match their suggesti
 ## Biological justification requirement
 
 User now explicitly requires researched justification for every scripted biological behavior. Added repository-level rule-provenance requirement and growth-history-v3/RULE-AUDIT.md. Audit separates supported anatomy from unsupported numerical timing, node eligibility, angles, dimensions, senescence and kinematic posture. Current model is not compliant as a biological forecast. No geometry or empirical claims changed. Next revisions must resolve documented unsupported behaviors individually with evidence; preserve exploratory legacy models.
+
+## 2026-09-14 — lower foliage inventory
+
+Bounded diagnostic of v4, motivated by user's sparse-bottom critique. Added reproducible leaf-junction counts in five height bands and traced lateral leaves to their main-axis branch origin. Legacy scenario has 11 junctions in lowest fifth vs 61 in each next fifth. This is not projected coverage, area, measured density or a target for biology. Counts conserve all 171 leaves; unresolved preset conserves 23. No geometry changed or growth/energy assumptions added. Visual anatomy comparison remains needed; no new reference fit, physics validation, ML or worker execution. Next: choose suitable pre-removal reference and fit visible lower branches with hidden connections explicitly unknown.

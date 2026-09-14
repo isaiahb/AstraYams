@@ -1,0 +1,114 @@
+{
+  "meaning": "Leaf junction counts by height and branch ancestry. Not silhouette coverage, leaf area, observed data, or a biological forecast.",
+  "finding": "The legacy scenario excludes main-axis nodes 1 and 2 from branch activation; the unresolved preset forecasts no branches. Both can produce sparse basal foliage for modeling reasons alone.",
+  "next": "Fit visible lower-branch topology and projected foliage coverage to a suitable pre-removal reference; do not infer activation dates from one image.",
+  "presets": [
+    {
+      "mode": "unresolved",
+      "height_m": 0.9859999999999995,
+      "bins": [
+        {
+          "heightFraction": [
+            0,
+            0.2
+          ],
+          "mainAxisLeaves": 8,
+          "lateralLeaves": 0
+        },
+        {
+          "heightFraction": [
+            0.2,
+            0.4
+          ],
+          "mainAxisLeaves": 4,
+          "lateralLeaves": 0
+        },
+        {
+          "heightFraction": [
+            0.4,
+            0.6
+          ],
+          "mainAxisLeaves": 4,
+          "lateralLeaves": 0
+        },
+        {
+          "heightFraction": [
+            0.6,
+            0.8
+          ],
+          "mainAxisLeaves": 3,
+          "lateralLeaves": 0
+        },
+        {
+          "heightFraction": [
+            0.8,
+            1
+          ],
+          "mainAxisLeaves": 4,
+          "lateralLeaves": 0
+        }
+      ],
+      "leavesByMainAxisBranchOrigin": {},
+      "totalLeaves": 23
+    },
+    {
+      "mode": "legacy-scenario",
+      "height_m": 0.9859999999999995,
+      "bins": [
+        {
+          "heightFraction": [
+            0,
+            0.2
+          ],
+          "mainAxisLeaves": 8,
+          "lateralLeaves": 3
+        },
+        {
+          "heightFraction": [
+            0.2,
+            0.4
+          ],
+          "mainAxisLeaves": 4,
+          "lateralLeaves": 57
+        },
+        {
+          "heightFraction": [
+            0.4,
+            0.6
+          ],
+          "mainAxisLeaves": 4,
+          "lateralLeaves": 57
+        },
+        {
+          "heightFraction": [
+            0.6,
+            0.8
+          ],
+          "mainAxisLeaves": 3,
+          "lateralLeaves": 25
+        },
+        {
+          "heightFraction": [
+            0.8,
+            1
+          ],
+          "mainAxisLeaves": 4,
+          "lateralLeaves": 6
+        }
+      ],
+      "leavesByMainAxisBranchOrigin": {
+        "3": 26,
+        "4": 26,
+        "5": 26,
+        "6": 13,
+        "7": 12,
+        "8": 12,
+        "9": 10,
+        "10": 8,
+        "11": 8,
+        "12": 7
+      },
+      "totalLeaves": 171
+    }
+  ]
+}
