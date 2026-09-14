@@ -1,0 +1,43 @@
+{
+  "specimen": "084847-W",
+  "timestamp": "2021-02-22_11-48-51",
+  "source": "https://doi.org/10.25909/23211776.v1",
+  "license": "CC BY-NC 4.0",
+  "attribution": "Rachel Burton; APPF Plant Accelerator, University of Adelaide; UA (Gill) hemp phenotyping dataset",
+  "images": [
+    {
+      "path": "research/hemp-defoliation/research-portraits-v2/images/RGB_3D_3D_side_far_0_084847-W_2021-02-22_11-48-51.png",
+      "sha256": "b5fb5d55f8ee33a7737f0f43c4d422891055b6ea8a578f121f652f3ad5bf3abd",
+      "size": [
+        2472,
+        3296
+      ]
+    },
+    {
+      "path": "research/hemp-defoliation/research-portraits-v2/images/RGB_3D_3D_side_upper0_084847-W_2021-02-22_11-48-51.png",
+      "sha256": "ef66e7b47d556061b7aa14f974a94a47b17054efbd5d138f96454d1fddbc2ec4",
+      "size": [
+        2472,
+        3296
+      ]
+    }
+  ],
+  "observations": [
+    "Archive filenames agree on specimen ID and timestamp.",
+    "Frontal view exposes a central stem with several petiole junctions; elevated view changes leaf occlusion substantially.",
+    "Elevated view does not expose all the same junctions.",
+    "Sparse vegetative specimen is not equivalent to the dense facility canopy requested by user."
+  ],
+  "unknowns": [
+    "No camera intrinsics/extrinsics found in the local portrait records or checked gallery metadata; availability elsewhere not determined.",
+    "No reviewed organ correspondences or metric scale.",
+    "Equal file timestamps do not independently establish exact synchronized capture."
+  ],
+  "decision": {
+    "useAsReplacementForCurrentPlant": false,
+    "inferMetricDepth": false,
+    "useForCommercialTraining": false,
+    "reason": "Research-only reference with noncommercial terms, different morphology and no verified camera calibration; not a solution to current specimen depth."
+  },
+  "nextEvidence": "Obtain same-specimen multi-view imagery with usable permissions and camera/scale information; until then keep current depth and occluded attachments explicitly unobserved. Do not transplant branch junctions from this other specimen."
+}
