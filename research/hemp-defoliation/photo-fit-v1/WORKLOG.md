@@ -262,3 +262,7 @@ User explicitly requested deep research into organs, developmental stages and ra
 ## Growth history v3 — explicit buds
 
 Added persistent dormant/active bud states for all modeled true-leaf axils; preserved inherited activation eligibility and canopy geometry to isolate this representation change. Added optional enlarged amber/blue diagnostic markers and inspected branching-stage three-quarter skeleton in browser. Attachment, activation timing and one-child-axis correspondence checks pass. Final 171 buds, 23 active, 148 dormant are scenario outputs. No biological calibration claimed. Lateral leaf profile reset and regular canopy remain next issues. No ML/heavy compute or desktop product edits.
+
+## Basal bud audit — 2026-09-13
+
+Latest user explicitly asks not to add lower buds merely to match their suggestion. Audited model rather than adding geometry: lowest two main-axis node ranks are held inactive; ranks 3–12 activate under an inherited eligibility rule and fixed delay. Added reproducible audit-buds.mjs and compact main-axis timeline JSON. Chronology assertions pass. This is a model explanation, not biological evidence. Primary developmental article publisher retry returned 429; no new empirical rate established. Existing visual views unchanged; no new visual inspection or validation claimed. No remote worker or heavy local job. Next evidence must resolve the same basal nodes over time, not compare unrelated plants.

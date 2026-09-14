@@ -1,0 +1,214 @@
+{
+  "units": "uncalibrated development units, not days",
+  "interpretation": "Existing model audit only. Does not establish when real lower buds form or grow.",
+  "finding": "Basal nodes 1–2 remain inactive by rule; eligible main-axis nodes 3–12 activate after fixed delay. Later nodes remain inactive. This spatial pattern is authored, not inferred from observations.",
+  "rows": [
+    {
+      "bud": "main/node-1/bud-0",
+      "parentNode": 1,
+      "initiated": 2.5,
+      "activated": null,
+      "state": "dormant",
+      "childNodes": 0,
+      "explanation": "Held inactive by scripted rank rule"
+    },
+    {
+      "bud": "main/node-1/bud-1",
+      "parentNode": 1,
+      "initiated": 2.5,
+      "activated": null,
+      "state": "dormant",
+      "childNodes": 0,
+      "explanation": "Held inactive by scripted rank rule"
+    },
+    {
+      "bud": "main/node-2/bud-0",
+      "parentNode": 2,
+      "initiated": 4.05,
+      "activated": null,
+      "state": "dormant",
+      "childNodes": 0,
+      "explanation": "Held inactive by scripted rank rule"
+    },
+    {
+      "bud": "main/node-2/bud-1",
+      "parentNode": 2,
+      "initiated": 4.05,
+      "activated": null,
+      "state": "dormant",
+      "childNodes": 0,
+      "explanation": "Held inactive by scripted rank rule"
+    },
+    {
+      "bud": "main/node-3/bud-0",
+      "parentNode": 3,
+      "initiated": 5.6,
+      "activated": 10.8,
+      "state": "active",
+      "childNodes": 6,
+      "explanation": "Eligible under inherited scripted rank rule"
+    },
+    {
+      "bud": "main/node-3/bud-1",
+      "parentNode": 3,
+      "initiated": 5.6,
+      "activated": 10.8,
+      "state": "active",
+      "childNodes": 6,
+      "explanation": "Eligible under inherited scripted rank rule"
+    },
+    {
+      "bud": "main/node-4/bud-0",
+      "parentNode": 4,
+      "initiated": 7.1499999999999995,
+      "activated": 12.35,
+      "state": "active",
+      "childNodes": 6,
+      "explanation": "Eligible under inherited scripted rank rule"
+    },
+    {
+      "bud": "main/node-4/bud-1",
+      "parentNode": 4,
+      "initiated": 7.1499999999999995,
+      "activated": 12.35,
+      "state": "active",
+      "childNodes": 6,
+      "explanation": "Eligible under inherited scripted rank rule"
+    },
+    {
+      "bud": "main/node-5/bud-0",
+      "parentNode": 5,
+      "initiated": 8.7,
+      "activated": 13.899999999999999,
+      "state": "active",
+      "childNodes": 6,
+      "explanation": "Eligible under inherited scripted rank rule"
+    },
+    {
+      "bud": "main/node-5/bud-1",
+      "parentNode": 5,
+      "initiated": 8.7,
+      "activated": 13.899999999999999,
+      "state": "active",
+      "childNodes": 6,
+      "explanation": "Eligible under inherited scripted rank rule"
+    },
+    {
+      "bud": "main/node-6/bud-0",
+      "parentNode": 6,
+      "initiated": 10.25,
+      "activated": 15.45,
+      "state": "active",
+      "childNodes": 6,
+      "explanation": "Eligible under inherited scripted rank rule"
+    },
+    {
+      "bud": "main/node-7/bud-0",
+      "parentNode": 7,
+      "initiated": 11.8,
+      "activated": 17,
+      "state": "active",
+      "childNodes": 6,
+      "explanation": "Eligible under inherited scripted rank rule"
+    },
+    {
+      "bud": "main/node-8/bud-0",
+      "parentNode": 8,
+      "initiated": 13.350000000000001,
+      "activated": 18.55,
+      "state": "active",
+      "childNodes": 6,
+      "explanation": "Eligible under inherited scripted rank rule"
+    },
+    {
+      "bud": "main/node-9/bud-0",
+      "parentNode": 9,
+      "initiated": 14.900000000000002,
+      "activated": 20.1,
+      "state": "active",
+      "childNodes": 6,
+      "explanation": "Eligible under inherited scripted rank rule"
+    },
+    {
+      "bud": "main/node-10/bud-0",
+      "parentNode": 10,
+      "initiated": 16.450000000000003,
+      "activated": 21.650000000000002,
+      "state": "active",
+      "childNodes": 6,
+      "explanation": "Eligible under inherited scripted rank rule"
+    },
+    {
+      "bud": "main/node-11/bud-0",
+      "parentNode": 11,
+      "initiated": 18.000000000000004,
+      "activated": 23.200000000000003,
+      "state": "active",
+      "childNodes": 6,
+      "explanation": "Eligible under inherited scripted rank rule"
+    },
+    {
+      "bud": "main/node-12/bud-0",
+      "parentNode": 12,
+      "initiated": 19.550000000000004,
+      "activated": 24.750000000000004,
+      "state": "active",
+      "childNodes": 5,
+      "explanation": "Eligible under inherited scripted rank rule"
+    },
+    {
+      "bud": "main/node-13/bud-0",
+      "parentNode": 13,
+      "initiated": 21.100000000000005,
+      "activated": null,
+      "state": "dormant",
+      "childNodes": 0,
+      "explanation": "Held inactive by scripted rank rule"
+    },
+    {
+      "bud": "main/node-14/bud-0",
+      "parentNode": 14,
+      "initiated": 22.650000000000006,
+      "activated": null,
+      "state": "dormant",
+      "childNodes": 0,
+      "explanation": "Held inactive by scripted rank rule"
+    },
+    {
+      "bud": "main/node-15/bud-0",
+      "parentNode": 15,
+      "initiated": 24.200000000000006,
+      "activated": null,
+      "state": "dormant",
+      "childNodes": 0,
+      "explanation": "Held inactive by scripted rank rule"
+    },
+    {
+      "bud": "main/node-16/bud-0",
+      "parentNode": 16,
+      "initiated": 25.750000000000007,
+      "activated": null,
+      "state": "dormant",
+      "childNodes": 0,
+      "explanation": "Held inactive by scripted rank rule"
+    },
+    {
+      "bud": "main/node-17/bud-0",
+      "parentNode": 17,
+      "initiated": 27.300000000000008,
+      "activated": null,
+      "state": "dormant",
+      "childNodes": 0,
+      "explanation": "Held inactive by scripted rank rule"
+    },
+    {
+      "bud": "main/node-18/bud-0",
+      "parentNode": 18,
+      "initiated": 28.85000000000001,
+      "activated": null,
+      "state": "dormant",
+      "childNodes": 0,
+      "explanation": "Held inactive by scripted rank rule"
+    }
+  ]
+}
