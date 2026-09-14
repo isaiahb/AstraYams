@@ -1,0 +1,698 @@
+{
+  "source": {
+    "image": "/research/hemp-defoliation/height-evidence-v1/figures/dated-architecture.png",
+    "doi": "https://doi.org/10.3390/plants11010140",
+    "panel": "(a), L specimen \u2014 treated plant, not untreated control or partner cultivar",
+    "credit": "Crispim Massuela et al. 2022, Figure 1, CC BY 4.0",
+    "crop": [
+      0,
+      0,
+      230,
+      434
+    ],
+    "stage": "Panel (a) caption identifies L specimen but does not independently date it. 65 DAP explicitly labels panel (b); panel (a) age unverified.",
+    "nativeImage": "/runs/hemp-specimen-source-native-v1/figure-native.png",
+    "registration": "registration.json"
+  },
+  "units": "Source image pixels, displayed in normalized specimen-height coordinates; physical scale not inferred from a different panel",
+  "status": "Assistant visual traces, not expert annotations. Publisher main/side guide lines aid tracing but partly obscure tissue. No inferred connections treated as observed.",
+  "root": [
+    110,
+    370
+  ],
+  "tip": [
+    96,
+    34
+  ],
+  "axes": [
+    {
+      "id": "main",
+      "parent": null,
+      "status": "approximate main-axis path aided by publisher solid guide",
+      "points": [
+        [
+          110,
+          370
+        ],
+        [
+          107,
+          314
+        ],
+        [
+          105,
+          249
+        ],
+        [
+          104,
+          194
+        ],
+        [
+          101,
+          132
+        ],
+        [
+          98,
+          78
+        ],
+        [
+          96,
+          34
+        ]
+      ],
+      "nativePoints": [
+        [
+          164.39424623711227,
+          543.0974865525673
+        ],
+        [
+          160.09270886866096,
+          462.79202151589243
+        ],
+        [
+          157.2250172896934,
+          369.58032102689486
+        ],
+        [
+          155.79117150020963,
+          290.70888215158925
+        ],
+        [
+          151.48963413175832,
+          201.79926014669925
+        ],
+        [
+          147.188096763307,
+          124.36184743276283
+        ],
+        [
+          144.32040518433945,
+          61.26469633251833
+        ]
+      ]
+    },
+    {
+      "id": "side-left",
+      "parent": "main",
+      "status": "hypothesized attachment; dashed publisher guide aids distal path",
+      "points": [
+        [
+          107,
+          314
+        ],
+        [
+          90,
+          256
+        ],
+        [
+          74,
+          210
+        ],
+        [
+          67,
+          181
+        ]
+      ],
+      "nativePoints": [
+        [
+          160.09270886866096,
+          462.79202151589243
+        ],
+        [
+          135.71733044743684,
+          379.6185041564792
+        ],
+        [
+          112.77579781569646,
+          313.65330073349634
+        ],
+        [
+          102.73887728931007,
+          272.06654205378976
+        ]
+      ]
+    },
+    {
+      "id": "side-right",
+      "parent": "main",
+      "status": "hypothesized attachment; dashed publisher guide aids distal path",
+      "points": [
+        [
+          107,
+          314
+        ],
+        [
+          120,
+          256
+        ],
+        [
+          131,
+          207
+        ],
+        [
+          141,
+          171
+        ],
+        [
+          146,
+          139
+        ]
+      ],
+      "nativePoints": [
+        [
+          160.09270886866096,
+          462.79202151589243
+        ],
+        [
+          178.73270413195,
+          379.6185041564792
+        ],
+        [
+          194.50500781627147,
+          309.35122224938874
+        ],
+        [
+          208.84346571110922,
+          257.7262804400978
+        ],
+        [
+          216.01269465852806,
+          211.83744327628358
+        ]
+      ]
+    }
+  ],
+  "regions": [
+    {
+      "id": "upper-left-blade",
+      "kind": "visible blade region",
+      "points": [
+        [
+          97,
+          105
+        ],
+        [
+          77,
+          110
+        ],
+        [
+          50,
+          125
+        ],
+        [
+          73,
+          120
+        ],
+        [
+          92,
+          115
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "nativePoints": [
+        [
+          145.75425097382322,
+          163.08055378973103
+        ],
+        [
+          117.07733518414778,
+          170.250684596577
+        ],
+        [
+          78.36349886808594,
+          191.7610770171149
+        ],
+        [
+          111.3419520262127,
+          184.59094621026892
+        ],
+        [
+          138.58502202640437,
+          177.42081540342295
+        ]
+      ]
+    },
+    {
+      "id": "upper-right-blade",
+      "kind": "visible blade region",
+      "points": [
+        [
+          102,
+          90
+        ],
+        [
+          125,
+          91
+        ],
+        [
+          155,
+          103
+        ],
+        [
+          129,
+          98
+        ],
+        [
+          106,
+          97
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "nativePoints": [
+        [
+          152.9234799212421,
+          141.57016136919313
+        ],
+        [
+          185.90193307936886,
+          143.00418753056232
+        ],
+        [
+          228.917306763882,
+          160.21250146699265
+        ],
+        [
+          191.63731623730393,
+          153.04237066014667
+        ],
+        [
+          158.65886307917717,
+          151.60834449877748
+        ]
+      ]
+    },
+    {
+      "id": "lower-left-blade",
+      "kind": "visible blade region",
+      "points": [
+        [
+          87,
+          257
+        ],
+        [
+          63,
+          276
+        ],
+        [
+          35,
+          300
+        ],
+        [
+          56,
+          289
+        ],
+        [
+          82,
+          270
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "nativePoints": [
+        [
+          131.4157930789855,
+          381.05253031784844
+        ],
+        [
+          97.00349413137498,
+          408.29902738386306
+        ],
+        [
+          56.85581202582936,
+          442.7156552567237
+        ],
+        [
+          86.96657360498857,
+          426.9413674816626
+        ],
+        [
+          124.24656413156664,
+          399.6948704156479
+        ]
+      ]
+    },
+    {
+      "id": "lower-right-blade",
+      "kind": "visible blade region",
+      "points": [
+        [
+          120,
+          279
+        ],
+        [
+          149,
+          291
+        ],
+        [
+          188,
+          322
+        ],
+        [
+          154,
+          310
+        ],
+        [
+          126,
+          292
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "nativePoints": [
+        [
+          178.73270413195,
+          412.60110586797066
+        ],
+        [
+          220.31423202697937,
+          429.809419804401
+        ],
+        [
+          276.2342178168465,
+          474.26423080684594
+        ],
+        [
+          227.48346097439824,
+          457.0559168704157
+        ],
+        [
+          187.33577886885263,
+          431.24344596577015
+        ]
+      ]
+    },
+    {
+      "id": "basal-left",
+      "kind": "visible blade region",
+      "points": [
+        [
+          101,
+          327
+        ],
+        [
+          88,
+          336
+        ],
+        [
+          80,
+          357
+        ],
+        [
+          92,
+          347
+        ],
+        [
+          104,
+          333
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "annotationStatus": "Coarse assistant contour from native source; not an expert mask or complete leaf",
+      "nativePoints": [
+        [
+          151.48963413175832,
+          481.4343616136919
+        ],
+        [
+          132.8496388684693,
+          494.34059706601465
+        ],
+        [
+          121.3788725525991,
+          524.4551464547677
+        ],
+        [
+          138.58502202640437,
+          510.1148848410758
+        ],
+        [
+          155.79117150020963,
+          490.0385185819071
+        ]
+      ]
+    },
+    {
+      "id": "basal-right",
+      "kind": "visible blade region",
+      "points": [
+        [
+          115,
+          328
+        ],
+        [
+          129,
+          332
+        ],
+        [
+          146,
+          343
+        ],
+        [
+          129,
+          339
+        ],
+        [
+          116,
+          335
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "annotationStatus": "Coarse assistant contour from native source; not an expert mask or complete leaf",
+      "nativePoints": [
+        [
+          171.56347518453111,
+          482.86838777506114
+        ],
+        [
+          191.63731623730393,
+          488.6044924205379
+        ],
+        [
+          216.01269465852806,
+          504.378780195599
+        ],
+        [
+          191.63731623730393,
+          498.64267555012225
+        ],
+        [
+          172.9973209740149,
+          492.9065709046455
+        ]
+      ]
+    },
+    {
+      "id": "low-left-tip",
+      "kind": "visible blade region",
+      "points": [
+        [
+          80,
+          294
+        ],
+        [
+          69,
+          305
+        ],
+        [
+          47,
+          340
+        ],
+        [
+          63,
+          325
+        ],
+        [
+          80,
+          304
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "annotationStatus": "Coarse assistant contour from native source; not an expert mask or complete leaf",
+      "nativePoints": [
+        [
+          121.3788725525991,
+          434.1114982885086
+        ],
+        [
+          105.6065688682776,
+          449.8857860635697
+        ],
+        [
+          74.06196149963462,
+          500.07670171149147
+        ],
+        [
+          97.00349413137498,
+          478.56630929095354
+        ],
+        [
+          121.3788725525991,
+          448.4517599022005
+        ]
+      ]
+    },
+    {
+      "id": "middle-left-horizontal",
+      "kind": "visible blade region",
+      "points": [
+        [
+          65,
+          235
+        ],
+        [
+          47,
+          244
+        ],
+        [
+          16,
+          264
+        ],
+        [
+          37,
+          258
+        ],
+        [
+          61,
+          245
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "annotationStatus": "Coarse assistant contour from native source; not an expert mask or complete leaf",
+      "nativePoints": [
+        [
+          99.87118571034252,
+          349.50395476772616
+        ],
+        [
+          74.06196149963462,
+          362.4101902200489
+        ],
+        [
+          29.612742025637687,
+          391.0907134474328
+        ],
+        [
+          59.7235036047969,
+          382.4865564792176
+        ],
+        [
+          94.13580255240743,
+          363.8442163814181
+        ]
+      ]
+    },
+    {
+      "id": "middle-right-horizontal",
+      "kind": "visible blade region",
+      "points": [
+        [
+          139,
+          252
+        ],
+        [
+          156,
+          255
+        ],
+        [
+          191,
+          270
+        ],
+        [
+          167,
+          266
+        ],
+        [
+          142,
+          259
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "annotationStatus": "Coarse assistant contour from native source; not an expert mask or complete leaf",
+      "nativePoints": [
+        [
+          205.97577413214165,
+          373.88239951100246
+        ],
+        [
+          230.35115255336578,
+          378.18447799511
+        ],
+        [
+          280.53575518529783,
+          399.6948704156479
+        ],
+        [
+          246.1234562376873,
+          393.95876577017117
+        ],
+        [
+          210.277311500593,
+          383.9205826405868
+        ]
+      ]
+    },
+    {
+      "id": "middle-right-descending",
+      "kind": "visible blade region",
+      "points": [
+        [
+          143,
+          222
+        ],
+        [
+          156,
+          227
+        ],
+        [
+          177,
+          246
+        ],
+        [
+          160,
+          237
+        ],
+        [
+          143,
+          228
+        ]
+      ],
+      "parent": null,
+      "attachmentStatus": "Unresolved; region is not a mechanically attached organ",
+      "annotationStatus": "Coarse assistant contour from native source; not an expert mask or complete leaf",
+      "nativePoints": [
+        [
+          211.71115729007676,
+          330.86161466992667
+        ],
+        [
+          230.35115255336578,
+          338.03174547677264
+        ],
+        [
+          260.461914132525,
+          365.27824254278727
+        ],
+        [
+          236.08653571130088,
+          352.37200709046454
+        ],
+        [
+          211.71115729007676,
+          339.4657716381418
+        ]
+      ]
+    }
+  ],
+  "limitations": [
+    "Only selected exposed blade regions traced; these are not complete compound leaves.",
+    "Untraced foliage and floral structures are unknown, not absent.",
+    "All initial depth is zero because this photograph does not establish depth.",
+    "No gravity, elasticity, contacts or growth response simulated."
+  ]
+}

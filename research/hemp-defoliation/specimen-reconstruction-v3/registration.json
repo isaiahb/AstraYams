@@ -1,0 +1,36 @@
+{
+  "oldToNative": {
+    "scaleX": 1.4338457894837722,
+    "offsetX": 6.671209393897334,
+    "scaleY": 1.4340261613691931,
+    "offsetY": 12.507806845965758
+  },
+  "method": "PDF image placement transform composed with saved page-render crop coordinates; no image fitting.",
+  "pagePoints": [
+    595.276,
+    841.89
+  ],
+  "pageRaster": [
+    1273,
+    1800
+  ],
+  "cropOrigin": [
+    100,
+    210
+  ],
+  "imageDrawRectPointsTopLeft": [
+    44.586,
+    94.141,
+    506.15,
+    204.5
+  ],
+  "nativeSize": [
+    1552,
+    627
+  ],
+  "source": "../height-evidence-v1/papers/massuela-2022.pdf, page 5, /Im6 /Image41",
+  "limitations": [
+    "Page-raster scaling uses saved rounded dimensions; subpixel renderer differences are possible.",
+    "Original manual trace error remains. Registration does not validate organ boundaries."
+  ]
+}
