@@ -1,0 +1,13 @@
+{
+  "baseline": "/runs/hemp-photo-fit-v1/shape-constrained.json",
+  "baseline_sha256": "60fd4531ef0a023e0252a80ad68cdbbb622989aa5e74ca28e0dfca793d52b69b",
+  "baseline_leaves": 148,
+  "added_leaves": 114,
+  "total_leaves": 262,
+  "baseline_axes": 43,
+  "added_axes": 38,
+  "max_attachment_error_m": 0.0,
+  "seed": 913,
+  "physics": "Static connected geometry; no new collision, stiffness, growth or damage validation.",
+  "evidence": "Added shoots and leaf counts are an explicit visual hypothesis, not measured commercial-plant data."
+}
