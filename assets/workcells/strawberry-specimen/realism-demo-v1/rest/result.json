@@ -1,0 +1,28 @@
+{
+  "kind": "rest",
+  "seconds": 20.00000000004999,
+  "history": [
+    {
+      "time_s": 4.999999999999685,
+      "last_5s_fruit_span_mm": 18.19141029390119,
+      "max_generalized_speed": 0.00028098266658963867
+    },
+    {
+      "time_s": 10.000000000002242,
+      "last_5s_fruit_span_mm": 0.23380410281919478,
+      "max_generalized_speed": 0.00013267176310405838
+    },
+    {
+      "time_s": 15.000000000026116,
+      "last_5s_fruit_span_mm": 0.01296297485134379,
+      "max_generalized_speed": 0.00045734304209574435
+    },
+    {
+      "time_s": 20.00000000004999,
+      "last_5s_fruit_span_mm": 0.005095691607372166,
+      "max_generalized_speed": 4.3579891592435905e-05
+    }
+  ],
+  "quiet": true,
+  "scope": "Fresh full-plant gravity settling from preceding state after the fruit shape change. Original elastic/damped plant law; no replayed old-shape motion."
+}

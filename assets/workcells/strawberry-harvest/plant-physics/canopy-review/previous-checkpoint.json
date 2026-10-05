@@ -1,0 +1,26 @@
+{
+  "label": "User-approved botanical v8: quieter plant response",
+  "sha256": {
+    "test_botanical.py": "b5290040b1e0bc3935eef26b92cc5618ba1bf5e748eef72f711f3259d036ac74",
+    "botanical-v8-metrics.json": "c9911d2c95f1acd1119e5dc94f953aebd6fb9ea8505488fbb326a325ea794c05",
+    "render_botanical.py": "25cda756dc61691bea77c395a32b8dfcb0345d284af29e51a75aa063542665f2",
+    "botanical.py": "3f303b5a5e09df794ce7d70a19d7e324a7cb84f82d99606ec21e683841b0377f",
+    "export_botanical.py": "6f59ee9e3fb2c0542a739768884147f119470945e9f06c919298830b7c54629f",
+    "botanical-v8/frame-13.5.png": "dce43fa79f0933c22bda997d4601197bb3f956bd8806104aac5ed26707a8e21b",
+    "botanical-v8/plant-response.mp4": "5a35fa62a69a4ad2140e5fd44387997b9743fed5731515b5387f2167553b2356",
+    "botanical-v8/frame-5.png": "76bfeed0c80ef363ae4320f88a60717033bc9754e3624c305c04e4fce5e74ef6",
+    "botanical-v8/model.json": "cface54df941a3d6e396f473a166ffcadacaffcca702f53b8b534addacad0069",
+    "botanical-v8/trace.json": "5116c8809e40f7fe2f6b4f2c40f22d3f143fc37c8adc4cf1292223462995788f",
+    "botanical-v8/result.json": "c8f880157ed26985e86545bba1d9ce303e6f4b07c3679fc3af92b8f219b08eed",
+    "botanical-v8/frame-0.png": "005786a041df97401edf61c6cb9919ab249aaa21476b23a01661d30eecc021b1",
+    "botanical-v8/frame-6.2.png": "40126a3d21fbc64ceb50ec0facea0a94bef82fd7249786bdd4782f101b180831",
+    "botanical-v8/frame-7.7.png": "efc25265a16d5f352bee4c56714b66773fbb8d7e53df9cb7f9164320f783217a",
+    "botanical-v8/rollout.npz": "d73ac72a3fb24001ac8cb67cfd3a1d36d12dfde17b388d6c9966941fe31ae1ef",
+    "botanical-v8/scene.xml": "1e504dcce2a3b0289c873d40b693284ff01c80f891b3dde1bfd36b9cd6bded76",
+    "botanical-v8-control/model.json": "cface54df941a3d6e396f473a166ffcadacaffcca702f53b8b534addacad0069",
+    "botanical-v8-control/trace.json": "9163444dd2ad009bd1fbfa10ef012d2e490fb72a12e22854cd1644c4cce9d6ac",
+    "botanical-v8-control/result.json": "8aeda16214ad30455e20be0d1129448ad9a78c32e5627f7bb810ffe7d338c9fc",
+    "botanical-v8-control/rollout.npz": "2142232a7a7291f76306f3d6c75afa296c69cb184cb5cde5f59f77f8ca8ac461",
+    "botanical-v8-control/scene.xml": "1e504dcce2a3b0289c873d40b693284ff01c80f891b3dde1bfd36b9cd6bded76"
+  }
+}

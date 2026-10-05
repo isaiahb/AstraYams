@@ -1,0 +1,29 @@
+{
+  "mode": "shell",
+  "scope": "Isolated clamped leaflet. Scripted probe; no robot, no real-plant calibration.",
+  "leaf_length_m": 0.08164999999999999,
+  "leaf_width_m": 0.07776190476190474,
+  "nominal_blade_mass_kg": 0.0008,
+  "clamp_fraction": 0.25,
+  "timestep_s": 0.00025,
+  "simulator": "3.12.0",
+  "source_model_sha256": "09da4b67aba3383c12aec19948c32df0db1ef4a119b45370ea5720a16896435b",
+  "sources": [
+    "tasks/strawberry_specimen/reference-graph.json",
+    "https://mujoco.readthedocs.io/en/stable/XMLreference.html#flex-elasticity"
+  ],
+  "limitations": [
+    "Same outline and nominal mass; constitutive law and nodal mass distribution differ.",
+    "First quarter clamped for this isolated test; not the plant attachment boundary.",
+    "Uniform-node flex mass, isotropic equivalent material, no explicit veins or turgor.",
+    "80 MPa is an assumed effective modulus, not a strawberry tissue measurement."
+  ],
+  "criteria": {
+    "full_episode_no_warnings": true,
+    "intended_contact": true,
+    "control_zero_contact": true,
+    "initial_overlap": false,
+    "peak_probe_penetration_mm_max": 1.0,
+    "max_edge_extension_fraction": 0.02
+  }
+}

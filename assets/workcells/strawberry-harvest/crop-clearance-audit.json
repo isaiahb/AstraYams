@@ -1,0 +1,10 @@
+{
+  "background_fruit_0_clearance_m": 0.029685177985551398,
+  "background_fruit_1_clearance_m": 0.029685177985551398,
+  "background_fruit_2_clearance_m": 0.029685177985551398,
+  "background_fruit_3_clearance_m": 0.029685177985551398,
+  "background_fruit_4_clearance_m": 0.0296851779855514,
+  "harvested_fruit_minimum_trough_clearance_m": 0.04447200103615559,
+  "stem_over_rim_clearance_m": 0.018600000000000005,
+  "stem_front_wall_clearance_m": 0.048600000000000004
+}

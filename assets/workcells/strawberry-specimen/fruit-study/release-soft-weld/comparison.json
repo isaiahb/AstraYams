@@ -1,0 +1,42 @@
+{
+  "results": [
+    {
+      "hypothesis": "elastic",
+      "max_primary_tip_recoil_mm": 37.91617518382918,
+      "final_primary_tip_rise_mm": 19.708888737558617,
+      "peduncle_tip_max_displacement_mm": 12.047605170256496,
+      "neighbor_max_displacement_mm": 22.665165122761728,
+      "initial_spring_energy_J": 0.019150880210961625,
+      "weld_gap_mm": 0.00033806866632406614
+    },
+    {
+      "hypothesis": "history",
+      "max_primary_tip_recoil_mm": 28.40611635171276,
+      "final_primary_tip_rise_mm": 11.392774910968267,
+      "peduncle_tip_max_displacement_mm": 7.907204716944061,
+      "neighbor_max_displacement_mm": 16.191227447857408,
+      "initial_spring_energy_J": 0.009905254004279117,
+      "weld_gap_mm": 0.0003380689206509526
+    }
+  ],
+  "measurement": "Difference from the matching uncut control at the same time. Final is last 0.5 s; not necessarily final equilibrium.",
+  "timestep_comparison": [
+    {
+      "hypothesis": "elastic",
+      "coarse_dt_s": 0.000125,
+      "fine_dt_s": 6.25e-05,
+      "final_tip_rise_fine_mm": 19.71133162393666,
+      "final_tip_rise_change_mm": 0.0024428863780414645,
+      "max_tip_response_curve_difference_mm": 0.06022383328902548
+    },
+    {
+      "hypothesis": "history",
+      "coarse_dt_s": 0.000125,
+      "fine_dt_s": 6.25e-05,
+      "final_tip_rise_fine_mm": 11.39353847632821,
+      "final_tip_rise_change_mm": 0.0007635653599429304,
+      "max_tip_response_curve_difference_mm": 0.053256183446708176
+    }
+  ],
+  "interpretation": "Both initial loaded configurations and spring moments match; different rest curvature AND tangent stiffness predict different unloading. This does not identify which model fits real strawberries."
+}

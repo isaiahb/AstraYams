@@ -1,0 +1,43 @@
+{
+  "kind": "neighbor",
+  "control": false,
+  "seconds": 4.000000000002015,
+  "elapsed_wall_s": 11.951317071914673,
+  "valid_run": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial_probe_contacts": [],
+  "probe_start_m": [
+    -0.037638106992973805,
+    -0.06789305358349856,
+    0.10136625852149528
+  ],
+  "probe_end_m": [
+    0.03344674536474603,
+    -0.026852194939464218,
+    0.11367851611470559
+  ],
+  "target": "berry_secondary_a",
+  "target_touched": true,
+  "probe_contacts": {
+    "berry_secondary_a": {
+      "contact_points": 9904,
+      "peak_force_n": 0.6329415454589329,
+      "impulse_ns": 0.08475659777896151,
+      "max_penetration_mm": 0.17199427777014714
+    }
+  },
+  "truss_trough_contact_duration_s": 3.925875,
+  "berry_berry_contact_duration_s": 4.0,
+  "penetrations_over_1mm": {},
+  "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.",
+  "approach_angle_deg": 0.0,
+  "trial_label": "neighbor"
+}

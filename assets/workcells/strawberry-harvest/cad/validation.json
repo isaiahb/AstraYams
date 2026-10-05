@@ -1,0 +1,17 @@
+{
+  "basket.step": {
+    "valid": true,
+    "volume_mm3": 1070207.9999999995,
+    "solids": 21
+  },
+  "cutter.step": {
+    "valid": true,
+    "volume_mm3": 89535.99999999999,
+    "solids": 5
+  },
+  "catcher.step": {
+    "valid": true,
+    "volume_mm3": 248636.90695961122,
+    "solids": 32
+  }
+}

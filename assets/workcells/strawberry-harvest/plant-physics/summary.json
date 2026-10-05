@@ -1,0 +1,19 @@
+{
+  "contact_response_vs_control_mm": [
+    54.503095104034635,
+    54.056818040218495,
+    40.893622520228206
+  ],
+  "probe_peak_force_n": 0.32933997904417267,
+  "probe_penetration_max_mm": 0.5761571730840999,
+  "max_right_cluster_attachment_gap_mm": 2.240874531478652,
+  "half_timestep_peak_force_change_percent": 6.85855426008144,
+  "half_timestep_impulse_change_percent": 0.9569127167253111,
+  "hardware_unchanged": {
+    "cut_base": true,
+    "catch_base": true,
+    "cutter": true,
+    "catcher": true
+  },
+  "status": "Candidate physical plant; diagnostic tests only, not a learned harvest or calibrated digital twin"
+}

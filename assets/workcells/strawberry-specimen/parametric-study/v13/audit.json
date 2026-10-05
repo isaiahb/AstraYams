@@ -1,0 +1,366 @@
+{
+  "scene_sha256": "185f600fbe2e30d3912cbbe913fb16e64d6a122cc274c74233efe464ab8c8232",
+  "mujoco_version": "3.12.0",
+  "anatomy": {
+    "unloaded": {
+      "left": {
+        "segment_inclination_from_vertical_deg": [
+          17.291114000959865,
+          22.41919745809555,
+          26.129495559917352,
+          28.92437447964965,
+          31.10510045021229,
+          32.862089335536105,
+          34.324812052578466
+        ],
+        "leaflet_base_normal_from_up_deg": [
+          19.5398461014595,
+          12.605071288862781,
+          9.71171875021525
+        ],
+        "tip_m": [
+          -0.0779999989,
+          0.0440000001,
+          0.423
+        ]
+      },
+      "high": {
+        "segment_inclination_from_vertical_deg": [
+          9.294473596334793,
+          8.679894298271874,
+          9.013139867790125,
+          10.22087054307979,
+          12.411884293222508,
+          15.898591136583388,
+          21.308900389429652
+        ],
+        "leaflet_base_normal_from_up_deg": [
+          23.874056641522348,
+          17.18873417230106,
+          13.339868227810973
+        ],
+        "tip_m": [
+          0.025000000099999996,
+          0.0829999999,
+          0.4390000010000001
+        ]
+      },
+      "right": {
+        "segment_inclination_from_vertical_deg": [
+          22.34500323142451,
+          30.535982029816807,
+          36.08525072425706,
+          39.81385722544337,
+          42.19496191603442,
+          43.43398893731226,
+          43.47853721199626
+        ],
+        "leaflet_base_normal_from_up_deg": [
+          17.4184201208632,
+          10.313240279760963,
+          8.257201976322424
+        ],
+        "tip_m": [
+          0.09899999999999999,
+          0.06300000004999999,
+          0.40900000000000003
+        ]
+      },
+      "front": {
+        "segment_inclination_from_vertical_deg": [
+          25.014687696017237,
+          32.744228386079016,
+          38.09413676901668,
+          41.83741386195672,
+          44.43065505295238,
+          46.10845642711808,
+          46.91869661543008
+        ],
+        "leaflet_base_normal_from_up_deg": [
+          15.8574237579554,
+          8.594366864603602,
+          7.445803489716355
+        ],
+        "tip_m": [
+          0.059000000000000004,
+          -0.016000000300000004,
+          0.38799999900000004
+        ]
+      },
+      "new": {
+        "segment_inclination_from_vertical_deg": [
+          15.305270092727476,
+          20.27120174975571,
+          23.541520009354088,
+          25.60361244942203,
+          26.6936982489765,
+          26.860085792996887,
+          25.945918728920077
+        ],
+        "leaflet_base_normal_from_up_deg": [
+          37.780939117170135,
+          31.512679130880755,
+          26.62335326129791
+        ],
+        "tip_m": [
+          -0.024999999899999997,
+          0.084,
+          0.37
+        ]
+      },
+      "emerging": {
+        "segment_inclination_from_vertical_deg": [
+          9.354780453430124,
+          11.400203992289791,
+          12.78193550172478,
+          13.697810769585486,
+          14.243366470183549,
+          14.445119879143771,
+          14.25994588634044
+        ],
+        "leaflet_base_normal_from_up_deg": [
+          49.06237935948611,
+          42.971834876547184,
+          37.780939242885836
+        ],
+        "tip_m": [
+          0.002,
+          0.04499999994,
+          0.3360000001000001
+        ]
+      }
+    },
+    "settled": {
+      "left": {
+        "segment_inclination_from_vertical_deg": [
+          17.709753211524987,
+          24.79936927620555,
+          30.96331309401566,
+          36.216414762125375,
+          40.67767068551807,
+          44.35567014058477,
+          47.23720633368431
+        ],
+        "leaflet_base_normal_from_up_deg": [
+          26.100711240887087,
+          3.4956178238872675,
+          18.595708693561402
+        ],
+        "tip_m": [
+          -0.09363752218769678,
+          0.04330740471516424,
+          0.41181813609334533
+        ]
+      },
+      "high": {
+        "segment_inclination_from_vertical_deg": [
+          9.555547920215162,
+          10.188992707213748,
+          12.16267830855687,
+          15.108019341309062,
+          19.026281622000692,
+          24.09367143429257,
+          30.794395879725265
+        ],
+        "leaflet_base_normal_from_up_deg": [
+          23.31541705490396,
+          5.610891387037286,
+          19.362691697216352
+        ],
+        "tip_m": [
+          0.031250811079099904,
+          0.09407466099140284,
+          0.4349802928138955
+        ]
+      },
+      "right": {
+        "segment_inclination_from_vertical_deg": [
+          22.753070449636635,
+          32.85024964830343,
+          40.80996774859662,
+          46.921728702607886,
+          51.46886200165469,
+          54.47725098120778,
+          55.76952644010439
+        ],
+        "leaflet_base_normal_from_up_deg": [
+          22.40596063734136,
+          3.6198854710930615,
+          18.903460578184237
+        ],
+        "tip_m": [
+          0.11177320929983539,
+          0.06415529660424457,
+          0.3959017074740464
+        ]
+      },
+      "front": {
+        "segment_inclination_from_vertical_deg": [
+          25.317638552303293,
+          34.44390414063257,
+          41.805599861246556,
+          47.549795914787076,
+          51.982253788530315,
+          55.190249254920744,
+          57.111901162342555
+        ],
+        "leaflet_base_normal_from_up_deg": [
+          20.52823945882267,
+          3.4291826563704673,
+          16.688474442767472
+        ],
+        "tip_m": [
+          0.06465197908432425,
+          -0.022797553266376842,
+          0.37836341040792326
+        ]
+      },
+      "new": {
+        "segment_inclination_from_vertical_deg": [
+          15.33914297336966,
+          20.411135698884916,
+          24.054932231718865,
+          26.565727339916638,
+          28.06748852944946,
+          28.581433892963958,
+          27.932522204430164
+        ],
+        "leaflet_base_normal_from_up_deg": [
+          38.335244497100845,
+          28.876643681205387,
+          26.234300020317978
+        ],
+        "tip_m": [
+          -0.025774599604035976,
+          0.08504277347294754,
+          0.3693494493799617
+        ]
+      },
+      "emerging": {
+        "segment_inclination_from_vertical_deg": [
+          9.359436897747159,
+          11.41181844849287,
+          12.808111802763573,
+          13.76479743276766,
+          14.427718774542164,
+          14.819533608640816,
+          14.80444302868408
+        ],
+        "leaflet_base_normal_from_up_deg": [
+          49.70555027328515,
+          41.36645825556316,
+          37.66318557381701
+        ],
+        "tip_m": [
+          0.002014237898040938,
+          0.044879743292761884,
+          0.3359689535017243
+        ]
+      }
+    }
+  },
+  "probe_pairs": {
+    "leaf": {
+      "numerical_probe_gate_pass": true,
+      "matching_initial_state_and_stroke": true,
+      "isolated_intended_organ": true,
+      "incidental_other_organs": [],
+      "target_touched": true,
+      "control_contact_count": 0,
+      "max_probe_penetration_mm": 0.12135714340339235,
+      "max_target_displacement_relative_control_mm": 26.218089990857337,
+      "final_target_displacement_relative_control_mm": 0.0007488659882969159,
+      "summed_contact_impulse_ns": 0.016739730425933845,
+      "contacted_surfaces": [
+        "leaf_left_1_w14_-1",
+        "leaf_left_1_w13_-1",
+        "leaf_left_1_w12_-1",
+        "leaf_left_1_w11_-1"
+      ],
+      "all_scene_penetrations_over_1mm": {}
+    },
+    "neighbor": {
+      "numerical_probe_gate_pass": true,
+      "matching_initial_state_and_stroke": true,
+      "isolated_intended_organ": true,
+      "incidental_other_organs": [],
+      "target_touched": true,
+      "control_contact_count": 0,
+      "max_probe_penetration_mm": 0.1668651302682584,
+      "max_target_displacement_relative_control_mm": 47.34504825068147,
+      "final_target_displacement_relative_control_mm": 0.9538454023013252,
+      "summed_contact_impulse_ns": 0.0793982035492827,
+      "contacted_surfaces": [
+        "berry_secondary_a"
+      ],
+      "all_scene_penetrations_over_1mm": {}
+    },
+    "stalk": {
+      "numerical_probe_gate_pass": true,
+      "matching_initial_state_and_stroke": true,
+      "isolated_intended_organ": true,
+      "incidental_other_organs": [],
+      "target_touched": true,
+      "control_contact_count": 0,
+      "max_probe_penetration_mm": 0.051955160565348574,
+      "max_target_displacement_relative_control_mm": 38.195562463660345,
+      "final_target_displacement_relative_control_mm": 0.7009764359615853,
+      "summed_contact_impulse_ns": 0.4740721391993289,
+      "contacted_surfaces": [
+        "peduncle_5_surface",
+        "peduncle_6_surface"
+      ],
+      "all_scene_penetrations_over_1mm": {}
+    },
+    "basal": {
+      "numerical_probe_gate_pass": true,
+      "matching_initial_state_and_stroke": true,
+      "isolated_intended_organ": true,
+      "incidental_other_organs": [],
+      "target_touched": true,
+      "control_contact_count": 0,
+      "max_probe_penetration_mm": 0.095636122434066,
+      "max_target_displacement_relative_control_mm": 6.0089629237505,
+      "final_target_displacement_relative_control_mm": 0.00034706894437157277,
+      "summed_contact_impulse_ns": 1.6071873127906886,
+      "contacted_surfaces": [
+        "petiole_left_1_surface"
+      ],
+      "all_scene_penetrations_over_1mm": {}
+    }
+  },
+  "rest": {
+    "kind": "rest",
+    "control": false,
+    "seconds": 10.000000000002242,
+    "elapsed_wall_s": 37.40136408805847,
+    "valid_run": true,
+    "warnings": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "initial_probe_contacts": [],
+    "probe_start_m": null,
+    "probe_end_m": null,
+    "target": null,
+    "target_touched": null,
+    "probe_contacts": {},
+    "truss_trough_contact_duration_s": 9.524875,
+    "berry_berry_contact_duration_s": 9.22625,
+    "penetrations_over_1mm": {
+      "berry_primary | trough_front": 1.1211507516894181,
+      "berry_primary | secondary_a_4_surface": 1.3568017720421144,
+      "berry_primary | secondary_a_5_surface": 1.2975411873732334
+    },
+    "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.",
+    "final_second_max_geom_coordinate_span_mm": 0.12554403840633194,
+    "approach_angle_deg": 0.0,
+    "trial_label": "rest"
+  },
+  "scope": "Synthetic geometry/contact checks only. No calibration, real transfer, root movement, cutting or policy result."
+}

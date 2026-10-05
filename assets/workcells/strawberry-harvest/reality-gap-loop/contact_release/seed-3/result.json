@@ -1,0 +1,58 @@
+{
+  "cup_floor_visible_pixels": 5834,
+  "cup_wall_visible_pixels": 27579,
+  "active_fruit_visible_pixels": 13314,
+  "trial": {
+    "time": 50.00000000001514,
+    "phase": "open cup / add to collection",
+    "severed": true,
+    "damage": 1,
+    "cut_time": 26.037999999996448,
+    "cup_contact": true,
+    "basket_contact": false,
+    "is_success": false,
+    "fruit_position": [
+      0.4560315459113244,
+      -0.27141469052286266,
+      0.1994125567502643
+    ],
+    "cutter_position": [
+      0.27492713135023206,
+      0.0901803529459452,
+      0.38371426808511955
+    ],
+    "catcher_position": [
+      0.4294211562242525,
+      -0.25179606780193775,
+      0.1927642926361632
+    ],
+    "grasp_contacts": {
+      "cutter": 2,
+      "catcher": 2
+    },
+    "peak_catch_force_n": 5.154139058799748,
+    "arm_arm_contacts": 0,
+    "active_berry": 2,
+    "berry_success": false,
+    "collected_count": 2,
+    "all_fruit_positions": [
+      [
+        0.46476202473373773,
+        -0.28067515882991206,
+        0.035959889326894916
+      ],
+      [
+        0.3555979727797321,
+        -0.2546039915891921,
+        0.035952308764722135
+      ],
+      [
+        0.4560315459113244,
+        -0.27141469052286266,
+        0.1994125567502643
+      ]
+    ]
+  },
+  "seed": 3,
+  "scope": "Scripted trial, unchanged success criteria, no learned policy; rim geometry and contact filters are candidate changes."
+}

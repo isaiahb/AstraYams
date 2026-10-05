@@ -1,0 +1,23 @@
+{
+  "tag": "refined-eight-segments",
+  "seconds": 9.999999999999897,
+  "fruits": 8,
+  "probe_contact_steps": 1503,
+  "peak_probe_force_n": 0.3606694634805342,
+  "probe_impulse_ns": 0.2238922763181622,
+  "max_probe_penetration_m": 0.0006417258199862934,
+  "finite": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "stiffness_scale": 1,
+  "segments": 8,
+  "contact_enabled": true,
+  "scope": "Force-limited diagnostic probe. Robot holds pose. No harvest or learned policy claim."
+}

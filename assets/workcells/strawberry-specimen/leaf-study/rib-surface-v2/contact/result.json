@@ -1,0 +1,36 @@
+{
+  "complete": true,
+  "control": false,
+  "seconds": 4.800000000000121,
+  "elapsed_wall_s": 1.44389804196544,
+  "timestep_s": 0.00025,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial_contacts": [],
+  "target_touched": true,
+  "contact_duration_s": 1.5735000000000001,
+  "max_probe_penetration_mm": 0.9030930102575494,
+  "peak_probe_normal_force_n": 0.5600259792737554,
+  "max_relative_edge_length_change": 0.005285874581150374,
+  "surface": "one shared-vertex contact/render surface supported by articulated ribs with near-inextensible edge constraints; no panel seams",
+  "criteria": {
+    "maximum_edge_change": 0.02,
+    "maximum_probe_penetration_mm": 1.0,
+    "initial_contacts": 0,
+    "complete_without_warnings": true
+  },
+  "individual_gate_pass": true,
+  "limitations": [
+    "Reduced bending law; no calibrated membrane stiffness, twist, veins, turgor, damage or cutting.",
+    "Uniform axial strip mass, fixed first-quarter clamp; not the crown attachment.",
+    "Force-limited scripted probe, not a learned policy.",
+    "Not integrated into whole-plant model or old rigid-mesh replay exporter."
+  ]
+}

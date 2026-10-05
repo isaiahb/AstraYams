@@ -1,0 +1,7 @@
+{
+  "source": "/Users/isaiah/Documents/BallahTech/AstraFactory/assets/workcells/strawberry-specimen/parametric-study/holdout-41/reference-input.json",
+  "source_sha256": "ef950437f18746386dd10c1099848a5b05b36c43093d0fbb416b25c3cd9ce815",
+  "generator_sha256": "29e2ef83ab727217634da1cd881d427ac1f4ea73cfe7da1641a29bde6a76c27b",
+  "scene_sha256": "14677da90e96f1b16558713241a0a31ab702a0d99b448524526f88e076f056ff",
+  "mujoco_version": "3.12.0"
+}

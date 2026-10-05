@@ -1,0 +1,20 @@
+{
+  "measurements": {
+    "overview": {
+      "visible_fruit_pixels": 3799,
+      "same_pose_with_leaf_surfaces_hidden_pixels": 3849,
+      "leaf_occlusion_percent": 1.299038711353595
+    },
+    "cut_wrist_d405": {
+      "visible_fruit_pixels": 3527,
+      "same_pose_with_leaf_surfaces_hidden_pixels": 3768,
+      "leaf_occlusion_percent": 6.395966029723987
+    },
+    "catch_wrist_d405": {
+      "visible_fruit_pixels": 3995,
+      "same_pose_with_leaf_surfaces_hidden_pixels": 3995,
+      "leaf_occlusion_percent": 0.0
+    }
+  },
+  "scope": "Single settled pose, visible berry-mesh pixels. Counterfactual hides leaf surfaces for rendering only, not a physics trial."
+}

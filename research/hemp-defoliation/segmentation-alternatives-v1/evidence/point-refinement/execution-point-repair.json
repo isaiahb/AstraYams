@@ -1,0 +1,7 @@
+{
+  "id": "mi70bjvnphais8",
+  "desiredStatus": "EXITED",
+  "verified_at_unix": 1789337802.4108071,
+  "costPerHr": 0.49,
+  "local_inference": false
+}

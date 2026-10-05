@@ -1,0 +1,1314 @@
+{
+  "version": 1,
+  "reference": "assets/workcells/strawberry-specimen/reference/tabletop.jpg",
+  "source": "https://u.osu.edu/indoorberry/structures/",
+  "photo_credit": "Meteor Systems, as credited within the photograph; hosted by Ohio State Kubota Lab",
+  "crop_pixels": [
+    55,
+    0,
+    330,
+    385
+  ],
+  "scope": "Single-crown strawberry morphology hypothesis informed by several photographs. Six trifoliate leaves and a separate fruit truss. No reconstruction, measured stiffness, roots, cutting or harvest-policy claim.",
+  "landmarks": [
+    {
+      "id": "crown",
+      "uv": [
+        133,
+        115
+      ],
+      "status": "hidden-assumed"
+    },
+    {
+      "id": "leaf_left",
+      "uv": [
+        88,
+        43
+      ],
+      "status": "visible-region-estimate"
+    },
+    {
+      "id": "leaf_high",
+      "uv": [
+        212,
+        28
+      ],
+      "status": "visible-region-estimate"
+    },
+    {
+      "id": "leaf_right",
+      "uv": [
+        280,
+        80
+      ],
+      "status": "visible-region-estimate"
+    },
+    {
+      "id": "leaf_front",
+      "uv": [
+        255,
+        151
+      ],
+      "status": "visible-region-estimate"
+    },
+    {
+      "id": "truss_a",
+      "uv": [
+        153,
+        159
+      ],
+      "status": "partially-visible-assumed-junction"
+    },
+    {
+      "id": "truss_b",
+      "uv": [
+        185,
+        258
+      ],
+      "status": "hidden-assumed"
+    },
+    {
+      "id": "fruit_a",
+      "uv": [
+        158,
+        253
+      ],
+      "status": "visible"
+    },
+    {
+      "id": "fruit_b",
+      "uv": [
+        200,
+        304
+      ],
+      "status": "visible"
+    },
+    {
+      "id": "fruit_c",
+      "uv": [
+        218,
+        331
+      ],
+      "status": "visible"
+    },
+    {
+      "id": "fruit_green",
+      "uv": [
+        120,
+        228
+      ],
+      "status": "visible"
+    }
+  ],
+  "connections": [
+    [
+      "crown",
+      "leaf_left",
+      "assumed"
+    ],
+    [
+      "crown",
+      "leaf_high",
+      "assumed"
+    ],
+    [
+      "crown",
+      "leaf_right",
+      "assumed"
+    ],
+    [
+      "crown",
+      "leaf_front",
+      "assumed"
+    ],
+    [
+      "crown",
+      "truss_a",
+      "partially-visible"
+    ],
+    [
+      "truss_a",
+      "fruit_green",
+      "partially-visible"
+    ],
+    [
+      "truss_a",
+      "fruit_a",
+      "partially-visible"
+    ],
+    [
+      "truss_a",
+      "truss_b",
+      "assumed"
+    ],
+    [
+      "truss_b",
+      "fruit_b",
+      "assumed"
+    ],
+    [
+      "truss_b",
+      "fruit_c",
+      "assumed"
+    ]
+  ],
+  "dimensions": "All metric sizes and depth coordinates below are assumed for this scale study. Image landmarks guide layout; no metric camera calibration is available.",
+  "leaf_shape_reference": "https://strawberrycenterblog.com/2025/12/15/strawberry-anatomy-part-3-leaves-and-stems/",
+  "leaflet_profile": {
+    "length_to_width": 1.05,
+    "petiolule_m": 0.009,
+    "teeth_per_side": 10,
+    "crease_m": 0.003,
+    "status": "approximate proportions traced from Cal Poly upper-surface terminal leaflet; lengths assumed",
+    "normalized_halfwidth_stations": [
+      [
+        0,
+        0.015
+      ],
+      [
+        0.08,
+        0.2
+      ],
+      [
+        0.17,
+        0.39
+      ],
+      [
+        0.25,
+        0.56
+      ],
+      [
+        0.33,
+        0.74
+      ],
+      [
+        0.42,
+        0.89
+      ],
+      [
+        0.5,
+        0.98
+      ],
+      [
+        0.58,
+        1
+      ],
+      [
+        0.67,
+        0.94
+      ],
+      [
+        0.75,
+        0.81
+      ],
+      [
+        0.83,
+        0.61
+      ],
+      [
+        0.92,
+        0.31
+      ],
+      [
+        1,
+        0.01
+      ]
+    ],
+    "profile_basis": "Manual width stations from the upper-surface terminal leaflet in the Cal Poly photograph. Approximate; not image segmentation.",
+    "midrib_arch_m": 0.0018,
+    "orientation_frame": "radial_yaw_then_pitch",
+    "lateral_azimuth_rad": 1.35
+  },
+  "crown_m": [
+    0,
+    0.055,
+    0.278
+  ],
+  "leaves": [
+    {
+      "id": "left",
+      "yaw": 2.95,
+      "pitch": -0.22,
+      "length": 0.08165,
+      "shaft_radius_m": 0.00165,
+      "age": "mature",
+      "young_pa": 297000000.0,
+      "modulus_status": "literature-derived prior; specimen and test-mode transfer unvalidated",
+      "tip": [
+        -0.078,
+        0.044,
+        0.42300000000000004
+      ],
+      "growth": {
+        "attachment_m": [
+          -0.0053,
+          -0.001,
+          0.0045
+        ],
+        "control_points_m": [
+          [
+            -0.011396828078470185,
+            -0.0015676517301884713,
+            0.04614058276401189
+          ],
+          [
+            -0.047480475254210314,
+            -0.006531014477883121,
+            0.1041436519017126
+          ]
+        ],
+        "stipule_length_m": 0.018,
+        "status": "unloaded shape hypothesis; not photo-measured or fitted loaded pose"
+      }
+    },
+    {
+      "id": "high",
+      "yaw": 1.3,
+      "pitch": -0.3,
+      "length": 0.08625,
+      "shaft_radius_m": 0.00165,
+      "age": "mature",
+      "young_pa": 297000000.0,
+      "modulus_status": "literature-derived prior; specimen and test-mode transfer unvalidated",
+      "tip": [
+        0.025,
+        0.083,
+        0.43900000000000006
+      ],
+      "growth": {
+        "attachment_m": [
+          0.0015,
+          0.005,
+          0.009
+        ],
+        "control_points_m": [
+          [
+            0.005789906857459489,
+            0.005666717349853968,
+            0.04594603130912187
+          ],
+          [
+            0.010348164042712327,
+            0.010127990339675893,
+            0.1125352793211821
+          ]
+        ],
+        "stipule_length_m": 0.018,
+        "status": "unloaded shape hypothesis; not photo-measured or fitted loaded pose"
+      }
+    },
+    {
+      "id": "right",
+      "yaw": 0.1,
+      "pitch": -0.18,
+      "length": 0.0759,
+      "shaft_radius_m": 0.00165,
+      "age": "mature",
+      "young_pa": 297000000.0,
+      "modulus_status": "literature-derived prior; specimen and test-mode transfer unvalidated",
+      "tip": [
+        0.099,
+        0.063,
+        0.40900000000000003
+      ],
+      "growth": {
+        "attachment_m": [
+          0.0056,
+          0.0005,
+          0.0065
+        ],
+        "control_points_m": [
+          [
+            0.013623408836178961,
+            0.001093956812327004,
+            0.04470359482385152
+          ],
+          [
+            0.06374004027860261,
+            0.005118311585540894,
+            0.0925912072678781
+          ]
+        ],
+        "stipule_length_m": 0.018,
+        "status": "unloaded shape hypothesis; not photo-measured or fitted loaded pose"
+      }
+    },
+    {
+      "id": "front",
+      "yaw": -0.95,
+      "pitch": -0.15,
+      "length": 0.078,
+      "shaft_radius_m": 0.00165,
+      "age": "mature",
+      "young_pa": 297000000.0,
+      "modulus_status": "literature-derived prior; specimen and test-mode transfer unvalidated",
+      "tip": [
+        0.059,
+        -0.015999999999999993,
+        0.388
+      ],
+      "growth": {
+        "attachment_m": [
+          0.002,
+          -0.0052,
+          0.004
+        ],
+        "control_points_m": [
+          [
+            0.009215101277334955,
+            -0.010637783579800702,
+            0.03866829539762235
+          ],
+          [
+            0.03860868984651187,
+            -0.044569329682464576,
+            0.07980675421589899
+          ]
+        ],
+        "stipule_length_m": 0.018,
+        "status": "unloaded shape hypothesis; not photo-measured or fitted loaded pose"
+      }
+    },
+    {
+      "id": "new",
+      "yaw": 2.0,
+      "pitch": -0.55,
+      "length": 0.043,
+      "shaft_radius_m": 0.00145,
+      "age": "young",
+      "young_pa": 194000000.0,
+      "modulus_status": "literature-derived prior; specimen and test-mode transfer unvalidated",
+      "tip": [
+        -0.025,
+        0.084,
+        0.37
+      ],
+      "growth": {
+        "attachment_m": [
+          -0.0024,
+          0.0025,
+          0.012
+        ],
+        "control_points_m": [
+          [
+            -0.00353146262009441,
+            0.0041408743111726485,
+            0.025603765967176517
+          ],
+          [
+            -0.015900216955089724,
+            0.018644059703976888,
+            0.05785824999652346
+          ]
+        ],
+        "stipule_length_m": 0.013087884664834116,
+        "status": "unloaded shape hypothesis; not photo-measured or fitted loaded pose"
+      }
+    },
+    {
+      "id": "emerging",
+      "yaw": -1.6,
+      "pitch": -0.75,
+      "length": 0.026,
+      "shaft_radius_m": 0.0011,
+      "age": "young",
+      "young_pa": 89000000.0,
+      "modulus_status": "literature-derived prior; specimen and test-mode transfer unvalidated",
+      "tip": [
+        0.002,
+        0.045,
+        0.336
+      ],
+      "growth": {
+        "attachment_m": [
+          0.0005,
+          -0.0005,
+          0.016
+        ],
+        "control_points_m": [
+          [
+            0.00028057206475947874,
+            -0.001776956410143366,
+            0.012800340043644427
+          ],
+          [
+            0.001044801232388705,
+            -0.006617074471795131,
+            0.03029397016573126
+          ]
+        ],
+        "stipule_length_m": 0.006463068156843157,
+        "status": "unloaded shape hypothesis; not photo-measured or fitted loaded pose"
+      }
+    }
+  ],
+  "truss": [
+    {
+      "id": "peduncle",
+      "parent": "crown",
+      "unloaded_delta": [
+        0.005,
+        -0.092,
+        0.062
+      ],
+      "radius": 0.0026
+    },
+    {
+      "id": "green_stalk",
+      "parent": "peduncle",
+      "unloaded_delta": [
+        -0.073,
+        -0.041,
+        -0.005
+      ],
+      "radius": 0.00125,
+      "fruit": {
+        "id": "green",
+        "radius": 0.009887607847726231,
+        "length": 0.02373082763271605,
+        "mass": 0.004,
+        "maturity": "green",
+        "landmark": "fruit_green",
+        "surface_profile": "measured_loft",
+        "flatten_y": 1.0,
+        "morphology": {
+          "id": "0-0",
+          "cultivar": "Fukuoka S6",
+          "panel": "A",
+          "crop_xyxy": [
+            100,
+            174,
+            259,
+            293
+          ],
+          "axis": "Calyx left to apex right in source photograph",
+          "length_px": 112,
+          "width_px": 103.34606897665095,
+          "length_width_ratio": 1.2000287631842734,
+          "maximum_width_fraction_from_calyx": 0.32142857142857145,
+          "apex_lateral_offset_over_width": 0.01477328447114218,
+          "t": [
+            0.0,
+            0.025,
+            0.05,
+            0.07500000000000001,
+            0.1,
+            0.125,
+            0.15000000000000002,
+            0.17500000000000002,
+            0.2,
+            0.225,
+            0.25,
+            0.275,
+            0.30000000000000004,
+            0.325,
+            0.35000000000000003,
+            0.375,
+            0.4,
+            0.42500000000000004,
+            0.45,
+            0.47500000000000003,
+            0.5,
+            0.525,
+            0.55,
+            0.5750000000000001,
+            0.6000000000000001,
+            0.625,
+            0.65,
+            0.675,
+            0.7000000000000001,
+            0.7250000000000001,
+            0.75,
+            0.775,
+            0.8,
+            0.8250000000000001,
+            0.8500000000000001,
+            0.875,
+            0.9,
+            0.925,
+            0.9500000000000001,
+            0.9750000000000001,
+            1.0
+          ],
+          "radius": [
+            0.008390070242452655,
+            0.1796020456575358,
+            0.3786209416471257,
+            0.5604315519623664,
+            0.6772539631579919,
+            0.7523273171599584,
+            0.8093894276532353,
+            0.855151920090717,
+            0.8912784921680211,
+            0.9194328415807645,
+            0.941278666024565,
+            0.9581509313325952,
+            0.9706184271093015,
+            0.9788725679560065,
+            0.9831047684740329,
+            0.9835064432647034,
+            0.9801936265223121,
+            0.9734452272660699,
+            0.9634526600972996,
+            0.9504073396173235,
+            0.9345006804274646,
+            0.9158517973298281,
+            0.8945943159863405,
+            0.8707826212469836,
+            0.8444710979617377,
+            0.815714130980584,
+            0.7845179325238719,
+            0.7509868280858114,
+            0.7151752025163836,
+            0.6771374406655688,
+            0.6369279273833487,
+            0.5945584711033589,
+            0.5501360641039248,
+            0.5037232344788429,
+            0.45538251032191074,
+            0.4051764197269253,
+            0.35296316919381954,
+            0.29804489939390744,
+            0.23953143226748064,
+            0.1765325897548306,
+            0.10815819379624939
+          ],
+          "centre": [
+            0.0076012962707549415,
+            -0.019697768746737114,
+            0.0010946830729815053,
+            0.03791593667907427,
+            0.04576074457922383,
+            0.038891019907328864,
+            0.03259041976577034,
+            0.02928581153886004,
+            0.028148744000833285,
+            0.02835076592592513,
+            0.02906342608837079,
+            0.029577523864815096,
+            0.029782384821335346,
+            0.02971163910666864,
+            0.029398916869552448,
+            0.02887784825872431,
+            0.02818009094865899,
+            0.027344198738180846,
+            0.026403801776026904,
+            0.025392530210934777,
+            0.024344014191641998,
+            0.023293994614531896,
+            0.02226291755413676,
+            0.02127194984825421,
+            0.02034225833468209,
+            0.019495009851217937,
+            0.018754336553180494,
+            0.01813826875378322,
+            0.017667973290824264,
+            0.017364617002101332,
+            0.017249366725412055,
+            0.017347430374594595,
+            0.017684025501745065,
+            0.018288462188477083,
+            0.0191900505164047,
+            0.020418100567141474,
+            0.021839697866056298,
+            0.022679728813000462,
+            0.022014797336082175,
+            0.018921507363410174,
+            0.012476462823092617
+          ],
+          "uncertainty": "Approximately 1\u20132 pixels per outline; calyx manually removed in source; photograph projection only.",
+          "blend": {
+            "other": "0-1",
+            "weight": 0.25,
+            "scope": "Interpolation between two observed outlines, not another measured specimen."
+          },
+          "depth_width_ratio": 0.97,
+          "depth_bend": -0.03,
+          "depth_taper": -0.1,
+          "depth_lobe": 0.035,
+          "lobe_phase": 0.4,
+          "depth_scope": "Unobserved 3D parameters are explicit priors, not reconstructed from the photograph."
+        },
+        "density_assumption_kg_m3": 1000.0,
+        "surface_recipe": 4
+      }
+    },
+    {
+      "id": "primary_stalk",
+      "parent": "peduncle",
+      "unloaded_delta": [
+        -0.038,
+        -0.085,
+        -0.01
+      ],
+      "radius": 0.00155,
+      "fruit": {
+        "id": "primary",
+        "radius": 0.01728675289589559,
+        "length": 0.03629949764102774,
+        "mass": 0.018,
+        "maturity": "red",
+        "landmark": "fruit_a",
+        "surface_profile": "measured_loft",
+        "flatten_y": 1.0,
+        "morphology": {
+          "id": "0-0",
+          "cultivar": "Fukuoka S6",
+          "panel": "A",
+          "crop_xyxy": [
+            100,
+            174,
+            259,
+            293
+          ],
+          "axis": "Calyx left to apex right in source photograph",
+          "length_px": 112,
+          "width_px": 103.34606897665095,
+          "length_width_ratio": 1.0499223844880192,
+          "maximum_width_fraction_from_calyx": 0.32142857142857145,
+          "apex_lateral_offset_over_width": 0.01477328447114218,
+          "t": [
+            0.0,
+            0.025,
+            0.05,
+            0.07500000000000001,
+            0.1,
+            0.125,
+            0.15000000000000002,
+            0.17500000000000002,
+            0.2,
+            0.225,
+            0.25,
+            0.275,
+            0.30000000000000004,
+            0.325,
+            0.35000000000000003,
+            0.375,
+            0.4,
+            0.42500000000000004,
+            0.45,
+            0.47500000000000003,
+            0.5,
+            0.525,
+            0.55,
+            0.5750000000000001,
+            0.6000000000000001,
+            0.625,
+            0.65,
+            0.675,
+            0.7000000000000001,
+            0.7250000000000001,
+            0.75,
+            0.775,
+            0.8,
+            0.8250000000000001,
+            0.8500000000000001,
+            0.875,
+            0.9,
+            0.925,
+            0.9500000000000001,
+            0.9750000000000001,
+            1.0
+          ],
+          "radius": [
+            0.05082091667052781,
+            0.2040151621317584,
+            0.49160020608504873,
+            0.6499673465285489,
+            0.7504397529685074,
+            0.8152292116364175,
+            0.8644881420988102,
+            0.9039619139881128,
+            0.9348608630832794,
+            0.9583873474161534,
+            0.975743725018578,
+            0.9879080263294958,
+            0.9954865040951045,
+            0.9988204552864441,
+            0.9982511768745533,
+            0.9941199658304721,
+            0.9867155127637904,
+            0.9764436626860917,
+            0.9636457125684157,
+            0.9486629593818012,
+            0.9318367000972883,
+            0.9134293720666271,
+            0.8935735573149205,
+            0.8723151686973335,
+            0.8497001190690305,
+            0.8257743212851766,
+            0.8005538539524399,
+            0.7741147744219922,
+            0.7465029955489979,
+            0.7177644301886217,
+            0.6879449911960289,
+            0.6568890089048531,
+            0.6238249454289111,
+            0.5877887569800828,
+            0.5478163997702485,
+            0.5029438300112885,
+            0.45287856646658037,
+            0.4004039677324056,
+            0.32671792144856293,
+            0.18037085093459243,
+            0.08856414042188848
+          ],
+          "centre": [
+            0.07740116348140923,
+            0.04114423729926259,
+            -0.06189821582617805,
+            -0.035238954274174714,
+            -0.03093554895159311,
+            -0.03901946695943072,
+            -0.046111906468205614,
+            -0.050405946085795905,
+            -0.05270863657199556,
+            -0.053819050939487384,
+            -0.054536262200954026,
+            -0.05553457092364853,
+            -0.05686976239184337,
+            -0.058450041339908027,
+            -0.060183612502211374,
+            -0.06197868061312227,
+            -0.06374361390047366,
+            -0.06538284015608392,
+            -0.06680456411432235,
+            -0.06791699050955773,
+            -0.06862832407615896,
+            -0.06886947385418948,
+            -0.06871781458320202,
+            -0.06827402022644269,
+            -0.06763876474715665,
+            -0.06691272210859017,
+            -0.06619424700039403,
+            -0.06558779450279771,
+            -0.06519403857904657,
+            -0.06511365319238627,
+            -0.06544731230606296,
+            -0.06627203556680467,
+            -0.06753495319183161,
+            -0.06915837862187196,
+            -0.07106462529765381,
+            -0.07317600665990591,
+            -0.07611928778985466,
+            -0.08353244701950772,
+            -0.07749972921751197,
+            -0.007457914932255682,
+            -0.0014947456239811814
+          ],
+          "uncertainty": "Approximately 1\u20132 pixels per outline; calyx manually removed in source; photograph projection only.",
+          "blend": {
+            "other": "0-2",
+            "weight": 0.35,
+            "scope": "Interpolation between two observed outlines, not another measured specimen."
+          },
+          "depth_width_ratio": 0.86,
+          "depth_bend": 0.08,
+          "depth_taper": -0.1,
+          "depth_lobe": 0.035,
+          "lobe_phase": 0.4,
+          "depth_scope": "Unobserved 3D parameters are explicit priors, not reconstructed from the photograph."
+        },
+        "density_assumption_kg_m3": 1000.0,
+        "surface_recipe": 4
+      }
+    },
+    {
+      "id": "secondary",
+      "parent": "peduncle",
+      "unloaded_delta": [
+        0.042,
+        -0.061,
+        0.006
+      ],
+      "radius": 0.0019
+    },
+    {
+      "id": "secondary_a",
+      "parent": "secondary",
+      "unloaded_delta": [
+        -0.004,
+        -0.047,
+        -0.008
+      ],
+      "radius": 0.00135,
+      "fruit": {
+        "id": "secondary_a",
+        "radius": 0.014985927798949668,
+        "length": 0.039173719337362675,
+        "mass": 0.014,
+        "maturity": "red",
+        "landmark": "fruit_b",
+        "surface_profile": "measured_loft",
+        "flatten_y": 1.0,
+        "morphology": {
+          "id": "0-0",
+          "cultivar": "Fukuoka S6",
+          "panel": "A",
+          "crop_xyxy": [
+            100,
+            174,
+            259,
+            293
+          ],
+          "axis": "Calyx left to apex right in source photograph",
+          "length_px": 112,
+          "width_px": 103.34606897665095,
+          "length_width_ratio": 1.3070168181414927,
+          "maximum_width_fraction_from_calyx": 0.32142857142857145,
+          "apex_lateral_offset_over_width": 0.01477328447114218,
+          "t": [
+            0.0,
+            0.025,
+            0.05,
+            0.07500000000000001,
+            0.1,
+            0.125,
+            0.15000000000000002,
+            0.17500000000000002,
+            0.2,
+            0.225,
+            0.25,
+            0.275,
+            0.30000000000000004,
+            0.325,
+            0.35000000000000003,
+            0.375,
+            0.4,
+            0.42500000000000004,
+            0.45,
+            0.47500000000000003,
+            0.5,
+            0.525,
+            0.55,
+            0.5750000000000001,
+            0.6000000000000001,
+            0.625,
+            0.65,
+            0.675,
+            0.7000000000000001,
+            0.7250000000000001,
+            0.75,
+            0.775,
+            0.8,
+            0.8250000000000001,
+            0.8500000000000001,
+            0.875,
+            0.9,
+            0.925,
+            0.9500000000000001,
+            0.9750000000000001,
+            1.0
+          ],
+          "radius": [
+            -0.007599547039704571,
+            0.16132983363553033,
+            0.3496401200501465,
+            0.516988478993122,
+            0.6273576130809001,
+            0.701177932097576,
+            0.7590902386249516,
+            0.806927581475991,
+            0.8461838801144065,
+            0.8783530540039101,
+            0.9049290226082142,
+            0.9270995816745078,
+            0.9452718447289296,
+            0.9595090905663122,
+            0.9698745979814885,
+            0.9764316457692911,
+            0.9791732405777245,
+            0.9782392901804278,
+            0.9736930733722338,
+            0.9655978689479753,
+            0.9540169557024849,
+            0.9389628641712027,
+            0.9205875135237567,
+            0.8989874185201574,
+            0.874259093920414,
+            0.8464990544845363,
+            0.8157535504599746,
+            0.7821723165877721,
+            0.7458518676279384,
+            0.7068887183404828,
+            0.6653793834854154,
+            0.6213798334274063,
+            0.5750459477452902,
+            0.5264898762272033,
+            0.4758237686612824,
+            0.42315977483566397,
+            0.3682579247900185,
+            0.3097298076300091,
+            0.2458583773290422,
+            0.17492658786052365,
+            0.09521739319785989
+          ],
+          "centre": [
+            0.011932134605796191,
+            -0.008454013337074235,
+            -0.0023839687472266757,
+            0.017714870361215034,
+            0.024199217331056865,
+            0.023309854762343943,
+            0.02208432437070492,
+            0.021762782348247862,
+            0.02210087432633249,
+            0.022854245936318435,
+            0.02377854280956519,
+            0.02465301133708284,
+            0.025413296672186815,
+            0.026031909136023546,
+            0.026481359049739604,
+            0.026734156734481894,
+            0.026759256766946377,
+            0.026533277050067017,
+            0.02602872790499037,
+            0.025218119652862987,
+            0.024073962614831777,
+            0.022584264310390078,
+            0.020812557236532032,
+            0.01883672499338967,
+            0.01673465118109512,
+            0.01458421939978038,
+            0.012465723995052629,
+            0.010456378174649804,
+            0.008634065538704239,
+            0.007076669687347978,
+            0.005862074220713061,
+            0.0050774667722633116,
+            0.004809032216891612,
+            0.005150289182856748,
+            0.006194756298417857,
+            0.008035952191833872,
+            0.010462297342205672,
+            0.012018512980617953,
+            0.010968921920599041,
+            0.005577846975677907,
+            -0.0058903890406170785
+          ],
+          "uncertainty": "Approximately 1\u20132 pixels per outline; calyx manually removed in source; photograph projection only.",
+          "blend": {
+            "other": "0-1",
+            "weight": 0.48,
+            "scope": "Interpolation between two observed outlines, not another measured specimen."
+          },
+          "depth_width_ratio": 0.9,
+          "depth_bend": -0.06,
+          "depth_taper": -0.1,
+          "depth_lobe": 0.035,
+          "lobe_phase": 0.4,
+          "depth_scope": "Unobserved 3D parameters are explicit priors, not reconstructed from the photograph."
+        },
+        "density_assumption_kg_m3": 1000.0,
+        "surface_recipe": 4
+      }
+    },
+    {
+      "id": "secondary_b",
+      "parent": "secondary",
+      "unloaded_delta": [
+        0.023,
+        -0.05,
+        -0.025
+      ],
+      "radius": 0.0012,
+      "fruit": {
+        "id": "secondary_b",
+        "radius": 0.01472560438038919,
+        "length": 0.03146211098638025,
+        "mass": 0.011,
+        "maturity": "turning",
+        "landmark": "fruit_c",
+        "surface_profile": "measured_loft",
+        "flatten_y": 1.0,
+        "morphology": {
+          "id": "0-0",
+          "cultivar": "Fukuoka S6",
+          "panel": "A",
+          "crop_xyxy": [
+            100,
+            174,
+            259,
+            293
+          ],
+          "axis": "Calyx left to apex right in source photograph",
+          "length_px": 112,
+          "width_px": 103.34606897665095,
+          "length_width_ratio": 1.068279106706136,
+          "maximum_width_fraction_from_calyx": 0.32142857142857145,
+          "apex_lateral_offset_over_width": 0.01477328447114218,
+          "t": [
+            0.0,
+            0.025,
+            0.05,
+            0.07500000000000001,
+            0.1,
+            0.125,
+            0.15000000000000002,
+            0.17500000000000002,
+            0.2,
+            0.225,
+            0.25,
+            0.275,
+            0.30000000000000004,
+            0.325,
+            0.35000000000000003,
+            0.375,
+            0.4,
+            0.42500000000000004,
+            0.45,
+            0.47500000000000003,
+            0.5,
+            0.525,
+            0.55,
+            0.5750000000000001,
+            0.6000000000000001,
+            0.625,
+            0.65,
+            0.675,
+            0.7000000000000001,
+            0.7250000000000001,
+            0.75,
+            0.775,
+            0.8,
+            0.8250000000000001,
+            0.8500000000000001,
+            0.875,
+            0.9,
+            0.925,
+            0.9500000000000001,
+            0.9750000000000001,
+            1.0
+          ],
+          "radius": [
+            0.037221895949976054,
+            0.20154406748730785,
+            0.44736909018342474,
+            0.6269963122862748,
+            0.7401522699118904,
+            0.8112637830878696,
+            0.8642570570997027,
+            0.9059204152413213,
+            0.9378104837484957,
+            0.9614802418868875,
+            0.9784826689221592,
+            0.9900763997132795,
+            0.9969427488005463,
+            0.9994172565245852,
+            0.9978354632260207,
+            0.9925329092454782,
+            0.9837771513180179,
+            0.9719871457135829,
+            0.9574984327727989,
+            0.9406465528362902,
+            0.9217670462446825,
+            0.9011074380173922,
+            0.8787900824194396,
+            0.8548406321252087,
+            0.8292847398090823,
+            0.8021480581454445,
+            0.7734176847798523,
+            0.7431582283507596,
+            0.7113953415325494,
+            0.6781546769996052,
+            0.643461887426311,
+            0.6072261615468711,
+            0.5691240313063426,
+            0.528719454913607,
+            0.48557639057754653,
+            0.439258796507043,
+            0.3896139235890761,
+            0.3379427947186516,
+            0.2756548224716999,
+            0.17923486430631902,
+            0.10683678838316889
+          ],
+          "centre": [
+            0.03695434338178126,
+            0.001481205669831863,
+            -0.025649450070238163,
+            0.01639358466688484,
+            0.023422222123992358,
+            0.012468652549441045,
+            0.002811462322978936,
+            -0.0027056517410562475,
+            -0.005246011223282415,
+            -0.005969290734209806,
+            -0.006035164884348309,
+            -0.00642509406249148,
+            -0.00725199195332828,
+            -0.008419574145857818,
+            -0.009831556229078588,
+            -0.011391653791989222,
+            -0.013003793707449491,
+            -0.014566810592546324,
+            -0.015984420036278906,
+            -0.017160337627645524,
+            -0.017998278955644837,
+            -0.018419091723383765,
+            -0.018472471608196685,
+            -0.018226416836749262,
+            -0.01774892563570655,
+            -0.0171079962317343,
+            -0.016368629636390554,
+            -0.015603710442904248,
+            -0.014881236877940279,
+            -0.014269207168164003,
+            -0.013835619540241085,
+            -0.013638570563700526,
+            -0.013676176173945412,
+            -0.013934898358776072,
+            -0.014401199105992555,
+            -0.015061540403395583,
+            -0.016228179739591144,
+            -0.019583629182007397,
+            -0.016959805085493183,
+            0.014735931312935375,
+            0.016927208073700004
+          ],
+          "uncertainty": "Approximately 1\u20132 pixels per outline; calyx manually removed in source; photograph projection only.",
+          "blend": {
+            "other": "0-2",
+            "weight": 0.16,
+            "scope": "Interpolation between two observed outlines, not another measured specimen."
+          },
+          "depth_width_ratio": 0.87,
+          "depth_bend": 0.1,
+          "depth_taper": -0.1,
+          "depth_lobe": 0.035,
+          "lobe_phase": 0.4,
+          "depth_scope": "Unobserved 3D parameters are explicit priors, not reconstructed from the photograph."
+        },
+        "density_assumption_kg_m3": 1000.0,
+        "surface_recipe": 4
+      }
+    }
+  ],
+  "crown_reference": {
+    "url": "https://strawberrycenterblog.com/2026/02/19/__trashed/",
+    "features": [
+      "compressed irregular crown at soil line",
+      "overlapping petiole bases and stipules",
+      "root origins below crown"
+    ],
+    "dimensions": "14 mm core diameter is an assumed scale, not measured from photo",
+    "roots": "buried root mechanics omitted from harvesting-contact model"
+  },
+  "basal_support": {
+    "petiole_base_radius_m": 0.0028,
+    "peduncle_base_radius_m": 0.0033,
+    "taper_length_m": 0.035,
+    "basis": "Geometry hypothesis from broad petiole bases in the Cal Poly crown reference; no measured dimensions or stiffness. Upper stalk radius and material modulus retained.",
+    "source": "https://strawberrycenterblog.com/2026/02/19/__trashed/",
+    "mechanics": "Bending compliance integrated over tapered radius; same tapered section used for rendering and contact.",
+    "upright_petiole_emergence": true,
+    "emergence_basis": "Separate unloaded-shape hypothesis: proximal leaf stalk rises before bending outward; no growth angle measured. Leaf attachment endpoint preserved.",
+    "fixed_embedded_sheath": true,
+    "attachment_basis": "Embedded sheath is a fixed crown component ending at the flexible stalk origin. It must not be a moving collider buried in rigid substrate. Exposed stalk contact stays enabled.",
+    "contact_timeconst_s": 0.001,
+    "contact_basis": "Numerical contact refinement for the stiffer structural bases; tested for penetration and timestep sensitivity. Not tissue calibration."
+  },
+  "simulation_timestep_s": 0.000125,
+  "morphology_evidence": [
+    {
+      "source": "https://extension.oregonstate.edu/catalog/pub/ec-1307-growing-strawberries-your-home-garden",
+      "feature": "Standing plant: petioles remain ascending through most of their length; cupped leaf faces and central developing leaves",
+      "condition": "Figure 1, field-grown plant; adjacent plants overlap; dimensions not recovered"
+    },
+    {
+      "source": "https://www.uaex.uada.edu/farm-ranch/crops-commercial-horticulture/horticulture/ar-fruit-veg-nut-update-blog/posts/HighGDDImpact.aspx",
+      "feature": "Layered petiole bases and main/branch crowns",
+      "condition": "Plant held apart by hands; not evidence for natural attachment angles; this candidate has one crown"
+    },
+    {
+      "source": "https://strawberrycenterblog.com/2026/02/19/__trashed/",
+      "feature": "Short compressed crown, overlapping bases, roots below crown",
+      "condition": "Trimmed bare-root specimen; cannot identify growth posture or mechanical constants"
+    },
+    {
+      "source": "https://agronomy.unl.edu/year-round-strawberry-production/",
+      "feature": "Young nursery-potted plants support another canopy/central-growth comparison",
+      "condition": "Different cultivar/stage/container; not a metric matched specimen"
+    },
+    {
+      "source": "https://doi.org/10.11357/jsamfe.84.4_229",
+      "feature": "Age-stratified effective Young modulus, 89 / 194 / 297 MPa, new / second / third-and-older leaves",
+      "condition": "Tsubota et al. 2022, Tochiotome cultivar in forcing culture. Effective modulus inferred from axial buckling under specified supports; not a direct calibration of our bent, tapered segments. Values stated in PDF p.229; setup described on p.232."
+    },
+    {
+      "source": "https://strawberrycenterblog.com/2025/12/15/strawberry-anatomy-part-3-leaves-and-stems/",
+      "feature": "Pedicels attach through the calyx; replace the arbitrary local-down frame with terminal tangent continuity.",
+      "condition": "Photographic anatomical constraint, not a measurement of attachment flexural/torsional compliance."
+    }
+  ],
+  "parameter_status": {
+    "topology": "anatomy-informed; specimen-specific connections assumed",
+    "unloaded_geometry": "explicit visual hypothesis; photos show loaded geometry, so rest shape remains unidentified",
+    "attachment_coordinates": "assumed staggered crown-relative coordinates in metres",
+    "material_properties": "Age-stratified petiole modulus uses published buckling-derived values as a prior. Mapping our leaf ages to those ranks is assumed. Truss and leaf blade material laws remain unchanged/assumed.",
+    "leaf_mass": "assumed areal-density scaling; no specimen measurements",
+    "distributions": "bounded engineering hypotheses, not biological statistics",
+    "fruit_attachment": "Calyx-to-apex axis aligned with terminal pedicel in unloaded material frame. Uniform-density fruit mesh determines COM and inertia; tissue heterogeneity and local curvature unmeasured."
+  },
+  "mechanics": {
+    "petiole_segments": 7,
+    "truss_segments": 7,
+    "petiole_young_pa": 85000000,
+    "truss_young_pa": 45000000,
+    "stalk_damping_time_s": 0.18,
+    "minimum_stalk_damping": 0.001,
+    "leaf_hinge_stiffness_nm_per_rad": 0.009,
+    "leaf_hinge_damping": 0.0009,
+    "scale_leaf_mass_by_area": true,
+    "leaf_mass_reference_length_m": 0.08165,
+    "leaf_mass_at_reference_kg": 0.0008,
+    "fruit_attachment_frame": "terminal_tangent"
+  },
+  "crown_structure": {
+    "core_rings_z_radius_m": [
+      [
+        -0.012,
+        0.0055
+      ],
+      [
+        -0.004,
+        0.007
+      ],
+      [
+        0.004,
+        0.0068
+      ],
+      [
+        0.01,
+        0.0055
+      ],
+      [
+        0.016,
+        0.0025
+      ]
+    ],
+    "status": "compressed stem with staggered petiole bases; fixed boundary; dimensions assumed"
+  },
+  "parameterization": {
+    "schema_version": 1,
+    "seed": null,
+    "split": "representative",
+    "latent_variables": {
+      "size_scale": 1.0,
+      "radial_scale": 1.0,
+      "azimuth_offset_rad": 0.0
+    },
+    "dependencies": [
+      "one size variable changes petiole length/radius, leaf area/mass, and fruit dimensions/volume/mass",
+      "one openness variable changes leaf endpoint radius without moving crown attachments or substrate",
+      "one azimuth variable rotates the leaf arrangement together; fruit truss fixed for probe comparability",
+      "Age-dependent petiole modulus remains fixed across morphology seeds; crown/root boundary and leaf hinge law remain uncalibrated."
+    ],
+    "distribution_status": "uncalibrated bounded hypotheses; seeded variants are simulation holdouts, not proof of real-world generalization",
+    "config_sha256": "c3978a08ccde42cc4af621af77a76409547c5991c3c5179ab954342c2f2f1ce4",
+    "roots": {
+      "representation": "fixed crown boundary; root geometry and pullout absent",
+      "validity": "above-ground contact hypothesis only; must test anchorage before transfer"
+    }
+  }
+}

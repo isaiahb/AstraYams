@@ -1,0 +1,199 @@
+{
+  "model": "Segmented beam equivalent joint stiffness EI/L; not Cosserat/FEM",
+  "parameters_status": "Uncalibrated priors; not measured strawberry tissue properties",
+  "branches": [
+    {
+      "name": "branch_target",
+      "radius_m": 0.004,
+      "length_m": 0.1331352695569435,
+      "segments": 5,
+      "young_pa": 120000000.0,
+      "bend_joint_nm_per_rad": 0.9061247128526688,
+      "damping_nms_per_rad": 0.006342872989968682
+    },
+    {
+      "name": "leafstalk_target_0",
+      "radius_m": 0.0009,
+      "length_m": 0.052430906915673314,
+      "segments": 3,
+      "young_pa": 40000000.0,
+      "bend_joint_nm_per_rad": 0.0011793800992239386,
+      "damping_nms_per_rad": 2e-05
+    },
+    {
+      "name": "leafstalk_target_1",
+      "radius_m": 0.0009,
+      "length_m": 0.052430906915673314,
+      "segments": 3,
+      "young_pa": 40000000.0,
+      "bend_joint_nm_per_rad": 0.0011793800992239386,
+      "damping_nms_per_rad": 2e-05
+    },
+    {
+      "name": "leafstalk_target_2",
+      "radius_m": 0.0009,
+      "length_m": 0.052430906915673314,
+      "segments": 3,
+      "young_pa": 40000000.0,
+      "bend_joint_nm_per_rad": 0.0011793800992239386,
+      "damping_nms_per_rad": 2e-05
+    },
+    {
+      "name": "stem_0",
+      "radius_m": 0.0015,
+      "length_m": 0.2941513216016546,
+      "segments": 5,
+      "young_pa": 80000000.0,
+      "bend_joint_nm_per_rad": 0.00540684730641335,
+      "damping_nms_per_rad": 3.784793114489345e-05
+    },
+    {
+      "name": "pedicel_target_1",
+      "radius_m": 0.0015,
+      "length_m": 0.22276669409945465,
+      "segments": 5,
+      "young_pa": 80000000.0,
+      "bend_joint_nm_per_rad": 0.007139448234437512,
+      "damping_nms_per_rad": 4.997613764106259e-05
+    },
+    {
+      "name": "pedicel_target_2",
+      "radius_m": 0.0015,
+      "length_m": 0.17007351351694952,
+      "segments": 5,
+      "young_pa": 80000000.0,
+      "bend_joint_nm_per_rad": 0.009351434259170113,
+      "damping_nms_per_rad": 6.546003981419079e-05
+    },
+    {
+      "name": "branch_left",
+      "radius_m": 0.004,
+      "length_m": 0.10295630140987001,
+      "segments": 5,
+      "young_pa": 120000000.0,
+      "bend_joint_nm_per_rad": 1.171731659411408,
+      "damping_nms_per_rad": 0.008202121615879856
+    },
+    {
+      "name": "leafstalk_left_0",
+      "radius_m": 0.0009,
+      "length_m": 0.052430906915673314,
+      "segments": 3,
+      "young_pa": 40000000.0,
+      "bend_joint_nm_per_rad": 0.0011793800992239386,
+      "damping_nms_per_rad": 2e-05
+    },
+    {
+      "name": "leafstalk_left_1",
+      "radius_m": 0.0009,
+      "length_m": 0.052430906915673314,
+      "segments": 3,
+      "young_pa": 40000000.0,
+      "bend_joint_nm_per_rad": 0.0011793800992239386,
+      "damping_nms_per_rad": 2e-05
+    },
+    {
+      "name": "leafstalk_left_2",
+      "radius_m": 0.0009,
+      "length_m": 0.052430906915673314,
+      "segments": 3,
+      "young_pa": 40000000.0,
+      "bend_joint_nm_per_rad": 0.0011793800992239386,
+      "damping_nms_per_rad": 2e-05
+    },
+    {
+      "name": "pedicel_left_0",
+      "radius_m": 0.0016,
+      "length_m": 0.11337548235840056,
+      "segments": 5,
+      "young_pa": 80000000.0,
+      "bend_joint_nm_per_rad": 0.01815978303799521,
+      "damping_nms_per_rad": 0.00012711848126596646
+    },
+    {
+      "name": "pedicel_left_1",
+      "radius_m": 0.0016,
+      "length_m": 0.10234744745229357,
+      "segments": 5,
+      "young_pa": 80000000.0,
+      "bend_joint_nm_per_rad": 0.02011651694993463,
+      "damping_nms_per_rad": 0.0001408156186495424
+    },
+    {
+      "name": "branch_right",
+      "radius_m": 0.004,
+      "length_m": 0.1065363787633126,
+      "segments": 5,
+      "young_pa": 120000000.0,
+      "bend_joint_nm_per_rad": 1.132356471077946,
+      "damping_nms_per_rad": 0.007926495297545622
+    },
+    {
+      "name": "leafstalk_right_0",
+      "radius_m": 0.0009,
+      "length_m": 0.052430906915673314,
+      "segments": 3,
+      "young_pa": 40000000.0,
+      "bend_joint_nm_per_rad": 0.0011793800992239386,
+      "damping_nms_per_rad": 2e-05
+    },
+    {
+      "name": "leafstalk_right_1",
+      "radius_m": 0.0009,
+      "length_m": 0.052430906915673314,
+      "segments": 3,
+      "young_pa": 40000000.0,
+      "bend_joint_nm_per_rad": 0.0011793800992239386,
+      "damping_nms_per_rad": 2e-05
+    },
+    {
+      "name": "leafstalk_right_2",
+      "radius_m": 0.0009,
+      "length_m": 0.052430906915673314,
+      "segments": 3,
+      "young_pa": 40000000.0,
+      "bend_joint_nm_per_rad": 0.0011793800992239386,
+      "damping_nms_per_rad": 2e-05
+    },
+    {
+      "name": "pedicel_right_2",
+      "radius_m": 0.0016,
+      "length_m": 0.11895377253370315,
+      "segments": 5,
+      "young_pa": 80000000.0,
+      "bend_joint_nm_per_rad": 0.017308187185683978,
+      "damping_nms_per_rad": 0.00012115731029978785
+    },
+    {
+      "name": "pedicel_right_3",
+      "radius_m": 0.0016,
+      "length_m": 0.12264175471673584,
+      "segments": 5,
+      "young_pa": 80000000.0,
+      "bend_joint_nm_per_rad": 0.016787709587260585,
+      "damping_nms_per_rad": 0.00011751396711082409
+    },
+    {
+      "name": "pedicel_right_4",
+      "radius_m": 0.0016,
+      "length_m": 0.15200657880499785,
+      "segments": 5,
+      "young_pa": 80000000.0,
+      "bend_joint_nm_per_rad": 0.013544638512638596,
+      "damping_nms_per_rad": 9.481246958847017e-05
+    }
+  ],
+  "hardware_unchanged": {
+    "cut_base": true,
+    "catch_base": true,
+    "cutter": true,
+    "catcher": true
+  },
+  "physical_fruits": 8,
+  "physical_leaf_panels": 27,
+  "limitations": [
+    "Leaf panels are coarse hinged surfaces",
+    "Fruit is rigid with compliant contacts, no bruising model",
+    "Fracture criterion inherited and uncalibrated; not validated here"
+  ]
+}

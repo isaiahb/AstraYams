@@ -1,0 +1,119 @@
+{
+  "contact_control_trials": {
+    "leaf": {
+      "valid": true,
+      "target_touched": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_overlaps": 0
+    },
+    "leaf-control": {
+      "valid": true,
+      "target_touched": false,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_overlaps": 0
+    },
+    "basal": {
+      "valid": true,
+      "target_touched": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_overlaps": 0
+    },
+    "basal-control": {
+      "valid": true,
+      "target_touched": false,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_overlaps": 0
+    },
+    "stalk": {
+      "valid": true,
+      "target_touched": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_overlaps": 0
+    },
+    "stalk-control": {
+      "valid": true,
+      "target_touched": false,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_overlaps": 0
+    },
+    "neighbor": {
+      "valid": true,
+      "target_touched": true,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_overlaps": 0
+    },
+    "neighbor-control": {
+      "valid": true,
+      "target_touched": false,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "initial_overlaps": 0
+    }
+  },
+  "missing_assets": [],
+  "scene_matches_v4": true,
+  "scope": "Numerical completion, intended contact and asset availability. Not biological validation."
+}

@@ -1,0 +1,126 @@
+{
+  "seed": 7100,
+  "layout": "gutter",
+  "config": {
+    "title": "Sample 01 / gutter",
+    "layout": "gutter",
+    "width": 0.5324803094371213,
+    "depth": 0.11378612525230028,
+    "top": 0.46280003759500604,
+    "targets": [
+      [
+        0.3036816788981678,
+        -0.05816375786480407,
+        0.346910308800415
+      ],
+      [
+        0.35144893647224723,
+        0.01664686770967779,
+        0.3527776677752975
+      ],
+      [
+        0.41208121550458493,
+        0.07523512628998827,
+        0.3406487808306863
+      ]
+    ],
+    "leaf_count": 13,
+    "canopy": 0.045
+  },
+  "preview": "seed-7100/review.png",
+  "minimum_fruit_planter_clearance_m": 0.13398819103509824,
+  "max_reset_ik_residual": 1.01551378389706e-06,
+  "finite_smoke_steps": 25,
+  "simulated_seconds": 0.5000000000000003,
+  "geometry_gate_pass": true,
+  "sensor_preview": {
+    "cut_fruit_visible_pixels": 3739,
+    "catch_fruit_visible_pixels": 17491
+  },
+  "cameras_after_smoke": {
+    "cut_wrist_d405": {
+      "position_world_m": [
+        0.11463029136700287,
+        -0.10181025377306656,
+        0.40369722309696526
+      ],
+      "rotation_world": [
+        [
+          -0.09228847834488396,
+          0.4108811252964048,
+          -0.9070058090442119
+        ],
+        [
+          -0.9891239369626117,
+          -0.14259932575259449,
+          0.03604538281788677
+        ],
+        [
+          -0.11452804936943811,
+          0.9004677302213917,
+          0.4195726310635216
+        ]
+      ],
+      "nominal_fov_degrees": [
+        87,
+        58
+      ],
+      "timestamp_sim_s": 0.5000000000000003,
+      "resolution": [
+        512,
+        288
+      ],
+      "nominal_focal_pixels": [
+        269.7677120719264,
+        259.782876759085
+      ],
+      "principal_point_pixels": [
+        256,
+        144
+      ]
+    },
+    "catch_wrist_d405": {
+      "position_world_m": [
+        0.4606743872186202,
+        -0.057911357336579115,
+        0.31572304396734363
+      ],
+      "rotation_world": [
+        [
+          4.718228313727035e-05,
+          -0.4326368762244985,
+          0.9015682620326319
+        ],
+        [
+          0.999985268128488,
+          0.004913968553064252,
+          0.0023057404571036333
+        ],
+        [
+          -0.005427826436814831,
+          0.9015548714547371,
+          0.4326307345258822
+        ]
+      ],
+      "nominal_fov_degrees": [
+        87,
+        58
+      ],
+      "timestamp_sim_s": 0.5000000000000003,
+      "resolution": [
+        512,
+        288
+      ],
+      "nominal_focal_pixels": [
+        269.7677120719264,
+        259.782876759085
+      ],
+      "principal_point_pixels": [
+        256,
+        144
+      ]
+    }
+  },
+  "scene_sha256": "a2d3977526f02d5d326b4fde0dde7648918914fcaf089b7845ffae939b59fc29",
+  "scope": "Environment sample and 0.5 s simulation check; not a completed harvest or trained policy."
+}

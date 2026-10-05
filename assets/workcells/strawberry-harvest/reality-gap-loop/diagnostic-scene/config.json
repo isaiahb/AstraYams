@@ -1,0 +1,26 @@
+{
+  "title": "03 / Staggered harvest bays",
+  "layout": "bays",
+  "width": 0.64,
+  "depth": 0.1,
+  "top": 0.46,
+  "targets": [
+    [
+      0.31,
+      -0.05,
+      0.35
+    ],
+    [
+      0.365,
+      0.015,
+      0.36
+    ],
+    [
+      0.415,
+      0.075,
+      0.345
+    ]
+  ],
+  "leaf_count": 18,
+  "canopy": 0.042
+}

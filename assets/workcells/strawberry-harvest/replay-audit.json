@@ -1,0 +1,37 @@
+{
+  "exact_qpos_replay": true,
+  "max_qpos_error": 0.0,
+  "max_camera_optical_origin_error_m": 0.0,
+  "camera_fov_degrees": [
+    [
+      87.0,
+      57.999996185302734
+    ],
+    [
+      87.0,
+      57.999996185302734
+    ]
+  ],
+  "collected": 3,
+  "all_fruit_positions": [
+    [
+      0.5079298071860704,
+      -0.2552969998959682,
+      0.03631426575775974
+    ],
+    [
+      0.35423260620992536,
+      -0.21462095105388845,
+      0.03595994783156924
+    ],
+    [
+      0.4719921330059019,
+      -0.2127984222586991,
+      0.037067678667326825
+    ]
+  ],
+  "video_real_time": true,
+  "continuous_no_resets": true,
+  "source_rollout_sha256": "29117299b11ea30f5cb4f813b52562733999df65b33abb9f030889235d0fb82b",
+  "scene_sha256": "7f71f199d1c9239b1cbcde00a9b6adfa9d319259ad56f61c9c10790cb3182118"
+}

@@ -1,0 +1,155 @@
+[
+  {
+    "time": 8.079999999999368,
+    "phase": "open cup / add to collection",
+    "severed": true,
+    "damage": 1,
+    "cut_time": 1.322000000000001,
+    "cup_contact": false,
+    "basket_contact": true,
+    "is_success": false,
+    "fruit_position": [
+      0.4742045896675353,
+      -0.2793795922945227,
+      0.03781737952822966
+    ],
+    "cutter_position": [
+      0.2749992929923316,
+      -0.08985819887356038,
+      0.38397971632875166
+    ],
+    "catcher_position": [
+      0.4294667239543669,
+      -0.2299571821558638,
+      0.18807361487915386
+    ],
+    "grasp_contacts": {
+      "cutter": 2,
+      "catcher": 2
+    },
+    "peak_catch_force_n": 1.57439034704655,
+    "arm_arm_contacts": 0,
+    "active_berry": 0,
+    "berry_success": true,
+    "collected_count": 1,
+    "all_fruit_positions": [
+      [
+        0.4742045896675353,
+        -0.2793795922945227,
+        0.03781737952822966
+      ],
+      [
+        0.35,
+        0.0,
+        0.3078319921040149
+      ],
+      [
+        0.35,
+        0.09,
+        0.3078319921040149
+      ]
+    ]
+  },
+  {
+    "time": 20.45999999999954,
+    "phase": "open cup / add to collection",
+    "severed": true,
+    "damage": 1,
+    "cut_time": 13.80800000000128,
+    "cup_contact": false,
+    "basket_contact": true,
+    "is_success": false,
+    "fruit_position": [
+      0.3661897158359878,
+      -0.2024234901772252,
+      0.037464677257526016
+    ],
+    "cutter_position": [
+      0.27489652047133917,
+      0.00013437782496732284,
+      0.3839253144160312
+    ],
+    "catcher_position": [
+      0.4287599379237276,
+      -0.22962652634185665,
+      0.1884384925210183
+    ],
+    "grasp_contacts": {
+      "cutter": 2,
+      "catcher": 2
+    },
+    "peak_catch_force_n": 3.797275014200362,
+    "arm_arm_contacts": 0,
+    "active_berry": 1,
+    "berry_success": true,
+    "collected_count": 2,
+    "all_fruit_positions": [
+      [
+        0.5078837696942412,
+        -0.25833421156770486,
+        0.03594698269349082
+      ],
+      [
+        0.3661897158359878,
+        -0.2024234901772252,
+        0.037464677257526016
+      ],
+      [
+        0.35000000001736886,
+        0.08999999999879699,
+        0.3078319921039555
+      ]
+    ]
+  },
+  {
+    "time": 34.119999999995734,
+    "phase": "open cup / add to collection",
+    "severed": true,
+    "damage": 1,
+    "cut_time": 26.4859999999962,
+    "cup_contact": false,
+    "basket_contact": true,
+    "is_success": true,
+    "fruit_position": [
+      0.4719921330059019,
+      -0.2127984222586991,
+      0.037067678667326825
+    ],
+    "cutter_position": [
+      0.27485189116399966,
+      0.0901620925677179,
+      0.38375074524440506
+    ],
+    "catcher_position": [
+      0.4328027640952062,
+      -0.22637085894038836,
+      0.18803776837934685
+    ],
+    "grasp_contacts": {
+      "cutter": 2,
+      "catcher": 2
+    },
+    "peak_catch_force_n": 4.142600868393605,
+    "arm_arm_contacts": 0,
+    "active_berry": 2,
+    "berry_success": true,
+    "collected_count": 3,
+    "all_fruit_positions": [
+      [
+        0.5079298071860704,
+        -0.2552969998959682,
+        0.03631426575775974
+      ],
+      [
+        0.35423260620992536,
+        -0.21462095105388845,
+        0.03595994783156924
+      ],
+      [
+        0.4719921330059019,
+        -0.2127984222586991,
+        0.037067678667326825
+      ]
+    ]
+  }
+]

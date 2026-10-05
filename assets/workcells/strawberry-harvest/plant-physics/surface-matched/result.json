@@ -1,0 +1,24 @@
+{
+  "tag": "surface-matched",
+  "seconds": 9.999999999999897,
+  "fruits": 8,
+  "probe_contact_steps": 1634,
+  "peak_probe_force_n": 0.32933997904417267,
+  "probe_impulse_ns": 0.2923930044645839,
+  "max_probe_penetration_m": 0.0005761571730840999,
+  "finite": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "stiffness_scale": 1,
+  "segments": 8,
+  "timestep_s": 0.001,
+  "contact_enabled": true,
+  "scope": "Force-limited diagnostic probe. Robot holds pose. No harvest or learned policy claim."
+}

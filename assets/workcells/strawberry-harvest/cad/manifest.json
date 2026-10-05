@@ -1,0 +1,81 @@
+{
+  "cutter": {
+    "parts": [
+      "cutter_handle",
+      "cutter_shoulder",
+      "cutter_shaft",
+      "shear_left",
+      "shear_right"
+    ],
+    "step": "cutter.step",
+    "stl": "cutter.stl",
+    "units": "millimetres"
+  },
+  "catcher": {
+    "parts": [
+      "catcher_handle",
+      "catcher_shoulder",
+      "catcher_shaft",
+      "cup_wall_0",
+      "cup_wall_1",
+      "cup_wall_2",
+      "cup_wall_3",
+      "cup_wall_4",
+      "cup_wall_5",
+      "cup_wall_6",
+      "cup_wall_7",
+      "cup_wall_8",
+      "cup_wall_9",
+      "cup_wall_10",
+      "cup_wall_11",
+      "cup_wall_12",
+      "cup_wall_13",
+      "cup_wall_14",
+      "cup_wall_15",
+      "cup_wall_16",
+      "cup_wall_17",
+      "cup_wall_18",
+      "cup_wall_19",
+      "cup_wall_20",
+      "cup_wall_21",
+      "cup_wall_22",
+      "cup_wall_23",
+      "gate_rail_157",
+      "gate_rail_63",
+      "gate_drive_envelope",
+      "cup_floor",
+      "cup_floor_b"
+    ],
+    "step": "catcher.step",
+    "stl": "catcher.stl",
+    "units": "millimetres"
+  },
+  "basket": {
+    "parts": [
+      "basket_floor",
+      "basket_wall_0_-1",
+      "part_354",
+      "part_355",
+      "part_356",
+      "part_357",
+      "basket_wall_0_1",
+      "part_359",
+      "part_360",
+      "part_361",
+      "part_362",
+      "basket_wall_1_-1",
+      "part_364",
+      "part_365",
+      "part_366",
+      "part_367",
+      "basket_wall_1_1",
+      "part_369",
+      "part_370",
+      "part_371",
+      "part_372"
+    ],
+    "step": "basket.step",
+    "stl": "basket.stl",
+    "units": "millimetres"
+  }
+}

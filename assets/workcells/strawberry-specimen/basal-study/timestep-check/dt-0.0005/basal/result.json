@@ -1,0 +1,41 @@
+{
+  "kind": "basal",
+  "control": false,
+  "seconds": 4.000000000000503,
+  "elapsed_wall_s": 4.801249027252197,
+  "valid_run": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial_probe_contacts": [],
+  "probe_start_m": [
+    -0.014465030763987117,
+    0.007648853032378243,
+    0.30702264750002556
+  ],
+  "probe_end_m": [
+    -0.014465030763987117,
+    0.06464885303237825,
+    0.30702264750002556
+  ],
+  "target": "petiole_left_1_surface",
+  "target_touched": true,
+  "probe_contacts": {
+    "petiole_left_1_surface": {
+      "contact_points": 1676,
+      "peak_force_n": 4.512957781383054,
+      "impulse_ns": 1.6145961156964346,
+      "max_penetration_mm": 0.5666551421554012
+    }
+  },
+  "truss_trough_contact_duration_s": 3.999,
+  "berry_berry_contact_duration_s": 4.0,
+  "penetrations_over_1mm": {},
+  "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation."
+}

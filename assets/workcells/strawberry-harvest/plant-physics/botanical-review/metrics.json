@@ -1,0 +1,27 @@
+{
+  "tag": "botanical-v8",
+  "max_control_span_last_second_mm": [
+    2.6802702100432133e-05,
+    2.8263557097330283e-05,
+    2.6942906402541623e-05
+  ],
+  "max_control_span_before_contact_mm": [
+    0.02455130370409813,
+    0.023942039871694777,
+    0.012090664599226085
+  ],
+  "peak_contact_difference_mm": [
+    49.420354987719776,
+    41.5268157285518,
+    26.26010862135983
+  ],
+  "final_contact_difference_mm": [
+    0.013776476397868841,
+    0.014569258023918773,
+    0.014023648408388881
+  ],
+  "relative_recovery_after_withdraw_seconds": 0.1004999999983962,
+  "relative_recovery_threshold_mm": 2.471017749385989,
+  "quiet_rest_gate_max_span_2mm": true,
+  "scope": "Engineering sanity gate, not a measured biological tolerance. Compare real plant force and motion data before claiming accuracy."
+}

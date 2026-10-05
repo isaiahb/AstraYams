@@ -1,0 +1,497 @@
+{
+  "model": "Curved segmented rod with spherical joints, isotropic rotational stiffness EI/L; approximate torsion, not Cosserat/FEM",
+  "parameters_status": "Uncalibrated priors; not measured strawberry tissue properties",
+  "branches": [
+    {
+      "name": "leafstalk_target_0",
+      "radius_m": 0.00165,
+      "length_m": 0.12009370183208362,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.03635333768138975,
+        0.03827973776515382,
+        0.039954880952391955,
+        0.03952526506126871,
+        0.03483567273772508
+      ]
+    },
+    {
+      "name": "leafstalk_target_1",
+      "radius_m": 0.00165,
+      "length_m": 0.13396356039458054,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.03573839944701327,
+        0.03592945155538582,
+        0.03523047677623143,
+        0.03276906656563204,
+        0.028235956581505833
+      ]
+    },
+    {
+      "name": "leafstalk_target_2",
+      "radius_m": 0.00165,
+      "length_m": 0.13396701025148824,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.03615691806433514,
+        0.03703531788584359,
+        0.03627740911732262,
+        0.03252063026936717,
+        0.026273391438001635
+      ]
+    },
+    {
+      "name": "leafstalk_target_3",
+      "radius_m": 0.00165,
+      "length_m": 0.1276481554669621,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.035830644826502674,
+        0.0364556202631372,
+        0.03668596233461361,
+        0.03559992347127415,
+        0.03218883367156857
+      ]
+    },
+    {
+      "name": "leafstalk_target_4",
+      "radius_m": 0.00165,
+      "length_m": 0.12691331259465302,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.03625700705618892,
+        0.03767191093016954,
+        0.0380949304076586,
+        0.03575259917584806,
+        0.02997198162012383
+      ]
+    },
+    {
+      "name": "branch_target",
+      "radius_m": 0.0032,
+      "length_m": 0.15330166201641832,
+      "segments": 8,
+      "young_pa": 240000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.9040453017228534,
+        1.048086406421073,
+        1.179474750394377,
+        1.1565212323495975,
+        0.9358053882332006,
+        0.6879783686833757,
+        0.5021890064482804,
+        0.37430369293905386
+      ]
+    },
+    {
+      "name": "stem_0",
+      "radius_m": 0.00155,
+      "length_m": 0.09798421570865458,
+      "segments": 6,
+      "young_pa": 160000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.05094258966915567,
+        0.04528583917974249,
+        0.038571364238357095,
+        0.03179679838794228,
+        0.025681814501640466,
+        0.02052360760218512
+      ]
+    },
+    {
+      "name": "secondary_target",
+      "radius_m": 0.002,
+      "length_m": 0.050791152714168904,
+      "segments": 4,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.20887367057612055,
+        0.18152779965422575,
+        0.1427742648984833,
+        0.10474965376497034
+      ]
+    },
+    {
+      "name": "pedicel_target_1",
+      "radius_m": 0.00145,
+      "length_m": 0.07059700275337573,
+      "segments": 6,
+      "young_pa": 160000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.0570946901037021,
+        0.04927051678337498,
+        0.04100385122215976,
+        0.03332241957191655,
+        0.026734407716252337,
+        0.021330407918645166
+      ]
+    },
+    {
+      "name": "pedicel_target_2",
+      "radius_m": 0.00145,
+      "length_m": 0.05569922000818718,
+      "segments": 6,
+      "young_pa": 160000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.04825696719197131,
+        0.049659344870740786,
+        0.05007463483579512,
+        0.048170849970895796,
+        0.04308982808916977,
+        0.03574695854891026
+      ]
+    },
+    {
+      "name": "leafstalk_left_0",
+      "radius_m": 0.00165,
+      "length_m": 0.12009370183208362,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.03635333768138975,
+        0.03827973776515382,
+        0.039954880952391955,
+        0.03952526506126871,
+        0.03483567273772508
+      ]
+    },
+    {
+      "name": "leafstalk_left_1",
+      "radius_m": 0.00165,
+      "length_m": 0.13396356039458054,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.03573839944701327,
+        0.03592945155538582,
+        0.03523047677623143,
+        0.03276906656563204,
+        0.028235956581505833
+      ]
+    },
+    {
+      "name": "leafstalk_left_2",
+      "radius_m": 0.00165,
+      "length_m": 0.13396701025148824,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.03615691806433514,
+        0.03703531788584359,
+        0.03627740911732262,
+        0.03252063026936717,
+        0.026273391438001635
+      ]
+    },
+    {
+      "name": "leafstalk_left_3",
+      "radius_m": 0.00165,
+      "length_m": 0.1276481554669621,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.035830644826502674,
+        0.0364556202631372,
+        0.03668596233461361,
+        0.03559992347127415,
+        0.03218883367156857
+      ]
+    },
+    {
+      "name": "leafstalk_left_4",
+      "radius_m": 0.00165,
+      "length_m": 0.12691331259465302,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.03625700705618892,
+        0.03767191093016954,
+        0.0380949304076586,
+        0.03575259917584806,
+        0.02997198162012383
+      ]
+    },
+    {
+      "name": "branch_left",
+      "radius_m": 0.0032,
+      "length_m": 0.15330166201641832,
+      "segments": 8,
+      "young_pa": 240000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.9040453017228534,
+        1.048086406421073,
+        1.179474750394377,
+        1.1565212323495975,
+        0.9358053882332006,
+        0.6879783686833757,
+        0.5021890064482804,
+        0.37430369293905386
+      ]
+    },
+    {
+      "name": "pedicel_left_0",
+      "radius_m": 0.00155,
+      "length_m": 0.09798421570865458,
+      "segments": 6,
+      "young_pa": 160000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.05094258966915567,
+        0.04528583917974249,
+        0.038571364238357095,
+        0.03179679838794228,
+        0.025681814501640466,
+        0.02052360760218512
+      ]
+    },
+    {
+      "name": "secondary_left",
+      "radius_m": 0.002,
+      "length_m": 0.05079115271416889,
+      "segments": 4,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.20887367057612055,
+        0.18152779965422583,
+        0.14277426489848336,
+        0.10474965376497039
+      ]
+    },
+    {
+      "name": "pedicel_left_1",
+      "radius_m": 0.00145,
+      "length_m": 0.07059700275337573,
+      "segments": 6,
+      "young_pa": 160000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.0570946901037021,
+        0.04927051678337498,
+        0.04100385122215976,
+        0.03332241957191655,
+        0.026734407716252337,
+        0.021330407918645166
+      ]
+    },
+    {
+      "name": "leafstalk_right_0",
+      "radius_m": 0.00165,
+      "length_m": 0.12009370183208362,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.03635333768138975,
+        0.03827973776515382,
+        0.039954880952391955,
+        0.03952526506126871,
+        0.03483567273772508
+      ]
+    },
+    {
+      "name": "leafstalk_right_1",
+      "radius_m": 0.00165,
+      "length_m": 0.13396356039458054,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.03573839944701327,
+        0.03592945155538582,
+        0.03523047677623143,
+        0.03276906656563204,
+        0.028235956581505833
+      ]
+    },
+    {
+      "name": "leafstalk_right_2",
+      "radius_m": 0.00165,
+      "length_m": 0.13396701025148824,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.03615691806433514,
+        0.03703531788584359,
+        0.03627740911732262,
+        0.03252063026936717,
+        0.026273391438001635
+      ]
+    },
+    {
+      "name": "leafstalk_right_3",
+      "radius_m": 0.00165,
+      "length_m": 0.1276481554669621,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.035830644826502674,
+        0.0364556202631372,
+        0.03668596233461361,
+        0.03559992347127415,
+        0.03218883367156857
+      ]
+    },
+    {
+      "name": "leafstalk_right_4",
+      "radius_m": 0.00165,
+      "length_m": 0.12691331259465302,
+      "segments": 5,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.03625700705618892,
+        0.03767191093016954,
+        0.0380949304076586,
+        0.03575259917584806,
+        0.02997198162012383
+      ]
+    },
+    {
+      "name": "branch_right",
+      "radius_m": 0.0032,
+      "length_m": 0.15330166201641832,
+      "segments": 8,
+      "young_pa": 240000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.9040453017228534,
+        1.048086406421073,
+        1.179474750394377,
+        1.1565212323495975,
+        0.9358053882332006,
+        0.6879783686833757,
+        0.5021890064482804,
+        0.37430369293905386
+      ]
+    },
+    {
+      "name": "pedicel_right_2",
+      "radius_m": 0.00155,
+      "length_m": 0.0979842157086546,
+      "segments": 6,
+      "young_pa": 160000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.05094258966915567,
+        0.045285839179742486,
+        0.03857136423835708,
+        0.03179679838794227,
+        0.025681814501640456,
+        0.020523607602185117
+      ]
+    },
+    {
+      "name": "secondary_right",
+      "radius_m": 0.002,
+      "length_m": 0.050791152714168904,
+      "segments": 4,
+      "young_pa": 200000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.20887367057612055,
+        0.18152779965422575,
+        0.1427742648984833,
+        0.10474965376497034
+      ]
+    },
+    {
+      "name": "pedicel_right_3",
+      "radius_m": 0.00145,
+      "length_m": 0.07059700275337573,
+      "segments": 6,
+      "young_pa": 160000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.0570946901037021,
+        0.04927051678337498,
+        0.04100385122215976,
+        0.03332241957191655,
+        0.026734407716252337,
+        0.021330407918645166
+      ]
+    },
+    {
+      "name": "pedicel_right_4",
+      "radius_m": 0.00145,
+      "length_m": 0.05569922000818722,
+      "segments": 6,
+      "young_pa": 160000000.0,
+      "natural_shape": "Quadratic curved rest centerline, tapering cross section",
+      "damping_relaxation_seconds": 0.2,
+      "bend_joint_nm_per_rad": [
+        0.04825696719197131,
+        0.04965934487074076,
+        0.05007463483579508,
+        0.04817084997089575,
+        0.04308982808916973,
+        0.03574695854891019
+      ]
+    }
+  ],
+  "hardware_unchanged": {
+    "cut_base": true,
+    "catch_base": true,
+    "cutter": true,
+    "catcher": true
+  },
+  "physical_fruits": 8,
+  "physical_leaf_panels": 135,
+  "limitations": [
+    "Leaf panels are coarse hinged surfaces",
+    "Fruit is rigid with compliant contacts, no bruising model",
+    "Fracture criterion inherited and uncalibrated; not validated here"
+  ]
+}

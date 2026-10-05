@@ -1,0 +1,7 @@
+{
+  "source": "/Users/isaiah/Documents/BallahTech/AstraFactory/assets/workcells/strawberry-specimen/parametric-study/v8/reference-input.json",
+  "source_sha256": "4b60417778a22df92cb6de63b2d6e277bcd3ba963f407a34da3ba27b505e5373",
+  "generator_sha256": "386fd467a410669a94de0b116847a0203ed98400930fc0af0461a7508cc67135",
+  "scene_sha256": "fe5161b5a2d454dae4dfbb48659088fbb8cd1b9ad4db08da20f902106ead418a",
+  "mujoco_version": "3.12.0"
+}

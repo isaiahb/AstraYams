@@ -1,0 +1,26 @@
+{
+  "title": "02 / Modular growing pockets",
+  "layout": "pods",
+  "width": 0.56,
+  "depth": 0.12,
+  "top": 0.46,
+  "targets": [
+    [
+      0.295,
+      -0.05,
+      0.35
+    ],
+    [
+      0.35,
+      0.015,
+      0.365
+    ],
+    [
+      0.405,
+      0.07,
+      0.34
+    ]
+  ],
+  "leaf_count": 21,
+  "canopy": 0.055
+}

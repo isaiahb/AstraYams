@@ -1,0 +1,25 @@
+{
+  "tag": "canopy-v1",
+  "seconds": 14.000000000005619,
+  "fruits": 8,
+  "probe_contact_steps": 3150,
+  "peak_probe_force_n": 0.19698696196992724,
+  "probe_impulse_ns": 0.19395733200737944,
+  "max_probe_penetration_m": 0.0004510345955442193,
+  "finite": true,
+  "valid_run": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "stiffness_scale": 2.0,
+  "segments": 6,
+  "timestep_s": 0.0005,
+  "contact_enabled": true,
+  "scope": "Force-limited diagnostic probe. Robot holds pose. No harvest or learned policy claim."
+}

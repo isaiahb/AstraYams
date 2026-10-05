@@ -1,0 +1,46 @@
+{
+  "scene_source": "assets/workcells/strawberry-specimen/surface-study/v4/scene.xml",
+  "scene_sha256": "12b7b9348b785c8a8f68321ae46b00970aa9e6c4161052a6b5919e24f8b710b0",
+  "prior_page": "assets/workcells/strawberry-specimen/index.html",
+  "scope": "Same complete V4 specimen; fresh diagnostic contacts, reused physically equivalent V3 settling. No PPO or biological calibration.",
+  "recordings": {
+    "rest": {
+      "origin": "reused",
+      "source": "assets/workcells/strawberry-specimen/surface-study/v3/rest/rollout.npz",
+      "sha256": "718269962e15897095faa9a704c5f9aba0596a46ee245320c06907c8cc2e8432",
+      "equivalence": "physics-equivalence.json"
+    },
+    "leaf": {
+      "origin": "fresh",
+      "sha256": "151b2bf1f4baf6a9edd106a7b0be617f7de26d3ecbe4b8f3a665925f51944b17"
+    },
+    "leaf-control": {
+      "origin": "fresh",
+      "sha256": "722cec6c4ad135302c3e80f93b9cb5836a3bd199275cc71214cd3695eedccc79"
+    },
+    "basal": {
+      "origin": "fresh",
+      "sha256": "6f1c38959e2545dfc508bf347e6670e9205678172a3ad37038f6e8718959625f"
+    },
+    "basal-control": {
+      "origin": "fresh",
+      "sha256": "0c16fc11438444fc2ccc0a8192c658f8b03cb8ee8db25d3239433b9035428fae"
+    },
+    "stalk": {
+      "origin": "fresh",
+      "sha256": "60460d693dc49a4ba7c50f54ca99b34c0a576937a5c4ac76275cd977360253c5"
+    },
+    "stalk-control": {
+      "origin": "fresh",
+      "sha256": "6701034bd835210c2a8c20787581469cb09491e2e0bd76931678b88ef995c754"
+    },
+    "neighbor": {
+      "origin": "fresh",
+      "sha256": "205df3590837a175ed6a97cf8f33fe8633396638da10389198b2209ed0c9f752"
+    },
+    "neighbor-control": {
+      "origin": "fresh",
+      "sha256": "7dd3e4a96b4ca322d2811f20de64155fb681de5f758c7f0f2adb26de941a5ec1"
+    }
+  }
+}

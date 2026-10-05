@@ -1,0 +1,49 @@
+{
+  "kind": "stalk",
+  "control": false,
+  "seconds": 3.999999999999143,
+  "elapsed_wall_s": 9.062682151794434,
+  "valid_run": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial_probe_contacts": [],
+  "probe_start_m": [
+    -0.04089482746973677,
+    -0.021861760778491276,
+    0.26891162073029834
+  ],
+  "probe_end_m": [
+    0.03910517253026323,
+    -0.021861760778491276,
+    0.26891162073029834
+  ],
+  "target": "peduncle_5_surface",
+  "target_touched": true,
+  "probe_contacts": {
+    "peduncle_5_surface": {
+      "contact_points": 1705,
+      "peak_force_n": 0.7039674624355905,
+      "impulse_ns": 0.16844210588511038,
+      "max_penetration_mm": 0.0568149603930139
+    },
+    "peduncle_6_surface": {
+      "contact_points": 3001,
+      "peak_force_n": 0.6551773035444235,
+      "impulse_ns": 0.30430214632841396,
+      "max_penetration_mm": 0.03307599948374623
+    }
+  },
+  "truss_trough_contact_duration_s": 3.63,
+  "berry_berry_contact_duration_s": 3.8545000000000003,
+  "penetrations_over_1mm": {},
+  "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.",
+  "approach_angle_deg": 0.0,
+  "trial_label": "stalk"
+}

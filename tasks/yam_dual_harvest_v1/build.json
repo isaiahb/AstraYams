@@ -1,0 +1,30 @@
+{
+  "nq": 657,
+  "nv": 571,
+  "source": "/Users/isaiah/Documents/BallahTech/AstraFactory/tasks/yam_catcher_positioning_v2",
+  "cut_initial_q": [
+    -0.08490991063747302,
+    0.6798860462993672,
+    0.8118567634009142,
+    -0.13197654204995155,
+    0.3514277438649605,
+    4.640957795036693e-06
+  ],
+  "cut_initial_position_error_m": 1.1443916996305594e-16,
+  "cut_target_world": [
+    0.2797132172619368,
+    -0.054307820789949925,
+    0.37119658234779296
+  ],
+  "cutter_mount_mass_kg": {
+    "left": 0.029337691363140118,
+    "right": 0.029507630963638336
+  },
+  "net_nodes": 97,
+  "net_edges": 264,
+  "net_mass_kg": 0.0015,
+  "net_edge_stiffness_N_per_m": 60,
+  "net_edge_damping_Ns_per_m": 0.015,
+  "scope": "Two dynamic YAMs. Offline initial pose only. Actual jaw-driven CAD shears with hooked Rev-C counterblade. Clipped CAD contact envelopes; rigid calyx contact envelopes. Same V4 plant, distal stalk capsule split into two pieces joined by an integrity weld. Deformable fiber net, contact-held frame. No learned dual-task result yet. Same-arm self-collision unresolved; inter-arm contacts enabled.",
+  "net_parameters": "Uncalibrated structural priors; the coarse woven lattice is a task model, not a fitted textile."
+}

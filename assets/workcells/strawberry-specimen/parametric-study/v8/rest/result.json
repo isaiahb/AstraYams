@@ -1,0 +1,32 @@
+{
+  "kind": "rest",
+  "control": false,
+  "seconds": 9.99999999999937,
+  "elapsed_wall_s": 24.848167896270752,
+  "valid_run": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial_probe_contacts": [],
+  "probe_start_m": null,
+  "probe_end_m": null,
+  "target": null,
+  "target_touched": null,
+  "probe_contacts": {},
+  "truss_trough_contact_duration_s": 9.5185,
+  "berry_berry_contact_duration_s": 9.215250000000001,
+  "penetrations_over_1mm": {
+    "petiole_emerging_2_surface | petiole_emerging_stipule": 1.6999445590692799,
+    "berry_primary | trough_front": 1.100390181945529,
+    "berry_primary | secondary_a_4_surface": 1.4297289411841807,
+    "berry_primary | secondary_a_5_surface": 1.3716124957894473
+  },
+  "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.",
+  "final_second_max_geom_coordinate_span_mm": 0.12833971276822106
+}

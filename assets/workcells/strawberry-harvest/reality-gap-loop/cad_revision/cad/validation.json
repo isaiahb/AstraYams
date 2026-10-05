@@ -1,0 +1,10 @@
+{
+  "catcher": {
+    "solids": 32,
+    "valid": true
+  },
+  "basket": {
+    "solids": 21,
+    "valid": true
+  }
+}

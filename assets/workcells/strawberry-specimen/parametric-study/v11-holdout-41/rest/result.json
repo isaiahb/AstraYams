@@ -1,0 +1,33 @@
+{
+  "kind": "rest",
+  "control": false,
+  "seconds": 9.99999999999937,
+  "elapsed_wall_s": 20.076688766479492,
+  "valid_run": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial_probe_contacts": [],
+  "probe_start_m": null,
+  "probe_end_m": null,
+  "target": null,
+  "target_touched": null,
+  "probe_contacts": {},
+  "truss_trough_contact_duration_s": 9.76825,
+  "berry_berry_contact_duration_s": 9.3005,
+  "penetrations_over_1mm": {
+    "berry_primary | trough_front": 1.1420127325364293,
+    "berry_primary | secondary_a_4_surface": 1.498937205461226,
+    "berry_primary | secondary_a_5_surface": 1.3221575970701152
+  },
+  "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.",
+  "final_second_max_geom_coordinate_span_mm": 0.7114507884994001,
+  "approach_angle_deg": 0.0,
+  "trial_label": "rest"
+}

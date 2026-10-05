@@ -1,0 +1,411 @@
+{
+  "version": 1,
+  "reference": "assets/workcells/strawberry-specimen/reference/tabletop.jpg",
+  "source": "https://u.osu.edu/indoorberry/structures/",
+  "photo_credit": "Meteor Systems, as credited within the photograph; hosted by Ohio State Kubota Lab",
+  "crop_pixels": [
+    55,
+    0,
+    330,
+    385
+  ],
+  "scope": "Manual image-plane landmark study of the foreground cluster. It cannot establish that all occluded stems share one crown. The single crown and all depths are explicit reconstruction assumptions. This is a representative specimen, not photogrammetry.",
+  "landmarks": [
+    {
+      "id": "crown",
+      "uv": [
+        133,
+        115
+      ],
+      "status": "hidden-assumed"
+    },
+    {
+      "id": "leaf_left",
+      "uv": [
+        88,
+        43
+      ],
+      "status": "visible-region-estimate"
+    },
+    {
+      "id": "leaf_high",
+      "uv": [
+        212,
+        28
+      ],
+      "status": "visible-region-estimate"
+    },
+    {
+      "id": "leaf_right",
+      "uv": [
+        280,
+        80
+      ],
+      "status": "visible-region-estimate"
+    },
+    {
+      "id": "leaf_front",
+      "uv": [
+        255,
+        151
+      ],
+      "status": "visible-region-estimate"
+    },
+    {
+      "id": "truss_a",
+      "uv": [
+        153,
+        159
+      ],
+      "status": "partially-visible-assumed-junction"
+    },
+    {
+      "id": "truss_b",
+      "uv": [
+        185,
+        258
+      ],
+      "status": "hidden-assumed"
+    },
+    {
+      "id": "fruit_a",
+      "uv": [
+        158,
+        253
+      ],
+      "status": "visible"
+    },
+    {
+      "id": "fruit_b",
+      "uv": [
+        200,
+        304
+      ],
+      "status": "visible"
+    },
+    {
+      "id": "fruit_c",
+      "uv": [
+        218,
+        331
+      ],
+      "status": "visible"
+    },
+    {
+      "id": "fruit_green",
+      "uv": [
+        120,
+        228
+      ],
+      "status": "visible"
+    }
+  ],
+  "connections": [
+    [
+      "crown",
+      "leaf_left",
+      "assumed"
+    ],
+    [
+      "crown",
+      "leaf_high",
+      "assumed"
+    ],
+    [
+      "crown",
+      "leaf_right",
+      "assumed"
+    ],
+    [
+      "crown",
+      "leaf_front",
+      "assumed"
+    ],
+    [
+      "crown",
+      "truss_a",
+      "partially-visible"
+    ],
+    [
+      "truss_a",
+      "fruit_green",
+      "partially-visible"
+    ],
+    [
+      "truss_a",
+      "fruit_a",
+      "partially-visible"
+    ],
+    [
+      "truss_a",
+      "truss_b",
+      "assumed"
+    ],
+    [
+      "truss_b",
+      "fruit_b",
+      "assumed"
+    ],
+    [
+      "truss_b",
+      "fruit_c",
+      "assumed"
+    ]
+  ],
+  "dimensions": "All metric sizes and depth coordinates below are assumed for this scale study. Image landmarks guide layout; no metric camera calibration is available.",
+  "leaf_shape_reference": "https://strawberrycenterblog.com/2025/12/15/strawberry-anatomy-part-3-leaves-and-stems/",
+  "leaflet_profile": {
+    "length_to_width": 1.05,
+    "petiolule_m": 0.009,
+    "teeth_per_side": 10,
+    "crease_m": 0.003,
+    "status": "approximate proportions traced from Cal Poly upper-surface terminal leaflet; lengths assumed",
+    "normalized_halfwidth_stations": [
+      [
+        0,
+        0.015
+      ],
+      [
+        0.08,
+        0.2
+      ],
+      [
+        0.17,
+        0.39
+      ],
+      [
+        0.25,
+        0.56
+      ],
+      [
+        0.33,
+        0.74
+      ],
+      [
+        0.42,
+        0.89
+      ],
+      [
+        0.5,
+        0.98
+      ],
+      [
+        0.58,
+        1
+      ],
+      [
+        0.67,
+        0.94
+      ],
+      [
+        0.75,
+        0.81
+      ],
+      [
+        0.83,
+        0.61
+      ],
+      [
+        0.92,
+        0.31
+      ],
+      [
+        1,
+        0.01
+      ]
+    ],
+    "profile_basis": "Manual width stations from the upper-surface terminal leaflet in the Cal Poly photograph. Approximate; not image segmentation."
+  },
+  "crown_m": [
+    0,
+    0.055,
+    0.278
+  ],
+  "leaves": [
+    {
+      "id": "left",
+      "landmark": "leaf_left",
+      "tip": [
+        -0.087,
+        0.04,
+        0.39499999999999996
+      ],
+      "yaw": 2.75,
+      "pitch": -0.28,
+      "length": 0.08164999999999999,
+      "age": "mature"
+    },
+    {
+      "id": "high",
+      "landmark": "leaf_high",
+      "tip": [
+        0.035,
+        0.073,
+        0.431
+      ],
+      "yaw": 1.15,
+      "pitch": -0.22,
+      "length": 0.08625,
+      "age": "mature"
+    },
+    {
+      "id": "right",
+      "landmark": "leaf_right",
+      "tip": [
+        0.116,
+        0.056,
+        0.368
+      ],
+      "yaw": 0.25,
+      "pitch": 0.35,
+      "length": 0.0759,
+      "age": "mature"
+    },
+    {
+      "id": "front",
+      "landmark": "leaf_front",
+      "tip": [
+        0.069,
+        -0.025,
+        0.35
+      ],
+      "yaw": -0.55,
+      "pitch": 0.5,
+      "length": 0.08279999999999998,
+      "age": "mature"
+    },
+    {
+      "id": "new",
+      "landmark": null,
+      "tip": [
+        -0.009,
+        0.074,
+        0.375
+      ],
+      "yaw": 1.7,
+      "pitch": -0.55,
+      "length": 0.043,
+      "age": "young",
+      "status": "assumed hidden leaf"
+    }
+  ],
+  "truss": [
+    {
+      "id": "peduncle",
+      "parent": "crown",
+      "unloaded_delta": [
+        0.005,
+        -0.092,
+        0.062
+      ],
+      "radius": 0.0026
+    },
+    {
+      "id": "green_stalk",
+      "parent": "peduncle",
+      "unloaded_delta": [
+        -0.073,
+        -0.041,
+        -0.005
+      ],
+      "radius": 0.00125,
+      "fruit": {
+        "id": "green",
+        "radius": 0.01,
+        "length": 0.022,
+        "mass": 0.004,
+        "maturity": "green",
+        "landmark": "fruit_green"
+      }
+    },
+    {
+      "id": "primary_stalk",
+      "parent": "peduncle",
+      "unloaded_delta": [
+        -0.038,
+        -0.085,
+        -0.01
+      ],
+      "radius": 0.00155,
+      "fruit": {
+        "id": "primary",
+        "radius": 0.015,
+        "length": 0.037,
+        "mass": 0.018,
+        "maturity": "red",
+        "landmark": "fruit_a"
+      }
+    },
+    {
+      "id": "secondary",
+      "parent": "peduncle",
+      "unloaded_delta": [
+        0.042,
+        -0.061,
+        0.006
+      ],
+      "radius": 0.0019
+    },
+    {
+      "id": "secondary_a",
+      "parent": "secondary",
+      "unloaded_delta": [
+        -0.004,
+        -0.047,
+        -0.008
+      ],
+      "radius": 0.00135,
+      "fruit": {
+        "id": "secondary_a",
+        "radius": 0.014,
+        "length": 0.032,
+        "mass": 0.014,
+        "maturity": "red",
+        "landmark": "fruit_b"
+      }
+    },
+    {
+      "id": "secondary_b",
+      "parent": "secondary",
+      "unloaded_delta": [
+        0.023,
+        -0.05,
+        -0.025
+      ],
+      "radius": 0.0012,
+      "fruit": {
+        "id": "secondary_b",
+        "radius": 0.013,
+        "length": 0.031,
+        "mass": 0.011,
+        "maturity": "turning",
+        "landmark": "fruit_c"
+      }
+    }
+  ],
+  "crown_reference": {
+    "url": "https://strawberrycenterblog.com/2026/02/19/__trashed/",
+    "features": [
+      "compressed irregular crown at soil line",
+      "overlapping petiole bases and stipules",
+      "root origins below crown"
+    ],
+    "dimensions": "14 mm core diameter is an assumed scale, not measured from photo",
+    "roots": "buried root mechanics omitted from harvesting-contact model"
+  },
+  "basal_support": {
+    "petiole_base_radius_m": 0.0028,
+    "peduncle_base_radius_m": 0.0033,
+    "taper_length_m": 0.035,
+    "basis": "Geometry hypothesis from broad petiole bases in the Cal Poly crown reference; no measured dimensions or stiffness. Upper stalk radius and material modulus retained.",
+    "source": "https://strawberrycenterblog.com/2026/02/19/__trashed/",
+    "mechanics": "Bending compliance integrated over tapered radius; same tapered section used for rendering and contact.",
+    "upright_petiole_emergence": true,
+    "emergence_basis": "Separate unloaded-shape hypothesis: proximal leaf stalk rises before bending outward; no growth angle measured. Leaf attachment endpoint preserved.",
+    "fixed_embedded_sheath": true,
+    "attachment_basis": "Embedded sheath is a fixed crown component ending at the flexible stalk origin. It must not be a moving collider buried in rigid substrate. Exposed stalk contact stays enabled.",
+    "contact_timeconst_s": 0.001,
+    "contact_basis": "Numerical contact refinement for the stiffer structural bases; tested for penetration and timestep sensitivity. Not tissue calibration."
+  },
+  "simulation_timestep_s": 0.00025
+}

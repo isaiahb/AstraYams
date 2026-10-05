@@ -1,0 +1,55 @@
+{
+  "kind": "basal",
+  "control": false,
+  "seconds": 3.999999999999143,
+  "elapsed_wall_s": 8.101542234420776,
+  "valid_run": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial_probe_contacts": [],
+  "probe_start_m": [
+    -0.03464565497797098,
+    0.012934356821402607,
+    0.3119650641645694
+  ],
+  "probe_end_m": [
+    -0.010556414058751113,
+    0.06459390068249166,
+    0.3119650641645694
+  ],
+  "target": "petiole_left_1_surface",
+  "target_touched": true,
+  "probe_contacts": {
+    "petiole_left_1_surface": {
+      "contact_points": 3962,
+      "peak_force_n": 4.181382457114521,
+      "impulse_ns": 1.6918246418159533,
+      "max_penetration_mm": 0.40095739165468997
+    },
+    "petiole_emerging_3_surface": {
+      "contact_points": 1536,
+      "peak_force_n": 0.540948208438214,
+      "impulse_ns": 0.07882246888024143,
+      "max_penetration_mm": 0.058720666241606975
+    },
+    "petiole_emerging_2_surface": {
+      "contact_points": 899,
+      "peak_force_n": 0.5787292638278662,
+      "impulse_ns": 0.030837725665144127,
+      "max_penetration_mm": 0.04858289642085435
+    }
+  },
+  "truss_trough_contact_duration_s": 4.0,
+  "berry_berry_contact_duration_s": 4.0,
+  "penetrations_over_1mm": {},
+  "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.",
+  "approach_angle_deg": 25.0,
+  "trial_label": "basal"
+}

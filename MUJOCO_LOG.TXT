@@ -1,0 +1,52 @@
+WARNING Wed Sep  9 10:36:00 2026: Nan, Inf or huge value in QACC at DOF 251. The simulation is unstable. Time = 0.0003.
+
+WARNING Wed Sep  9 11:42:01 2026: Nan, Inf or huge value in QACC at DOF 309. The simulation is unstable. Time = 0.0003.
+
+WARNING Wed Sep  9 11:42:01 2026: Nan, Inf or huge value in QACC at DOF 290. The simulation is unstable. Time = 0.0003.
+
+WARNING Wed Sep  9 11:42:01 2026: Nan, Inf or huge value in QACC at DOF 271. The simulation is unstable. Time = 0.0003.
+
+WARNING Wed Sep  9 11:42:01 2026: Nan, Inf or huge value in QACC at DOF 290. The simulation is unstable. Time = 0.0003.
+
+WARNING Wed Sep  9 11:42:01 2026: Nan, Inf or huge value in QACC at DOF 251. The simulation is unstable. Time = 0.0003.
+
+WARNING Wed Sep  9 11:42:01 2026: Nan, Inf or huge value in QACC at DOF 268. The simulation is unstable. Time = 0.0003.
+
+WARNING Wed Sep  9 11:43:27 2026: Nan, Inf or huge value in QACC at DOF 251. The simulation is unstable. Time = 0.0003.
+
+WARNING Wed Sep  9 11:43:27 2026: Nan, Inf or huge value in QACC at DOF 83. The simulation is unstable. Time = 0.0003.
+
+WARNING Wed Sep  9 11:46:38 2026: Nan, Inf or huge value in QACC at DOF 42. The simulation is unstable. Time = 0.0050.
+
+WARNING Wed Sep  9 11:47:28 2026: Nan, Inf or huge value in QACC at DOF 44. The simulation is unstable. Time = 0.0085.
+
+WARNING Wed Sep  9 11:47:56 2026: Nan, Inf or huge value in QACC at DOF 44. The simulation is unstable. Time = 0.0060.
+
+WARNING Wed Sep  9 11:53:18 2026: flex 'blade' is not rigid and has no equality constraints or passive forces
+Element name 'blade', id 0, line 87
+
+WARNING Wed Sep  9 11:53:53 2026: flex 'blade' is not rigid and has no equality constraints or passive forces
+Element name 'blade', id 0, line 87
+
+WARNING Wed Sep  9 11:54:28 2026: flex 'blade' is not rigid and has no equality constraints or passive forces
+Element name 'blade', id 0, line 87
+
+WARNING Thu Sep 10 12:41:42 2026: Insufficient arena memory for the number of constraints generated. Increase arena memory allocation above 55M bytes. Time = 0.0000.
+
+WARNING Thu Sep 10 16:49:47 2026: flex 'strand' is not rigid and has no equality constraints or passive forces
+Element name 'strand', id 0
+
+WARNING Sat Sep 12 13:58:00 2026: Nan, Inf or huge value in QACC at DOF 17. The simulation is unstable. Time = 0.0010.
+
+WARNING Sat Sep 12 13:59:41 2026: Nan, Inf or huge value in QACC at DOF 17. The simulation is unstable. Time = 0.0010.
+
+WARNING Sat Sep 12 14:01:11 2026: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0010.
+
+WARNING Sat Sep 12 14:01:29 2026: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0003.
+
+WARNING Sat Sep 12 14:01:29 2026: Nan, Inf or huge value in QACC at DOF 14. The simulation is unstable. Time = 0.0001.
+
+WARNING Sat Sep 12 14:01:57 2026: Nan, Inf or huge value in QACC at DOF 996. The simulation is unstable. Time = 0.0015.
+
+WARNING Sat Sep 12 14:03:38 2026: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0010.
+

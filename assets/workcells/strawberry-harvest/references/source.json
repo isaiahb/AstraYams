@@ -1,0 +1,11 @@
+{
+  "repo": "i2rt-robotics/i2rt",
+  "commit": "5b72c47239bd056d0fa6c1a39edeb0537c89443c",
+  "files": [
+    "i2rt/robot_models/station/yam_station_linear_4310_d405/README.md",
+    "i2rt/robot_models/station/yam_station_linear_4310_d405/yam_station_linear_4310_d405.xml",
+    "i2rt/robot_models/station/yam_station_linear_4310_d405/yam_station_linear_4310_d405.urdf",
+    "i2rt/robot_models/station/assets/d405_wrist_linear_4310.stl",
+    "LICENSE"
+  ]
+}

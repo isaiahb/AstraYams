@@ -1,0 +1,27 @@
+{
+  "tag": "canopy-v1",
+  "max_control_span_last_second_mm": [
+    0.3849770195646594,
+    0.49818957673186726,
+    0.30841675996638623
+  ],
+  "max_control_span_before_contact_mm": [
+    0.05759603216194774,
+    0.1284287207408827,
+    0.04261354328993588
+  ],
+  "peak_contact_difference_mm": [
+    49.324184116516356,
+    30.495992333944606,
+    22.648619523165628
+  ],
+  "final_contact_difference_mm": [
+    0.33640535463491983,
+    0.9452065316758221,
+    0.32341093005963145
+  ],
+  "relative_recovery_after_withdraw_seconds": 0.020499999998440543,
+  "relative_recovery_threshold_mm": 2.466209205825818,
+  "quiet_rest_gate_max_span_2mm": true,
+  "scope": "Engineering sanity gate, not a measured biological tolerance. Compare real plant force and motion data before claiming accuracy."
+}

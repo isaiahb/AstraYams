@@ -1,0 +1,23 @@
+{
+  "plant": "/Users/isaiah/Documents/BallahTech/AstraFactory/assets/workcells/strawberry-specimen/surface-study/v4",
+  "CAD": "/Users/isaiah/Documents/BallahTech/AstraFactory/cad/harvest-tools/rev-b",
+  "nq": 423,
+  "nv": 338,
+  "tool_mass_kg": 0.024197012187206206,
+  "initial_ik_error": 0.0002662667082031634,
+  "target": "secondary_b",
+  "goal_m": [
+    0.35385458915942397,
+    0.07136262681371877,
+    0.3035580886104833
+  ],
+  "initial_joint_positions": [
+    1.260072036583712,
+    2.0200421431755804,
+    1.7456577747377793,
+    -0.7737534049314606,
+    1.5698,
+    -2.0934
+  ],
+  "scope": "All plant joints retained. Actual CAD visible; rigid ring/handle/spine contact approximations, textile rest shape visual only. Free catcher prepositioned between jaws, held by contact. No pickup or catch claim. Robot self-collision not enabled."
+}

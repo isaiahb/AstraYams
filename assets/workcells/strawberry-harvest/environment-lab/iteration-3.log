@@ -1,0 +1,10 @@
+WARNING: ARB_clip_control unavailable while mjDEPTH_ZEROFAR requested, depth accuracy will be limited
+
+0 0 align catcher / cut strawberry
+400 0 align catcher / cut strawberry
+800 0 align catcher / cut strawberry
+1200 0 align catcher / cut strawberry
+1600 0 align catcher / cut strawberry
+2000 0 align catcher / cut strawberry
+2400 0 align catcher / cut strawberry
+{'cut_fruit_visible_pixels': 3771, 'catch_fruit_visible_pixels': 18032, 'reset': {'reset_ik_error_m': {'cut': 5.633477760758828e-06, 'catch': 8.79313327694719e-09}}, 'trial': {'time': 50.00000000001514, 'phase': 'align catcher / cut strawberry', 'severed': False, 'damage': 0.0, 'cut_time': None, 'cup_contact': False, 'basket_contact': False, 'is_success': False, 'fruit_position': [0.309999999995682, -0.05000000000015359, 0.3078319921039555], 'cutter_position': [0.2725886569422587, -0.09701331756873549, 0.362590523768296], 'catcher_position': [0.30974140846734294, -0.049844571175942605, 0.24654042520556269], 'grasp_contacts': {'cutter': 2, 'catcher': 2}, 'peak_catch_force_n': 0.0, 'arm_arm_contacts': 0, 'active_berry': 0, 'berry_success': False, 'collected_count': 0, 'all_fruit_positions': [[0.309999999995682, -0.05000000000015359, 0.3078319921039555], [0.365, 0.015, 0.317831992104], [0.415, 0.075, 0.30283199210399997]]}}

@@ -1,0 +1,61 @@
+{
+  "kind": "leaf",
+  "control": false,
+  "seconds": 3.999999999999143,
+  "elapsed_wall_s": 7.908342123031616,
+  "valid_run": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "initial_probe_contacts": [],
+  "probe_start_m": [
+    -0.15456555716998566,
+    0.10028409771293312,
+    0.4543804893071915
+  ],
+  "probe_end_m": [
+    -0.151157836878747,
+    0.0777614262475779,
+    0.40212997053005056
+  ],
+  "target": "leaf_left_1_w14_-1",
+  "target_touched": true,
+  "probe_contacts": {
+    "leaf_left_1_w14_-1": {
+      "contact_points": 253,
+      "peak_force_n": 0.018180298329585273,
+      "impulse_ns": 0.0006663249499236362,
+      "max_penetration_mm": 0.09326194679485332
+    },
+    "leaf_left_1_w13_-1": {
+      "contact_points": 374,
+      "peak_force_n": 0.016814410484454645,
+      "impulse_ns": 0.0012098426067476563,
+      "max_penetration_mm": 0.010053567584954182
+    },
+    "leaf_left_1_w12_-1": {
+      "contact_points": 1031,
+      "peak_force_n": 0.022362881500822888,
+      "impulse_ns": 0.0037785949197623155,
+      "max_penetration_mm": 0.02079656725825947
+    },
+    "leaf_left_1_w11_-1": {
+      "contact_points": 2577,
+      "peak_force_n": 0.02145032251592689,
+      "impulse_ns": 0.00996193702078916,
+      "max_penetration_mm": 0.02052096895469209
+    }
+  },
+  "truss_trough_contact_duration_s": 4.0,
+  "berry_berry_contact_duration_s": 4.0,
+  "penetrations_over_1mm": {},
+  "scope": "Force-limited probe diagnostic, not a learned policy or calibrated biological response. Reset before each trial; no plant edits during simulation.",
+  "approach_angle_deg": 25.0,
+  "trial_label": "leaf"
+}

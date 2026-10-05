@@ -1,0 +1,25 @@
+{
+  "tag": "botanical-v4",
+  "seconds": 13.999999999990047,
+  "fruits": 8,
+  "probe_contact_steps": 4815,
+  "peak_probe_force_n": 0.3557861348371922,
+  "probe_impulse_ns": 0.14996664315917543,
+  "max_probe_penetration_m": 0.00040653735272660856,
+  "finite": true,
+  "valid_run": true,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "stiffness_scale": 1,
+  "segments": 6,
+  "timestep_s": 0.00025,
+  "contact_enabled": true,
+  "scope": "Force-limited diagnostic probe. Robot holds pose. No harvest or learned policy claim."
+}

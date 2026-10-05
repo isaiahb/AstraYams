@@ -1,0 +1,18 @@
+{
+  "source_scene_sha256": "535de45e60aff7fadc161f013a4de0ee9de59caf79c123a5e0e6fafaa1a33022",
+  "scene_sha256": "125c74cc189369242fbfc74c7d9285a65781ed77e3053482554dd462a65f9e49",
+  "mujoco": "3.12.0",
+  "event": "Disable calyx attachment weld at 1 s. No blade, fracture force, cutter work, or distal stem remnant modeled.",
+  "preprocessing": "Start from v14 settled pose, reset velocities for this experiment, settle changed weld representation 2 s; both trials copy this state including its residual velocities.",
+  "growth_hypothesis": "Before simulation: q_spring = exp(0.5 log(q_loaded)) and k_new = 2 k_old on truss ball joints. Restoring moment at the shared initial pose is preserved; tangent stiffness doubles. No growth law is being integrated.",
+  "unchanged_at_release": [
+    "all qpos",
+    "all qvel",
+    "masses",
+    "inertias",
+    "stiffness",
+    "spring references",
+    "contact filters"
+  ],
+  "interpretation": "Hypothesis sensitivity; no known biological growth fraction, damping, or recoil magnitude."
+}

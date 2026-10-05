@@ -1,0 +1,53 @@
+{
+  "status": "Candidate; not promoted",
+  "controller": "Scripted, not learned",
+  "trials": [
+    {
+      "trial": "Baseline seed 1",
+      "collected": 3,
+      "seconds": 34.12,
+      "success": true
+    },
+    {
+      "trial": "CAD only seed 1",
+      "collected": 3,
+      "seconds": 33.88,
+      "success": true
+    },
+    {
+      "trial": "Broader contacts seed 1",
+      "collected": 2,
+      "seconds": 50.0,
+      "success": false
+    },
+    {
+      "trial": "Combined seed 1",
+      "collected": 3,
+      "seconds": 36.58,
+      "success": true
+    },
+    {
+      "trial": "Combined seed 2",
+      "collected": 3,
+      "seconds": 34.0,
+      "success": true
+    },
+    {
+      "trial": "Combined seed 3",
+      "collected": 2,
+      "seconds": 50.0,
+      "success": false
+    }
+  ],
+  "visibility": {
+    "before_pixels": 4572,
+    "after_pixels": 5834,
+    "increase_percent": 27.6
+  },
+  "combined_success": "2/3 full runs; no demonstrated aggregate improvement over prior 2/3 baseline",
+  "remaining": [
+    "Third berry remains in cup in seed 3",
+    "Varied environments still fail approach feasibility",
+    "Contact and fracture parameters need physical calibration"
+  ]
+}

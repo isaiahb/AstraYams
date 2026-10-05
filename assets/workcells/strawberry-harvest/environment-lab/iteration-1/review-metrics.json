@@ -1,0 +1,61 @@
+{
+  "cut_fruit_visible_pixels": 3770,
+  "catch_fruit_visible_pixels": 18438,
+  "reset": {
+    "reset_ik_error_m": {
+      "cut": 9.472786970082428e-07,
+      "catch": 1.4590621347523692e-06
+    }
+  },
+  "trial": {
+    "time": 50.00000000001514,
+    "phase": "align catcher / cut strawberry",
+    "severed": false,
+    "damage": 0.0,
+    "cut_time": null,
+    "cup_contact": false,
+    "basket_contact": false,
+    "is_success": false,
+    "fruit_position": [
+      0.299999999995682,
+      -0.055000000000153586,
+      0.3078319921039555
+    ],
+    "cutter_position": [
+      0.27244705824055415,
+      -0.08976539177229027,
+      0.3594573488804891
+    ],
+    "catcher_position": [
+      0.29976375447091913,
+      -0.05487782754236648,
+      0.24631091878154662
+    ],
+    "grasp_contacts": {
+      "cutter": 2,
+      "catcher": 2
+    },
+    "peak_catch_force_n": 0.0,
+    "arm_arm_contacts": 0,
+    "active_berry": 0,
+    "berry_success": false,
+    "collected_count": 0,
+    "all_fruit_positions": [
+      [
+        0.299999999995682,
+        -0.055000000000153586,
+        0.3078319921039555
+      ],
+      [
+        0.35,
+        0.015,
+        0.312831992104
+      ],
+      [
+        0.405,
+        0.075,
+        0.297831992104
+      ]
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "label": "Offline workspace feasibility diagnostic. IK commanded this check, never used by PPO training or evaluation.",
+  "rows": [
+    {
+      "seed": 41001,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.002652581124301724,
+      "normal_z": 0.9999214210816951,
+      "joint_speed_norm": 0.011891462919182498,
+      "hold_steps": 20,
+      "return_sum": 101.14036391866529,
+      "sim_s": 1.22,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          0.009965310336625023,
+          -0.01835801430774946,
+          -0.0001262168569314195
+        ],
+        "yaw_rad": 0.1706670105458722,
+        "stiffness_scale": 0.9457779615195666
+      },
+      "left_jaw_N": 5.347299356566858,
+      "right_jaw_N": 5.381797297501851,
+      "tool_slip_m": 0.0013277085981081044,
+      "tool_rotation_rad": 0.011056871528199137,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "peak_torque": 6.665447194274722
+    },
+    {
+      "seed": 41002,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.0025020977434544907,
+      "normal_z": 0.9999307693495563,
+      "joint_speed_norm": 0.008184260138598588,
+      "hold_steps": 20,
+      "return_sum": 96.2935515958089,
+      "sim_s": 1.12,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          -0.0026304853880435974,
+          0.0032465935267446165,
+          0.011372082015451921
+        ],
+        "yaw_rad": -4.284459335011093e-05,
+        "stiffness_scale": 0.9504562277557556
+      },
+      "left_jaw_N": 5.379361873686524,
+      "right_jaw_N": 5.306490255588256,
+      "tool_slip_m": 0.0012223725184155958,
+      "tool_rotation_rad": 0.010281254547178818,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "peak_torque": 6.362603898730805
+    },
+    {
+      "seed": 41003,
+      "is_success": true,
+      "invalid": false,
+      "distance_m": 0.002317678522617729,
+      "normal_z": 0.9999424746756932,
+      "joint_speed_norm": 0.016681540840508217,
+      "hold_steps": 20,
+      "return_sum": 80.65324337959281,
+      "sim_s": 0.9400000000000001,
+      "peak_wrong_contact_N": 0.0,
+      "domain_randomization": {
+        "offset_m": [
+          -0.0006200178406865753,
+          -0.01874788359659882,
+          0.00883453496477405
+        ],
+        "yaw_rad": -0.07129836027673812,
+        "stiffness_scale": 1.1009685530033897
+      },
+      "left_jaw_N": 5.343699378808298,
+      "right_jaw_N": 5.380127544263601,
+      "tool_slip_m": 0.0010523178666699729,
+      "tool_rotation_rad": 0.009098896996178728,
+      "wrong_contact_N": 0.0,
+      "penetration_m": 0.0,
+      "peak_torque": 6.062020591691399
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "mode": "shell",
+  "control": false,
+  "seconds": 0.00025,
+  "elapsed_wall_s": 0.01817220915108919,
+  "complete": false,
+  "warnings": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+  ],
+  "initial_probe_contacts": 0,
+  "target_touched": false,
+  "contact_duration_s": 0.0,
+  "peak_sum_probe_normal_force_n": 0.0,
+  "max_probe_penetration_mm": 0.0,
+  "max_panel_seam_gap_mm": null,
+  "shell_max_edge_extension_fraction": 0.0,
+  "surface_continuity": "Shared triangle vertices; no independently separating panel edges.",
+  "scope": "Numerical diagnostic only. Both models use the same world-space commanded probe trajectory; material calibration is absent."
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "seed": 2,
+    "collected": 2,
+    "all_three_retained": false,
+    "seconds": 60.00000000002736,
+    "minimum_finger_contacts": 0,
+    "arm_arm_contacts": 0,
+    "peak_catch_force_n": 20.805877520758056
+  },
+  {
+    "seed": 3,
+    "collected": 3,
+    "all_three_retained": true,
+    "seconds": 34.71999999999647,
+    "minimum_finger_contacts": 2,
+    "arm_arm_contacts": 0,
+    "peak_catch_force_n": 4.589913307666096
+  }
+]
